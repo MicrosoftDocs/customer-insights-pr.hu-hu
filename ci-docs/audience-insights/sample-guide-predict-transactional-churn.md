@@ -1,0 +1,206 @@
+---
+title: Tranzakcionális lemorzsolódási előrejelzési példamutató
+description: Használja ezt a példamutatót, hogy kipróbálja a mezőn kívüli lemorzsolódás-előrejelzési modellt.
+ms.date: 11/19/2020
+ms.reviewer: digranad
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+manager: shellyha
+ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643596"
+---
+# <a name="transactional-churn-prediction-preview-sample-guide"></a><span data-ttu-id="58591-103">Tranzakcionális lemorzsolódási előrejelzési (előnézet) példamutató</span><span class="sxs-lookup"><span data-stu-id="58591-103">Transactional churn prediction (preview) sample guide</span></span>
+
+<span data-ttu-id="58591-104">Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával.</span><span class="sxs-lookup"><span data-stu-id="58591-104">This guide will walk you through an end to end example of Transactional Churn prediction in Customer Insights using the data provided below.</span></span> <span data-ttu-id="58591-105">Az ebben az útmutatóban felhasznált adatok nem valós ügyféladatok, és részei a Contoso-adatkészletnek, ami megtalálható a *Bemutató* környezetben a Customer Insights Előfizetésében.</span><span class="sxs-lookup"><span data-stu-id="58591-105">All data used in this guide is not real customer data and is part of the Contoso dataset found in the *Demo* environment within your Customer Insights Subscription.</span></span>
+
+## <a name="scenario"></a><span data-ttu-id="58591-106">Forgatókönyv</span><span class="sxs-lookup"><span data-stu-id="58591-106">Scenario</span></span>
+
+<span data-ttu-id="58591-107">A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el.</span><span class="sxs-lookup"><span data-stu-id="58591-107">Contoso is a company that produces high-quality coffee and coffee machines, which they sell through their Contoso Coffee website.</span></span> <span data-ttu-id="58591-108">Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni.</span><span class="sxs-lookup"><span data-stu-id="58591-108">Their goal is to know which customers who typically purchase their products on a regular basis, will stop being active customers in the next 60 days.</span></span> <span data-ttu-id="58591-109">Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.</span><span class="sxs-lookup"><span data-stu-id="58591-109">Knowing which of their customers is **likely to churn**, can help them save marketing efforts by focusing on keeping them.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="58591-110">Előfeltételek</span><span class="sxs-lookup"><span data-stu-id="58591-110">Prerequisites</span></span>
+
+- <span data-ttu-id="58591-111">Legalább [közreműködői engedély](permissions.md) a Customer Insightsban.</span><span class="sxs-lookup"><span data-stu-id="58591-111">At least [Contributor permissions](permissions.md) in Customer Insights.</span></span>
+- <span data-ttu-id="58591-112">Javasoljuk, hogy a következő lépéseket hajtsa végre [egy új környezetben](manage-environments.md).</span><span class="sxs-lookup"><span data-stu-id="58591-112">We recommend that you implement the following steps [in a new environment](manage-environments.md).</span></span>
+
+## <a name="task-1---ingest-data"></a><span data-ttu-id="58591-113">1. Feladat - Adatok betáplálása</span><span class="sxs-lookup"><span data-stu-id="58591-113">Task 1 - Ingest data</span></span>
+
+<span data-ttu-id="58591-114">Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az adatforrások importálásáról a Power Query csatlakozók használatával](connect-power-query.md).</span><span class="sxs-lookup"><span data-stu-id="58591-114">Review the articles [about data ingestion](data-sources.md) and [importing data sources using Power Query connectors](connect-power-query.md) specifically.</span></span> <span data-ttu-id="58591-115">A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban.</span><span class="sxs-lookup"><span data-stu-id="58591-115">The following information assumes you familiarized with ingesting data in general.</span></span> 
+
+### <a name="ingest-customer-data-from-ecommerce-platform"></a><span data-ttu-id="58591-116">Betáplált ügyféladatok az eCommerce platformról.</span><span class="sxs-lookup"><span data-stu-id="58591-116">Ingest customer data from eCommerce platform</span></span>
+
+1. <span data-ttu-id="58591-117">Hozzon létre egy adatforrást, elnevezve **eCommerce**-nek, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.</span><span class="sxs-lookup"><span data-stu-id="58591-117">Create a data source named **eCommerce**, choose the import option, and select the **Text/CSV** connector.</span></span>
+
+1. <span data-ttu-id="58591-118">Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscontacts.</span><span class="sxs-lookup"><span data-stu-id="58591-118">Enter the URL for eCommerce contacts https://aka.ms/ciadclasscontacts.</span></span>
+
+1. <span data-ttu-id="58591-119">Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-119">While editing the data, select **Transform** and then **Use First Row as Headers**.</span></span>
+
+1. <span data-ttu-id="58591-120">Frissítse az adattípust az alább felsorolt oszlopokhoz:</span><span class="sxs-lookup"><span data-stu-id="58591-120">Update the datatype for the columns listed below:</span></span>
+
+   - <span data-ttu-id="58591-121">**SzületésiDátum**: Dátum</span><span class="sxs-lookup"><span data-stu-id="58591-121">**DateOfBirth**: Date</span></span>
+   - <span data-ttu-id="58591-122">**CreatedOn**: Dátum/Idő/Zóna</span><span class="sxs-lookup"><span data-stu-id="58591-122">**CreatedOn**: Date/Time/Zone</span></span>
+
+   [!div class="mx-imgBorder"]
+   <span data-ttu-id="58591-123">![DoB átalakítása Dátummá](media/ecommerce-dob-date.PNG "A születési dátum átalakítása dátummá")</span><span class="sxs-lookup"><span data-stu-id="58591-123">![Transform DoB to Date](media/ecommerce-dob-date.PNG "transform date of birth to date")</span></span>
+
+1. <span data-ttu-id="58591-124">A jobb oldali panelben a "Név" mezőben nevezze át az adatforrását a **Lekérdezés**-ről **eCommerceContacts**-ra.</span><span class="sxs-lookup"><span data-stu-id="58591-124">In the 'Name' field on the right-hand pane, rename your data source from **Query** to **eCommerceContacts**</span></span>
+
+1. <span data-ttu-id="58591-125">Az adatforrások mentése.</span><span class="sxs-lookup"><span data-stu-id="58591-125">Save the data source.</span></span>
+
+### <a name="ingest-online-purchase-data"></a><span data-ttu-id="58591-126">Online vásárlási adatok betáplálása.</span><span class="sxs-lookup"><span data-stu-id="58591-126">Ingest online purchase data</span></span>
+
+1. <span data-ttu-id="58591-127">Adjon hozzá egy újabb adatforrást a megegyező **eCommerce** adatforráshoz.</span><span class="sxs-lookup"><span data-stu-id="58591-127">Add another data set to the same **eCommerce** data source.</span></span> <span data-ttu-id="58591-128">Válassza a **Text/CSV** csatlakozót újra.</span><span class="sxs-lookup"><span data-stu-id="58591-128">Choose the **Text/CSV** connector again.</span></span>
+
+1. <span data-ttu-id="58591-129">Adja meg az URL-címét az **Online vásárlas** adataihoz https://aka.ms/ciadclassonline.</span><span class="sxs-lookup"><span data-stu-id="58591-129">Enter the URL for **Online Purchases** data https://aka.ms/ciadclassonline.</span></span>
+
+1. <span data-ttu-id="58591-130">Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-130">While editing the data, select **Transform** and then **Use First Row as Headers**.</span></span>
+
+1. <span data-ttu-id="58591-131">Frissítse az adattípust az alább felsorolt oszlopokhoz:</span><span class="sxs-lookup"><span data-stu-id="58591-131">Update the datatype for the columns listed below:</span></span>
+
+   - <span data-ttu-id="58591-132">**PurchasedOn** : Dátum/Idő</span><span class="sxs-lookup"><span data-stu-id="58591-132">**PurchasedOn**: Date/Time</span></span>
+   - <span data-ttu-id="58591-133">**TotalPrice** : Pénznem</span><span class="sxs-lookup"><span data-stu-id="58591-133">**TotalPrice**: Currency</span></span>
+   
+1. <span data-ttu-id="58591-134">A"Név" mezőben a jobb oldali panelen, nevezze át az adatforrását a **Lekérdezés**-ről **eCommercePurchases**-ra.</span><span class="sxs-lookup"><span data-stu-id="58591-134">In the 'Name' field on the right-hand pane, rename your data source from **Query** to **eCommercePurchases**.</span></span>
+
+1. <span data-ttu-id="58591-135">Az adatforrások mentése.</span><span class="sxs-lookup"><span data-stu-id="58591-135">Save the data source.</span></span>
+
+### <a name="ingest-customer-data-from-loyalty-schema"></a><span data-ttu-id="58591-136">Ügyféladatok bevitele a hűségsémából</span><span class="sxs-lookup"><span data-stu-id="58591-136">Ingest customer data from loyalty schema</span></span>
+
+1. <span data-ttu-id="58591-137">Hozzon létre egy adatforrást, melynek neve **LoyaltyScheme**, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.</span><span class="sxs-lookup"><span data-stu-id="58591-137">Create a data source named **LoyaltyScheme**, choose the import option, and select the **Text/CSV** connector.</span></span>
+
+1. <span data-ttu-id="58591-138">Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscustomerloyalty.</span><span class="sxs-lookup"><span data-stu-id="58591-138">Enter the URL for eCommerce contacts https://aka.ms/ciadclasscustomerloyalty.</span></span>
+
+1. <span data-ttu-id="58591-139">Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-139">While editing the data, select **Transform** and then **Use First Row as Headers**.</span></span>
+
+1. <span data-ttu-id="58591-140">Frissítse az adattípust az alább felsorolt oszlopokhoz:</span><span class="sxs-lookup"><span data-stu-id="58591-140">Update the datatype for the columns listed below:</span></span>
+
+   - <span data-ttu-id="58591-141">**SzületésiDátum**: Dátum</span><span class="sxs-lookup"><span data-stu-id="58591-141">**DateOfBirth**: Date</span></span>
+   - <span data-ttu-id="58591-142">**JutalmazásiPontok**: Egész Szám</span><span class="sxs-lookup"><span data-stu-id="58591-142">**RewardsPoints**: Whole Number</span></span>
+   - <span data-ttu-id="58591-143">**KészültEkkor**: Dátum/Idő</span><span class="sxs-lookup"><span data-stu-id="58591-143">**CreatedOn**: Date/Time</span></span>
+
+1. <span data-ttu-id="58591-144">A "Név" mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **loyCustomers**-re.</span><span class="sxs-lookup"><span data-stu-id="58591-144">In the 'Name' field on the right-hand pane, rename your data source from **Query** to **loyCustomers**.</span></span>
+
+1. <span data-ttu-id="58591-145">Az adatforrások mentése.</span><span class="sxs-lookup"><span data-stu-id="58591-145">Save the data source.</span></span>
+
+
+## <a name="task-2---data-unification"></a><span data-ttu-id="58591-146">2. feladat - Adatok egységesítése</span><span class="sxs-lookup"><span data-stu-id="58591-146">Task 2 - Data unification</span></span>
+
+<span data-ttu-id="58591-147">Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesítés** folyamatot, hogy hogy létrehozzunk egy egyesített ügyfélprofilt.</span><span class="sxs-lookup"><span data-stu-id="58591-147">After ingesting the data we now begin the **Map, Match, Merge** process to create a unified customer profile.</span></span> <span data-ttu-id="58591-148">További információkért lásd: [Adatok egységesítése](data-unification.md).</span><span class="sxs-lookup"><span data-stu-id="58591-148">For more information, see [Data unification](data-unification.md).</span></span>
+
+### <a name="map"></a><span data-ttu-id="58591-149">Map</span><span class="sxs-lookup"><span data-stu-id="58591-149">Map</span></span>
+
+1. <span data-ttu-id="58591-150">Az adatok betáplálása után képezze le a kapcsolattartókat az eCommerce-ből és a Loyalty data-ból a közös adattípusokba.</span><span class="sxs-lookup"><span data-stu-id="58591-150">After ingesting the data, map contacts from eCommerce and Loyalty data to common data types.</span></span> <span data-ttu-id="58591-151">Nyissa meg az **Adatok** > **Egységesítés** > **Megfeleltetés**-t.</span><span class="sxs-lookup"><span data-stu-id="58591-151">Go to **Data** > **Unify** > **Map**.</span></span>
+
+1. <span data-ttu-id="58591-152">Válassza ki az entitást, amely jelképezi az ügyfélprofilt – **eCommerceContacts** és **loyCustomers**.</span><span class="sxs-lookup"><span data-stu-id="58591-152">Select the entities that represent the customer profile – **eCommerceContacts** and **loyCustomers**.</span></span> 
+
+   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="az ecommerce és a loyality adatforrások egységesítése.":::
+
+1. <span data-ttu-id="58591-154">Jelölje ki a **ContactId**-t elsődleges kulcsaként az **eCommerceContacts**-hoz és a **LoyaltyID** a **loyCustomers** elsődleges kulcsaként.</span><span class="sxs-lookup"><span data-stu-id="58591-154">Select **ContactId** as the primary key for **eCommerceContacts** and **LoyaltyID** as the primary key for **loyCustomers**.</span></span>
+
+   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="A LoyaltyId egyesítheti elsődleges kulcsként.":::
+
+### <a name="match"></a><span data-ttu-id="58591-156">Egyeztetés</span><span class="sxs-lookup"><span data-stu-id="58591-156">Match</span></span>
+
+1. <span data-ttu-id="58591-157">Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.</span><span class="sxs-lookup"><span data-stu-id="58591-157">Go to the **Match** tab and select **Set Order**.</span></span>
+
+1. <span data-ttu-id="58591-158">Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** lehetőséget elsődleges forrásként, amely minden rekordot magában foglal.</span><span class="sxs-lookup"><span data-stu-id="58591-158">In the **Primary** drop-down list, choose **eCommerceContacts : eCommerce** as the primary source and include all records.</span></span>
+
+1. <span data-ttu-id="58591-159">Az **Entitás 2** legördülő listájában válassza ki a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.</span><span class="sxs-lookup"><span data-stu-id="58591-159">In the **Entity 2** drop-down list, choose **loyCustomers : LoyaltyScheme** and include all records.</span></span>
+
+   :::image type="content" source="media/unify-match-order.PNG" alt-text="Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.":::
+
+1. <span data-ttu-id="58591-161">Válassza az **Új szabály létrehozása** menüpontot</span><span class="sxs-lookup"><span data-stu-id="58591-161">Select **Create a new rule**</span></span>
+
+1. <span data-ttu-id="58591-162">Adja hozzá az első feltételt a FullName segítségével.</span><span class="sxs-lookup"><span data-stu-id="58591-162">Add your first condition using FullName.</span></span>
+
+   * <span data-ttu-id="58591-163">Az eCommerceContacts lehetőséghez válassza ki a **FullName** opciót a legördülő listából.</span><span class="sxs-lookup"><span data-stu-id="58591-163">For eCommerceContacts select **FullName** in the drop-down.</span></span>
+   * <span data-ttu-id="58591-164">A loyCustumers lehetőséghez válassza ki a **FullName** opciót a legördülő listából.</span><span class="sxs-lookup"><span data-stu-id="58591-164">For loyCustomers select **FullName** in the drop-down.</span></span>
+   * <span data-ttu-id="58591-165">Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-165">Select the **Normalize** drop down and choose **Type (Phone, Name, Address, ...)**.</span></span>
+   * <span data-ttu-id="58591-166">Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.</span><span class="sxs-lookup"><span data-stu-id="58591-166">Set **Precision Level**: **Basic** and **Value**: **High**.</span></span>
+
+1. <span data-ttu-id="58591-167">Adja meg a nevét **FullName, Email**, az új szabályhoz.</span><span class="sxs-lookup"><span data-stu-id="58591-167">Enter the name **FullName, Email** for the new rule.</span></span>
+
+   * <span data-ttu-id="58591-168">Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.</span><span class="sxs-lookup"><span data-stu-id="58591-168">Add a second condition for email address by selecting **Add Condition**</span></span>
+   * <span data-ttu-id="58591-169">Az eCommerceContacts entitáshoz válassza az **Email** legördülő lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-169">For entity eCommerceContacts, choose **EMail** in drop-down.</span></span>
+   * <span data-ttu-id="58591-170">Az loyCustomers entitáshoz válassza az **Email** legördülő lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-170">For entity loyCustomers, choose **EMail** in the drop-down.</span></span> 
+   * <span data-ttu-id="58591-171">Hagyja üresen a Normalizálást.</span><span class="sxs-lookup"><span data-stu-id="58591-171">Leave Normalize blank.</span></span> 
+   * <span data-ttu-id="58591-172">Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.</span><span class="sxs-lookup"><span data-stu-id="58591-172">Set **Precision Level**: **Basic** and **Value**: **High**.</span></span>
+
+   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Egységesítése az egyezési szabályt a névhez és az e-mailhez.":::
+
+7. <span data-ttu-id="58591-174">Válassza a **Mentés** és **Futtatás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-174">Select **Save** and **Run**.</span></span>
+
+### <a name="merge"></a><span data-ttu-id="58591-175">Összefűzés</span><span class="sxs-lookup"><span data-stu-id="58591-175">Merge</span></span>
+
+1. <span data-ttu-id="58591-176">Nyissa meg az **Egyesítés** lapot.</span><span class="sxs-lookup"><span data-stu-id="58591-176">Go to the **Merge** tab.</span></span>
+
+1. <span data-ttu-id="58591-177">A **ContactId** **loyCustomers** entitáshoz változtassa meg a megjelenítendő nevet **ContactIdLOYALTY**-ra, hogy megkülönböztethesse azt a többi betáplált azonosítóval.</span><span class="sxs-lookup"><span data-stu-id="58591-177">On the **ContactId** for **loyCustomers** entity, change the display name to **ContactIdLOYALTY** to differentiate it from the other IDs ingested.</span></span>
+
+   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="nevezze át a loyalty azonosítót contactid-re.":::
+
+1. <span data-ttu-id="58591-179">Válassza a **Mentés** és **Futtatás** lehetőséget, hogy elindítsa a Egyesítés Folyamatot.</span><span class="sxs-lookup"><span data-stu-id="58591-179">Select **Save** and **Run** to start the Merge Process.</span></span>
+
+
+
+## <a name="task-3---configure-transaction-churn-prediction"></a><span data-ttu-id="58591-180">3. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.</span><span class="sxs-lookup"><span data-stu-id="58591-180">Task 3 - Configure transaction churn prediction</span></span>
+
+<span data-ttu-id="58591-181">Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk.</span><span class="sxs-lookup"><span data-stu-id="58591-181">With the unified customer profiles in place, we can now run the subscription churn prediction.</span></span> <span data-ttu-id="58591-182">A részletes lépésekért lásd az [Előfizetés lemorzsolódási előrejelzés (előnézet)](predict-subscription-churn.md) című cikket.</span><span class="sxs-lookup"><span data-stu-id="58591-182">For detailed steps, see the [Subscription churn prediction (preview)](predict-subscription-churn.md) article.</span></span> 
+
+1. <span data-ttu-id="58591-183">Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.</span><span class="sxs-lookup"><span data-stu-id="58591-183">Go to **Intelligence** > **Discover** and select to use the **Customer churn model**.</span></span>
+
+1. <span data-ttu-id="58591-184">Válassza a **Tranzakciós** beállítást, és válassza ki a **Kezdő lépések** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-184">Select the **Transactional** option and select **Get started**.</span></span>
+
+1. <span data-ttu-id="58591-185">Nevezze el a modellt **OOB eCommerce Lemorzsolódási Előrejelzés**-nek és a kimeneti entitást **OOBeCommerceChurnPrediction**-nak.</span><span class="sxs-lookup"><span data-stu-id="58591-185">Name the model **OOB eCommerce Transaction Churn Prediction** and the output entity **OOBeCommerceChurnPrediction**.</span></span>
+
+1. <span data-ttu-id="58591-186">Határozzon meg két feltételt a lemorzsolódási modellhez.</span><span class="sxs-lookup"><span data-stu-id="58591-186">Define two conditions for the churn model:</span></span>
+
+   * <span data-ttu-id="58591-187">**Előrejelzési ablak**: **legalább 60** nap.</span><span class="sxs-lookup"><span data-stu-id="58591-187">**Prediction window**: **at least 60** days.</span></span> <span data-ttu-id="58591-188">Ez a beállítás meghatározza, a jövőben milyen távol szeretné előre jelezni az ügyfél lemorzsolódást.</span><span class="sxs-lookup"><span data-stu-id="58591-188">This setting defines how far into the future do we want to predict customer churn.</span></span>
+
+   * <span data-ttu-id="58591-189">**Lemorzsolódás meghatározása**: **legalább 60** nap.</span><span class="sxs-lookup"><span data-stu-id="58591-189">**Churn definition**: **at least 60** days.</span></span> <span data-ttu-id="58591-190">A vásárlás nélküli időtartam, ami után egy ügyfél lemorzsolódónak minősül.</span><span class="sxs-lookup"><span data-stu-id="58591-190">The duration without purchase after which a customer is considered churned.</span></span>
+
+     :::image type="content" source="media/model-levers.PNG" alt-text="Válassza ki a modellt, amely előhozza az Előrejelzési Ablakot és a Lemorzsolódás Meghatározását.":::
+
+1. <span data-ttu-id="58591-192">Válassza ki a **Vásárlási előzményeket (kötelező)** és válassza az **Adatok hozzáadása** lehetőséget az előfizetési előzményekhez.</span><span class="sxs-lookup"><span data-stu-id="58591-192">Select **Purchase History (required)** and select **Add data** for subscription history.</span></span>
+
+1. <span data-ttu-id="58591-193">Adja hozzá a **eCommercePurchases: eCommerce** entitást és képezze le a mezőket az eCommerce-ről a megfelelő mezőkre, melyek modell által megköveteltek.</span><span class="sxs-lookup"><span data-stu-id="58591-193">Add the **eCommercePurchases : eCommerce** entity and map the fields from eCommerce to the corresponding fields required by the model.</span></span>
+
+1. <span data-ttu-id="58591-194">Csatlakozzon az **eCommercePurchases: eCommerce** entitáshoz az **eCommerceContacts: eCommerce**-szel.</span><span class="sxs-lookup"><span data-stu-id="58591-194">Join the **eCommercePurchases : eCommerce** entity with **eCommerceContacts : eCommerce**.</span></span>
+
+   :::image type="content" source="media/model-purchase-join.PNG" alt-text="Csatlakoztassa az eCommerce entitásokhoz.":::
+
+1. <span data-ttu-id="58591-196">Válassza a **Következő** lehetőséget a modell ütemezésének beállításához.</span><span class="sxs-lookup"><span data-stu-id="58591-196">Select **Next** to set the model schedule.</span></span>
+
+   <span data-ttu-id="58591-197">A modell rendszeres betanítást igényel ahhoz, hogy új mintákat tanulhasson, amikor új adatok kerülnek a rendszerbe.</span><span class="sxs-lookup"><span data-stu-id="58591-197">The model needs to train regularly to learn new patterns when there is new data ingested.</span></span> <span data-ttu-id="58591-198">Ennél a példánál válassza a **Havonta** beállítást.</span><span class="sxs-lookup"><span data-stu-id="58591-198">For this example, select **Monthly**.</span></span>
+
+1. <span data-ttu-id="58591-199">A részletek áttekintése után válassza a **Mentés és Futtatás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="58591-199">After reviewing all the details, select **Save and Run**.</span></span>
+
+## <a name="task-4---review-model-results-and-explanations"></a><span data-ttu-id="58591-200">4. feladat – Modell eredmények és a magyarázatok áttekintése</span><span class="sxs-lookup"><span data-stu-id="58591-200">Task 4 - Review model results and explanations</span></span>
+
+<span data-ttu-id="58591-201">Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását.</span><span class="sxs-lookup"><span data-stu-id="58591-201">Let the model complete the training and scoring of the data.</span></span> <span data-ttu-id="58591-202">Most már megtekintheti az előfizetési lemorzsolódás modell magyarázatait.</span><span class="sxs-lookup"><span data-stu-id="58591-202">You can now review the subscription churn model explanations.</span></span> <span data-ttu-id="58591-203">További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-subscription-churn.md#review-a-prediction-status-and-results) című témakört.</span><span class="sxs-lookup"><span data-stu-id="58591-203">For more information, see [Review a prediction status and results](predict-subscription-churn.md#review-a-prediction-status-and-results).</span></span>
+
+## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a><span data-ttu-id="58591-204">5. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről</span><span class="sxs-lookup"><span data-stu-id="58591-204">Task 5 - Create a segment of high churn-risk customers</span></span>
+
+<span data-ttu-id="58591-205">Futtatva a termékjavaslati modellt, létrehozhat egy új entitást, amelyet láthat a **Adat** > **Entitások**-nál.</span><span class="sxs-lookup"><span data-stu-id="58591-205">Running the production model creates a new entity that you can see in **Data** > **Entities**.</span></span>   
+
+<span data-ttu-id="58591-206">Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.</span><span class="sxs-lookup"><span data-stu-id="58591-206">You can create a new segment based on the entity created by the model.</span></span>
+
+1.  <span data-ttu-id="58591-207">Kattintson a **Szegmensek** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="58591-207">Go to **Segments**.</span></span> <span data-ttu-id="58591-208">Válassza az **Új** lehetőséget, és válassza a **Létrehozás a következőkből** > **Intelligencia**.</span><span class="sxs-lookup"><span data-stu-id="58591-208">Select **New** and choose **Create from** > **Intelligence**.</span></span> 
+
+   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Szegmens létrehozása a modell kimenetével.":::
+
+1. <span data-ttu-id="58591-210">Válassza ki a **OOBSubscriptionChurnPrediction** végpontot és definiálja a szegmenst:</span><span class="sxs-lookup"><span data-stu-id="58591-210">Select the **OOBSubscriptionChurnPrediction** endpoint and define the segment:</span></span> 
+   - <span data-ttu-id="58591-211">Mező: ChurnScore</span><span class="sxs-lookup"><span data-stu-id="58591-211">Field: ChurnScore</span></span>
+   - <span data-ttu-id="58591-212">Operátor: nagyobb, mint</span><span class="sxs-lookup"><span data-stu-id="58591-212">Operator: greater than</span></span>
+   - <span data-ttu-id="58591-213">Érték: 0,6</span><span class="sxs-lookup"><span data-stu-id="58591-213">Value: 0.6</span></span>
+   
+   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Állítsa be az előfizetési lemorzsolódási szegmenset.":::
+
+<span data-ttu-id="58591-215">Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén.</span><span class="sxs-lookup"><span data-stu-id="58591-215">You now have a segment that is dynamically updated which identifies high churn-risk customers for this subscription business.</span></span>
+
+<span data-ttu-id="58591-216">További információ: [Szegmensek létrehozása és kezelése](segments.md).</span><span class="sxs-lookup"><span data-stu-id="58591-216">For more information, see [Create and manage segments](segments.md).</span></span>
