@@ -1,0 +1,108 @@
+### YamlMime:Landing
+metadata:
+  title: Súgóközpont a Dynamics 365 Customer Insights szolgáltatáshoz
+  author: m-hartmann
+  description: A Súgótartalmak megkereséséhez keresse meg a megfelelő cikkeket.
+  ms.author: mhart
+  ms.date: 10/29/2020
+  ms.service: customer-insights
+  ms.topic: landing-page
+  ms.openlocfilehash: f175ea858213022afc87fce77213893c7d050d30
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4406031"
+title: Dynamics 365 Customer Insights-dokumentáció
+summary: Keresse meg a hasznos erőforrásokat az ismerkedéshez, és ismerkedjen meg a Customer Insights funkcióinak és lehetőségeivel.
+landingContent:
+- title: Customer Insights megismerése
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Customer Insights áttekintése
+      url: overview.md
+    - text: Kiadási tervek
+      url: https://docs.microsoft.com/dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Saját környezet hozzáférése
+      url: https://home.ci.ai.dynamics.com/
+- title: Ismerkedés a célközönség-információkkal
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Regisztráció a kipróbáláshoz
+      url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
+    - text: Újdonságok
+      url: audience-insights/whats-new-audience-insights.md
+    - text: Célközönséggel kapcsolatos információk dokumentációja
+      url: audience-insights/index.yml
+- title: Vegye fel a kapcsolatot
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Csatlakozzon a Dynamics 365-közösséghez
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+    - text: Ossza meg ötleteit!
+      url: https://go.microsoft.com/fwlink/?linkid=2074172
+    - text: Probléma bejelentése
+      url: https://go.microsoft.com/fwlink/?linkid=2079641
+- title: Célközönséggel kapcsolatos információk oktatóanyagok
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Új környezet létrehozása
+      url: audience-insights/home.md
+    - text: Egyesített ügyfélprofil létrehozása
+      url: https://docs.microsoft.com/learn/modules/unified-customer-profile/
+    - text: Az alkalmazás használata
+      url: https://docs.microsoft.com/learn/modules/working-with-customer-insights/
+- title: Célközönség-információk adatainak exportálása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Exportálási célhelyek beállítása
+      url: audience-insights/export-destinations.md
+    - text: Ügyfélkártyák a Dynamics 365 alkalmazásokban
+      url: audience-insights/customer-card-add-in.md
+    - text: Power BI-csatlakozó
+      url: audience-insights/export-power-bi.md
+- title: Célközönséggel kapcsolatos információk felügyelete
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: A rendszer konfigurálása
+      url: audience-insights/system.md
+    - text: Felhasználói engedélyek meghatározása
+      url: audience-insights/permissions.md
+    - text: Több környezetet kezelése
+      url: audience-insights/manage-environments.md
+- title: Elkötelezettségi információkről (előzetes verzió)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Képességek áttekintése
+      url: engagement-insights/overview.md
+    - text: Kifejezések és koncepciók
+      url: engagement-insights/glossary.md
+    - text: Első lépések
+      url: engagement-insights/get-started.md
+- title: Elkötelezettségi információk (előzetes verzió) jelentései
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Jelentések megtekintése
+      url: engagement-insights/view-reports.md
+    - text: Egyéni jelentések létrehozása
+      url: engagement-insights/custom-reports.md
+    - text: Egyesített profilok jelentés megtekintése
+      url: engagement-insights/profile-reports.md
+- title: Elkötelezettségi információk (előzetes verzió) eseményei
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Kifinomult események létrehozása
+      url: engagement-insights/refined-events.md
+    - text: Események exportálása
+      url: engagement-insights/export-events.md
+    - text: Személyes adatok törlése és exportálása
+      url: engagement-insights/delete-export-personal-data.md

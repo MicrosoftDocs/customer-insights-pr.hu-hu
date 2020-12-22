@@ -1,0 +1,79 @@
+### YamlMime:Landing
+title: Célközönség betekintési információs funkciója a Dynamics 365 Customer Insights szolgáltatásban
+summary: Az ügyféladatokat több forrásból is betöltheti, egyesítheti és rendszerezheti. Hozza létre és kezelje az ügyfelek profiljait és a valós idejű szegmentálást. Az ügyféladatok integrálása más rendszerekkel, hogy azok még inkább végrehajthatók legyenek.
+metadata:
+  title: Célközönséggel kapcsolatos információk dokumentációja
+  description: Súgóközpont a célközönség-információk kulcsfontosságú hivatkozásaival.
+  ms.service: customer-insights
+  ms.subservice: audience-insights
+  ms.topic: landing-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.date: 10/16/2020
+  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4406014"
+landingContent:
+- title: Célközönséggel kapcsolatos információkról
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Termék áttekintése
+      url: overview.md
+    - text: Új és frissített funkciók
+      url: whats-new-audience-insights.md
+    - text: Közösségi oldal
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+- title: Betöltési adatforrások
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Adatforrások hozzáadása
+      url: data-sources.md
+    - text: Növekményes frissítés
+      url: incremental-refresh-data-sources.md
+    - text: Entitások megismerése
+      url: entities.md
+- title: Adatok egyesítése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Map
+      url: map-entities.md
+    - text: Egyeztetés
+      url: match-entities.md
+    - text: Összefűzés
+      url: merge-entities.md
+- title: Ügyfélprofilok finomítása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Kapcsolatok konfigurálása
+      url: relationships.md
+    - text: Ügyféltevékenységek listázása
+      url: activities.md
+    - text: Hozd a sajátodat gépi tanulási modellek
+      url: custom-models.md
+- title: Ügyféladatok exportálása
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Exportálási célhelyek beállítása
+      url: export-destinations.md
+    - text: Ügyfélkártyák a Dynamics 365 alkalmazásokban
+      url: customer-card-add-in.md
+    - text: Power BI-csatlakozó
+      url: export-power-bi.md
+- title: Az alkalmazás felügyelete
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: A rendszer konfigurálása
+      url: system.md
+    - text: Felhasználói engedélyek meghatározása
+      url: permissions.md
+    - text: Több környezetet kezelése
+      url: manage-environments.md

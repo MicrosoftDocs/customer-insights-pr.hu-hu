@@ -1,0 +1,67 @@
+---
+title: Ügyfélprofilok keresése és szűrése
+description: Gyorsan megtalálhatja az egyesített ügyfelek profiljaira vonatkozó információkat, és szűrhet a megadott attribútumokra.
+ms.date: 04/16/2020
+ms.reviewer: nimagen
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+manager: shellyha
+ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406025"
+---
+# <a name="customer-profiles-search--filter-index"></a>Felhasználói profilok: Keresés & szűrőindex
+
+Az ügyféladatok egységesítésének eredménye egy Ügyfélprofil entitás, amely egységes nézetet biztosít a teljes ügyfélkörre. Egy [adott ügyfélre vagy ügyfelek egy csoportjára vonatkozó információk](customer-profiles.md) gyors megkereséséhez konfigurálhatja a **Keresés** és a **Szűrés** lehetőségeket az **Ügyfelek** lapon . A cikkből megtudhatja, hogyan szerkeszthetik a rendszergazdák az attribútumokat a **Keresési és szűrési index** lapon, amely a felhasználók számára elérhető a kereséshez és a szűréshez.
+
+> [!div class="mx-imgBorder"]
+> ![Keresési szűrő](media/search-filter.png "Keresési szűrő")
+
+## <a name="add-fields-and-specify-attributes"></a>Mezők hozzáadása és attribútumok megadása
+
+Ha első alkalommal határozza meg a kereshető attribútumokat rendszergazdaként, először meg kell határoznia az indexelt mezőket. Javasoljuk, hogy az összes attribútumot válassza ki, amely alapján a felhasználók kereshetnek és szűrhetik az ügyfeleket az **Ügyfelek** oldalon. Csak az adategyesítési folyamat során létrehozott Felhasználói profil entitásban található attribútumokat adhatja meg.
+
+1. Nyissa meg az **ügyfelek** oldalt, és válassza a **keresési & szűrő indexe** lehetőséget.
+
+> [!NOTE]
+> Létrehozzuk az alapértelmezett keresési index konfigurációt az Ügyfél entitás elérhető attribútumain az alábbi szemantikai típusokból, a Leképezés lapon megadott módon.
+> - Személy utóneve, Vezetéknév, második utónév, teljes név
+> - Szervezet neve
+> - E-mail cím
+> - Telefonszám
+> - Helyadatok
+
+2. Válassza a **+ Hozzáadás** elemet az indexelt mezők meghatározásához.
+
+3. A listában jelölje ki az indexelt mezőkként hozzáadni kívánt attribútumokat. A **Hozzáadás** lehetőséggel bármikor hozzáadhat további attribútumokat. A kijelölt attribútumokat az **Eltávolítás** szimbólum választásával is eltávolíthatja.
+
+## <a name="explore-the-indexed-customer-fields-table"></a>Az indexelt ügyféladatokat tartalmazó tábla felfedezése
+
+A következő információk láthatók a táblában.
+
+- **Név**: Az attribútum nevét jelöli, ahogyan az az Ügyfélprofil entitásában jelenik meg.
+- **Adattípus**: Azt adja meg, hogy az adattípus karakterlánc, szám vagy dátum-e.
+- **A keresésben szerepel**: Azt adja meg, hogy az attribútum használható-e az ügyfelek keresésére az **Ügyfelek** oldalon a **Keresés** mező segítségével.
+- **Szűrő hozzáadása**: Meghatározza, hogy az attribútum hogyan használható szűrésre az **Ügyfelek** lapon.
+
+## <a name="editing-filtering-options-for-a-given-attribute"></a>Adott attribútum szűrési beállításainak módosítása
+
+Az **Ügyfelek** oldalon megjelenő **Szűrő** menüben szerepelhet több attribútumszint (például különböző korcsoportok az ügyfelek szűrése céljából).
+
+1. Válassza azadott attribútumhoz tartozó **Szűrő hozzáadása** lehetőséget a **Keresési és szűrési index** oldalon. Megadhatja az eredmények számát és a rendezési sorrendet. Az attribútum adattípusától függően a következő ablaktáblák egyike jelenik meg.
+
+- Karakterlánc típusú attribútumok: Meghatározzák a kívánt eredmények számát a **Karakterlánc szűrőbeállításai** panelen és a rendezési irányelvben, amely alapján rendezve lesznek.
+
+- Numerikus típusú attribútumok: Meghatározzák a belefoglalt intervallumokat a **Számok szűrőbeállításai** panelen és a rendezési irányelvben, amely alapján rendezve lesznek.
+
+- Dátum típusú attribútumok: Meghatározzák a belefoglalt intervallumokat a **Dátumszűrő beállításai** panelen és a rendezési irányelvben, amely alapján rendezve lesznek.
+
+2. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
+
+3. Válassza a **Futtatás** lehetőséget, ha már készen áll a beállítások alkalmazására.

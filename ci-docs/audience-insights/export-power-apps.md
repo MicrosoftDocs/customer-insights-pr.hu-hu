@@ -1,0 +1,74 @@
+---
+title: Power Apps-csatlakozó
+description: A Power Apps csatlakoztatása a Power Automate szolgáltatáshoz.
+ms.date: 08/21/2020
+ms.reviewer: nikeller
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+manager: shellyha
+ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4405980"
+---
+# <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps összekötő (előzetes verzió)
+
+Az egyesített ügyfélprofilokat beviheti a személyre szabott alkalmazásokba a Power Apps segítségével.
+
+## <a name="connect-power-apps-and-dynamics-365-customer-insights"></a>A Power Apps és a Dynamics 365 Customer Insights összekapcsolása
+
+A Customer Insights az [adatok egyik elérhető forrása a Power Apps szolgáltatásban](https://docs.microsoft.com/powerapps/maker/canvas-apps/working-with-data-sources).
+
+A Power Apps dokumentációban megismerheti, hogyan [vehet fel adatkapcsolatot egy alkalmazásba](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-data-connection). Ajánlott azt is megvizsgálni, hogy a [Power Apps delegálás használata hogyan kezeli a nagyméretű adatkészleteket vászonalapú alkalmazásokban](https://docs.microsoft.com/powerapps/maker/canvas-apps/delegation-overview).
+
+## <a name="available-entities"></a>Elérhető entitások
+
+A Customer Insights adatkapcsolatként való hozzáadása után kiválaszthatja a következő entitásokat a Power Apps szolgáltatásban:
+
+- Ügyfél: az [egyesített ügyfélprofil](customer-profiles.md) adatainak használatához.
+- Egységes ügyféltevékenység: a [tevékenység idősor](activities.md) megjelenítésére az alkalmazásban.
+
+## <a name="limitations"></a>Korlátozások
+
+### <a name="retrievable-entities"></a>Lekérhető entitások
+
+Az **Ügyfél**, **UnifiedActivity** és **Szegmensek** entitásokat csak a Power Apps-összekötőn keresztül tudja lekérni. Más entitások láthatók, mert az alapul szolgáló összekötő támogatja azokat eseményindítókkal a Power Automate-szolgáltatásban.  
+
+### <a name="delegation"></a>Meghatalmazás
+
+A delegálás az Ügyfél entitáshoz és a UnifiedActivity entitáshoz használható. 
+
+- Az **Ügyfél** entitásának delegálása: Az entitás delegálásának használatához a mezőket indexelni kell a [keresési & szűrő indexében](search-filter-index.md).  
+
+- A **UnifiedActivity** delegálása: A delegálás ehhez az entitáshoz csak az **ActivityId** és a **CusomerId** mező esetében működik.  
+
+- A delegálással kapcsolatban további tudnivalókat a [Power Apps delegálható funkciók és műveletek](https://docs.microsoft.com/connectors/commondataservice/#power-apps-delegable-functions-and-operations-for-the-cds-for-apps) című rész tartalmaz. 
+
+## <a name="example-gallery-control"></a>Példa a katalógusvezérlőre
+
+Az ügyfelek profiljait például egy [galériavezérlőhöz](https://docs.microsoft.com/powerapps/maker/canvas-apps/add-gallery) adhatja hozzá.
+
+1. Adjon hozzá egy **Katalógus** vezérlőt az épített alkalmazáshoz.
+
+> [!div class="mx-imgBorder"]
+> ![Katalóguselem hozzáadása](media/connector-powerapps9.png "Katalóguselem hozzáadása")
+
+1. Válassza az **Ügyfél** elemet az elemek adatforrásaként.
+
+    > [!div class="mx-imgBorder"]
+    > ![Adatforrás kijelölése](media/choose-datasource-powerapps.png "Adatforrás kijelölése")
+
+1. A jobb oldali adatpanelt megváltoztatva megadhatja, hogy az Ügyfél entitásnál melyik mező jelenjen meg a katalógusban.
+
+1. Ha a kiválasutott ügyfélből a katalóguson bármely mezőt meg szeretné jeleníteni, töltse ki a címke Szöveg tulajdonságát: **{Name_of_the_gallery}.Selected.{property_name}**
+
+    Példa: Gallery1.Selected.address1_city
+
+1. Ha egy ügyfélnél egyesített idősort szeretne megjeleníteni, adjon hozzá egy Katalógus elemet, és az Elemek tulajdonságot: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
+
+    Példa: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)

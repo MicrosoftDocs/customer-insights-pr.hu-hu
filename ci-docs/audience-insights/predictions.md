@@ -1,0 +1,162 @@
+---
+title: Részleges adatok kitöltése előrejelzések használatával
+description: Az előrejelzések segítségével töltse ki a hiányos ügyféladatokat.
+ms.date: 05/05/2020
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: zacook
+manager: shellyha
+ms.openlocfilehash: 66f0b16b5d05741ab98ca5ce2157da8c46b6d9e0
+ms.sourcegitcommit: 5379c2b77d613d071a177f509e6417ebf3c47516
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "4648714"
+---
+# <a name="complete-your-partial-data-with-predictions"></a>Részleges adatok kiegészítése előrejelzésekkel
+
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
+Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzett értékeket, amelyek segíthetik az ügyfél megértését. Az **Intelligencia** > **Előrejelzések** oldalon kiválaszthatja a **Saját előrejelzések** elemet a célközönség-információk más részein konfigurált előrejelzések megtekintéséhez, és lehetővé teszi a további testreszabást.
+
+> [!NOTE]
+> Ez a funkció nem használható, ha a környezet Azure Data Lake Gen 2 tárhelyet használ.
+>
+> Az előrejelzések funkció automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítésére az adott adatok alapján, és így képes a profilkészítési módszerként használni, abban az értelemben, ahogy ezt a kifejezést az általános adatvédelmi rendelet ("GDPR") meghatározza. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, az előrejelzésekkel együtt, megfelel a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.
+
+## <a name="prerequisites"></a>Előfeltételek
+
+Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskodjon arról, hogy a következő előfeltételek teljesüljenek:
+
+1. A szervezetnél egy példányt [be kell állítani a Common Data Service-ben](https://docs.microsoft.com/ai-builder/build-model#prerequisites), és ugyanabban a szervezetben, mint a Customer Insights.
+
+2. A környezet a Common Data Service példányához van csatolva.
+
+Ha [új környezetet hoz létre](manage-environments.md), konfigurálja a **Környezet létrehozása** párbeszédablakban, és válassza a **Speciális** elemet. Ha már létrehozott egy környezetet, nyissa meg a beállításait, és válassza a **Speciális** lehetőséget. Akárhogy is, az **Előrejelzések használata** részben adja meg a Common Data Service-példány URL-címét, amelyre a környezetet csatolni szeretné.
+
+## <a name="create-a-prediction-in-the-customer-entity"></a>Előrejelzés létrehozása az ügyfél entitásban
+
+1. A célközönség információin belül nyissa meg a következőt: **Adatok** > **Entitások**.
+
+2. Válassza az **Ügyfél** entitást.
+
+3. Az **Ügyfél: CustomerInsights** entitásban válassza a **Mezők** lapot.
+
+4. Keresse meg azt az attribútumot, amelyhez előre szeretné jelezni az értékeket, és válassza az **Áttekintés** ikont az **Összesítés** oszlopban.
+   > [!div class="mx-imgBorder"]
+   > ![Áttekintés ikon](media/intelligence-overviewicon.png "Áttekintés ikon")
+
+5. Ha az attribútumhoz nagy a hiányzó értékek aránya, akkor az előrejelzés folytatásához válassza a **Hiányzó értékek előrejelzése** lehetőséget.
+   > [!div class="mx-imgBorder"]
+   > ![Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható](media/intelligence-overviewpredictmissingvalues.png "Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható")
+
+6. Adja meg a **Megjelenítendő név** és a **Kimeneti entitás neve** értékét az előrejelzés eredményéhez.
+
+7. Megjelenik a lehetőségek előre kitöltött listája, ahol az értékeket egy előre jelzett kategóriához rendelheti. Ebben az esetben az egyetlen kategórialehetőségek a 0 vagy az 1, mivel az előrejelzés igaz/hamis vagy bináris jellegével lesznek megfeleltetve. A Kategória oszlopban azokat a mezőértékeket, amelyeket a végső előrejelzésben „0” értékkel szeretne besorolni, feleltesse meg a „0” értékkel, a végső előrejelzésben „1” értékkel besorolandó elemeket pedig az „1” értékkel.
+   > [!div class="mx-imgBorder"]
+   > ![Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók](media/intelligence-categorymapping.png "Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók")
+
+8. Válassza a **Kész** lehetőséget, és a rendszer feldolgozza az előrejelzést. A feldolgozás egy kis időt vesz igénbe, az adatok méretétől és összetettségétől függően. Az eredmények egy új entitásban lesznek elérhetők a létrehozott előrejelzés **Kimeneti entitásának neve** alapján.
+
+## <a name="create-a-prediction-while-creating-a-segment"></a>Előrejelzés létrehozása a szegmens létrehozásakor
+
+A kiválasztott attribútumok hiányzó értékeinek előrejelzése a szegmens létrehozásakor is lehetséges. Különösen, amikor gyorsan létrehoz egy szegmenst az egyesített Ügyfél entitás vagy a Customer_Measure entitás alapján.
+
+Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin alapulhat a szegmens, például Ügyfél-elégedettség, Vásárlás összege. A szegmens létrehozásakor a rendszer javaslatot tesz az attribútum hiányzó értékeinek előrejelzésére.
+
+1. A célközönség-információkban nyissa meg a **Szegmensek** oldalt, és válassza a **Profilok** csempét.
+
+2. A **Mező** pont kiválasztásával hozzon létre egy szegmenst, és válassza ki az **Operátor** elemet, majd a **Felülvizsgálat** lehetőséget.
+
+3. Adja meg a **Név** és a **Megjelenítendő név** értékét a szegmenshez.
+
+4. Válassza a **Mentés** parancsot.
+
+5. Ha a létrehozott szegmensben hiányos adatok szerepelnek a Forrás mezőben, dönthet úgy, hogy előre jelzi a hiányzó értékeket.
+   > [!div class="mx-imgBorder"]
+   > ![Előrejelzés gomb](media/segments-predictoption.png "Előrejelzés gomb")
+
+6. Adja meg a **Megjelenítendő név** és a **Kimeneti entitás neve** értékét az előrejelzés eredményéhez.
+
+7. Válassza a **Kész** lehetőséget. Az előrejelzés hamarosan létrejön egy új entitásban, amelynek neve a **Kimeneti entitás neve** mezőben megadott név.
+
+## <a name="view-a-prediction"></a>Előrejelzés megtekintése
+
+1. A célközönség információin belül nyissa meg a következőt: **Információk** > **Előrejelzések** > **Saját előrejelzések**.
+
+2. Jelölje ki az áttekinteni kívánt előrejelzést.
+
+3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Megtekintés** lehetőséget.
+
+4. Az előrejelzés nézetében számos adatpont jelenik meg.
+   > [!div class="mx-imgBorder"]
+   > ![Előrejelzések oldala](media/intelligence-predictionsviewpage.png "Előrejelzések oldala")
+
+   - **Előre jelzett értékek** bemutatja a Mező értékének a Kategóriával való megfeleltetési fázis során létrehozott megfeleltetését. Ezek az adathalmaz azon értékeit, amelyek egy adott kategóriára vannak leképezve.
+   -**Legfontosabb befolyásolók** az adathalmaz olyan tényezői, amelyek nagy valószínűséggel befolyásolják a Mező értékének egy adott kategóriára való leképezésére vonatkozó előrejelzés konfidenciáját.
+   - A **teljesítmény** jelzi az előrejelzések előrehaladását. További tudnivalókért válassza a hivatkozást.
+   - Az **előnézet** mintákat mutat be az előrejelzés kimeneti adathalmazából, valamint az előre jelzett érték valószínűségét, azaz konfidenciáját, ahol 0 a bizonytalan és az 1 a biztos érték.
+
+## <a name="update-a-prediction"></a>Előrejelzés frissítése
+
+1. A célközönség információin belül nyissa meg a következőt: **Információk** > **Előrejelzések** > **Saját előrejelzések**.
+
+2. Válassza ki a frissíteni kívánt előrejelzést, és válassza a **Frissítés** ikont.
+
+3. A rendszer feldolgozásra ütemezi a előrejelzést. Megtekintheti az utolsó frissítés időpontját a **Frissítve** oszlopban, az **Előrejelzések** oldalon.
+
+## <a name="edit-a-prediction"></a>Előrejelzés szerkesztése
+
+Előrejelzés létrehozása után testreszabhatja az AI Builder modelljét, amellyel növelheti a modell hatékonyságát.  
+
+1. A célközönség információin belül nyissa meg a következőt: **Információk** > **Előrejelzések** > **Saját előrejelzések**.
+
+2. Válassza ki a szerkeszteni kívánt előrejelzést.
+
+3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Megtekintés** lehetőséget.
+
+4. Válassza a **Testreszabás az AI Builder segítségével** lehetőséget.
+
+5. Frissítse a modellt az AI Builder alkalmazásban. [További információ az AI Builderben található modellek kezeléséről](https://docs.microsoft.com/ai-builder/manage-model#retrain-and-republish-existing-models).
+
+Az előrejelzés következő futtatása a létrehozott frissített modellt fogja használni.
+
+> [!NOTE]
+> Az AI Builder rendszerben létrehozott új modellek nem jelennek meg célközönség-információkban, kivéve ha a modell a fentiekben felsorolt tapasztalatokból jött létre.
+
+## <a name="remove-a-prediction"></a>Előrejelzés eltávolítása
+
+1. A célközönség információin belül nyissa meg a következőt: **Információk** > **Előrejelzések** > **Saját előrejelzések**.
+
+2. Jelölje ki a törlendő előrejelzést.
+
+3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Törlés** lehetőséget.
+
+4. Törlés jóváhagyása.
+
+## <a name="troubleshooting"></a>Hibaelhárítás
+
+Ha hiba miatt nem tudja elvégezni a csatolási Common Data Service folyamatot, megpróbálhatja manuálisan végrehajtani. A csatolási folyamat során két ismert probléma is előfordulhat:
+
+- Nincs telepítve az Ügyfélkártya bővítmény megoldás.
+    1. Hajtsa végre a [megoldás telepítésére és konfigurálására vonatkozó](customer-card-add-in.md) utasításokat.
+
+- Az alkalmazásengedélyek nincsenek megadva.
+    1. Menjen a [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com) felületre.
+    1. **Környezetek** kiválasztása.
+    1. Válassza azon környezet mellett látható három pontot, amelyhez engedélyt szeretne hozzáadni, majd válassza a **Beállítások** lehetőséget.
+    1. Bontsa ki a **Felhasználók + engedélyek** elemet, és válassza a **Felhasználók** elemet.
+    1. Válassza az **+ Új** lehetőséget , és válassza a **Felhasználó** lehetőséget.
+    1. Válassza az **Alkalmazásfelhasználó** elemt, ha még nincs kijelölve, és adja meg a következő adatokat:
+        - **Felhasználónév:** cihelp@microsoft.com
+        - **Alkalmazás azonosítója:** 38c77d00-5fcb-4cce-9d93-af4738258e3c
+        - **Utónév:** Customer
+        - **Vezetéknév:** Insights
+        - **Elsődleges e-mail cím:** cihelp@microsoft.com
+    1. Válassza a **Mentés és bezárás** lehetőséget.
+    1. Jelölje ki a létrehozott felhasználókat.
+    1. Válassza a **Szerepkörök kezelése** lehetőséget a felső menüsávon.
+    1. Válassza a **Rendszergazda** lehetőséget, majd kattintson az **OK** gombra.
