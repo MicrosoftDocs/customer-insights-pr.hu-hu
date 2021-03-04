@@ -14,10 +14,10 @@
       href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Új és frissített funkciók
       href: audience-insights/whats-new-audience-insights.md
-    - name: Első lépések
+    - name: Új környezet létrehozása
+      href: audience-insights/home.md
+    - name: Tanulási modulok
       items:
-        - name: Új környezet létrehozása
-          href: audience-insights/home.md
         - name: Adatok betáplálása
           href: 'https://docs.microsoft.com/learn/modules/ingest-data-customer-insights/'
         - name: Egyesített ügyfélprofil létrehozása
@@ -44,7 +44,7 @@
           href: audience-insights/entities.md
     - name: Adategyesítés
       items:
-        - name: Egyesítés áttekintése
+        - name: Az Adategyesítés áttekintése
           href: audience-insights/data-unification.md
         - name: Entitások és attribútumok leképezése
           href: audience-insights/map-entities.md
@@ -80,6 +80,8 @@
           href: audience-insights/segments.md
         - name: Betekintést nyerhet a szegmensekbe
           href: audience-insights/segment-insights.md
+        - name: Javasolt szegmensek megtekintése
+          href: audience-insights/suggested-segments.md
         - name: Hasonló ügyfelek keresése
           href: audience-insights/find-similar-customer-segments.md
         - name: KPI-k és intézkedések meghatározása
@@ -96,6 +98,12 @@
           href: audience-insights/predict-transactional-churn.md
         - name: Példamutató a tranzakció lemorzsolódás előrejelzéséhez
           href: audience-insights/sample-guide-predict-transactional-churn.md
+        - name: Ügyfél élettartamra vetített értékének előrejelzése (CLV)
+          href: audience-insights/predict-customer-lifetime-value.md
+        - name: Termékjavaslatok előrejelzése
+          href: audience-insights/predict-product-recommendation.md
+        - name: Termékjavaslat-előrejelzés mintaútmutató
+          href: audience-insights/sample-guide-predict-product-recommendation.md
         - name: Egyéni gépi tanulási modellek megvalósítása
           href: audience-insights/custom-models.md
         - name: Azure Machine Learning-kísérletek
@@ -104,10 +112,14 @@
           href: audience-insights/machine-learning-studio-experiments.md
     - name: Exportálási beállítások
       items:
-        - name: Exportálási célhelyek felfedezése
+        - name: Exportálási célhelyek áttekintése
           href: audience-insights/export-destinations.md
+        - name: Autopilot
+          href: audience-insights/export-autopilot.md
         - name: Azure Blob Storage
           href: audience-insights/export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: audience-insights/export-azure-data-lake-storage-gen2.md
         - name: DotDigital
           href: audience-insights/export-dotdigital.md
         - name: Dynamics 365 Customer Service (bővítmény)
@@ -136,6 +148,8 @@
           href: audience-insights/export-power-apps.md
         - name: Power Automate
           href: audience-insights/export-power-automate.md
+        - name: SendGrid
+          href: audience-insights/export-sendgrid.md
         - name: SFTP
           href: audience-insights/export-sftp.md
     - name: Adminisztráció
@@ -152,6 +166,8 @@
           href: audience-insights/supported-languages.md
     - name: Bővíthetőség
       items:
+        - name: A webes adatok integrálása az elkötelezettségi információk segítségével
+          href: audience-insights/integrate-engagement-insights.md
         - name: A Common Data Model-entitássémák áttekintése
           href: audience-insights/entity-schemas.md
         - name: Az API-k használata
@@ -170,10 +186,6 @@
       href: engagement-insights/overview.md
     - name: Ingyenes próbaverzió
       href: 'https://pi.dynamics.com/'
-    - name: Rövid útmutató
-      items:
-        - name: Gyorsindító a nyilvános előzetes verzióhoz
-          href: engagement-insights/quickstart.md
     - name: Első lépések
       items:
         - name: Első lépések
@@ -223,4 +235,4 @@
     - name: A szolgáltatás korlátozásai
       href: engagement-insights/quotas.md
 - name: Kapcsolatfelvétel az ügyfélszolgálattal
-  href: 'https://go.microsoft.com/fwlink/?linkid=2145734'
+  href: 'https://admin.powerplatform.microsoft.com/support'
