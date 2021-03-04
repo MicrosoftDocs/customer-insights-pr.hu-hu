@@ -1,30 +1,26 @@
 ---
-title: Célközönség-információk funkció
-description: A Dynamics 365 Customer Insights célközönség-információ funkciójának áttekintése.
-ms.date: 02/05/2020
+title: Célközönséggel kapcsolatos információk a Dynamics 365 Customer Insights alkalmazáshoz – áttekintés
+description: Célközönséggel kapcsolatos információk áttekintése a Dynamics 365 Customer Insights alkalmazáshoz.
+ms.date: 01/18/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 82763b294484cca4a3982f4ebef6f914a02f5cca
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406012"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5476998"
 ---
-# <a name="dynamics-365-customer-insights-audience-insights-capability"></a>Dynamics 365 Customer Insights célközönség-információ funkció
+# <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Célközönséggel kapcsolatos információk a Dynamics 365 Customer Insights alkalmazáshoz – áttekintés
 
-Az ügyfélélmény minden szervezet digitális átalakítási ambícióinak rendkívül központi eleme. A mai piacon való versenyképesség érdekében a szervezeteknek személyes szintű és értékes kapcsolatokat kell kiépíteniük az ügyfelekkel. A hatékony személyre szabáshoz az ügyfelek teljes körű, egységes áttekintése szükséges.
+A célközönség-információk segítségével mélyebben megértheti az ügyfeleit. A különböző tranzakciós, viselkedésbeli és megfigyelési forrásokból származó adatok összekapcsolhatók a 360 fokos ügyfélnézet létrehozásához. Ezekkel a betekintéssel ügyfélközpontú élményeket és folyamatokat támogathat. Az ügyféladatokat egyesítheti és megértheti, és kiaknázhatja a belőlük származó intelligens összefüggéseket és műveleteket.
 
-A célközönség-információk segítségével mélyebben megértheti az ügyfeleit. A különböző tranzakciós, viselkedésbeli és megfigyelési forrásokból származó adatok összekapcsolhatók a 360 fokos ügyfélnézet létrehozásához. Ezekkel a betekintéssel ügyfélközpontú élményeket és folyamatokat támogathat.
-
-**Az ügyféladatokat egyesítheti és megértheti, és kiaknázhatja a belőlük származó intelligens összefüggéseket és műveleteket.**
-
-A célközönség-információk segítéségével a szervezeteknek a következőkre van lehetőségük:  
+## <a name="main-benefits"></a>Fő előnyök 
 
 - **Adatsilók kiküszöbölése és az ügyféladatok egyesítése**
 
@@ -33,15 +29,15 @@ A célközönség-információk segítéségével a szervezeteknek a következő
 
 - **Bővítés a Microsoft Graph megoldásban található célközönség intelligenciával**
 
-  - Építsen ki bővebb ügyfélprofilokat a Microsoft Graphban található célközönség intelligencia alkalmazásával.  
+  - Építsen ki bővebb ügyfélprofilokat a [Microsoft Graphban található célközönség intelligencia alkalmazásával](enrichment-microsoft-graph.md).  
 
 - **Támogassa meg az üzleti folyamatokat és a személyre szabott ügyfélélményeket**
 
   - Támogassa meg a személyre szóló elkötelezettség csatornákat – segítse a marketing, értékesítési és szolgáltatási szakembereket kulcsrakész, környezetfüggő ügyfélbetekintésekkel és személyre szabott ügyfélprofilt kártyák az üzleti alkalmazásokban, amelyeket már minden nap használnak
   - Automatizálja az ügyfélközpontú élményeket és folyamatokat testreszabható profilok, üzleti intézkedések és szegmensek alapján.
-  - A Microsoft Power Platform rendszerre épített üzleti élmények alkalmazása és kiterjesztése. Az alkalmazások gyorsan létrehozhatók beágyazott összefüggésekkel a nagy teljesítményű, alacsony kódú PowerApps megközelítés segítségével.  
+  - A [Microsoft Power Platform](https://powerplatform.microsoft.com/) rendszerre épített üzleti élmények alkalmazása és kiterjesztése. Az alkalmazások gyorsan létrehozhatók beágyazott összefüggésekkel a nagy teljesítményű, alacsony kódú PowerApps megközelítés segítségével.  
 
-A célközönség-információk a következő kulcsfontosságú felhasználók számára tartalmaz lehetőségeket:
+## <a name="key-audiences"></a>Legfontosabb közönségek
 
 - **Adatelemzők / adminisztrátorok:**
 
@@ -58,5 +54,8 @@ A célközönség-információk a következő kulcsfontosságú felhasználók s
 
 - **Üzleti elemzők:**
 
-  - Létrehozhat testreszabható profilokat, intézkedéseket határozhat meg, és szegmenseket hozhat létre, hogy 360 fokos képet kapjon ügyfeleiről, amely a szervezetére jellemző.  
-  - A nem beépített összekötők használata a PowerApps vagy a Microsoft Power BI vagy az API-k számára az üzleti alkalmazásokba vagy BI-megoldásokba való betekintések megjelenítéséhez.  
+  - Létrehozhat testreszabható profilokat, intézkedéseket határozhat meg, szegmenseket hozhat létre, és használhatja a prediktív elemzést, hogy 360 fokos képet kapjon ügyfeleiről, amely a szervezetére jellemző.  
+  - Az információk további feldolgozásához használhatók gyári csatlakozók számos Microsoft és külső alkalmazáshoz vagy API-hoz.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

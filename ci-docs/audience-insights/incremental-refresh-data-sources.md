@@ -5,16 +5,16 @@ ms.date: 09/28/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b7e834f5f2fd1328563139675d7f850008348734
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d4b01be75d25fa0e120904924a193171eefec579
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406013"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268551"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>A Power Queryn alapuló adatforrások növekményes frissítése
 
@@ -54,3 +54,6 @@ A célközönség-információk lehetővé teszi a növekményes betöltést tá
    - **Frissítések keresése minden**: Határozza meg, hogy a növekményes frissítés milyen hosszú időkerettel rendelkezzen.
 
 1. Válassza a **Mentés** lehetőséget a adatforrás létrehozásának befejezéséhez. A kezdeti adatfrissítés teljes körű frissítés lesz. Ezt követően a növekményes adatfrissítés történik az előző lépésben beállítottak alapján.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

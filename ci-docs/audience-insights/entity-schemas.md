@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2cf01029ef6b64fe566022d09ce65bca3603189c
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 9e7a6e944d37d25f4c25846644278b39b3ddd08e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643911"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269287"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
@@ -45,3 +45,6 @@ A további tudnivalókért lásd a [Customer Insights sémák a Common Data Mode
 Az entitások a [Common Data Model entitásnavigátorban](https://microsoft.github.io/CDM/) tekinthetők meg. Válassza ki: **Betöltés GitHub-ról!** gombot és navigáljon a **foundationCommon** > **crmCommon** > **solutions** > **customerInsights** helyre, ahol megtalálja a Customer Insights entitásokat és azok definícióit.
 > [!div class="mx-imgBorder"]
 > ![A CDM-entitásnavigator CustomerActivity entitást mutatja](media/CDM-entity-navigator.png "A CDM-entitásnavigator CustomerActivity entitást mutatja")
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

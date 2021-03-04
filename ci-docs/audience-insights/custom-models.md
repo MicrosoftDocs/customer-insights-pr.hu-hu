@@ -4,16 +4,16 @@ description: Munka az Azure Machine Learning megoldásból származó modellekke
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668906"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267237"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
 
@@ -46,15 +46,15 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 1. Válassza ki a Machine Learning Studio (klasszikus) webszolgáltatást vagy Azure Machine Learning folyamat lehetőséget a **Modellt tartalmazó webszolgáltatás** legördülő menüben. Azután válassza a **Következő** elemet.
    - További információ a [webszolgáltatás közzétételéről a Machine Learning Studio (classic) szolgáltatásban](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - További információ a [folyamatok közzétételéről az Azure Machine Learning a tervezővel](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) vagy az [SDK-val](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). 
-     > [!NOTE]
-     > A folyamatokat a [folyamatvégpont](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run) alatt közzé kell tenni.
+   - További információ a [folyamatok közzétételéről az Azure Machine Learning a tervezővel](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) vagy az [SDK-val](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). A folyamatokat a [folyamatvégpont](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run) alatt közzé kell tenni.
 
 1. Minden egyes **Webszolgáltatás-bemenetnél** válassza ki a megfelelő **Entitást** a célközönség-információkból, és válassza a **Következő** elemet.
+   > [!NOTE]
+   > Az egyéni modell-munkafolyamat heurisztikák segítségével leképezi a webszolgáltatás beviteli mezőit az entitás attribútumára a mező neve és adattípusa alapján. Hibaüzenet jelenik meg, ha egy webszolgáltatás mezőjét nem lehet egy entitásra leképezni.
 
    > [!div class="mx-imgBorder"]
    > ![Munkafolyamat konfigurálása](media/intelligence-screen2-updated.png "Munkafolyamat konfigurálása")
-
+   
 1. Állítsa be a következő tulajdonságokat a **Modell kimeneti paraméterek** lépésében:
    - Machine Learning Studio (klasszikus)
       1. Adja meg a kimeneti **Entitás nevét**, amelyet a webszolgáltatás kimenetének eredményére szeretne beáramlani.
@@ -112,3 +112,6 @@ A munkafolyamat minden ütemezett frissítéssel együtt automatikusan lefut. To
 1. Válassza a **Törlés** lehetőséget, és hagyja jóvá a törlést.
 
 A munkafolyamat törölve lesz. A munkafolyamat létrehozásakor létrehozott [entitás](entities.md) továbbra is megmarad, és az **Entitások** lapról tekinthető meg.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

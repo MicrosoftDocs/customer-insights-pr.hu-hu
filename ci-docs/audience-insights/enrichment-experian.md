@@ -1,20 +1,20 @@
 ---
 title: Bővítés a harmadik fél bővítési Experiannal
 description: Általános információk a Experian harmadik fél bővítésről.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668815"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269563"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfelek profiljainak gazdagítása az Experianból (előzetes verzió)
 
@@ -39,9 +39,11 @@ Az Experian konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 1. Válassza az **Első lépések** lehetőséget , és adja meg a Experian Secure Transport fiókjához tartozó felhasználói azonosítót, a félazonosítót és a modellszámot. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével. Az **Alkalmaz** lehetőség választásával erősítse meg a összes bevitt adatot.
 
-## <a name="map-your-fields"></a>Mezők leképezése
+## <a name="map-your-fields"></a>Mezők megfeleltetése
 
-1. Válassza az **Adatok hozzáadása** lehetőséget, és adja meg a kulcsazonosítókat a **Név és a cím**, **E-mail** vagy a **Telefon** helyről, hogyelküldje Experian számára a személyazonosság feloldásához.
+1.  Válassza az **Adatok hozzáadása** lehetőséget, és az Experian vállalati adatokkal bővíteni kívánt **Ügyfél adatkészletet**. Kiválaszthatja a **Vevő** entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+
+1. Válassza ki a kulcsazonosítókat a **Név és cím**, **E-mail** vagy **Telefon** közül, és küldje el az Experiannek a identitás feloldása érdekében.
 
    > [!TIP]
    > Minél több kulcsazonosító-attribútumot küld el az Experian számára, valószínűleg annál nagyobb lesz az egyezési arány.
@@ -52,8 +54,8 @@ Az Experian konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 1.  Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian mezőleképezés](media/experian-field-mapping.png "Experian mezőleképezés")
+    > [!div class="mx-imgBorder"]
+    > ![Experian mezőleképezés](media/experian-field-mapping.png "Experian mezőleképezés")
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
@@ -71,3 +73,6 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 Amikor engedélyezi az Dynamics 365 Customer Insights szolgáltatást az adatok Experianbe való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy az Experian megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

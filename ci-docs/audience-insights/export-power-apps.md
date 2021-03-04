@@ -1,20 +1,20 @@
 ---
 title: Power Apps-csatlakozó
 description: A Power Apps csatlakoztatása a Power Automate szolgáltatáshoz.
-ms.date: 08/21/2020
+ms.date: 01/19/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5a8bbb9a09218d54228589d43c21c8894680b56e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405980"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268919"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps összekötő (előzetes verzió)
 
@@ -31,7 +31,7 @@ A Power Apps dokumentációban megismerheti, hogyan [vehet fel adatkapcsolatot e
 A Customer Insights adatkapcsolatként való hozzáadása után kiválaszthatja a következő entitásokat a Power Apps szolgáltatásban:
 
 - Ügyfél: az [egyesített ügyfélprofil](customer-profiles.md) adatainak használatához.
-- Egységes ügyféltevékenység: a [tevékenység idősor](activities.md) megjelenítésére az alkalmazásban.
+- UnifiedActivity: a [tevékenységi idővonal](activities.md) megjelenítése az alkalmazásban.
 
 ## <a name="limitations"></a>Korlátozások
 
@@ -72,3 +72,6 @@ Az ügyfelek profiljait például egy [galériavezérlőhöz](https://docs.micro
 1. Ha egy ügyfélnél egyesített idősort szeretne megjeleníteni, adjon hozzá egy Katalógus elemet, és az Elemek tulajdonságot: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
     Példa: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

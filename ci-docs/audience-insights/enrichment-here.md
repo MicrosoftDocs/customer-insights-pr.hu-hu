@@ -1,20 +1,20 @@
 ---
 title: 'Bővítés külső bővítéssel: HERE Technologies'
 description: Általános információk a HERE Technologies harmadik fél bővítésről.
-ms.date: 10/27/2020
+ms.date: 12/10/2020
 ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668681"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269517"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Ügyfélprofilok bővítése a HERE Technologies (előzetes verzió) segítségével
 
@@ -43,7 +43,11 @@ A HERE Technologies bővítések konfigurálásához a következő előfeltétel
 
 1. Erősítse meg mindkét bemenetet a **Csatlakozik a HERE-hez** lehetőség kiválasztásával.
 
-1. Válassza az **Adatok hozzáadása** lehetőséget, és adja meg, hogy szeretné-e leképezni a mezőket az elsődleges és/vagy másodlagos címre. Megadhatja a mezők leképezését mindkét címhez (például otthoni és üzleti cím), és a mindkét címhez tartozó profilt külön is bővítheti. Válassza a **Következő** lehetőséget.
+1.  Válassza az **Adatok hozzáadása** lehetőséget, és az HERE helyadatokkal bővíteni kívánt **Ügyfél adatkészletet**. Kiválaszthatja a **Vevő** entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+
+    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Képernyőkép az ügyféladatkészlet kiválasztásáról.":::
+
+1. Válassza ki, hogy szeretné-e leképezni a mezőket az elsődleges és/vagy másodlagos címre. Megadhatja a mezők leképezését mindkét címhez (például otthoni és üzleti cím), és a mindkét címhez tartozó profilt külön is bővítheti. Válassza a **Következő** lehetőséget.
 
 1. Adja meg, hogy az egyesített profilokból mely mezők használhatók a megfelelő helyadatok megkereséséhez a HERE Technologiesből. A kiválasztott elsődleges és/vagy másodlagos címhez az **Utca 1.** és az **Irányítószám** mező megadása kötelező. A nagyobb egyeztetési pontosság érdekében további mezők adhatók hozzá.
 
@@ -68,3 +72,6 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 Amikor engedélyezi a Dynamics 365 Customer Insights szolgáltatást az adatok HERE Technologies szolgáltatásba való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy a HERE Technologies megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -6,16 +6,16 @@ metadata:
   description: Súgóközpont a célközönség-információk kulcsfontosságú hivatkozásaival.
   ms.service: customer-insights
   ms.subservice: audience-insights
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.date: 10/16/2020
-  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
-  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.openlocfilehash: ba5229067c7c338b4f8d0503aaf80f25b6c4002c
+  ms.sourcegitcommit: a8f7d5d0008b2d7d0ff0daeb746126abfc82c253
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "4406014"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "4745724"
 landingContent:
 - title: Célközönséggel kapcsolatos információkról
   linkLists:
@@ -27,36 +27,36 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Közösségi oldal
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-- title: Betöltési adatforrások
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Adatforrások hozzáadása
-      url: data-sources.md
-    - text: Növekményes frissítés
-      url: incremental-refresh-data-sources.md
-    - text: Entitások megismerése
-      url: entities.md
 - title: Adatok egyesítése
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Map
-      url: map-entities.md
-    - text: Egyeztetés
-      url: match-entities.md
-    - text: Összefűzés
-      url: merge-entities.md
-- title: Ügyfélprofilok finomítása
+    - text: Adatforrások áttekintése
+      url: data-sources.md
+    - text: Egyesítés áttekintése
+      url: data-unification.md
+    - text: Entitások megismerése
+      url: entities.md
+- title: Az adatok bővítése és finomítása
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Ügyfélprofilok bővítése
+      url: enrichment-hub.md
     - text: Kapcsolatok konfigurálása
       url: relationships.md
     - text: Ügyféltevékenységek listázása
       url: activities.md
-    - text: Hozd a sajátodat gépi tanulási modellek
-      url: custom-models.md
+- title: Háttér-információk megtekintése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Szegmensek létrehozása
+      url: segments.md
+    - text: Mértékek létrehozása
+      url: measures.md
+    - text: Adatok kiegészítése előrejelzésekkel
+      url: predictions.md
 - title: Ügyféladatok exportálása
   linkLists:
   - linkListType: how-to-guide

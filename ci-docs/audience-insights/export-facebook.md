@@ -5,16 +5,16 @@ ms.date: 06/05/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8260e3b5e529f3d54678d9d6e11aebb2795e27fd
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: c839f9dc7e403412c0e3d936392d45a43bc63545
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643686"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269977"
 ---
 # <a name="connector-for-facebook-ads-manager-preview"></a>A Facebook csatlakozója összekötője (előzetes verzió)
 
@@ -62,7 +62,16 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 [Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.
 
+## <a name="known-limitations"></a>Ismert korlátozások
+
+- Akár 10 millió ügyfélprofil exportálásonként a Facebook Hirdetéskezelőbe 
+- A Facebook hirdetéskezelőbe való exportálás csak szegmensekre korlátozódik
+- Az összesen 10 millió profillal rendelkező szegmensek exportálása akár 90 percig is eltarthat
+
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
 Amikor engedélyezi a Dynamics 365 Customer Insights szolgáltatást az adatok Facebook Ads Managerbe való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy a Facebook Ads megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

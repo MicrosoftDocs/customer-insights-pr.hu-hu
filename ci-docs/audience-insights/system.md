@@ -1,7 +1,7 @@
 ---
 title: Rendszerkonfiguráció a célközönség információk funkcióban
 description: Ismerkedjen meg a rendszerbeállításokkal Dynamics 365 Customer Insights célközönség információkban.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406022"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267343"
 ---
 # <a name="system-configuration"></a>Rendszerkonfiguráció
 
-A **Rendszer** oldal négy lapból áll: **Állapot**, **Ütemezés**, **Névjegy** és **Általános**.
+A **Rendszer** lap a következő füleket tartalmazza:
+- [Állapot](#status-tab)
+- [Ütemezés](#schedule-tab)
+- [API-használat](#api-usage-tab)
+- [Névjegy](#about-tab)
+- [Általános](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Rendszer oldal](media/system-tabs.png "Rendszer oldal")
 
 ## <a name="status-tab"></a>Állapot lap
 
-Az **Állapot lapon** nyomon követheti az adatbetöltés folyamatát, az adatok exportálását, valamint számos fontos termékfolyamatot. Tekintse át az ezen az oldalon található információkat, hogy megbizonyosodhasson az aktív folyamatok pontos működéséről.
+Az **Állapot lapon** nyomon követheti az adatbetöltés, az adatexportálás és számos más fontos termékfolyamat előrehaladását. Tekintse át az ezen az oldalon található információkat, hogy megbizonyosodhasson az aktív folyamatok pontos működéséről.
 
-Ezen a lapon az **Adatforrások**, a **Rendszerfolyamatok** és az **Adatelőkészítés** állapotjelentései szerepelnek. Minden tábla nyomon követi a feladat **Nevét**, valamint a hozzá tartozó entitást, a legutóbbi futtatás **Állapotát**, illetve azt, mikor történt a **Legutóbbi frissítés**.
+Ez a lap a különböző folyamatok állapot- és feldolgozási adatainak tábláit tartalmazza. Minden tábla nyomon követi a feladat **Nevét**, valamint a hozzá tartozó entitást, a legutóbbi futtatás **Állapotát**, illetve azt, mikor történt a **Legutóbbi frissítés**.
 
 A feladat utolsó néhány futtatásának részleteit a feladat nevét kijelölve tekintheti meg.
 
@@ -40,7 +45,7 @@ A feladatokhoz hatféle állapot tartozhat. A következő állapottípusok szint
 - **Kihagyva:** A feladat kimaradt. Egy vagy több olyan alsóbb szintű folyamat kimaradt vagy hibás volt, amelytől ez a feladat függ.
 - **Sikertelen:** a feladat feldolgozása nem sikerült.
 - **Megszakítva:** a feldolgozást a felhasználó a befejeződése előtt visszavonta.
-- **Feldolgozási sorban:** A feldolgozás várólistára kerül, és a rendszer az összes későbbi feladat befejezését követően indul el. További információ: [Irányelvek frissítése](#refresh-policies).
+- **Várólistára helyezett:** A feldolgozás várólistára kerül, és az összes kiinduló feladat befejezése után kezdődik. További információ: [Irányelvek frissítése](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Irányelvek frissítése
 
@@ -89,4 +94,17 @@ A **Mentés** parancsot választva erősítse meg kiválasztásait.
 
 ## <a name="api-usage-tab"></a>API-használat lap
 
-A lapon részletes információk találhatók a valós idejű API-használatáról, és látható, hogy egy adott időtartományban milyen események történtek. További információ: [Valós idejű adatbetöltés](real-time-data-ingestion.md).
+További információ a valós idejű API-használatról, és annak megtekintése, hogy mely események történtek egy adott időkeretben. Válassza ki az időkeretet a **Válasszon egy időkeret** menüben. 
+
+Az **API-használat** három szakaszból áll: 
+- **API-hívások** – olyan diagram, amely a kiválasztott időkeretben megjeleníti az API-hívásokat.
+
+- **Adatátvitel** – olyan diagram, amely az API-n keresztül továbbított adatok mennyiségét mutatja a kiválasztott időkeretben.
+
+-  **Műveletek** – egy táblázat sorokkal minden elérhető API-művelethez, és részletek a műveletek használatáról. Az [API-hivatkozáshoz](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) válassza ki egy művelet nevét.
+
+   A [valós idejű adatbetöltést](real-time-data-ingestion.md) használó műveletek tartalmaznak egy távcsőszimbólum gombot a valós idejű API-használat megtekintéséhez. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.   
+   A **Valós idejű API-használati** ablakban a **Csoportosítás** mező segítségével választhatja ki, hogyan tudja a legjobban bemutatni a valós idejű interakciókat. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

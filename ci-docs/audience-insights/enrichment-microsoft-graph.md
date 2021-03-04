@@ -1,20 +1,20 @@
 ---
 title: Az ügyfelélprofilok bővítése a Microsoft Graph alkalmazással
 description: A Microsoft Graph tulajdonosi adataival bővítheti az ügyféladatokat amárkák iránti hűséggel és érdeklődési körökkel.
-ms.date: 09/28/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4f93a2337815f76b98185ecb3755e08443031748
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405990"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269333"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
 
@@ -35,16 +35,21 @@ Az online keresési adatok segítségével a Microsoft Graph segítségével meg
 
 [További információk a Microsoft Graph szolgáltatásról](https://docs.microsoft.com/graph/overview).
 
-## <a name="affinity-score-and-confidence"></a>Affinitási pontszám és konfidencia
+## <a name="affinity-level-and-score"></a>Affinitás szintje és pontszám
 
-Az **affinitás pontszám** értékét egy 100 pontos skálán számítja ki a rendszer, a 100 értéket az a szegmens kapja, amely a legmagasabb affinitással rendelkezik a márka vagy a érdeklődés szempontjából.
+Minden bővített ügyfélprofilon két kapcsolódó értéket biztosítunk – affinitás szintje és affinitás pontszáma. Ezek az értékek segítenek annak meghatározásában, hogy milyen erős az affinitás profil demográfiai szegmensében a márkához vagy érdeklődési körhöz az egyéb demográfiai szegmensekkel összehasonlítva.
 
-Az **affinitási konfidencia** értékét egy 100 pontos skálán is kiszámítja a rendszer. Jelzi a rendszer konfidenciaszintjét, hogy a szegmensnek a márkához vagy a kamathoz hűsége van. A konfidencia szintje a szegmens méretén és a szegmens granularitásán alapul. A szegmens méretét az adott szegmenshez tartozó adatok mennyisége határozza meg. A szegmensek részletességét az határozza meg, hogy a profilban hány attribútum (kor, nem, hely) áll rendelkezésre.
+Az *Affinitás szintje* négy szintből áll, és egy 100 pontos skálán számítja ki a rendszer az *affinitási pontszámot*, amely hozzárendeli az affintiási szinteket.
 
-Nem normalizáljuk a pontszámokat az adatkészletéhez. Következésképpen előfordulhat, hogy nem látja az adatkészlet összes lehetséges affinitási értékét. Előfordulhat például, hogy az adatokban nincs 100 affinitás pontszámú ügyfélprofil. Ez akkor lehetséges, ha a demográfiai szegmensben nem szerepelnek olyan ügyfelek, akik egy adott márkához vagy érdeklődéshez 100 pontszámmal rendelkeznek.
 
-> [!TIP]
-> Ha az affinitás pontszámok segítségével [hoz létre szegmenseket](segments.md), tekintse át az affinitási pontszámok eloszlását az adatkészlethez, mielőtt döntene a megfelelő pontszámküszöbről. Egy 10-es affinitási pontszám például egy adatkészletben jelentősnek tekinthető, ahol egy adott márkához vagy érdeklődéshez a legmagasabb affinitási pontszám csak 25.
+|Affinitás szintje |Affinitási pontszám  |
+|---------|---------|
+|Nagyon magas     | 85-100       |
+|Magas     | 70-84        |
+|Közepes     | 35-69        |
+|Alacsony     | 1-34        |
+
+Az affinitás méréséhez használt részletességtől függően használhatja az affinitás szintjét vagy a pontszámot is. Pontosabban szabályozható az affinitási pontszám.
 
 ## <a name="supported-countriesregions"></a>Támogatott országok/régiók
 
@@ -54,17 +59,13 @@ Ország kiválasztásához nyissa meg a **Márkák bővítése** vagy az **Érde
 
 ### <a name="implications-related-to-country-selection"></a>Az országválasztással kapcsolatos következmények
 
-- A [saját márkák kiválasztásakor](#define-your-brands-or-interests) a kiválasztott országra/régióra vonatkozó javaslatokat adunk meg.
+- Saját [márkájának kiválasztásakor](#define-your-brands-or-interests) a rendszer a kiválasztott ország vagy régió alapján tesz javaslatokat.
 
-- Az [iparág kiválasztásakor](#define-your-brands-or-interests) a kiválasztott ország/régió alapján azonosítjuk a legrelevánsabb márkákat és érdeklődéseket.
+- Egy [iparág kiválasztása](#define-your-brands-or-interests) esetén a kiválasztott ország vagy régió alapján megkapja a leginkább releváns márkákat és érdeklődési köröket.
 
-- Ha [a mezők leképezése](#map-your-fields) során az ország/régió mező nincs leképezve, a Microsoft Graph adatait a kiválasztott országból/régióból használjuk az ügyfélprofilok bővítéséhez. Emellett a kijelölés segítségével bővítheti az ügyfelek profilját, amelyhez nem állnak rendelkezésre ország/régió adatok.
-
-- A [profilok bővítése](#refresh-enrichment) során minden olyan felhasználói profilt bővítünk, amelyhez a kiválasztott márkák és érdeklődési körök számára Microsoft Graph adatok állnak rendelkezésre, beleértve a kiválasztott országban/régióban nem szereplő profilokat is. Ha például Németországot jelölte ki, a rendszer az Egyesült Államokban található profilokat bővíti, ha a Microsoft Graph adatai elérhetők a kiválasztott márkákhoz és érdeklődési körökhöz az Egyesült Államokban.
+- A [profilok bővítésekor](#refresh-enrichment) minden ügyfélprofilt bővítünk, amelyhez a kiválasztott márkák és érdeklődési körök kapcsán adatokat kapunk. A nem a kijelölt országban vagy régióban található profilokat is. Ha például Németországot jelölte ki, a rendszer az Egyesült Államokban található profilokat bővíti, ha a Microsoft Graph adatai elérhetők a kiválasztott márkákhoz és érdeklődési körökhöz az Egyesült Államokban.
 
 ## <a name="configure-enrichment"></a>A bővítés konfigurálása
-
-A márkák vagy érdeklődési körök bővítésének beállítása két lépésből áll:
 
 ### <a name="define-your-brands-or-interests"></a>Márkák vagy érdeklődési körök megadása
 
@@ -75,9 +76,19 @@ Válasszon az alábbi lehetőségek közül:
 
 Ha márkát vagy érdeklődési kört szeretne hozzáadni, írja be a beviteli területen a megfelelő kifejezések alapján javaslatokat kapjon. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
 
+### <a name="review-enrichment-preferences"></a>Bővítési beállítások áttekintése
+
+Tekintse át az alapértelmezett bővítési beállításokat, és szükség szerint frissítse azokat.
+
+:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Képernyőkép a bővítési beállítások ablakáról.":::
+
+### <a name="select-entity-to-enrich"></a>Entitás kiválasztása bővítéshez
+
+Válassza a **Bővített entitás** lehetőséget, és a Microsoft Graph vállalati adatokkal bővíteni kívánt adatkészletet. Kiválaszthatja a Vevő entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+
 ### <a name="map-your-fields"></a>Mezők megfeleltetése
 
-Az egyesített ügyfélentitás mezőit feleltesse meg legalább két attribútummal a használni kívánt demográfiai szegmenshez az ügyféladatok bővítéséhez. Válassza a **Szerkesztés** lehetőséget a mezők leképezésének definiálásához, és válassza az **Alkalmazás** lehetőséget, amikor elkészült. Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
+A egyesített ügyfélentitás mezőinek leképezésével meghatározhatja, hogy a rendszer az ügyféladatok gyarapítására melyik demográfiai szegmenst használja. Ország/régió leképezése, és legalább a születési dátum vagy nem attribútumát. Ezenkívül le kell képeznie legalább egy várost (és államot/tartományt) vagy irányítószámot. Válassza a **Szerkesztés** lehetőséget a mezők leképezésének definiálásához, és válassza az **Alkalmazás** lehetőséget, amikor elkészült. Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
 
 A következő formátumok és értékek támogatottak, az értékek nem különböztetik meg a kis- és nagybetűket:
 
@@ -120,3 +131,6 @@ A márka és a érdeklődés affinitásokat az ügyfélkártyákon is meg lehet 
 ## <a name="next-steps"></a>Következő lépések
 
 Építsen a bővített ügyféladatokra. Hozzon létre [Szegmenseket](segments.md), [Mértékeket](measures.md) , sőt [Exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 63caa2ebdd7d637d14ac9c9cc7972095803aee2f
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643866"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477136"
 ---
-# <a name="export-destinations-preview"></a>Exportálási célhelyek (előzetes)
+# <a name="export-destinations-preview-overview"></a>Exportálási célhelyek (előzetes verzió) áttekintése
 
 Az **Exportálási célhelyek** lap megjeleníti az összes olyan helyet, amelyet beállított az adatok exportálási céljának. Az exportáláshoz új célhelyeket is hozzáadhat. Emellett a jelenleg elérhető exportálási lehetőségeket is mutatja. Gyors áttekintést, leírást kaphat, és megtudhatja, mit tehet az egyes bővíthetőség-beállításokkal. Egységesített profilok, intézkedések és szegmensek exportálása a vállalat szempontjából releváns támogatott alkalmazásokhoz.
 
@@ -27,10 +27,13 @@ Válassza a **Felügyelet** > **Exportálási célhelyek** lehetőséget a köve
 - [Power Automate-csatlakozó](export-power-automate.md)
 - [Power Apps-csatlakozó](export-power-apps.md)
 - [Power BI-csatlakozó](export-power-bi.md)
+- [Autopilot](export-autopilot.md)
 - [DotDigital](export-dotdigital.md)
 - [Dynamics 365 Sales](export-dynamics365-sales.md)
 - [Dynamics 365 Marketing](export-dynamics365-marketing.md)
 - [Azure Blob Storage](export-azure-blob-storage.md)
+- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
+- [SendGrid](export-sendgrid.md)
 - [LiveRamp&reg; összekötő](export-liveramp.md)
 - [Microsoft Teams robot](export-teams-bot.md)
 - [Mailchimp](export-mailchimp.md)
@@ -95,3 +98,6 @@ Az exportálási célhely eltávolításához induljon a fő **Exportálási cé
 2. Válassza a legördülő menü **Eltávolítás** elemét.
 
 3. Erősítse meg az eltávolítást az **Eltávolítás** lehetőség választásával a megerősítő képernyőn.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

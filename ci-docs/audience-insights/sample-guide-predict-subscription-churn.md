@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653983"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269839"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Előfizetés-lemorzsolódási előrejelzési (előnézet) példamutató
 
@@ -46,10 +46,9 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **SzületésiDátum**: Dátum
    - **CreatedOn**: Dátum/Idő/Zóna
 
-   [!div class="mx-imgBorder"]
-   ![DoB átalakítása Dátummá](media/ecommerce-dob-date.PNG "A születési dátum átalakítása dátummá")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="A születési dátum átalakítása dátummá.":::
 
-1. A jobb oldali panelben a "Név" mezőben nevezze át az adatforrását a **Lekérdezés**-ről **eCommerceContacts**-ra.
+1. A jobb oldali panelben a **Név** mezőben nevezze át az adatforrását a **Lekérdezés** értékről **eCommerceContacts** értékre
 
 1. Az adatforrások mentése.
 
@@ -67,7 +66,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **JutalmazásiPontok**: Egész Szám
    - **KészültEkkor**: Dátum/Idő
 
-1. A "Név" mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **loyCustomers**-re.
+1. A **Név** mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés** helyett **loyCustomers** értékre.
 
 1. Az adatforrások mentése.
 
@@ -90,7 +89,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **Is_auto_megújítás**: Igaz/Hamis
    - **IsmétlődésiGyakoriságInHónapok**: Egész Szám
 
-1. A 'Név' mezőben a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **SubscriptionHistory**-ra.
+1. A **Név** mezőben a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **SubscriptionHistory**-ra.
 
 1. Az adatforrások mentése.
 
@@ -230,3 +229,6 @@ Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén.
 
 További információ: [Szegmensek létrehozása és kezelése](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

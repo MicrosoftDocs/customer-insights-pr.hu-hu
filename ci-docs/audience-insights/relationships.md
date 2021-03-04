@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 295c372bb452e7c40aa950506dc494d4a2de1108
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406024"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269881"
 ---
 # <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
 
@@ -28,8 +28,8 @@ Az egyeztetési és egyesítési folyamatok során a rendszerkapcsolatok a hátt
 > ![Kapcsolat létrehozása](media/relationships-entities-merge.png "Kapcsolat létrehozása")
 
 - ***CustomerToContact* kapcsolat** jaz Ügyfél entitás és a Kapcsolattartó entitás között jött létre. Az Ügyfél entitás **Contact_contactId** kulcsmezőjét kapcsolja össze a Kapcsolattartó entitás **contactId** kulcsmezőjével.
-- **_CustomerToAccount_ kapcsolat** az Ügyfél entitás és a Partner entitás között jött létre. Az Ügyfél entitás **Account_accountId** kulcsmezőjét kapcsolja össze a Partner entitás **accountId** kulcsmezőjével.
-- **_CustomerToWebAccount_ kapcsolat** az Ügyfél entitás és a WebAccount entitás között jött létre. Az Ügyfél entitás **WebAccount_webaccountId** kulcsmezőjét kapcsolja össze a WebAccount entitás **webaccountId** kulcsmezőjével.
+- ***CustomerToAccount* kapcsolat** az Ügyfél entitás és a Partner entitás között jött létre. Az Ügyfél entitás **Account_accountId** kulcsmezőjét kapcsolja össze a Partner entitás **accountId** kulcsmezőjével.
+- ***CustomerToWebAccount* kapcsolat** az Ügyfél entitás és a WebAccount entitás között jött létre. Az Ügyfél entitás **WebAccount_webaccountId** kulcsmezőjét kapcsolja össze a WebAccount entitás **webaccountId** kulcsmezőjével.
 
 ## <a name="create-a-relationship"></a>Egy kapcsolat létrehozása
 
@@ -69,3 +69,6 @@ Egyéni kapcsolatok definiálása a **kapcsolatok** oldalon történhet. Minden 
 ## <a name="next-step"></a>Következő lépés
 
 A rendszerkapcsolatok és az egyéni kapcsolatok több adatforráson alapuló szegmensek létrehozására szolgálnak, amelyek már nincsenek elszigetelve. További tudnivalókat a [Szegmensek](segments.md) részben talál.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Csatlakozás egy Azure Data Lake Storage Gen2-fiókhoz egyszerű szolgáltatásnévvel
 description: Azure egyszerű szolgáltatásnév használatával a célközöség-információkhoz a saját adattóhoz való csatlakozáshoz a célközönség-információkhoz való csatolás során.
-ms.date: 11/24/2020
+ms.date: 02/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c2fae278d34fa02b9168ac70dfa8dd351653245e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644091"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267725"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Csatlakozás az Azure Data Lake Storage Gen2 fiókjához az Azure fő szolgáltatás célözönség információk funkcióján keresztül
 
@@ -22,7 +22,9 @@ Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlá
 
 Az egyszerű szolgáltatásnév használatával biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrásként](connect-common-data-model.md) vagy [létrehozhat egy új környezetet, vagy frissíthet egy meglévőt](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-Az egyszerű szolgáltatásnév létrehozásához rendszergazdai előfizetéssel kell rendelkezni az Azure-előfizetéshez.
+> [!IMPORTANT]
+> - A szolgáltatást használni kívánó Azure Data Lake Gen2 tárfióban [engedélyeznie kell hierarchikus a névterületet (HNS)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Az egyszerű szolgáltatásnév létrehozásához rendszergazdai előfizetéssel kell rendelkezni az Azure-előfizetéshez.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Azure egyszerű szolgáltatásnév létrehozása célközönség-információkhoz
 
@@ -83,7 +85,7 @@ Kapcsoljon egy Azure Data Lake-tárfiókot a célközönség-információkban a 
 
 Az alábbi lépések végrehajtásával adja meg a szükséges információkat a kiválasztott megközelítésről.
 
-### <a name="resounce-based-storage-account-connection"></a>Erőforrás-alapú tárfiókkapcsolat
+### <a name="resource-based-storage-account-connection"></a>Erőforrás-alapú tárfiókkapcsolat
 
 1. Keresse fel az [Azure rendszergazdai portált](https://portal.azure.com), jelentkezzen be az előfizetésbe, és nyissa meg a tárfiókot.
 
@@ -108,7 +110,8 @@ Az alábbi lépések végrehajtásával adja meg a szükséges információkat a
 1. Tekintse át az **Előfizetést**, az **Erőforráscsoportot** és a tárolási fiók **Nevét**, és ügyeljen rá, hogy célközönség-információknál jelölje ki a megfelelő értékeket.
 
 1. A célközönség-információkban válassza ki az értékeket vagy a megfelelő mezőket a tárfiók csatolásakor.
-
-   :::image type="content" source="media/ADLS-SP-SubscriptionConnection.png" alt-text="Adja meg a tárfiók erőforrás-azonosítójának adatait.":::
    
 1. Folytassa a többi lépést a célközönség-információkban, hogy csatolja a tárfiókot.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

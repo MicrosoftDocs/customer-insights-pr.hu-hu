@@ -4,17 +4,17 @@ description: Adatok importálása Common Data Service felügyelt adattóből.
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643401"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267817"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Kapcsolódás az adatokhoz egy Common Data Service felügyelt adattóban
 
@@ -34,7 +34,10 @@ Az online szolgáltatásokban, például az Azure Data Lake Storage esetében t�
 
 3. Válassza a **Kapcsolódás a Common Data Service szolgáltatáshoz** lehetőséget, majd válassza a **Következő** elemet.
 
-4. Adjon meg egy **Nevet** az adatforrás számára, majd válassza a **Tovább** elemet.
+4. Adjon meg egy **Nevet** az adatforrás számára, majd válassza a **Tovább** elemet. Névvel kapcsolatos irányelvek: 
+   - Kezdje egy betűvel.
+   - Csak betűket és számokat használjon. Speciális karakterek és szóközök nem adhatók meg.
+   - 3–64 karakter használható.
 
 5. Adja meg a **Kiszolgáló címét** a Common Data Service szervezet számára , és válassza a **Bejelentkezés** lehetőséget.
 
@@ -65,3 +68,6 @@ A kapcsolódáshoz egy másik Common Data Service szolgáltatáshoz [hozzon lét
 3. Válassza a lista **Szerkesztés** elemét.
 
 4. Jelöljön ki további entitásokat a rendelkezésre álló entitások listájából, és válassza a **Mentés** lehetőséget.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

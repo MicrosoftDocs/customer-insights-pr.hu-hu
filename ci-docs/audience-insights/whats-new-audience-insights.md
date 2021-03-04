@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 11/02/2020
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 07b4bee0445f9cd7d53a37cd405af839feb07ae3
-ms.sourcegitcommit: 4004eadac7a65e50e0a409cb925958523c2b6348
+ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "4650007"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270435"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
@@ -30,6 +30,77 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="january-2021-updates"></a>2021. januári frissítések
+
+A 2021. januári frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Bővített funkcionalitás és megnövelt teljesítmény az SFTP-exportáláshoz** Most már exportálhatja az összes kimeneti entitást a Customer Insightsból egy SFTP-állomásra. Korábban az export a szegmensentitásokra volt korlátozva. Ezenkívül az SFTP-exportálás teljesítménye kevesebb idő alatt több adatmennyiséget tesz lehetővé, az SFTP-állomás teljesítményétől függően.    
+  További információért lásd: [SFTP összekötő (előzetes verzió)](export-sftp.md).  
+
+#### <a name="segments"></a>Szegmensek
+
+- **Gépi tanulás alapú szegmensjavaslatok a metrikák javítása érdekében** Van egy új módja a szegmensek felfedezésének és létrehozásának. A rendszer egy AI modell segítségével olyan szegmenseket javasol, amelyek segíthetnek a már nyomon követhetett KPI (mérték) javításában. Megmutatjuk a mértéken vagy más elsődleges attribútumon kiválasztott attribútumok hatásának mértékét. Ez az információ segít megtalálni a lehetőségeket kínáló potenciális szegmenseket.    
+  További információért lásd: [Javasolt szegmensek (előzetes verzió)](suggested-segments.md).
+
+#### <a name="data-unification"></a>Adategyesítés
+
+- **Továbbfejlesztett egyeztetési élmény** Az adategyesítési területen az egyeztetési élmény frissült. Lehetővé teszi az egyeztetési szabályok konfigurálását és megtekintése, beleértve a részletes statisztikákat, hogy tovább magyarázza az egyeztetés működését. Vannak olyan beállítások, amelyek letiltják az egyezési szabályt, így az már nem aktív, miközben megőrzi a konfigurációt, egyeztetési szabályok húzása stb.
+  További információ: [Entitások egyeztetése](match-entities.md).
+
+- **Az egyeztetési folyamat deduplikációs kimenete entitásként elérhető** Az egyezési folyamatból származó deduplikációs folyamat kimenete most egy külön entitásba van írva további elemzés céljából. Ez az entitás a deduplikációs folyamatban használt mezőkből, valamint a nyertes rekordból és a nyertes rekordhoz egyesített megfelelő alternatív rekordokból áll.
+  További információ lásd: [A deduplikáció kimenete entitásként](match-entities.md#deduplication-output-as-an-entity).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Az adatok zökkenőmentes megosztása a Microsoft Dataverse-szolgáltatással** most már megoszthatja a Customer Insights kimenetet a Microsoft Dataverse alkalmazással a Microsoft Dataverse Managed Data Lake használatával. Miután társít egy Dataverse környezetet a Customer Insights szolgáltatáshoz, lehetősége van engedélyezni az adatmegosztást.
+  További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
+
+
+## <a name="december-2020-updates"></a>2020 decemberi frissítések
+
+A 2020. decemberi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-december-2020"></a>Új és frissített szolgáltatások 2020 decemberében
+
+#### <a name="data-enrichment"></a>Adatbővítés
+
+- **Továbbfejlesztett márka- és érdeklődésaffinitás bővítések**
+  
+  Egyszerűsítettük az affinitási pontszámainkat, hogy könnyebben megérthetőek és használhatóak. Most már gyorsan azonosíthatja az ügyfeleket az alapján, hogy mennyi affinitást mutatnak van egy adott márka vagy érdeklődés irányában.
+
+  Emellett új konfigurációs lehetőségeket is hozzáadtunk, hogy jobban szabályozni tudjuk, hogyan szeretné, hogy az ügyfélprofilokat bővíteni. 
+
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+
+- **Annak szabályozása, hogy mely profilokat bővítse**
+
+  Most már csak az ügyfélprofilok egy részhalmazát bővítheti azzal a lehetőséggel, hogy az alapértelmezett ügyfélentitás helyett egy szegmens entitást válasszon. Hozzon létre egy szegmenst a vevőprofilokkal, amelyeket bővíteni szeretne és válassza ki a bővítési adatkészlete az ügyféladatkészlethez.
+  Ez a funkció jelenleg csak az Experian és a HERE Technologies által biztosított bővítésekhez érhető el. Hamarosan lehetővé fogjuk tenni, hogy ez a képességet további bővítésekhez is.
+
+  További információ: [Ügyfélprofilok bővítése demográfiai az Experian demográfiai adataival](enrichment-experian.md) vagy [Ügyfélprofilok bővítése a HERE Technologies segítségével](enrichment-here.md).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **A szegmensek aktiválása az Autopilot segítségével**
+
+  Exportálhat szegmenseket az Autopilotba és használhatja ezeket marketingcélokra. További információért lásd: [Autopilot összekötő (előzetes verzió)](export-autopilot.md).
+
+- **A szegmensek aktiválása a SendGrid segítségével**
+
+  Exportálhat szegmenseket a SendGridbe, és használhatja ezeket marketingcélokra. További információért lásd: [Csatlakozó a SendGrid szolgáltatáshoz](export-sendgrid.md).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Frissített környezetkezelési élmény**
+  
+  Mostantól közvetlenül az alkalmazásfejléc környezetválasztójában hozhat létre, szerkeszthet, törölhet és állíthat vissza környezeteket. 
+  
+  Ezenkívül a használt környezet a környezetpanel tetején lesz rögzítve, így többé nem kell keresnie.
+
+  További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
 ## <a name="november-2020-updates"></a>2020. novemberi frissítések
 
@@ -165,7 +236,7 @@ További információkért lásd: [Ügyfelek profiljainak gazdagítása az Exper
 A feladat részletei ablaktábla segítségével megtekintheti a rendszer által futtatott feladatokra vonatkozó részleteket. A konfigurálással és a megoldásokkal kapcsolatos problémák azonosítására szolgáló praktikus módszer.
 Tekintse át a hibaüzeneteket, tekintse meg, hogyan kezeli a lehetséges problémákat.
  
-- **A további oldalakhoz hozzáadott adatok feldolgozása**
+- **További oldalakhoz hozzáadott adatok feldolgozása**
 
 Ez a javítás az **entitások** és az **ügyfelek** oldalon található entitások állapotára vonatkozó információkat ad meg.
  
@@ -200,11 +271,11 @@ A 2020. augusztusi frissítések számos szolgáltatást, teljesítménnyel kapc
   - továbbfejlesztett keresési lehetőségek a leképezési lapon
   - a javasolt típusú mező vizuális és egyszerű azonosítása
 
-#### <a name="enrichment"></a>Bővítés
+#### <a name="enrichment"></a>Dúsítás
 
-- **A további piacokon elérhető érdeklődési körök iránti hűség bővítése**
+- **Érdeklődés affinitások bővítése elérhető több piacon**
 
-  Az Egyesült Államokon kívüli érdeklődési körök iránti hűség bővítésének elérhetőségét öt további piacra is kiterjesztjük: Kanada, Ausztrália, Egyesült Királyság, Franciaország és Németország. Ezzel a bővítménnyel az ügyféladatokat bővítheti az ilyen piacokon alkalmazandó további érdeklődési körökkel. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
+  Az érdeklődési affinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyféladatokat több, ezekre a piacokra vonatkozó érdeklődési körrel gazdagíthatja. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
   További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
 
 
@@ -221,11 +292,11 @@ A 2020. júliusi frissítések számos szolgáltatást, teljesítménnyel kapcso
   Kibővítettük a triggereket a Power Automate-hoz, és lehetővé tettük, hogy értesítést vagy műveletet hozzon létre az egyesítési folyamat (Megfeleltetés/Egyeztetés/Egyesítés) frissítésének befejeződése után.    
   További információ: [Power Automate összekötő](export-power-automate.md)
 
-#### <a name="enrichment"></a>Bővítés
+#### <a name="enrichment"></a>Dúsítás
 
-- **Márkahűség bővítése elérhető a további piacokon**
+- **A márkaaffinitások bővítése elérhető több piacon**
 
-  A márkahűség bővítésének elérhetőségét kiterjesztjük az Egyesült Államokon túl öt további piacra: Kanada, Ausztrália, Egyesült Királyság, Franciaország és Németország. Ezzel a kiterjesztéssel az ügyfelek adatait a helyi márkákkal bővítheti ezeken a piacokon. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
+  A márkaaffinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyfelek adatait a helyi márkákkal bővítheti ezeken a piacokon. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
   További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
 
 ## <a name="june-2020-updates"></a>2020. júniusi frissítések
@@ -238,7 +309,7 @@ A 2020. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcso
 
 - **A Leadspace-ből származó vállalati adatokkal való bővítés**
   
-  Az egyesített ügyfelek profiljaiban adja meg azokat a mezőket, amelyek a kapcsolódó vállalati adatok Leadspace-ben való keresésére szolgálnak. A bővítési folyamat futtatása után a B2B-profilok további attribútumokkal bővülnek, beleértve a vállalat méretét, helyét, az iparágat és sok minden más.    
+  Az egyesített ügyfelek profiljaiban adja meg azokat a mezőket, amelyek a kapcsolódó vállalati adatok Leadspace-ben való keresésére szolgálnak. A bővítési folyamat futtatása után a B2B-profilok több attribútummal lesznek bővítve, beleértve a vállalat méretét, helyét, iparágát stb.    
   Az együttműködés lehetővé teszi az adatok minőségének javítását harmadik féltől származó szolgáltatások bevitelével. A bővítés használatához a Leadspace licenc szükséges ahhoz, hogy hozzáférjenek a B2B vállalati adatokhoz. Ez a rendszer azt a licencet fogja használni, hogy adatait folyamatosan gyarapítsa.    
   További információkért lásd: [Vállalati profilok bővítése a Leadspace-szel](enrichment-leadspace.md).
 
@@ -264,7 +335,7 @@ A 2020. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcso
   A Dynamics 365 ügyfélkártya-bővítmény új vezérlője lehetővé teszi, hogy a Dynamics 365-ben megjelenő ügyfélkapcsolati alkalmazásokban a kapcsolattartókon megjelenjenek márka- és érdeklődésikör-hűségek.    
   További információ: [Ügyfélkártya bővítmény](customer-card-add-in.md).
 
-- **További Power Automate-triggerek**
+- **További Power Automate eseményindítók**
 
   Kibővítettük a triggereket a Power Automate-hez a következő triggerek hozzáadásával:
   - Értesítés kérése vagy művelet végrehajtása az automatizált teljes frissítés (adatforrások, Egyesítés, szegmensek, mérőszámok, exportálás) befejeződésekor
@@ -295,12 +366,12 @@ A 2020. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcso
   
   Hasonló ügyfelek keresése az ügyfélkörben mesterséges intelligencia használatával. A bináris besorolás gépi tanulási modellje a kibontott szegmensben lévő ügyfelekhez hasonlítja a hasonlóságok pontszámát. A pontszám a forrás-szegmensben lévő ügyfelekhez való hasonlóságon alapul. A hasonlósági pontszámtól függően az ügyfelek profiljait az újonnan létrehozott szegmenshez adja hozzá a rendszer.
 
-  A digitális marketingben más néven hasonlósági modellezéskénis nevezett folyamatban az AI modell segítségével keresheti meg az ügyfeleket, akik egy másik ügyfélszegmenshez hasonlók, további attribútumok figyelembevételével. Ez nem csak lehetővé teszi, hogy kiválassza az attribútumokat, de azt is lehetővé teszi, hogy megadhatja azoknak az ügyfeleknek a maximális számát, akik ebben az új szegmensben kell lenniük. Az AI modell ezután a kiválasztott attribútumok alapján kiszámítja a hasonlósági pontszámokat az egyes ügyfelekre, és a magasabb átlagos hasonlósági pontszámmal rendelkező ügyfeleket keres. Az eredményül kapott szegmens olyan ügyfeleket fog tartalmazni, akik az eredeti szegmensben szereplő ügyfélhez hasonlónak tűnnek.    
+  A digitális marketingben hasonmás modellezésnek is nevezik, de AI modellt használ, hogy segítsen megtalálni azokat az ügyfeleket, akik hasonlóak az ügyfelei egy másik fontos szegmenséhez, úgy hogy több attribútumot vesz figyelembe. Ez nem csak lehetővé teszi, hogy kiválassza az attribútumokat, de azt is lehetővé teszi, hogy megadhatja azoknak az ügyfeleknek a maximális számát, akik ebben az új szegmensben kell lenniük. Az AI modell ezután a kiválasztott attribútumok alapján kiszámítja a hasonlósági pontszámokat az egyes ügyfelekre, és a magasabb átlagos hasonlósági pontszámmal rendelkező ügyfeleket keres. Az eredményül kapott szegmens olyan ügyfeleket fog tartalmazni, akik az eredeti szegmensben szereplő ügyfélhez hasonlónak tűnnek.    
   További információkért lásd: [Hasonló ügyfelek](find-similar-customer-segments.md).
 
 - **Szegmensátfedések és differenciálók**
 
-  A szegmens átfedéssel megtekintheti, hogy hány és melyik ügyfél közös két vagy több szegmensben. Például, hogy a nagy költésű szegmens átfedése milyen a nagy elégedettségű ügyfelek szegmensével, vagy hogy a lemorzsolódó ügyfélszegmens hogyan van átfedésben az alacsony elégedettségű ügyfelek szegmensével. Emellett elemezheti azt is, hogyan változik az átfedés a kiválasztott további attribútumok alapján.
+  A szegmens átfedéssel megtekintheti, hogy hány és melyik ügyfél közös két vagy több szegmensben. Például, hogy a nagy költésű szegmens átfedése milyen a nagy elégedettségű ügyfelek szegmensével, vagy hogy a lemorzsolódó ügyfélszegmens hogyan van átfedésben az alacsony elégedettségű ügyfelek szegmensével. Ezenkívül elemezheti, hogy az átfedés hogyan változik az Ön által választott extra attribútum alapján.
 
   A szegmensdifferenciálók azt mutatják, hogy mi különbözteti meg az egyik szegmenst az ügyfelek többi részétől vagy egy másik szegmenstől. Mindössze annyit kell tennie, hogy azonosítja a szegmenset, és a rendszer azonosítja a profil attribútumait és mérőszámait, amelyek megkülönböztetik a szegmenst a differenciálók rangsorolt listájának formájában – a legerősebb differenciálótól a leggyengébbig.    
   További információk: [Szegmens betekintő információi (előzetes verzió)](segment-insights.md).
@@ -333,7 +404,7 @@ A 2020. májusi frissítések számos szolgáltatást, teljesítménnyel kapcsol
 
 - **Frissített idősor és tördelés az Ügyfélkártya bővítményben**
 
-  Az Ügyfélkártya-bővítmény idővonala végeredményben egyezik a tevékenység-idővonallal. A tördelés az idővonalon javult, amely akár 50 tevékenységet is megjeleníthet egyszerre. Emellett lehetővé teszi további tevékenységek betöltését az idővonalon.    
+  Az Ügyfélkártya-bővítmény idővonala végeredményben egyezik a tevékenység-idővonallal. A tördelés az idővonalon javult, amely akár 50 tevékenységet is megjeleníthet egyszerre. Azt is lehetővé teszi, hogy több tevékenységet töltsön be az idővonalon.    
   További információ: [Ügyfélkártya bővítmény](customer-card-add-in.md).
 
 - **Power Automate eseményindító szegmensmódosításokhoz**
@@ -412,7 +483,7 @@ A 2020-as áprilisi frissítések számos szolgáltatást, teljesítménnyel kap
 
 - **Exportálás LiveRampbe**
 
-  Az adatok aktiválása a LiveRamp® megoldásban, hogy a digitális, a közösségi és a TV-ökoszisztémákban több mint 500 platformot csatlakoztasson. Felhasználhatja a LiveRampben található adatait az hirdetési kampányok célzása, elrejtése és személyre szabása céljából.    
+  Az adatok aktiválása a LiveRamp® megoldásban, hogy a digitális, a közösségi és a TV-ökoszisztémákban több mint 500 platformot csatlakoztasson. Adatait a LiveRamp alkalmazásban hirdetési kampányok célzására, elrejtésére és személyre szabására használhatja.    
   További információ: [LiveRamp&reg; összekötő](export-liveramp.md).
 
 - **Customer Insights Teams bővítmény**
@@ -433,7 +504,7 @@ A 2020-as áprilisi frissítések számos szolgáltatást, teljesítménnyel kap
 
 #### <a name="segments"></a>Szegmensek
 
-- **További operátor**
+- **Egy másik operátor**
   
   A Halmazban operátor több lehetséges sztringérték használatával lehetővé teszi az ügyfelek szegmentálását. Az operátor hozzáadását megelőzően az ilyen szegmenseket több VAGY feltétellel kellett létrehozni. A Halmazban operátorral egyetlen feltétellel teheti ezt meg.    
   További információ: [Szegmensek létrehozása és kezelése](segments.md).
@@ -444,3 +515,6 @@ A 2020-as áprilisi frissítések számos szolgáltatást, teljesítménnyel kap
   
   Másolja konfigurációit egyik környezetből a másikba. Új környezet létrehozásakor kiválaszthat egy meglévő környezetet, amelyből a konfigurációt másolni szeretné. Jelenleg az adatforrásokat, az adategyesítést, a kapcsolatokat, az méréseket és a szegmenseket lehetséges másolni. Adatforrás hitelesítő adatokat és a tényleges adatokat nem másolja a rendszer.    
   További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

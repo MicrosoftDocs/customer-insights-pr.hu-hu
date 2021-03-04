@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689178"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270283"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Valós idejű adatbetöltés (előzetes verzió)
 
@@ -83,6 +83,7 @@ Az API-kra vonatkozó részletek, beleértve a paramétereket és válaszokat, m
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>A valós idejű használatát felmérése telemetriával
 
-Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#api-usage-tab) a **Felügyelet** > **Rendszer** > **API-használat** részen érhető el. A **Műveletek** táblázat API-műveletek sorai, amelyek a valós idejű módszerekkel tartalmaznak egy gombot, hogy megtekinthesse a valós idejű API-használatot. A gomb vizuálisan egy távcsőként kerül megjelenítésre. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.
+Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#api-usage-tab) elérhető. 
 
-A **Csoportosítás szempontja** választóval megadhatja, hogyan szeretné megjeleníteni a valós idejű interakciókat egy, a legutóbbi 24 órától a legutóbbi 30 napig terjedő intervallumot megjeleníteni képes idővonalon. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

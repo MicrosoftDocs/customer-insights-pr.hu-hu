@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667232"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267435"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
@@ -44,13 +44,13 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
 
 1. A **Kapcsolat beállítása** szakaszban állítsa be a részleteket, hogy a tevékenység adatait a megfelelő ügyfélhez csatlakoztassa.
 
-   > [!div class="mx-imgBorder"]
-   > ![Definiálja az entitás kapcsolatát](media/activities-entities-define.png "Definiálja az entitás kapcsolatát")
-
     - **Tevékenység entitás mezője**: Jelölje ki a tevékenység entitásban egy másik entitással fennálló kapcsolat létesítéséhez használandó mezőt.
     - **Ügyfél entitás**: Válassza ki a megfelelő forrás ügyfélentitást, amellyel a tevékenység entitása kapcsolatban lesz. Csak az adategyesítési folyamat során használt forrás ügyfél-entitásokhoz kapcsolódhat.
     - **Ügyfél entitás mezője**: Ez a mező mutatja a forrás ügyfél entitás elsődleges kulcsát a leképezési folyamatban kiválasztottként. A forrás ügyfél entitásban ez az elsődlegeskulcs-mező a tevékenység entitással fennálló kapcsolat létrehozására használt.
     - **Név**: Ha a tevékenység entitás és a kiválasztott forrásoldali ügyfél entitás között már létezik kapcsolat, a kapcsolat neve írásvédett módban lesz. Ha nincs ilyen kapcsolat, akkor létrejön egy új kapcsolat az itt megadott néven.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Definiálja az entitás kapcsolatát](media/activities-entities-define.png "Definiálja az entitás kapcsolatát")
 
 1. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
 
@@ -82,3 +82,6 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
 3. **Törlés** ikon kiválasztása.
 
 4. Hagyja jóvá a törlést.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

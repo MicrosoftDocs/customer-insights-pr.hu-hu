@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 81540ad2f490cf566f031233543b3cb6aa838033
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643596"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269793"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési (előnézet) példamutató
 
@@ -49,7 +49,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    [!div class="mx-imgBorder"]
    ![DoB átalakítása Dátummá](media/ecommerce-dob-date.PNG "A születési dátum átalakítása dátummá")
 
-1. A jobb oldali panelben a "Név" mezőben nevezze át az adatforrását a **Lekérdezés**-ről **eCommerceContacts**-ra.
+1. A jobb oldali panelben a **Név** mezőben nevezze át az adatforrását a **Lekérdezés** értékről **eCommerceContacts** értékre
 
 1. Az adatforrások mentése.
 
@@ -66,7 +66,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **PurchasedOn** : Dátum/Idő
    - **TotalPrice** : Pénznem
    
-1. A"Név" mezőben a jobb oldali panelen, nevezze át az adatforrását a **Lekérdezés**-ről **eCommercePurchases**-ra.
+1. A **Név** mezőben a jobb oldali panelen, nevezze át az adatforrását a **Lekérdezés**-ről **eCommercePurchases**-ra.
 
 1. Az adatforrások mentése.
 
@@ -84,7 +84,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **JutalmazásiPontok**: Egész Szám
    - **KészültEkkor**: Dátum/Idő
 
-1. A "Név" mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **loyCustomers**-re.
+1. A **Név** mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés** helyett **loyCustomers** értékre.
 
 1. Az adatforrások mentése.
 
@@ -166,7 +166,7 @@ Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsol
 
      :::image type="content" source="media/model-levers.PNG" alt-text="Válassza ki a modellt, amely előhozza az Előrejelzési Ablakot és a Lemorzsolódás Meghatározását.":::
 
-1. Válassza ki a **Vásárlási előzményeket (kötelező)** és válassza az **Adatok hozzáadása** lehetőséget az előfizetési előzményekhez.
+1. Válassza ki a **Vásárlási előzményeket (kötelező)** és válassza az **Adatok hozzáadása** lehetőséget az vásárlási előzményekhez.
 
 1. Adja hozzá a **eCommercePurchases: eCommerce** entitást és képezze le a mezőket az eCommerce-ről a megfelelő mezőkre, melyek modell által megköveteltek.
 
@@ -204,3 +204,6 @@ Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén.
 
 További információ: [Szegmensek létrehozása és kezelése](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

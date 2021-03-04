@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: philk
 manager: shellyha
-ms.openlocfilehash: 856ac34f53c2395224c4ee4ce94e5b72a3495b89
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406029"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268183"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>A célközönség információk funkció támogatott nyelvei
 
@@ -79,3 +79,6 @@ Mivel a legtöbb szolgáltatás az adatokon alapul, bizonyos elemek megmaradnak 
 ## <a name="choose-your-language-settings"></a>A nyelvi beállítások kiválasztása  
 
 Módosítsa preferált nyelvét [a **Rendszer** oldalon](system.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

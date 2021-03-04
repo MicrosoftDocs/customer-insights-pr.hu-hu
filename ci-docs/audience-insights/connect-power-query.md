@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406002"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267772"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Csatlakozás Power Queryhoz adatforráshoz
 
@@ -28,7 +28,10 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
 
 1. Válassza az **Adatok importálása** módszert, és válassza a **Tovább** lehetőséget.
 
-1. Adja meg a adatforrás **Nevét**, majd válassza a **Következő** lehetőséget a adatforrás létrehozásához.
+1. Adja meg a adatforrás **Nevét**, majd válassza a **Következő** lehetőséget a adatforrás létrehozásához. Névvel kapcsolatos irányelvek: 
+   - Kezdje egy betűvel.
+   - Csak betűket és számokat használjon. Speciális karakterek és szóközök nem adhatók meg.
+   - 3–64 karakter használható.
 
 1. Válassza ki az egyik [elérhető csatlakozót](#available-power-query-data-sources). Ebben a példában a **Szöveg/CSV** összekötőt választjuk.
 
@@ -77,3 +80,6 @@ Azok az összekötők, amelyeknél a **Customer Insights (adatfolyamok)** oszlop
 3. Alkalmazza a változtatásokat és az átalakításokat az **Power Query - Lekérdezések szerkesztése** párbeszédpanelen az [Új adatforrás létrehozása](#create-a-new-data-source) című részben leírtak szerint.
 
 4. A változtatások mentéséhez a módosítások elvégzése után válassza a **Mentés** lehetőséget a Power Query-ben.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

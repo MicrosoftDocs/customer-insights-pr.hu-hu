@@ -1,7 +1,7 @@
 ---
 title: Telepítheti és használhatja az Ügyfélkártya bővítményt
 description: Az Ügyfélkártya bővítmény telepítése és konfigurálása a Dynamics 365 Customer Insights megoldásban.
-ms.date: 08/04/2020
+ms.date: 01/20/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: aab5deaf89b4b019f6688a1bca950ec2277ad5fb
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a6d5b49380ed129cf147698a16f5f3f597bf7fbc
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644046"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268047"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
@@ -28,7 +28,7 @@ ms.locfileid: "4644046"
 - Ügyfélprofilok [a Dynamics 365 alkalmazásból betöltve a Common Data Service szolgáltatással](connect-power-query.md).
 - Az Ügyfélkártya bővítmény felhasználóit a célközönség-információkban [felhasználóként kell felvenni](permissions.md).
 - [Konfigurált keresési és szűrési lehetőségek](search-filter-index.md).
-- Demográfiai ellenőrzés: Demográfiai mezők, például az életkor vagy a nemek az egyesített ügyfélprofilban érhetők el.
+- Demográfiai ellenőrzés: Demográfiai mezők (például az életkor vagy a nemek) az egyesített ügyfélprofilban érhetők el.
 - A dúsítási vezérlő: az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel.
 - Intelligenciai ellenőrzés: Az Azure Machine Learning ([Előrejelzések](predictions.md) vagy [Egyéni modellek](custom-models.md)) használatával létrehozott adatok szükségesek
 - Mérték ellenőrzése: [Konfigurált mértékek](measures.md) szükségesek.
@@ -92,10 +92,26 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 
 1. Ha **Mezőtulajdonságok** párbeszédpanelen törölje a **Megjelenítendő címke az űrlapon** jelölését.
 
-1. Válassza ki **Web** lehetőséget az vezérlőhöz. A Dúsítási vezérlőhöz adja meg, hogy milyen dúsítástípust szeretne megjeleníteni az **enrichmentType** mező konfigurálásával. Minden egyes dúsítástípushoz külön dúsítási vezérlőt kell hozzáadnia.
+1. Válassza ki **Web** lehetőséget az vezérlőhöz. A Dúsítási vezérlőhöz adja meg, hogy milyen dúsítástípust szeretne megjeleníteni az **enrichmentType** mező konfigurálásával. Mindegyik bővítéstípushoz adjon hozzá külön bővítési vezérlőt.
 
 1. Válassza a **Mentés** és a **Közzététel** lehetőséget a frissített kapcsolattartói űrlap közzétételéhez.
 
 1. Nyissa meg a közzétett kapcsolattartó űrlapot. Ekkor megjelenik az újonnan hozzáadott vezérlő. Előfordulhat, hogy első használatkor be kell jelentkeznie.
 
 1. Ha testre szeretné szabni, hogy mit szeretne megjeleníteni az egyéni vezérlőn, akkor válassza a jobb felső sarokban található szerkesztés gombot.
+
+## <a name="upgrade-customer-card-add-in"></a>Ügyfélkártya bővítmény frissítése
+Az Ügyfélkártya bővítmény nem frissül automatikusan. A legújabb verzióra való frissítéshez kövesse a Dynamics 365 alkalmazásban, amelyhez telepítve van a bővítmény.
+
+1. A Dynamics 365 alkalmazásban válassza a **Beállítások** > **Testreszabás**, majd a **Megoldások** lehetőséget.
+
+1. A bővítmények táblázatában keresse meg a **CustomerInsightsCustomerCard** elemet és jelölje ki a sort.
+
+1. Válassza a **Megoldásfrissítés alkalmazása** lehetőséget a műveletsávban.
+
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Megoldás frissítése a Dynamics 365 alkalmazások Testreszabás területén":::
+
+1. A frissítési folyamat megkezdése után betöltési kijelző látható, amíg be nem fejeződik a frissítés. Ha nincs újabb verzió, a frissítés hibaüzenetet ad.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

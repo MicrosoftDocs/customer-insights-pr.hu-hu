@@ -1,20 +1,20 @@
 ---
 title: A környezetek létrehozása és kezelése
 description: Megismerheti, hogyan lehet regisztrálni a szolgáltatásra, és hogyan kezelhetők a környezetek.
-ms.date: 11/10/2020
+ms.date: 02/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: nimagen
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 010336445d0825a7ff82d1b7a65702fc12245788
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 744f0bcbf5d2700363180f44e38d6dee9bf5df63
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644136"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270115"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
 
@@ -46,9 +46,9 @@ Kétféleképpen hozhat létre új környezetet. MEghatározhat teljesen új kon
 
 Környezet létrehozásához:
 
-1. Válassza ki a **Beállítások** szimbólumot az alkalmazás fejlécében.
+1. Válassza ki az alkalmazás fejlécében a **Környezet** választót.
 
-1. Válassza a **New environment** (Új környezet) lehetőséget.
+1. Válassza az **Új** lehetőséget.
 
    > [!div class="mx-imgBorder"]
    > ![Környezeti beállítások](media/environment-settings-dialog.png)
@@ -75,7 +75,14 @@ Környezet létrehozásához:
 
    - Az Azure Data Lake Storage Gen2 beállításnál választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A **Tároló** neve nem módosítható, és "customerinsights" lesz.
    
-   - Ha [előrejelzéseket](predictions.md) szeretne használni , írja be a Common Data Service-példány URL-címét a **Kiszolgáló címe** mezőbe az **Előrejelzések használata** területen.
+   - Ha [Előrejelzéseket](predictions.md) szeretne használni, vagy szeretné konfigurálni az adatok megosztását az alkalmazásokkal és megoldásokkal a Microsoft Dataverse alapján, akkor adja meg a Microsoft Dataverse környezet URL-címét a **konfigurálja a Microsoft Dataverse adatmegosztást és engedélyezze a további szolgáltatásokat** alatt. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Microsoft Dataverse Managed Data Lake használatával.
+
+     > [!NOTE]
+     > - A Microsoft Dataverse Managed Data Lake használatával való adatmegosztás jelenleg nem támogatott, ha az adatokat a saját Azure Data Lake Storage tárhelyére menti.
+     > - [Az entitásból hiányzó értékek előrejelzése](predictions.md) jelenleg nem támogatott, ha engedélyezi az adatok megosztását a Microsoft Dataverse Managed Data Lake használatával.
+
+     > [!div class="mx-imgBorder"]
+     > ![Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse-szolgáltatással](media/Datasharing-with-DataverseMDL.png)
 
    A folyamatok – például adatbetöltés vagy szegmenslétrehozás – futtatásakor a megfelelő mappák létrejönnek a fent megadott tárfiókban. Az adatfájlok és a model.json fájlok a futtatott folyamat alapján jönnek létre, és hozzáadódnak a megfelelő almappákhoz.
 
@@ -87,7 +94,7 @@ A következő konfigurációbeállítások vannak másolva:
 
 - Funkciókonfigurációk
 - Betöltött/importált adatforrások
-- Adategységesítési ( Megfeleltetés/Egyeztetés/Egyesítés) konfiguráció
+- Adategységesítési (Megfeleltetés/Egyeztetés/Egyesítés) konfiguráció
 - Szegmensek
 - Mértékek
 - Kapcsolatok
@@ -120,11 +127,11 @@ Amikor az adatok egyesítése befejeződött, nyissa meg a **Mértékek** és a 
 
 A meglévő környezetek bizonyos részleteit szerkesztheti.
 
-1. Lépjen a **Felügyelet** > **Rendszer** > **Névjegy** pontba.
+1.  Válassza ki az alkalmazás fejlécében a **Környezet** választót.
 
-2. Válassza a **Szerkesztés** lehetőséget.
+2.  Kattintson a **Szerkesztés** ikonra.
 
-3. A környezet **Megjelenítendő neve** frissíthető, de a **régiót** vagy **típust** nem módosíthatja.
+3. A **Környezet szerkesztése** mezőben frissítheti a környezet **Megejelenő nevét**, de a **Régió** vagy a **Típus** nem módosítható.
 
 4. Ha egy környezet úgy van beállítva, hogy az Azure Data Lake Storage Gen2-ben tárolja az adatokat, akkor frissítheti a **Fiókkulcsot**. A **partner neve** vagy a **tároló** neve azonban nem módosítható.
 
@@ -132,19 +139,27 @@ A meglévő környezetek bizonyos részleteit szerkesztheti.
 
 ## <a name="reset-an-existing-environment"></a>Meglévő környezet visszaállítása
 
-A környezetet visszaállíthatja üres állapotba, ha szeretné törölni az összes konfigurációt, és eltávolítani a betöltött adatokat.
+Rendszergazdaként a környezetet visszaállíthatja üres állapotba, ha szeretné törölni az összes konfigurációt, és eltávolítani a betöltött adatokat.
 
-1.  Lépjen a **Felügyelet** > **Rendszer** > **Névjegy** pontba.
+1.  Válassza ki az alkalmazás fejlécében a **Környezet** választót. 
 
-2.  Válassza a **Visszaállítást**. 
+2.  Válassza ki az alaphelyzetbe állítani kívánt környezetet, és válassza ki a három pontot **...**. 
 
-3.  A törlés jóváhagyásához írja be a környezet nevét, és válassza az **Alaphelyzetbe állítás** lehetőséget.
+3. Válassza az **Alaphelyzetbe állítás** lehetőséget. 
+
+4.  A törlés jóváhagyásához írja be a környezet nevét, és válassza az **Alaphelyzetbe állítás** lehetőséget.
+
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Meglévő környezet törlése (csak rendszergazdák számára érhető el)
+
+Rendszergazdaként törölheti az Ön által felügyelt környezetet.
+
+1.  Válassza ki az alkalmazás fejlécében a **Környezet** választót.
+
+2.  Válassza ki az alaphelyzetbe állítani kívánt környezetet, és válassza ki a három pontot **...**. 
+
+3. Válassza a **Törlés** lehetőséget. 
+
+4.  A törlés jóváhagyásához adja meg a környezet nevét, és válassza a **Törlés** lehetőséget.
 
 
-## <a name="delete-an-existing-environment"></a>Meglévő környezet törlése
-
-1. Lépjen a **Felügyelet** > **Rendszer** > **Névjegy** pontba.
-
-1. Válassza a **Törlés** lehetőséget.
-
-1. A törlés jóváhagyásához adja meg a környezet nevét, és válassza a **Törlés** lehetőséget.
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

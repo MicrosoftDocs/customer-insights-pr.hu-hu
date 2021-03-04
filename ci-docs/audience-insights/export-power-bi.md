@@ -5,16 +5,16 @@ ms.date: 09/21/2020
 ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405983"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477091"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI összekötő (előzetes verzió)
 
@@ -31,7 +31,7 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 
 1. Válassza a **Továbbiak megtekintése** elemet, és keressen erre: **Dynamics 365 Customer Insights**
 
-1. Jelölje ki az eredményt, és válassza a **Kapcsolódás** lehetőséget.
+1. Válassza a **Kapcsolódás** lehetőséget.
 
 1. **Jelentkezzen be** ugyanazzal a szervezeti fiókkal, amelyet a Customer Insights esetében használ, és válassza a **Csatlakozás** lehetőséget.
    > [!NOTE]
@@ -52,3 +52,22 @@ A Customer Insights Power BI-csatlakozója az egymillió ügyfélprofilig terjed
 ### <a name="work-with-a-subset-of-data"></a>Munka az adatok egy részhalmazával
 
 Érdemes lehet az adatok egy részhalmazával dolgozni. Létrehozhatók például olyan [szegmensek](segments.md), amelyek nem exportálják az összes ügyfélrekordot a Power BI-be.
+
+## <a name="troubleshooting"></a>Hibaelhárítás
+
+### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>A Customer Insights környezet nem jelenik meg a Power BI alatt
+
+Azok a környezetek, amelyek egynél több definiált [kapcsolattal](relationships.md) rendelkeznek két egyforma entitás között a célközönséggel kapcsolatos információkban, nem lesznek elérhetők a Power BI-összekötőben.
+
+A duplikált kapcsolatok azonosíthatók és eltávolíthatóak kapcsolatok.
+
+1. Az célközönség kapcsolatos információkban menjen az **Adatok** > **Kapcsolatok** részbe annál a környezetél, ahonnan a Power BI hiányzik.
+2. Duplikált kapcsolatok azonosítása:
+   - Ellenőrizze, hogy egynél több kapcsolat van-e definiálva ugyanazon két entitás között.
+   - Ellenőrizze, hogy két olyan entitás között van-e kapcsolat, amelyek egyaránt szerepelnek az egyesítési folyamatban. Az egyesítési folyamatban szereplő összes entitás között implicit kapcsolat van definiálva.
+3. Távolítsa el az azonosított duplikált kapcsolatokat.
+
+A duplikált kapcsolatok eltávolítását, próbálja meg újra konfigurálni az Power BI-összekötőt. A környezetnek immár elérhetőnek kell lennie.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
+

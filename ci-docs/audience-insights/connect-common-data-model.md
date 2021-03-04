@@ -4,17 +4,17 @@ description: Common Data Model-adatok használata Azure Data Lake Storage segít
 ms.date: 05/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 25de23e615704a72f6b41d98ae9418beb338e77e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 247e4d9c47ff2373065ebf3c6d554323e45a120b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643461"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267863"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 
@@ -38,17 +38,25 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 
 1. Válassza az **Adatforrás hozzáadása** lehetőséget.
 
-1. Válassza a **Csatlakozás egy Common Data Model-mappához** lehetőséget , írja be az adatforrás **Nevét**, majd válassza a **Következő** lehetőséget.
+1. Válassza a **Csatlakozás egy Common Data Model-mappához** lehetőséget , írja be az adatforrás **Nevét**, majd válassza a **Következő** lehetőséget. Névvel kapcsolatos irányelvek: 
+   - Kezdje egy betűvel.
+   - Csak betűket és számokat használjon. Speciális karakterek és szóközök nem adhatók meg.
+   - 3–64 karakter használható.
 
 1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). Adja meg a **Tároló** adatait, és válassza a **Következő** lehetőséget.
    > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához](media/enter-new-storage-details.png)
-
-1. A **Common Data Model-mappa kiválasztása** párbeszédpanelen válassza azt a model.json fájlt, amelyből adatokat szeretne importálni, majd válassza a **Következő** lehetőséget.
+   > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez](media/enter-new-storage-details.png)
    > [!NOTE]
-   > A környezetben más adatforrással társított egyéb model.json fájlok nem jelennek meg a listában.
+   > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:
+   >  - Storage Blob adatolvasó
+   >  - Storage Blob adattulajdonos
+   >  - Storage Blob adatközreműködő
 
-1. A kiválasztott model.json fájlban a rendelkezésre álló entitások listája látható. Áttekinthet és kiválaszthat rendelkezésre álló entitások listájából, és válassza a **Mentés** lehetőséget. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
+1. A **Common Data Model-mappa kiválasztása** párbeszédpanelen válassza azt a manifest.json fájlt, amelyből adatokat szeretne importálni, majd válassza a **Következő** lehetőséget.
+   > [!NOTE]
+   > A környezetben más adatforrással társított egyéb model.json vagy manifest.json fájlok nem jelennek meg a listában.
+
+1. A kiválasztott model.json vagy manifest.json fájlban a rendelkezésre álló entitások listája látható. Áttekinthet és kiválaszthat rendelkezésre álló entitások listájából, és válassza a **Mentés** lehetőséget. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
    > [!div class="mx-imgBorder"]
    > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból](media/review-entities.png)
 
@@ -59,11 +67,11 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 9. A kiválasztott adatok mentése után megnyílik az **Adatforrások** lap. Ekkor a Common Data Model mappa kapcsolatot adatforrásként látja.
 
 > [!NOTE]
-> A model.json fájl csak egy-egy adatforráshoz társítható ugyanabban a környezetben. Ugyanakkor ugyanez a model.json fájl több környezetben is használható adatforrásokhoz.
+> A model.json vagy manifest-json fájl csak egy-egy adatforráshoz társítható ugyanabban a környezetben. Ugyanakkor ugyanez a model.json vagy manifest.json fájl több környezetben is használható adatforrásokhoz.
 
 ## <a name="edit-a-common-data-model-folder-data-source"></a>Common Data Model-mappa adatforrás szerkesztése
 
-A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot frissítheti. Illetve megváltoztathatja a model.json fájlt is. Ha a tárfiókból egy másik tárolóhoz szeretne kapcsolódni, vagy módosítani szeretné a fiók nevét, akkor [hozzon létre egy új adatforrás-kapcsolatot](#connect-to-a-common-data-model-folder).
+A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot frissítheti. A model.json vagy a manifest.json fájlt is módosíthatja. Ha a tárfiókból egy másik tárolóhoz szeretne kapcsolódni, vagy módosítani szeretné a fiók nevét, akkor [hozzon létre egy új adatforrás-kapcsolatot](#connect-to-a-common-data-model-folder).
 
 1. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**.
 
@@ -77,13 +85,24 @@ A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot 
 
 5. Lehetőség van arra, hogy a fiókkulcs-kapcsolatot az erőforrás- vagy előfizetés-alapú kapcsolatra is frissítheti. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
    > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához](media/enter-existing-storage-details.png)
 
-6. Tetszés szerint választhat másik model.json fájlt is, amely a tárolóban lévő entitások egy másik halmazát adja meg.
+   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához egy meglévő tárhelyfiókhoz](media/enter-existing-storage-details.png)
+
+   > [!NOTE]
+   > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:
+   >  - Storage Blob adatolvasó
+   >  - Storage Blob adattulajdonos
+   >  - Storage Blob adatközreműködő
+
+
+6. Másik model.json vagy manifest.json fájl is választható, a tárolóból származó más entitáskészletekkel.
 
 7. Tetszés szerint kiválaszthat további entitásokat is, amelyeket betölthet. Ha nincsenek függőségek, akkor a már kijelölt entitásokat is eltávolíthatja.
 
    > [!IMPORTANT]
-   > Ha függőségek vannak a meglévő model.json fájllal és az entitások készletével, hibaüzenet jelenik meg, és nem lehet másik model.json fájlt választani. Távolítsa el ezeket a függőségeket, mielőtt módosítaná a model.json fájlt, vagy hozzon létre egy új adatforrást a model.json fájllal, amelyet a függőségek eltávolításának elkerülésére szeretne használni.
+   > Ha függőségek vannak a meglévő model.json vagy manifest.json fájlhoz és az entitások készletéhez. egy hibaüzenet jelenik meg, és nem választhat másik model.json vagy manifest.json fájlt. A model.json vagy a manifest.json fájl módosítása előtt távolítsa el ezeket a függőségeket, vagy hozzon létre egy új adatforrást a használni kívánt model.json vagy a manifest.json fájllal a függőségek elkerüléséhez szükséges.
 
 8. Tetszés szerint kiválaszthat további attribútumokat vagy entitásokat, amelyek lehetővé teszik az adatok profilkészítésének engedélyezését vagy letiltását a már kijelöltek esetén.   
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

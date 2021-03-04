@@ -1,20 +1,20 @@
 ---
 title: Customer Insights adatok exportálása a SFTP gazdaszámítógépekhez
 description: Megismerkedhet vele, hogyan konfigurálható egy SFTP-hoszt kapcsolata.
-ms.date: 06/05/2020
+ms.date: 01/27/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: c2529744d7a26a06324b79cad6a8001d75903545
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: ddba55b3ca159c0095371e46385dcf1d3ed4a63d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643506"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268001"
 ---
 # <a name="connector-for-sftp-preview"></a>SFTP-összekötő (előzetes verzió)
 
@@ -22,9 +22,9 @@ ms.locfileid: "4643506"
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Az SFTP-hoszt és a megfelelő hitelesítő adatok rendelkezésre állása.
+- Egy SFTP állomás és a hozzájuk tartozó hitelesítő adatok elérhetősége.
 
-## <a name="connect-to-sftp"></a>Csatlakozás SFTP-hez
+## <a name="connect-to-sftp"></a>Csatlakozás a SFTP-hez
 
 1. Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.
 
@@ -32,23 +32,22 @@ ms.locfileid: "4643506"
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben.
 
-1. Adjon meg egy **Felhasználónevet**, **Jelszót** és **Eszköznév** értéket az SFTP-fiókhoz. Példa: Ha az SFTP kiszolgáló gyökérkönyvtára/root/folder, és szeretné, hogy az adatok a /root/folder/ci_export_destination_folder mappába exportálódjanak, akkor a gazdaszámítógép legyen: sftp://<server_address>/ci_export_destination_folder".
+1. Adjon meg egy **Felhasználónevet**, **Jelszót**, **Állomásnevet** és **Exportálási mappát** az SFTP-fiókhoz.
 
 1. A kapcsolat teszteléséhez válassza az **Ellenőrzés** lehetőséget.
 
-1. A sikeres ellenőrzés után válassza ki, hogy **Tömörített** vagy **Kibontott** formátumban szeretné exportálni az adatokat, és jelölje ki az exportált fájlokhoz tartozó **mezőhatárolót**.
+1. A sikeres ellenőrzés után válassza ki, hogy szeretné-e exportálni az adatokat **Tömörített** vagy **Nem tömörített** formátumban, válassza ki a **mezőelválasztót** az exportált fájlokhoz.
 
 1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
 
 1. Az exportálás konfigurálásának megkezdéséhez válassza a **Tovább** lehetőséget.
 
-## <a name="configure-the-connection"></a>A kapcsolat konfigurálása
+## <a name="configure-the-export"></a>Az exportálás konfigurálása
 
-1. Jelölje ki az **ügyfélattribútumokat** amelyeket exportálni szeretne. Egy vagy több attribútum is exportálható.
+1. Jelölje ki az exportálni kívánt entitásokat, például szegmenseket.
 
-1. Válassza a **Következő** lehetőséget.
-
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
+   > [!NOTE]
+   > Minden egyes kijelölt entitás legfeljebb öt kimeneti fájlt képes exportálni. 
 
 1. Válassza a **Mentés** parancsot.
 
@@ -56,7 +55,15 @@ ms.locfileid: "4643506"
 
 [Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.
 
+## <a name="known-limitations"></a>Ismert korlátozások
+
+- Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória. 
+- Az legfeljebb 100 millió ügyfélprofillal rendelkező entitások exportálása 90 percet is igénybe fog venni, ha két processzormag és 1 Gb memória ajánlott minimális konfigurációját használja. 
+
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
 Amikor engedélyezi az Dynamics 365 Customer Insights szolgáltatásnak az adatok átvitelét SFTP-n keresztül, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy az exportálási célhely megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

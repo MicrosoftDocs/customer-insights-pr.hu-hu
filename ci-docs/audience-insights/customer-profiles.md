@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 13308c2f40cda0d7e813b4d94ab47d53b5ce2115
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: a5d928ae518f3cb1afbf8e2b197e51b27665f6e0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653893"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269747"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
@@ -70,3 +70,6 @@ A **Visszatérés az Ügyfelekhez** lehetőséggel visszatérhet az ügyfelek ke
 ## <a name="next-steps"></a>Következő lépések
 
 [További adatforrások hozzáadása](data-sources.md) vagy az [ügyfelek szegmensének létrehozása](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

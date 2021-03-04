@@ -4,17 +4,17 @@ description: Entitások egyeztetése az egyesített ügyfélprofilok létrehozá
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406019"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267481"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -22,7 +22,7 @@ A megfeleltetési fázis befejezése után készen áll az entitások egyezteté
 
 ## <a name="specify-the-match-order"></a>Egyeztetési sorrend megadása
 
-Lépjen az **Egyesítés** > **Egyeztetés** pontra, és válassza a **Sorrend beállítása** lehetőséget az egyeztetési fázis indításához.
+Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, és válassza a **Sorrend beállítása** lehetőséget az egyeztetési fázisának indításához.
 
 Az egyes egyeztetések két vagy több entitást egyetlen entitásba egyesítenek, miközben megtartják az egyedi ügyfélrekordokat. A következő példában három entitást választottunk: **ContactCSV: TestData** **Elsődleges** entitásként, **WebAccountCSV: TestData** **2. entitás** entitásként, és **CallRecordSmall: TestData** **3. entitás** entitásként. A kijelölések feletti ábra bemutatja, hogyan történik az egyeztetési sorrend végrehajtása.
 
@@ -136,7 +136,7 @@ A deduplikált rekord beazonosítása után a rekordot a rendszer az entitások 
 
 1. Az egyeztetési folyamat futtatása során a rendszer a rekordokat a deduplikációs szabályokban megadott feltételek alapján csoportosítja. A rekordok csoportosítását követően a rendszer alkalmazza a nyertes rekord beazonosítására szolgáló egyesítési házirendet.
 
-1. Ezt a nyertes bejegyzést ezután továbbítja a rendszer az entitások közti egyeztetésre.
+1. Ezt a győztes bejegyzést ezután át kell haladni az entitások közötti egyeztetésnek, a nem győztes rekordokkal (pl. másodlagos azonosítók) az egyeztetési minőség javítása érdekében.
 
 1. A Mindig egyezzen és Soha ne egyezzen típushoz megadott bármely egyéni egyeztetési szabály mindig felülbírálja a deduplikációs szabályokat. Ha egy deduplikációs szabály azonosítja az egyező bejegyzéseket, és az egyéni egyeztetési szabály beállítása a rekorokhoz Soha ne egyezzen, akkor a két rekord egyeztetése nem történik meg.
 
@@ -157,6 +157,17 @@ Az első egyeztetési folyamat egy egyesített fő entitás létrehozását ered
 
 > [!TIP]
 > A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+
+## <a name="deduplication-output-as-an-entity"></a>Deduplikáció kimenete entitásként
+Az egyeztetésének részeként létrehozott egységes főentitáson kívül a deduplikáció-folyamat az egyeztetési sorrendben létrehozott minden entitáshoz létrehoz egy új entitást, hogy azonosíthatók a deduplikált bejegyzések. Ezek az entitások az **Entitások** lap **Rendszer** szakaszában a **ConflationMatchPairs:CustomerInsights** elemmel együtt találhatók meg **Deduplication_Datasource_Entity** névvel.
+
+A deduplikált kimeneti entitás a következő információkat tartalmazza:
+- Azonosítók / kulcsok
+  - Az elsődleges kulcs mezője és a másodlagos azonosító mezője. A másodlagos azonosítók mező a bejegyzéshez azonosított összes másodlagos azonosítóból áll.
+  - Deduplication_GroupId mező mutatja az entitáson belül azonosított csoportot vagy fürtöt, amely a hasonló bejegyzéseket a megadott deduplikáció mezők alapján csoportosítja. Ezt a rendszerfeldolgozási célokra használják. Ha nincsenek megadva manuális deduplikációs szabályok, és a rendszer által definiált deduplikációs szabályok vonatkoznak, akkor előfordulhat, hogy ez a mező nem található meg a deduplikálás kimeneti entitásban.
+  - Deduplication_WinnerId: Ez a mező tartalmazza az azonosított csoportokból vagy fürtökből a nyertes azonosítót. Ha a Deduplication_WinnerId megegyezik egy rekord elsődleges kulcsával, ez azt jelenti, hogy az a rekord lesz a győztes rekord.
+- A deduplikációs szabályok definiáló mezői.
+- Szabály és Pontszám mezők, amelyekben a deduplikációs szabályok alkalmazva lettek és az egyeztető algoritmus által visszaadott pontszám is megegyezik.
 
 ## <a name="review-and-validate-your-matches"></a>Egyeztetések áttekintése és ellenőrzése
 
@@ -200,6 +211,11 @@ Javítsa a minőséget bizonyos egyeztetési paraméterek újrakonfigurálásáv
   > [!div class="mx-imgBorder"]
   > ![Szabály megkettőzése](media/configure-data-duplicate-rule.png "Szabály megkettőzése")
 
+- **Inaktiválhat egy szabályt**, hogy megtartsa az egyeztetési szabályt, de azt kizárja az egyeztetési folyamatból.
+
+  > [!div class="mx-imgBorder"]
+  > ![Szabály inaktiválása](media/configure-data-deactivate-rule.png "Szabály inaktiválása")
+
 - **Szabályok módosítása** a **Szerkesztés** szimbólum választásával. Az alábbi módosításokat is alkalmazhatja:
 
   - Feltétel attribútumainak módosítása: Válasszon új attribútumokat az adott feltétel sorában.
@@ -229,6 +245,8 @@ Megadhat olyan feltételeket, hogy bizonyos rekordoknak mindig egyezniük kell v
     - Entity2Key: 34567
 
    Ugyanezzel a sablonfájllal megadhat több entitásból származó egyéni egyeztetési rekordokat is.
+   
+   Ha a deduplikáláshoz egyéni egyeztetést kíván megadni egy entitáson, akkor ugyanazt az entitást kell megadnia, mint az Entity1 és az Entity2, és állítson be különböző elsődleges kulcsértékeket.
 
 5. Az összes alkalmazni kívánt felülbírálás hozzáadását követően mentse a sablonfájlt.
 
@@ -250,3 +268,6 @@ Megadhat olyan feltételeket, hogy bizonyos rekordoknak mindig egyezniük kell v
 ## <a name="next-step"></a>Következő lépés
 
 Legalább egy egyeztetési párra vonatkozó egyeztetési folyamat végrehajtása után feloldhatja a lehetséges ellentmondásokat az adatokban, ha áttekinti az [**Egyesítés**](merge-entities.md) témakört.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Ügyfélprofilok keresése és szűrése
 description: Gyorsan megtalálhatja az egyesített ügyfelek profiljaira vonatkozó információkat, és szűrhet a megadott attribútumokra.
-ms.date: 04/16/2020
+ms.date: 01/19/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d675738c43cbdb5f9b478d53d6124db38ba3004d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406025"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270069"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Felhasználói profilok: Keresés & szűrőindex
 
@@ -28,14 +28,6 @@ Az ügyféladatok egységesítésének eredménye egy Ügyfélprofil entitás, a
 Ha első alkalommal határozza meg a kereshető attribútumokat rendszergazdaként, először meg kell határoznia az indexelt mezőket. Javasoljuk, hogy az összes attribútumot válassza ki, amely alapján a felhasználók kereshetnek és szűrhetik az ügyfeleket az **Ügyfelek** oldalon. Csak az adategyesítési folyamat során létrehozott Felhasználói profil entitásban található attribútumokat adhatja meg.
 
 1. Nyissa meg az **ügyfelek** oldalt, és válassza a **keresési & szűrő indexe** lehetőséget.
-
-> [!NOTE]
-> Létrehozzuk az alapértelmezett keresési index konfigurációt az Ügyfél entitás elérhető attribútumain az alábbi szemantikai típusokból, a Leképezés lapon megadott módon.
-> - Személy utóneve, Vezetéknév, második utónév, teljes név
-> - Szervezet neve
-> - E-mail cím
-> - Telefonszám
-> - Helyadatok
 
 2. Válassza a **+ Hozzáadás** elemet az indexelt mezők meghatározásához.
 
@@ -65,3 +57,10 @@ Az **Ügyfelek** oldalon megjelenő **Szűrő** menüben szerepelhet több attri
 2. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
 
 3. Válassza a **Futtatás** lehetőséget, ha már készen áll a beállítások alkalmazására.
+
+## <a name="next-steps"></a>További lépések
+
+Az **Ügyfelek** oldalon ügyfélprofilokat kereshet, illetve az indexelt mezők használatával az összes ügyfélprofil egy részhalmazát láthatja.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

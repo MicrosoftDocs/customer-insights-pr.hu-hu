@@ -9,14 +9,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: a720641f7499fc71ff5bceeba48d296c51f77242
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 68aa1b56fb634da80a0c64db72f778d57507104d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643956"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269701"
 ---
-# <a name="overview-about-data-sources"></a>Adatforrások áttekintése
+# <a name="data-sources-overview"></a>Adatforrások áttekintése
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
@@ -49,7 +49,7 @@ Látni fogja az egyes betöltött adatforrások nevét, állapotát, valamint az
 |Frissítés    |Az adatbetöltés folyamatban van. A művelet a **Műveletek** oszlop **Frissítés leállítása** parancsával vonható vissza. A adatforrás frissítésének leállítása visszaállítja azt az utolsó frissítéskori állapotára.       |
 |Sikertelen     |Az adatbetöltés hibákba ütközött.         |
 
-Válassza a **Frissítési állapot** elemet a frissítési állapot további adatai áttekintéséhez, többek között hiba részleteit és a lefelé irányuló folyamat frissítéseit.
+A további részletekért válassza ki az adatforrás **Állapot** oszlopát. A **Folyamat részletei** ablaktáblában bontsa ki az **Adatforrások** részt. Válassza a **Részletek megtekintése** elemet a frissítési állapot további adatai áttekintéséhez, többek között hiba részleteit és a lefelé irányuló folyamat frissítéseit.
 
 Az adatok betöltése eltarthat egy ideig. A sikeres frissítés után a betöltött adatok áttekinthetők az **Entitások** lapról. További információ: [Entitások](entities.md).
 
@@ -76,3 +76,6 @@ Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lép
 2. Jelölje ki az eltávolítani kívánt adatforrás melletti függőleges három pontot, és a legördülő menüben válassza a **Törlés** parancsot.
 
 3. Hagyja jóvá a törlést.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

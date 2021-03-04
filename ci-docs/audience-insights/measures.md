@@ -1,7 +1,7 @@
 ---
-title: Mérőszámok létrehozása és szerkesztése
-description: Határozza meg az ügyfélhez kapcsolódó mérőszámokat, amelyekkel elemezheti és szemléltetheti bizonyos üzleti területek teljesítményét.
-ms.date: 10/15/2020
+title: Mértékek létrehozása és felügyelete
+description: Definiálja a vállalkozás teljesítményét elemző és tükröző mértékeket.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4406021"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269931"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
-A **Mérőszámok** olyan fő teljesítménymutatókat (KPI) jelentenek, amelyek adott üzleti területek teljesítményét és működését tükrözik. A célközönség-információk a különböző típusú intézkedések kiépítésére szolgáló intuitív élményt nyújt, egy lekérdezés-szerkesztő segítségével, amely nem igényli az intézkedések kézi kódolását vagy érvényesítését. Az üzleti mérőszámokat a **Kezdőlap** oldalon követheti nyomon, és megtekintheti az egyes ügyfelekre vonatkozó mérőszámokat az **Ügyfélkártya** részben, és mérőszámokkal meghatározhatja az ügyfélszegmenseket a **Szegmensek** oldalon.
+A mértékek segítenek abban, hogy jobban megértse az ügyfelek viselkedését és az üzleti teljesítményt a kapcsolódó értékek lekérésével az [egyesített profilokból](data-unification.md). Egy vállalat például az *egy ügyfélhez kapcsolódó teljes költést* szeretné látni az egyes ügyfelek vásárlási előzményeinek megismeréséhez. Vagy mérni szeretné a *vállalat teljes értékesítéseit*, hogy megértse a teljes vállalat összesített szintű bevételeit.  
+
+Az mértékek létrehozása a mértékkészítővel történik, ami egy adatlekérdezési platform számos operátorral és egyszerű leképezési lehetőségekkel. Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére.
+
+A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az ügyféladatok lekérdezésével és a betekintések kinyerésével. Ha például egy *ügyfélre jutó teljes költség* és az *egy ügyfélre jutó teljes megtérülés* mértékeket hozza létre, akkor könnyebben azonosítható a nagy költéssel, mégis nagy megtérüléssel jellemezhető ügyfelek csoportja. A következő legjobb műveletek előremozdításához [létrehozhat egy szegmenst](segments.md). 
 
 ## <a name="create-a-measure"></a>Mérőszám létrehozása
 
-Ez a rész végigvezeti a mérőszám semmiből történő létrehozásának lépésein. Mérőszámokat hozhat létre olyan adatokkal, amelyek több adatforrásból származnak, és az ügyfél entitáson keresztül kapcsolódnak egymáshoz. Bizonyos [szolgáltatási korlátozások](service-limits.md) érvényesek.
+Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. Az Ügyfél entitáshoz kapcsolattal beállított adatentitások adatattribútumainak segítségével mértéket állíthat össze. 
 
 1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
 
-2. Válassza az **Új mérőszám** lehetőséget.
+1. Válassza az **Új** lehetőséget.
 
-3. Válassza ki a mérőszám **típusát**:
-
-   - **Ügyfélattribútum**: Egyetlen mező ügyfelenként, amely az ügyfél pontszámát, értékét vagy állapotát tükrözi. Az ügyfelek attribútumai egy új, a rendszer által létrehozott, **Customer_Measure** nevű entitásban attribútumokként jönnek létre.
-
-   - **Ügyfélmérőszám**: Az ügyfelek viselkedésének vonatkozó információk a kijelölt dimenziók szerinti részletezéssel. A rendszer minden egyes mérőszámhoz létrehoz egy új entitást, amely esetleg több bejegyzést tartalmaz egy ügyfélnél.
-
-   - **Üzleti mérőszám**: Nyomon követi a vállalkozás teljesítményét és egészségét. Az üzleti mérőszámok két különböző kimenettel rendelkezhetnek: egy numerikus kimenet, amely a **Kezdőlapon** jelenik meg, vagy egy új entitás, amelyet az **Entitások** oldalon talál.
-
-4. Adjon meg egy **Név** értéket, és egy nem kötelező **Megjelenítendő nevet**, majd nyomja meg a **Tovább** lehetőséget.
-
-5. Az **Entitás** részben válassza ki az első entitást a legördülő listából. Ezen a ponton el kell döntenie, hogy szükségesek-e további entitások a mértékegység meghatározásának részeként.
-
-   > [!div class="mx-imgBorder"]
-   > ![Mérőszám definíciója](media/measure-definition.png "Mérőszám definíciója")
-
-   További entitások hozzáadásához válassza az **Entitás hozzáadása** lehetőséget, és válassza ki a mérőszámhoz használni kívánt entitásokat.
-
+1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
    > [!NOTE]
-   > Olyan entitásokat választhat csak, amelyek kapcsolódnak az elsőként kiválasztott entitáshoz. Ha további tájékoztatást szeretne kapni a kapcsolatok meghatározásáról, lásd. [Kapcsolatok](relationships.md).
+   > Ha az új mértékkonfigurációban csak két mező található , például, CustomerID és egy számítás – a kimenet új oszlopként kerül fel a rendszer által létrehozott Customer_Measure nevű entitáshoz. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
 
-6. Másik megoldásként Ön is konfigurálhatja a változókat. A **Változók** szakaszban válassza az **új változó** elemet.
+1. Válassza a konfigurációs területen az összesítési függvényt a **Függvény kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
+   - **Sum**
+   - **Átlag**
+   - **Számlálás**
+   - **Egyedszámlálás**
+   - **Max**
+   - **Min**
+   - **Első:** az adatrekord első értékét veszi fel
+   - **Utolsó**: az adatrekordhoz hozzáadott utolsó értéket veszi fel
 
-   A változók a kijelölt rekordokon végrehajtott számítások. Például a pénztári (POS) és online értékesítés összesítése az egyes ügyfelek rekordjaira vonatkozóan.
+   :::image type="content" source="media/measure-operators.png" alt-text="A mértékek számításához használható operátorok.":::
 
-7. Adja meg a változó **nevét**.
+1. Válassza az **Attribútum hozzáadása** lehetőséget a mérték létrehozásához szükséges adatok kiválasztásához.
+   
+   1. Válassza az **Attribútumok** lapot. 
+   1. Adatentitás: Válassza ki azt az entitást, amely a mérni kívánt attribútumot tartalmazza. 
+   1. Adatattribútum: Válassza ki az összesítési függvényben az mérték kiszámításához használni kívánt attribútumot. Egyszerre csak egy attribútumot választhat ki.
+   1. Meglévő mértékből is kiválaszthat adatattribútumokat a **Mértékek** lapon. Másik lehetőségként megkeresheti egy entitást vagy mérték nevét is. 
+   1. Válassza a **Hozzáadás** lehetőséget, ha a kijelölt attribútumot hozzá szeretne adni a mértékhez.
 
-8. A **Kifejezés** területen válassza ki azt a mezőt, amellyel el szeretné kezdeni a számítást.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Válassza ki a számításokban használni kívánt attribútumot.":::
 
-9. Írjon be egy kifejezést a **Kifejezés** területen, és válassza ki a számításba szerepeltetendő további mezőket.
+1. Összetettebb mértékek építéshez további attribútumokat adhat hozzá, vagy használhat operátorokat a mértékfüggvényben.
 
-   > [!NOTE]
-   > Jelenleg csak aritmetikai kifejezések támogatottak. Emellett a változók számítása nem támogatott a különböző [entitásútvonalról](relationships.md) származó entitások esetén.
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Hozzon létre egy összetett mértéket a matematikai műveletek segítségével.":::
 
-10. Válassza a **Kész** lehetőséget.
+1. Szűrők hozzáadásához válassza ki a **Szűrő** lehetőséget a konfigurációs területen. 
+  
+   1. A **Szűrők** panel **Attribútum hozzáadása** szakaszában jelölje ki a szűrők létrehozásához használni kívánt attribútumot.
+   1. Állítsa be a szűrőoperátorokat, hogy minden kijelölt attribútumhoz definiálja a szűrőt.
+   1. Válassza az **Alkalmaz** lehetőséget, ha a szűrőket hozzá szeretne adni a mértékhez.
 
-11. A **Mértékegység meghatározása** szakaszban azt határozhatja meg, hogy a kiválasztott entitások és a számított változók hogyan legyenek összesítve egy új mérőszám entitásában vagy attribútumában.
+1. Dimenziók hozzáadásához válassza ki a **Dimenzió** lehetőséget a konfigurációs területen. A dimenziók oszlopként fognak megjelenni a mérték kimeneti entitásában.
+   1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem. Az *ügyfélszintű mértékek* létrehozásához alapértelmezés szerint a *CustomerID* dimenzió van kiválasztva. Ha *üzleti szintű mértékeket* szeretne létrehozni, eltávolíthatja az alapértelmezett dimenziót.
+   1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
-12. Válassza az **Új dimenzió** elemet. A dimenzióra *csoportosítási szempont* függvényként is tekinthet. A Mérőszám entitás vagy attribútum adatkimeneteit a rendszer az összes megadott dimenzió alapján csoportosítja.
+1. Ha a leképezett adatentitás és az Ügyfél entitás között több elérési út is van, válasszon egyet az azonosított [entitáskapcsolat -útvonalak](relationships.md) közül. A mértékek eredményei a kiválasztott elérési úttól függően változhatnak.
+   1. Válassza ki az **Adatbeállítások** lehetőséget, és válassza ki az entitás elérési útját, amely a mérték azonosítására fog használni.
+   1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Összesítési ciklus kiválasztása](media/measures-businessreport-measure-definition2.png "Összesítési ciklus kiválasztása")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Válassza ki a mértékhez tartozó entitás elérési utat.":::
 
-    Válassza ki vagy adja meg a következő adatokat a dimenzió meghatározása részeként:
+1. Ha további számításokat szeretne hozzáadni az mértékhez, válassza az **Új számítás** lehetőséget. Az új számításokhoz csak ugyanazon az entitás elérési úton használhatók entitások. A további számítások új oszlopként fognak megjelenni a mérték kimeneti entitásában.
 
-    - **Entitás**: Ha egy Mérőszám entitást definiál, akkor legalább egy attribútumot tartalmaznia kell. Ha Mérőszám attribútumot határoz meg, akkor alapértelmezés szerint csak egyetlen attribútumot fog tartalmazni. Ez a beállítás az attribútumot tartalmazó entitás kiválasztásáról szól.
-    - **Mező**: válassza ki azt a konkrét attribútumot, amelyet be szeretne vonni a mérőszám entitásba vagy attribútumba.
-    - **Gyűjtő**: válassza ki, hogy az adatokat napi, havi vagy éves szinten szeretné összesíteni. Csak akkor szükséges, ha a Dátumtípus attribútumot jelölte ki.
-    - **Mint**: Meghatározza az új mező nevét.
-    - **Megjelenítendő név**: meghatározza a mező megjelenítendő nevét.
+1. Válassza a **...** lehetőséget a mértékből szármató számítás **Duplikálásához**, **Átnevezéséhez** vagy **Eltávolításához**.
 
-    > [!NOTE]
-    > Az üzleti mérőszámot egyszámos entitásként menti a rendszer és megjelenik a **Kezdőlap** oldalon, ha csak nem ad több dimenziót a mérőszámhoz. További dimenziók hozzáadását követően a mérőszám *nem* jelenik meg a **kezdőlapon**.
+1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
 
-13. Tetszés szerint az összesítési funkciókat is hozzáadhatja. Bármely Ön által létrehozott összesítés az eredményeket egy új értékben hozza létre a Mérőszám entitást vagy attribútumot. A támogatott aggregációs függvények a következők: **Min**, **Max**, **Average**, **Median**, **Sum**, **Count Unique**, **First** (a dimenzióérték rekordjai közül az elsőt veszi) és **Last** (a dimenzióértékhez utoljára hozzáadott rekordot veszi).
+1. Válassza a **Futtatás** lehetőséget a konfigurált mértékhez tartozó eredmények kiszámításához. Válassza a **Mentés és bezárás** lehetőséget, ha meg szeretné tartani az aktuális konfigurációt, és a mértéket később szeretné futtatni.
 
-14. A mérőszám módosításainak alkalmazásához válassza a **Mentés** lehetőséget.
+1. A listában az újonnan létrehozott mértékegységet a **Mértékek** listában jelenítheti meg.
 
 ## <a name="manage-your-measures"></a>Intézkedések kezelése
 
-Legalább egy mérték létrehozása után megtekintheti a mértékek listáját a **Mértékek** oldalon.
+[Egy mérték létrehozása](#create-a-measure) után megtekintheti a mértékek listáját a **Mértékek** oldalon.
 
-Itt információk találhatók a mérőszám típusáról, a létrehozóról, a létrehozás dátumáról és idejéről, az utolsó módosítás dátumáról és időpontjáról, állapotról (hogy a mérőszám aktív, inaktív vagy sikertelen) és az utolsó frissítés dátumáról és időpontjáról. Ha egy intézkedést kiválaszt a listából, láthatja a kimenetének előnézetét.
+Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, akkor megtekintheti a kimenetet, és letölthet egy .CSV-fájl.
 
 Ha egyszerre szeretné frissíteni az összes intézkedést, akkor jelölje be az **összes frissítése** lehetőséget egy adott intézkedés kiválasztása nélkül.
 
 > [!div class="mx-imgBorder"]
 > ![Az egyes intézkedések kezelésére szolgáló műveletek](media/measure-actions.png "Az egyes intézkedések kezelésére szolgáló műveletek")
 
-Másik lehetőségként jelöljön ki egy intézkedést a listából, és hajtsa végre az alábbi műveletek egyikét:
+Válasszon ki egy mértéket a listából a következő lehetőségekhez:
 
 - Adja meg a mérőszám nevét a részletek megtekintéséhez.
 - **Szerkessze** a mérőszám konfigurációját.
+- **Frissítse** a mértéket a legújabb adatok alapján.
 - **Nevezze át** az intézkedést.
 - **Törölje** az intézkedést.
-- Jelölje ki a három pontot (...), majd a **Frissítés** lehetőséggel indítsa el az intézkedés frissítési folyamatát.
-- Jelölje ki a három pontot (...), majd a **Letöltés** lehetőséggel töltse le az intézkedés .CSV fájlját.
+- **Aktiválás** vagy **Inaktiválás**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során.
 
 > [!TIP]
 > A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
 
 ## <a name="next-step"></a>Következő lépés
 
-A meglévő mérőszámok használatával a **Szegmensek** oldalon hozhatja létre az első ügyfélszegmenst. További tudnivalókat a [Szegmensek](segments.md) részben talál.
+Az [ügyfélszegmens](segments.md) létrehozásához meglévő mértéket használhat.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

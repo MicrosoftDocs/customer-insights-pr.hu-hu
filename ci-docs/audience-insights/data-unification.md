@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 24321e9e11f9fd4e800526673726e5146ed33674
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 44f97696ec91dc488dd6a7528e186abb99c8288b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405986"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269655"
 ---
-# <a name="data-unification"></a>Adategyesítés
+# <a name="data-unification-overview"></a>Az Adategyesítés áttekintése
 
 [Az adatforrások beállítása után](data-sources.md) egyesítheti az adatot. Az Adategyesítés három lépésből áll: **Leképezés**, **Egyeztetés** és **Egyesítés**.
 
@@ -31,3 +31,6 @@ Az adatok egyesítésének befejezése után tetszés szerint
 - [beállíthat az entitások közötti kapcsolatokat](relationships.md) kifinomult szegmensek létrehozásához
 - [bővítheti adatait](enrichment-hub.md), hogy szélesebb körű betekintést tudjon kapni az ügyfelekről
 - [tevékenységeket definiálhat](activities.md) néhány betöltött attribútumból
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
