@@ -2,78 +2,78 @@
 title: Customer Insights adatok exportálása a Marketóba
 description: Megismerheti, hogyan konfigurálható a kapcsolat a Marketóval.
 ms.date: 11/12/2020
-ms.reviewer: philk
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: phkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e0245f2d01aabc86f43532822c056965ff7ae67a
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 74d19a0448123904210c26f7b8760d00296c9cfd
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267084"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597974"
 ---
-# <a name="connector-for-marketo-preview"></a><span data-ttu-id="e0d6c-103">A Marketo összekötője (előzetes verzió)</span><span class="sxs-lookup"><span data-stu-id="e0d6c-103">Connector for Marketo (preview)</span></span>
+# <a name="connector-for-marketo-preview"></a><span data-ttu-id="1027e-103">A Marketo összekötője (előzetes verzió)</span><span class="sxs-lookup"><span data-stu-id="1027e-103">Connector for Marketo (preview)</span></span>
 
-<span data-ttu-id="e0d6c-104">Az egyesített ügyfélprofilok szegmensei exportálásának felhasználásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából a Marketo szolgáltatással.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-104">Export segments of unified customer profiles to generate campaigns, provide email marketing and use specific groups of customers with Marketo.</span></span>
+<span data-ttu-id="1027e-104">Az egyesített ügyfélprofilok szegmensei exportálásának felhasználásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából a Marketo szolgáltatással.</span><span class="sxs-lookup"><span data-stu-id="1027e-104">Export segments of unified customer profiles to generate campaigns, provide email marketing and use specific groups of customers with Marketo.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e0d6c-105">Előfeltételek</span><span class="sxs-lookup"><span data-stu-id="e0d6c-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="1027e-105">Előfeltételek</span><span class="sxs-lookup"><span data-stu-id="1027e-105">Prerequisites</span></span>
 
--   <span data-ttu-id="e0d6c-106">Rendelkezik [Marketo-fiókkal](https://login.marketo.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-106">You have a [Marketo account](https://login.marketo.com/) and corresponding administrator credentials.</span></span>
--   <span data-ttu-id="e0d6c-107">A Marketóban és a megfelelő azonosítókban meglévő listák találhatók.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-107">There are existing lists in Marketo and the corresponding IDs.</span></span> <span data-ttu-id="e0d6c-108">További tájékoztatásért keresse fel a [Marketo listák](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists) webhelyet.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-108">For more information, see [Marketo lists](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span></span>
--   <span data-ttu-id="e0d6c-109">Rendelkezik [konfigurált szegmensekkel](segments.md).</span><span class="sxs-lookup"><span data-stu-id="e0d6c-109">You have [configured segments](segments.md).</span></span>
--   <span data-ttu-id="e0d6c-110">Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-110">Unified customer profiles in the exported segments contain a field representing an email address.</span></span>
+-   <span data-ttu-id="1027e-106">Rendelkezik [Marketo-fiókkal](https://login.marketo.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.</span><span class="sxs-lookup"><span data-stu-id="1027e-106">You have a [Marketo account](https://login.marketo.com/) and corresponding administrator credentials.</span></span>
+-   <span data-ttu-id="1027e-107">A Marketóban és a megfelelő azonosítókban meglévő listák találhatók.</span><span class="sxs-lookup"><span data-stu-id="1027e-107">There are existing lists in Marketo and the corresponding IDs.</span></span> <span data-ttu-id="1027e-108">További tájékoztatásért keresse fel a [Marketo listák](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists) webhelyet.</span><span class="sxs-lookup"><span data-stu-id="1027e-108">For more information, see [Marketo lists](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span></span>
+-   <span data-ttu-id="1027e-109">Rendelkezik [konfigurált szegmensekkel](segments.md).</span><span class="sxs-lookup"><span data-stu-id="1027e-109">You have [configured segments](segments.md).</span></span>
+-   <span data-ttu-id="1027e-110">Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.</span><span class="sxs-lookup"><span data-stu-id="1027e-110">Unified customer profiles in the exported segments contain a field representing an email address.</span></span>
 
-## <a name="connect-to-marketo"></a><span data-ttu-id="e0d6c-111">Csatlakozás a Marketóhoz</span><span class="sxs-lookup"><span data-stu-id="e0d6c-111">Connect to Marketo</span></span>
+## <a name="connect-to-marketo"></a><span data-ttu-id="1027e-111">Csatlakozás a Marketóhoz</span><span class="sxs-lookup"><span data-stu-id="1027e-111">Connect to Marketo</span></span>
 
-1. <span data-ttu-id="e0d6c-112">Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-112">Go to **Admin** > **Export destinations**.</span></span>
+1. <span data-ttu-id="1027e-112">Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="1027e-112">Go to **Admin** > **Export destinations**.</span></span>
 
-1. <span data-ttu-id="e0d6c-113">A **Marketo** részben válassza a **Beállítás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-113">Under **Marketo**, select **Set up**.</span></span>
+1. <span data-ttu-id="1027e-113">A **Marketo** részben válassza a **Beállítás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="1027e-113">Under **Marketo**, select **Set up**.</span></span>
 
-1. <span data-ttu-id="e0d6c-114">Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-114">Give your export destination a recognizable name in the **Display name** field.</span></span>
+1. <span data-ttu-id="1027e-114">Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.</span><span class="sxs-lookup"><span data-stu-id="1027e-114">Give your export destination a recognizable name in the **Display name** field.</span></span>
 
-1. <span data-ttu-id="e0d6c-115">Adja meg a **[Marketo ügyfél-azonosítót, titkos ügyfélkódot és REST végpont eszköznevét](https://developers.marketo.com/rest-api/authentication/)**.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-115">Enter your **[Marketo client ID, Client secret and REST Endpoint Hostname](https://developers.marketo.com/rest-api/authentication/)**.</span></span>
+1. <span data-ttu-id="1027e-115">Adja meg a **[Marketo ügyfél-azonosítót, titkos ügyfélkódot és REST végpont eszköznevét](https://developers.marketo.com/rest-api/authentication/)**.</span><span class="sxs-lookup"><span data-stu-id="1027e-115">Enter your **[Marketo client ID, Client secret and REST Endpoint Hostname](https://developers.marketo.com/rest-api/authentication/)**.</span></span>
 
-1. <span data-ttu-id="e0d6c-116">Adja meg a **[Marketo-lista azonosítóját](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**</span><span class="sxs-lookup"><span data-stu-id="e0d6c-116">Enter your **[Marketo list ID](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**</span></span> 
+1. <span data-ttu-id="1027e-116">Adja meg a **[Marketo-lista azonosítóját](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**</span><span class="sxs-lookup"><span data-stu-id="1027e-116">Enter your **[Marketo list ID](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**</span></span> 
 
-1. <span data-ttu-id="e0d6c-117">Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez, majd válassza a **Csatlakozás** lehetőséget a Marketo kapcsolat inicializálásához.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-117">Select **I agree** to confirm the **Data privacy and compliance** and select **Connect** to initialize the connection to Marketo.</span></span>
+1. <span data-ttu-id="1027e-117">Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez, majd válassza a **Csatlakozás** lehetőséget a Marketo kapcsolat inicializálásához.</span><span class="sxs-lookup"><span data-stu-id="1027e-117">Select **I agree** to confirm the **Data privacy and compliance** and select **Connect** to initialize the connection to Marketo.</span></span>
 
-1. <span data-ttu-id="e0d6c-118">Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-118">Select **Add yourself as export user** and provide your Customer Insights credentials.</span></span>
+1. <span data-ttu-id="1027e-118">Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.</span><span class="sxs-lookup"><span data-stu-id="1027e-118">Select **Add yourself as export user** and provide your Customer Insights credentials.</span></span>
 
    :::image type="content" source="media/export-connect-marketo.png" alt-text="Képernyőkép exportálása a Marketo kapcsolatához":::
 
-1. <span data-ttu-id="e0d6c-120">Az Exportálás konfigurálásához válassza a **Tovább** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-120">Select **Next** to configure the export.</span></span>
+1. <span data-ttu-id="1027e-120">Az Exportálás konfigurálásához válassza a **Tovább** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="1027e-120">Select **Next** to configure the export.</span></span>
 
-## <a name="configure-the-connector"></a><span data-ttu-id="e0d6c-121">Konfigurálja az összekötőt</span><span class="sxs-lookup"><span data-stu-id="e0d6c-121">Configure the connector</span></span>
+## <a name="configure-the-connector"></a><span data-ttu-id="1027e-121">Konfigurálja az összekötőt</span><span class="sxs-lookup"><span data-stu-id="1027e-121">Configure the connector</span></span>
 
-1. <span data-ttu-id="e0d6c-122">Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-122">In the **Data matching** section, in the **Email** field, select the field in your unified customer profile that represents a customer's email address.</span></span> 
+1. <span data-ttu-id="1027e-122">Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét.</span><span class="sxs-lookup"><span data-stu-id="1027e-122">In the **Data matching** section, in the **Email** field, select the field in your unified customer profile that represents a customer's email address.</span></span> 
 
-1. <span data-ttu-id="e0d6c-123">Alternatív lehetőségként exportálhatja az **Utónév**, **Vezetéknév**, **Város**, **Állam** és **Ország/régió** mezőket további mezőként személyre szabottabb e-mailek létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-123">Optionally, you can export **First name**, **Last name**, **City**, **State**, and **Country/Region**  as additional fields to create more personalized emails.</span></span> <span data-ttu-id="e0d6c-124">Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-124">Select **Add attribute** to map these fields.</span></span>
+1. <span data-ttu-id="1027e-123">Alternatív lehetőségként exportálhatja az **Utónév**, **Vezetéknév**, **Város**, **Állam** és **Ország/régió** mezőket további mezőként személyre szabottabb e-mailek létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="1027e-123">Optionally, you can export **First name**, **Last name**, **City**, **State**, and **Country/Region**  as additional fields to create more personalized emails.</span></span> <span data-ttu-id="1027e-124">Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.</span><span class="sxs-lookup"><span data-stu-id="1027e-124">Select **Add attribute** to map these fields.</span></span>
 
-1. <span data-ttu-id="e0d6c-125">Jelölje ki a szegmenseket, amelyeket exportálni szeretne.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-125">Select the segments you want to export.</span></span> <span data-ttu-id="e0d6c-126">Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Marketóba.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-126">You can export up to 1 million customer profiles in total to Marketo.</span></span>
+1. <span data-ttu-id="1027e-125">Jelölje ki a szegmenseket, amelyeket exportálni szeretne.</span><span class="sxs-lookup"><span data-stu-id="1027e-125">Select the segments you want to export.</span></span> <span data-ttu-id="1027e-126">Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Marketóba.</span><span class="sxs-lookup"><span data-stu-id="1027e-126">You can export up to 1 million customer profiles in total to Marketo.</span></span>
 
    :::image type="content" source="media/export-segment-marketo.png" alt-text="Marketóba exportálandó mezők és szegmensek kijelölése":::
 
-1. <span data-ttu-id="e0d6c-128">Válassza a **Mentés** parancsot.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-128">Select **Save**.</span></span>
+1. <span data-ttu-id="1027e-128">Válassza a **Mentés** parancsot.</span><span class="sxs-lookup"><span data-stu-id="1027e-128">Select **Save**.</span></span>
 
-## <a name="export-the-data"></a><span data-ttu-id="e0d6c-129">Az adatok exportálása</span><span class="sxs-lookup"><span data-stu-id="e0d6c-129">Export the data</span></span>
+## <a name="export-the-data"></a><span data-ttu-id="1027e-129">Az adatok exportálása</span><span class="sxs-lookup"><span data-stu-id="1027e-129">Export the data</span></span>
 
-<span data-ttu-id="e0d6c-130">[Igény szerint exportálhatja az adatot](export-destinations.md).</span><span class="sxs-lookup"><span data-stu-id="e0d6c-130">You can [export data on demand](export-destinations.md).</span></span> <span data-ttu-id="e0d6c-131">Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-131">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span> <span data-ttu-id="e0d6c-132">A Marketóban most már megtalálhatja a szegmenseket a [Marketo listában](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span><span class="sxs-lookup"><span data-stu-id="e0d6c-132">In Marketo, you can now find your segments under [Marketo lists](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span></span>
+<span data-ttu-id="1027e-130">[Igény szerint exportálhatja az adatot](export-destinations.md).</span><span class="sxs-lookup"><span data-stu-id="1027e-130">You can [export data on demand](export-destinations.md).</span></span> <span data-ttu-id="1027e-131">Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.</span><span class="sxs-lookup"><span data-stu-id="1027e-131">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span> <span data-ttu-id="1027e-132">A Marketóban most már megtalálhatja a szegmenseket a [Marketo listában](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span><span class="sxs-lookup"><span data-stu-id="1027e-132">In Marketo, you can now find your segments under [Marketo lists](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).</span></span>
 
-## <a name="known-limitations"></a><span data-ttu-id="e0d6c-133">Ismert korlátozások</span><span class="sxs-lookup"><span data-stu-id="e0d6c-133">Known limitations</span></span>
+## <a name="known-limitations"></a><span data-ttu-id="1027e-133">Ismert korlátozások</span><span class="sxs-lookup"><span data-stu-id="1027e-133">Known limitations</span></span>
 
-- <span data-ttu-id="e0d6c-134">Legfeljebb 1 000 000 profilt exportálhat egyszerre a Marketoba.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-134">Up to 1 million profiles per export to Marketo.</span></span>
-- <span data-ttu-id="e0d6c-135">A Marketoba való exportálás csak szegmensekre korlátozódik.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-135">Exporting to Marketo is limited to segments.</span></span>
-- <span data-ttu-id="e0d6c-136">Az összesen 1 000 000 profillal rendelkező szegmensek exportálása akár 3 óráig is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-136">Exporting segments with a total of 1 million profiles can take up to 3 hours.</span></span> 
-- <span data-ttu-id="e0d6c-137">A Marketoba exportálható profilok száma függ a Marketo szerződésről, és korlátozott.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-137">The number of profiles that you can export to Marketo is dependent and limited on your contract with Marketo.</span></span>
+- <span data-ttu-id="1027e-134">Legfeljebb 1 000 000 profilt exportálhat egyszerre a Marketoba.</span><span class="sxs-lookup"><span data-stu-id="1027e-134">Up to 1 million profiles per export to Marketo.</span></span>
+- <span data-ttu-id="1027e-135">A Marketoba való exportálás csak szegmensekre korlátozódik.</span><span class="sxs-lookup"><span data-stu-id="1027e-135">Exporting to Marketo is limited to segments.</span></span>
+- <span data-ttu-id="1027e-136">Az összesen 1 000 000 profillal rendelkező szegmensek exportálása akár 3 óráig is eltarthat.</span><span class="sxs-lookup"><span data-stu-id="1027e-136">Exporting segments with a total of 1 million profiles can take up to 3 hours.</span></span> 
+- <span data-ttu-id="1027e-137">A Marketoba exportálható profilok száma függ a Marketo szerződésről, és korlátozott.</span><span class="sxs-lookup"><span data-stu-id="1027e-137">The number of profiles that you can export to Marketo is dependent and limited on your contract with Marketo.</span></span>
 
-## <a name="data-privacy-and-compliance"></a><span data-ttu-id="e0d6c-138">Adatvédelem és megfelelőség</span><span class="sxs-lookup"><span data-stu-id="e0d6c-138">Data privacy and compliance</span></span>
+## <a name="data-privacy-and-compliance"></a><span data-ttu-id="1027e-138">Adatvédelem és megfelelőség</span><span class="sxs-lookup"><span data-stu-id="1027e-138">Data privacy and compliance</span></span>
 
-<span data-ttu-id="e0d6c-139">Amikor engedélyezi az Dynamics 365 Customer Insights szolgáltatást az adatok Marketoba való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-139">When you enable Dynamics 365 Customer Insights to transmit data to Marketo, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="e0d6c-140">A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy az Marketo megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-140">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that Marketo meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="e0d6c-141">További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="e0d6c-141">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
-<span data-ttu-id="e0d6c-142">A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.</span><span class="sxs-lookup"><span data-stu-id="e0d6c-142">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
+<span data-ttu-id="1027e-139">Amikor engedélyezi az Dynamics 365 Customer Insights szolgáltatást az adatok Marketoba való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat.</span><span class="sxs-lookup"><span data-stu-id="1027e-139">When you enable Dynamics 365 Customer Insights to transmit data to Marketo, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="1027e-140">A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy az Marketo megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek.</span><span class="sxs-lookup"><span data-stu-id="1027e-140">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that Marketo meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="1027e-141">További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="1027e-141">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
+<span data-ttu-id="1027e-142">A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.</span><span class="sxs-lookup"><span data-stu-id="1027e-142">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
