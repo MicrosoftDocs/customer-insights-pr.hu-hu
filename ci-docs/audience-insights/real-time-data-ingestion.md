@@ -2,19 +2,19 @@
 title: Valós idejű adatbetöltés és korlátozások.
 description: Általános információk a valós idejű képességekről a célközönséggel kapcsolatosan.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270283"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598572"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Valós idejű adatbetöltés (előzetes verzió)
 
@@ -54,7 +54,7 @@ A valós idejű API-k segítségével közzétehet egy új tevékenységet a for
 
 A valós idejű API-khoz két módon lehet kapcsolódni:
 
-- [közvetett módon](#connect-via-the-dynamics-365-customer-insights-connector), a [Dynamics 365 Customer Insights.összekötő](https://docs.microsoft.com/connectors/customerinsights/) használatával
+- [közvetett módon](#connect-via-the-dynamics-365-customer-insights-connector), a [Dynamics 365 Customer Insights.összekötő](/connectors/customerinsights/) használatával
 - [közvetlenül](#connect-directly-to-the-real-time-api), kóddal
 
 Mindkettőnél az alábbi előfeltételek egyaránt érvényesek:
@@ -66,13 +66,13 @@ Mindkettőnél az alábbi előfeltételek egyaránt érvényesek:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Csatlakozás a Dynamics 365 Customer Insights-összekötőn keresztül
 
-A valós idejű API képes betölteni adatokat egy dedikált Power Platform-összekötőből, a [Dynamics 365 Customer Insights-összekötőből](https://docs.microsoft.com/connectors/customerinsights/) anélkül, hogy írni és üzembe kell helyezni a kódot.    
-Az összekötő ugyanolyan valós idejű műveleteket hajthat végre, mint az API-t. A prémium összekötőkhöz érvényes licenccel kell rendelkezniük. További információkért lásd: [Power Apps és Power Automate licencelési GYIK](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+A valós idejű API képes betölteni adatokat egy dedikált Power Platform-összekötőből, a [Dynamics 365 Customer Insights-összekötőből](/connectors/customerinsights/) anélkül, hogy írni és üzembe kell helyezni a kódot.    
+Az összekötő ugyanolyan valós idejű műveleteket hajthat végre, mint az API-t. A prémium összekötőkhöz érvényes licenccel kell rendelkezniük. További információkért lásd: [Power Apps és Power Automate licencelési GYIK](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps és/vagy Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps és/vagy Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-A folyamatok létrehozásáról a [Power Automate-dokumentáció](https://docs.microsoft.com/power-automate/) tartalmaz további tudnivalókat.
+A folyamatok létrehozásáról a [Power Automate-dokumentáció](/power-automate/) tartalmaz további tudnivalókat.
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Közvetlen kapcsolódás a valós idejű API-hoz
 

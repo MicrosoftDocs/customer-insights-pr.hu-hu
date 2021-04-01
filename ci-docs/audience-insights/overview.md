@@ -2,19 +2,19 @@
 title: Célközönséggel kapcsolatos információk a Dynamics 365 Customer Insights alkalmazáshoz – áttekintés
 description: Célközönséggel kapcsolatos információk áttekintése a Dynamics 365 Customer Insights alkalmazáshoz.
 ms.date: 01/18/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5476998"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598633"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Célközönséggel kapcsolatos információk a Dynamics 365 Customer Insights alkalmazáshoz – áttekintés
 
@@ -25,7 +25,7 @@ A célközönség-információk segítségével mélyebben megértheti az ügyfe
 - **Adatsilók kiküszöbölése és az ügyféladatok egyesítése**
 
   - Az adatok egyszerű összekapcsolása és egységesítése – behozhatja a tranzakciós, megfigyelési és viselkedési adatokat a népszerű adatforrásokból az [előre elkészített csatlakozók használatával](data-sources.md).
-  - Az ügyféladatok intelligens átalakítása – építsen ki egyesített ügyfélprofilokat, amelyek megfelelnek a [Common Data Model](https://docs.microsoft.com/common-data-model/) szabványnak.. Az ügyfelek identitásának feloldása AI/ML-vezérelt ajánlásokkal.
+  - Az ügyféladatok intelligens átalakítása – építsen ki egyesített ügyfélprofilokat, amelyek megfelelnek a [Common Data Model](/common-data-model/) szabványnak.. Az ügyfelek identitásának feloldása AI/ML-vezérelt ajánlásokkal.
 
 - **Bővítés a Microsoft Graph megoldásban található célközönség intelligenciával**
 
@@ -42,7 +42,7 @@ A célközönség-információk segítségével mélyebben megértheti az ügyfe
 - **Adatelemzők / adminisztrátorok:**
 
   - Az összekötők gazdag gyűjteményéhez való hozzáférés az összes ügyféladat beolvasására.
-  - Az ügyféladatok egységesítésének és átalakításának képessége a [Common Data Model](https://docs.microsoft.com/common-data-model/) formátumba.
+  - Az ügyféladatok egységesítésének és átalakításának képessége a [Common Data Model](/common-data-model/) formátumba.
   - Bővítheti az ügyfélinformációkat a Microsoft Graph alkalmazásban található célközönség-intelligencia, mint a márkahűség és érdeklődés.
   - A „Kattintások kódolás nélkül” konfigurációs és hibakeresési élmény megkönnyíti a célközönség-információk konfigurálását és a lehetséges problémák azonosítását.
   - Az ügyfelek adatainak megtisztítása és egységesítése különböző forrásokból, AI-alapú ajánlásokkal.  
