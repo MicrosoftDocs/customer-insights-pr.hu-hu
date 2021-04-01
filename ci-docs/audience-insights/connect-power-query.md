@@ -2,23 +2,23 @@
 title: Adatok betöltése Power Query összekötőn keresztül
 description: Összekötők Power Query alapú adatforrásokhoz.
 ms.date: 09/29/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: b9a1b30e37c3792aa7bdfcfc177da9e8a32c324d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267772"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596916"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Csatlakozás Power Queryhoz adatforráshoz
 
-A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséhez. A legtöbb ilyen csatlakozót a támogatja Dynamics 365 Customer Insights. Power Query csatlakozón alapuló adatforrások hozzáadása általában a következő szakaszban leírt lépéseket követi. A használt csatlakozótól függően azonban eltérő információra van szükség. További információkért tekintse meg az egyes összekötők dokumentációját a [Power Query-összekötő referencia](https://docs.microsoft.com/power-query/connectors/).
+A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséhez. A legtöbb ilyen csatlakozót a támogatja Dynamics 365 Customer Insights. Power Query csatlakozón alapuló adatforrások hozzáadása általában a következő szakaszban leírt lépéseket követi. A használt csatlakozótól függően azonban eltérő információra van szükség. További információkért tekintse meg az egyes összekötők dokumentációját a [Power Query-összekötő referencia](/power-query/connectors/).
 
 ## <a name="create-a-new-data-source"></a>Új adatforrás létrehozása
 
@@ -44,7 +44,7 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
    > [!div class="mx-imgBorder"]
    > ![Lekérdezések szerkesztése párbeszédpanel](media/data-manager-configure-edit-queries.png "Lekérdezések szerkesztése párbeszédpanel")
 
-1. Át is alakíthatja adatait. Jelöljön ki egy módosítani vagy átalakítani kívánt entitást. Az átalakítások alkalmazásához használja a Power Query ablak beállításait. Minden átalakítás az **Alkalmazott lépések** területen jelenik meg. A Power Query számos előre elkészített átalakítási beállítást biztosít. További információ: [Power Query átalakítások](https://docs.microsoft.com/power-query/power-query-what-is-power-query#transformations).
+1. Át is alakíthatja adatait. Jelöljön ki egy módosítani vagy átalakítani kívánt entitást. Az átalakítások alkalmazásához használja a Power Query ablak beállításait. Minden átalakítás az **Alkalmazott lépések** területen jelenik meg. A Power Query számos előre elkészített átalakítási beállítást biztosít. További információ: [Power Query átalakítások](/power-query/power-query-what-is-power-query#transformations).
 
 1. A adatforráshoz további entitások hozzáadásához válassza az **Adatok beolvasása** elemet a **Lekérdezések szerkesztése** párbeszédpanelen.
 
@@ -59,7 +59,7 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
 
 ## <a name="available-power-query-data-sources"></a>Rendelkezésre álló Power Query-adatforrások
 
-Tekintse meg a [Power Query-összekötő referencia](https://docs.microsoft.com/power-query/connectors/) dokumentumot azon összekötők listájának megjelenítéséhez, amelyeket kiválaszthat adatok importálásához a Customer Insights alkalmazásba. 
+Tekintse meg a [Power Query-összekötő referencia](/power-query/connectors/) dokumentumot azon összekötők listájának megjelenítéséhez, amelyeket kiválaszthat adatok importálásához a Customer Insights alkalmazásba. 
 
 Azok az összekötők, amelyeknél a **Customer Insights (adatfolyamok)** oszlopában egy pipa látható érhetők el új adatforrások létrehozásához a Power Query-re építve. Egy adott csatlakozó dokumentációjának áttekintésével többet megtudhat az előfeltételekről, a korlátozásokról és egyéb részletekről.
 

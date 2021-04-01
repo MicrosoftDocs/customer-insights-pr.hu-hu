@@ -1,24 +1,24 @@
 ---
 title: A célközönség információk funkció támogatott nyelvei
 description: A nyelvi támogatás megismerése és konfigurálása.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268183"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595475"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>A célközönség információk funkció támogatott nyelvei
 
-Dynamics 365 Customer Insights a célközönség információk funkció számos nyelvet támogat. Ez a témakör felsorolja a rendelkezésre álló nyelveket, és támogatja a köztük való váltást, valamint áttekintést nyújt a tartalom fordításáról.
+A Dynamics 365 Customer Insights célközönség-információk számos nyelvre lefordítva vannak. Az alábbi lista a rendelkezésre álló nyelveket és a lefordított adatokra vonatkozó információkat tartalmazza. A nyelvi beállítások módosításával kapcsolatban további tudnivalókat is megismerhet. 
 
 ## <a name="languages"></a>Nyelvek
 
@@ -28,7 +28,7 @@ Dynamics 365 Customer Insights a célközönség információk funkció számos 
 | bolgár | български |
 | katalán | català |
 | kínai (egyszerűsített) | 中文 (简体) |
-| Kínai (hagyományos) | 中文 (繁體) |
+| kínai (hagyományos) | 中文 (繁體) |
 | horvát | hrvatski |
 | cseh | čeština |
 | dán | dansk |
@@ -42,22 +42,22 @@ Dynamics 365 Customer Insights a célközönség információk funkció számos 
 | görög | Ελληνικά |
 | hindi | हिंदी |
 | magyar | magyar |
-| indonéz | Bahasa Indonesia |
+| indonéz | Indonézia |
 | olasz | italiano |
 | japán | 日本語 |
-| kazah | Қазақ |
+| kazak | қазақ тілі |
 | koreai | 한국어 |
 | lett | latviešu |
 | litván | lietuvių |
-| maláj | Bahasa Melayu |
-| norvég (bokmål) | norsk (bokmål) |
+| maláj | Melayu |
+| norvég (bokmål) | norsk bokmål |
 | lengyel | polski |
-| portugál (brazíliai) | português |
-| portugál (portugáliai) | português |
+| portugál (Brazília) | português |
+| portugál (Portugália) | português |
 | román | română |
-| orosz | русский |
+| orosz | pусский |
 | szerb (cirill) | српски |
-| szerb (latin) | srpski |
+| szerb (latin betűs) | srpski |
 | szlovák | slovenčina |
 | szlovén | slovenski |
 | spanyol | español |

@@ -2,19 +2,19 @@
 title: Bővítés SFTP egyéni importálással
 description: Általános információk az SFTP egyéni importálási bővítésről.
 ms.date: 11/18/2020
-ms.reviewer: kishorem
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: jdahl
-ms.author: mhart
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f25dcc08d96d36507e47af0d7b184003ae095819
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: d9e095ef793cbd25415864f76a541dce68fafe47
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269609"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595858"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Felhasználói profilok bővítése egyéni adatokkal (előzetes verzió)
 
@@ -50,7 +50,7 @@ Az SFTP egyéni importálás konfigurálásához a következő előfeltételekne
 
 ## <a name="defining-field-mappings"></a>Mezőleképezések meghatározása 
 
-Az SFTP-kiszolgálón importálandó fájlt tartalmazó könyvtárnak tartalmaznia kell egy *model.json* fájlt is. Ez a fájl határozza meg az adatok importálásához használandó sémát. A sémának a [Common Data Model](https://docs.microsoft.com/common-data-model/) használatával kell megadnia a mező leképezését. A model.json fájl egyszerű példája a következőképpen néz ki:
+Az SFTP-kiszolgálón importálandó fájlt tartalmazó könyvtárnak tartalmaznia kell egy *model.json* fájlt is. Ez a fájl határozza meg az adatok importálásához használandó sémát. A sémának a [Common Data Model](/common-data-model/) használatával kell megadnia a mező leképezését. A model.json fájl egyszerű példája a következőképpen néz ki:
 
 ```
 {

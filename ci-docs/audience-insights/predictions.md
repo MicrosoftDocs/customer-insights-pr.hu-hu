@@ -5,16 +5,16 @@ ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: zacook
+author: zacookmsft
+ms.author: zacook
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 577232c7e901dfd54a195c3e9cfac5d1f0f866e6
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268275"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595904"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Részleges adatok kiegészítése előrejelzésekkel
 
@@ -31,7 +31,7 @@ Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzet
 
 Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskodjon arról, hogy a következő előfeltételek teljesüljenek:
 
-1. A szervezetnél egy példányt [be kell állítani a Common Data Service-ben](https://docs.microsoft.com/ai-builder/build-model#prerequisites), és ugyanabban a szervezetben, mint a Customer Insights.
+1. A szervezetnél egy példányt [be kell állítani a Common Data Service-ben](/ai-builder/build-model#prerequisites), és ugyanabban a szervezetben, mint a Customer Insights.
 
 2. A környezet a Common Data Service példányához van csatolva.
 
@@ -120,7 +120,7 @@ Előrejelzés létrehozása után testreszabhatja az AI Builder modelljét, amel
 
 4. Válassza a **Testreszabás az AI Builder segítségével** lehetőséget.
 
-5. Frissítse a modellt az AI Builder alkalmazásban. [További információ az AI Builderben található modellek kezeléséről](https://docs.microsoft.com/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Frissítse a modellt az AI Builder alkalmazásban. [További információ az AI Builderben található modellek kezeléséről](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Az előrejelzés következő futtatása a létrehozott frissített modellt fogja használni.
 

@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270207"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598342"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio (klasszikus) modelleken alapuló modellek használata
 
@@ -37,7 +37,7 @@ Első lépésként létre kell hoznia egy munkaterületet, és meg kell nyitnia 
 
 1. Keresse meg a **Machine Learning Studio munkaterületet**, és válassza a **Létrehozás** lehetőséget.
 
-1. Adja meg a [munkaterület létrehozásához](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace) szükséges adatokat. Válassza ki a **Webszolgáltatási csomag tarifacsomag** az importálni kívánt adatok mennyiségétől függően. A legjobb teljesítmény érdekében válassza ki a földrajzilag legközelebb eső **Helyet**.
+1. Adja meg a [munkaterület létrehozásához](/azure/machine-learning/studio/create-workspace) szükséges adatokat. Válassza ki a **Webszolgáltatási csomag tarifacsomag** az importálni kívánt adatok mennyiségétől függően. A legjobb teljesítmény érdekében válassza ki a földrajzilag legközelebb eső **Helyet**.
 
 1. Az erőforrás létrehozása után megjelenik a Machine Learning Studio munkaterület irányítópultja. Válassza a **Machine Learning Studio indítása** lehetőséget.
 
@@ -65,7 +65,7 @@ Ezután létrehozhat egy új kísérletet, vagy importálhat egy meglévő kís�
 
    ![Prediktív webszolgáltatás beállítása](media/predictive-webservice-control.png)
 
-1. Ha a prediktív webszolgáltatási kísérlet sikeres, akkor az automatikus ütemezéshez üzembe helyezheti azt. Ha azt szeretné, hogy a webszolgáltatás működjön együtt a Customer Insights alkalmazással, válassza **Webszolgáltatás központi telepítése** > **Webszolgáltatás [új] előzetes verzió központi telepítése** lehetőséget. [További információk webszolgáltatás telepítéséről](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
+1. Ha a prediktív webszolgáltatási kísérlet sikeres, akkor az automatikus ütemezéshez üzembe helyezheti azt. Ha azt szeretné, hogy a webszolgáltatás működjön együtt a Customer Insights alkalmazással, válassza **Webszolgáltatás központi telepítése** > **Webszolgáltatás [új] előzetes verzió központi telepítése** lehetőséget. [További információk webszolgáltatás telepítéséről](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
    ![Prediktív webszolgáltatás telepítése](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ A következő kép bemutatja a modell tanítási és értékelési folyamatát a
 
 ![Az Azure Machine Learning Studio lemorzsolódási modellje](media/azure-machine-learning-model.png)
 
-Mi is alkalmazzuk a **Permutációs tulajdonság fontossága** technikát, ami fontos szempontja a modell optimalizálása. A beépített modellek nem tudnak betekintést kapni a végső előrejelzés adott jellemzőire gyakorolt hatásra. A jellemzők fontossága a kalkulátor egyéni algoritmus segítségével számítja ki az egyes jellemzők hatását egy adott modell kimenetelére. A jellemző fontossága a +1 és -1 közötti normalizált. A negatív hatás azt jelenti, hogy a kapcsolódó jellemző nem intuitív módon befolyásolja az eredményt, és el kell távolítani a modellből. A pozitív hatás azt jelzi, hogy a funkció nagy mértékben hozzájárul a előrejelzéshez. Ezek az értékek nem korrelációs együtthatók, mivel ezek eltérő mérőszámok. További információkért lásd:[Permutációs tulajdonság fontossága](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Mi is alkalmazzuk a **Permutációs tulajdonság fontossága** technikát, ami fontos szempontja a modell optimalizálása. A beépített modellek nem tudnak betekintést kapni a végső előrejelzés adott jellemzőire gyakorolt hatásra. A jellemzők fontossága a kalkulátor egyéni algoritmus segítségével számítja ki az egyes jellemzők hatását egy adott modell kimenetelére. A jellemző fontossága a +1 és -1 közötti normalizált. A negatív hatás azt jelenti, hogy a kapcsolódó jellemző nem intuitív módon befolyásolja az eredményt, és el kell távolítani a modellből. A pozitív hatás azt jelzi, hogy a funkció nagy mértékben hozzájárul a előrejelzéshez. Ezek az értékek nem korrelációs együtthatók, mivel ezek eltérő mérőszámok. További információkért lásd:[Permutációs tulajdonság fontossága](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 A teljes [lemorzsolódási kísérlet az Azure AI Gallery-ben érhető el](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ A teljes [termékajánlási kísérlet elérhető az Azure AI Gallery-ben.](http
 
 ## <a name="integrate-custom-models"></a>Egyéni modellek integrálása
 
-Ahhoz, hogy ezeket az előrejelzéseket használni lehessen a Customer Insights alkalmazásban, az ügyfelek azonosítói mellett **exportálnia** kell az előrejelzéseket is. [Exportálja őket ugyanabba az Azure Blob Storage helyre](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs), ahova a forrásadatokat exportálta. A prediktív webszolgáltatás rendszeresen futtatható, és a pontszámokat frissítheti.
+Ahhoz, hogy ezeket az előrejelzéseket használni lehessen a Customer Insights alkalmazásban, az ügyfelek azonosítói mellett **exportálnia** kell az előrejelzéseket is. [Exportálja őket ugyanabba az Azure Blob Storage helyre](/azure/storage/common/storage-import-export-data-from-blobs), ahova a forrásadatokat exportálta. A prediktív webszolgáltatás rendszeresen futtatható, és a pontszámokat frissítheti.
 
 Az egyéni modell által létrehozott adatok segítségével tovább bővítheti az ügyféladatokat. További tudnivalókat az [Egyéni gépi tanulás modellek](custom-models.md) című rész tartalmaz.
 

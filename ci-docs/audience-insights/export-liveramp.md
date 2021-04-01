@@ -2,19 +2,19 @@
 title: LiveRamp összekötő
 description: Megismerkedhet vele, hogyan exportálhatja az adatokat a LiveRamp megoldásba.
 ms.date: 12/02/2020
-ms.reviewer: kishorem
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: kishorem-ms
+ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 64d781f52e8124fc3e83a7b84f468830c5249cfd
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 6ef4388b0e8ba8bc5866807765d8a872d41c9c14
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270161"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597560"
 ---
 # <a name="liverampreg-connector-preview"></a>LiveRamp&reg; összekötő (előzetes verzió)
 

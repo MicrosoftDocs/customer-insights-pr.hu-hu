@@ -2,19 +2,19 @@
 title: Az Előfizetés-lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálhassa a mezőn kívüli előfizetés lemorzsolódási modellt.
 ms.date: 11/19/2020
-ms.reviewer: digranad
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: diegogranados117
+ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269839"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595521"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Előfizetés-lemorzsolódási előrejelzési (előnézet) példamutató
 

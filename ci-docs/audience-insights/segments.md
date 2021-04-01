@@ -1,20 +1,20 @@
 ---
 title: Szegmensek létrehozása és kezelése
 description: Hozzon létre ügyfelekből álló szegmenseket, és csoportosítsa őket különböző attribútumok alapján.
-ms.date: 10/15/2020
+ms.date: 03/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: jimsonc
+author: JimsonChalissery
+ms.author: jimsonc
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a1308f07ac3ba7d4b09931bab3d19b6dfaf479ee
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270359"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597055"
 ---
 # <a name="create-and-manage-segments"></a>Szegmensek létrehozása és kezelése
 
@@ -35,19 +35,19 @@ A szegmensek kezelése a **Szegmensek** oldalon történik.
 
 1. A célközönség információkban nyissa meg a **Szegmensek** oldalt.
 
-2. Válassza az **új** > **üres szegmens** lehetőséget.
+1. Válassza az **új** > **üres szegmens** lehetőséget.
 
-3. Az **Új szegmens** ablaktáblában válasszon egy szegmenstípust, és adja meg a **Név** értékét.
+1. Az **Új szegmens** ablaktáblában válasszon egy szegmenstípust, és adja meg a **Név** értékét.
 
    Tetszés szerint megadhat egy megjelenítendő nevet és egy leírást is, amely segít a szegmens azonosításában.
 
-4. Válassza a **Következő** elemet a **Szegmensépítő** oldalára való eljutáshoz, ahol megadhat egy csoportot. A csoport az ügyfelek halmaza.
+1. Válassza a **Következő** elemet a **Szegmensépítő** oldalára való eljutáshoz, ahol megadhat egy csoportot. A csoport az ügyfelek halmaza.
 
-5. Válassza ki az entitást, amelyben szerepel az attribútum, amely alapján szegmentálni szeretne.
+1. Válassza ki az entitást, amelyben szerepel az attribútum, amely alapján szegmentálni szeretne.
 
-6. Válassza ki a szegmenshez tartozó attribútumot. Ez az attribútum a következő négy értéktípus egyike lehet: numerikus, szöveges, dátum vagy logikai.
+1. Válassza ki a szegmenshez tartozó attribútumot. Ez az attribútum a következő négy értéktípus egyike lehet: numerikus, szöveges, dátum vagy logikai.
 
-7. Válasszon egy operátort, és adja meg a kijelölt attribútum értékét.
+1. Válasszon egy operátort, és adja meg a kijelölt attribútum értékét.
 
    > [!div class="mx-imgBorder"]
    > ![Egyéni csoportszűrő](media/customer-group-numbers.png "Ügyfélcsoportszűrő")
@@ -64,9 +64,14 @@ A szegmensek kezelése a **Szegmensek** oldalon történik.
    > [!div class="mx-imgBorder"]
    > ![Kapcsolati útvonal a szegmens létrehozása során](media/segments-multiple-relationships.png "Kapcsolati útvonal a szegmens létrehozása során")
 
-9. Válassza a **Mentés** lehetőséget a szegmens mentéséhez. A rendszer menti a szegmenst és feldolgozza, ha az összes követelményt ellenőrizte. Ellenkező esetben vázlatként menti a program.
+1. A szegmensek alapértelmezés szerint létrehoznak egy kimeneti entitást, amely a definiált szűrőknek megfelelő ügyfélprofilok összes attribútumát tartalmazza. Ha egy szegmens nem az *Ügyfél* entitáson alapul, akkor ezekből az entitásokból további attribútumokat adhat a kimeneti entitáshoz. A **Projektattribútumok** kiválasztásával kiválaszthatja a kimeneti entitáshoz hozzáfűzni kívánt attribútumokat.  
 
-10. A **Szegmensek** oldalra a **Vissza a szegmensekhez** elemre kattintva léphet vissza.
+   
+   Példa: A szegmens egy olyan entitáson alapul, amely az *Ügyfél* entitáshoz kapcsolódó ügyféltevékenységi adatokat tartalmaz. A szegmens az utóbbi 60 napban a súgónak telefonáló összes ügyfelet keresi. Megadhatja, hogy a hívás időtartamát és a hívások számát hozzáfűzi a kimeneti entitásban található összes egyező ügyfélrekordhoz. Ez az információ hasznosnak bizonyulhat, ha a gyakran telefonáló ügyfeleknek online súgócikkekre irányuló hasznos hivatkozásokat és a gyakori kérdések hivatkozását szeretné elküldeni.
+
+1. Válassza a **Mentés** lehetőséget a szegmens mentéséhez. A rendszer menti a szegmenst és feldolgozza, ha az összes követelményt ellenőrizte. Ellenkező esetben vázlatként menti a program.
+
+1. A **Szegmensek** oldalra a **Vissza a szegmensekhez** elemre kattintva léphet vissza.
 
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
@@ -85,6 +90,7 @@ Szegmens kiválasztása esetén a következő művelet használható:
 
 - **Megtekintés** a szegmens részleteinek, köztük a tagszám trendjének megtekintése és a szegmens tagjainak előnézete.
 - **Szerkesztés** a szegmens szerkesztése a tulajdonságainak módosításához.
+- **Duplikált elem létrehozása** a szegmensről. Megadhatja, hogy azonnal módosítja-e a tulajdonságait, vagy egyszerűen csak menti a duplikált példányt.
 - **Frissítés** a szegmens frissítése a legfrissebb adatok felvételéhez.
 - Szegmens **Aktiválása** vagy **inaktiválása**. A szegmensek két lehetséges állapottal rendelkeznek – aktívak vagy inaktívak. A szegmensek szerkesztésekor hasznosnak bizonyulnak ezek az állapotok. Inaktív szegmensek esetén a szegmens definíciója létezik, de még nem tartalmaz ügyfeleket. A szegmens aktiválásakor az állapota az "inaktív" értékről "aktív" állapotra változik, és a szegmens meghatározásnak megfelelő ügyfeleket keresi meg. Ha egy [ütemezett frissítés](system.md#schedule-tab) be van állítva, az inaktív szegmensek **állapota** **kihagyva** állapotú , jelezve, hogy a frissítést nem is kísérelte meg. Inaktív szegmens aktiválásakor a rendszer frissíti, és bekerül az ütemezett frissítésekbe.
   Másik lehetőségként használhatja **Ütemezés később** funkcióit az **Aktiválás/inaktiválás**, ahol megadhat egy adott szegmens aktiválására és inaktiválására vonatkozó jövőbeli dátumot és időpontot.

@@ -2,19 +2,19 @@
 title: Ügyfélprofilok keresése és szűrése
 description: Gyorsan megtalálhatja az egyesített ügyfelek profiljaira vonatkozó információkat, és szűrhet a megadott attribútumokra.
 ms.date: 01/19/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d675738c43cbdb5f9b478d53d6124db38ba3004d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: b6cc0ad1a47a6c00e3bf220271f42870fc53621b
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270069"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597146"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Felhasználói profilok: Keresés & szűrőindex
 

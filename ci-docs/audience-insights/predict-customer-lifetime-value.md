@@ -2,19 +2,19 @@
 title: Ügyfélélettartam érték (CLV) előrejelzése
 description: Az aktív ügyfelek jövőbeli bevételi lehetőségeinek előrejelzése a jövőre vonatkozóan.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268597"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595811"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Ügyfélélettartam-érték (CLV) előrejelzése (előzetes verzió)
 
@@ -194,11 +194,11 @@ Az eredményoldalon lévő adatok három fő részben jelennek meg.
   
   - **A nagy értékű ügyfelek előrejelzésének sikerességi aránya**
 
-  Megtekintheti a különbséget a nagy értékű ügyfelek előrejelzését az az AI modell használatával alapmodellhez képest. A 84%-os sikeresség például azt jelenti, hogy a képzési adatokban lévő értékes ügyfelekből az AI-modellnek sikerült pontosan rögzítenie a 84%-ot. Ezután összehasonlítjuk ezt az alapmodell sikerességi arányával a relatív változás jelentéséhez. Ez az érték egy osztályzatot rendel a modellhez.
+    Megtekintheti a különbséget a nagy értékű ügyfelek előrejelzését az az AI modell használatával alapmodellhez képest. A 84%-os sikeresség például azt jelenti, hogy a képzési adatokban lévő értékes ügyfelekből az AI-modellnek sikerült pontosan rögzítenie a 84%-ot. Ezután összehasonlítjuk ezt az alapmodell sikerességi arányával a relatív változás jelentéséhez. Ez az érték egy osztályzatot rendel a modellhez.
 
   - **Hibamutatók**
     
-  Egy másik mérőszám lehetővé teszi a modell általános teljesítményének áttekintését a jövőbeli értékek előrejelzésének hibái szempontjából. A hiba felmérésére a gyök átlagos négyezetes eltérés (RMSE) mérőszámot használjuk. Az RMSE egy szabványos módja annak, hogy lemérje egy modell hibáját a kvantitatív adatok előrejelzésében. Összehasonlítják az AI modell RMSE-értékét az alapmodell RMSE-értékével, és a relatív különbség lesz jelentve.
+    Egy másik mérőszám lehetővé teszi a modell általános teljesítményének áttekintését a jövőbeli értékek előrejelzésének hibái szempontjából. A hiba felmérésére a gyök átlagos négyezetes eltérés (RMSE) mérőszámot használjuk. Az RMSE egy szabványos módja annak, hogy lemérje egy modell hibáját a kvantitatív adatok előrejelzésében. Összehasonlítják az AI modell RMSE-értékét az alapmodell RMSE-értékével, és a relatív különbség lesz jelentve.
 
   Az AI modell előnyben részesíti ad az ügyfeleknek a vállalat számára behozott értéknek megfelelő pontos rangsorolásában. Az utolsó modellminőség származtatáshoz tehát csak a nagy értékű ügyfeleket jóslásának sikerességi aránya használható. Az RMSE mérőszám érzékeny a kiesőkre. Olyan helyzetekben, amikor az ügyfelek kis hányadánál nagyon magas a vásárlási érték, előfordulhat, hogy az általános RMSE metrika nem ad teljes képet a modell teljesítményével kapcsolatosan.   
 

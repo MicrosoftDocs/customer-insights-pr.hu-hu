@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267909"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597422"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Használjon Azure Machine Learning alapú modelleket
 
@@ -29,9 +29,9 @@ A Dynamics 365 Customer Insights egyesített adatok a forrása a gépi tanulás 
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Az Azure Machine Learning munkaterület beállítása
 
-1. További tudnivalókért lásd: [Azure Machine Learning munkaterület létrehozása](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) a munkaterület létrehozásához használt különböző beállításokhoz. A legjobb teljesítmény érdekében hozza létre a munkaterületet egy Azure-régióban, amely földrajzilag legközelebb áll a Customer Insights környezetéhez.
+1. További tudnivalókért lásd: [Azure Machine Learning munkaterület létrehozása](/azure/machine-learning/concept-workspace#-create-a-workspace) a munkaterület létrehozásához használt különböző beállításokhoz. A legjobb teljesítmény érdekében hozza létre a munkaterületet egy Azure-régióban, amely földrajzilag legközelebb áll a Customer Insights környezetéhez.
 
-1. Nyissa meg a munkaterületet az [Azure Machine Learning Studio](https://ml.azure.com/) segítségével. A munkaterületre többféle [módon léphet kapcsolatba](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
+1. Nyissa meg a munkaterületet az [Azure Machine Learning Studio](https://ml.azure.com/) segítségével. A munkaterületre többféle [módon léphet kapcsolatba](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Az Azure Machine Learning tervező használata
 
@@ -39,13 +39,13 @@ Az Azure Machine Learning tervező vizuális vásznat biztosít, ahol húzással
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Az Azure Machine Learning SDK használata
 
-Az adatszakértők és az AI-fejlesztők az [Azure Machine Learning SDK-t](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) használják a gépi tanulási munkafolyamatok létrehozásához. Jelenleg az SDK segítségével betanított modellek nem integrálhatók közvetlenül a Customer Insights szolgáltatáshoz. A Customer Insights integrációhoz az adott modellt elfoglaló kötegelt származtatási folyamata.
+Az adatszakértők és az AI-fejlesztők az [Azure Machine Learning SDK-t](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) használják a gépi tanulási munkafolyamatok létrehozásához. Jelenleg az SDK segítségével betanított modellek nem integrálhatók közvetlenül a Customer Insights szolgáltatáshoz. A Customer Insights integrációhoz az adott modellt elfoglaló kötegelt származtatási folyamata.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>A kötegelt folyamat követelményei a Customer Insights való integrálásra
 
 ### <a name="dataset-configuration"></a>Adathalmaz konfigurálása
 
-Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Customer Insights alapján a rendszer áttekintse a gyártási folyamatba. Ezeket az adathalmazokat regisztrálni kell a munkaterületen. Jelenleg [a táblázatos adathalmazokat](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset) csak .csv formátumban támogatjuk. Az entitásadatoknak megfelelő adathalmazokat a folyamatparaméterként kell megadni.
+Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Customer Insights alapján a rendszer áttekintse a gyártási folyamatba. Ezeket az adathalmazokat regisztrálni kell a munkaterületen. Jelenleg [a táblázatos adathalmazokat](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) csak .csv formátumban támogatjuk. Az entitásadatoknak megfelelő adathalmazokat a folyamatparaméterként kell megadni.
    
 * Az adathalmaz paraméterei a tervezőben
    
@@ -76,7 +76,7 @@ Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Custome
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Folyamatadatok importálása a Customer Insightsba
 
-* A tervező biztosítja az [exportálási adatmodult](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data), amely lehetővé teszi a folyamat kimenetének exportálását az Azure Storage rendszerbe. Jelenleg a modulnak az **Azure Blob Storage** adattár típust kell használnia, és paraméterré kell alakítani az **adattár** és a relatív **elérési út** elemeket. A Customer Insights mindkét paramétert felülbírálja a folyamat végrehajtása során a termékhez elérhető adattár és elérési út értékével.
+* A tervező biztosítja az [exportálási adatmodult](/azure/machine-learning/algorithm-module-reference/export-data), amely lehetővé teszi a folyamat kimenetének exportálását az Azure Storage rendszerbe. Jelenleg a modulnak az **Azure Blob Storage** adattár típust kell használnia, és paraméterré kell alakítani az **adattár** és a relatív **elérési út** elemeket. A Customer Insights mindkét paramétert felülbírálja a folyamat végrehajtása során a termékhez elérhető adattár és elérési út értékével.
    > [!div class="mx-imgBorder"]
    > ![Adatmodell-konfiguráció exportálása](media/intelligence-designer-importdata.png "Adatmodell-konfiguráció exportálása")
    

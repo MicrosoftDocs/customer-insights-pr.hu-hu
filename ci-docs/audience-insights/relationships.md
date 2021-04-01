@@ -2,19 +2,19 @@
 title: Az entitások és entitásútvonalak közti kapcsolatok.
 description: Kapcsolatok létrehozása és kezelése a több adatforrásból származó entitások között.
 ms.date: 04/14/2020
-ms.reviewer: mukeshpo
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: c25bfcb8e2a8223498dd1a5e8cfb3712a40ab85e
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269881"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595215"
 ---
 # <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
 

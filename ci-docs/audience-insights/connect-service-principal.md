@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267725"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596502"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Csatlakozás az Azure Data Lake Storage Gen2 fiókjához az Azure fő szolgáltatás célözönség információk funkcióján keresztül
 
@@ -23,7 +23,7 @@ Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlá
 Az egyszerű szolgáltatásnév használatával biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrásként](connect-common-data-model.md) vagy [létrehozhat egy új környezetet, vagy frissíthet egy meglévőt](manage-environments.md#create-an-environment-in-an-existing-organization).
 
 > [!IMPORTANT]
-> - A szolgáltatást használni kívánó Azure Data Lake Gen2 tárfióban [engedélyeznie kell hierarchikus a névterületet (HNS)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - A szolgáltatást használni kívánó Azure Data Lake Gen2 tárfióban [engedélyeznie kell hierarchikus a névterületet (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
 > - Az egyszerű szolgáltatásnév létrehozásához rendszergazdai előfizetéssel kell rendelkezni az Azure-előfizetéshez.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Azure egyszerű szolgáltatásnév létrehozása célközönség-információkhoz
@@ -48,7 +48,7 @@ Mielőtt új egyszerű szolgáltatásnevet hozna létre célközönség-informá
 
 ### <a name="create-a-new-service-principal"></a>Új egyszerű szolgáltatásnév létrehozása
 
-1. Telepítse az **Azure Active Directory PowerShell Graphhoz** legújabb verzióját. További információkért lásd: [Azure Active Directory PowerShell telepítése a graphhoz](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Telepítse az **Azure Active Directory PowerShell Graphhoz** legújabb verzióját. További információkért lásd: [Azure Active Directory PowerShell telepítése a graphhoz](/powershell/azure/active-directory/install-adv2).
    - A számítógépen válassza ki a Windows billentyűt a billentyűzeten, és keresse meg a **Windows PowerShell** programot, és **Futtatás rendszergazdaként** lehetőséget.
    
    - A megnyíló PowerShell ablakában adja meg az `Install-Module AzureAD` értéket.

@@ -2,19 +2,19 @@
 title: Customer Insights adatok exportálása a DotDigitalbe
 description: Megismerheti, hogyan konfigurálható a kapcsolat a DotDigitallal.
 ms.date: 11/14/2020
-ms.reviewer: philk
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: phkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 573a22e24f84c65fc4d21faf823cace801cc7ea3
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 51a28bdf0de34f0555d8ad7e3d13b2ef8911d417
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269103"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598020"
 ---
 # <a name="connector-for-dotdigital-preview"></a>A DotDigital összekötője (előzetes verzió)
 
