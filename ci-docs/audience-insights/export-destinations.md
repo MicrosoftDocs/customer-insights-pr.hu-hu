@@ -1,7 +1,7 @@
 ---
-title: Exportálási célhelyek
-description: Adatok exportálása és az exportálási célhelyek kezelése.
-ms.date: 07/21/2020
+title: Adatok exportálása a Customer Insightsból
+description: Exportálások kezelése az adatok megosztásához.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596088"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896146"
 ---
-# <a name="export-destinations-preview-overview"></a>Exportálási célhelyek (előzetes verzió) áttekintése
+# <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
-Az **Exportálási célhelyek** lap megjeleníti az összes olyan helyet, amelyet beállított az adatok exportálási céljának. Az exportáláshoz új célhelyeket is hozzáadhat. Emellett a jelenleg elérhető exportálási lehetőségeket is mutatja. Gyors áttekintést, leírást kaphat, és megtudhatja, mit tehet az egyes bővíthetőség-beállításokkal. Egységesített profilok, intézkedések és szegmensek exportálása a vállalat szempontjából releváns támogatott alkalmazásokhoz.
+Az **Exportálások** lap megjeleníti az összes konfigurált exportálást. Az exportálások meghatározott adatokat osztanak meg különböző alkalmazásokkal. Ezek tartalmazhatnak ügyfélprofilokat vagy entitásokat, sémákat és leképezési részleteket. Mindegyik exportáláshoz szükség van egy [rendszergazda kapcsolatra, beállításra, hogy kezelhesse a hitelesítést és a hozzáférést](connections.md).
 
-Válassza a **Felügyelet** > **Exportálási célhelyek** lehetőséget a következő bővíthetőségi lehetőségek megkereséséhez:
+> [!NOTE]
+> 2021 márciusáig az exportálásáok automatikusan létrehoztak egy kapcsolatot a megfelelő szolgáltatáshoz. Az exportálásokhoz már szükség van [egy rendszergazda által létrehozott és megosztott kapcsolatra](connections.md) még mielőtt létrehoznák őket.
 
-- [Adobe Campaign Standard](export-adobe-campaign-standard.md)
-- [Adobe Experience Platform](export-adobe-experience-platform.md)
-- [AdRoll](export-adroll.md)
-- [Autopilot](export-autopilot.md)
-- [Azure Blob Storage](export-azure-blob-storage.md)
-- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
-- [Microsoft Teams robot](export-teams-bot.md)
-- [Customer Insights API](apis.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 Customer Service (Ügyfélkártya bővítmény)](customer-card-add-in.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Dynamics 365 Sales](export-dynamics365-sales.md)
-- [Dynamics 365 Értékesítési központ (Ügyfélkártya bővítmény)](customer-card-add-in.md)
-- [Facebook hirdetéskezelő](export-facebook.md)
-- [Google Ads](export-google-ads.md)
-- [LiveRamp&reg;](export-liveramp.md)
-- [Mailchimp](export-mailchimp.md)
-- [Marketo](export-marketo.md)
-- [Power Automate](export-power-automate.md)
-- [Power Apps](export-power-apps.md)
-- [Power BI](export-power-bi.md)
-- [SendGrid](export-sendgrid.md)
-- [SFTP](export-sftp.md)
+Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások** lehetőségre. Minden felhasználói szerepkörrel rendelkező megtekintheti a konfigurált exportálásokat. A parancssávban a keresési mező segítségével keresse meg az exportálás nevét, a kapcsolat nevét, vagy a kapcsolat típusát.
 
-## <a name="add-a-new-export-destination"></a>Új exportálási cél hozzáadása
+## <a name="set-up-a-new-export"></a>Új exportálás beállítása
 
-Az exportálási célhelyek hozzáadásához [rendszergazdai jogosultságokkal kell rendelkeznie](permissions.md). Ha Microsoft-szolgáltatásokba exportál, akkor feltételezzük, hogy mindkét szolgáltatás ugyanabban a szervezetben van.
+Az exportálás beállításához vagy szerkesztéséhez elérhető kapcsolatokra van szüksége. A kapcsolatok a [felhasználói szerepkörtől](permissions.md) függnek:
+- A rendszergazdák minden kapcsolathoz rendelkeznek hozzáféréssel. Az exportálás beállításakor új kapcsolatokat is létrehozhatnak.
+- A közreműködő adott kapcsolatokhoz férhetnek hozzá. Ezek a rendszergazdáktól függnek, a kapcsolatok konfigurálásához és megosztásához. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- A megtekintők csak a meglévő exportálásokat tekinthetik meg, létrehozni azonban nem jogosultak.
 
-1. Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Váltson a **Saját exportálási célhelyek** lapra.
+1. Új exportálási cél létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
 
-1. Válassza a **Célhely hozzáadása** lehetőséget új célhely létrehozásához.
+1. Az **Exportálás beállítása** ablaktáblában válassza ki a használni kívánt kapcsolatot. A [Kapcsolatokat](connections.md) a rendszergazdák kezelik. 
 
-1. A **Célhely hozzáadása** ablaktáblában válassza ki az exportálási cél **Típusát** a legördülő listában.
+1. Adja meg a szükséges adatokat, majd az exportálás létrehozásához válassza a **Mentés** lehetőséget.
 
-1. Adja meg a szükséges adatokat, és válassza a **Következő** lehetőséget az exportálási cél létrehozásához.
+### <a name="edit-an-export"></a>Egy exportálás szerkesztése
 
-A **Beállítás** lehetőséget is választhatja egy mozaikon a **Felderítés** lapon.
+1. Jelölje ki a szerkeszteni kívánt exportálási célhely függőleges három pontját.
 
-## <a name="view-export-destinations"></a>Exportálási célhely megtekintése
+1. Válassza a legördülő menü **Szerkesztés** lehetőséget.
 
-Az exportálási célhelyek létrehozása után ezeket egy táblázatban találja a **Saját exportálási célhelyek** lapon. Ennek a táblának három oszlopa van:
+1. Módosítsa a frissíteni kívánt értékeket, majd válassza a **Mentés** lehetőséget.
 
-- **mMegjelenítendő név**: A cél létrehozásakor megadott név.
-- **Típus**: A cél létrehozásakor beállított exportálási célhely típus.
-- **Létrehozva**: A célhely létrehozásának dátuma.
+## <a name="view-exports-and-export-details"></a>Exportálás és exportálás részleteinek megtekintése
 
-## <a name="edit-an-export-destination"></a>Exportálási cél szerkesztése
+Az exportálási célhelyek a létrehozása után az **Adatok** > **Exportálások** listán jelennek meg. Minden felhasználó láthatja, hogy mely adatok lettek megosztva, és hogy milyen állapotúak.
 
-1. Jelölje ki a szerkeszteni kívánt Exportálási célhely függőleges három pontját.
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-   > [!div class="mx-imgBorder"]
-   > ![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")
+1. A szerkesztési jogosultsággal nem rendelkező felhasználók a **Szerkesztés** helyett a **Megtekintés** lehetőséget választhatják az exportálás részleteinek megtekintéséhez.
 
-1. A legördülő menüben kattintson a **Szerkesztés** parancsra.
+1. Ez az oldalpanel mutatja az exportálás beállítását. Az értékek a szerkesztési jogosultságok nélkül nem módosíthatók. Az exportálások lapra való visszatéréshez válassza a **Bezárás** lehetőséget.
 
-1. Módosítsa a frissítést igénylő értékeket, és válassza a **Mentés** lehetőséget.
+## <a name="run-exports-on-demand"></a>Exportálások futtatása igény szerint
 
-## <a name="export-data-on-demand"></a>Adatok igény szerinti exportálása
+Az exportálás konfigurálása után az összes [ütemezett frissítéssel](system.md#schedule-tab) futni fog, amíg van működő kapcsolata.
 
-Az exportálási célhely összekötőjének konfigurálása után az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt megtörténik.
+Ütemezett frissítésre való várakozás nélküli adatexportáláshoz menjen az **Adatok** > **Exportálások** lehetőségre. Két lehetőség közül választhat:
 
-Ha az adatok exportálását az ütemezett frissítésre való várakozás nélkül szeretné elvégezni, akkor nyissa meg a **Saját exportálási célhelyek** lapot itt: **Rendszergazda** > **Exportálási célhelyek**.
+- Az összes exportálás futtatásához válassza az **Összes futtatása** lehetőséget. 
+- Egyetlen exportálás futtatásához jelölje ki a három pontot (...) a listaelemen, majd válassza a **Futtatás** lehetőséget.
 
-> [!div class="mx-imgBorder"]
-> ![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")
+## <a name="remove-an-export"></a>Exportálás eltávolítása
 
-- Válassza az **Exportálás** lehetőséget a lista felett, ha az exportálást egyszerre az összes exportálási célhelyre szeretné futtatni.
-- Jelölje ki a három pontot (...) egy listaelem után, majd válassza az **Exportálás** lehetőséget az exportálás egyetlen exportálási célhelyre való futtatásához.
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-## <a name="remove-an-export-destination"></a>Exportálási cél eltávolítása
+1. Jelölje ki az eltávolítani kívánt Exportálás függőleges három pontját.
 
-Az exportálási célhely eltávolításához induljon a fő **Exportálási célhelyek** oldalról.
+1. Válassza a legördülő menü **Eltávolítás** elemét.
 
-1. Jelölje ki az eltávolítani kívánt Exportálási célhely függőleges három pontját.
-
-   > [!div class="mx-imgBorder"]
-   > ![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")
-
-2. Válassza a legördülő menü **Eltávolítás** elemét.
-
-3. Erősítse meg az eltávolítást az **Eltávolítás** lehetőség választásával a megerősítő képernyőn.
+1. Erősítse meg az eltávolítást az **Eltávolítás** lehetőség választásával a megerősítő képernyőn.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

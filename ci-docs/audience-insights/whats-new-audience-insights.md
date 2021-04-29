@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 03/08/2021
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2159481f9355de738a7b457dcf0849a45c3e08db
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598434"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896238"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
@@ -22,14 +22,51 @@ ms.locfileid: "5598434"
 
 Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
 
-A következő videót is megtekinthet, hogy többet tudhasson meg az utolsó hat hónapban tervezett képességekről.
-
-> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
-
 A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképpen meghatározva, nem kell semmilyen műveletet végrehajtania, és az alkalmazás automatikusan, leállás nélkül frissíthető.
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="march-2021-updates"></a>2021 márciusi frissítések
+
+A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és hibajavítást tartalmaznak.
+
+### <a name="activities"></a>Tevékenységek
+
+- **Tevékenység varázsló és szemantikus típusok** Továbbfejlesztettük és frissítettük tevékenységleképezési élményünket, hogy útmutatóként szolgáljon és egyszerűbbé tegye a tevékenységleképezések létrehozását. Ebben az új élményben a felhasználók interaktív élményben részesülnek, amely segíthet a folyamat egyes lépéseinek elvégzésében. A tevékenységleképezési lépésben a felhasználó nemcsak a különböző tevékenységtípusokból választhat, hanem kiválaszthatja, hogy szemnatikusan szeretné-e leképezni az adatokat az *Előfizetés* és/vagy *SalesOrderLine* ipraági standard sémákhoz, amelyeket a lefelé irányuló folyasztáshoz is lehet használni.    
+  További információ: [Ügyféltevékenységek](activities.md).
+
+### <a name="data-ingestion"></a>Adatok betöltése
+
+- **Csatlakozzon helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Customer Insightshoz társított Power Platform vagy Dataverse környezetben található, átjárókat használó Power Platform adatfolyamok és helyszíni összekapcsolhatóságok előzetes verzióját. A Customer Insights környezetben létrehozott, kapcsolt Dataverse környezettel rendelkező új adatforrások alapértelmezés szerint Power Platform adatforrásokká fognak válni, helyszíni összekapcsolhatósággal, valamint az összekapcsolók és átalakítási lehetőségek gazdag készletével.
+
+### <a name="extensibility"></a>Bővíthetőség
+
+- **Kapcsolatokba és exportálásokba rendezett exportálások** Az **Exportálás céljai** lap nevét megváltoztattuk **Kapcsolatok** lapra, és egy külön oldalt adtunk hozzá az **Exportálások** lehetőségekhez. A frissítés részeként a meglévő exportálásokat kapcsolatpárokba állítjuk össze, illetve egy kapcsolatot használó exportálásba. A rendszergazdák most már jobban átláthatják a kimenő adatokat a **Kapcsolatok** oldalon. Minden felhasználói szerepkörnek van hozzáférése az **Exportálások** laphoz, de csak a rendszergazdák engedélyezhetik a munkatársaknak, hogy megosztott kapcsolatokkal szerkesszék az adott exportálásokat.     
+  További tudnivalókhoz lásd: [Kapcsolatok áttekintése](connections.md) és [Exportálások áttekintése](export-destinations.md).
+
+- **Szegmensek exportálása a Campaign Monitorba** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Campaign Monitorben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Campaign Monitor listáiba, és ezeket használhatja a marketingkampányok kiindulási alapértékeként.    
+   További tájékoztatás az [Exportálás a Campaign Monitorba](export-campaign-monitor.md) című témakörben olvasható.
+
+- **Szegmensek exportálása az Constant Contactba** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók az Constant Contactban is. Mostantól exportálhatja a szegmenseket a Customer Insightsból az Constant Contact listáiba, és ezeket használhatja a marketingkampányok kiindulási alapértékeként.   
+   További tájékoztatás az [Exportálás az Constant Contactba](export-constant-contact.md) című témakörben olvasható.
+
+- **Szegmensek exportálása a RollWorksbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a RollWorksben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a RollWorks célközönségekbe, és ezeket használhatja a B2B hirdetések kiindulási alapértékeként.    
+   További tájékoztatás az [Adatok exportálása RollWorksbe ](export-rollworks.md)című témakörben olvasható.
+
+- **Szegmensek exportálása a Snapchatbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Snapchatben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Snapchat célközönségekbe, és ezeket használhatja a hirdetések kiindulási alapértékeként.     
+   További tájékoztatás az [Adatok exportálása Snapchatbe](export-snapchat.md) című témakörben olvasható.
+
+### <a name="predictions"></a>Előrejelzések
+
+- **Használja a termékszűrőket a prediktív termékjavaslatokban** A termékjavaslat modellhez hozzáadtunk egy képességet, amelynek segítségével termékszűrőket is használhat. Mostantól létrehozhat egy olyan előrejelzést, amely a termékek egy alkészletét használja.    
+   További információkért lásd: [Termékszűrők konfigurálása](predict-product-recommendation.md#configure-product-filters).
+
+- **Szegmensek létrehozása modellelőrejelzésekből** Egy olyan lehetőséget adtunk hozzá, amellyel gyorsan hozhat létre szegmenseket egy előrejelzés eredményeinek segítségével. A modell eredményei oldalról egyszerűen létrehozhat egy új szegmenst az új **Szegmens létrehozása** lehetőséggel.    
+  További információért lásd: [Szegmens létrehozása saját modell előrejelzés alapján](prediction-based-segment.md).
+
+- **A termékre vonatkozó javaslatok magyarázatai** Az AI-modell által a termékre vonatkozó javaslatok előállításához szükséges alapvető tényezőket ismerteti, valamint azt, hogy milyen mértékben járulnak hozzá ezek a tényezők a termékre vonatkozó javaslatokhoz. Ez az információ jelenik meg a modell eredményeinek képernyőjén.    
+   További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-product-recommendation.md#review-a-prediction-status-and-results) című témakört.
 
 ## <a name="february-2021-updates"></a>2021. februári frissítések
 
@@ -107,7 +144,7 @@ A 2020. decemberi frissítések számos szolgáltatást, teljesítménnyel kapcs
 
   Emellett új konfigurációs lehetőségeket is hozzáadtunk, hogy jobban szabályozni tudjuk, hogyan szeretné, hogy az ügyfélprofilokat bővíteni. 
 
-  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
 
 - **Annak szabályozása, hogy mely profilokat bővítse**
 
@@ -309,8 +346,8 @@ A 2020. augusztusi frissítések számos szolgáltatást, teljesítménnyel kapc
 
 - **Érdeklődés affinitások bővítése elérhető több piacon**
 
-  Az érdeklődési affinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyféladatokat több, ezekre a piacokra vonatkozó érdeklődési körrel gazdagíthatja. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
-  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
+  Az érdeklődési affinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyféladatokat több, ezekre a piacokra vonatkozó érdeklődési körrel gazdagíthatja. Az ezeken a piacokon található ügyfélprofilokat is bővíthetjük a Microsoft helyi saját adatainak segítségével.
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md)
 
 
 ## <a name="july-2020-updates"></a>2020. júliusi frissítések
@@ -330,8 +367,8 @@ A 2020. júliusi frissítések számos szolgáltatást, teljesítménnyel kapcso
 
 - **A márkaaffinitások bővítése elérhető több piacon**
 
-  A márkaaffinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyfelek adatait a helyi márkákkal bővítheti ezeken a piacokon. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
-  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
+  A márkaaffinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyfelek adatait a helyi márkákkal bővítheti ezeken a piacokon. Az ezeken a piacokon található ügyfélprofilokat is bővíthetjük a Microsoft helyi saját adatainak segítségével.
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md)
 
 ## <a name="june-2020-updates"></a>2020. júniusi frissítések
 
@@ -355,7 +392,7 @@ A 2020. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcso
 - **Különálló márka- és érdeklődési kör hűség bővítése**
 
   A márkák és érdeklődési körök hűsége immár két független bővítés formájában érhető el. A szétválasztott bővítések révén rugalmasan konfigurálhatja és kezelheti azokat egyénileg, az üzleti igényektől és szükségletektől függően.    
-  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
 
 #### <a name="extensibility"></a>Bővíthetőség
 

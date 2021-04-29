@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596870"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896330"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
@@ -59,7 +59,7 @@ Az ügyféladatok a következőket tartalmazza:
 
 -   **Ügyfélprofil csempéje:** Ez a csempe megjeleníti az egyesített ügyfélprofil entitás különböző értékeit. Az adatok között szerepelhet az e-mail-cím, a név, a város stb. 
 
--   **Lehetséges érdeklődési körök, lehetséges márkák:** Azt mutatja, hogy konfigurált-e belső bővítést. Lehetséges érdeklődési köröket és márkahűségeket jelent egy olyan ügyfélre vonatkozóan, akinek a profilja hasonló lehet ehhez az ügyfélhez. További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+-   **Lehetséges érdeklődési körök, lehetséges márkák:** Azt mutatja, hogy konfigurált-e belső bővítést. Lehetséges érdeklődési köröket és márkahűségeket jelent egy olyan ügyfélre vonatkozóan, akinek a profilja hasonló lehet ehhez az ügyfélhez. További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
 
 -   **Mérőszámok:** Azt mutatja, hogy adott típus egy vagy több mérőszámáz konfigurálta-e: az ügyfél attribútumára vonatkozó mérőszámok. Magukban foglalják az egyéni ügyfelek szintjén az ügyfelekhez számított fő teljesítménymutatókat. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
 

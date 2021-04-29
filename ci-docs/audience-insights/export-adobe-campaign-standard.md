@@ -1,7 +1,7 @@
 ---
 title: A Customer Insights adatainak exportálása az Adobe Campaign Standardba
 description: Ismerje meg, hogyan használhatja a célközönség-infomációs szegmenseket az Adobe Campaign Standardban.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: a5d0154c3d7c473dcba03fac0847bafcf97de2f2
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596318"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760284"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>A Customer Insights-szegmensek használata az Adobe Campaign Standardban (előzetes verzió)
 
@@ -48,15 +48,21 @@ Az elküldeni kívánt ajánlati e-mail tartalmazza az ügyfél utónevét, veze
 
 ## <a name="export-your-target-audience"></a>Exportálja a célközönséget
 
+### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
+
 Az azonosított célközönség segítségével konfigurálható az exportálás az célközönség-információkból egy Azure Blob Storage-fiókba.
 
-1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
+1. A célközönség információkban menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. A **Adobe Campaign** csempében válassza a **Beállítás** lehetőséget.
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Adobe Campaign** lehetőséget a kapcsolat konfigurálához, vagy válassza a **Beállítás** lehetőséget az **Adobe Campaign** csempén
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Az Adobe Campaign Standard konfigurációs csempéje.":::
 
-1. Adja meg az új exportálási célhely **Megjelenítendő nevét**, és adja meg a **Fiók neve**, a **Fiókkulcs** és a **Tároló** értékét arra az Azure Blob Storage-fiókra vonatkozóan, ahova exportálni szeretné a szegmenst.  
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Adja meg annak az Azure Blob Storage fióknak a **Fiók nevét**, **Fiókkulcsát** és **Tárolóját**, ahová exportálni szeretné a szegmenst.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Képernyőkép a tárfiók konfigurációjáról."::: 
 
@@ -64,7 +70,17 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
 
    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Válassza a **Következő** lehetőséget.
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
+
+### <a name="configure-an-export"></a>Exportálás konfigurálása
+
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+
+1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
+
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Adobe Campaign szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
 1. Válassza ki az exportálni kívánt szegmenst. Ebben a példában ez a **ChurnProneCustomers**.
 
@@ -83,11 +99,9 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálási cél mentése után megtalálja a **Felügyelet** > **Exportálások** > **Saját exportálási célhelyek** helyen.
+Az exportálási cél mentése után az **Adatok** > **Exportálások** lehetőségnél található.
 
-:::image type="content" source="media/export-destination-adobe-campaign-standard.png" alt-text="Képernyőkép az exportálások listájáról, amelyen a kiemelt mintaszegmens látható.":::
-
-Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#export-data-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
+Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#run-exports-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
 
 > [!NOTE]
 > Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licencének megengedett korlátjan belül van.

@@ -1,7 +1,7 @@
 ---
 title: A környezetek létrehozása és kezelése
 description: Megismerheti, hogyan lehet regisztrálni a szolgáltatásra, és hogyan kezelhetők a környezetek.
-ms.date: 02/01/2021
+ms.date: 03/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1c2dfdd2889b5cb6c5285b4d7cc7f52a3d6de4d1
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598296"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887989"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
 
@@ -44,6 +44,9 @@ Ez a cikk azt mutatja be, hogyan hozhat létre új szervezetet, és hogyan lehet
 
 Kétféleképpen hozhat létre új környezetet. MEghatározhat teljesen új konfigurációt, vagy másolhat néhány konfigurációs beállítást egy meglévő környezetből.
 
+> [!NOTE]
+> A szervezetek minden Customer Insights licenchez *két* környezetet hozhatnak létre. Ha a szervezete egynél több licencet vásárol, a rendelkezésre álló környezetek számának növelése érdekében [lépjen kapcsolatba a támogatási csoporttal](https://go.microsoft.com/fwlink/?linkid=2079641). A kapacitással és a bővítménykapacitással kapcsolatos további információkért töltse le a [Dynamics 365 licencelési útmutatóját](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 Környezet létrehozásához:
 
 1. Válassza ki az alkalmazás fejlécében a **Környezet** választót.
@@ -55,14 +58,14 @@ Környezet létrehozásához:
 
 1. Az **új környezet létrehozása** párbeszédpanelen válassza az **új környezet** lehetőséget.
 
-   Ha [az aktuális környezetből szeretne adatot másolni](#additional-considerations-for-copy-configuration-preview), akkor válassza a **Másolás meglévő környezetből** lehetőséget. A szervezetében összes elérhető környezet listáját látja, amelyekből adatokat másolhat.
+   Ha [az aktuális környezetből szeretne adatot másolni](#considerations-for-copy-configuration-preview), akkor válassza a **Másolás meglévő környezetből** lehetőséget. A szervezetében összes elérhető környezet listáját látja, amelyekből adatokat másolhat.
 
 1. Adja meg a következő részleteket:
    - **Név**: A környezet neve. Ha meglévő környezetből másolt, akkor ez a mező már ki van töltve, de ez módosítható.
    - **Régió**: Az a régió, ahová a szolgáltatást telepítették és üzemeltetik.
    - **Típus**: Adja meg, hogy szeretne-e működési vagy tesztkörnyezetet létrehozni.
 
-2. Nem kötelezően kiválaszthatja a **Speciális beállításokat**:
+1. Nem kötelezően kiválaszthatja a **Speciális beállításokat**:
 
    - **Összes adat mentése ide**: Megadja, hogy hol szeretné tárolni a Customer Insights-ból előállított kimeneti adatait. Két lehetőség közül választhat **Customer Insights tároló** ( egy Azure Data Lake, amelyet a Customer Insights csapata kezel) és **Azure Data Lake Storage Gen2** (saját Azure Data Lake Storage tárolója). Alapértelmezés szerint a Customer Insights tárolóhely beállítás van kiválasztva.
 
@@ -75,20 +78,20 @@ Környezet létrehozásához:
 
    - Az Azure Data Lake Storage Gen2 beállításnál választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A **Tároló** neve nem módosítható, és "customerinsights" lesz.
    
-   - Ha [Előrejelzéseket](predictions.md) szeretne használni, vagy szeretné konfigurálni az adatok megosztását az alkalmazásokkal és megoldásokkal a Microsoft Dataverse alapján, akkor adja meg a Microsoft Dataverse környezet URL-címét a **konfigurálja a Microsoft Dataverse adatmegosztást és engedélyezze a további szolgáltatásokat** alatt. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Microsoft Dataverse Managed Data Lake használatával.
+   - Ha [előrejelzéseket](predictions.md) szeretne használni, konfigurálja az adatok megosztását a Microsoft Dataverse-en alapuló alkalmazások és megoldások használatával, vagy engedélyezze a helyszíni környezet adatforrásokból való adatbetöltést, adja meg a Microsoft Dataverse környezet URL-címét az **Adatmegosztás konfigurálása Microsoft Dataverse-szel, és további képességek engedélyezése** alatt. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Microsoft Dataverse Managed Data Lake használatával.
 
      > [!NOTE]
      > - A Microsoft Dataverse Managed Data Lake használatával való adatmegosztás jelenleg nem támogatott, ha az adatokat a saját Azure Data Lake Storage tárhelyére menti.
      > - [Az entitásból hiányzó értékek előrejelzése](predictions.md) jelenleg nem támogatott, ha engedélyezi az adatok megosztását a Microsoft Dataverse Managed Data Lake használatával.
 
      > [!div class="mx-imgBorder"]
-     > ![Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse-szolgáltatással](media/Datasharing-with-DataverseMDL.png)
+     > ![Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse-szolgáltatással](media/datasharing-with-DataverseMDL.png)
 
    A folyamatok – például adatbetöltés vagy szegmenslétrehozás – futtatásakor a megfelelő mappák létrejönnek a fent megadott tárfiókban. Az adatfájlok és a model.json fájlok a futtatott folyamat alapján jönnek létre, és hozzáadódnak a megfelelő almappákhoz.
 
    Ha több Customer Insights-környezetet hoz létre, és úgy dönt, hogy menti a kimeneti entitást ezekből a környezetekből a tárfiókba, a rendszer minden környezethez külön mappát hoz létre a tárolóban ci_<environmentid>.
 
-### <a name="additional-considerations-for-copy-configuration-preview"></a>A konfiguráció másolásának további szempontjai (előzetes verzió)
+### <a name="considerations-for-copy-configuration-preview"></a>A másolási konfigurációval kapcsolatos szempontok (előzetes verzió)
 
 A következő konfigurációbeállítások vannak másolva:
 
@@ -136,6 +139,18 @@ A meglévő környezetek bizonyos részleteit szerkesztheti.
 4. Ha egy környezet úgy van beállítva, hogy az Azure Data Lake Storage Gen2-ben tárolja az adatokat, akkor frissítheti a **Fiókkulcsot**. A **partner neve** vagy a **tároló** neve azonban nem módosítható.
 
 5. Lehetőség van arra, hogy a fiókkulcs-alapú kapcsolatot az erőforrás- vagy előfizetés-alapú kapcsolatra is frissítheti. A frissítést követően a frissítés után nem térhet vissza a fiókkulcshoz. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
+
+6. Tetszés szerint megadhat egy Microsoft Dataverse környezet URL-címet az **Adatok megosztásának konfigurálása Microsoft Dataverseszel, és további képességek engedélyezése** alatt. Ezek a lehetőségek olyan alkalmazások és megoldások használatával való adatmegosztásra használhatók, amelyek Microsoft Dataverse-en, helyszíni adatforrásból származó adatokon vagy a használat [előrejelzéseken](predictions.md) alapulnak. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Microsoft Dataverse Managed Data Lake használatával.
+
+   > [!NOTE]
+   > - A Microsoft Dataverse Managed Data Lake használatával való adatmegosztás jelenleg nem támogatott, ha az adatokat a saját Azure Data Lake Storage tárhelyére menti.
+   > - [Entitásból hiányzó értékek előrejelzése](predictions.md) jelenleg nem támogatott, ha engedélyezi az adatok megosztását a Microsoft Dataverse Managed Data Lake szolgáltatással.
+
+   Amint engedélyezi az adatok megosztását a Microsoft Dataverse-szel, az adatforrások és más folyamatok egyszeri teljes frissítése aktiválódik. Ha folyamatok futnak és várakoznak, akkor nem fogja látni a lehetőséget, amelltel engedélyezhetné az adatok megosztását a Microsoft Dataverse-szel. Az adatmegosztás engedélyezéséhez megvárhatja, amíg befejeződnek vagy visszavonják ezeket a folyamatokat. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
+   
+   A folyamatok – például adatbetöltés vagy szegmenslétrehozás – futtatásakor a megfelelő mappák létrejönnek a fent megadott tárfiókban. A rendszer a futtatott folyamattól függően adatfájlokat és model.json fájlokat hoz létre, és ad hozzá a megfelelő almappákhoz.
 
 ## <a name="reset-an-existing-environment"></a>Meglévő környezet visszaállítása
 

@@ -1,7 +1,7 @@
 ---
 title: A Customer Insights adatainak exportálása az Adobe Experience Platformba
 description: Ismerje meg, hogyan használhatja a célközönség-infomációs szegmenseket az Adobe Experience Platformban.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: d1856861562be55c6d1d051050fe965560fa42f8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596272"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760104"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>A Customer Insights-szegmensek használata az Adobe Experience Platformban (előzetes verzió)
 
@@ -51,21 +51,36 @@ Az elküldeni kívánt ajánlati e-mail tartalmazza az ügyfél utónevét, veze
 
 Az azonosított célközönség segítségével konfigurálható az exportálás az célközönség-információkból egy Azure Blob Storage-fiókba.
 
-1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
+### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
 
-1. Az **Azure Blob Storage** csempén válassza a **Beállítás** lehetőséget.
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Az Azure Blob Storage konfigurációs csempéje.":::
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Azure Blob Storage** vagy a **Beállítás** lehetőséget az **Azure Blob Storage** csempén:
 
-1. Adja meg az új exportálási célhely **Megjelenítendő nevét**, és adja meg a **Fiók neve**, a **Fiókkulcs** és a **Tároló** értékét arra az Azure Blob Storage-fiókra vonatkozóan, ahova exportálni szeretné a szegmenst.  
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Az Azure Blob Storage konfigurációs csempéje."::: a kapcsolat konfigurálásához.
+
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Adja meg annak a Blob Storage fióknak a **Fiók nevét**, **Fiókkulcsát** és **Tárolóját**, ahová exportálni szeretné a szegmenst.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Képernyőkép a tárfiók konfigurációjáról."::: 
+   
+    - Ha szeretne többet megtudni arról, hogyan találja meg a Blob Storage-fiók nevét és fiókkulcsát, olvassa el a [Tárhelyfiók beállításainak kezelése az Azure-portálon](/azure/storage/common/storage-account-manage) részt.
+    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-   - Az Azure Blob Storage fióknév és fiókkulcs megkeresésével kapcsolatos további tudnivalókat lásd: [A tárolófiók beállításainak kezelése az Azure Portal webhelyen](/azure/storage/common/storage-account-manage).
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
 
-   - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
+### <a name="configure-an-export"></a>Exportálás konfigurálása
 
-1. Válassza a **Következő** lehetőséget.
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+
+1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
+
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Azure Blob Storage szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
 1. Válassza ki az exportálni kívánt szegmenst. Ebben a példában ez a **ChurnProneCustomers**.
 
@@ -73,11 +88,9 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálási cél mentése után megtalálja a **Felügyelet** > **Exportálások** > **Saját exportálási célhelyek** helyen.
+Az exportálási cél mentése után az **Adatok** > **Exportálások** lehetőségnél található.
 
-:::image type="content" source="media/export-destination-azure-blob-storage.png" alt-text="Képernyőkép az exportálások listájáról, amelyen a kiemelt mintaszegmens látható.":::
-
-Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#export-data-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
+Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#run-exports-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
 
 > [!NOTE]
 > Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licencének megengedett korlátjan belül van.

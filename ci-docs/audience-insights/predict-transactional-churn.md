@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597192"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906859"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tranzakciólemorzsolódási előrejelzés (előnézet)
 
@@ -46,6 +46,14 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
         - **Időbélyegző:** Az elsődleges kulcs által azonosított esemény dátuma és időpontja.
         - **Esemény:** A használni kívánt esemény neve. Például, ha egy mező neve "FelhasználóiMűvelet" egy élelmiszerboltban, ez egy ügyfél által történő kuponhasználatot jelenthet.
         - **Részletek:** Részletes információk az eseményről. Például, ha egy mező neve "KuponÉrték" egy élelmiszerboltban, ez a kupon pénznembeli értékét jelentheti.
+- Javasolt adatjellemzők:
+    - Elegendő előzményadat: A tranzakciós adatok a kijelölt időablak legalább duplájához. Lehetőség szerint két-három éves előfizetési adatok. 
+    - Ügyfelenkénti több vásárlás: Lehetőség szerint ügyfelenként legalább két tranzakció.
+    - Ügyfelek száma: Legalább 10 ügyfélprofil, lehetőség szerint 1000-nél több egyedi ügyfél. A modell 10-nél kevesebb ügyfél esetén és ha nem áll rendelkezésre elegendő előzményadat, akkor nem működik.
+    - Adat teljessége: A megadott entitás adatmezőjének hiányzó értékeinek kevesebb, mint 20%-a.
+
+> [!NOTE]
+> A nagy ügyfélvásárlási gyakoriságú (néhány hetes) üzleti tevékenység esetén ajánlott rövidebb előrejelzési ablak és lemorzsolódás meghatározását választani. Az alacsony vásárlási gyakoriság (néhány havonta vagy évente egyszer) esetén válasszon hosszabb előrejelzési ablakot és lemorzsolódást.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Tranzakciólemorzsolódási előrejelzés létrehozása
 
@@ -129,7 +137,9 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 1. Jelölje ki az áttekinteni kívánt előrejelzést.
    - **Előrejelzés neve:** Az előrejelzés neve, mely a létrehozáskor kerül megadásra.
    - **Előrejelzés típusa:** Az előrejelzéshez használt model típusa
-   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.
+   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.    
+     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-new-segment) az preferált küszöbértékkel.
+     Nem minden ügyfél feltétlenül aktív ügyfél. Némelyikük lehet, hogy már hosszú ideje nem végzett tevékenységet, és a már lemorzsolódottnak számít – az Ön lemorzsolódási definíciójától függően. A már lemorzsolódott ügyfelek számára előrejelezni a lemorzsolódási kockázatot nem hasznos, mivel nem ők a célközönség.
    - **Várható mező:** Ez a mező csak bizonyos típusú előrejelzésekhez megadható, és nem használható a lemorzsolódási előrejelzéshez.
    - **Állapot:** A futtatott előrejelzés állapota.
         - **Feldolgozási sorban:** Az előrejelzés további folyamatok futtatására vár.

@@ -1,7 +1,7 @@
 ---
 title: Bővítés a harmadik fél bővítési Experiannal
 description: Általános információk a Experian harmadik fél bővítésről.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597790"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896376"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfelek profiljainak gazdagítása az Experianból (előzetes verzió)
 
@@ -25,10 +25,10 @@ A Experian a fogyasztói és üzleti hitel-jelentési és marketing szolgáltat�
 Az Experian konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 - Aktív Experian-előfizetése van. Az előfizetés megkezdéséhez [forduljon közvetlenül a Experianhoz](https://www.experian.com/marketing-services/contact). [További információ az Experian adatgazdagításáról](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Rendelkezik a Felhasználói azonosítóval, Félazonosítóval és Modellszámmal aaz SSH-képes Secure Transport (ST) fiókhoz, amit az Experian hozott létre Önnek.
-- [Rendszergazdai](permissions.md#administrator) jogosultságokkal rendelkezik célközönségi-információkban.
 
-## <a name="configuration"></a>Konfigurálás
+- Egy Experian-kapcsolatot már konfigurált egy rendszergazda, *vagy* Ön rendelkezik a [rendszergazdai](permissions.md#administrator) engedélyekkel. Szüksége van az Experian által az Ön számára létrehozott SSH-engedélyezett Secure Transport (ST) fiókjához a felhasználói azonosítóra, a félazonosítóra és a modellszámra is.
+
+## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
 1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
@@ -36,26 +36,46 @@ Az Experian konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
    > [!div class="mx-imgBorder"]
    > ![Experian csempe](media/experian-tile.png "Experian csempe")
+   > 
 
-1. Válassza az **Első lépések** lehetőséget , és adja meg a Experian Secure Transport fiókjához tartozó felhasználói azonosítót, a félazonosítót és a modellszámot. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével. Az **Alkalmaz** lehetőség választásával erősítse meg a összes bevitt adatot.
+1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, akkor a legördülő menüből válassza ki a **Kapcsolat hozzáadása** és az Experian lehetőséget a kapcsolat létrehozásához. 
 
-## <a name="map-your-fields"></a>Mezők megfeleltetése
+1. Válassza a **Kapcsolódás az Experianhez** lehetőséget a kapcsolat kiválasztásához.
 
-1.  Válassza az **Adatok hozzáadása** lehetőséget, és az Experian vállalati adatokkal bővíteni kívánt **Ügyfél adatkészletet**. Kiválaszthatja a **Vevő** entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+1.  Válassza a **Következő** lehetőséget, és válassza a demográfiai adatokkal bővíteni kívánt **Ügyfél adatkészletet** az Experianből. Kiválaszthatja a **Vevő** entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
 
-1. Válassza ki a kulcsazonosítókat a **Név és cím**, **E-mail** vagy **Telefon** közül, és küldje el az Experiannek a identitás feloldása érdekében.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Képernyőkép az ügyféladatkészlet kiválasztásáról.":::
 
-   > [!TIP]
-   > Minél több kulcsazonosító-attribútumot küld el az Experian számára, valószínűleg annál nagyobb lesz az egyezési arány.
+1. Válassza a **Következő** lehetőséget, és határozza meg, hogy az egyesített profilokból milyen típusú mezők használhatók az Experianből származó demográfiai adatok egyeztetéséhez. Legalább egy mezőben meg kell adni a **Név és cím**, a **Telefon** vagy az **E-mail-cím** adatokat. A nagyobb egyezési pontosság érdekében legfeljebb két másik mezőt lehet hozzáadni. Ez a beállítás hatással van a következő lépésben elérhető leképezési mezőkre.
 
-1. Válassza a **Tovább** lehetőséget, és képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kijelölt kulcsazonosító-mezőkhöz.
+    > [!TIP]
+    > Minél több kulcsazonosító-attribútumot küld el az Experian számára, valószínűleg annál nagyobb lesz az egyezési arány.
 
-1. Az **Attribútum hozzáadása** lehetőséget választva leképezheti az összes olyan további attribútumot, amelyet el szeretne küldeni a Experian számára.
+1. A mező leképezésének elkezdéséhez válassza a **Következő** lehetőséget.
 
-1.  Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
+1. Határozza meg, hogy az egyesített profilokból mely mezők használhatók az Experianből származó demográfiai adatok egyeztetéséhez. A kötelező mezők meg vannak jelölve.
 
-    > [!div class="mx-imgBorder"]
-    > ![Experian mezőleképezés](media/experian-field-mapping.png "Experian mezőleképezés")
+1. Adja meg a bővítés nevét és a kimeneti entitás nevét.
+
+1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
+
+## <a name="configure-the-connection-for-experian"></a>Az Experian kapcsolatának beállítása 
+
+A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konfigurálásakor válassza a **Kapcsolat hozzáadása** lehetőséget, *vagy* menjen a **Rendszergazda** > **Kapcsolatok** elemre, és válassza a **Beállítások** lehetőséget az Experian csempén.
+
+1. Válassza az **Első lépések** lehetőséget.
+
+1. Adja meg a kapcsolat nevét a **Megjelenítendő név** mezőben.
+
+1. Adja meg az Experian Secure Transport fiókjához tartozó érvényes felhasználói azonosítót, félazonosítót és modellszámot.
+
+1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével
+
+1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
+
+1. Az ellenőrzés befejezése után válassza a **Mentés** lehetőséget.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Az Experian kapcsolat konfigurációs ablaktábla.":::
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 

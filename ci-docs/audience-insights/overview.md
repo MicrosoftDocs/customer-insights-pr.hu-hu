@@ -9,12 +9,12 @@ ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8fdfe16d609fbebd53703b56f4e0252125bedf8f
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598633"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896468"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Célközönséggel kapcsolatos információk a Dynamics 365 Customer Insights alkalmazáshoz – áttekintés
 
@@ -27,9 +27,9 @@ A célközönség-információk segítségével mélyebben megértheti az ügyfe
   - Az adatok egyszerű összekapcsolása és egységesítése – behozhatja a tranzakciós, megfigyelési és viselkedési adatokat a népszerű adatforrásokból az [előre elkészített csatlakozók használatával](data-sources.md).
   - Az ügyféladatok intelligens átalakítása – építsen ki egyesített ügyfélprofilokat, amelyek megfelelnek a [Common Data Model](/common-data-model/) szabványnak.. Az ügyfelek identitásának feloldása AI/ML-vezérelt ajánlásokkal.
 
-- **Bővítés a Microsoft Graph megoldásban található célközönség intelligenciával**
+- **Bővítés célközönség intelligenciával**
 
-  - Építsen ki bővebb ügyfélprofilokat a [Microsoft Graphban található célközönség intelligencia alkalmazásával](enrichment-microsoft-graph.md).  
+  - [Bővített adatok beépítésével](enrichment-hub.md) gazdagabb ügyfélprofilokat építhet ki.  
 
 - **Támogassa meg az üzleti folyamatokat és a személyre szabott ügyfélélményeket**
 
@@ -43,7 +43,7 @@ A célközönség-információk segítségével mélyebben megértheti az ügyfe
 
   - Az összekötők gazdag gyűjteményéhez való hozzáférés az összes ügyféladat beolvasására.
   - Az ügyféladatok egységesítésének és átalakításának képessége a [Common Data Model](/common-data-model/) formátumba.
-  - Bővítheti az ügyfélinformációkat a Microsoft Graph alkalmazásban található célközönség-intelligencia, mint a márkahűség és érdeklődés.
+  - Bővítheti az ügyfélinformációkat a célközönség-intelligenciával, például a márkahűséggel és érdeklődéssel.
   - A „Kattintások kódolás nélkül” konfigurációs és hibakeresési élmény megkönnyíti a célközönség-információk konfigurálását és a lehetséges problémák azonosítását.
   - Az ügyfelek adatainak megtisztítása és egységesítése különböző forrásokból, AI-alapú ajánlásokkal.  
 

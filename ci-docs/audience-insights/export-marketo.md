@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása a Marketóba
-description: Megismerheti, hogyan konfigurálható a kapcsolat a Marketóval.
-ms.date: 11/12/2020
+description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Marketoba.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,59 +9,23 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 74d19a0448123904210c26f7b8760d00296c9cfd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 01290d5fae7af1737b73373d75e334ae1ed67d37
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597974"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759824"
 ---
-# <a name="connector-for-marketo-preview"></a>A Marketo összekötője (előzetes verzió)
+# <a name="export-segments-to-marketo-preview"></a>Szegmensek exportálása a Marketoba (előzetes verzió)
 
 Az egyesített ügyfélprofilok szegmensei exportálásának felhasználásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából a Marketo szolgáltatással.
 
-## <a name="prerequisites"></a>Előfeltételek
+## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
 
 -   Rendelkezik [Marketo-fiókkal](https://login.marketo.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
 -   A Marketóban és a megfelelő azonosítókban meglévő listák találhatók. További tájékoztatásért keresse fel a [Marketo listák](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists) webhelyet.
 -   Rendelkezik [konfigurált szegmensekkel](segments.md).
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
-
-## <a name="connect-to-marketo"></a>Csatlakozás a Marketóhoz
-
-1. Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.
-
-1. A **Marketo** részben válassza a **Beállítás** lehetőséget.
-
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.
-
-1. Adja meg a **[Marketo ügyfél-azonosítót, titkos ügyfélkódot és REST végpont eszköznevét](https://developers.marketo.com/rest-api/authentication/)**.
-
-1. Adja meg a **[Marketo-lista azonosítóját](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
-
-1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez, majd válassza a **Csatlakozás** lehetőséget a Marketo kapcsolat inicializálásához.
-
-1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
-
-   :::image type="content" source="media/export-connect-marketo.png" alt-text="Képernyőkép exportálása a Marketo kapcsolatához":::
-
-1. Az Exportálás konfigurálásához válassza a **Tovább** lehetőséget.
-
-## <a name="configure-the-connector"></a>Konfigurálja az összekötőt
-
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. 
-
-1. Alternatív lehetőségként exportálhatja az **Utónév**, **Vezetéknév**, **Város**, **Állam** és **Ország/régió** mezőket további mezőként személyre szabottabb e-mailek létrehozásához. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
-
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Marketóba.
-
-   :::image type="content" source="media/export-segment-marketo.png" alt-text="Marketóba exportálandó mezők és szegmensek kijelölése":::
-
-1. Válassza a **Mentés** parancsot.
-
-## <a name="export-the-data"></a>Az adatok exportálása
-
-[Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut. A Marketóban most már megtalálhatja a szegmenseket a [Marketo listában](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
@@ -69,6 +33,49 @@ Az egyesített ügyfélprofilok szegmensei exportálásának felhasználásával
 - A Marketoba való exportálás csak szegmensekre korlátozódik.
 - Az összesen 1 000 000 profillal rendelkező szegmensek exportálása akár 3 óráig is eltarthat. 
 - A Marketoba exportálható profilok száma függ a Marketo szerződésről, és korlátozott.
+
+## <a name="set-up-connection-to-marketo"></a>Állítsa be a Marketoval való kapcsolatot
+
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
+
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Marketo** lehetőséget a kapcsolat konfigurálásához.
+
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Adja meg a **[Marketo ügyfél-azonosítót, titkos ügyfélkódot és REST végpont eszköznevét](https://developers.marketo.com/rest-api/authentication/)**.
+
+1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez, majd válassza a **Csatlakozás** lehetőséget a Marketo kapcsolat inicializálásához.
+
+1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
+
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
+
+## <a name="configure-an-export"></a>Exportálás konfigurálása
+
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+
+1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Marketo szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+
+1. Adja meg a **[Marketo-lista azonosítóját](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
+
+1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. 
+
+1. Tetszés szerint exportálhatja az **Utónév**, **Vezetéknév**, **Város**, **Megye** és **Ország/Régió** lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Marketóba.
+
+1. Válassza a **Mentés** parancsot.
+
+Az exportálás mentése nem futtatja azonnal az exportálást.
+
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). A Marketóban most már megtalálhatja a szegmenseket a [Marketo listában](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
+
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

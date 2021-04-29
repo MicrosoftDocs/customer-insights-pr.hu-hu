@@ -1,7 +1,7 @@
 ---
 title: Felhasználói engedélyek kezelése
 description: További információk az engedélyekről és a felhasználói szerepkörökről.
-ms.date: 10/27/2020
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8638489dba908d4504278916d2c28454e3ea9e18
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595705"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760376"
 ---
 # <a name="user-permissions"></a>Felhasználói engedélyek
 
@@ -31,7 +31,7 @@ Háromféle típusú szerepkör van:
 - A **Bővítés** oldal megtekintése felfedezése.
 - Fedezzen fel és exportáljon entitásokat az **Entitások** lap használatával.
 - A rendszerfolyamatok állapotának megtekintése a **Rendszer** oldalon történik.
-- Szegmensek exportálása a **Szegmensek** lapról.
+- Az exportálások megtekintése az **Exportálások** lapon.
 - Telepítse és használja a **Power BI Customer Insights** irányítópultot.
 
 ## <a name="contributor"></a>Közreműködő
@@ -43,6 +43,7 @@ Háromféle típusú szerepkör van:
 - Hozzon létre szegmenseket a **Szegmensek** oldalán.
 - Hozzon létre mérőszámokat a **Mérőszámok** oldalon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (csak a belső bővítések esetében).
+- Az exportálások kezelése és létrehozása a közreműködőkkel megosztott kapcsolatok alapján. [További információk arról, hogyan engedélyezik a rendszergazdák a közreműködőknek az exportálásokhoz használható kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Adminisztrátor
 
@@ -50,8 +51,9 @@ Háromféle típusú szerepkör van:
 - A beállításokat a **Rendszer** oldalon módosíthatja, beleértve a munkanyelvet és a rendszerfolyamatok frissítési ütemezését.
 - Az engedélyeket megtekintheti és hozzáadhatja az **Engedélyek** oldalon.
 - Az Ügyfelek oldalra vonatkozóan beállíthatja a Keresés és Szűrés meghatározásait a **Keresési és szűrési index** oldalon (amely az **Ügyfelek** oldalról elérhető).
-- Meghatározhatja a Dynamics 365 Sales szegmens célhelyeit a **Exportálási célhelyek** oldalon.
+- Kezelje a kapcsolatokat, és engedélyezze őket az egyéb felhasználói szerepkörökkel rendelkezők számára a **Kapcsolatok** lapon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (az összes bővítés esetében).
+- Exportálás kezelése és létrehozása az **Exportálások** lapon.
 - Telepítheti és használhatja az **Ügyfélkártya bővítményt**.
 - Adja hozzá és használja a **Power Apps összekötőt**.
 - [Customer Insights API-k](apis.md) használatának engedélyezése.

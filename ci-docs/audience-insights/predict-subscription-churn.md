@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595659"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906905"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Előfizetési lemorzsolódás előrejelzése (előzetes verzió)
 
@@ -49,6 +49,12 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
         - **Időbélyegző:** Az elsődleges kulcs által azonosított esemény dátuma és időpontja.
         - **Esemény:** A használni kívánt esemény neve. Egy folyamatos átvitelt használó videószolgáltatás „FelhasználóiMűvelet” mezőjének értéke például „Megtekintve” lehet.
         - **Részletek:** Részletes információk az eseményről. Egy folyamatos átvitelt használó videószolgáltatás „MűsorCíme” mezőjének értéke például egy ügyfél által megtekintett videó lehet.
+- Javasolt adatjellemzők:
+    - Elegendő előzményadat: Az előfizetési adatok a kijelölt időablak legalább duplájához. Lehetőség szerint két-három éves előfizetési adatok.
+    - Előfizetés állapota: Az adatok minden ügyfélhez aktív és inaktív előfizetéseket tartalmaznak, így ügyfélazonosítónként több bejegyzés van.
+    - Ügyfelek száma: Legalább 10 ügyfélprofil, lehetőség szerint 1000-nél több egyedi ügyfél. A modell 10-nél kevesebb ügyfél esetén és ha nem áll rendelkezésre elegendő előzményadat, akkor nem működik.
+    - Adat teljessége: A megadott entitás adatmezőjének hiányzó értékeinek kevesebb, mint 20%-a.
+   
    > [!NOTE]
    > Legalább két tevékenységi bejegyzéshez lesz szüksége azon ügyfelek 50%-ához akiknél ki szeretné számítani a lemorzsolódás értékét.
 
@@ -67,7 +73,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 ### <a name="define-customer-churn"></a>Ügyfél-lemorzsolódás meghatározása
 
 1. Adja meg **Az előfizetés óta eltelt napok** számát; ez az az érték, ami után a vállalat lemorzsolódottnak tekint egy ügyfelet. Ezt az időszakot általában olyan üzleti tevékenységekkel szokták összevetni, amelyek az ügyfél elvesztését hivatottak megakadályozni (ajánlatok vagy egyéb marketinges erőfeszítések).
-1. Adja meg a számot **A napok száma a jövőben a lemorzsolódás megjósolásához** alatt, hogy beállítsa az ablakot a lemorzsolódás előrejelzéséhez. Például megjósolhatja a lemorzsolódás kockázatát az ügyfelek számára a következő 90 nap során, hogy az megfeleljen a marketing megtartási törekvéseinek. A lemorzsolódás kockázatának hosszabb vagy rövidebb időszakra történő megjósolása nehezebbé teheti a lemorzsolódási kockázati profil tényezőinek megközelítését, de nagy mértékben függ az adott üzleti igényektől. A folytatáshoz válassza a **Tovább** lehetőséget.
+1. Adja meg a számot **A napok száma a jövőben a lemorzsolódás megjósolásához** alatt, hogy beállítsa az ablakot a lemorzsolódás előrejelzéséhez. Például megjósolhatja a lemorzsolódás kockázatát az ügyfelek számára a következő 90 nap során, hogy az megfeleljen a marketing megtartási törekvéseinek. A hosszabb vagy rövidebb időszakokra visszavethető lemorzsolódási kockázata előrejelzése az adott üzleti követelményektől függően nehezebben tudja figyelembe venni a lemorzsolódási kockázat profiljában lévő tényezőket. A folytatáshoz válassza a **Tovább** lehetőséget.
    >[!TIP]
    > A **Mentés és bezárás** gombbal bármikor mentheti vázlatként az előrejelzést. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
 
@@ -113,7 +119,8 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 1. Jelölje ki az áttekinteni kívánt előrejelzést.
    - **Előrejelzés neve:** Az előrejelzés létrehozáskor megadott neve.
    - **Előrejelzés típusa:** Az előrejelzéshez használt modell típusa.
-   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.
+   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.    
+     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-new-segment) az preferált küszöbértékkel.
    - **Várható mező:** Ez a mező csak bizonyos típusú előrejelzések esetén kap értéket; az előfizetési lemorzsolódás előrejelzése nem használja.
    - **Állapot:** Az előrejelzés aktuális futási állapota.
         - **Feldolgozási sorban:** Az előrejelzés jelenleg más folyamatok futására vár.

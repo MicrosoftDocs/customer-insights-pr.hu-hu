@@ -1,7 +1,7 @@
 ---
 title: A vállalati profilok bővítése a harmadik féltől származó bővítési Leadspace-szel
 description: Általános információk a Leadspace harmadik fél bővítésről.
-ms.date: 11/24/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,46 +9,67 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 41c56aece043c2d7658fd2655713e1e98775edec
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597652"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5895916"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>A vállalati profilok bővítése Leadspace-szel (előzetes verzió)
 
-A Leadspace egy adatelemző vállalat, amely egy B2B ügyfél-adatplatformot biztosít. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések tartalmaznak kiegészítő attribútumokkal, mint például vállalatméret, székhely, iparág stb.
+A Leadspace egy adatelemző vállalat, amely egy B2B ügyfél-adatplatformot biztosít. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések több attribútumot tartalmaznak,mint például a vállalatméret, székhely, iparág stb.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 A Leadspace konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
-- Aktív Leadspace licence van, és "végleges kulcsa" (más néven **Leadspace-token**). A termékkel kapcsolatos részletekért forduljon közvetlenül a [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/) vállalathoz.
-- [Rendszergazda](permissions.md#administrator) engedéllyel rendelkezik.
+- Aktív Leadspace-licenccel rendelkezik.
 - A vállalatokhoz [egyesített ügyfélprofilok](customer-profiles.md) tartoznak.
+- A Leadspace kapcsolatot már konfigurálta egy rendszergazda, vagy rendelkezik [rendszergazdai](permissions.md#administrator) engedélyekkel, és a „végleges kulcs” (más néven **Leadspace token**). Termékeikkel kapcsolatos részletekért forduljon közvetlenül a [Leadspace-hez](https://www.leadspace.com/products/leadspace-on-demand/).
 
-## <a name="configuration"></a>Konfigurálás
+## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
 1. A célközönség információin belül nyissa meg a következőt: **Adatok** > **Bővítés**.
 
-1. Válassza az **Adataim bővítése** lehetőséget a Leadspace csempéjén.
+1. Válassza az **Adatok bővítése** lehetőséget a Leadspace csempén, majd válassza az **Első lépések** lehetőséget.
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Képernyőkép – Leadspace csempe.":::
 
-1. Válassza az **Első lépések** lehetőséget , majd adja meg az aktív **Leadspace-tokent** (végleges kulcs). Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével. Erősítse meg mindkét bemenetet a **Csatlakozik a Leadspace-hez** lehetőség kiválasztásával.
+1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, a **Kapcsolat hozzáadása**, és a **Leadspace** lehetőség kiválasztásával hozhat létre kapcsolatot. 
 
-1. Válassza az **Adatok leképezés** lehetőséget, és a Leadspace vállalati adatokkal bővíteni kívánt adatkészletet. Kiválaszthatja a *Vevő* entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+1. Válassza a **Kapcsolódás a Leadspace-hez** lehetőséget a kapcsolat megerősítéséhez.
 
-   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Válasszon az ügyfélprofil és a szegmensek bővítése közül.":::
+1. Válassza a **Következő** lehetőséget, és válassza a vállalati adatokkal bővíteni kívánt **Ügyfél adatkészletet** a Leadspace-ből. Kiválaszthatja a **Vevő** entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
 
-1. Kattintson a **Tovább** lehetőségre, és adja meg, hogy az egyesített profilokból mely mezők használhatók a Leadspace-ből származó megfelelő vállalati adatok kereséséhez. A **Vállalat neve** mező kitöltése kötelező. A nagyobb egyeztetési pontosság érdekében akár két másik mező is hozzáadható: **Vállalati webhely** és **Vállalat székhelye**.
+    :::image type="content" source="media/enrichment-Leadspace-configuration-customer-data-set.png" alt-text="Képernyőkép az ügyféladatkészlet kiválasztásáról.":::
+
+1. Válassza a **Következő** lehetőséget, és határozza meg, hogy az egyesített profilokból mely mezők használhatók a Leadspace-ből származó vállalati adatok egyeztetéséhez. A **Vállalat neve** mező kitöltése kötelező. A nagyobb egyeztetési pontosság érdekében akár két másik mező is hozzáadható: **Vállalati webhely** és **Vállalat székhelye**.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace mező leképezési ablaka.":::
-   
-1. Válassza az **Alkalmaz** lehetőséget a mezők leképezésének végrehajtásához.
 
-1. Válassza a **Futtatás** lehetőséget a vállalati profilok bővítése érdekében. A bővítés időtartama az egyesített ügyfélprofilok számától függ.
+1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
+
+1. Adja meg a bővítés nevét, és válassza a **Bővítés memtése** lehetőséget a lehetőségek áttekintése után.
+
+
+## <a name="configure-the-connection-for-leadspace"></a>A Leadspace kapcsolatának beállítása 
+
+A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konfigurálásakor válassza a **Kapcsolat hozzáadása** lehetőséget, *vagy* menjen a **Rendszergazda** > **Kapcsolatok** elemre, és válassza a **Beállítások** lehetőséget a Leadspace csempén.
+
+1. Válassza az **Első lépések** lehetőséget 
+
+1. Adja meg a kapcsolat nevét a **Megjelenítendő név** mezőben.
+
+1. Adjon meg egy érvényes Leadspace jogkivonatot.
+
+1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével
+
+1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
+
+1. Az ellenőrzés befejezése után válassza a **Mentés** lehetőséget.
+   
+   :::image type="content" source="media/enrichment-Leadspace-connection.png" alt-text="Az Leadspace kapcsolat konfigurációs oldala.":::
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 

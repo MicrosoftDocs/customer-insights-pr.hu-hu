@@ -1,7 +1,7 @@
 ---
 title: Mértékek létrehozása és felügyelete
 description: Definiálja a vállalkozás teljesítményét elemző és tükröző mértékeket.
-ms.date: 02/02/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,28 +9,28 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
-ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
+ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "5654735"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887943"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
-A mértékek segítenek abban, hogy jobban megértse az ügyfelek viselkedését és az üzleti teljesítményt a kapcsolódó értékek lekérésével az [egyesített profilokból](data-unification.md). Egy vállalat például az *egy ügyfélhez kapcsolódó teljes költést* szeretné látni az egyes ügyfelek vásárlási előzményeinek megismeréséhez. Vagy mérni szeretné a *vállalat teljes értékesítéseit*, hogy megértse a teljes vállalat összesített szintű bevételeit.  
+A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Egy vállalat például az *ügyfélenkénti teljes kiadást* szeretné látni, hogy megértsék az egyes ügyfelek vásárlási előzményeit, vagy lemérjék a *vállalat teljes értékesítéseit*, hogy megértsék a teljes vállalat összesítési szintű bevételét.  
 
 Az mértékek létrehozása a mértékkészítővel történik, ami egy adatlekérdezési platform számos operátorral és egyszerű leképezési lehetőségekkel. Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére.
 
 A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az ügyféladatok lekérdezésével és a betekintések kinyerésével. Ha például egy *ügyfélre jutó teljes költség* és az *egy ügyfélre jutó teljes megtérülés* mértékeket hozza létre, akkor könnyebben azonosítható a nagy költéssel, mégis nagy megtérüléssel jellemezhető ügyfelek csoportja. A következő legjobb műveletek előremozdításához [létrehozhat egy szegmenst](segments.md). 
 
-## <a name="create-a-measure"></a>Mérőszám létrehozása
+## <a name="build-your-own-measure-from-scratch"></a>Saját mérték létrehozása az alapoktól
 
 Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. Az Ügyfél entitáshoz kapcsolattal beállított adatentitások adatattribútumainak segítségével mértéket állíthat össze. 
 
 1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
 
-1. Válassza az **Új** lehetőséget.
+1. Válassza az **Új** lehetőséget, és válassza a **Saját elkészítése** lehetőséget.
 
 1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
    > [!NOTE]
@@ -72,6 +72,8 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
    1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem. Az *ügyfélszintű mértékek* létrehozásához alapértelmezés szerint a *CustomerID* dimenzió van kiválasztva. Ha *üzleti szintű mértékeket* szeretne létrehozni, eltávolíthatja az alapértelmezett dimenziót.
    1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
+1. Ha vannak olyan értékek az adatokban, amelyeket egész számra kell lecserélni, például a *null* értéket *0* értékkel, akkor válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként.
+
 1. Ha a leképezett adatentitás és az *Ügyfél* entitás között több elérési út is van, válasszon egyet az azonosított [entitáskapcsolat-útvonalak közül](relationships.md). A mértékek eredményei a kiválasztott elérési úttól függően változhatnak. 
    1. Válassza ki az **Adatbeállítások** lehetőséget, és válassza ki az entitás elérési útját, amely a mérték azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
    1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz. 
@@ -88,9 +90,57 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. A listában az újonnan létrehozott mértékegységet a **Mértékek** listában jelenítheti meg.
 
+## <a name="use-a-template-to-build-a-measure"></a>Sablon használata mértékek építéséhez
+
+A leggyakrabban használt mértékeket előre definiált sablonok segítségével hozhatja létre. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
+
+Elérhető mértéksablonok: 
+- Tranzakció átlagos értéke (ATV)
+- Tranzakció összértéke
+- Átlagos napi bevétel
+- Átlagos éves bevétel
+- Tranzakció száma
+- Szerzett hűségpontok
+- Beváltott hűségpontok
+- Hűségpontok egyenlege
+- Ügyfél aktív életciklusa
+- Hűség tagságának időtartama
+- Az utolsó vásárlás óta eltelt idő
+
+A következő eljárás egy új mérték használatával való felépítés lépéseit ismerteti.
+
+1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
+
+1. Válassza az **Új**, és a **Sablon kiválasztása** lehetőséget.
+
+   :::image type="content" source="media/measure-use-template.png" alt-text="Képernyőkép a legördülő menüről, amikor új mértéket hoz létre a sablon kiemelése segítségével.":::
+
+1. Keresse meg az igényeinek megfelelő sablont, és válassza a **Sablon kiválasztása** lehetőséget.
+
+1. Tekintse át a kötelező adatokat, és válassza az **Első lépések** lehetőséget, ha minden adat a megfelelő helyen van.
+
+1. A **Név szerkesztése** ablaktáblában állítsa be a mérték és a kimeneti entitás nevét. 
+
+1. Válassza a **Kész** lehetőséget.
+
+1. Adja meg az adat használandó időkeretét az **Időszak beállítása** szakaszban. Válassza ki, hogy az új mérték lefedje-e a teljes adatkészletet a **Minden idő** kiválasztásával. Vagy ha azt szeretné, hogy a mérték egy **Adott időszakra** összpontosítson.
+
+   :::image type="content" source="media/measure-set-time-period.png" alt-text="Képernyőkép, amely egy sablonból származó mérték konfiguálásakor mutatja az időszak szakaszt.":::
+
+1. A következő szakaszban válassza az **Adatok hozzáadása** lehetőséget a tevékenységek kiválasztásához, és az *Egyesített tevékenység* entitásból képezze le a megfelelő adatokat.
+
+    1. A 1/2. lépés: A **Tevékenység típusa** alatt válassza ki a használni kívánt entitás típusát. A **Tevékenységekhez** válassza ki a leképezni kívánt entitásokat.
+    1. 2/2. lépés: Válassza ki az attribútumot az *Egyesített tevékenység* entitásból a képlet által megkövetelt összetevőhöz. Például az Átlagos tranzakció értéke a Tranzakció értéket képviselő attribútum. A **Tevékenység időbélyegző** esetén válassza ki az Egyesített tevékenység entitás attribútumát, amely a tevékenység dátumát és időpontját jelképezi.
+   
+1. Miután az adatleképezés sikeres volt, az állapot **Befejezett** értékre vált, valamint láthatja a leképezett tevékenységek és attribútumok nevét.
+
+   :::image type="content" source="media/measure-template-configured.png" alt-text="Képernyőkép a mérősablon teljes konfigurálásról.":::
+
+1. Most már a **Futtatás** lehetőséget is választhatja a mérték eredményének kiszámításához. Későbbi finomításhoz válassza a **Tervezet mentése** lehetőséget.
+
 ## <a name="manage-your-measures"></a>Intézkedések kezelése
 
-[Egy mérték létrehozása](#create-a-measure) után megtekintheti a mértékek listáját a **Mértékek** oldalon.
+A **Mértékek** lapon láthatja a mértékek listáját.
 
 Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, akkor megtekintheti a kimenetet, és letölthet egy .CSV-fájl.
 

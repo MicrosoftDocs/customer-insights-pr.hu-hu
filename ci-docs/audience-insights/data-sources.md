@@ -1,7 +1,7 @@
 ---
 title: Adatforrások kiválasztása adatok betöltéséhez
 description: Megismerkedhet vele, hogyan importálhat különböző forrásokból származó adatokat.
-ms.date: 11/03/2020
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 780dc61a82d6ed9856a37dc8f164fa946d982bbe
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595950"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887897"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -32,8 +32,15 @@ A adatforrások három fő módon adhatók hozzá:
 - [Common Data Model-mappából](connect-common-data-model.md)
 - [Saját Common Data Service tóból](connect-common-data-service-lake.md)
 
-> [!NOTE]
-> Még nem vehetők fel adatok helyszíni-adatforrásokból.
+## <a name="add-data-from-on-premises-data-sources"></a>Adatok hozzáadása helyszíni adatforrásokból
+
+A helyszíni Audience Insights-ban az adatok betöltése a helyi adatforrásokból a Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](manage-environments.md#create-an-environment-in-an-existing-organization).
+
+A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjárók használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse környezet társítva lett volna a helyszíni adatátjárók használatára.
+
+A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan hivatkozások láthatóak, amelyekre kattintva a Power Platform környezetbe mehet, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Képernyőkép az adatforrások oldalról, amely a Power Platform környezetre mutató hivatkozásokat tartalmazza.":::
 
 ## <a name="review-ingested-data"></a>A betöltött adatok áttekintése
 
@@ -65,7 +72,7 @@ Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lép
 
 2. Jelölje ki a frissíteni kívánt adatforrás melletti függőleges ellipszist, és válassza a **Frissítés** elemet a legördülő listából.
 
-3. Az adatforrás most már a manuális frissítésre váltja ki. Az adatforrás frissítésével mind az entitások sémája, mind az adatforrásban megadott entitások adatai is frissülnek.
+3. Az adatforrás most már a manuális frissítésre váltja ki. Egy adatforrás frissítése frissíteni fogja az entitássémát és az adatokat a frissítésben megadott összes adatforrás számára.
 
 4. Válassza a **Frissítés leállítása**, ha meg akarja szakítani a meglévő frissítést, és az adatforrás visszaáll a legutóbbi frissítési állapotba.
 
