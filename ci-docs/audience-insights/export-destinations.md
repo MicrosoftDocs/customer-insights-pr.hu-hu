@@ -1,7 +1,7 @@
 ---
-title: Exportálási célhelyek
-description: Adatok exportálása és az exportálási célhelyek kezelése.
-ms.date: 07/21/2020
+title: Adatok exportálása a Customer Insightsból
+description: Exportálások kezelése az adatok megosztásához.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596088"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896146"
 ---
-# <a name="export-destinations-preview-overview"></a><span data-ttu-id="4b9f8-103">Exportálási célhelyek (előzetes verzió) áttekintése</span><span class="sxs-lookup"><span data-stu-id="4b9f8-103">Export destinations (preview) overview</span></span>
+# <a name="exports-preview-overview"></a><span data-ttu-id="4aa1c-103">Exportálások (előzetes verzió) áttekintése</span><span class="sxs-lookup"><span data-stu-id="4aa1c-103">Exports (preview) overview</span></span>
 
-<span data-ttu-id="4b9f8-104">Az **Exportálási célhelyek** lap megjeleníti az összes olyan helyet, amelyet beállított az adatok exportálási céljának.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-104">The **Export destinations** page shows you all locations you've set up to export data to.</span></span> <span data-ttu-id="4b9f8-105">Az exportáláshoz új célhelyeket is hozzáadhat.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-105">You can also add new destinations for export.</span></span> <span data-ttu-id="4b9f8-106">Emellett a jelenleg elérhető exportálási lehetőségeket is mutatja.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-106">Additionally, it shows export currently available options.</span></span> <span data-ttu-id="4b9f8-107">Gyors áttekintést, leírást kaphat, és megtudhatja, mit tehet az egyes bővíthetőség-beállításokkal.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-107">Get a quick overview, description, and find out what you can do with each extensibility option.</span></span> <span data-ttu-id="4b9f8-108">Egységesített profilok, intézkedések és szegmensek exportálása a vállalat szempontjából releváns támogatott alkalmazásokhoz.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-108">Export unified profiles, measures, and segments to supported apps relevant for your business.</span></span>
+<span data-ttu-id="4aa1c-104">Az **Exportálások** lap megjeleníti az összes konfigurált exportálást.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-104">The **Exports** page shows you all configured exports.</span></span> <span data-ttu-id="4aa1c-105">Az exportálások meghatározott adatokat osztanak meg különböző alkalmazásokkal.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-105">Exports share specific data with various applications.</span></span> <span data-ttu-id="4aa1c-106">Ezek tartalmazhatnak ügyfélprofilokat vagy entitásokat, sémákat és leképezési részleteket.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-106">They can include customer profiles or entities, schemas, and mapping details.</span></span> <span data-ttu-id="4aa1c-107">Mindegyik exportáláshoz szükség van egy [rendszergazda kapcsolatra, beállításra, hogy kezelhesse a hitelesítést és a hozzáférést](connections.md).</span><span class="sxs-lookup"><span data-stu-id="4aa1c-107">Each export requires a [connection, set up by an administrator, to manage authentication and access](connections.md).</span></span>
 
-<span data-ttu-id="4b9f8-109">Válassza a **Felügyelet** > **Exportálási célhelyek** lehetőséget a következő bővíthetőségi lehetőségek megkereséséhez:</span><span class="sxs-lookup"><span data-stu-id="4b9f8-109">Go to **Admin** > **Export destinations** to find the following extensibility options:</span></span>
+> [!NOTE]
+> <span data-ttu-id="4aa1c-108">2021 márciusáig az exportálásáok automatikusan létrehoztak egy kapcsolatot a megfelelő szolgáltatáshoz.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-108">Until March 2021, exports created a connection to the corresponding service automatically.</span></span> <span data-ttu-id="4aa1c-109">Az exportálásokhoz már szükség van [egy rendszergazda által létrehozott és megosztott kapcsolatra](connections.md) még mielőtt létrehoznák őket.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-109">Exports now require a [connection, created and shared by an administrator](connections.md) before you can create them.</span></span>
 
-- [<span data-ttu-id="4b9f8-110">Adobe Campaign Standard</span><span class="sxs-lookup"><span data-stu-id="4b9f8-110">Adobe Campaign Standard</span></span>](export-adobe-campaign-standard.md)
-- [<span data-ttu-id="4b9f8-111">Adobe Experience Platform</span><span class="sxs-lookup"><span data-stu-id="4b9f8-111">Adobe Experience Platform</span></span>](export-adobe-experience-platform.md)
-- [<span data-ttu-id="4b9f8-112">AdRoll</span><span class="sxs-lookup"><span data-stu-id="4b9f8-112">AdRoll</span></span>](export-adroll.md)
-- [<span data-ttu-id="4b9f8-113">Autopilot</span><span class="sxs-lookup"><span data-stu-id="4b9f8-113">Autopilot</span></span>](export-autopilot.md)
-- [<span data-ttu-id="4b9f8-114">Azure Blob Storage</span><span class="sxs-lookup"><span data-stu-id="4b9f8-114">Azure Blob Storage</span></span>](export-azure-blob-storage.md)
-- [<span data-ttu-id="4b9f8-115">Azure Data Lake Storage Gen2</span><span class="sxs-lookup"><span data-stu-id="4b9f8-115">Azure Data Lake Storage Gen2</span></span>](export-azure-data-lake-storage-gen2.md)
-- [<span data-ttu-id="4b9f8-116">Microsoft Teams robot</span><span class="sxs-lookup"><span data-stu-id="4b9f8-116">Bot for Microsoft Teams</span></span>](export-teams-bot.md)
-- [<span data-ttu-id="4b9f8-117">Customer Insights API</span><span class="sxs-lookup"><span data-stu-id="4b9f8-117">Customer Insights API</span></span>](apis.md)
-- [<span data-ttu-id="4b9f8-118">DotDigital</span><span class="sxs-lookup"><span data-stu-id="4b9f8-118">DotDigital</span></span>](export-dotdigital.md)
-- [<span data-ttu-id="4b9f8-119">Dynamics 365 Customer Service (Ügyfélkártya bővítmény)</span><span class="sxs-lookup"><span data-stu-id="4b9f8-119">Dynamics 365 Customer Service (Customer Card Add-in)</span></span>](customer-card-add-in.md)
-- [<span data-ttu-id="4b9f8-120">Dynamics 365 Marketing</span><span class="sxs-lookup"><span data-stu-id="4b9f8-120">Dynamics 365 Marketing</span></span>](export-dynamics365-marketing.md)
-- [<span data-ttu-id="4b9f8-121">Dynamics 365 Sales</span><span class="sxs-lookup"><span data-stu-id="4b9f8-121">Dynamics 365 Sales</span></span>](export-dynamics365-sales.md)
-- [<span data-ttu-id="4b9f8-122">Dynamics 365 Értékesítési központ (Ügyfélkártya bővítmény)</span><span class="sxs-lookup"><span data-stu-id="4b9f8-122">Dynamics 365 Sales Hub (Customer Card Add-in)</span></span>](customer-card-add-in.md)
-- [<span data-ttu-id="4b9f8-123">Facebook hirdetéskezelő</span><span class="sxs-lookup"><span data-stu-id="4b9f8-123">Facebook Ads Manager</span></span>](export-facebook.md)
-- [<span data-ttu-id="4b9f8-124">Google Ads</span><span class="sxs-lookup"><span data-stu-id="4b9f8-124">Google Ads</span></span>](export-google-ads.md)
-- [<span data-ttu-id="4b9f8-125">LiveRamp&reg;</span><span class="sxs-lookup"><span data-stu-id="4b9f8-125">LiveRamp&reg;</span></span>](export-liveramp.md)
-- [<span data-ttu-id="4b9f8-126">Mailchimp</span><span class="sxs-lookup"><span data-stu-id="4b9f8-126">Mailchimp</span></span>](export-mailchimp.md)
-- [<span data-ttu-id="4b9f8-127">Marketo</span><span class="sxs-lookup"><span data-stu-id="4b9f8-127">Marketo</span></span>](export-marketo.md)
-- [<span data-ttu-id="4b9f8-128">Power Automate</span><span class="sxs-lookup"><span data-stu-id="4b9f8-128">Power Automate</span></span>](export-power-automate.md)
-- [<span data-ttu-id="4b9f8-129">Power Apps</span><span class="sxs-lookup"><span data-stu-id="4b9f8-129">Power Apps</span></span>](export-power-apps.md)
-- [<span data-ttu-id="4b9f8-130">Power BI</span><span class="sxs-lookup"><span data-stu-id="4b9f8-130">Power BI</span></span>](export-power-bi.md)
-- [<span data-ttu-id="4b9f8-131">SendGrid</span><span class="sxs-lookup"><span data-stu-id="4b9f8-131">SendGrid</span></span>](export-sendgrid.md)
-- [<span data-ttu-id="4b9f8-132">SFTP</span><span class="sxs-lookup"><span data-stu-id="4b9f8-132">SFTP</span></span>](export-sftp.md)
+<span data-ttu-id="4aa1c-110">Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-110">Go to **Data** > **Exports** to view the exports page.</span></span> <span data-ttu-id="4aa1c-111">Minden felhasználói szerepkörrel rendelkező megtekintheti a konfigurált exportálásokat.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-111">All user roles have access to view configured exports.</span></span> <span data-ttu-id="4aa1c-112">A parancssávban a keresési mező segítségével keresse meg az exportálás nevét, a kapcsolat nevét, vagy a kapcsolat típusát.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-112">Use of the search field in the command bar to find exports by their name, connection name, or connection type.</span></span>
 
-## <a name="add-a-new-export-destination"></a><span data-ttu-id="4b9f8-133">Új exportálási cél hozzáadása</span><span class="sxs-lookup"><span data-stu-id="4b9f8-133">Add a new export destination</span></span>
+## <a name="set-up-a-new-export"></a><span data-ttu-id="4aa1c-113">Új exportálás beállítása</span><span class="sxs-lookup"><span data-stu-id="4aa1c-113">Set up a new export</span></span>
 
-<span data-ttu-id="4b9f8-134">Az exportálási célhelyek hozzáadásához [rendszergazdai jogosultságokkal kell rendelkeznie](permissions.md).</span><span class="sxs-lookup"><span data-stu-id="4b9f8-134">To add export destinations, you have [administrator permissions](permissions.md).</span></span> <span data-ttu-id="4b9f8-135">Ha Microsoft-szolgáltatásokba exportál, akkor feltételezzük, hogy mindkét szolgáltatás ugyanabban a szervezetben van.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-135">If you export to Microsoft services, we assume both services are in the same organization.</span></span>
+<span data-ttu-id="4aa1c-114">Az exportálás beállításához vagy szerkesztéséhez elérhető kapcsolatokra van szüksége.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-114">To set up or edit an export, you need to have connections available to you.</span></span> <span data-ttu-id="4aa1c-115">A kapcsolatok a [felhasználói szerepkörtől](permissions.md) függnek:</span><span class="sxs-lookup"><span data-stu-id="4aa1c-115">Connections depend on your [user role](permissions.md):</span></span>
+- <span data-ttu-id="4aa1c-116">A rendszergazdák minden kapcsolathoz rendelkeznek hozzáféréssel.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-116">Administrators have access to all connections.</span></span> <span data-ttu-id="4aa1c-117">Az exportálás beállításakor új kapcsolatokat is létrehozhatnak.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-117">They can also create new connections when setting up an export.</span></span>
+- <span data-ttu-id="4aa1c-118">A közreműködő adott kapcsolatokhoz férhetnek hozzá.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-118">Contributors can have access to specific connections.</span></span> <span data-ttu-id="4aa1c-119">Ezek a rendszergazdáktól függnek, a kapcsolatok konfigurálásához és megosztásához.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-119">They depend on administrators to configure and share connections.</span></span> <span data-ttu-id="4aa1c-120">További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).</span><span class="sxs-lookup"><span data-stu-id="4aa1c-120">For more information, see [Allow contributors to use a connection for exports](connections.md#allow-contributors-to-use-a-connection-for-exports).</span></span>
+- <span data-ttu-id="4aa1c-121">A megtekintők csak a meglévő exportálásokat tekinthetik meg, létrehozni azonban nem jogosultak.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-121">Viewers can only view existing exports but not create them.</span></span>
 
-1. <span data-ttu-id="4b9f8-136">Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-136">Go to **Admin** > **Export destinations**.</span></span>
+1. <span data-ttu-id="4aa1c-122">Menjen az **Adatok** > **Exportálások** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-122">Go to **Data** > **Exports**.</span></span>
 
-1. <span data-ttu-id="4b9f8-137">Váltson a **Saját exportálási célhelyek** lapra.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-137">Switch to the **My export destinations** tab.</span></span>
+1. <span data-ttu-id="4aa1c-123">Új exportálási cél létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-123">Select **Add export** to create a new export destination.</span></span>
 
-1. <span data-ttu-id="4b9f8-138">Válassza a **Célhely hozzáadása** lehetőséget új célhely létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-138">Select **Add destination** to create a new export destination.</span></span>
+1. <span data-ttu-id="4aa1c-124">Az **Exportálás beállítása** ablaktáblában válassza ki a használni kívánt kapcsolatot.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-124">In the **Set up export** pane, select which connection to use.</span></span> <span data-ttu-id="4aa1c-125">A [Kapcsolatokat](connections.md) a rendszergazdák kezelik.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-125">[Connections](connections.md) are managed by administrators.</span></span> 
 
-1. <span data-ttu-id="4b9f8-139">A **Célhely hozzáadása** ablaktáblában válassza ki az exportálási cél **Típusát** a legördülő listában.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-139">In the **Add destination** pane, select the **Type** of export destination in the drop-down.</span></span>
+1. <span data-ttu-id="4aa1c-126">Adja meg a szükséges adatokat, majd az exportálás létrehozásához válassza a **Mentés** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-126">Provide the required details and select **Save** to create the export.</span></span>
 
-1. <span data-ttu-id="4b9f8-140">Adja meg a szükséges adatokat, és válassza a **Következő** lehetőséget az exportálási cél létrehozásához.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-140">Provide the required details and select **Next** to create the export destination.</span></span>
+### <a name="edit-an-export"></a><span data-ttu-id="4aa1c-127">Egy exportálás szerkesztése</span><span class="sxs-lookup"><span data-stu-id="4aa1c-127">Edit an export</span></span>
 
-<span data-ttu-id="4b9f8-141">A **Beállítás** lehetőséget is választhatja egy mozaikon a **Felderítés** lapon.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-141">You can also select **Set up** on a tile on the **Discover** tab.</span></span>
+1. <span data-ttu-id="4aa1c-128">Jelölje ki a szerkeszteni kívánt exportálási célhely függőleges három pontját.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-128">Select the vertical ellipsis for the export destination you want to edit.</span></span>
 
-## <a name="view-export-destinations"></a><span data-ttu-id="4b9f8-142">Exportálási célhely megtekintése</span><span class="sxs-lookup"><span data-stu-id="4b9f8-142">View Export destinations</span></span>
+1. <span data-ttu-id="4aa1c-129">Válassza a legördülő menü **Szerkesztés** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-129">Select **Edit** from the drop-down menu.</span></span>
 
-<span data-ttu-id="4b9f8-143">Az exportálási célhelyek létrehozása után ezeket egy táblázatban találja a **Saját exportálási célhelyek** lapon. Ennek a táblának három oszlopa van:</span><span class="sxs-lookup"><span data-stu-id="4b9f8-143">After creating export destinations, you'll find them in a table on the **My export destinations** tab. This table has three columns:</span></span>
+1. <span data-ttu-id="4aa1c-130">Módosítsa a frissíteni kívánt értékeket, majd válassza a **Mentés** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-130">Change the values you want to update and select **Save**.</span></span>
 
-- <span data-ttu-id="4b9f8-144">**mMegjelenítendő név**: A cél létrehozásakor megadott név.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-144">**Display name**: The name you entered when creating the destination.</span></span>
-- <span data-ttu-id="4b9f8-145">**Típus**: A cél létrehozásakor beállított exportálási célhely típus.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-145">**Type**: The export destination type you set when creating the destination.</span></span>
-- <span data-ttu-id="4b9f8-146">**Létrehozva**: A célhely létrehozásának dátuma.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-146">**Created**: The date you created the destination.</span></span>
+## <a name="view-exports-and-export-details"></a><span data-ttu-id="4aa1c-131">Exportálás és exportálás részleteinek megtekintése</span><span class="sxs-lookup"><span data-stu-id="4aa1c-131">View Exports and export details</span></span>
 
-## <a name="edit-an-export-destination"></a><span data-ttu-id="4b9f8-147">Exportálási cél szerkesztése</span><span class="sxs-lookup"><span data-stu-id="4b9f8-147">Edit an export destination</span></span>
+<span data-ttu-id="4aa1c-132">Az exportálási célhelyek a létrehozása után az **Adatok** > **Exportálások** listán jelennek meg.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-132">After creating export destinations, they are listed on **Data** > **Exports**.</span></span> <span data-ttu-id="4aa1c-133">Minden felhasználó láthatja, hogy mely adatok lettek megosztva, és hogy milyen állapotúak.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-133">All users can see which data is shared and its latest status.</span></span>
 
-1. <span data-ttu-id="4b9f8-148">Jelölje ki a szerkeszteni kívánt Exportálási célhely függőleges három pontját.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-148">Select the vertical ellipsis for the Export destination you want to edit.</span></span>
+1. <span data-ttu-id="4aa1c-134">Menjen az **Adatok** > **Exportálások** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-134">Go to **Data** > **Exports**.</span></span>
 
-   > [!div class="mx-imgBorder"]
-   > <span data-ttu-id="4b9f8-149">![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")</span><span class="sxs-lookup"><span data-stu-id="4b9f8-149">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
+1. <span data-ttu-id="4aa1c-135">A szerkesztési jogosultsággal nem rendelkező felhasználók a **Szerkesztés** helyett a **Megtekintés** lehetőséget választhatják az exportálás részleteinek megtekintéséhez.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-135">Users without edit permissions select **View** instead of **Edit** see the export details.</span></span>
 
-1. <span data-ttu-id="4b9f8-150">A legördülő menüben kattintson a **Szerkesztés** parancsra.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-150">Select **Edit** from the dropdown menu.</span></span>
+1. <span data-ttu-id="4aa1c-136">Ez az oldalpanel mutatja az exportálás beállítását.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-136">This side pane shows the set up of this export.</span></span> <span data-ttu-id="4aa1c-137">Az értékek a szerkesztési jogosultságok nélkül nem módosíthatók.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-137">Without edit permissions, you can't change values.</span></span> <span data-ttu-id="4aa1c-138">Az exportálások lapra való visszatéréshez válassza a **Bezárás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-138">Select **Close** to return to the exports page.</span></span>
 
-1. <span data-ttu-id="4b9f8-151">Módosítsa a frissítést igénylő értékeket, és válassza a **Mentés** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-151">Change the values that require update and select **Save**.</span></span>
+## <a name="run-exports-on-demand"></a><span data-ttu-id="4aa1c-139">Exportálások futtatása igény szerint</span><span class="sxs-lookup"><span data-stu-id="4aa1c-139">Run exports on demand</span></span>
 
-## <a name="export-data-on-demand"></a><span data-ttu-id="4b9f8-152">Adatok igény szerinti exportálása</span><span class="sxs-lookup"><span data-stu-id="4b9f8-152">Export data on demand</span></span>
+<span data-ttu-id="4aa1c-140">Az exportálás konfigurálása után az összes [ütemezett frissítéssel](system.md#schedule-tab) futni fog, amíg van működő kapcsolata.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-140">After configuring an export, it will run with every [scheduled refresh](system.md#schedule-tab) as long as it has a working connection.</span></span>
 
-<span data-ttu-id="4b9f8-153">Az exportálási célhely összekötőjének konfigurálása után az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt megtörténik.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-153">After configuring a connector for an export destination, exports will run with every [scheduled refresh](system.md#schedule-tab).</span></span>
+<span data-ttu-id="4aa1c-141">Ütemezett frissítésre való várakozás nélküli adatexportáláshoz menjen az **Adatok** > **Exportálások** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-141">To export data without waiting for a scheduled refresh, go to **Data** > **Exports**.</span></span> <span data-ttu-id="4aa1c-142">Két lehetőség közül választhat:</span><span class="sxs-lookup"><span data-stu-id="4aa1c-142">You have two options:</span></span>
 
-<span data-ttu-id="4b9f8-154">Ha az adatok exportálását az ütemezett frissítésre való várakozás nélkül szeretné elvégezni, akkor nyissa meg a **Saját exportálási célhelyek** lapot itt: **Rendszergazda** > **Exportálási célhelyek**.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-154">To export data without waiting for a scheduled refresh, go the **My export destinations** tab on **Admin** > **Export destinations**.</span></span>
+- <span data-ttu-id="4aa1c-143">Az összes exportálás futtatásához válassza az **Összes futtatása** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-143">To run all exports, select **Run all** in the command bar.</span></span> 
+- <span data-ttu-id="4aa1c-144">Egyetlen exportálás futtatásához jelölje ki a három pontot (...) a listaelemen, majd válassza a **Futtatás** lehetőséget.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-144">To run a single export, select the ellipsis (...) on a list item and then choose **Run**.</span></span>
 
-> [!div class="mx-imgBorder"]
-> <span data-ttu-id="4b9f8-155">![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")</span><span class="sxs-lookup"><span data-stu-id="4b9f8-155">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
+## <a name="remove-an-export"></a><span data-ttu-id="4aa1c-145">Exportálás eltávolítása</span><span class="sxs-lookup"><span data-stu-id="4aa1c-145">Remove an Export</span></span>
 
-- <span data-ttu-id="4b9f8-156">Válassza az **Exportálás** lehetőséget a lista felett, ha az exportálást egyszerre az összes exportálási célhelyre szeretné futtatni.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-156">Select **Export** above the list to run the export to all export destinations simultaneously.</span></span>
-- <span data-ttu-id="4b9f8-157">Jelölje ki a három pontot (...) egy listaelem után, majd válassza az **Exportálás** lehetőséget az exportálás egyetlen exportálási célhelyre való futtatásához.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-157">Select the ellipsis (...) after a list item and then choose the **Export** option to run the export for a single export destination.</span></span>
+1. <span data-ttu-id="4aa1c-146">Menjen az **Adatok** > **Exportálások** lehetőségre.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-146">Go to **Data** > **Exports**.</span></span>
 
-## <a name="remove-an-export-destination"></a><span data-ttu-id="4b9f8-158">Exportálási cél eltávolítása</span><span class="sxs-lookup"><span data-stu-id="4b9f8-158">Remove an Export destination</span></span>
+1. <span data-ttu-id="4aa1c-147">Jelölje ki az eltávolítani kívánt Exportálás függőleges három pontját.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-147">Select the vertical ellipsis for the Export you want to remove.</span></span>
 
-<span data-ttu-id="4b9f8-159">Az exportálási célhely eltávolításához induljon a fő **Exportálási célhelyek** oldalról.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-159">To remove an Export destination, start from the main **Export destinations** page.</span></span>
+1. <span data-ttu-id="4aa1c-148">Válassza a legördülő menü **Eltávolítás** elemét.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-148">Select **Remove** from the dropdown menu.</span></span>
 
-1. <span data-ttu-id="4b9f8-160">Jelölje ki az eltávolítani kívánt Exportálási célhely függőleges három pontját.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-160">Select the vertical ellipsis for the Export destination you want to remove.</span></span>
-
-   > [!div class="mx-imgBorder"]
-   > <span data-ttu-id="4b9f8-161">![Függőleges három pont](media/export-destinations-page-ellipsis.png "Függőleges három pont")</span><span class="sxs-lookup"><span data-stu-id="4b9f8-161">![Vertical ellipsis](media/export-destinations-page-ellipsis.png "Vertical ellipsis")</span></span>
-
-2. <span data-ttu-id="4b9f8-162">Válassza a legördülő menü **Eltávolítás** elemét.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-162">Select **Remove** from the dropdown menu.</span></span>
-
-3. <span data-ttu-id="4b9f8-163">Erősítse meg az eltávolítást az **Eltávolítás** lehetőség választásával a megerősítő képernyőn.</span><span class="sxs-lookup"><span data-stu-id="4b9f8-163">Confirm the removal by selecting **Remove** on the confirmation screen.</span></span>
+1. <span data-ttu-id="4aa1c-149">Erősítse meg az eltávolítást az **Eltávolítás** lehetőség választásával a megerősítő képernyőn.</span><span class="sxs-lookup"><span data-stu-id="4aa1c-149">Confirm the removal by selecting **Remove** on the confirmation screen.</span></span>
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
