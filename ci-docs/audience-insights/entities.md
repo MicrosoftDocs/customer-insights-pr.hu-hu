@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 383523bad5105e08e57758838e90a49e805b5f9b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
+ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596410"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049397"
 ---
 # <a name="entities-in-audience-insights"></a>Entitások a célközönség-információkban
 
@@ -35,14 +35,14 @@ Az **Entitások** lap felsorolja az entitásokat, és több oszlopot is tartalma
 Jelöljön ki egy entitást az adott entitáshoz tartozó különböző mezők és bejegyzések feltáráshoz.
 
 > [!div class="mx-imgBorder"]
-> ![Válasszon entitást](media/data-manager-entities-data.png "Válasszon ki egy entitást!")
+> ![Entitás kiválasztása](media/data-manager-entities-data.png "Válasszon ki egy entitást!")
 
-- Az **Adatok** lap alapértelmezés szerint be van jelölve, és az entitás egyes bejegyzéseire vonatkozó adatokat tartalmazó táblázatot jelenít meg.
+- Az **Adatok** lapon megjelenik az entitás egyéni rekordjainak részleteit tartalmazó táblázat.
 
 > [!div class="mx-imgBorder"]
 > ![Mezők tábla](media/data-manager-entities-fields.PNG "Mezők tábla")
 
-- A **Mezők** lapon látható egy táblázat, amely a kijelölt entitás adatainak, például mezőnevek, adattípusok és típusok áttekintésére szolgál. A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek olyan szemantikai típusok, amelyek eltérhetnek az attribútumok adattípusaitól – például az alábbi *Ee-mail* mező adattípusa *Szöveg*, de (szemantikai) Common Data Model típusa lehet *E-mail* vagy *EmailAddress*.
+- Az **Attribútumok** lap alapértelmezés szerint ki van választva, és megjelenik rajta egy táblázat, amelyben áttekinthetők a kiválasztott entitás részletei (például a mezőnevek vagy az adattípusok). A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek olyan szemantikai típusok, amelyek eltérhetnek az attribútumok adattípusaitól – például az alábbi *Ee-mail* mező adattípusa *Szöveg*, de (szemantikai) Common Data Model típusa lehet *E-mail* vagy *EmailAddress*.
 
 > [!NOTE]
 > Mindkét tábla csak az entitás adatainak mintáját jeleníti meg. Ha meg szeretné tekinteni a teljes adatkészlet, nyissa meg az **Adatforrások** oldalt, jelöljön kiegy entitást, válassza a **Szerkesztés** lehetőséget, majd tekintse meg az entitás adatait aPower Query-szerkesztővel, amint az az [Adatforrásokban](data-sources.md) látható.

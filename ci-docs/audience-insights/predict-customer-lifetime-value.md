@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595811"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954582"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Ügyfélélettartam-érték (CLV) előrejelzése (előzetes verzió)
 
@@ -38,11 +38,11 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
 - Ügyfélazonosító: Egyedi azonosító az egyes ügyfelekhez tranzakciók egyeztetéshez
 
 - Tranzakcióelőzmények: A tranzakciók előzménynaplója a szemantikus adatséma alatt
-    - Tranzakcióazonosító: Egy egyedi azonosító az egyes tranzakciókhoz
-    - Tranzakció dátuma: Dátum, lehetőség szerint az egyes tranzakciók időbélyegzője
-    - Tranzakció összege: Az egyes tranzakciók pénzbeni értéke (például bevétel vagy haszonkulcs)
-    - Visszaküldéshez hozzárendelt címke (nem kötelező): logikai érték, amely azt jelzi, hogy a tranzakció visszatérés-e 
-    - Termékazonosító (nem kötelező): A tranzakcióban részt vevő termék termékazonosítója
+    - **Tranzakcióazonosító**: Az egyes tranzakciók egyedi azonosítója
+    - **Tranzakció dátuma**: Dátum, lehetőség szerint az egyes tranzakciók időbélyegzője
+    - **Tranzakció összege**: Az egyes tranzakciók pénzben megadott értéke (például bevétel vagy fedezeti mutató)
+    - **Visszatérítésekhez hozzárendelt címke** (nem kötelező): Olyan logikai érték, amely azt jelzi, hogy a tranzakció visszatérítés-e 
+    - **Termékazonosító** (nem kötelező): A tranzakcióban érintett termék termékazonosítója
 
 - További adatok (nem kötelező), például
     - Webes tevékenységek: webhelylátogatási előzmények, e-mail előzmények
@@ -53,10 +53,20 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
     - A tevékenységek ügyfelekhez rendelésére szolgáló ügyfél-azonosítók
     - A tevékenység adatai a tevékenység nevét és dátumát tartalmazzák
     - A tevékenységekhez tartozó szemantikus adatséma az alábbiakat tartalmazza: 
-        - Elsődleges kulcs: Egy tevékenység egyedi azonosítója
-        - Időbélyegző: Az elsődleges kulcs által azonosított esemény dátuma és időpontja
-        - Esemény (tevékenység neve): A használni kívánt esemény neve
-        - Részletek (összeg vagy érték): Az ügyféltevékenység részletei
+        - **Elsődleges kulcs**: Egy tevékenység egyedi azonosítója
+        - **Időbélyegző**: Az elsődleges kulcs által azonosított esemény dátuma és időpontja
+        - **Esemény (tevékenység neve)**: A használni kívánt esemény neve
+        - **Részletek (összeg vagy érték)**: Az ügyféltevékenység részletei
+
+- Javasolt adatjellemzők:
+    - Elegendő korábbi adat: Legalább egy évnyi tranzakciós adat. A CLV egy évre való előrejelzéséhez lehetőség szerint 2-3 évnyi tranzakciós adat szükséges.
+    - Több vásárlás ügyfélenként: Ideális esetben ügyfélazonosítónként legalább 2-3 tranzakció, lehetőség szerint eltérő dátummal.
+    - Ügyfelek száma: Legalább 100 egyedi ügyfél; lehetőség szerint 10 000-nél több ügyfél. A modell nem működik 100-nál kevesebb ügyfél esetén, illetve ha nem áll rendelkezésre elegendő előzményadat.
+    - Adatok teljessége: A bemeneti adatok kötelező mezőiben legfeljebb az értékek 20%-a hiányzik.   
+
+> [!NOTE]
+> - A modellhez az ügyfelek tranzakciós előzményeire van szükség. Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több vásárlási/tranzakciós entitás van, akkor egyesítheti őket a Power Query-ben az adatbetöltés előtt.
+> - További ügyféltevékenység-adat esetén (nem kötelező) azonban annyi ügyféltevékenység-entitást adhat hozzá, amennyit a modellel figyelembe szeretne vetetni.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Ügyfélélettartam-érték előrejelzésének létrehozása
 
@@ -76,7 +86,7 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
    Az egység alapértelmezés szerint hónapként van beállítva. Ezt módosíthatja évekre, a ha távolabbi jövőt szeretné vizsgálni.
 
    > [!TIP]
-   > Ahhoz, hogy a pontosan előre tudja jelezni a CLV-t a beállított időszakra vonatkozóan, hasonló időszakra van szükség a korábbi adatokból. Ha például a következő 12 hónapra szeretne előrejelzést készíteni, ajánlott, hogy legalább 18–24 hónap korábbi adatait használja.
+   > Ahhoz, hogy a pontosan előre tudja jelezni a CLV-t a beállított időszakra vonatkozóan, hasonló időszakra van szükség a korábbi adatokból. Ha például a következő 12 hónapra szeretne előrejelzést készíteni a CLV-ről, ajánlott, hogy legalább 18–24 hónap korábbi adatait használja.
 
 1. Adja meg, hogy mit jelentenek az **Aktív ügyfelek** a vállalat számára. Állítsa be időkeretet amelyben az ügyfélnek legalább egy tranzakcióval kell rendelkeznie, hogy aktívnak minősüljön. A modell csak az aktív ügyfelek CLV-jét fogja előre jelezni. 
    - **Hagyja, hogy a modell számítsa ki a beszerzési intervallumot (ajánlott)**: A modell elemzi az adatokat, és a korábbi vásárlások alapján határoz meg egy időszakot.
@@ -181,14 +191,14 @@ Az eredményoldalon lévő adatok három fő részben jelennek meg.
   A rendszer a előrejelzés konfigurálása során megadott nagy értékű ügyfelek definícióját használva felméri, hogy az AI-modell hogyan teljesített a nagy értékű ügyfelek előrejelzésében az alapmodellhez képest.    
 
   Az osztályzatot a következő szabályok határozzák meg:
-  - A, ha a modell legalább 5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
-  - B, ha a modell legalább 0–5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
-  - C, ha a modell kevesebb nagy értékű ügyfelet jelzett előre alapmodellhez képest.
+  - **A**, ha a modell legalább 5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
+  - **B**, ha a modell 0–5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
+  - **C**, ha a modell pontosan kevesebb nagy értékű ügyfelet jelzett előre alapmodellhez képest.
 
   A **Modell minősítése** panel további részleteket tartalmaz az AI-modell teljesítményéről és az alapmodellről. Az alapmodell nem AI-alapú megközelítést alkalmaz az ügyfelek élettartamának elsődlegesen az ügyfelek által történt korábbi vásárlások alapján történő kiszámításához.     
   A CLV-értéknek az alapmodellel való kiszámításához használt szabványos képlet:    
 
-  *Az egyes ügyfelek CLV-értéke = Az ügyfél által az aktív ügyfélablakban végzett átlagos havi vásárlás * A hónapok száma a CLV előrejelzési időszakban * Az ügyfelek összesített megtartási aránya*
+  _**Az egyes ügyfelek CLV-értéke** = Az ügyfél által az aktív ügyfélablakban végzett átlagos havi vásárlás * A hónapok száma a CLV-előrejelzési időszakban * Az ügyfelek összesített megtartási aránya*_
 
   Az AI-modellt az alapmodellhez hasonlítják két teljesítménymérőszám-modell alapján.
   

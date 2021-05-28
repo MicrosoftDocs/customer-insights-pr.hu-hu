@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 10c338b89a6f9971912d05986c105cba1221b01b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896008"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954490"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -29,6 +29,7 @@ A **felderítés** lapon a következő bővítések találhatók:
 
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
 - [Demográfia](enrichment-experian.md) az Experiantól
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította

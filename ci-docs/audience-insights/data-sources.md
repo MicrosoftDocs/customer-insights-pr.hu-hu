@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 3c0b4690e18285aa37eef481b3cfac951884ead6
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887897"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085533"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -36,11 +36,9 @@ A adatforrások három fő módon adhatók hozzá:
 
 A helyszíni Audience Insights-ban az adatok betöltése a helyi adatforrásokból a Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjárók használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse környezet társítva lett volna a helyszíni adatátjárók használatára.
+A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse-környezet társítva lett volna [a helyszíni adatátjárók használatára](/powerapps/maker/data-platform/using-dataflows-with-on-premises-data.md).
 
 A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan hivatkozások láthatóak, amelyekre kattintva a Power Platform környezetbe mehet, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
-
-:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Képernyőkép az adatforrások oldalról, amely a Power Platform környezetre mutató hivatkozásokat tartalmazza.":::
 
 ## <a name="review-ingested-data"></a>A betöltött adatok áttekintése
 

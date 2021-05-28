@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595567"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085625"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -103,6 +103,18 @@ Az egyezési szabályok feltételek egy csoportját jelentik. Ha több attribút
 
 > [!NOTE]
 > A szabályok sorrendje számít. Az egyezési algoritmus az első szabály alapján próbál meg egyeztetni, és csak akkor halad tovább a második szabályhoz, ha az első szabály még nem adott meg egyezést.
+
+### <a name="change-the-entity-order-in-match-rules"></a>Az entitások sorrendjének módosítása az egyezési szabályokban
+
+Az egyezési szabályok entitásait átrendezheti, hogy módosítsa a feldolgozásuk sorrendjét. A módosított sorrend miatt ütköző szabályokat a rendszer eltávolítja. Az eltávolított szabályokat újra létre kell hozni frissített konfigurációval.
+
+1. Lépjen az **Adatok** > **Egységesítés** > **Egyezés** részre, és válassza a **Szerkesztés** lehetőséget.
+
+1. A **Szabály szerkesztése** panelen a **Mozgatás le/fel** vezérlővel vagy az entitások húzásával módosíthatja a sorrendet.
+
+   :::image type="content" source="media/reorder-match-rules.png" alt-text="Az entitások egyeztetési fázisban való feldolgozási sorrendjének módosítára szolgáló beállítások.":::
+
+1. A szabály mentéséhez válassza a **Kész** gombot.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Deduplikáció definiálása egyeztetett entitáson
 

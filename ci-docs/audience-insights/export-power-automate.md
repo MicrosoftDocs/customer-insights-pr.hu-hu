@@ -6,15 +6,15 @@ ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e973bb11b31c9e70b695ebec8aa2700fdaa5e44f
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ce2477d957a1792e0436a0dfc15a33621b1c89a9
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597928"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5976091"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate összekötő (előzetes verzió)
 
@@ -27,7 +27,7 @@ Az eseményindítók segítségével felhőfolyamatokat hozhat létre, és autom
 - Az adatforrás frissítésének sikertelensége esetén aktiválódó eseményindító. 
 - Az adatforrás sikeres frissítése esetén aktiválódó eseményindító.
 - Egy szegmens küszöbértékének túllépésekor aktiválódó eseményindító. Az eseményindító csak a küszöbérték túllépésére korlátozott.
-- Egy üzleti mérőszám küszöbértékének túllépésekor aktiválódó eseményindító. Az eseményindító csak a küszöbérték túllépésére korlátozott.
+- Egy üzleti mérőszám küszöbértékének túllépésekor aktiválódó eseményindító. Csak a dimenzió nélküli üzleti mérőszámok támogatottak. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Az (adatforrások, a szegmensek, az intézkedések,...) teljes frissítésének indítása.
 - Eseményindító az egyesítési folyamat (Térkép, egyeztetés, összefésülés) frissítésének befejezése után.
 

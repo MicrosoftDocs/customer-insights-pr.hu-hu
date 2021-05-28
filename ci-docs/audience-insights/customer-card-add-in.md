@@ -1,7 +1,7 @@
 ---
-title: Telepítheti és használhatja az Ügyfélkártya bővítményt
-description: Az Ügyfélkártya bővítmény telepítése és konfigurálása a Dynamics 365 Customer Insights megoldásban.
-ms.date: 01/20/2021
+title: Ügyfélkártya bővítmény Dynamics 365-alkalmazásokhoz
+description: Ezzel a bővítménnyel a célközönségből származó adatok jeleníthetők a Dynamics 365-alkalmazásokban.
+ms.date: 05/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,30 +9,31 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f3c4a01f9ce7749eeee72f7901620dae7cb9b8d3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
+ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597330"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059591"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-360 fokos képet kaphat az ügyfeleiről közvetlenül a Dynamics 365 alkalmazásokban. A demográfiai adatok, a betekintések és a tevékenységek ütemezése az ügyfélkarton bővítménnyel tekinthető meg.
+360 fokos képet kaphat az ügyfeleiről közvetlenül a Dynamics 365 alkalmazásokban. Ha egy támogatott Dynamics 365-alkalmazásban telepíti az Ügyfélkártya bővítményt, megjelenítheti a demográfiai adatok, a betekintő információkat és a tevékenységek idővonalait. A bővítmény úgy olvassa be az adatokat a Customer Insightsból, hogy a művelet nincs hatással a csatlakoztatott Dynamics 365-alkalmazásban található adatokra. 
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Dynamics 365 alkalmazás (például Értékesítési központ vagy Ügyfélszolgálati központ), 9.0 vagy újabb verziója, és az egyesített felület engedélyezve.
-- Ügyfélprofilok [a Dynamics 365 alkalmazásból betöltve a Common Data Service szolgáltatással](connect-power-query.md).
-- Az Ügyfélkártya bővítmény felhasználóit a célközönség-információkban [felhasználóként kell felvenni](permissions.md).
-- [Konfigurált keresési és szűrési lehetőségek](search-filter-index.md).
-- Demográfiai ellenőrzés: Demográfiai mezők (például az életkor vagy a nemek) az egyesített ügyfélprofilban érhetők el.
-- A dúsítási vezérlő: az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel.
-- Intelligenciai ellenőrzés: Az Azure Machine Learning ([Előrejelzések](predictions.md) vagy [Egyéni modellek](custom-models.md)) használatával létrehozott adatok szükségesek
-- Mérték ellenőrzése: [Konfigurált mértékek](measures.md) szükségesek.
-- Idősor-vezérlő: [Konfigurált tevékenységeket](activities.md) igényel.
+- A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
+- Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Common Data Service-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
+- Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
+- Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
+- Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik:
+  - Mérték ellenőrzése: [Konfigurált mértékek](measures.md) szükségesek.
+  - Információk ellenőrzése: Az [előrejelzések](predictions.md) vagy az [egyéni modellek](custom-models.md) használatával létrehozott adatokra van szükség.
+  - Demográfiai ellenőrzés: Demográfiai mezők (például az életkor vagy a nemek) az egyesített ügyfélprofilban érhetők el.
+  - A dúsítási vezérlő: az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel.
+  - Idősor-vezérlő: [Konfigurált tevékenységeket](activities.md) igényel.
 
 ## <a name="install-the-customer-card-add-in"></a>Az Ügyfélkártya bővítmény telepítése
 
@@ -56,9 +57,9 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
    > [!NOTE]
    > Ellenőrizze, hogy a böngésző előugró ablakok blokkolása funkció nem blokkolja-e a hitelesítési ablakot, amikor a **Bejelentkezés** gombot választja.
 
-1. Válassza ki azt a környezetet, amelyből az adatokat szeretné lekérni.
+1. Válassza ki azt a Customer Insights-környezetet, amelyből az adatokat szeretné lekérni.
 
-1. Adja meg, hogy mely mezők legyenek hozzárendelve a Dynamics 365 alkalmazás rekordjait.
+1. Adja meg a mezőleképezéseket a Dynamics 365-alkalmazásban szereplő rekordokhoz. A Customer Insightsban található adatoktól függően leképezheti a következő beállításokat:
    - Ha egy kapcsolattartót szeretne leképezni, akkor jelölje ki a mezőt az Ügyfél entitásban kapcsolattartói entitás azonosítójának megfelelő mezőben.
    - Ha egy partnert szeretne leképezni, akkor jelölje ki a mezőt az Ügyfél entitásban partner entitás azonosítójának megfelelő mezőben.
 

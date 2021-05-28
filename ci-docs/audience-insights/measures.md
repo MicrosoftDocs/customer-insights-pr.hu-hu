@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887943"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049253"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
@@ -34,7 +34,7 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
    > [!NOTE]
-   > Ha az új mértékkonfigurációban csak két mező található , például, CustomerID és egy számítás – a kimenet új oszlopként kerül fel a rendszer által létrehozott Customer_Measure nevű entitáshoz. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
+   > Ha az új mértékkonfigurációban csak két mező található (például az ügyfél-azonosító és egy számítás), akkor a kimenet új oszlopként keröl a rendszer által létrehozott, Customer_Measure nevű entitásba. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
 
 1. Válassza a konfigurációs területen az összesítési függvényt a **Függvény kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
    - **Sum**

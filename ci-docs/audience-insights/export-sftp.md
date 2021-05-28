@@ -6,15 +6,15 @@ ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 96c6026aded315008439740646827ca910cead90
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 3663a48955f0b1db8a96e25403e5f8947bc6a220
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760422"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5976896"
 ---
 # <a name="export-segment-lists-and-other-data-to-sftp-preview"></a>Szegmenslisták és egyéb adatok exportálása az SFTP-be (előzetes verzió)
 
