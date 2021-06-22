@@ -1,7 +1,7 @@
 ---
 title: Ügyfélprofilok bővítése a Microsoftból származó adatokkal
 description: Használja a Microsoft tulajdonát képező adatokat az ügyféladatok márkahűséggel és érdeklődéssel való bővítésre.
-ms.date: 04/09/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: be042dd139607849b795c903fa58da2edb9ff589
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
+ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064894"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6245710"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
 
@@ -69,12 +69,10 @@ Az interaktív élmény végig segít Önnek a bővítések konfigurálásában.
 
 ### <a name="define-your-brands-or-interests"></a>Márkák vagy érdeklődési körök megadása
 
-Válasszon az alábbi lehetőségek közül:
+Válasszon legfeljebb öt márkát vagy érdeklődési kört az alábbi lehetőségek egyikének vagy mindkettőnek a használatával:
 
-- **Iparág**: A rendszer azonosítja az iparághoz kapcsolódó legnépszerűbb márkákat vagy érdeklődési köröket, és bővíti az ügyfelek adatait velük.
-- **Válassza ki a sajátját**: Legfeljebb öt elemet jelölhet ki a szervezetéhez leginkább kapcsolódó márkák vagy érdeklődési körök listájából.
-
-Ha márkát vagy érdeklődési kört szeretne hozzáadni, írja be a beviteli területen a megfelelő kifejezések alapján javaslatokat kapjon. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
+- **Iparág** : Válassza ki az iparágat a legördülő listából, majd válasszon az iparág legfontosabb márkáiból vagy érdeklődési köréből.
+- **Válassza ki a sajátját**: Adjon meg egy, a szervezet számára releváns márkát vagy érdeklődési kört, majd válasszon a megfelelő javaslatok közül. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
 
 ### <a name="review-enrichment-preferences"></a>Bővítési beállítások áttekintése
 

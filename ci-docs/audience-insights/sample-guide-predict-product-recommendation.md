@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595276"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129902"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Termékjavaslat-előrejelzés (előzetes verzió) mintaútmutató
 
@@ -22,7 +22,7 @@ Elejétől végéig bemutatunk Önnek egy példán keresztül a egy termékaján
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. Céljuk, hogy megértsék, mely termékeket ajánlják ki a visszatérő ügyfeleiknek. Ha tudják azt, hogy az ügyfelek mit **vásárolnak valószínűleg**, segíthet a marketingráfordítások mérséklésében, ha bizonyos elemekre figyelnek.
+A Contoso egy olyan cég, amely kiváló minőségű kávékat és kávéfőzőket gyárt, amelyeket a Contoso Coffee weboldalon keresztül értékesítenek. Céljuk, hogy megértsék, mely termékeket ajánlják ki a visszatérő ügyfeleiknek. Ha tudják azt, hogy az ügyfelek mit **vásárolnak valószínűleg**, segíthet a marketingráfordítások mérséklésében, ha bizonyos elemekre figyelnek.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -65,7 +65,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
 
 1. A **Név** mezőben az oldalsó panelen, nevezze át az adatforrását a **Lekérdezés** helyett **eCommercePurchases** értékre.
 
-1. Az adatforrások mentése.
+1. **Mentse** az adatforrást.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Ügyféladatok bevitele a hűségsémából
@@ -83,11 +83,11 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
 
 1. A **Név** mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés** helyett **loyCustomers** értékre.
 
-1. Az adatforrások mentése.
+1. **Mentse** az adatforrást.
 
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
-Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesítés** folyamatot, hogy hogy létrehozzunk egy egyesített ügyfélprofilt. További információkért lásd: [Adatok egységesítése](data-unification.md).
+Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy egységes ügyfélprofilt hozzunk létre. További információkért lásd: [Adatok egységesítése](data-unification.md).
 
 ### <a name="map"></a>Map
 
@@ -156,7 +156,7 @@ Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsol
 
    - **Termékek száma**: Állítsa ezt az értéket **5**-re. Ez a beállítás határozza meg, hogy hány terméket szeretne javasolni az ügyfeleknek.
 
-   - **Javasol olyan termékeket, amelyeket az ügyfelek a közelmúltban vásároltak?**: Válassza az **Igen** lehetőséget, ha jelezni szeretné, hogy a javaslatban az ügyfelek által korábban megvásárolt termékeket szeretne szerepeltetni.
+   - **Ismétlődő vásárlások várhatóak** : Válassza az **Igen** lehetőséget annak jelzésére, hogy olyan termékeket szeretne belefoglalni az ajánlásba, amelyeket az ügyfelek korábban megvásároltak.
 
    - **Visszatekintő ablak**: Jelöljön ki legalább **365 napot**. Ez a beállítás határozza meg, hogy mennyi időre visszamenőleg vizsgálja meg a modell az ügyféltevékenységét, amelyet felhasznál a javaslataihoz.
    

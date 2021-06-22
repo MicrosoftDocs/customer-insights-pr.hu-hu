@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906767"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095559"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Termékjavaslat-előrejelzés (előzetes verzió)
 
@@ -205,33 +205,9 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
        > [!div class="mx-imgBorder"]
        > ![Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista](media/product-recommendation-highconfidence.PNG "Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista")
 
-## <a name="fix-a-failed-prediction"></a>Sikertelen előrejelzés kijavítása
+## <a name="manage-predictions"></a>Előrejelzések kezelése
 
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-
-1. Válassza ki, hogy azt az előrejelzést, amelynek meg szeretné tekinteni a hibanaplóit, majd válassza ki a **Naplók** lehetőséget.
-
-1. Tekintse át a hibákat. Többféle típusú hiba fordulhat elő; a leírásból kiderül, milyen feltétel okozta a hibát. Például ha egy hiba miatt nincs elegendő adat a pontos előrejelzéshez, akkor általában több adat töltődik be a Customer Insightsba.
-
-## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
-
-Az előrejelzések automatikusan frissülnek az [adatai frissítési ütemezésével](system.md#schedule-tab) megegyezően, ahogy az a beállításokban konfigurálva van.
-
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-
-1. Kattintson a frissíteni kívánt előrejelzés mellett lévő pontokra.
-
-1. Válassza a **Frissítés** lehetőséget.
-
-## <a name="delete-a-prediction"></a>Előrejelzés törlése
-
-Az előrejelzés törlésével annak kimeneti entitása is törlésre kerül.
-
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-
-1. Kattintson a törölni kívánt előrejelzés mellett lévő pontokra.
-
-1. Válassza a **Törlés** lehetőséget.
+Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

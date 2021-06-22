@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906905"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095651"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Előfizetési lemorzsolódás előrejelzése (előzetes verzió)
 
@@ -147,30 +147,9 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
        > [!div class="mx-imgBorder"]
        > ![A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében](media/subscription-churn-influentialfactors.PNG "A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében")
 
-## <a name="fix-a-failed-prediction"></a>Sikertelen előrejelzés kijavítása
+## <a name="manage-predictions"></a>Előrejelzések kezelése
 
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-1. Válassza ki, hogy azt az előrejelzést, amelynek meg szeretné tekinteni a hibanaplóit, majd válassza ki a **Naplók** lehetőséget.
-   > [!div class="mx-imgBorder"]
-   > ![Az eredmények menüjének nézete a Bezárás, a Modell szerkesztése és a Naplók gombbal](media/subscription-churn-logsbutton.PNG "Az eredmények menüjének nézete a Bezárás, a Modell szerkesztése és a Naplók gombbal")
-1. Tekintse át a hibákat. Többféle típusú hiba fordulhat elő; a leírásból kiderül, milyen feltétel okozta a hibát. Például egy hiba, amely szerint nem áll rendelkezésre elegendő adat a pontos előrejelzéshez, általában további adatok betöltésével oldható meg.
-
-## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
-
-Az előrejelzések automatikusan frissülnek az [adatok beállítások között megadott frissítési ütemezése](system.md#schedule-tab) szerint.
-
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-1. Kattintson a frissíteni kívánt előrejelzés mellett lévő pontokra.
-1. Válassza a **Frissítés** lehetőséget.
-
-## <a name="delete-a-prediction"></a>Előrejelzés törlése
-
-1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
-1. Kattintson a törölni kívánt előrejelzés mellett lévő pontokra.
-1. Válassza a **Törlés** lehetőséget.
-
-> [!NOTE]
-> A előrejelzés törlésével a rendszer eltávolítja a kimeneti entitását.
+Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

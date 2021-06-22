@@ -96,30 +96,40 @@
           href: audience-insights/measures.md
     - name: Előrejelzések
       items:
-        - name: Adatok kiegészítése az érték-előrejelzések használatával
-          href: audience-insights/predictions.md
-        - name: Előfizetési lemorzsolódás előrejelzése
-          href: audience-insights/predict-subscription-churn.md
-        - name: Példamutató az előfizetés lemorzsolódási előrejelzéshez
-          href: audience-insights/sample-guide-predict-subscription-churn.md
-        - name: Tranzakció lemorzsolódás előrejelzése
-          href: audience-insights/predict-transactional-churn.md
-        - name: Példamutató a tranzakció lemorzsolódás előrejelzéséhez
-          href: audience-insights/sample-guide-predict-transactional-churn.md
-        - name: Ügyfél élettartamra vetített értékének előrejelzése (CLV)
-          href: audience-insights/predict-customer-lifetime-value.md
-        - name: Termékjavaslatok előrejelzése
-          href: audience-insights/predict-product-recommendation.md
-        - name: Termékjavaslat-előrejelzés mintaútmutató
-          href: audience-insights/sample-guide-predict-product-recommendation.md
+        - name: Adatok előrejelzése az AI segítségével
+          items:
+            - name: Előrejelzési modellek áttekintése
+              href: audience-insights/predictions-overview.md
+            - name: Ügyfél élettartamra vetített értékének előrejelzése (CLV)
+              href: audience-insights/predict-customer-lifetime-value.md
+            - name: Termékjavaslatok előrejelzése
+              href: audience-insights/predict-product-recommendation.md
+            - name: Előfizetési lemorzsolódás előrejelzése
+              href: audience-insights/predict-subscription-churn.md
+            - name: Tranzakció lemorzsolódás előrejelzése
+              href: audience-insights/predict-transactional-churn.md
+            - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
+              href: audience-insights/custom-models.md
+            - name: Részben hiányzó adatok kitöltése
+              href: audience-insights/predictions.md
+        - name: Mintaútmutatók
+          items:
+            - name: Mintaútmutató a CLV előrejelzéshez
+              href: audience-insights/sample-guide-predict-clv.md
+            - name: Példamutató az előfizetés lemorzsolódási előrejelzéshez
+              href: audience-insights/sample-guide-predict-subscription-churn.md
+            - name: Példamutató a tranzakció lemorzsolódás előrejelzéséhez
+              href: audience-insights/sample-guide-predict-transactional-churn.md
+            - name: Termékjavaslat-előrejelzés mintaútmutató
+              href: audience-insights/sample-guide-predict-product-recommendation.md
+            - name: Azure Machine Learning-kísérletek
+              href: audience-insights/azure-machine-learning-experiments.md
+            - name: Kísérletezés az Azure Machine Learning stúdióval
+              href: audience-insights/machine-learning-studio-experiments.md
+        - name: Előrejelzések kezelése
+          href: audience-insights/manage-predictions.md
         - name: Szegmensek létrehozása előrejelzések alapján
           href: audience-insights/prediction-based-segment.md
-        - name: Egyéni gépi tanulási modellek megvalósítása
-          href: audience-insights/custom-models.md
-        - name: Azure Machine Learning-kísérletek
-          href: audience-insights/azure-machine-learning-experiments.md
-        - name: Kísérletezés az Azure Machine Learning stúdióval
-          href: audience-insights/machine-learning-studio-experiments.md
     - name: Exportálási beállítások
       items:
         - name: Exportálások
@@ -154,12 +164,18 @@
               href: audience-insights/export-facebook.md
             - name: Google Ads
               href: audience-insights/export-google-ads.md
+            - name: LinkedIn hirdetések
+              href: audience-insights/export-linkedin-ads.md
             - name: LiveRamp
               href: audience-insights/export-liveramp.md
             - name: Mailchimp
               href: audience-insights/export-mailchimp.md
             - name: Marketo
               href: audience-insights/export-marketo.md
+            - name: Microsoft Advertising
+              href: audience-insights/export-microsoft-advertising.md
+            - name: Omnisend
+              href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
             - name: SendGrid
@@ -200,6 +216,8 @@
           href: audience-insights/integrate-engagement-insights.md
         - name: A Common Data Model-entitássémák áttekintése
           href: audience-insights/entity-schemas.md
+        - name: A Customer Insights-adatok a Dataverse-ben
+          href: audience-insights/customer-insights-dataverse.md
         - name: Az API-k használata
           href: audience-insights/apis.md
         - name: API-hivatkozások
@@ -240,6 +258,12 @@
           href: engagement-insights/custom-reports.md
         - name: Egységesített profiljelentések létrehozása
           href: engagement-insights/profile-reports.md
+        - name: Dimenziók megtekintése és létrehozása
+          href: engagement-insights/dimensions.md
+        - name: Metrikák megtekintése és létrehozása
+          href: engagement-insights/metrics.md
+        - name: Szegmensek megtekintése és létrehozása
+          href: engagement-insights/segments.md
     - name: Útelemzések
       items:
         - name: Tölcsérjelentések létrehozása és kezelése

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906859"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095605"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tranzakciólemorzsolódási előrejelzés (előnézet)
 
@@ -144,7 +144,7 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
    - **Állapot:** A futtatott előrejelzés állapota.
         - **Feldolgozási sorban:** Az előrejelzés további folyamatok futtatására vár.
         - **Frissítés:** Az előrejelzés jelenleg fut, hogy a kimeneti entitásba kerülő eredményt produkálhassa.
-        - **Sikertelen:** Az előrejelzés lefuttatása sikertelen. [Ellenőrizze a naplókat](#troubleshoot-a-failed-prediction) a további részletekért.
+        - **Sikertelen:** Az előrejelzés lefuttatása sikertelen. [Ellenőrizze a naplókat](manage-predictions.md#troubleshoot-a-failed-prediction) a további részletekért.
         - **Sikeres:** Az Előrejelzés lefuttatása sikeresen megtörtént. Az előrejelzés megtekintéséhez válassza a függőleges pontok alatt lévő **Megtekintés** lehetőséget.
    - **Szerkesztve:** Az előrejelzés konfigurációjának módosítási dátuma.
    - **Legutóbbi frissítés:** A dátum, amikor az előrejelzés frissítette a kimeneti entitásban szereplő eredményeket.
@@ -168,35 +168,9 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
        
     1. **Legbefolyásosabb tényezők:** Az előrejelzés létrehozásakor a rendszer számos tényezőt vesz figyelembe. A tényezők mindegyikének megvan a fontossága, az összesített előrejelzés számításaiban, melyet a modell hoz létre. Ezekkel a tényezőkkel ellenőrizheti az előrejelzés eredményeit. Ezeket az információkat később is felhasználhatja, hogy olyan [szegmenseket hozzon létre,](segments.md) amelyekkel csökkenthető az ügyfelek lemorzsolódási kockázata.
 
-## <a name="troubleshoot-a-failed-prediction"></a>A sikertelen előrejelzés hibáinak elhárítása.
+## <a name="manage-predictions"></a>Előrejelzések kezelése
 
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-
-1. Válassza ki a függőleges ellipsziseket amellett az előrejelzés mellet, melynek hibanaplóját meg szeretné tekinteni.
-
-1. Válassza ki a **Naplók** menüpontot.
-
-1. Tekintse át a hibákat. Többféle típusú hiba fordulhat elő; a leírásból kiderül, milyen feltétel okozta a hibát. Ha például az a hiba, hogy nincs elég adat a pontos előrejelzéshez, akkor ez általában megoldható további adatok Customer Insightsba történő betöltésével.
-
-## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
-
-Az előrejelzések automatikusan frissülnek az [adatok beállítások között megadott frissítési ütemezése](system.md#schedule-tab) szerint. Ezeket Ön manuálisan is frissíteni tudja.
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-
-1. Kattintson a frissíteni kívánt előrejelzés mellett lévő pontokra.
-
-1. Válassza a **Frissítés** lehetőséget.
-
-## <a name="delete-a-prediction"></a>Előrejelzés törlése
-
-Az előrejelzés törlésével annak kimeneti entitása is törlésre kerül.
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-
-1. Kattintson a törölni kívánt előrejelzés mellett lévő pontokra.
-
-1. Válassza a **Törlés** lehetőséget.
+Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

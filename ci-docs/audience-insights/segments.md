@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a7fa6515bd6e79dedfb21aa0f0b8e24b873a6771
-ms.sourcegitcommit: 8341fa964365c185b65bc4b71fc0c695ea127dc0
+ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
+ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/14/2021
-ms.locfileid: "6034015"
+ms.lasthandoff: 05/27/2021
+ms.locfileid: "6111390"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -32,22 +32,13 @@ A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagj
 - AI-alapú, mértékeken vagy attribútumokon alapuló javaslatok: [Javasolt szegmensek a mértékek javításához](suggested-segments.md)
 - Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md)
 
-## <a name="get-insights-on-existing-segments"></a>Információk kérése meglévő szegmensekről
-
-A meglévő szegmensekről további információt kaphat a [Szegmenssel kapcsolatos információk](segment-insights.md) használatával. Megtudhatja, hogy mi különbözteti meg a két szegmenst, illetve hogy mi a közös bennük.
-
-## <a name="find-similar-customers"></a>Hasonló ügyfelek keresése
-
-A kiválasztott szegmens tagjaihoz hasonló ügyfelek megkereshetők a mesterséges intelligencia segítségével. További információ: [Hasonló ügyfelek](find-similar-customer-segments.md).
-
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
 A mentett szegmensek a **Szegmensek** oldalon tekinthetők és kezelhetők.
 
 Minden szegmenshez egy sor tartozik; ez a sor további információkat tartalmaz a szegmensről.
 
-> [!div class="mx-imgBorder"]
-> ![Meglévő szegmensek kezelésére szolgáló lehetőségek](media/segments-selected-segment.png "Meglévő szegmensek kezelésére szolgáló lehetőségek")
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Kijelölt szegmens a lehetőségek legördülő listájával és a rendelkezésre álló lehetőségekkel.":::
 
 Szegmens kiválasztása esetén a következő művelet használható:
 
@@ -59,7 +50,7 @@ Szegmens kiválasztása esetén a következő művelet használható:
   Másik lehetőségként használhatja **Ütemezés később** funkcióit az **Aktiválás/inaktiválás**, ahol megadhat egy adott szegmens aktiválására és inaktiválására vonatkozó jövőbeli dátumot és időpontot.
 - Szegmens **átnevezése**.
 - A tagok listájának **letöltése** .CSV fájlként.
-- A **Hozzáadás ehhez:** lehetőség a szegmensben szereplő ügyfelek azonosítóinak listáját egy másik alkalmazásban feldolgozásra küldi.
+- Az **Exportálások kezelése** az exporttal kapcsolatos szegmensek megtekintéséhez és kezeléséhez. [További információ az exportálásokról.](export-destinations.md)
 - Szegmens **törlése**.
 
 ## <a name="refresh-segments"></a>Szegmensek frissítése
@@ -68,6 +59,24 @@ Az összes szegmenst egyszerre frissítheti a **Szegmensek** oldal **Az összes 
 
 > [!TIP]
 > A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+
+## <a name="export-segments"></a>Szegmensek exportálása
+
+Exportálhat egy szegmenst a szegmensek oldaláról vagy az [exportálások oldalról](export-destinations.md). 
+
+1. Lépjen a **Szegmensek** oldalra.
+
+1. Válassza ki a **Továbbiak megjelenítése [...]** lehetőséget exportálni kívánt szegmenshez.
+
+1. Válassza az **Exportálások kezelése** lehetőséget a műveletek legördülő listából.
+
+1. Megnyílik az **Exportálás (előzetes verzió) szegmenshez** oldal. Láthatja az összes konfigurált exportálást export szerint csoportosítva, amely tartalmazza az aktuális szegmenst, vagy nem tartalmazza azt.
+
+   1. Ha a kijelölt szegmenst egy exportáláshoz szeretné hozzáadni, jelölje ki a listában az exportálást, és válassza a **Szegmens hozzáadása** lehetőséget.
+
+   1. Ha új exportálást szeretne létrehozni a kijelölt szegmenssel, válassza az **Exportálás hozzáadása** lehetőséget. Az exporálások létrehozásával kapcsolatos további információkért lásd: [Új exportálás beállítása](export-destinations.md#set-up-a-new-export).
+
+1. Válassza a **Vissza** lehetőséget, hogy visszatérjen a szegmensek főoldalára.
 
 ## <a name="view-processing-history-and-segment-members"></a>A feldolgozási előzmények és a szegmenstagok megtekintése
 

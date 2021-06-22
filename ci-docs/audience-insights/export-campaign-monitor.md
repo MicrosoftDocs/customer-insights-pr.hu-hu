@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7fd6af37b40e21d030a1ace0cd5f8fcc7861c3fa
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 091a3197dc0c19ff78f0419fb4e88868e0f78359
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760552"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124184"
 ---
-# <a name="export-segment-lists-to-campaign-monitor-preview"></a>Szegmenslisták exportálása a Campaign Monitorba (előzetes verzió)
+# <a name="export-segments-to-campaign-monitor-preview"></a>Szegmensek exportálása a Campaign Monitorba (előzetes verzió)
 
 Exportálja az egyesített ügyfélprofilok szegmensét a Campaign Monitorba, és használja őket marketing-tevékenységekre.
 
