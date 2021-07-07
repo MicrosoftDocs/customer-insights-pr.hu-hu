@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 0496d10c994cd077a778a6e745e3774e316765ae
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895916"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305205"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>A vállalati profilok bővítése Leadspace-szel (előzetes verzió)
 
@@ -57,13 +57,13 @@ A Leadspace konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konfigurálásakor válassza a **Kapcsolat hozzáadása** lehetőséget, *vagy* menjen a **Rendszergazda** > **Kapcsolatok** elemre, és válassza a **Beállítások** lehetőséget a Leadspace csempén.
 
-1. Válassza az **Első lépések** lehetőséget 
+1. Válassza az **Első lépések** lehetőséget. 
 
 1. Adja meg a kapcsolat nevét a **Megjelenítendő név** mezőben.
 
 1. Adjon meg egy érvényes Leadspace jogkivonatot.
 
-1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével
+1. Tekintse át és adja meg hozzájárulását az **adatvédelem és a megfelelőséghez** az **Elfogadom** által.
 
 1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
 
@@ -81,7 +81,7 @@ További tájékoztatásért tekintse meg a [Leadspace API-kat](https://support.
 
 ## <a name="next-steps"></a>Következő lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md), [mértékeket](measures.md) , sőt [exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

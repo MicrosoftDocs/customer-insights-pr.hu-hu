@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700671"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305638"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
 
@@ -72,7 +72,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
       > [!div class="mx-imgBorder"]
       > ![A modell kimenet paraméter panele](media/intelligence-screen3-outputparameters.png "A modell kimenet paraméter panele")
 
-1. Válassza ki a megfelelő attribútumot az **Ügyfél-azonosító az eredményekben** legördülő listából, amely beazonosítja az ügyfeleket, és válassza a **Mentés** elemet.
+1. Válassza ki a megfelelő attribútumot az **Ügyfélazonosító az eredményekben** legördülő listából, amely azonosítja az ügyfeleket és válassza a **Mentés** lehetőséget.
 
    > [!div class="mx-imgBorder"]
    > ![Eredmények összekapcsolása az Ügyfél adatpanelhlel](media/intelligence-screen4-relatetocustomer.png "Eredmények összekapcsolása az Ügyfél adatpanelhlel")
@@ -100,7 +100,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
       1. Válassza ki a **kimeneti adattár paraméter nevét** a tesztelési folyamathoz.
       1. Válassza ki a **kimeneti útvonal paraméter nevét** a tesztelési folyamathoz.
 
-1. Válassza ki a megfelelő attribútumot az **Ügyfél-azonosító az eredményekben** legördülő listából, amely beazonosítja az ügyfeleket, és válassza a **Mentés** elemet.
+1. Válassza ki a megfelelő attribútumot az **Ügyfélazonosító az eredményekben** legördülő listából, amely azonosítja az ügyfeleket és válassza a **Mentés** lehetőséget.
    Ki kell választania egy attribútumot a származtatott kimenetből az ügyfél entitás ügyfél-azonosító oszlopához hasonló értékekkel. Ha nincs ilyen oszlop az adathalmazban, válasszon egy attribútumot, amely egyedileg azonosítja a sort.
 
 ## <a name="run-a-workflow"></a>Munkafolyamat futtatása

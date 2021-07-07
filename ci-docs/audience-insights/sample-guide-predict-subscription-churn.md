@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595521"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306306"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Előfizetés-lemorzsolódási előrejelzési (előnézet) példamutató
 
@@ -22,7 +22,7 @@ Elejétől végéig bemutatunk Önnek egy példán keresztül a egy előfizetés
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. A közelmúltban indítottak el egy előfizetéses üzletet ügyfeleiknek, hogy azok rendszeresen megkaphassák kávéjukat. Céljuk, hogy megérthessék, melyik előfizetett ügyfelük fogja visszavonni előfizetését az elkövetkező pár hónapban. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
+A Contoso egy olyan cég, amely kiváló minőségű kávékat és kávéfőzőket gyárt, amelyeket a Contoso Coffee weboldalon keresztül értékesítenek. A közelmúltban indítottak el egy előfizetéses üzletet ügyfeleiknek, hogy azok rendszeresen megkaphassák kávéjukat. Céljuk, hogy megérthessék, melyik előfizetett ügyfelük fogja visszavonni előfizetését az elkövetkező pár hónapban. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -128,9 +128,9 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
 
-1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** lehetőséget elsődleges forrásként, amely minden rekordot magában foglal.
+1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
 
-1. Az **Entitás 2** legördülő listájában válassza ki a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
+1. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.":::
 
@@ -138,16 +138,16 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 1. Adja hozzá az első feltételt a FullName segítségével.
 
-   * Az eCommerceContacts lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
-   * A loyCustumers lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
+   * Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
+   * A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
    * Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
    * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 
 1. Adja meg a nevét **FullName, Email**, az új szabályhoz.
 
    * Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   * Az eCommerceContacts entitáshoz válassza az **Email** legördülő lehetőséget.
-   * Az loyCustomers entitáshoz válassza az **Email** legördülő lehetőséget. 
+   * Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
+   * Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben. 
    * Hagyja üresen a Normalizálást. 
    * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 

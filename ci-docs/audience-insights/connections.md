@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896100"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304975"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -42,7 +42,7 @@ Kapcsolatok hozzáadásához [rendszergazdai engedélyekkel](permissions.md) kel
 
 1. Menjen a **Kapcsolatok** fülre.
 
-1. Új kapcsolat létrehozásához válassza a **Kapcsolat hozzáadása** lehetőséget. Válassza ki a legördülő menüből, hogy milyen típusú kapcsolatot kíván létrehozni.
+1. Új kapcsolat létrehozásához válassza a **Kapcsolat hozzáadása** lehetőséget. Válassza ki a legördülő menüből, hogy milyen típusú kapcsolatot szeretne létrehozni.
 
 1. Adja meg a szükséges adatokat a **Kapcsolat beállítása** ablaktáblán. 
    1. A **Megjelenítendő név** és a kapcsolat típusa ír le egy kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
@@ -74,7 +74,9 @@ Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hog
 
 ## <a name="remove-a-connection"></a>Kapcsolat eltávolítása
 
-Ha az eltávolítandó kapcsolatot bővítések vagy exportálások használják, előbb szét kell őket kapcsolni, vagy el kell távolítani. Az eltávolítási párbeszédpanel útmutatást nyújt a megfelelő bővítésekhez vagy exportálásokhoz. A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiválhatja őket, ha új kapcsolatot ad hozzájuk a [Bővítések](enrichment-hub.md) és [Exportálások](export-destinations.md) oldalon.
+Ha az eltávolítandó kapcsolatot bővítések vagy exportálások használják, előbb szét kell őket kapcsolni, vagy el kell távolítani. Az eltávolítási párbeszédpanel útmutatást nyújt a megfelelő bővítésekhez vagy exportálásokhoz. 
+
+A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiválhatja őket, ha új kapcsolatot ad hozzájuk a [Bővítések](enrichment-hub.md) és [Exportálások](export-destinations.md) oldalon.
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok (előzetes verzió)** lehetőségre.
 
@@ -89,5 +91,5 @@ Ha az eltávolítandó kapcsolatot bővítések vagy exportálások használják
       - **Bővítések:** Kiválaszthatja a bővítések eltávolítását vagy inaktiválását, hogy el tudja távolítani a kapcsolatot. 
    1. Ha a kapcsolatnak már nincsenek függőségei, menjen vissza a **Rendszergazda** > **Kapcsolatok** lehetőséghez, és próbálja meg ismét eltávolítani a kapcsolatot.
 
-1. Jelölje be az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
+1. Jelölje be az **Eltávolít** lehetőséget a törlés megerősítéséhez.
 

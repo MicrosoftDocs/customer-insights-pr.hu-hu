@@ -1,7 +1,7 @@
 ---
 title: Power Automate-összekötő | Microsoft Docs
 description: Folyamatok létrehozása a Microsoft Power Automate rendszerben a Dynamics 365 Customer Insights szolgáltatásból.
-ms.date: 01/20/2021
+ms.date: 06/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ce2477d957a1792e0436a0dfc15a33621b1c89a9
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 57be0a204ef920b7a4bb31cf9a5b3a77f96eca0d
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976091"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305067"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate összekötő (előzetes verzió)
 
@@ -28,12 +28,13 @@ Az eseményindítók segítségével felhőfolyamatokat hozhat létre, és autom
 - Az adatforrás sikeres frissítése esetén aktiválódó eseményindító.
 - Egy szegmens küszöbértékének túllépésekor aktiválódó eseményindító. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Egy üzleti mérőszám küszöbértékének túllépésekor aktiválódó eseményindító. Csak a dimenzió nélküli üzleti mérőszámok támogatottak. Az eseményindító csak a küszöbérték túllépésére korlátozott.
-- Az (adatforrások, a szegmensek, az intézkedések,...) teljes frissítésének indítása.
+- Aktivál, amikor az (adatforrások, szegmensek, intézkedések,...) teljes frissítése befejeződött.
 - Eseményindító az egyesítési folyamat (Térkép, egyeztetés, összefésülés) frissítésének befejezése után.
 
-[Eseményindítók konfigurálása a Power Automate alkalmazásban](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
+[Konfiguráld a triggereket Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
 ## <a name="power-automate-actions"></a>Power Automate-műveletek
+
 A Power Automate-összekötő más műveleteket biztosít, mint az eseményindítók. További információ itt található: [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/).
 
 ## <a name="create-a-power-automate-flow"></a>Power Automate-folyamat létrehozása

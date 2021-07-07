@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866410"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304929"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
@@ -45,7 +45,7 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
 
    - **Első**: A tevékenységentitás egy másik entitással való kapcsolat létrehozására használt idegen mező.
    - **Második**: A megfelelő forrás ügyfélentitás, amellyel a tevékenységentitás kapcsolatban lesz. Csak az adategyesítési folyamatban használt forrás ügyfélentitásokhoz tud kapcsolódni.
-   - **Harmadik**: Ha a tevékenységentitás és a kijelölt forrás ügyfélentitása között már létezik kapcsolat, a kapcsolat neve írásvédett módban lesz. Ha nincs ilyen kapcsolat, új kapcsolat jön létre az ebben a mezőben található névvel.
+   - **Harmadik**: Ha a tevékenységentitás és a kijelölt forrás ügyfélentitása között már létezik kapcsolat, a kapcsolat neve írásvédett módban lesz. Ha ilyen kapcsolat nem létezik, új kapcsolat jön létre a mezőben megadott névvel.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiálja az entitás kapcsolatát.":::
 
@@ -53,23 +53,23 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
 
 1. A **Tevékenységegyesítés** lépésben válassza ki a tevékenységeseményt, valamint a tevékenység kezdési idejét. 
    - **Kötelező mezők**
-      1. **Eseménytevékenység**: A tevékenység eseményének megfelelő mező
-      2. **Időbélyeg**: A tevékenység kezdő idejét jelképező mező.
+      - **Eseménytevékenység**: A tevékenység eseményének megfelelő mező.
+      - **Időbélyeg**: A tevékenység kezdő idejét jelképező mező.
 
    - **Választható mezők**
-      1. **További részletek**: Mező, amely a tevékenységre vonatkozó releváns információkat tartalmazza.
-      2. **Ikon**: Ezt a tevékenységtípust leginkább képviselő ikon.
-      3. **Webcím**: A tevékenységre vonatkozó információkat tartalmazó URL-címet tartalmazó mező. Például a tevékenység forrását jelentő tranzakciós rendszer. Ez az URL-cím az adatforrás tetszőleges mezője lehet, vagy Power Query átalakítást használó új mezőként lehet kialakítani. Az URL-adatokat az *Egyesített tevékenység* entitás tárolja, amely az [API-k](apis.md) használatával lefelé irányulóan használható.
+      - **További részletek**: Mező, amely a tevékenységre vonatkozó releváns információkat tartalmazza.
+      - **Ikon**: Ezt a tevékenységtípust leginkább képviselő ikon.
+      - **Webcím**: A tevékenységre vonatkozó információkat tartalmazó URL-címet tartalmazó mező. Például a tevékenység forrását jelentő tranzakciós rendszer. Ez az URL-cím az adatforrás tetszőleges mezője lehet, vagy Power Query átalakítást használó új mezőként lehet kialakítani. Az URL-adatokat az *Egyesített tevékenység* entitás tárolja, amely az [API-k](apis.md) használatával lefelé irányulóan használható.
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Adja meg az ügyféltevékenység adatait egy Egyesített tevékenység entitásban.":::
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. A **Befejezés és áttekintés** lehetőséget választva most már az **Egyéb** tevékenységtípussal mentheti a tevékenységet. 
 
-1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg az *Előfizetés* & *SalesOrderLine* tevékenységtípusai szemantikusan leképezhetőek a a mezők leképezésébe való beleegyezés után. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
+1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg *az Előfizetés* és a *SalesOrderLine* tevékenységtípusok szemantikailag leképezhetők, miután megállapodtak a mezők feltérképezéséről. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. 
 
-1. Az **Áttekintés** lépésben ellenőrizze a beállításokat. Visszatér az előző lépések bármelyikére, és szükség esetén frissíti az információkat.
+1. Az **Áttekintés** lépésben ellenőrizze a beállításokat. Lépjen vissza az előző lépések bármelyikéhez, és szükség esetén frissítse az információkat.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Tevékenység megadott mezőinek áttekintése.":::
    
@@ -89,7 +89,7 @@ A következő műveletek érhetők el, amikor kiválaszt egy tevékenységet.
 
 - **Szerkesztés**: Megnyitja a tevékenység beállítását az áttekintés lépésben. Ebben a lépésben bármelyiket vagy az összes aktuális konfigurációt módosíthatja. A konfiguráció módosítása után válassza a **Tevékenység mentése** lehetőséget, majd a **Futtatás** lehetőséget a változtatások feldolgozásához.
 
-- **Átnevezés**: Megnyit egy párbeszédet, ahol másik nevet adhat meg a kijelölt tevékenység számára. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
+- **Átnevezés**: Megnyit egy párbeszédpanelt, ahol a kijelölt tevékenységhez más nevet adhat meg. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
 
 - **Törlés**: Párbeszéd megnyitása a kijelölt tevékenység törlésének megerősítéséhez. Egyszerre több tevékenységet is törölhet, ha kijelöli a tevékenységeket, majd kiválasztja a törlés ikont. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
 

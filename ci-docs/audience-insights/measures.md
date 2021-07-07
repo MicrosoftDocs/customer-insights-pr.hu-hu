@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
-ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
+ms.openlocfilehash: a83caf2428f3dbd9791b9f746d00d370362a508c
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049253"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304798"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
-A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Egy vállalat például az *ügyfélenkénti teljes kiadást* szeretné látni, hogy megértsék az egyes ügyfelek vásárlási előzményeit, vagy lemérjék a *vállalat teljes értékesítéseit*, hogy megértsék a teljes vállalat összesítési szintű bevételét.  
+A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Például egy vállalkozás látni szeretné az *ügyfélre jutó teljes költést* , hogy megértse az egyes ügyfelek vásárlási előzményeit, vagy mérje a *vállalat teljes értékesítését*, hogy megértse az egész üzlet összesített szintű bevételét.  
 
 Az mértékek létrehozása a mértékkészítővel történik, ami egy adatlekérdezési platform számos operátorral és egyszerű leképezési lehetőségekkel. Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére.
 
@@ -34,9 +34,9 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
    > [!NOTE]
-   > Ha az új mértékkonfigurációban csak két mező található (például az ügyfél-azonosító és egy számítás), akkor a kimenet új oszlopként keröl a rendszer által létrehozott, Customer_Measure nevű entitásba. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
+   > Ha az új mértékkonfigurációban csak két mező található (például az ügyfélazonosító és egy számítás), akkor a kimenet új oszlopként kerül a rendszer által létrehozott Customer_Measure nevű entitásba. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
 
-1. Válassza a konfigurációs területen az összesítési függvényt a **Függvény kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
+1. A konfigurációs területen válassza az összesítési függvényt a **Funkció kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
    - **Sum**
    - **Átlag**
    - **Számlálás**
@@ -64,17 +64,19 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. Szűrők hozzáadásához válassza ki a **Szűrő** lehetőséget a konfigurációs területen. 
   
-   1. A **Szűrők** panel **Attribútum hozzáadása** szakaszában jelölje ki a szűrők létrehozásához használni kívánt attribútumot.
+   1. Az **Attribútum hozzáadása** szakaszban a **Szűrők** ablaktáblán belül, jelölje ki a szűrők létrehozásához használni kívánt attribútumot.
    1. Állítsa be a szűrőoperátorokat, hogy minden kijelölt attribútumhoz definiálja a szűrőt.
    1. Válassza az **Alkalmaz** lehetőséget, ha a szűrőket hozzá szeretne adni a mértékhez.
 
 1. Dimenziók hozzáadásához válassza ki a **Dimenzió** lehetőséget a konfigurációs területen. A dimenziók oszlopként fognak megjelenni a mérték kimeneti entitásában.
+ 
    1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem. Az *ügyfélszintű mértékek* létrehozásához alapértelmezés szerint a *CustomerID* dimenzió van kiválasztva. Ha *üzleti szintű mértékeket* szeretne létrehozni, eltávolíthatja az alapértelmezett dimenziót.
    1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
-1. Ha vannak olyan értékek az adatokban, amelyeket egész számra kell lecserélni, például a *null* értéket *0* értékkel, akkor válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként.
+1. Ha vannak olyan értékek az adatokban, amelyeket egész számra kell lecserélni, például a *nulla* értéket *0* értékre, akkor válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként.
 
 1. Ha a leképezett adatentitás és az *Ügyfél* entitás között több elérési út is van, válasszon egyet az azonosított [entitáskapcsolat-útvonalak közül](relationships.md). A mértékek eredményei a kiválasztott elérési úttól függően változhatnak. 
+   
    1. Válassza ki az **Adatbeállítások** lehetőséget, és válassza ki az entitás elérési útját, amely a mérték azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
    1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz. 
 
@@ -113,7 +115,7 @@ A következő eljárás egy új mérték használatával való felépítés lép
 
 1. Válassza az **Új**, és a **Sablon kiválasztása** lehetőséget.
 
-   :::image type="content" source="media/measure-use-template.png" alt-text="Képernyőkép a legördülő menüről, amikor új mértéket hoz létre a sablon kiemelése segítségével.":::
+   :::image type="content" source="media/measure-use-template.png" alt-text="Képernyőkép a legördülő menüről, amikor új mérőintézkedést hoz létre, kiemelve a sablont.":::
 
 1. Keresse meg az igényeinek megfelelő sablont, és válassza a **Sablon kiválasztása** lehetőséget.
 
@@ -123,7 +125,7 @@ A következő eljárás egy új mérték használatával való felépítés lép
 
 1. Válassza a **Kész** lehetőséget.
 
-1. Adja meg az adat használandó időkeretét az **Időszak beállítása** szakaszban. Válassza ki, hogy az új mérték lefedje-e a teljes adatkészletet a **Minden idő** kiválasztásával. Vagy ha azt szeretné, hogy a mérték egy **Adott időszakra** összpontosítson.
+1. Adja meg az adat használandó időkeretét az **Időszak beállítása** szakaszban. Válassza ki, hogy az új mérés lefedi-e a teljes adathalmazt az **Összes idő** kiválasztásával, vagy ha azt szeretné, hogy a mérés egy **Adott időszakra** összpontosítson.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Képernyőkép, amely egy sablonból származó mérték konfiguálásakor mutatja az időszak szakaszt.":::
 
@@ -142,12 +144,12 @@ A következő eljárás egy új mérték használatával való felépítés lép
 
 A **Mértékek** lapon láthatja a mértékek listáját.
 
-Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, akkor megtekintheti a kimenetet, és letölthet egy .CSV-fájl.
+Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, megtekintheti a kimenetet, és letölthet egy CSV fájlt.
 
 Ha egyszerre szeretné frissíteni az összes intézkedést, akkor jelölje be az **összes frissítése** lehetőséget egy adott intézkedés kiválasztása nélkül.
 
 > [!div class="mx-imgBorder"]
-> ![Az egyes intézkedések kezelésére szolgáló műveletek](media/measure-actions.png "Az egyes intézkedések kezelésére szolgáló műveletek")
+> ![Az egyes intézkedések kezelésére szolgáló műveletek.](media/measure-actions.png "Az egyes intézkedések kezelésére szolgáló műveletek.")
 
 Válasszon ki egy mértéket a listából a következő lehetőségekhez:
 
@@ -159,11 +161,11 @@ Válasszon ki egy mértéket a listából a következő lehetőségekhez:
 - **Aktiválás** vagy **Inaktiválás**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során.
 
 > [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. A Feladat egyik feladatának **Lásd részletek** kiválasztása után további információkat talál: feldolgozási idő, utolsó feldolgozási dátum, valamint a feladathoz kapcsolódó összes hiba és figyelmeztetés.
 
 ## <a name="next-step"></a>Következő lépés
 
-Az [ügyfélszegmens](segments.md) létrehozásához meglévő mértéket használhat.
+Meglévő intézkedésekkel létrehozhat [egy ügyfélszegmenst](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

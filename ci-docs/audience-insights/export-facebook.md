@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 37d25aa038ea32b98f2d1850d7b42b701292438d
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: e20c7b7fd3989d7621cb7765f38b85c8ab4adfcb
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976045"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305113"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Szegmenslista exportálása a Facebook Hirdetéskezelő (előzetes verzió)
 
@@ -22,12 +22,12 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 ## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
 
-- A [**Facebook üzleti fiókot**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) tartalmazó [**Facebook hirdetési fiókkal**](https://business.facebook.com/) kell rendelkeznie.
-- A [**Facebook hirdetési fiók**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) rendszergazdájának kell lennie.
+- Rendelkeznie kell egy [**Facebook hirdetési fiókkal**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) amely tartalmaz egy [**Facebook üzleti fiókot**](https://business.facebook.com/).
+- Rendszergazdának kell lennie a [**Facebook hirdetési fiókban**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Akár 10 millió ügyfélprofil exportálásonként a Facebook Hirdetéskezelőbe.
+- Exportálásonként legfeljebb 10 millió ügyfélprofilt lehet a Facebook hirdetéskezelőbe exportálni.
 - A Facebook hirdetéskezelőbe való exportálás csak szegmensekre korlátozódik.
 - Kizárólag *ügyféllista* típusú célközönségek létrehozása vagy frissítése a Facebookon.
 - Az összesen 10 millió profillal rendelkező szegmensek exportálása akár 90 percig is eltarthat.
@@ -42,19 +42,19 @@ Ahhoz, hogy a felhasználók exportálást tudjanak létrehozni, a rendszergazd�
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a **Rendszergazdák** lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Hitelesítés a Facebook-hirdetések használatával: 
 
-   1. Válassza a **Folytatás Facebook-kal** lehetőséget a bejelentkezéshez a Facebook hirdetési fiókjába.
+   1. A **Folytatás Facebook** gomb kiválasztásával jelentkezzen be a Facebook hirdetési fiókjába.
 
    1. A hitelesítés után engedélyezze a **ads_management** engedélyt a Facebookkal.
 
    1. Válassza ki a **Facebook hirdetési fiókot**, amellyel dolgozni kíván.
 
-   1. Jelöljön ki egy **Meglévő egyéni célközönséget** a legördülő listából, vagy hozzon létre egy **Új egyéni célközönséget**. További tájékoztatás [**Célközönségek a Facebook hirdetéskezelőben**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494) című témakörben olvashat.
+   1. Válasszon egy **meglévő egyéni célközönséget** a legördülő listából, vagy hozzon létre egy **új egyéni célközönséget**. További tájékoztatás [**Célközönségek a Facebook hirdetéskezelőben**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494) című témakörben olvashat.
       > [!NOTE]
-      > Ezzel az exportálással a Facebookon csak az adott típusú *ügyféllistán* hozhatók létre vagy frissíthetők egyéni célközönségek. Bizonyos esetekben a legördülő menüben különféle típusú egyéni célközönségek jelennek meg. Ha az *ügyféllistától* eltérő típust választ, akkor az exportálás sikertelen lesz. 
+      > Ezzel az exportálással a Facebookon csak az adott típusú *ügyféllistán* hozhatók létre vagy frissíthetők egyéni célközönségek. Bizonyos esetekben a legördülő listában különféle típusú egyéni célközönségek láthatóak. Ha az *ügyféllistától* eltérő típust választ, akkor az exportálás sikertelen lesz. 
 
 1. Tekintse át az **Adatvédelem és a megfelelés** lehetőséget, és válassza az **Elfogadom** lehetőséget.
 
@@ -68,16 +68,17 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget. 
 
-1. A **Kapcsolat exportáláshoz** lehetőségen válasszon egy kapcsolatot a **Facebook hirdetéskezelőből**. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** lehetőségen válasszon egy kapcsolatot a **Facebook hirdetéskezelőből**. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
 1. A **Kulcsazonosító kiválasztása** mezőben válassza az **E-mail-cím**, **Név és a cím** vagy a **Telefon** lehetőséget, amelyet elküld a Facebook hirdetéskezelőnek. 
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak.
 
 1. Képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kiválasztott kulcsazonosítóhoz.
-   > [Tipp] A legjobb esély akkor van az egyezésre, ha az **E-mail-cím** lehetőséget választja kulcsazonosítónak. A további azonosítók hozzáadásával javíthatja a megfeleltetést.
+   > [!TIP]
+   > A legjobb esély akkor van az egyezésre, ha az **E-mail-cím** lehetőséget választja kulcsazonosítónak. A további azonosítók hozzáadásával javíthatja a megfeleltetést.
 
-1. Válassza az **Attribútum hozzáadása** lehetőséget a több attribútum leképzésének Facebook hirdetéskezelőbe küldéséhez. A Facebook Ads Manager a következő felhasználóbarát neveket használja a leképezéshez: **FN** = **Keresztnév**, **LN** = **Utónév**, **FI** = **Első kezdőbetű**, **PHONE** = **Telefon**, **GEN** = **Nem**, **DOB** = **Születési idő**, **ST** = **Állam**, **CT** = **Város**, **ZIP** = **Irányítószám**, **COUNTRY** = **Ország/régió**
+1. Válassza az **Attribútum hozzáadása** lehetőséget a több attribútum leképzésének Facebook hirdetéskezelőbe küldéséhez. A Facebook hirdetéskezelő attribútumai a következő felhasználóbarát neveket használják a leképezéshez: **FN** = **Keresztnév**, **LN** = **Utónév**, **FI** = **Első kezdőbetű**, **PHONE** = **Telefon**, **GEN** = **Nem**, **DOB** = **Születési idő**, **ST** = **Állam**, **CT** = **Város**, **ZIP** = **Irányítószám / postafiók**, **COUNTRY** = **Ország/régió**
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 
@@ -85,7 +86,9 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
+
+Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

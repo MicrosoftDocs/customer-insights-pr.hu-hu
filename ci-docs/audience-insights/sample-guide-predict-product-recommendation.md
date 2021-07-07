@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: a85ee598ec747d0594755314e83a127ce0f2af95
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129902"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306169"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Termékjavaslat-előrejelzés (előzetes verzió) mintaútmutató
 
@@ -105,9 +105,9 @@ Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy
 
 1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
 
-2. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** lehetőséget elsődleges forrásként, amely minden rekordot magában foglal.
+2. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
 
-3. Az **Entitás 2** legördülő listájában válassza ki a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
+3. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
 
    ![Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.](media/unify-match-order.png)
 
@@ -115,16 +115,16 @@ Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy
 
 5. Adja hozzá az első feltételt a FullName segítségével.
 
-   - Az eCommerceContacts lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
-   - A loyCustumers lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
+   - Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
+   - A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
    - Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
    - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 
 6. Adja meg a nevét **FullName, Email**, az új szabályhoz.
 
    - Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   - Az eCommerceContacts entitáshoz válassza az **Email** legördülő lehetőséget.
-   - Az loyCustomers entitáshoz válassza az **Email** legördülő lehetőséget.
+   - Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
+   - Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben.
    - Hagyja üresen a Normalizálást.
    - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 

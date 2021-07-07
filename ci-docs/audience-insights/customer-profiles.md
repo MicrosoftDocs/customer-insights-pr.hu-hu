@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896330"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304607"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
@@ -57,13 +57,13 @@ Az **Ügyféladatok oldal** megnyitásához válassza ki bármelyik ügyfélcsem
 
 Az ügyféladatok a következőket tartalmazza:
 
--   **Ügyfélprofil csempéje:** Ez a csempe megjeleníti az egyesített ügyfélprofil entitás különböző értékeit. Az adatok között szerepelhet az e-mail-cím, a név, a város stb. 
+-   **Ügyfélprofil csempe:** Ez a csempe megjeleníti az egyesített ügyfélprofil entitás különböző értékeit. Az adatok között szerepelhet az e-mail-cím, a név, a város stb. 
 
--   **Lehetséges érdeklődési körök, lehetséges márkák:** Azt mutatja, hogy konfigurált-e belső bővítést. Lehetséges érdeklődési köröket és márkahűségeket jelent egy olyan ügyfélre vonatkozóan, akinek a profilja hasonló lehet ehhez az ügyfélhez. További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
+-   **Lehetséges érdeklődési körök, lehetséges márkák**: Azt mutatja, hogy konfigurált-e elsődleges bővítést. Lehetséges érdeklődési köröket és márkahűségeket jelent egy olyan ügyfélre vonatkozóan, akinek a profilja hasonló lehet ehhez az ügyfélhez. További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
 
--   **Mérőszámok:** Azt mutatja, hogy adott típus egy vagy több mérőszámáz konfigurálta-e: az ügyfél attribútumára vonatkozó mérőszámok. Magukban foglalják az egyéni ügyfelek szintjén az ügyfelekhez számított fő teljesítménymutatókat. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
+-   **Mérőszámok**: Azt mutatja, hogy adott típus egy vagy több mérőszáma konfigurált-e: az ügyfél attribútumára vonatkozó mérőszámok. Magukban foglalják az egyéni ügyfelek szintjén az ügyfelekhez számított fő teljesítménymutatókat. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
 
--   **Tevékenység idővonala:** Azt mutatja, hogy van-e konfigurált tevékenysége. Az Idősornézet az ügyfél időrendben rendezett tevékenységeit tartalmazza, a legutóbbi tevékenységtől kezdve. További információ: [Ügyféltevékenységek](activities.md).
+-   **Tevékenység idősora**: Azt mutatja, hogy van-e konfigurált tevékenysége. Az Idősornézet az ügyfél időrendben rendezett tevékenységeit tartalmazza, a legutóbbi tevékenységtől kezdve. További információ: [Ügyféltevékenységek](activities.md).
 
 A **Visszatérés az Ügyfelekhez** lehetőséggel visszatérhet az ügyfelek keresési oldalára.
 

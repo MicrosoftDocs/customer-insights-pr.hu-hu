@@ -9,22 +9,22 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896284"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304653"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Felhasználói profilok bővítése egyéni adatokkal (előzetes verzió)
 
-A Biztonságos fájlátviteli protokoll (SFTP) egyéni importálás lehetővé teszi olyan adatok importálását, amelyeknek nem kell végigmenniük az adategyesítési folyamaton. Az adatok bevitelének rugalmas, biztonságos és egyszerű módja. Az SFTP egyéni Importálás az [SFTP exportálással](export-sftp.md) együtt használható, amely lehetővé teszi a bővítéshez szükséges ügyfélprofiladatok exportálását. Az adatok ezután feldolgozhatók és bővíthetők, és az SFTP egyéni importálás segítségével a bővített adat visszavihető a Dynamics 365 Customer Insights célközönség-információk funkciójába.
+A Secure File Transfer Protocol (SFTP) egyéni importálás lehetővé teszi, hogy olyan bővítési adatokat importáljon, amik még nem mentek keresztül az adategységesítési folyamaton. Az adatok bevitelének rugalmas, biztonságos és egyszerű módja. Az SFTP egyéni Importálás az [SFTP exportálással](export-sftp.md) együtt használható, amely lehetővé teszi a bővítéshez szükséges ügyfélprofiladatok exportálását. Ezután az adatok feldolgozhatók és bővíthetők, és az SFTP egyéni importálása felhasználható a bővített adatok visszahozására a Dynamics 365 Customer Insights célközönségi elemzések lehetőségeihez.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 Az SFTP egyéni importálás konfigurálásához a következő előfeltételeknek kell teljesülnie:
 
-- Az SFTP állomásra importálni kívánt fájl neve és helye (elérési útja) megvan.
+- Az SFTP állomáson importálni kívánt fájl neve és helye (elérési útvonal) megvan.
 - Van egy *model.json* fájl, amely megadja az importálni kívánt adatok [Common Data Model sémáját](/common-data-model/). A fájlnak ugyanabban a könyvtárban kell lennie, mint az importálandó fájlnak.
 - Egy SFTP-kapcsolatot már konfigurált egy rendszergazda, *vagy* Ön rendelkezik a [rendszergazdai](permissions.md#administrator) engedélyekkel. Ahhoz az SFTP-helyhez, ahonnan az adatokat importálni szeretné, szüksége lesz a felhasználói hitelesítő adatokra, az URL-címre és a portszámra.
 
@@ -37,11 +37,11 @@ Az SFTP egyéni importálás konfigurálásához a következő előfeltételekne
 
    :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="SFTP egyéni importálás csempe.":::
 
-1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, akkor a legördülő menüből válassza ki a **Kapcsolat hozzáadása** és az **SFTP Egyéni importálás** lehetőséget a kapcsolat létrehozásához.
+1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, akkor kapcsolatot hozhat létre a **Kapcsolat hozzáadása** majd **SFTP Egyéni Importálás** kiválasztásával a legördülő listából.
 
 1. A kijelölt kapcsolat megerősítéséhez válassza a **Csatlakozás egyéni importáláshoz** lehetőséget.
 
-1.  Válassza a **Következő** lehetőséget, és adja meg az importálni kívánt adatfájl **Fájlnevét** és **Elérési** útját.
+1.  Válassza a **Tovább** lehetőséget, és írja be az importálni kívánt adatfájl **Elérési útvonal** és **Fájlnév** részleteit.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Képernyőkép készítése az adathely megadásakor.":::
 
@@ -55,21 +55,21 @@ A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konf
 
 1. Adja meg a kapcsolat nevét a **Megjelenítendő név** mezőben.
 
-1. Az importálni kívánt adatokkal érvényes felhasználónevet, jelszót és állomás URL-címet adjon meg az STFP kiszolgáló számára.
+1. Adja meg annak az SFTP-kiszolgálónak az érvényes felhasználónevét, jelszavát és állomás URL-címét, ahol az importálni kívánt adatok találhatók.
 
 1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével.
 
 1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
 
-1. Az ellenőrzés befejezését követően a kapcsolat menthető a **Mentés** gombra kattintással.
+1. Az ellenőrzés befejezését követően a kapcsolat menthető a **Mentés** lehetőség kiválasztásával.
 
-> [!div class="mx-imgBorder"]
-   > ![Az Experian kapcsolat konfigurációs oldala](media/enrichment-SFTP-connection.png "Az Experian kapcsolat konfigurációs oldala")
+   > [!div class="mx-imgBorder"]
+   > ![Experian kapcsolati konfiguráció oldal](media/enrichment-SFTP-connection.png "Experian kapcsolati konfiguráció oldal")
 
 
 ## <a name="defining-field-mappings"></a>Mezőleképezések meghatározása 
 
-Az SFTP-kiszolgálón importálandó fájlt tartalmazó könyvtárnak tartalmaznia kell egy *model.json* fájlt is. Ez a fájl határozza meg az adatok importálásához használandó sémát. A sémának a [Common Data Model](/common-data-model/) használatával kell megadnia a mező leképezését. A model.json fájl egyszerű példája a következőképpen néz ki:
+Az SFTP-kiszolgálón importálandó fájlt tartalmazó könyvtárnak tartalmaznia kell egy *model.json* fájlt is. Ez a fájl határozza meg az adatok importálásához használandó sémát. A sémának használnia kell a [Közös Adatmodellt](/common-data-model/) a mező leképezésének megadásához. A model.json fájl egyszerű példája a következőképpen néz ki:
 
 ```
 {
@@ -123,6 +123,6 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 ## <a name="next-steps"></a>Következő lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md), [mértékeket](measures.md) és [exportálja az adatot](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

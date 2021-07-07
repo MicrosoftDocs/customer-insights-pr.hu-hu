@@ -9,20 +9,20 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 251bc26246cee16952e8e4cb08e2ed7aa4d18488
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595429"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306123"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési (előnézet) példamutató
 
-Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával. Az ebben az útmutatóban felhasznált adatok nem valós ügyféladatok, és részei a Contoso-adatkészletnek, ami megtalálható a *Bemutató* környezetben a Customer Insights Előfizetésében.
+Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával. Az ebben az útmutatóban használt összes adat nem valós ügyféladatok, és a Contoso adathalmaz része, amely a *Demo* környezetben található a Customer Insights előfizetésén belül.
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
+A Contoso egy olyan cég, amely kiváló minőségű kávékat és kávéfőzőket gyárt, amelyeket a Contoso Coffee weboldalon keresztül értékesítenek. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -109,9 +109,9 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
 
-1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** lehetőséget elsődleges forrásként, amely minden rekordot magában foglal.
+1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
 
-1. Az **Entitás 2** legördülő listájában válassza ki a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
+1. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.":::
 
@@ -119,16 +119,16 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 1. Adja hozzá az első feltételt a FullName segítségével.
 
-   * Az eCommerceContacts lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
-   * A loyCustumers lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
+   * Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
+   * A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
    * Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
    * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 
 1. Adja meg a nevét **FullName, Email**, az új szabályhoz.
 
    * Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   * Az eCommerceContacts entitáshoz válassza az **Email** legördülő lehetőséget.
-   * Az loyCustomers entitáshoz válassza az **Email** legördülő lehetőséget. 
+   * Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
+   * Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben. 
    * Hagyja üresen a Normalizálást. 
    * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 

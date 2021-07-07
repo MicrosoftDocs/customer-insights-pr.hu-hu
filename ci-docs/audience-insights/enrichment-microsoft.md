@@ -9,16 +9,16 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
-ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6245710"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305159"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
 
-Használja a Microsoft tulajdonát képező adatokat az ügyféladatok márkahűséggel és érdeklődéssel való bővítésre. Ezeket az affinitásokat az ügyfelekihez hasonló demográfiai adatokkal rendelkező emberek adatai alapján határozzák meg. Ez az információ segíti az ügyfelek jobb megértését és szegmentálásukban a márkahűségük és érdeklődésük alapján.
+Használja a Microsoft tulajdonát képező adatokat az ügyféladatok márkahűséggel és érdeklődéssel való bővítésre. Ezek az affinitások az Ön ügyfeleihez hasonló demográfiai jellemzőkkel rendelkező emberek adatain alapulnak. Ez az információ segíti az ügyfelek jobb megértését és szegmentálásukban a márkahűségük és érdeklődésük alapján.
 
 A célközönség-információkban lépjen az **Adatok** > **Bővítés** a [bővítések konfigurálásához és megtekintéséhez](enrichment-hub.md).
 
@@ -27,7 +27,7 @@ A márkaaffinitások bővítésének konfigurálásához nyissa meg a **Felfedez
 Az érdeklődésikör-affinitások bővítésének konfigurálásához nyissa meg a **Felfedezés** lapot, és válassza a **Saját adatok bővítése** elemet az **Érdeklődési körök** csempén.
 
    > [!div class="mx-imgBorder"]
-   > ![Márkák és érdeklődési mozaikok](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődés mozaikok")
+   > ![Márkák és érdeklődési mozaikok](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
 
 ## <a name="how-we-determine-affinities"></a>Hogyan határozzuk meg a márkahűséget
 
@@ -35,7 +35,7 @@ A Microsoft online keresési adatait használjuk fel különböző demográfiai 
 
 ## <a name="affinity-level-and-score"></a>Affinitás szintje és pontszám
 
-Minden bővített ügyfélprofilon két kapcsolódó értéket biztosítunk – affinitás szintje és affinitás pontszáma. Ezek az értékek segítenek annak meghatározásában, hogy milyen erős az affinitás profil demográfiai szegmensében a márkához vagy érdeklődési körhöz az egyéb demográfiai szegmensekkel összehasonlítva.
+Minden bővített ügyfélprofilon két kapcsolódó értéket biztosítunk: affinitás szintje és affinitás értéke. Ezek az értékek segítenek annak meghatározásában, hogy milyen erős az affinitás profil demográfiai szegmensében a márkához vagy érdeklődési körhöz az egyéb demográfiai szegmensekkel összehasonlítva.
 
 Az *Affinitás szintje* négy szintből áll, és egy 100 pontos skálán számítja ki a rendszer az *affinitási pontszámot*, amely hozzárendeli az affintiási szinteket.
 
@@ -53,7 +53,7 @@ Az affinitás méréséhez használt részletességtől függően használhatja 
 
 Jelenleg a következő ország-/régió lehetőségeket támogatjuk: Ausztrália, Kanada (angol), Franciaország, Németország, Egyesült Királyság vagy Egyesült Államok (angol).
 
-Ország kiválasztásához nyissa meg a **Márkák bővítése** vagy az **Érdeklődés bővítése** lehetőséget és válassza az **Módosítás** lehetőséget az **Ország/régió** mellett. Az **Ország/régió beállításai** ablaktáblában válasszon egy beállítást, és válassza az **Alkalmaz** lehetőséget.
+Ország vagy régió kiválasztásához nyissa meg a **Márkák bővítése** vagy **Érdeklődés bővítése** és válassza a **Változtat** lehetőséget az **Ország/Régió** mellett. Az **Ország/régió beállításai** ablaktáblában válasszon egy beállítást, és válassza az **Alkalmaz** lehetőséget.
 
 ### <a name="implications-related-to-country-selection"></a>Az országválasztással kapcsolatos következmények
 
@@ -61,7 +61,7 @@ Ország kiválasztásához nyissa meg a **Márkák bővítése** vagy az **Érde
 
 - Egy [iparág kiválasztása](#define-your-brands-or-interests) esetén a kiválasztott ország vagy régió alapján megkapja a leginkább releváns márkákat és érdeklődési köröket.
 
-- A [profilok bővítésekor](#refresh-enrichment) minden ügyfélprofilt bővítünk, amelyhez a kiválasztott márkák és érdeklődési körök kapcsán adatokat kapunk. A nem a kijelölt országban vagy régióban található profilokat is. Ha például Németországot választotta, akkor bővítjük az Egyesült Államokban található profilokat, ha rendelkezésre állnak adatok az Egyesült Államokban a kiválasztott márkákra és érdeklődésre.
+- A [profilok bővítésénél](#refresh-enrichment) minden olyan ügyfélprofilt bővítünk, amelynél adatokat kapunk a kiválasztott márkákhoz és érdeklődésekhez, tartalmazva a profilokat, amelyek nincsenek benne a kiválasztott országban vagy régióban. Ha például Németországot választotta, akkor bővítjük az Egyesült Államokban található profilokat, ha rendelkezésre állnak adatok az Egyesült Államokban a kiválasztott márkákra és érdeklődésre.
 
 ## <a name="configure-enrichment"></a>A bővítés konfigurálása
 
@@ -71,7 +71,7 @@ Az interaktív élmény végig segít Önnek a bővítések konfigurálásában.
 
 Válasszon legfeljebb öt márkát vagy érdeklődési kört az alábbi lehetőségek egyikének vagy mindkettőnek a használatával:
 
-- **Iparág** : Válassza ki az iparágat a legördülő listából, majd válasszon az iparág legfontosabb márkáiból vagy érdeklődési köréből.
+- **Iparág**: válassza ki saját iparágát a legördülő listából, majd válasszon a csúcsmárkákból vagy érdeklődési körökből ezt az iparágat illetően.
 - **Válassza ki a sajátját**: Adjon meg egy, a szervezet számára releváns márkát vagy érdeklődési kört, majd válasszon a megfelelő javaslatok közül. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
 
 ### <a name="review-enrichment-preferences"></a>Bővítési beállítások áttekintése
@@ -88,19 +88,19 @@ Válassza a **Bővített entitás** lehetőséget, és válassza a Microsoft vá
 
 A egyesített ügyfélentitás mezőinek leképezésével meghatározhatja, hogy a rendszer az ügyféladatok gyarapítására melyik demográfiai szegmenst használja. Ország/régió leképezése, és legalább a születési dátum vagy nem attribútumát. Ezenkívül le kell képeznie legalább egy várost (és államot/tartományt) vagy irányítószámot. Válassza a **Szerkesztés** lehetőséget a mezők leképezésének definiálásához, és válassza az **Alkalmazás** lehetőséget, amikor elkészült. Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
 
-A következő formátumok és értékek támogatottak, az értékek nem különböztetik meg a kis- és nagybetűket:
+A következő formátumok és értékek támogatottak (az értékek nem különböztetik meg a kis- és nagybetűket):
 
-- **Születési dátum**: Azt ajánljuk, hogy az adatok betöltése során a születési dátumot a rendszer datetime típusúra alakítsa. Másik lehetőségként [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) formátumú "éééé-hh-nn" vagy "éééé-hh-NNTóó:pp:mp" karakterláncot is meg lehet adni.
-- **Nem**: férfi, nő, ismeretlen
-- **Irányítószám**: Öt számjegyből álló ZIP-kód az Egyesült Államokban, szabványos irányítószám mindenhol máshol
-- **Város**: A város neve angolul
-- **Állam/megye**: Két betűs rövidítés az Egyesült Államok és Kanada esetében. Két vagy három betű rövidítés Ausztrália esetében. Franciaország, Németország és az Egyesült Királyság esetében nem alkalmazható.
+- **Születési dátum**: Azt ajánljuk, hogy az adatok betöltése során a születési dátumot a rendszer datetime típusúra alakítsa. Másik lehetőségként sztring lehet [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-ddd" vagy "yyyy-MM-ddTHH:mm:ss" formátumban.
+- **Nem**: férfi, nő, ismeretlen.
+- **Irányítószám**: Ötjegyű irányítószámok az Egyesült Államok számára, standard irányítószám mindenhol máshol.
+- **Város**: A város neve angolul.
+- **Állam/megye**: Két betűs rövidítés az Egyesült Államok és Kanada esetében. Két- vagy három betűs rövidítés Ausztrália esetében. Franciaország, Németország és az Egyesült Királyság esetében nem alkalmazható.
 - **Ország/régió**:
 
   - USA: Amerikai Egyesült Államok, Egyesült Államok, USA, US, Amerika
   - CA: Kanada, CA
   - GB: Egyesült Királyság, UK, Nagy-Britannia, GB, Nagy-Britannia és Észak-Írország Egyesült Királysága, Nagy-Britannia Egyesült Királysága
-  - AU: Ausztrália, AU, Ausztrál nemzetközösség
+  - AU: Ausztrália, AU, Ausztrália, Ausztrál Nemzetközösség
   - FR: Franciaország, Francia Köztársaság
   - DE: Németország, német, Deutschland, Allemagne, DE, Német Szövetségi Köztársaság, Német Köztársaság
 
@@ -113,10 +113,11 @@ Végül áttekintheti az információkat, és nevet adhat a bővítésnek.
 ## <a name="refresh-enrichment"></a>A bővítés frissítése
 
 Futtassa a bővítést a márkák, érdeklődési körök konfigurálása és a mezők demográfiai adatokra vonatkozó leképezése után. A folyamat megkezdéséhez válassza a márka vagy az érdeklődési kör konfigurációja lapon a **Futtatás** lehetőséget. Emellett a rendszer automatikusan is futtathatja a dúsítást egy ütemezett frissítés részeként.
+
 Az ügyféladatok méretétől függően előfordulhat, hogy a bővítés futtatása néhány percig is eltarthat.
 
 > [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. A Feladat egyik feladatának **Lásd részletek** kiválasztása után további információkat talál: feldolgozási idő, utolsó feldolgozási dátum, valamint a feladathoz kapcsolódó összes hiba és figyelmeztetés.
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
@@ -134,7 +135,7 @@ A márka és a érdeklődés affinitásokat az ügyfélkártyákon is meg lehet 
 
 ## <a name="next-steps"></a>Következő lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [Szegmenseket](segments.md), [Mértékeket](measures.md) , sőt [Exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

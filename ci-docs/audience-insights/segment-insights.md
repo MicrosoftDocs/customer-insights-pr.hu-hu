@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 90ebcaab896c628b04e751ad9857e924749895e7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595337"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306077"
 ---
 # <a name="segment-insights-preview"></a>Szegmensekkel kapcsolatosa információk (előzetes verzió)
 
@@ -50,7 +50,7 @@ Az elemzési eredmények megtekintéséhez válasszon ki egy betekintést:
 
 - Az elemzésre kiválasztott szegmensekben található átfedő tagok száma.
 - A szegmensek egyikében, azonban a többiben nem szereplő tagok száma.
-- Ha az átfedési elemzés konfigurálásakor kijelölt mezőket, a megfelelő lapokon találja azokat. A szűrő legördülő listáról kiválaszthat bármilyen attribútum érdeklődési szintet, és a lenti táblázat megjeleníti a megfelelő adatokat.
+- Ha az átfedési elemzés konfigurálásakor kijelölt mezőket, a megfelelő lapokon találja azokat. A legördülő szűrő segítségével bármilyen attribútum szintet kijelölhet, és az alsó táblázatban a megfelelő adatok fognak mutatni.
 
 ## <a name="segment-differentiators"></a>Szegmensmegkülönböztetők
 

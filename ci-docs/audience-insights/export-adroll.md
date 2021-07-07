@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dbebc3ee3978ca6ee9d1ad1c15c226479876709f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 67bfa23d56b26ae592efa4d7197713664bb02623
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124368"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304830"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Szegmensek exportálása az AdRollba (előzetes verzió)
 
@@ -28,11 +28,11 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és haszná
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Összesen exportálásonként legfeljebb 250 000 ügyfélprofilt exportálhat az AdRollba.
+- Egyidejűleg legfeljebb 250 000 profilt exportálhat AdRoll-ba.
 - 100-nál kevesebb profillal rendelkező szegmensek nem exportálhatók az AdRollba. 
 - Az AdRollba való exportálás csak szegmensekre korlátozódik.
-- Legfeljebb 250 000 profil az AdRollba való exportálása eltarthat 10 percig. 
-- A Marketoba exportálható profilok száma függ a AdRoll szerződéstől, és korlátozott.
+- Legfeljebb 250 000 profil AdRollba való exportálása eltarthat 10 percig. 
+- Az AdRoll-ba exportálható profilok száma az AdRoll- lal kötött szerződésétől függ.
 
 ## <a name="set-up-connection-to-adroll"></a>Állítsa be az AdRollal való kapcsolatot
 
@@ -62,19 +62,21 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az AdRoll szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az AdRoll szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
-1. Adja meg az **AdRoll Advertiser azonosítóját** További információkért lásd: [AdRoll Advertiser profilok](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Adja meg **AdRoll hirdetői azonosítóját**. További információ: [AdRoll Hirdetői Profilok](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
 3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell az AdRollba.
 
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Jelöljön ki egy legalább 100 tagból álló szegmenst. Kisebb szegmensek nem exportálhatók. Az exportálni kívánt szegmens maximális mérete exportálásonként 250 000 tag. 
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Jelöljön ki egy legalább 100 tagból álló szegmenst. Kisebb szegmensek nem exportálhatók. Továbbá az exportálni kívánt szegmens maximális mérete exportálásonként 250 000 tag. 
 
 1. Válassza a **Mentés** parancsot.
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
+
+Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség

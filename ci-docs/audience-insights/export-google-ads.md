@@ -9,27 +9,26 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 73f3257a3ae6e8423f45410546535df5e3b400ce
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: c23c8b4e6758df08e04bf1e3ae0cba4dee06fe2b
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976321"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305343"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 
-Exportáljon egyéni ügyfélprofilok szegmenseit a Google Ads célközönséglistába, és használja ezeket a hirdetésekhez a Google Kereső, a Gmail, a YouTube és a Google Display Network felületén. 
+Exportálja az egységes ügyfélprofilok szegmenseit a Google Ads célközönség listára, és használja őket a Google Keresés, a Gmail, YouTube és Google Display Network-ön történő hirdetésnél. 
 
 ## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
 
 -   Rendelkezik [Google Ads-fiókkal](https://ads.google.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
--   [Jóváhagyott Google Ads fejlesztői jogkivonattal rendelkezik](https://developers.google.com/google-ads/api/docs/first-call/dev-token) 
--   Ön megfelel az [Ügyfél megfeleltetési irányelv](https://support.google.com/adspolicy/answer/6299717) követelményeinek
--   Teljesítse a [remarketing listaméretekre](https://support.google.com/google-ads/answer/7558048) vonatkozó követelményeket 
-
+-   Rendelkezik egy [jóváhagyott Google Ads fejlesztői kóddal](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
+-   Ön megfelel az [Ügyfél megfeleltetési szabályzat](https://support.google.com/adspolicy/answer/6299717) követelményeinek.
+-   Ön teljesíti a [remarketing listaméretekre](https://support.google.com/google-ads/answer/7558048) vonatkozó követelményeket.
 -   A Google Adsban és a megfelelő azonosítókban meglévő célközönségek találhatók. További információért lásd: [Google Ads-célközönségek](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   Rendelkezik [konfigurált szegmensekkel](segments.md)
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőket, amelyek az e-mail-címet, utónevet és vezetéknevet tartalmazzák
+-   Rendelkezik [konfigurált szegmensekkel](segments.md).
+-   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőket, amelyek e-mail-címet, utónevet és vezetéknevet tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
@@ -68,7 +67,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Google Ads szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Google Ads szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
 1. Adja meg a **[Google Ads célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, és válassza a **Csatlakozás** lehetőséget a Google Ads-kapcsolat kezdeményezéséhez.
 
@@ -78,7 +77,9 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
+
+Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

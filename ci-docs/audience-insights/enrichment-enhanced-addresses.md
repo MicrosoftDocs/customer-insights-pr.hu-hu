@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 07271d491460764f2c738e760e41c3492f2b6de9
-ms.sourcegitcommit: 27f9dd837304ef9fc00f055a6e900fbf6fce1429
+ms.openlocfilehash: e0ca731f944da9a7eaae7c2dc2d7568b6386089f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "5965581"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305435"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Ügyfélprofilok bővítése továbbfejlesztett címekkel
 
@@ -22,11 +22,11 @@ Az adatokban szereplő címek strukturálatlanok, hiányosak vagy helytelenek le
 
 ## <a name="how-we-enhance-addresses"></a>Hogyan történik a címek továbbfejlesztése?
 
-A modell két lépést használ a címek továbbfejlesztéséhez. Először elemezi a címet, azonosítja az összetevőit, és strukturált formátumba alakítja őket. Ezután a mesterséges intelligencia segítségével kijavítjuk, kiegészítjük és egységesítjük a címben lévő értékeket.
+A modell két lépést használ a címek továbbfejlesztéséhez. Először elemezi a címet, azonosítja az összetevőit, és strukturált formátumba alakítja őket. Ezután az AI-t használjuk a címben lévő értékek javítására, befejezésére és szabványosítására.
 
 ### <a name="example"></a>Példa
 
-Előfordulhat, hogy a címinformációk nem szabványos formátumban vannak, illetve helyesírási hibákat tartalmaznak. A modell ezeket a problémákat ki tudja javítani, és egységes címeket hozhat létre az egységes ügyfélprofilokban.
+Előfordulhat, hogy a címadatok nem szabványos formátumúak, és helyesírási hibákat tartalmaznak. A modell ezeket a problémákat ki tudja javítani, és egységes címeket hozhat létre az egységes ügyfélprofilokban.
 
 ```Input
 4567 w main stret californa missouri 54321 us
@@ -50,7 +50,7 @@ A továbbfejlesztett címek csak a betöltött címadatokban már megtalálható
 2. ellenőrzi, hogy az értékek (például az irányítószám vagy az utcanév) érvényesek-e;
 3. módosítja a fel nem ismert értékeket.
 
-A modell gépi tanuláson alapuló technikákat alkalmaz a címek továbbfejlesztéséhez. Noha – más gépi tanulási modellekhez hasonlóan – nagy megbízhatósági küszöböt alkalmazunk arra az esetre, amikor a modell módosít egy bemeneti értéket, a 100%-os pontosság nem garantált.
+A modell gépi tanuláson alapuló technikákat alkalmaz a címek továbbfejlesztéséhez. Bár magas megbízhatósági küszöböt alkalmazunk arra az időre, amikor a modell megváltoztatja a bemeneti értéket, mint minden gépi tanuláson alapuló modell esetében, a 100 százalékos pontosság nem garantált.
 
 ## <a name="supported-countries-or-regions"></a>Támogatott országok és régiók
 
@@ -76,7 +76,7 @@ A címek egy ország/régió értéket tartalmazhatnak. Nem dolgozunk fel nem t�
 1. Adja meg, hogyan történjen az adatkészletben lévő címek formázása. Ha az adatokban lévő címek egy mezőt használnak, válassza az **Egyattribútumos cím** lehetőséget. Ha az adatokban lévő címek több adatmezőt használnak, válassza a **Többattribútumos cím** lehetőséget.
 
    > [!NOTE]
-   > Az országnak/régiónak az egy- és a többattribútumos címben is szerepelnie kell. Az érvényes vagy támogatott ország/régió értéket nem tartalmazó címeket a rendszer nem bővíti.
+   > Az ország/régió kötelező mind az egy-attribútumos, mind a több attribútumos címekben. Az érvényes vagy támogatott ország/régió értékeket nem tartalmazó címek nem kerülnek bővítésre.
 
 1.  Képezze le az egyesített ügyfélentitásból származó címmezőket.
 
@@ -98,6 +98,6 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 ## <a name="next-steps"></a>Következő lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md), [mértékeket](measures.md) , sőt [exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

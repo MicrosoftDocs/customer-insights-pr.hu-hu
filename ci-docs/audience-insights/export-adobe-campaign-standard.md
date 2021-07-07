@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760284"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305389"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>A Customer Insights-szegmensek használata az Adobe Campaign Standardban (előzetes verzió)
 
-A Dynamics 365 Customer Insights célközönség-információinak felhasználójaként létrehozott szegmenseket, hogy a marketingkampányok hatékonyságát növelje a releváns célközönségek megcélzásával. Az Adobe Experience Platformban és az Adobe Campaign Standardhoz hasonló alkalmazásokban található célközönség-információs szegmensek használatához a jelen cikkben ismertetett lépéseket kell követnie.
+A célközönségi elemzések felhasználójaként Dynamics 365 Customer Insights -ban előfordulhat, hogy szegmenseket hozott létre, hogy hatékonyabbá tegye marketingkampányait a releváns célközönségek megcélzásával. Az Adobe Experience Platformban és az Adobe Campaign Standardhoz hasonló alkalmazásokban található célközönség-információs szegmensek használatához a jelen cikkben ismertetett lépéseket kell követnie.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="A jelen cikkben ismertetett lépések folyamatábrája.":::
 
@@ -54,7 +54,7 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
 
 1. A célközönség információkban menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Adobe Campaign** lehetőséget a kapcsolat konfigurálához, vagy válassza a **Beállítás** lehetőséget az **Adobe Campaign** csempén
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Adobe Campaign** lehetőséget a kapcsolat konfigurálához, vagy válassza a **Beállítás** lehetőséget az **Adobe Campaign** csempében.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Az Adobe Campaign Standard konfigurációs csempéje.":::
 
@@ -66,7 +66,7 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Képernyőkép a tárfiók konfigurációjáról."::: 
 
-   - Az Azure Blob Storage fióknév és fiókkulcs megkeresésével kapcsolatos további tudnivalókat lásd: [A tárolófiók beállításainak kezelése az Azure Portal webhelyen](/azure/storage/common/storage-account-manage).
+   - Az Azure Blob Storage fióknév és fiókkulcs megkeresésével kapcsolatos további tudnivalókat lásd: [A tárfiók beállításainak kezelése az Azure Portal webhelyen](/azure/storage/common/storage-account-manage).
 
    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
@@ -80,7 +80,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Adobe Campaign szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Adobe Campaign szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
 1. Válassza ki az exportálni kívánt szegmenst. Ebben a példában ez a **ChurnProneCustomers**.
 
@@ -106,7 +106,7 @@ Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#ru
 > [!NOTE]
 > Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licencének megengedett korlátjan belül van.
 
-Az exportált adatokat a rendszer a fent beállított Azure Blob Storage-tárolóban tárolja. A következő mappa elérési útja automatikusan létrejön a tárolóban:
+Az exportált adatokat a rendszer a fent beállított Azure Blob Storage tárolóban tárolja. A következő mappa elérési útja automatikusan létrejön a tárolóban:
 
 *%ContainerName%/CustomerInsights_%instanceID%/% exportdestination-name%_%segmentname%_%timestamp%.csv*
 
@@ -118,7 +118,7 @@ Ha egy szegmenst exportál célközönség-információkból, akkor az előző l
 
 A szegmens az Adobe Campaign Standardban való használata esetén két további mezőre is ki kell bővítenünk a profilsémát az Adobe Campaign Standardban. Ismerje meg, hogyan [bővítheti a profilerőforrást](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) az Adobe Campaign Standard új mezőivel.
 
-A példában ezek a mezők a *Szegmens neve és a Szegmens dátuma (nem kötelező).*
+A példában ezek a mezők a *Szegmens neve és a Szegmens dátuma (nem kötelező)*.
 
 Ezeket a mezőket arra használjuk, hogy azonosítsuk a kampányhoz megcélozni kívánt Adobe Campaign Standard-profilokat.
 
@@ -128,7 +128,7 @@ Ha az Adobe Campaign Standardban nincs más rekord, mint amit importálni fog, e
 
 Most, hogy minden a helyén van, a profilok létrehozásához importálni kell az előkészített célközönségadatokat az célközönség-információkból az Adobe Campaign Standardba. Ismerje meg, [hogyan importálhat profilokat az Adobe Campaign Standardba](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) munkafolyamatok használatával.
 
-Az alábbi képen az importálási munkafolyamat 8 óránként fut, és exportált célközönség-információs szegmensek (.csv fájl az Azure Blob Storage-ban) után kutat. A munkafolyamat meghatározott oszloprendben bontja ki a .csv fájl tartalmát. Ez a munkafolyamat az alapvető hibakezelés végrehajtásához készült, és biztosítja, hogy minden rekordhoz tartozzon e-mail-cím, mielőtt az adatokat átveszi az Adobe Campaign Standardban. A munkafolyamat ki is bontja a szegmens nevét a fájlnévből, mielőtt az ACS-profiladatokba upsertelné.
+Az alábbi képen látható importálási munkafolyamat úgy van konfigurálva, hogy nyolc óránként fusson, és keresse meg az exportált célközönségi elemzések szegmenseket (.csv fájl az Azure Blob Storage-ban). A munkafolyamat meghatározott oszloprendben bontja ki a .csv fájl tartalmát. Ez a munkafolyamat az alapvető hibakezelés végrehajtásához készült, és biztosítja, hogy minden rekordhoz tartozzon e-mail-cím, mielőtt az adatokat átveszi az Adobe Campaign Standardban. A munkafolyamat a szegmens nevét is kinyeri a fájlnévből, mielőtt az Adobe Campaign Standard profiladataiba lépne.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Képernyőkép az importálási munkafolyamatról az Adobe Campaign Standard felhasználói felületén.":::
 

@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
-ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
+ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6253043"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305481"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
 Az **Exportálások** lap megjeleníti az összes konfigurált exportálást. Az exportálások meghatározott adatokat osztanak meg különböző alkalmazásokkal. Ezek tartalmazhatnak ügyfélprofilokat vagy entitásokat, sémákat és leképezési részleteket. Mindegyik exportáláshoz szükség van egy [rendszergazda kapcsolatra, beállításra, hogy kezelhesse a hitelesítést és a hozzáférést](connections.md).
 
-Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások** lehetőségre. Minden felhasználói szerepkörrel rendelkező megtekintheti a konfigurált exportálásokat. A parancssávban a keresési mező segítségével keresse meg az exportálás nevét, a kapcsolat nevét, vagy a kapcsolat típusát.
+Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások** lehetőségre. Minden felhasználói szerepkör megtekintheti a konfigurált exportálást. A parancssáv keresőmezőjében keresse meg az exportot a nevük, a kapcsolatnevük vagy a kapcsolattípusuk alapján.
 
 ## <a name="set-up-a-new-export"></a>Új exportálás beállítása
 
@@ -65,7 +65,7 @@ Az exportálási célhelyek a létrehozása után az **Adatok** > **Exportálás
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. A szerkesztési jogosultsággal nem rendelkező felhasználók a **Szerkesztés** helyett a **Megtekintés** lehetőséget választhatják az exportálás részleteinek megtekintéséhez.
+1. A szerkesztési engedélyekkel nem rendelkező felhasználók a **Nézet** lehetőséget választják a **Szerkesztés** helyett az exportálás részleteinek megtekintéséhez.
 
 1. Az oldalsó ablaktáblán megjelenik egy exportálás konfigurációja. Az értékek a szerkesztési jogosultságok nélkül nem módosíthatók. Az exportálások lapra való visszatéréshez válassza a **Bezárás** lehetőséget.
 
@@ -73,7 +73,7 @@ Az exportálási célhelyek a létrehozása után az **Adatok** > **Exportálás
 
 Minden konfigurált exportálás egy frissítési ütemezéssel rendelkezik. A frissítés során a rendszer új vagy frissített adatokat keres, amelyek szerepeljenek az exportálásban. Alapértelmezés szerint az exportálás minden [ütemezett rendszerfrissítés](system.md#schedule-tab) részeként fut. Testreszabhatja a frissítési ütemezést, vagy ki is kapcsolhatja az exportálás manuális futtatásához.
 
-Az exportálási ütemezések a környezet állapotától függenek. Ha az ütemezett exportálás indításakor frissítések vannak folyamatban a [függőségeken](system.md#refresh-policies), a rendszer először befejezi a függőségeket, majd futtatja az exportálást. A **Frissítve** oszlopban láthatja, hogy mikor frissült utoljára egy exportálás.
+Az exportálási ütemezések a környezet állapotától függenek. Ha folyamatban vannak frissítések [függőségeken](system.md#refresh-policies) ,amikor egy ütemezett exportálást el kell indítani, a rendszer először befejezi a frissítéseket, majd futtatja az exportálást. A **Frissítve** oszlopban láthatja, hogy mikor frissült utoljára egy exportálás.
 
 ### <a name="schedule-exports"></a>Exportálások ütemezése
 

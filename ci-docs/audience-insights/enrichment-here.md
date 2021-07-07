@@ -1,5 +1,5 @@
 ---
-title: 'Bővítés külső bővítéssel: HERE Technologies'
+title: Bővítés a HERE Technologies független gyártótól származó bővítéssel
 description: Általános információk a HERE Technologies harmadik fél bővítésről.
 ms.date: 04/09/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896054"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305297"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Ügyfélprofilok bővítése a HERE Technologies (előzetes verzió) segítségével
 
@@ -24,9 +24,9 @@ A HERE Technologies egy helyplatformot biztosító vállalat, amely helyalapú a
 
 A HERE Technologies bővítések konfigurálásához a következő előfeltételeknek kell teljesülnie:
 
-- Aktív HERE Technologies előfizetéssel kell rendelkeznie. Az előfizetés beszerzéséhez [regisztrálhat itt](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) vagy [felveheti a HERE Technologiesszel a kapcsolatot](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) közvetlenül. [Itt többet is megtudhat a HERE Technologies helybővítéshez.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
+- Aktív HERE Technologies előfizetéssel kell rendelkeznie. Az előfizetéshez [regisztrálhat itt](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) vagy [felveheti a HERE Technologies-szel a kapcsolatot](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) közvetlenül. [Itt többet is megtudhat a HERE Technologies helybővítéshez.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Egy HERE [kapcsolat](connections.md) áll rendelkezésre *vagy* Ön [rendszergazdai](permissions.md#administrator) engedélyekkel és a HERE Technologies API-kulcssal rendelkezik.
+- Egy HERE [kapcsolat](connections.md) elérhető *vagy* rendelkezik [rendszergazdai](permissions.md#administrator) engedélyekkel és HERE Technologies API-kulccsal.
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
@@ -37,7 +37,7 @@ A HERE Technologies bővítések konfigurálásához a következő előfeltétel
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies csempe](media/HERE-tile.png "HERE Technologies csempe")
 
-1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, a **Kapcsolat hozzáadása** lehetőség kiválasztásával hozhat létre kapcsolatot. Válassza a legördülő listából a **HERE Technologies** lehetőséget. 
+1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, a **Kapcsolat hozzáadása** lehetőség kiválasztásával hozhat létre kapcsolatot. Válassza a **HERE Technologies** -t a legördülő listából. 
 
 1. A kijelölés megerősítéséhez válassza a **Kapcsolódás a HERE Technologies-hez** lehetőséget.
 
@@ -58,7 +58,7 @@ A HERE Technologies bővítések konfigurálásához a következő előfeltétel
 
 1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
-## <a name="configure-the-connection-for-here-technologies"></a>Konfigurálja a kapcsolatot a HERE Technologies-hez 
+## <a name="configure-the-connection-for-here-technologies"></a>Konfigurálja a kapcsolatot a HERE Technologies-hoz 
 
 A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konfigurálásakor válassza a **Kapcsolat hozzáadása** lehetőséget, *vagy* menjen a **Rendszergazda** > **Kapcsolatok** elemre, és válassza a **Beállítások** lehetőséget a HERE Technologies csempén.
 
@@ -66,13 +66,13 @@ A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konf
 
 1. Adjon meg egy érvényes HERE Technologies API-kulcsot.
 
-1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével
+1. Tekintse át és adja meg hozzájárulását az **adatvédelem és a megfelelőséghez** az **Elfogadom** által.
 
 1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
 
 1. Az ellenőrzés befejezése után válassza a **Mentés** lehetőséget.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![A HERE Technologies kapcsolat konfigurációs oldala](media/enrichment-HERE-connection.png "A HERE Technologies kapcsolat konfigurációs oldala")
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
@@ -85,7 +85,7 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 ## <a name="next-steps"></a>Következő lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md), [mértékeket](measures.md) , sőt [exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

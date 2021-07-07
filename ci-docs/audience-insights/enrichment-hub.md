@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954490"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305251"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -22,7 +22,8 @@ Adatok felhasználása olyan forrásokból, mint például a Microsoft és más 
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala":::
 
-A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra a bővítési lehetőségek használatához.    
+A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra a bővítési lehetőségek használatához.  
+
 A bővítések létrehozásához vagy módosításához Közreműködő vagy Rendszergazdai engedélyekkel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).
 
 A **felderítés** lapon a következő bővítések találhatók:
@@ -31,7 +32,7 @@ A **felderítés** lapon a következő bővítések találhatók:
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
-- [Demográfia](enrichment-experian.md) az Experiantól
+- [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül
 
@@ -39,7 +40,7 @@ A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beáll
 
 ## <a name="manage-existing-enrichments"></a>Meglévő bővítések kezelése
 
-Nyissa meg a **Saját bővítések** lehetőséget az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
+Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
 
 A rendelkezésre álló lehetőségek megtekintéséhez válasszon egy bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket.
 
@@ -59,6 +60,6 @@ A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md)
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 
-A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmensre vonatkozó adatok bővítése. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
+A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
