@@ -72,7 +72,7 @@
           href: audience-insights/enrichment-here.md
         - name: Bővítés Leadspace-szel
           href: audience-insights/enrichment-leadspace.md
-        - name: Bővítés Experiannal
+        - name: Bővítés Experian -nal
           href: audience-insights/enrichment-experian.md
         - name: Gazdagítás az SFTP egyéni importálással
           href: audience-insights/enrichment-SFTP-custom-import.md
@@ -136,6 +136,8 @@
           items:
             - name: Exportálások áttekintése
               href: audience-insights/export-destinations.md
+            - name: Active Campaign
+              href: audience-insights/export-active-campaign.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
             - name: Autopilot
@@ -178,8 +180,12 @@
               href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
+            - name: Salesforce Marketing Cloud
+              href: audience-insights/export-salesforce.md
             - name: SendGrid
               href: audience-insights/export-sendgrid.md
+            - name: SendInBlue
+              href: audience-insights/export-sendinblue.md
             - name: Snapchat
               href: audience-insights/export-snapchat.md
             - name: SFTP
@@ -240,8 +246,8 @@
           href: engagement-insights/get-started.md
         - name: Munkaterület létrehozása
           href: engagement-insights/create-workspace.md
-        - name: Módosítsa weboldalát
-          href: engagement-insights/instrument-website.md
+        - name: Események rögzítése webhelyekről és mobilalkalmazásokból
+          href: engagement-insights/developer-resources.md
         - name: Fogalmak és szakkifejezések
           href: engagement-insights/glossary.md
     - name: Események
@@ -272,10 +278,18 @@
       items:
         - name: Fejlesztői erőforrások áttekintése
           href: engagement-insights/developer-resources.md
-        - name: Web SDK-oktatóanyag
+        - name: Webes SDK oktatóanyag
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Web SDK-minta
           href: engagement-insights/websdk-sample.md
+        - name: Android SDK oktatóanyag
+          href: engagement-insights/get-started-android.md
+        - name: Android SDK minta
+          href: engagement-insights/androidsdk-sample.md
+        - name: iOS SDK oktatóanyag
+          href: engagement-insights/get-started-ios.md
+        - name: iOS SDK minta
+          href: engagement-insights/iossdk-sample.md
     - name: Adminisztráció
       items:
         - name: Engedélyek és szerepkörök
