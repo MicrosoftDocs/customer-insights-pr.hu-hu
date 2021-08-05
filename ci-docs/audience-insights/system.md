@@ -9,24 +9,24 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 09d449e51a3a47ec916ab3d017419c9d9be1ffcf
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 32bb89b02947350c056c8ce8adbe37500d2099a1
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305713"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556081"
 ---
 # <a name="system-configuration"></a>Rendszerkonfiguráció
 
 A **Rendszer** lap a következő füleket tartalmazza:
-- [Állapot](#status-tab)
+- [Státusz](#status-tab)
 - [Ütemezés](#schedule-tab)
 - [API-használat](#api-usage-tab)
 - [Névjegy](#about-tab)
 - [Általános](#general-tab)
 
 > [!div class="mx-imgBorder"]
-> ![Rendszer oldal](media/system-tabs.png "Rendszer oldal")
+> ![Rendszer oldal.](media/system-tabs.png "Rendszer oldal")
 
 ## <a name="status-tab"></a>Állapot lap
 

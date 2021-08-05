@@ -9,12 +9,13 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: 47bdcc5bb38587063e4414377568943f868107a3
+ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305481"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "6539346"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 

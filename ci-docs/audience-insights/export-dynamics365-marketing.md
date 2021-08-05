@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 195bee789dc043057b47c12c8d93e6d53edb59cd
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976803"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692484"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Szegmensek használata a Dynamics 365 Marketing alkalmazásban (előzetes verzió)
 
@@ -24,7 +24,7 @@ A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott cs
 
 ## <a name="prerequisite-for-a-connection"></a>Egy kapcsolat előfeltétele
 
-- A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Marketing alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Marketing alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Marketing alkalmazásba a Common Data Services használatával](connect-power-query.md).
+- A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Marketing alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Marketing alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Marketing alkalmazásba a Microsoft Dataverse használatával](connect-power-query.md).
 
   > [!NOTE]
   > Ha szegmenseket exportál a célközönséggel kapcsolatos információkból a Marketing nem hoz létre új kapcsolattartói rekordokat a Marketing példányban. A Marketing kapcsolattartói bejegyzéseket be kell tölteni a célközönség kapcsolatos információkba és adatforrásként használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.

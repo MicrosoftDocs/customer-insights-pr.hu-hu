@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 987457966fe1fc034d9e3cd2a1ce33902c7a84f4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: b377a3500c5d91962e59d46fbc259db5cc8fa7d0
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760330"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555448"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Szegmensek exportálása a LiveRampbe&reg; (előzetes verzió)
 
@@ -56,7 +56,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Az **adja meg a kulcs azonosítóját** mezőben jelölje ki az **e-mailt**, a **nevet és a címet** vagy a **telefont**, hogy elküldje a LiveRamp rendszerbe a személyazonosság feloldása céljából.
    > [!div class="mx-imgBorder"]
-   > ![LiveRamp összekötő attribútum-hozzárendeléssel](media/export-liveramp-segments.png "LiveRamp összekötő attribútum-hozzárendeléssel")
+   > ![LiveRamp összekötő attribútum-hozzárendeléssel.](media/export-liveramp-segments.png "LiveRamp összekötő attribútum-hozzárendeléssel")
 
 1. Képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kiválasztott kulcsazonosítóhoz.
 

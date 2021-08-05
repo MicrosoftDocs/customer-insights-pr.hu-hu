@@ -9,12 +9,12 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c23c8b4e6758df08e04bf1e3ae0cba4dee06fe2b
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: c16967bf8ea1fd02b3f991d7b7d3715a71fa8681
+ms.sourcegitcommit: 9a99e48e96dfb3d895db428f37c30ae55eea66b7
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305343"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6604280"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 
@@ -71,7 +71,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[Google Ads célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, és válassza a **Csatlakozás** lehetőséget a Google Ads-kapcsolat kezdeményezéséhez.
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Ismételje meg ugyanezeket a lépéseket az **Utónév** és a **Vezetéknév** mezőkkel is.
+1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Google Adsbe.
 

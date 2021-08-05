@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596548"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554897"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 
@@ -45,7 +45,7 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 
 1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). Adja meg a **Tároló** adatait, és válassza a **Következő** lehetőséget.
    > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez](media/enter-new-storage-details.png)
+   > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:
    >  - Storage Blob adatolvasó
@@ -58,11 +58,11 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 
 1. A kiválasztott model.json vagy manifest.json fájlban a rendelkezésre álló entitások listája látható. Áttekinthet és kiválaszthat rendelkezésre álló entitások listájából, és válassza a **Mentés** lehetőséget. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
    > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból](media/review-entities.png)
+   > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból.](media/review-entities.png)
 
 8. Adja meg, hogy milyen adatentitásokat szeretne az adatprofil-készítés engedélyezéséhez, és válassza a **Mentést**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
    > [!div class="mx-imgBorder"]
-   > ![Adatprofil-készítést megjelenítő párbeszédpanel](media/dataprofiling-entities.png)
+   > ![Adatprofil-készítést megjelenítő párbeszédpanel.](media/dataprofiling-entities.png)
 
 9. A kiválasztott adatok mentése után megnyílik az **Adatforrások** lap. Ekkor a Common Data Model mappa kapcsolatot adatforrásként látja.
 
@@ -81,12 +81,12 @@ A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot 
 
 4. Opcionálisan frissítse a **Hozzáférési kulcsot**, és válassza a **Tovább** lehetőséget.
 
-   ![Párbeszéd a meglévő adatforráshoz tartozó hozzáférési kulcs szerkesztéséhez és frissítéséhez](media/edit-access-key.png)
+   ![Párbeszéd a meglévő adatforráshoz tartozó hozzáférési kulcs szerkesztéséhez és frissítéséhez.](media/edit-access-key.png)
 
 5. Lehetőség van arra, hogy a fiókkulcs-kapcsolatot az erőforrás- vagy előfizetés-alapú kapcsolatra is frissítheti. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
    > [!div class="mx-imgBorder"]
 
-   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához egy meglévő tárhelyfiókhoz](media/enter-existing-storage-details.png)
+   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához egy meglévő tárhelyfiókhoz.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:

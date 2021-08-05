@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306031"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650321"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -138,7 +138,7 @@ A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincs
    - **Legrégebbi**: A nyertes rekord a legkevésbé friss rekord lesz. Az időbeli frissesség definiálásához dátum vagy numerikus mező szükséges.
  
    > [!div class="mx-imgBorder"]
-   > ![Deduplikációs szabályok 1. lépése](media/match-selfconflation.png "Deduplikációs szabályok 1. lépése")
+   > ![Deduplikációs szabályok 1. lépése.](media/match-selfconflation.png "Deduplikációs szabályok 1. lépése")
  
 1. Miután az entitások ki vannak jelölve, és az egyesítési preferencia be van állítva, válassza az **Szabály hozzáadása** lehetőséget a deduplikációs szabályok entitás szintjén történő definiálásához.
    - A **Mező kiválasztása** felsorolja az adott entitásból származó összes elérhető mezőt. Válassza ki, hogy melyik mezőt szeretné ellenőrizni a duplikált elemekkel kapcsolatban. Válassza ki a mezőket, amelyek valószínűleg egyediek minden egyes ügyfélnél. Például egy e-mail-cím, vagy a név, a város és a telefonszám kombinációja.
@@ -146,7 +146,7 @@ A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincs
    - További feltételeket a **Feltétel hozzáadása** lehetőség választásával adhat meg.
  
    > [!div class="mx-imgBorder"]
-   > ![Deduplikációs szabályok 2. lépése](media/match-selfconflation-rules.png "Deduplikációs szabályok 2. lépése")
+   > ![Deduplikációs szabályok 2. lépése.](media/match-selfconflation-rules.png "Deduplikációs szabályok 2. lépése")
 
   Egy entitáshoz több deduplikációs szabályt hozhat létre. 
 
@@ -179,7 +179,9 @@ Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, �
 A sikeres futtatás eredményét, az egyesített ügyfélprofil entitást az **Entitások** oldalon találja. Az egyesített ügyfélentitás neve **Ügyfelek** a **Profilok** szakaszban. Az első sikeres egyezés futtatása létrehozza a egyesített *Ügyfél* entitást. Minden ezt követő egyezés kibontja az entitást.
 
 > [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+> Az egyeztetési folyamat futtatása után válassza ki a folyamat állapotát a **Feladat részletei** ablaktábla megnyitásához. Áttekintést ad a feldolgozási időről, az utolsó feldolgozási dátumról, valamint a feladathoz kapcsolódó összes hibáról és figyelmeztetésről. Válassza a **Részletek megtekintése** lehetőséget, hogy lássa, mely entitások vettek részt az egyeztetési folyamatban, mely szabályok vonatkoztak rájuk, és hogy sikerült-e közzétenni a frissítéseket.  
+> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="A feladat állapotára mutató hivatkozás részleteinek lefúrási útvonala.":::
 
 ## <a name="review-and-validate-your-matches"></a>Egyeztetések áttekintése és ellenőrzése
 

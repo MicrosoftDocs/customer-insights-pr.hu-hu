@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 00be15367001a5f4342d60bb284726ef7154d05c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305297"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555310"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Ügyfélprofilok bővítése a HERE Technologies (előzetes verzió) segítségével
 
@@ -35,7 +35,7 @@ A HERE Technologies bővítések konfigurálásához a következő előfeltétel
 1. Válassza az **Adatok bővítése** lehetőséget a HERE Technologies csempén, majd válassza az **Első lépések** lehetőséget.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies csempe](media/HERE-tile.png "HERE Technologies csempe")
+   > ![HERE Technologies csempe.](media/HERE-tile.png "HERE Technologies csempe")
 
 1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, a **Kapcsolat hozzáadása** lehetőség kiválasztásával hozhat létre kapcsolatot. Válassza a **HERE Technologies** -t a legördülő listából. 
 
@@ -50,7 +50,7 @@ A HERE Technologies bővítések konfigurálásához a következő előfeltétel
 1. Adja meg, hogy az egyesített profilokból mely mezők használhatók a megfelelő helyadatok megkereséséhez a HERE Technologiesből. A kiválasztott elsődleges és/vagy másodlagos címhez az **Utca 1.** és az **Irányítószám** mező megadása kötelező. A nagyobb egyeztetési pontosság érdekében további mezők adhatók hozzá.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies bővítés konfigurációs oldal](media/enrichment-HERE-configuration.png "HERE Technologies bővítés konfigurációs oldal")
+   > ![HERE Technologies bővítés konfigurációs oldal.](media/enrichment-HERE-configuration.png "HERE Technologies bővítés konfigurációs oldal")
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
@@ -73,7 +73,7 @@ A kapcsolatok konfiguráljához rendszergazdának kell lennie. A bővítés konf
 1. Az ellenőrzés befejezése után válassza a **Mentés** lehetőséget.
 
    > [!div class="mx-imgBorder"]
-   > ![A HERE Technologies kapcsolat konfigurációs oldala](media/enrichment-HERE-connection.png "A HERE Technologies kapcsolat konfigurációs oldala")
+   > ![A HERE Technologies kapcsolat konfigurációs oldala.](media/enrichment-HERE-connection.png "A HERE Technologies kapcsolat konfigurációs oldala")
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 

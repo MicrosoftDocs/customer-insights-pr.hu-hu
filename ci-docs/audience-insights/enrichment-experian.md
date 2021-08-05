@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7c82fe92b3351a782a4fa6510300d870b742d042
-ms.sourcegitcommit: 42b3bce1e20e7cc707d232844dacfeed3d6fc096
+ms.openlocfilehash: abe9ee447745081e3c462d44e5901b6dac919adf
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/28/2021
-ms.locfileid: "6309823"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555356"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfélprofilok bővítése demográfiai adatokkal az Experian -ból (előzetes verzió)
 
@@ -39,7 +39,7 @@ Jelenleg csak az Egyesült Államokban támogatjuk az ügyfélprofilok bővíté
 1. Válassza ki az **Adatom bővítése** az Experian csempén.
 
    > [!div class="mx-imgBorder"]
-   > ![Experian mozaikot](media/experian-tile.png "Experian tile")
+   > ![Experian-csempe.](media/experian-tile.png "Experian tile")
    > 
 
 1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, akkor kapcsolatot hozhat létre a **Kapcsolat hozzáadása** majd Experian kiválasztásával a legördülő listából. 

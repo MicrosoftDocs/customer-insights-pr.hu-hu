@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f588f45ed11efffbb335003642a4b92810153017
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96fbd18a20e0df7abd4e79ff77e2c3a396e33ccc
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596778"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554208"
 ---
 # <a name="similar-customers-preview"></a>Hasonló ügyfelek (előzetes verzió)
 
@@ -50,7 +50,7 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 A hasonló szegmens feldolgozását követően megtalálja az új szegmenst a **Szegmensek** oldalon.
 
 > [!div class="mx-imgBorder"]
-> ![Hasonló ügyfelek szegmens](media/expanded-segment.png "Hasonló ügyfelek szegmens")
+> ![Hasonló ügyfelek szegmens.](media/expanded-segment.png "Hasonló ügyfelek szegmens")
 
 A szegmens részleteinek megnyitásához válassza a **Nézet** lehetőséget a műveleti sávban. Ez a nézet a [hasonlósági pontszámok](#about-similarity-scores) közötti eredményeloszlásra vonatkozó információkat tartalmaz . Emellett megtalálja a hasonlóságok pontszámát is a **Szegmens tagok előnézete** részben.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6667e411a1b56e13105a6b59b7b5d249bc8141ea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596364"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692308"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
@@ -24,7 +24,7 @@ A [Common Data Model](/common-data-model/) leíró specifikáció, és olyan sza
 
 Ez egy megosztott adatmodell, amely lehetővé teszi, hogy az alkalmazások és az adatintegrátorok könnyebben együttműködjenek az egységesen definiált adatokkal. A Common Data Model gazdag metaadatrendszert tartalmaz, amely szabványos entitásokkal, kapcsolatokokkal, hierarchiákkal, közös jellemzőkkel és egyéb tulajdonságokkal rendelkezik. A Dynamics 365 alkalmazásokból származik, és a nyílt forráskódú GitHubon, több mint 260 szabványos entitással. A belső és külső partnerek nagy rendszere hozzájárul az ágazatra jellemző fogalmakhoz a Common Data Modelhez.
 
-A különböző rendszerek és platformok ma a Common Data Modelt alkalmazzák, beleértve a Power BI adatfolyamokat és az Azure Data Servicest is. Ez már támogatott a Common Data Service, Dynamics 365, Power Apps, Power BI és a közelgő Azure-Data Servicesben is, és közvetlenül adva értéket az [Open Data Iniative](https://www.microsoft.com/open-data-initiative) számára.
+A Common Data Modelt ma több rendszeren és platformon is alkalmazva van, beleértve a Power BI adatfolyamokat és az Azure Data Servicest is. Már támogatott a Microsoft Dataverse, Dynamics 365, Power Apps, Power BI és a hamarosan megjelenő Azure adatszolgáltatásokban is, az értékeket közvetlenül az [Open Data Initiative](https://www.microsoft.com/open-data-initiative) felé közelítve.
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insights entitássémák
 
@@ -44,7 +44,7 @@ A további tudnivalókért lásd a [Customer Insights sémák a Common Data Mode
 
 Az entitások a [Common Data Model entitásnavigátorban](https://microsoft.github.io/CDM/) tekinthetők meg. Válassza ki: **Betöltés GitHub-ról!** gombot és navigáljon a **foundationCommon** > **crmCommon** > **solutions** > **customerInsights** helyre, ahol megtalálja a Customer Insights entitásokat és azok definícióit.
 > [!div class="mx-imgBorder"]
-> ![A CDM-entitásnavigator CustomerActivity entitást mutatja](media/CDM-entity-navigator.png "A CDM-entitásnavigator CustomerActivity entitást mutatja")
+> ![A CDM-entitásnavigator CustomerActivity entitást mutatja.](media/CDM-entity-navigator.png "A CDM-entitásnavigator CustomerActivity entitást mutatja")
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

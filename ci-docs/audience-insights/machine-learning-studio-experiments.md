@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: ameetj
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2eb44604e72b32292f971754d4f8c4fd1988c697
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598342"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555172"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Azure Machine Learning Studio (klasszikus) modelleken alapuló modellek használata
 
@@ -41,7 +41,7 @@ Első lépésként létre kell hoznia egy munkaterületet, és meg kell nyitnia 
 
 1. Az erőforrás létrehozása után megjelenik a Machine Learning Studio munkaterület irányítópultja. Válassza a **Machine Learning Studio indítása** lehetőséget.
 
-   ![Az Azure Machine Learning Studio felhasználói felülete](media/azure-machine-learning-studio.png)
+   ![Az Azure Machine Learning Studio felhasználói felülete.](media/azure-machine-learning-studio.png)
 
 ## <a name="work-with-azure-machine-learning-studio"></a>Az Azure Machine Learning Studio használata
 
@@ -55,7 +55,7 @@ Ezután létrehozhat egy új kísérletet, vagy importálhat egy meglévő kís�
 
 1. Ha új kísérletet hoz létre, vagy a katalógusból használ kísérleti sablont használ, akkor be kell állítania az **Adatimportálás** tulajdonságait. Használja az interaktív élményt, vagy közvetlenül adja meg az adatokat tartalmazó Azure Blob Storage eléréséhez használható adatokat.  
 
-   ![Azure Machine Learning Studio kísérlet](media/azure-machine-learning-studio-experiment.png)
+   ![Azure Machine Learning Studio kísérlet.](media/azure-machine-learning-studio-experiment.png)
 
 1. Most már létrehozhat egy egyéni feldolgozási folyamatot az adatok tisztításához és előfeldolgozásához, a funkciók kinyeréséhez és egy megfelelő modell betanításához.
 
@@ -63,15 +63,15 @@ Ezután létrehozhat egy új kísérletet, vagy importálhat egy meglévő kís�
 
 1. Ha elégedett a modell minőségével, válassza a **Webszolgáltatás beállítása** > **Prediktív webszolgáltatás** lehetőséget. Ezzel a lehetőséggel a betanított modellt és a jellemzőkre bontó csővezetéket importálja a tanítási kísérletből a prediktív kiszolgálásba. A prediktív szolgáltatás egy másik bemeneti adatkészletet is fogadhat a tanítási kísérletben használt sémával előrejelzések készítéséhez.
 
-   ![Prediktív webszolgáltatás beállítása](media/predictive-webservice-control.png)
+   ![Prediktív webszolgáltatás beállítása.](media/predictive-webservice-control.png)
 
 1. Ha a prediktív webszolgáltatási kísérlet sikeres, akkor az automatikus ütemezéshez üzembe helyezheti azt. Ha azt szeretné, hogy a webszolgáltatás működjön együtt a Customer Insights alkalmazással, válassza **Webszolgáltatás központi telepítése** > **Webszolgáltatás [új] előzetes verzió központi telepítése** lehetőséget. [További információk webszolgáltatás telepítéséről](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
-   ![Prediktív webszolgáltatás telepítése](media/predictive-webservice-deploy.png)
+   ![Prediktív webszolgáltatás telepítése.](media/predictive-webservice-deploy.png)
 
 ## <a name="sample-models-from-the-gallery"></a>Mintamodellek a galériából
 
-A Contoso Hotel kitalált forgatókönyvét fogjuk használni jelen cikk modelljeihez. A Contoso Hotel a következő adatokat gyűjti össze:
+A cikkben található modellekhez a Contoso Hotel kitalált forgatókönyvét használjuk. A Contoso Hotel következő adatokat gyűjti:
 
 - A hotelben tartózkodás tevékenységből álló CRM-adatok. A adatkészlet információkat tartalmaz az egyes regisztrált ügyfelek tartózkodásának dátumairól. Tartalmaz továbbá információkat a helyfoglalásokról, a szobatípusokről, a tartózkodás részleteiről stb. Az adatok négy évet ölelnek fel, 2014. január és 2018. január között.
 - A szálloda vendégeinek ügyfélprofiljai. Ezek a profilok az egyes ügyfelekre vonatkozó információkat tartalmaznak, beleértve a nevüket, a születési nevet, a lakcímet, a nemet és a telefonszámot.
@@ -87,13 +87,13 @@ A lemorzsolódás meghatározása az esettől függően változhat. Ebben a pél
 
 A kísérlet sablont importálhatja a katalógusból. Első lépésként ügyeljen arra, hogy az Azure Blob Storage szolgáltatásból importálja a **Hotelben tartózkodás tevékenységeit**, az **Ügyféladatokat** és a **Szolgáltatáshasználat adatait** az Azure Blob Storage tárhelyről.
 
-   ![Adatok importálása a lemorzsolódási modellhez](media/import-data-azure-blob-storage.png)
+   ![Adatok importálása a lemorzsolódási modellhez.](media/import-data-azure-blob-storage.png)
 
 ### <a name="featurization"></a>Jellegzetességek megadása
 
 A lemorzsolódás meghatározása alapján először azonosítani kell a címkét befolyásoló nyers funkciókat. Ezt követően ezeket a nyers funkciókat a gépi tanulás modellekkel használható numerikus függvényekké dolgozzuk fel. A Customer Insightsban adatintegráció történik, így összekapcsolhatja ezeket a táblákat az *Ügyfélazonosító* segítségével.
 
-   ![Importált adatok egyesítése](media/join-imported-data.png)
+   ![Importált adatok egyesítése.](media/join-imported-data.png)
 
 A modell kiépítésének jellemzőkre bontása a lemorzsolódás elemzéséhez kicsit trükkös lehet. Ez az adat egy időfüggvény új szállodai tevékenységgel, amelyet napi rendszerességgel rögzítettek. A jellemzőkre bontás során statikus funkciókat szeretnénk létrehozni a dinamikus adatokból. Ebben az esetben a szállodai tevékenységből több jellemzőt is létrehozunk egy év csúszó ablakával. Kiterjesztjük a kategorikus jellemzőket is, mint a szoba típusa vagy a foglalás típusa különálló jellemzőkké one-hot kódolással.  
 
@@ -114,7 +114,7 @@ Most ki kell választani a használandó optimális algoritmust. Ebben az esetbe
 
 A következő kép bemutatja a modell tanítási és értékelési folyamatát az Azure Machine Learning Studio alkalmazásból:
 
-![Az Azure Machine Learning Studio lemorzsolódási modellje](media/azure-machine-learning-model.png)
+![Az Azure Machine Learning Studio lemorzsolódási modellje.](media/azure-machine-learning-model.png)
 
 Mi is alkalmazzuk a **Permutációs tulajdonság fontossága** technikát, ami fontos szempontja a modell optimalizálása. A beépített modellek nem tudnak betekintést kapni a végső előrejelzés adott jellemzőire gyakorolt hatásra. A jellemzők fontossága a kalkulátor egyéni algoritmus segítségével számítja ki az egyes jellemzők hatását egy adott modell kimenetelére. A jellemző fontossága a +1 és -1 közötti normalizált. A negatív hatás azt jelenti, hogy a kapcsolódó jellemző nem intuitív módon befolyásolja az eredményt, és el kell távolítani a modellből. A pozitív hatás azt jelzi, hogy a funkció nagy mértékben hozzájárul a előrejelzéshez. Ezek az értékek nem korrelációs együtthatók, mivel ezek eltérő mérőszámok. További információkért lásd:[Permutációs tulajdonság fontossága](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
@@ -148,7 +148,7 @@ A célt úgy határozjuk meg, hogy a lehető legnagyobb értékű szolgáltatás
 
 A lemorzsolódás modelljéhez hasonlóan egyestíjük a szálloda ServiceCustomerID és CustomerID entitásait, hogy konzisztens módon hozzunk létre ajánlásokat CustomerID alapján.
 
-![Az ajánlási modell jellemzőkre bontása](media/azure-machine-learning-model-featurization.png)
+![Az ajánlási modell jellemzőkre bontása.](media/azure-machine-learning-model-featurization.png)
 
 Az adatok három különböző entitásból származnak és a jellemzők ezekből vannak származtatva. Az ajánlás problematikájához kapcsolódó jellemzőkre bontás más mint az lemorzsolódási és CLTV forgatókönyvek esetében. Az ajánlási modellnek három jellemzőcsoport formájában van szüksége bemeneti adatokra.
 
@@ -156,13 +156,13 @@ Az adatok három különböző entitásból származnak és a jellemzők ezekbő
 
 A termékeket vagy szolgáltatásokat a **Matchbox-ajánló betanítása** algoritmusával jósoljuk meg az ajánlási modell betanításához.
 
-![Termékjavaslat-algoritmus](media/azure-machine-learning-model-recommendation-algorithm.png)
+![Termékjavaslat-algoritmus.](media/azure-machine-learning-model-recommendation-algorithm.png)
 
 A **Matchbox-ajánló betanítása** három bemenete a betanítási szolgáltatás használati adatait, az ügyfél leírását (nem kötelező) és a szolgáltatás leírását kéri be. A modelleket három különböző módon lehet pontozni. Az egyik a modell értékelése, ahol a Normalizált diszkontált kumulatív nyereséget (NDCG) pontszám lesz kiszámítva az értékelt elemek rangsorolásához. Ebben a kísérletben az NDCG pontszáma 0,97. A másik két lehetőség a modell pontozása a teljes ajánlott szolgáltatáskatalóguson, vagy csak olyan elemek pontozása, amelyeket a felhasználók korábban még nem használtak.
 
 A teljes szolgáltatási katalógusra vonatkozó ajánlások eloszlása alapján megfigyelhető, hogy a telefon, a Wi-Fi és a futár a legfelső szintű szolgáltatás, amelyet érdemes ajánlani. Ez összhangban áll azzal, amit találtunk a szolgáltatásifogyasztási-adatok eloszlásakor:
 
-![Javaslati modell kimenete](media/azure-machine-learning-model-output.png)
+![Javaslati modell kimenete.](media/azure-machine-learning-model-output.png)
 
 A teljes [termékajánlási kísérlet elérhető az Azure AI Gallery-ben.](https://gallery.azure.ai/Experiment/Recommendation-4)
 

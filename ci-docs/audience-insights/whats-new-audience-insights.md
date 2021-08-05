@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 06/15/2021
+ms.date: 07/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
-ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
+ms.openlocfilehash: 1c54d74c999eb4776074951a129019843017964e
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6263254"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692392"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
@@ -26,6 +26,28 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2021-updates"></a>2021. júniusi frissítések
+
+A 2021. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="data-ingestion"></a>Adatok betöltése
+
+- **Továbbfejlesztett adategyesítési folyamat frissítései** Mostantól részletesebb, továbbfejlesztett dinamikus állapotfrissítéseket lehet megtekinteni az [adategyesítési folyamat](data-unification.md) lépéseinél. A funkció segítségével nyomon követheti a részletes folyamatot, így megértheti a folyamatot, és cselekedhet, ha valamelyik lépés figyelmet igényel.
+
+### <a name="extensibility"></a>Bővíthetőség
+
+- **Szegmensek és egyéb adatok exportálása a Salesforce Marketing Cloudba** Kiterjesztettük az exportálási célokat a [Salesforce Marketing Cloud](export-salesforce.md) tárhelyre is. Mostantól exportálhat a szegmenseket és más típusú adatokat a Salesforce Marketing Cloud szolgáltatásba márkanévvel ellátott SFTP-exportálással. Az adatok importálása teljesen automatizálni lehet a Salesforce-ban, és hatékonyabb marketingkampányok létrehozásához használhatók fel.  
+ 
+- **Szegmenseket ActiveCampaign-be** Az exportálási célpontokat kiterjesztettük az [Aktív Campaignre](export-active-campaign.md) is. A szegmensek exportálásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából az ActiveCampaign szolgáltatással.
+ 
+- **Szegmenseket Sendinblue-ba** Az exportálási célpontokat kiterjesztettük a [Sendinblue](export-sendinblue.md) szolgáltatásra is. A szegmensek exportálásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából az Sendinblue szolgáltatással.
+ 
+### <a name="ux-updates"></a>UK-frissítések 
+
+- **Új és továbbfejlesztett Ügyfelek oldal és profilrészletek oldal** Átalakítottuk az Ügyfelek oldalt és a profilrészletek oldalakat a jobb felhasználói élmény és jobb teljesítmény érdekében. A módosítások segítségével megtekintheti, rendezheti, keresheti és szűrheti az ügyfeleket. A szűrők mostantól megjelennek az URL-ben, és így zökkenőmentesen megoszthatja a keresési eredményeket más felhasználókkal. A keresési eredmények szegmensként is menthetők.    
+  Az ügyfélprofilok részletes lapja mostantól különféle alszakaszokba (például demográfiai adatok, azonosítók egyéb profilattribútumok) vannak rendezve olvashatóság javítása érdekében. A profil részletei oldalon található egyéb szakaszok mostantól interaktívak. A tevékenységek szakasz például most már lehetővé teszi a szűrést és a rendezést.
+
 
 ## <a name="may-2021-updates"></a>2021. májusi frissítések
 
@@ -170,7 +192,7 @@ A 2021. februári frissítések számos szolgáltatást, teljesítménnyel kapcs
 
 - **A környezet másolása több típusú adatforrást támogat**
 
-  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kibővíti a környezet másolási funkciójának működését az olyan esetekre, amikor Common Data Service adattón vagy Common Data Model-mappán alapuló adatforrásokat használnak.
+  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kibővíti a környezet másolása funkciót olyan esetekre, amikor az adatforrások Microsoft Dataverse kezelt adattón alapulnak vagy a Common Data Model mappa van használva.
 
 ## <a name="january-2021-updates"></a>2021. januári frissítések
 

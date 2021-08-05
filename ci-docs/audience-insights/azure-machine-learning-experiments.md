@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597422"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554438"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Használjon Azure Machine Learning alapú modelleket
 
@@ -52,7 +52,7 @@ Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Custome
      Nyissa meg a tervezőben az **oszlopok kiválasztása az adathalmazban**, és válassza a **beállítás folyamatparaméterként**, ahol megadja a paraméter nevét.
 
      > [!div class="mx-imgBorder"]
-     > ![Az adathalmaz paraméterezései a tervezőben](media/intelligence-designer-dataset-parameters.png "Az adathalmaz paraméterezései a tervezőben")
+     > ![Az adathalmaz paraméterezései a tervezőben.](media/intelligence-designer-dataset-parameters.png "Az adathalmaz paraméterezései a tervezőben")
    
 * DataSet paraméter az SDK (Python) alkalmazásban
    
@@ -78,7 +78,7 @@ Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Custome
 
 * A tervező biztosítja az [exportálási adatmodult](/azure/machine-learning/algorithm-module-reference/export-data), amely lehetővé teszi a folyamat kimenetének exportálását az Azure Storage rendszerbe. Jelenleg a modulnak az **Azure Blob Storage** adattár típust kell használnia, és paraméterré kell alakítani az **adattár** és a relatív **elérési út** elemeket. A Customer Insights mindkét paramétert felülbírálja a folyamat végrehajtása során a termékhez elérhető adattár és elérési út értékével.
    > [!div class="mx-imgBorder"]
-   > ![Adatmodell-konfiguráció exportálása](media/intelligence-designer-importdata.png "Adatmodell-konfiguráció exportálása")
+   > ![Adatmodell-konfiguráció exportálása.](media/intelligence-designer-importdata.png "Adatmodell-konfiguráció exportálása")
    
 * Amikor kódot használ a származtatott kimenet írásakor, feltöltheti a kimenetet a megfelelő elérési útra a munkaterületen található *regisztrált adattáron* belül. Ha az elérési út és az adattár paraméterei a folyamatban vannak, a Customer Insights képes olvasni és importálni a származtatott kimenetet. Jelenleg egyetlen táblázatos kimenet támogatott CSV formátumban. Az elérési útnak tartalmaznia kell a könyvtárat és a fájlnevet.
 

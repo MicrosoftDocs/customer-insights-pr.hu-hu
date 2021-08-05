@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72ccb2d86c698939d0ff018b4d36203e793df9ae
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305638"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554851"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
 
@@ -42,7 +42,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 1. Adjon meg egy felismerhető nevet a **Név** mezőben az egyéni modellnek.
 
    > [!div class="mx-imgBorder"]
-   > ![Képernyőkép – az új munkafolyamat ablaktábla](media/new-workflowv2.png "Képernyőkép – az új munkafolyamat ablaktábla")
+   > ![Képernyőkép – az új munkafolyamat ablaktábla.](media/new-workflowv2.png "Képernyőkép – az új munkafolyamat ablaktábla")
 
 1. Válassza ki azt a szervezetet, amely a webszolgáltatást tartalmazza a **Bérlő, amely tartalmazza a webszolgáltatást** pontban.
 
@@ -59,7 +59,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
    > Az egyéni modell-munkafolyamat heurisztikák segítségével leképezi a webszolgáltatás beviteli mezőit az entitás attribútumára a mező neve és adattípusa alapján. Hibaüzenet jelenik meg, ha egy webszolgáltatás mezőjét nem lehet egy entitásra leképezni.
 
    > [!div class="mx-imgBorder"]
-   > ![Munkafolyamat konfigurálása](media/intelligence-screen2-updated.png "Munkafolyamat konfigurálása")
+   > ![Munkafolyamat konfigurálása.](media/intelligence-screen2-updated.png "Munkafolyamat konfigurálása")
 
 1. Állítsa be a következő tulajdonságokat a **Modell kimeneti paraméterek** lépésében:
    - Machine Learning Studio (klasszikus)
@@ -70,12 +70,12 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
       1. Válassza ki a **Kimeneti útvonal paraméter nevét** a kötegfolyamathoz a legördülő listából.
 
       > [!div class="mx-imgBorder"]
-      > ![A modell kimenet paraméter panele](media/intelligence-screen3-outputparameters.png "A modell kimenet paraméter panele")
+      > ![A modell kimenet paraméter panele.](media/intelligence-screen3-outputparameters.png "A modell kimenet paraméter panele")
 
 1. Válassza ki a megfelelő attribútumot az **Ügyfélazonosító az eredményekben** legördülő listából, amely azonosítja az ügyfeleket és válassza a **Mentés** lehetőséget.
 
    > [!div class="mx-imgBorder"]
-   > ![Eredmények összekapcsolása az Ügyfél adatpanelhlel](media/intelligence-screen4-relatetocustomer.png "Eredmények összekapcsolása az Ügyfél adatpanelhlel")
+   > ![Eredmények összekapcsolása az Ügyfél adatpanellel.](media/intelligence-screen4-relatetocustomer.png "Eredmények összekapcsolása az Ügyfél adatpanelhlel")
 
 1. Megjelenik a **Munkafolyamat mentve** képernyő a munkafolyamat részleteivel.    
    Ha az Azure Machine Learning folyamathoz munkafolyamatot konfigurált, a célközönség-információk hozzákapcsolja a munkaterülethez, amely a folyamatot tartalmazza. Célközönség-információk kap egy **Közreműködő** szerepkörrel az Azure workspace-ban.

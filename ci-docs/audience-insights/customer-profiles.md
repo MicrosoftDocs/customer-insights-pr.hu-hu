@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 8ab55d101f98169b8f794ce580ddd0a71ede6642
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304607"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554621"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
@@ -23,11 +23,11 @@ Az **Ügyfelek** lap az [összes adatforrásból](data-sources.md) összegyűjt�
 Az ügyfelek lehetnek egyének vagy szervezetek (előzetes verzió). Minden egyes ügyfél- vagy szervezeti profilt egy csempe képvisel. A csempét kiválasztva megtekintheti az adott ügyfélre vagy szervezetre vonatkozó további információkat. További rekordok megtekintéséhez használja a lap alján található oldalszámozási vezérlőket.
 
 > [!div class="mx-imgBorder"] 
-> ![B2C ügyfélprofilok](media/profiles-customers.png "B2C ügyfélprofilok")
+> ![B2C ügyfélprofilok.](media/profiles-customers.png "B2C ügyfélprofilok")
 
 Szervezetek (előzetes verzió)
 > [!div class="mx-imgBorder"] 
-> ![B2B ügyfélprofilok](media/profile-customers-b2b.png "B2B ügyfélprofilok")
+> ![B2B ügyfélprofilok.](media/profile-customers-b2b.png "B2B ügyfélprofilok")
 
 > [!NOTE]
 > Ha nem látja a csempéket, amikor a navigációban kiválasztja az **Ügyfelek** elemet, a rendszergazdának [legalább egy kereshető attribútumot meg kell adnia](search-filter-index.md) a **Keresési és szűrőindex** pontban.
@@ -47,7 +47,7 @@ Az ügyfelek az ügyfélprofil entitás mezői alapján szűrhetők. A keresésh
 2. Jelölje be a jelölőnégyzetet azon attribútumok mellett, amelyek alapján az ügyfeleket szűrni szeretné.
 
    > [!div class="mx-imgBorder"] 
-   > ![Ügyfélprofilok](media/profiles-customers3.png "Ügyfélprofilok")
+   > ![Ügyfélprofilok.](media/profiles-customers3.png "Ügyfélprofilok")
 
 3. Távolítsa el a szűrőket a **Szűrők törlése** lehetőséggel az **Ügyfelek** oldalon.
 

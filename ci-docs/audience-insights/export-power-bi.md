@@ -1,7 +1,7 @@
 ---
 title: Power BI-csatlakozó
 description: Útmutató a Dynamics 365 Customer Insights összekötő használatához a Power BI megoldásban.
-ms.date: 09/21/2020
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: faeb95bd7d2fe3cb220308cdee559b3347c5af54
+ms.sourcegitcommit: f98b6b2058f384365f222d1f9ba0cc9ce801f09d
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596042"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6661105"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI összekötő (előzetes verzió)
 
@@ -39,7 +39,7 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 
 1. A **Navigátor** párbeszédpanelen. megtekintheti az összes olyan környezet listáját, amelyhez hozzáféréssel rendelkezik. Bontson ki egy környezetet, és nyissa meg bármelyik mappát (entitások, intézkedések, szegmensek, bővítések). Nyissa meg például az **Entitások** mappát, és tekintse meg az összes importálható entitást.
 
-   ![Power BI összekötő navigátor](media/power-bi-navigator.png "Power BI összekötő navigátor")
+   ![Power BI összekötő navigátor.](media/power-bi-navigator.png "Power BI összekötő navigátor")
 
 1. Jelölje be a szerepeltetni és betölteni kívánt entitások melletti jelölőnégyzeteket, és válassza a **Betöltés** elemet. Többe entitást is kiválaszthat több környezetből.
 
@@ -68,5 +68,11 @@ A duplikált kapcsolatok azonosíthatók és eltávolíthatóak kapcsolatok.
 3. Távolítsa el az azonosított duplikált kapcsolatokat.
 
 A duplikált kapcsolatok eltávolítását, próbálja meg újra konfigurálni az Power BI-összekötőt. A környezetnek immár elérhetőnek kell lennie.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Hibák a dátummezőkben az entitások betöltésekor a Power BI Desktopban
+
+Az olyan entitások betöltésekor, amelyek olyan mezőket tartalmaznak, amelyek dátumformátuma HH/NN/ÉÉÉÉ, a nem egyező területiformátumok miatt hibákba ütközhet. Ez az eltérés akkor fordul elő, ha a Power BI Desktop-fájl az angol (Egyesült Államok) nyelvtől más területi beállításra van beállítva, mert a célközönség információk dátummezőit amerikai formátumban menti a program.
+
+A Power BI Desktop fájlnak egyetlen területi beállítása van, amelyet az adatok beolvasásakor alkalmaz a program. A dátummezők helyes értelmezése érdekében, állítsa be a .BPI-fájl területi beállítását angol (Egyesült Államok) formátumra. [Ismerje meg, hogyan módosíthatja egy Power BI Desktop fájl területi beállítását](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

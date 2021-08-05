@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 328bb2f26ebcea234fb645e5225930ab12f82a8b
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 9f11ab189117da5bcc1aee843b73962ec6615e82
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976229"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692346"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Szegmensek használata a Dynamics 365 Sales alkalmazásban (előzetes verzió)
 
@@ -24,7 +24,7 @@ A Dynamics 365 Sales modullal az ügyféladatokból marketinglistákat hozhat l�
 
 ## <a name="prerequisite-for-connection"></a>A kapcsolat előfeltétele
 
-1. A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Sales alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Sales alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Sales alkalmazásba a Common Data Services használatával](connect-power-query.md).
+1. A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Sales alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Sales alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Sales alkalmazásba a Microsoft Dataverse használatával](connect-power-query.md).
 
    > [!NOTE]
    > Ha szegmenseket exportál a célközönséggel kapcsolatos információkból a Sales nem hoz létre új kapcsolattartói rekordokat a Sales példányban. A Sales kapcsolattartói bejegyzéseket be kell tölteni a célközönség kapcsolatos információkba és adatforrásként használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.

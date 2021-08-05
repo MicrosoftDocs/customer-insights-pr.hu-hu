@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72f3bd1f32b813fef04dc14618331e3d707b5052
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306123"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556264"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési (előnézet) példamutató
 
@@ -47,7 +47,7 @@ Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az a
    - **CreatedOn**: Dátum/Idő/Zóna
 
    [!div class="mx-imgBorder"]
-   ![DoB átalakítása Dátummá](media/ecommerce-dob-date.PNG "A születési dátum átalakítása dátummá")
+   ![DoB átalakítása Dátummá.](media/ecommerce-dob-date.PNG "A születési dátum átalakítása dátummá")
 
 1. A jobb oldali panelben a **Név** mezőben nevezze át az adatforrását a **Lekérdezés** értékről **eCommerceContacts** értékre
 

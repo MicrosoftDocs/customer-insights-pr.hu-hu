@@ -2,6 +2,8 @@
   href: index.yml
 - name: Termék áttekintése
   href: overview.md
+- name: Próbaverzió létrehozása
+  href: audience-insights/get-started-trial.md
 - name: Saját környezet hozzáférése
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Célközönséggel kapcsolatos információk
@@ -10,12 +12,10 @@
       href: audience-insights/index.yml
     - name: Képességek áttekintése
       href: audience-insights/overview.md
-    - name: Ingyenes próbaverzió
-      href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Új és frissített funkciók
       href: audience-insights/whats-new-audience-insights.md
     - name: Új környezet létrehozása
-      href: audience-insights/home.md
+      href: audience-insights/get-started-paid.md
     - name: Tanulási modulok
       items:
         - name: Adatok betáplálása
@@ -34,8 +34,8 @@
           href: audience-insights/connect-power-query.md
         - name: Common Data Model-mappa hozzáadása adatforrásként
           href: audience-insights/connect-common-data-model.md
-        - name: Common Data Service felügyelt adattó hozzáadása
-          href: audience-insights/connect-common-data-service-lake.md
+        - name: Dataverse felügyelt adattó hozzáadása
+          href: audience-insights/connect-dataverse-managed-lake.md
         - name: Adatforrások növekményes frissítése
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Valós idejű adatbetöltés
@@ -76,11 +76,11 @@
           href: audience-insights/enrichment-experian.md
         - name: Gazdagítás az SFTP egyéni importálással
           href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Szegmensek és intézkedések
+    - name: Szegmensek
       items:
         - name: Szegmensek áttekintése
           href: audience-insights/segments.md
-        - name: Szegmensek és vevőcsoportok létrehozása
+        - name: Szegmensek létrehozása
           href: audience-insights/segment-builder.md
         - name: Mértékek alapján javasolt szegmensek
           href: audience-insights/suggested-segments.md
@@ -254,6 +254,8 @@
       items:
         - name: Események létrehozása és módosítása
           href: engagement-insights/refined-events.md
+        - name: Webes események felismerése a korábban hitelesített látogatóktól
+          href: engagement-insights/unknown-to-known.md
         - name: Események exportálása
           href: engagement-insights/export-events.md
     - name: Jelentések
@@ -304,6 +306,8 @@
       items:
         - name: Személyes adatok törlése és exportálása
           href: engagement-insights/delete-export-personal-data.md
+    - name: Régiónkénti rendelkezésre állás.
+      href: engagement-insights/regional-availability.md
     - name: A szolgáltatás korlátozásai
       href: engagement-insights/quotas.md
 - name: Kapcsolatfelvétel az ügyfélszolgálattal

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9c453c9b416bff0e6362a8ccf7ff534f4efa1e00
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e832fbbdfb59cb06d98715223edca438d2c3a7f2
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597514"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554324"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint
 
@@ -40,7 +40,7 @@ A Customer Insights rendszergazdák az alábbi lépések végrehajtásával elt�
    2. Ellenőrizze az adatforrás állapotát az **Állapot** alatt. A pipa azt jelenti, hogy a frissítés sikeresen megtörtént. A figyelmeztető háromszög azt jelenti, hogy valamilyen hiba történt. Ha egy figyelmeztető háromszög jelenik meg, forduljon ide: D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
-> ![Ügyféladatok GDPR törlési kérelmeinek kezelése](media/gdpr-data-sources.png "Ügyféladatok GDPR törlési kérelmeinek kezelése")
+> ![Ügyféladatok GDPR törlési kérelmeinek kezelése.](media/gdpr-data-sources.png "Ügyféladatok GDPR törlési kérelmeinek kezelése")
 
 #### <a name="manage-delete-requests-for-user-data"></a>Felhasználói adatok törlési kérelmeinek kezelése
 
@@ -52,7 +52,7 @@ Egy Customer Insights rendszergazda a Customer Insights ügyféladatok törlés�
 4. Válassza az **Eltávolítás** lehetőséget.
 
 > [!div class="mx-imgBorder"]
-> ![GDPR felhasználói adatokra vonatkozó törlési kérelmeinek kezelése](media/gdpr-permissions.png "GDPR felhasználói adatokra vonatkozó törlési kérelmeinek kezelése")
+> ![GDPR felhasználói adatokra vonatkozó törlési kérelmeinek kezelése.](media/gdpr-permissions.png "GDPR felhasználói adatokra vonatkozó törlési kérelmeinek kezelése")
 
 ## <a name="responding-to-gdpr-data-subject-export-requests"></a>GDPR szerinti Adatalanyi exportálási kérelmek megválaszolása
 

@@ -9,18 +9,18 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: cc94ad49f12067d513db4663bff60620d6501eb0
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596502"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692116"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Csatlakozás az Azure Data Lake Storage Gen2 fiókjához az Azure fő szolgáltatás célözönség információk funkcióján keresztül
 
 Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlátozott engedélyekkel kell rendelkezniük. Ahelyett, hogy az alkalmazások teljes jogosultsággal rendelkező felhasználóként jelentkezzenek be, az Azure egyszerű szolgáltatásneveket biztosít. A cikkből megtudhatja, hogyan kapcsolhatja össze a célközönség-információkat egy Azure Data Lake Storage Gen2-fiókkal Azure egyszerű szolgáltatásnév használatával tárfiókkulcsok helyett. 
 
-Az egyszerű szolgáltatásnév használatával biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrásként](connect-common-data-model.md) vagy [létrehozhat egy új környezetet, vagy frissíthet egy meglévőt](manage-environments.md#create-an-environment-in-an-existing-organization).
+Az egyszerű szolgáltatásnév használatával biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrásként](connect-common-data-model.md) vagy [létrehozhat egy új környezetet, vagy frissíthet egy meglévőt](get-started-paid.md).
 
 > [!IMPORTANT]
 > - A szolgáltatást használni kívánó Azure Data Lake Gen2 tárfióban [engedélyeznie kell hierarchikus a névterületet (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
@@ -81,7 +81,7 @@ A módosítások feltöltése 15 percet is igénybe vehet.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Adja meg a Célközönség-információkhoz csatolt tárfiókban az Azure forrásazonosítót vagy az Azure előfizetés részleteit.
 
-Kapcsoljon egy Azure Data Lake-tárfiókot a célközönség-információkban a [kimeneti adatok tárolásához](manage-environments.md) vagy [használhatja adatforrásként](connect-common-data-service-lake.md). Az Azure Data Lake beállítás választásával az erőforrás-alapú vagy előfizetéses alapú megközelítések közül választhat.
+Kapcsoljon egy Azure Data Lake-tárfiókot a célközönség-információkban a [kimeneti adatok tárolásához](manage-environments.md) vagy [használhatja adatforrásként](connect-dataverse-managed-lake.md). Az Azure Data Lake beállítás választásával az erőforrás-alapú vagy előfizetéses alapú megközelítések közül választhat.
 
 Az alábbi lépések végrehajtásával adja meg a szükséges információkat a kiválasztott megközelítésről.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: bcbafa513c2c61b0280c91aa7ed71e211c32c35c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095559"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556127"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Termékjavaslat-előrejelzés (előzetes verzió)
 
@@ -64,7 +64,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 1. Válassza ki a **Termékjavaslat-modell (előzetes verzió)** csempét, és ott válassza az **A modell használata** menüpontot.
    > [!div class="mx-imgBorder"]
-   > ![Terméka javaslati modell csempéje a Modell használata gombbal](media/product-recommendation-usethismodel.PNG "Terméka javaslati modell csempéje a Modell használata gombbal")
+   > ![Terméka javaslati modell csempéje a Modell használata gombbal.](media/product-recommendation-usethismodel.PNG "Terméka javaslati modell csempéje a Modell használata gombbal")
 
 1. Tekintse át a modellkövetelményekkel kapcsolatos információkat. Ha rendelkezésére állnak a szükséges adatok, válassza az **Első lépések** lehetőséget.
 
@@ -93,7 +93,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 1. Képezze le a szemantikai mezőket olyan attribútumokra, melyek a beszerzési előzmények entitáson belül esnek, és válassza a **Tovább** lehetőséget. A mezők leírása az [előfeltételek](#prerequisites) között található.
    > [!div class="mx-imgBorder"]
-   > ![Definiálja az entitás kapcsolatát](media/product-recommendation-purchasehistorymapping.PNG "Vásárlási előzmények oldal, amely a kijelölt vásárlási előzmények entitásának mezőire leképezett szemantikus attribútumokat mutatja")
+   > ![Definiálja az entitás kapcsolatát.](media/product-recommendation-purchasehistorymapping.PNG "Vásárlási előzmények oldal, amely a kijelölt vásárlási előzmények entitásának mezőire leképezett szemantikus attribútumokat mutatja")
 
 1. Ha az alábbi mezők nincsenek kitöltve, konfigurálja a kapcsolatokat beszerzési előzmények entitásából az *Ügyfél* entitással.
     1. Válassza ki a **Beszerzési előzmények entitás**-t.
@@ -101,7 +101,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
     1. Válassza ki azt az **Ügyfél entitást**, amely egyezik az elsődleges ügyfélentitással.
     1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
        > [!div class="mx-imgBorder"]
-       > ![A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot](media/model-purchase-join.png "A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot")
+       > ![A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot.](media/model-purchase-join.png "A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot")
 
 1. Válassza a **Mentés** parancsot.
 
@@ -145,7 +145,7 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
 
 1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
    > [!div class="mx-imgBorder"]
-   > ![A Saját előrejelzések oldal képe](media/product-recommendation-mypredictions.PNG "A Saját előrejelzések oldal képe")
+   > ![A Saját előrejelzések oldal képe.](media/product-recommendation-mypredictions.PNG "A Saját előrejelzések oldal képe")
 
 1. Jelölje ki az áttekinteni kívánt előrejelzést.
    - **Előrejelzés neve:** Az előrejelzés létrehozáskor megadott neve.
@@ -163,7 +163,7 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
 
 1. Kattintson a függőleges pontok ikonjára azon előrejelzés mellett, amelynek meg szeretné tekinteni az eredményeit, és kattintson a **Megtekintés** elemre.
    > [!div class="mx-imgBorder"]
-   > ![A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés](media/product-recommendation-verticalellipses.PNG "A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés")
+   > ![A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés.](media/product-recommendation-verticalellipses.PNG "A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés")
 
 1. Az eredmények oldalon öt elsődleges adatszakasz található:
     1. **Betanítási modell teljesítménye:** A lehetséges értékek: A, B vagy C. Ez a pontszám jelzi az előrejelzés teljesítményét, és könnyebbé teheti a kimeneti entitásban tárolt eredmények használatára vonatkozó döntést.
@@ -173,13 +173,13 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
             - **C** A modell figyelembe vett minősége **C** lesz, ha a „Success @ K” mérték kevesebb, mint a kiindulási érték.
                
                > [!div class="mx-imgBorder"]
-               > ![A modell teljesítményének megtekintése](media/product-recommendation-modelperformance.PNG "A modell teljesítményének megtekintése")
+               > ![A modell teljesítményének megtekintése.](media/product-recommendation-modelperformance.PNG "A modell teljesítményének megtekintése")
             - **Alapérték**: A modell a legjobb ajánlott termékeket veszi figyelembe a vásárlások száma szerint az összes ügyfél esetében, és a modell által azonosított szabályok segítségével hozza létre az ügyfeleknek tett javaslatok egy sorát. Ezután a rendszer összeveti az előrejelzéseket a legjobb termékekkel, amit a terméket megvásárolt ügyfelek száma alapján számít. Ha egy ügyfélnek legalább egy olyan terméke van az ajánlott termékeiben, amelyek a legjobb megvásárolt termékeknél is láthatók, akkor ezek az alapérték részét jelentik. Ha ezen ügyfelek közül 10 olyan lenne, akik az ajánlott terméket a 100 teljes ügyfél közül megvásárolták, az alapérték 10%.
             - **Sikeres @ K**: A tranzakciók beállított időszakának ellenőrzésekor javaslatokat tesz a rendszer az összes ügyfél számára, és összehasonlítja a tranzakciók ellenőrzési készletével. Egy 12 hónapos időszakban például a 12. hónapot félre lehet tenni ellenőrzési adathalmazként. Ha a modell legalább egy dolgot előre jelez, amit a 12. hónapban vásárolna az előző 11 hónap során tanultak alapján, az ügyfél megnövelné a "Siker @ K" mérőszámot.
     
     1. **A leggyakrabban javasolt termékek (egyezéssel):** Az öt legjobb termék, amit előre jeleztek az ügyfeleknek.
        > [!div class="mx-imgBorder"]
-       > ![A legjobb 5 ajánlott terméket bemutató grafikon](media/product-recommendation-topproducts.PNG "A legjobb 5 ajánlott terméket bemutató grafikon")
+       > ![A legjobb 5 ajánlott terméket bemutató grafikon.](media/product-recommendation-topproducts.PNG "A legjobb 5 ajánlott terméket bemutató grafikon")
     
     1. **A legfontosabb javaslati tényezők:** A modell az ügyfelek tranzakciós előzményei alapján tesz termékjavaslatokat. A mintákat a korábbi vásárlások alapján tanulja meg, és hasonlóságot keres az ügyfelek és a termékek között. Ezt követően a hasonlóságokat a termékre vonatkozó javaslatok létrehozásához használjuk.
     A következő tényezők befolyásolhatják a modell által létrehozott termékjavaslatot. 
@@ -190,20 +190,20 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
         Minden termékjavaslatot egy vagy több tényező befolyásol. A diagram ábrázolja azoknak a javaslatoknak a százalékos arányát, amelyeknél mindegyik tényező szerepet játszott. A következő példában az ajánlások 100%-át korábbi tranzakciók befolyásolták, 60%-át az ügyfélhasonlóság, 22%-át a termékhasonlóság. Menjen az egérrel a diagram sávjaira, és tekintse meg, hogy pontosan milyen százalékban játszottak szerepet a befolyásoló tényezők.
 
         > [!div class="mx-imgBorder"]
-        > ![A legfontosabb javaslati tényezők](media/product-recommendation-keyrecommendationfactors.png "A modell által a termékjavaslatok érdekében megtanult fő javaslati tényezők")
+        > ![A legfontosabb javaslati tényezők.](media/product-recommendation-keyrecommendationfactors.png "A modell által a termékjavaslatok érdekében megtanult fő javaslati tényezők")
        
      
    1. **Adatstatisztika**: Áttekintést ad a modell által figyelembe vett tranzakciók, ügyfelek és termékek számáról. A minták megtanulásához és a termékre vonatkozó javaslatok létrehozása során használt bemeneti adatokon alapul.
 
       > [!div class="mx-imgBorder"]
-      > ![Adatstatisztika](media/product-recommendation-datastatistics.png "A modell által a minták elsajátítása érdekében használt kimeneti adatokra vonatkozó adatstatisztika")
+      > ![Adatstatisztika.](media/product-recommendation-datastatistics.png "A modell által a minták elsajátítása érdekében használt kimeneti adatokra vonatkozó adatstatisztika")
 
       Ez a szakasz a modell által a tanulási minták elsajátításához és a termékre vonatkozó javaslatok létrehozásához használt adatpontokra vonatkozó statisztikákat mutatja be. A modellkonfigurációban konfigurált szűrés a modell által létrehozott kimeneti adatokra vonatkozik. A modell azonban a rendelkezésre álló összes adatot felhasználja a minták elsajátítása érdekében. Ezért ha a modellkonfigurációban termékszűrést használ, akkor ez a szakasz a modell által elemzett termékek teljes számát mutatja, hogy megismerje a mintákat, amelyek eltérhetnek a megadott szűrési feltételeknek megfelelő termékek számától.
 
    1. **Nagy magabiztosságú termékajánlások:** Az ügyfeleknek megjelenített ajánlatok egy listája, amelyekről a modell úgy gondolja, hogy az ügyfelei valószínűleg megvásárolják.    
       Ha hozzáad egy termékkatalógust, akkor a termékazonosítókat lecserélik a terméknevekre. A terméknevek használhatóbb és magától értetődőbb információkat biztosítanak az előrejelzésekről.
        > [!div class="mx-imgBorder"]
-       > ![Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista](media/product-recommendation-highconfidence.PNG "Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista")
+       > ![Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista.](media/product-recommendation-highconfidence.PNG "Az egyéni ügyfelek egy kiválasztott halmazára vonatkozó nagy megbízhatóságú javaslatokat mutató lista")
 
 ## <a name="manage-predictions"></a>Előrejelzések kezelése
 

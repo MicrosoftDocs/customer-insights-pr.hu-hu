@@ -1,7 +1,7 @@
 ---
 title: Szegmensek létrehozása és kezelése
 description: Hozzon létre ügyfelekből álló szegmenseket, és csoportosítsa őket különböző attribútumok alapján.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064940"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685465"
 ---
 # <a name="create-and-manage-segments"></a>Szegmensek létrehozása és kezelése
+
+> [!IMPORTANT]
+> 2021 szeptemberében számos változás várható a szegmensek létrehozási folyamatában: 
+> - A szegmensszerkesztő kissé eltérő lesz az újratervezett elemekkel és a továbbfejlesztett felhasználói folyamattal.
+> - A szegmensszerkesztőben engedélyezve vannak az új dátumidő-operátorok és a továbbfejlesztett dátumválasztó.
+> - A szegmensekbe felvehet feltételeket és szabályokat, illetve el is távolíthatja azokat. 
+> - Elérhetővé válnak a VAGY feltétellel kezdődő egymásba ágyazott szabályok. Már nincs szükség ÉS feltételre a legkülső rétegben.
+> - Az attribútumok kiválasztására használható oldalsó panel folyamatosan elérhető lesz.
+> - Az entitáskapcsolatok elérési útjainak kiválasztására vonatkozó lehetőség.
+> Az új szegmensszerkesztő kipróbálásához küldjön „Request to enable the new segment builder” tárggyal e-mail a cihelp [at] microsoft.com címre. Tűntesse fel a szervezete nevét és a tesztkörnyezet azonosítóját.
 
 Összetett szűrőket definiálhat az egyesített ügyfélentitás és a kapcsolódó entitások körül. A feldolgozást követően minden szegmens létrehoz egy csoport olyan ügyfélrekordot, amellyel az exportálás után műveletek végezhetők. A szegmensek kezelése a **Szegmensek** oldalon történik. 
 
@@ -50,7 +60,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A rendszer inaktív szegmen
 1. Válasszon egy operátort, és adja meg a kijelölt attribútum értékét.
 
    > [!div class="mx-imgBorder"]
-   > ![Egyéni csoportszűrő](media/customer-group-numbers.png "Ügyfélcsoportszűrő")
+   > ![Egyéni csoportszűrő.](media/customer-group-numbers.png "Ügyfélcsoportszűrő")
 
    |Szám |Definíció  |
    |---------|---------|
@@ -66,7 +76,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A rendszer inaktív szegmen
       - **VAGY** operátor: a szegmentálási folyamat részeként az egyik feltételnek meg kell felelnie. Ez a beállítás akkor a leghasznosabb, ha különböző feltételeket ad meg ugyanahhoz az entitáshoz.
 
       > [!div class="mx-imgBorder"]
-      > ![VAGY operátor, ahol valamelyik feltételt teljesíteni kell](media/segmentation-either-condition.png "VAGY operátor, ahol valamelyik feltételt teljesíteni kell")
+      > ![VAGY operátor, ahol valamelyik feltételt teljesíteni kell.](media/segmentation-either-condition.png "VAGY operátor, ahol valamelyik feltételt teljesíteni kell")
 
       Jelenleg lehetséges egy **VAGY** operátor beágyazása egy **ÉS** operátor alá, de fordítva nem.
 
@@ -74,12 +84,12 @@ A szegmensek létrehozásakor mentheti a tervezetet. A rendszer inaktív szegmen
    Válassza a **Csoport hozzáadása** lehetőséget.
 
       > [!div class="mx-imgBorder"]
-      > ![Ügyfélcsoport hozzáadása csoport](media/customer-group-add-group.png "Ügyfélcsoport hozzáadása csoport")
+      > ![Ügyfélcsoport hozzáadása csoport.](media/customer-group-add-group.png "Ügyfélcsoport hozzáadása csoport")
 
    1. Válasszon egyet a készletre vonatkozó operátorok közül: **Unió**, **Metszet** vagy **Kivétel**.
 
    > [!div class="mx-imgBorder"]
-   > ![Ügyfélcsoport hozzáadása egyesülés](media/customer-group-union.png "Ügyfélcsoport hozzáadása egyesülés")
+   > ![Ügyfélcsoport hozzáadása egyesülés.](media/customer-group-union.png "Ügyfélcsoport hozzáadása egyesülés")
 
    - Az **Egyesülés** egyesíti a két csoportot.
 
@@ -90,7 +100,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A rendszer inaktív szegmen
 1. Ha az entitás [kapcsolatokon](relationships.md) keresztül kapcsolódik az egyesített ügyfél entitáshoz, meg kell határoznia a kapcsolati útvonalat az érvényes szegmens létrehozásához. Adjon hozzá entitásokat a kapcsolati útvonalról, amíg ki nem tudja választani az **Ügyfél: CustomerInsights** entitást a legördülő menüből. Ezután minden lépéshez válassza ki az **Összes rekord** lehetőséget.
 
    > [!div class="mx-imgBorder"]
-   > ![Kapcsolati útvonal a szegmens létrehozása során](media/segments-multiple-relationships.png "Kapcsolati útvonal a szegmens létrehozása során")
+   > ![Kapcsolati útvonal a szegmens létrehozása során.](media/segments-multiple-relationships.png "Kapcsolati útvonal a szegmens létrehozása során")
 
 1. A szegmensek alapértelmezés szerint létrehoznak egy kimeneti entitást, amely a definiált szűrőknek megfelelő ügyfélprofilok összes attribútumát tartalmazza. Ha egy szegmens nem az *Ügyfél* entitáson alapul, akkor ezekből az entitásokból további attribútumokat adhat a kimeneti entitáshoz. A **Projektattribútumok** kiválasztásával kiválaszthatja a kimeneti entitáshoz hozzáfűzni kívánt attribútumokat.  
   
@@ -127,7 +137,7 @@ A gyorsszegmensek segítségével gyorsan készíthet egyszerű, egy operátorra
 4. A rendszer megadja a **Becsült szegmensméret** értékét. Kiválaszthatja, hogy létrehozza-e a megadott szegmenst, vagy először újra meg szeretné vizsgálni, hogy egy másik szegmens méretet kap-e.
 
     > [!div class="mx-imgBorder"]
-    > ![Gyorsszegmens neve és becslése](media/quick-segment-name.png "Gyorsszegmens neve és becslése")
+    > ![Gyorsszegmens neve és becslése.](media/quick-segment-name.png "Gyorsszegmens neve és becslése")
 
 5. Adjon meg egy **Név** értéket a szegmens számára. Másik lehetőségként adjon meg **Megjelenítendő nevet**.
 

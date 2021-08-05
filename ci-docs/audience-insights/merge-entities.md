@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 24b523786158ff36c314601846ee25ea64cfabbe
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305643"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650137"
 ---
 # <a name="merge-entities"></a>Entitások összefésülése
 
@@ -109,7 +109,7 @@ Egyes entitások több adatot tartalmaznak, mint mások. Ha egy entitás egy mez
 Függetlenül attól, hogy kézzel egyesíti-e az attribútumokat, vagy a rendszer egyesíti-e őket, bármikor futtathatja az egyesítést. A folyamat indításához az **Egyeztetés** oldalon válassza a **Futtatás** elemet.
 
 > [!div class="mx-imgBorder"]
-> ![Adatok egyesítése Mentés és Futtatás](media/configure-data-merge-save-run.png "Adatok egyesítése Mentés és Futtatás")
+> ![Adatok egyesítése Mentés és Futtatás.](media/configure-data-merge-save-run.png "Adatok egyesítése Mentés és Futtatás")
 
 Ha csak az egységesített ügyfélentitásban szereplő kimenetet szeretné látni, válassza a **Csak az Egyesítés futtatása** lehetőséget. A lefelé irányuló folyamatok [a frissítési ütemezésében meghatározottak szerint](system.md#schedule-tab) frissülnek.
 
@@ -118,7 +118,9 @@ Ha a saját módosításaival szeretné frissíteni a rendszert, válassza az **
 Ha további módosításokat szeretne végrehajtani, majd újrafuttatná a lépést, megszakíthatja a folyamatban lévő egyesítést. Válassza ki a **Frissítés folyamatban...** szöveget és válassza a **Feladat megszakítása** lehetőséget a megjelenő oldalpanelen.
 
 > [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+> Az egyesítési folyamat futtatása után válassza ki a folyamat állapotát a **Feladat részletei** ablaktábla megnyitásához. Áttekintést ad a feldolgozási időről, az utolsó feldolgozási dátumról, valamint a feladathoz kapcsolódó összes hibáról és figyelmeztetésről. Válassza a **Részletek megtekintése** lehetőséget, hogy lássa, mely entitások vettek részt az egyeztetési folyamatban, hogy az ütközések feloldása sikerült-e, és hogy sikerült-e közzétenni a frissítéseket.  
+> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="A feladat állapotára mutató hivatkozás részleteinek lefúrási útvonala.":::
 
 ## <a name="next-step"></a>Következő lépés
 

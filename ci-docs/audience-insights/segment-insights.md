@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306077"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554988"
 ---
 # <a name="segment-insights-preview"></a>Szegmensekkel kapcsolatosa információk (előzetes verzió)
 
@@ -44,7 +44,7 @@ Elemezheti azt is, hogyan módosul az átfedés az egyes attribútumok esetében
 Az elemzés befejezése után a háttér-információ részleteit a **Szegmensek** > **Háttér információk (előzetes verzió)** helyen találja.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Szegmens átfedés háttér-információinak részletei":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Szegmens átfedés háttér-információinak részletei.":::
 
 Az elemzési eredmények megtekintéséhez válasszon ki egy betekintést:
 
@@ -77,7 +77,7 @@ A szegmens-megkülönböztetők segítségével megtudhatja, hogy mi különböz
 Az elemzés befejezése után a háttér-információ részleteit a **Szegmensek** > **Háttér információk (előzetes verzió)** helyen találja.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Szegmens megkülönböztető háttér-információinak részletei":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Szegmens megkülönböztető háttér-információinak részletei.":::
 
 Az elemzési eredmények megtekintéséhez válasszon ki egy betekintést. A megkülönböztető elemzés két lapból áll. Az **Attribútumok** lap felsorolja a megkülönböztető tulajdonságokkal rendelkező profil attribútumokat. Az **Mértékek** lapon a megkülönböztető elemek szerepelnek. Minden lap a következő adatokat tartalmazza:
 

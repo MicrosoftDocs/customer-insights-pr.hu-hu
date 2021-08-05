@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 7ee57aa9e86ebf9bd1989d88750642f0b01bd4bf
+ms.sourcegitcommit: f18635c29bb25d9e424a3f5825dc2696278450cf
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5977380"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "6327367"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Aadtok exportálása az Azure Synapse Analytics rendszerbe (előzetes verzió)
 
@@ -74,8 +74,10 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 1. Adjon meg egy felismerhető **megjelenítendő nevet** és egy **adatbázisnevet** az exportáláshoz.
 
 1. Válassza ki, hogy melyik entitásokat szeretné exportálni az Azure Synapse Analytics alkalmazásba.
+   > [!NOTE]
+   > A [Common Data Model mappán](connect-common-data-model.md) alapuló adatforrások nem támogatottak.
 
-1. Válassza a **Mentés** parancsot.
+2. Válassza a **Mentés** parancsot.
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 

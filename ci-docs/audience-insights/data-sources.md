@@ -9,12 +9,13 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54dd7b629d4b4e7f640b932b0f9246e0602f46bd
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: 0a017a37777adaaf7de079cf481ec10c70c7adba
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304699"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692438"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -30,13 +31,13 @@ A adatforrások három fő módon adhatók hozzá:
 
 - [Több tucat Power Query-összekötőn keresztül](connect-power-query.md)
 - [Common Data Model-mappából](connect-common-data-model.md)
-- [Saját Microsoft Dataverse tóból](connect-common-data-service-lake.md)
+- [Saját Microsoft Dataverse tóból](connect-dataverse-managed-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Adatok hozzáadása helyszíni adatforrásokból
 
-A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](manage-environments.md#create-an-environment-in-an-existing-organization).
+A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](get-started-paid.md).
 
-A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse-környezet társítva lett volna [a helyszíni adatátjárók használatára](/data-integration/gateway/service-gateway-app.md).
+A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse-környezet társítva lett volna [a helyszíni adatátjárók használatára](/data-integration/gateway/service-gateway-app).
 
 A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
 
@@ -45,11 +46,11 @@ A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók leszne
 Látni fogja az egyes betöltött adatforrások nevét, állapotát, valamint az adatoknak az adott forrásra vonatkozó utolsó frissítését. Az adatforrások listáját minden oszlop szerint rendezheti.
 
 > [!div class="mx-imgBorder"]
-> ![Adatforrás hozzáadva](media/configure-data-datasource-added.png "Adatforrás hozzáadva")
+> ![Adatforrás hozzáadva.](media/configure-data-datasource-added.png "Adatforrás hozzáadva")
 
-|Állapot  |Adatfolyam leírása  |
+|Státusz  |Ismertetés  |
 |---------|---------|
-|Sikeres   |A adatforrás betöltése sikeres volt, ha egy idő szerepel a **Frissített** oszlopban.
+|Sikerült   |A adatforrás betöltése sikeres volt, ha egy idő szerepel a **Frissített** oszlopban.
 |Nem kezdődött el   |Az adatforrás még nem tartalmaz adatokat vagy még vázlat módban van.         |
 |Frissítés    |Az adatbetöltés folyamatban van. A művelet a **Műveletek** oszlop **Frissítés leállítása** parancsával vonható vissza. A adatforrás frissítésének leállítása visszaállítja azt az utolsó frissítéskori állapotára.       |
 |Sikertelen     |Az adatbetöltés hibákba ütközött.         |

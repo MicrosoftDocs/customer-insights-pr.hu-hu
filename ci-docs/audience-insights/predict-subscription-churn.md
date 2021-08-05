@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095651"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556310"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Előfizetési lemorzsolódás előrejelzése (előzetes verzió)
 
@@ -63,9 +63,9 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 1. A célközönség információin belül nyissa meg a következőt **Információk** > **Előrejelzések**.
 1. Válassza ki az **Előfizetési lemorzsolódás előrejelzése (előzetes verzió)** csempét, majd az **Adott modell használata** lehetőséget.
    > [!div class="mx-imgBorder"]
-   > ![Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal](media/subscription-churn-usethismodel.PNG "Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal")
+   > ![Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal.](media/subscription-churn-usethismodel.PNG "Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal")
 
-### <a name="name-model"></a>Névmodell
+### <a name="name-model"></a>Név modell
 
 1. Adja meg a modell nevét; ez különbözteti majd meg a többi modelltől.
 1. Adja meg a kimeneti entitás nevét: csak betűket és számokat használjon, szóközök nélkül. Ez lesz az a név, amelyet a modell entitás használni fog. Azután válassza a **Következő** elemet.
@@ -86,11 +86,11 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
     1. Válassza ki azt az **Ügyfél entitást**, amely egyezik az elsődleges ügyfélentitással.
     1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
        > [!div class="mx-imgBorder"]
-       > ![Az Előfizetés előzményei oldal, amelyen az ügyfélhez fűződő kapcsolat létrehozása látható](media/subscription-churn-subscriptionhistoryrelationship.PNG "Az Előfizetés előzményei oldal, amelyen az ügyfélhez fűződő kapcsolat létrehozása látható")
+       > ![Az Előfizetés előzményei oldal, amelyen az ügyfélhez fűződő kapcsolat létrehozása látható.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Az Előfizetés előzményei oldal, amelyen az ügyfélhez fűződő kapcsolat létrehozása látható")
 1. Válassza a **Következő** lehetőséget.
 1. Képezze le a szemantikai mezőket az előfizetési előzmények entitás attribútumaira, és válassza a **Mentés** lehetőséget. A mezők leírása az [előfeltételek](#prerequisites) között található.
    > [!div class="mx-imgBorder"]
-   > ![Az Előfizetés előzményei oldal, amelyen az előfizetési előzmények kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók](media/subscription-churn-subscriptionhistorymapping.PNG "Az Előfizetés előzményei oldal, amelyen az előfizetési előzmények kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók")
+   > ![Az Előfizetés előzményei oldal, amelyen az előfizetési előzmények kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók.](media/subscription-churn-subscriptionhistorymapping.PNG "Az Előfizetés előzményei oldal, amelyen az előfizetési előzmények kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók")
 1. Az **Ügyféltevékenységek** beállításnál válassza az **Adatok hozzáadása** lehetőséget, és válassza ki azt az ügyféltevékenységet, amely – az előfeltételek között leírtaknak megfelelően – biztosítja az előfizetési előzményadatokat.
 1. Válasszon ki egy, az éppen konfigurált ügyféltevékenység típusának megfelelő tevékenységtípust.  Válassza az **Új létrehozása** lehetőséget, és adjon meg egy nevet, ha nem lát a kívánt tevékenység típusának megfelelő beállítást.
 1. A kapcsolatot az ügyféltevékenység entitásából az Ügyfél entitáshoz kell konfigurálni.
@@ -101,7 +101,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 1. Képezze le a szemantikai mezőket az ügyféltevékenység entitásának attribútumaira, és válassza a **Mentés** lehetőséget. A mezők leírása az [előfeltételek](#prerequisites) között található.
 1. (Választható) Ha más ügyfélkapcsolatot is fel szeretne venni, akkor ismételje meg a fenti lépéseket.
    > [!div class="mx-imgBorder"]
-   > ![Definiálja az entitás kapcsolatát](media/subscription-churn-customeractivitiesmapping.PNG "Az Ügyféltevékenységek oldal, amelyen az ügyféltevékenység kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók")
+   > ![Definiálja az entitás kapcsolatát.](media/subscription-churn-customeractivitiesmapping.PNG "Az Ügyféltevékenységek oldal, amelyen az ügyféltevékenység kijelölt entitásának mezőihez leképezett szemantikus attribútumok láthatók")
 1. Válassza a **Következő** lehetőséget.
 
 ### <a name="set-schedule-and-review-configuration"></a>Ütemezési és felülvizsgálati konfiguráció beállítása
@@ -115,7 +115,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 
 1. Lépjen az **Információk** > **Előrejelzések** rész **Saját előrejelzések** lapjára.
    > [!div class="mx-imgBorder"]
-   > ![A Saját előrejelzések oldal képe](media/subscription-churn-mypredictions.PNG "A Saját előrejelzések oldal képe")
+   > ![A Saját előrejelzések oldal képe.](media/subscription-churn-mypredictions.PNG "A Saját előrejelzések oldal képe")
 1. Jelölje ki az áttekinteni kívánt előrejelzést.
    - **Előrejelzés neve:** Az előrejelzés létrehozáskor megadott neve.
    - **Előrejelzés típusa:** Az előrejelzéshez használt modell típusa.
@@ -131,7 +131,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
    - **Legutóbbi frissítés:** A dátum, amikor az előrejelzés frissítette a kimeneti entitásban szereplő eredményeket.
 1. Kattintson a függőleges pontok ikonjára azon előrejelzés mellett, amelynek meg szeretné tekinteni az eredményeit, és kattintson a **Megtekintés** elemre.
    > [!div class="mx-imgBorder"]
-   > ![A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés](media/subscription-churn-verticalellipses.PNG "A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés")
+   > ![A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés.](media/subscription-churn-verticalellipses.PNG "A függőleges pontok menüjének beállításai az előrejelzésekhez – többek között Szerkesztés, Frissítés, Megtekintés, Naplók és Törlés")
 1. Az eredményoldalon lévő adatok három fő részben jelennek meg:
     1. **Betanítási modell teljesítménye:** A lehetséges értékek: A, B vagy C. Ez a pontszám jelzi az előrejelzés teljesítményét, és könnyebbé teheti a kimeneti entitásban tárolt eredmények használatára vonatkozó döntést.
         - A pontszámok meghatározása a következő szabályok alapján történik:
@@ -139,13 +139,13 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
             - **B** ha a modell pontosan megjósolta legalább 50%-át a teljes előrejelzések, és amikor a pontos előrejelzések százalékértéke azon ügyfelek esetében, akik elvándoroltak nagyobb, mint az átlagos előzmény ügyfél-lemorzsolódás maximum az előzmény lemorzsolódási arány 10%-ával.
             - **C** Ha modell az összes előrejelzés kevesebb mint 50%-át jelezte előre pontosan, vagy amikor a lemorzsolódott ügyfelek előrejelzésének pontossága kisebb, mint az átlagos előzmény lemorzsolódási arány.
                > [!div class="mx-imgBorder"]
-               > ![A modell teljesítményének megtekintése](media/subscription-churn-modelperformance.PNG "A modell teljesítményének megtekintése")
+               > ![A modell teljesítményének megtekintése.](media/subscription-churn-modelperformance.PNG "A modell teljesítményének megtekintése")
     1. **Lemorzsolódási valószínűség (ügyfelek száma):** Ügyfelek csoportjai a lemorzsolódás előrejelzett kockázata alapján. Ez az adat a későbbiekben segítséget jelenthet, ha magas lemorzsolódási kockázattal rendelkező ügyfelekhez szeretne szegmenst létrehozni. Az ilyen szegmensek segítségével felmérheti, hogy a szegmens tagsága esetén hol legyen a lezárás.
        > [!div class="mx-imgBorder"]
-       > ![A lemorzsolódási eredmények megoszlását bemutató grafikon, 0–100%](media/subscription-churn-resultdistribution.PNG "A lemorzsolódási eredmények megoszlását bemutató grafikon, 0–100%")
+       > ![A lemorzsolódási eredmények megoszlását bemutató grafikon, 0–100%.](media/subscription-churn-resultdistribution.PNG "A lemorzsolódási eredmények megoszlását bemutató grafikon, 0–100%")
     1. **Legbefolyásosabb tényezők:** Az előrejelzés létrehozásakor a rendszer számos tényezőt vesz figyelembe. Az egyes tényezők fontosságát a rendszer kiszámítja a modell által létrehozott összesített előrejelzésekhez. Ezekkel a tényezőkkel ellenőrizheti az előrejelzés eredményeit. Ezeket az információkat később is felhasználhatja, hogy olyan [szegmenseket hozzon létre,](segments.md) amelyekkel csökkenthető az ügyfelek lemorzsolódási kockázata.
        > [!div class="mx-imgBorder"]
-       > ![A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében](media/subscription-churn-influentialfactors.PNG "A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében")
+       > ![A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében.](media/subscription-churn-influentialfactors.PNG "A befolyásos tényezőket és a fontosságukat mutató lista a lemorzsolódási eredmény előrejelzésében")
 
 ## <a name="manage-predictions"></a>Előrejelzések kezelése
 

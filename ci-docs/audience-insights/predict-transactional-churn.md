@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095605"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559408"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tranzakciólemorzsolódási előrejelzés (előnézet)
 
@@ -47,7 +47,7 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
         - **Esemény:** A használni kívánt esemény neve. Például, ha egy mező neve "FelhasználóiMűvelet" egy élelmiszerboltban, ez egy ügyfél által történő kuponhasználatot jelenthet.
         - **Részletek:** Részletes információk az eseményről. Például, ha egy mező neve "KuponÉrték" egy élelmiszerboltban, ez a kupon pénznembeli értékét jelentheti.
 - Javasolt adatjellemzők:
-    - Elegendő előzményadat: A tranzakciós adatok a kijelölt időablak legalább duplájához. Lehetőség szerint két-három éves előfizetési adatok. 
+    - Elegendő előzményadat: A tranzakciós adatok a kijelölt időablak legalább duplájához. Lehetőség szerint két-három évnyi tranzakcióelőzmény. 
     - Ügyfelenkénti több vásárlás: Lehetőség szerint ügyfelenként legalább két tranzakció.
     - Ügyfelek száma: Legalább 10 ügyfélprofil, lehetőség szerint 1000-nél több egyedi ügyfél. A modell 10-nél kevesebb ügyfél esetén és ha nem áll rendelkezésre elegendő előzményadat, akkor nem működik.
     - Adat teljessége: A megadott entitás adatmezőjének hiányzó értékeinek kevesebb, mint 20%-a.

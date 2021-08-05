@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
-ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
+ms.openlocfilehash: ac8b0671b20123091bef64e672fc53398fe8955a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049397"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6553978"
 ---
 # <a name="entities-in-audience-insights"></a>Entitások a célközönség-információkban
 
@@ -30,19 +30,19 @@ Az **Entitások** lap felsorolja az entitásokat, és több oszlopot is tartalma
 - **Legutóbbi frissítés**: Az entitás utolsó módosításának dátuma és időpontja
 - **Legutóbbi frissítés**: Az utolsó adatfrissítés dátuma és időpontja
 
-## <a name="exploring-a-specific-entitys-data"></a>Adott entitás adatainak feltárása
+## <a name="explore-a-specific-entitys-data"></a>Adott entitás adatainak feltárása
 
 Jelöljön ki egy entitást az adott entitáshoz tartozó különböző mezők és bejegyzések feltáráshoz.
 
 > [!div class="mx-imgBorder"]
-> ![Entitás kiválasztása](media/data-manager-entities-data.png "Válasszon ki egy entitást!")
+> ![Entitás kiválasztása](media/data-manager-entities-data.png "Entitás kiválasztása")
 
 - Az **Adatok** lapon megjelenik az entitás egyéni rekordjainak részleteit tartalmazó táblázat.
 
 > [!div class="mx-imgBorder"]
-> ![Mezők tábla](media/data-manager-entities-fields.PNG "Mezők tábla")
+> ![Mezők tábla.](media/data-manager-entities-fields.PNG "Mezők tábla")
 
-- Az **Attribútumok** lap alapértelmezés szerint ki van választva, és megjelenik rajta egy táblázat, amelyben áttekinthetők a kiválasztott entitás részletei (például a mezőnevek vagy az adattípusok). A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek olyan szemantikai típusok, amelyek eltérhetnek az attribútumok adattípusaitól – például az alábbi *Ee-mail* mező adattípusa *Szöveg*, de (szemantikai) Common Data Model típusa lehet *E-mail* vagy *EmailAddress*.
+- Az **Attribútumok** lap alapértelmezés szerint ki van választva, és megjelenik rajta egy táblázat, amelyben áttekinthetők a kiválasztott entitás részletei (például a mezőnevek vagy az adattípusok). A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek a típusok olyan szemantikus típusok, amelyek eltérhetnek az attribútumok adattípusaitól. Az alábbi mezőben az *E-mail* mezőben van *Szöveg* adattípus, de a (szemantikus) Common Data Model típus lehet *E-mail* vagy *EmailAddress*.
 
 > [!NOTE]
 > Mindkét tábla csak az entitás adatainak mintáját jeleníti meg. Ha meg szeretné tekinteni a teljes adatkészlet, nyissa meg az **Adatforrások** oldalt, jelöljön kiegy entitást, válassza a **Szerkesztés** lehetőséget, majd tekintse meg az entitás adatait aPower Query-szerkesztővel, amint az az [Adatforrásokban](data-sources.md) látható.
@@ -52,11 +52,28 @@ Ha többet szeretne megtudni az entitásban lévő adatokról, akkor az **Össze
 Az adatok összegzésének megjelenítéséhez válassza ki a diagram ikont.
 
 > [!div class="mx-imgBorder"]
-> ![Összegzés szimbólum](media/data-manager-entities-summary.png "Adatok összesítése tábla")
+> ![Összegzés szimbólum.](media/data-manager-entities-summary.png "Adatok összesítése tábla")
 
-### <a name="next-step"></a>Következő lépés
+## <a name="entity-specific-information"></a>Entitásspecifikus információk
 
-Tekintse meg az [Egyesítés](data-unification.md) témakör, azzal kapcsolatosan, hogy hogyan lehet *leképezni*, *egyeztetni* és *egyesíteni* a leképezett adatokat.
+A következő rész egyes rendszer által létrehozott entitásokkal kapcsolatos információkat tartalmaz.
+
+### <a name="corrupted-data-sources"></a>Sérült adatforrások
+
+A betöltött adatforrásból származó mezők sérült adatokat tartalmazhatnak. A sérült mezőket tartalmazó rekordok láthatóak a rendszer által létrehozott entitások között. A sérült rekordok ismerete segít azonosítani, hogy mely adatokat kell átnézni és frissíteni a forrásrendszerben. Az adatforrás következő frissítésekor a kijavított bejegyzéseket a Customer Insights alkalmazásba be lesznek töltve és tovább lesznek küldve a későbbi folyamatoknak. 
+
+Például egy "születési" oszlop adattípusának beállítása "dátum". Egy ügyfélrekord ban a születésnap értéke „01/01/19777”. A rendszer sérültként jelöli meg a bejegyzést. Most már valaki át tudja változtatni a forrásrendszerben az 1977-re a születésnapot. Az adatforrások automatikus frissítését követően a mező most már érvényes formátumban van, és a rekord törlődik a sérült entitásból. 
+
+Nyissa meg az **Adatok** > **Entitások** lehetőséget és keressen sérült entitásokat a **Rendszer** szakaszban. Sérült entitások elnevezési sémája: "DataSourceName_EntityName_corrupt".
+
+A Customer Insights továbbra is feldolgozza a sérült rekordokat. Ezek azonban problémákat okozhatnak a egyesített adatokkal való munka során.
+
+A következő ellenőrzések a betöltött adatokon futnak a sérült bejegyzések felfedése érdekében: 
+
+- A mező értéke nem egyezik meg az oszlopa adattípusával.
+- A mezők olyan karaktereket tartalmaznak, amelyek hatására az oszlopok nem egyeznek meg a várt sémával. Például: nem megfelelően formázott idézőjelek, lezáratlan idézőjelek, vagy újsor karakterek.
+- Ha vannak datetime/date/datetimeset oszlopok, akkor azok formátumát meg kell adni a modellben, ha az nem követik a szabványos ISO formátumot.
+
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7922a6a69f863caae5401549ed6f88a61aa77d39
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: ac6642c0ce02f1a92458a16250fd3b4cdef5fd1c
+ms.sourcegitcommit: adb9c43ddaba25e511535d78a4bcf8815f154a7b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124230"
+ms.lasthandoff: 07/06/2021
+ms.locfileid: "6362512"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Szegmensek exportálása a Mailchimpbe (előzetes verzió)
 
@@ -38,7 +38,7 @@ Az egyesített ügyfélprofilok szegmenseinek Mailchimpbe való exportálásáva
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Autopilot** lehetőséget a kapcsolat konfigurálásához.
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Mailchimp** lehetőséget a kapcsolat konfigurálásához.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 

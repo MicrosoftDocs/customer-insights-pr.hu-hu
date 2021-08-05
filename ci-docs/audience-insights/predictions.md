@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595904"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692530"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Részleges adatok kiegészítése előrejelzésekkel
 
@@ -31,11 +31,11 @@ Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzet
 
 Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskodjon arról, hogy a következő előfeltételek teljesüljenek:
 
-1. A szervezetnél egy példányt [be kell állítani a Common Data Service-ben](/ai-builder/build-model#prerequisites), és ugyanabban a szervezetben, mint a Customer Insights.
+1. A szervezete rendelkezik egy példánnyal [beállítva a Microsoft Dataverse-ben](/ai-builder/build-model#prerequisites), amely ugyanabban a szervezetben található, mint a Customer Insights.
 
-2. A környezet a Common Data Service példányához van csatolva.
+2. A Célközönséggel kapcsolatos információk környezet csatolva van a Dataverse példányhoz.
 
-Ha [új környezetet hoz létre](manage-environments.md), konfigurálja a **Környezet létrehozása** párbeszédablakban, és válassza a **Speciális** elemet. Ha már létrehozott egy környezetet, nyissa meg a beállításait, és válassza a **Speciális** lehetőséget. Akárhogy is, az **Előrejelzések használata** részben adja meg a Common Data Service-példány URL-címét, amelyre a környezetet csatolni szeretné.
+Ha [új környezetet hoz létre](get-started-paid.md), konfigurálja a **Környezet létrehozása** párbeszédablakban, és válassza a **Speciális** elemet. Ha már létrehozott egy környezetet, nyissa meg a beállításait, és válassza a **Speciális** lehetőséget. Akárhogy is, az **Előrejelzések használata** részben adja meg a Dataverse-példány URL-címét, amelyre a környezetet csatolni szeretné.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Előrejelzés létrehozása az ügyfél entitásban
 
@@ -47,17 +47,17 @@ Ha [új környezetet hoz létre](manage-environments.md), konfigurálja a **Kör
 
 4. Keresse meg azt az attribútumot, amelyhez előre szeretné jelezni az értékeket, és válassza az **Áttekintés** ikont az **Összesítés** oszlopban.
    > [!div class="mx-imgBorder"]
-   > ![Áttekintés ikon](media/intelligence-overviewicon.png "Áttekintés ikon")
+   > ![Áttekintés ikon.](media/intelligence-overviewicon.png "Áttekintés ikon")
 
 5. Ha az attribútumhoz nagy a hiányzó értékek aránya, akkor az előrejelzés folytatásához válassza a **Hiányzó értékek előrejelzése** lehetőséget.
    > [!div class="mx-imgBorder"]
-   > ![Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható](media/intelligence-overviewpredictmissingvalues.png "Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható")
+   > ![Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható.](media/intelligence-overviewpredictmissingvalues.png "Áttekintési állapot, ahol a hiányzó értékek előrejelzése gomb látható")
 
 6. Adja meg a **Megjelenítendő név** és a **Kimeneti entitás neve** értékét az előrejelzés eredményéhez.
 
 7. Megjelenik a lehetőségek előre kitöltött listája, ahol az értékeket egy előre jelzett kategóriához rendelheti. Ebben az esetben az egyetlen kategórialehetőségek a 0 vagy az 1, mivel az előrejelzés igaz/hamis vagy bináris jellegével lesznek megfeleltetve. A Kategória oszlopban azokat a mezőértékeket, amelyeket a végső előrejelzésben „0” értékkel szeretne besorolni, feleltesse meg a „0” értékkel, a végső előrejelzésben „1” értékkel besorolandó elemeket pedig az „1” értékkel.
    > [!div class="mx-imgBorder"]
-   > ![Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók](media/intelligence-categorymapping.png "Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók")
+   > ![Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók.](media/intelligence-categorymapping.png "Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók")
 
 8. Válassza a **Kész** lehetőséget, és a rendszer feldolgozza az előrejelzést. A feldolgozás egy kis időt vesz igénbe, az adatok méretétől és összetettségétől függően. Az eredmények egy új entitásban lesznek elérhetők a létrehozott előrejelzés **Kimeneti entitásának neve** alapján.
 
@@ -77,7 +77,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 5. Ha a létrehozott szegmensben hiányos adatok szerepelnek a Forrás mezőben, dönthet úgy, hogy előre jelzi a hiányzó értékeket.
    > [!div class="mx-imgBorder"]
-   > ![Előrejelzés gomb](media/segments-predictoption.png "Előrejelzés gomb")
+   > ![Előrejelzés gomb.](media/segments-predictoption.png "Előrejelzés gomb")
 
 6. Adja meg a **Megjelenítendő név** és a **Kimeneti entitás neve** értékét az előrejelzés eredményéhez.
 
@@ -93,7 +93,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 4. Az előrejelzés nézetében számos adatpont jelenik meg.
    > [!div class="mx-imgBorder"]
-   > ![Előrejelzések oldala](media/intelligence-predictionsviewpage.png "Előrejelzések oldala")
+   > ![Előrejelzések oldala.](media/intelligence-predictionsviewpage.png "Előrejelzések oldala")
 
    - **Előre jelzett értékek** bemutatja a Mező értékének a Kategóriával való megfeleltetési fázis során létrehozott megfeleltetését. Ezek az adathalmaz azon értékeit, amelyek egy adott kategóriára vannak leképezve.
    -**Legfontosabb befolyásolók** az adathalmaz olyan tényezői, amelyek nagy valószínűséggel befolyásolják a Mező értékének egy adott kategóriára való leképezésére vonatkozó előrejelzés konfidenciáját.
@@ -139,7 +139,7 @@ Az előrejelzés következő futtatása a létrehozott frissített modellt fogja
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 
-Ha hiba miatt nem tudja elvégezni a csatolási Common Data Service folyamatot, megpróbálhatja manuálisan végrehajtani. A csatolási folyamat során két ismert probléma is előfordulhat:
+Ha hiba miatt nem tudja elvégezni a csatolási Dataverse folyamatot, megpróbálhatja manuálisan végrehajtani. A csatolási folyamat során két ismert probléma is előfordulhat:
 
 - Nincs telepítve az Ügyfélkártya bővítmény megoldás.
     1. Hajtsa végre a [megoldás telepítésére és konfigurálására vonatkozó](customer-card-add-in.md) utasításokat.

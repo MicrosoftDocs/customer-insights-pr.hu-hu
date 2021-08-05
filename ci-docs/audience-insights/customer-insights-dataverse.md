@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7157ad930f3cea17c12bd4f95028d291483329d3
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259194"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650045"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>A Customer Insights-adatok használata a Microsoft Dataverse-ben
 
@@ -24,11 +24,11 @@ A Customer Insights lehetőséget biztosít a kimeneti entitások elérhetővé 
 
 **Meglévő Dataverse-környezettel rendelkező szervezetek**
 
-Azok a szervezetek, amelyek már használják a Dataverse-t, [használhatják meglévő Dataverse-környezetüket](manage-environments.md#create-an-environment-in-an-existing-organization), ha a rendszergazda beállítja a célközönséggel kapcsolatos információkat. Azáltal, hogy az URL-t ad meg a Dataverse-környezethez, ez csatolja az új célközönség információk környezethez. A lehető legjobb teljesítmény biztosítása érdekében a Customer Insights szolgáltatást és a Dataverse-környezeteket ugyanabban a régióban kell üzemeltetni.
+Azok a szervezetek, amelyek már használják a Dataverse-t, [használhatják meglévő Dataverse-környezetüket](get-started-paid.md), ha a rendszergazda beállítja a célközönséggel kapcsolatos információkat. Azáltal, hogy az URL-t ad meg a Dataverse-környezethez, ez csatolja az új célközönség információk környezethez. A lehető legjobb teljesítmény biztosítása érdekében a Customer Insights szolgáltatást és a Dataverse-környezeteket ugyanabban a régióban kell üzemeltetni.
 
 Egy Dataverse-környezet csatolásához bontsa ki a **Speciális beállítások** lehetőséget a célközönséggel kapcsolatos információk környezet létrehozásakor. Adja meg a **Microsoft Dataverse-környezet URL-címét**, és jelölje be a jelölőnégyzetet az **Adatmegosztás engedélyezéséhez**.
 
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt":::
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
 
 **Új szervezet**
 

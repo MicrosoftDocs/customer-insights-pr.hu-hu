@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9326f821f9970ba2254ab804814e369abb677eb0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: f98af8fb1c1d1ae050a5273286d35cf276d9fb17
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304745"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554484"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
@@ -35,7 +35,7 @@ Ez a cikk leírja, hogyan érheti el az Customer Insights API-kat, hozhat létre
  
    Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsok újbóli generálásához válassza az **Elsődleges újbóli létrehozása** vagy a **Másodlagos újbóli létrehozása** beállítást a **Rendszergazda** > **Engedélyek** > **API-k** között.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Customer Insights API-k engedélyezése":::
+   :::image type="content" source="media/enable-apis.gif" alt-text="Customer Insights API-k engedélyezése.":::
 
 1. Az **API-k kipróbálásához** válassza az [API-k kipróbálása](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetőséget.
 
@@ -129,7 +129,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
  
    Másik lehetőségként futtassa ezt a parancsot a **NuGet csomagkezelő konzolon**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="NuGet-csomag hozzáadása Visual Studio-projekthez":::
+   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="NuGet-csomag hozzáadása Visual Studio-projekthez.":::
 
 #### <a name="use-the-c-client-library"></a>A C# ügyféloldali függvénytár használata
 
@@ -141,7 +141,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
 
 1. Adja át ezt a `HttpClient` elemet a `CustomerInsights` ügyfél felépítéséhez.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Httpclient mintája":::
+   :::image type="content" source="media/httpclient-sample.png" alt-text="Httpclient mintája.":::
 
 1. Indítson hívást a klienssel a „bővítmény módszerekhez”, például `GetAllInstancesAsync`. Ha az alapul szolgáló `Microsoft.Rest.HttpOperationResponse` elem elérését részesíti előnyben, használja a "http-üzenetek módszereit", például `GetAllInstancesWithHttpMessagesAsync`.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
-ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
+ms.openlocfilehash: 6a7137730ab8cc43bc93daf647d9d55d02d96cd8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/18/2021
-ms.locfileid: "6059591"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692208"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
@@ -25,7 +25,7 @@ ms.locfileid: "6059591"
 ## <a name="prerequisites"></a>Előfeltételek
 
 - A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Common Data Service-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
+- Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Microsoft Dataverse-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
 - Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
 - Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik:
@@ -50,7 +50,7 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 1. Válassza ki a **Megjelenítendő név** hivatkozást a **Dynamics 365 Customer Insights ügyfélkártya bővítmény (előzetes verzió)** megoldáshoz.
 
    > [!div class="mx-imgBorder"]
-   > ![Megjelenítendő név választása](media/select-display-name.png "Megjelenítendő név választása")
+   > ![Megjelenítendő név választása.](media/select-display-name.png "Megjelenítendő név választása")
 
 1. Válassza a **Bejelentkezés** lehetőséget, és adja meg a Customer Insights konfigurálásához használt rendszergazdai fiók hitelesítő adatait.
 
@@ -64,7 +64,7 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
    - Ha egy partnert szeretne leképezni, akkor jelölje ki a mezőt az Ügyfél entitásban partner entitás azonosítójának megfelelő mezőben.
 
    > [!div class="mx-imgBorder"]
-   > ![Kapcsolattartó azonosítója mező](media/contact-id-field.png "Kapcsolattartó azonosítója mező")
+   > ![Kapcsolattartó azonosítója mező.](media/contact-id-field.png "Kapcsolattartó azonosítója mező")
 
 1. A beállítás mentéséhez válassza a **Konfiguráció mentése** lehetőséget.
 
@@ -83,7 +83,7 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 1. Válassza ki azt a kapcsolattartói űrlapot, amelyhez hozzá szeretné adni az Ügyfélkártya vezérlőit.
 
     > [!div class="mx-imgBorder"]
-    > ![Válassza a Kapcsolattartói űrlapot](media/contact-active-forms.png "Válassza a Kapcsolattartói űrlapot")
+    > ![Válassza a Kapcsolattartói űrlapot.](media/contact-active-forms.png "Válassza a Kapcsolattartói űrlapot")
 
 1. A vezérlő hozzáadásához húzza az űrlapszerkesztő bármelyik mezőjét a **Mezőkezelőből** arra a helyre, ahol a demográfiai vezérlőt meg szeretné jeleníteni.
 
@@ -110,7 +110,7 @@ Az Ügyfélkártya bővítmény nem frissül automatikusan. A legújabb verziór
 
 1. Válassza a **Megoldásfrissítés alkalmazása** lehetőséget a műveletsávban.
 
-   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Megoldás frissítése a Dynamics 365 alkalmazások Testreszabás területén":::
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Megoldás frissítése a Dynamics 365 alkalmazások Testreszabás területén.":::
 
 1. A frissítési folyamat megkezdése után betöltési kijelző látható, amíg be nem fejeződik a frissítés. Ha nincs újabb verzió, a frissítés hibaüzenetet ad.
 

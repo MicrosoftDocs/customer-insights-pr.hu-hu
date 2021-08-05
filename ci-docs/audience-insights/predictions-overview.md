@@ -9,12 +9,13 @@ ms.topic: get-started
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 69ae945b22819521db217508c6fc232876346747
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.custom: intro-internal
+ms.openlocfilehash: b73046844f6009a2b163b5eaadf5f63f75cda1d8
+ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095717"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "6539164"
 ---
 # <a name="predictions-overview"></a>Előrejelzések áttekintése
 

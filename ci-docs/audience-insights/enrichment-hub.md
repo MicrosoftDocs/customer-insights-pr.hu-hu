@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 04/09/2021
+ms.date: 07/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,19 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c35e73b366fcd5db2ba5a757295ddda6db30efa0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: d12c0a9dd65d31f9ae8a9cafeafab2767d57893e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305251"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555264"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
 Adatok felhasználása olyan forrásokból, mint például a Microsoft és más partnerek az ügyféladatok bővítése céljából.
 
-:::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala":::
+:::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala.":::
 
 A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra a bővítési lehetőségek használatához.  
 
@@ -42,17 +43,17 @@ A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beáll
 
 Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
 
-A rendelkezésre álló lehetőségek megtekintéséhez válasszon egy bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket.
+Az elérhető lehetőségekért válassza ki a bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
 
-:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek":::
+:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek.":::
 
 - **Nézet** a bővítés részleteinek megtekintése a bővített ügyfelek profiljainak számával.
 - **Szerkesztheti** bővítés konfigurációját.
 - A bővítés **Futtatásával** frissítheti az ügyfelek profiljait a legfrissebb adatokkal.
 - **Inaktiválhat** egy meglévő bővítést, hogy leállítsa annak automatikus frissítését az egyes ütemezett frissítések során. Az utolsó sikeres frissítésből származó adatok továbbra is elérhetők lesznek. **Aktiválhat** egy inaktív bővítést az automatikus frissítés újraindításához minden ütemezett frissítéshez.
-- Egy bővítés **törlése**.
+- A bővítés **Törlése**.
 
-Egyszerre több bővítést is futtathat vagy inaktiválhat, ha kijelöli azokat a listából. A beállítások megtekintése és szerkesztése nem érhető el tömeges műveletként, és egyszerre csak egy bővítéshez használható.
+A listában való kijelölésvel egyszerre futtathat vagy inaktiválhat több bővítést. A megtekintése és szerkesztés lehetőségek nem érhetők el tömeges műveletként. Egyszerre csak egy bővítéssel működnek.
 
 ## <a name="enrichments-and-connections"></a>Bővítések és kapcsolatok
 

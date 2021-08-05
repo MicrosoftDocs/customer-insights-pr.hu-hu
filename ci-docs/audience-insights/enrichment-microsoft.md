@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 3b10fb23cca03ed918aa7fd46478b568d5ebbf1a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305159"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555494"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
 
@@ -27,7 +27,7 @@ A márkaaffinitások bővítésének konfigurálásához nyissa meg a **Felfedez
 Az érdeklődésikör-affinitások bővítésének konfigurálásához nyissa meg a **Felfedezés** lapot, és válassza a **Saját adatok bővítése** elemet az **Érdeklődési körök** csempén.
 
    > [!div class="mx-imgBorder"]
-   > ![Márkák és érdeklődési mozaikok](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
+   > ![Márkák és érdeklődési mozaikok.](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
 
 ## <a name="how-we-determine-affinities"></a>Hogyan határozzuk meg a márkahűséget
 
@@ -123,7 +123,7 @@ Az ügyféladatok méretétől függően előfordulhat, hogy a bővítés futtat
 
 A bővítési folyamat futtatása után lépjen a **Saját bővítések** pontra, és nézze át a bővített ügyfelek teljes számát és a márkák vagy érdeklődési körök lebontását a bővített ügyfelek profiljaiban.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után.":::
 
 A bővített adatok áttekintéséhez jelölje be a **Bővített adatok megtekintése** lehetőséget a diagramban. A márkák bővített adatai a **BrandAffinityFromMicrosoft** entitásba kerülnek. Az érdeklődési körök adatai az **InterestAffinityFromMicrosoft** entitásba kerülnek. Ezeket az entitásokat a **Bővítés** csoportban is megtekintheti az **Adatok** > **Entitások** helyen.
 
@@ -131,9 +131,9 @@ A bővített adatok áttekintéséhez jelölje be a **Bővített adatok megtekin
 
 A márka és a érdeklődés affinitásokat az ügyfélkártyákon is meg lehet tekinteni. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán megkeresheti a márkákra vagy az érdeklődési körökre vonatkozó diagramokat, amelyek szerint az adott ügyfél demográfiai profiljához tartozó személyek affinitással rendelkeznek.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya.":::
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
 Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
 
