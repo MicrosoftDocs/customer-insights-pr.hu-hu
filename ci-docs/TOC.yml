@@ -166,6 +166,8 @@
               href: audience-insights/export-facebook.md
             - name: Google Ads
               href: audience-insights/export-google-ads.md
+            - name: Klaviyo
+              href: audience-insights/export-klaviyo.md
             - name: LinkedIn hirdetések
               href: audience-insights/export-linkedin-ads.md
             - name: LiveRamp
@@ -310,5 +312,13 @@
       href: engagement-insights/regional-availability.md
     - name: A szolgáltatás korlátozásai
       href: engagement-insights/quotas.md
-- name: Kapcsolatfelvétel az ügyfélszolgálattal
-  href: 'https://admin.powerplatform.microsoft.com/support'
+- name: A célközönség és az elkötelezettségi információk integrálása
+  items:
+    - name: Összekapcsolhatja a célközönséggel kapcsolatos információkat az elkötelezettséggel kapcsolatos információkkal
+      href: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - name: Az célközönség információk szegmensek használata az elkötelezettségi információk jelentésekben
+      href: engagement-insights/integrate-audience-insights-segments.md
+    - name: Viselkedési adatok felosztása demográfiai dimenziók használatával
+      href: engagement-insights/curate-dimensions.md
+- name: Támogatás igénybevétele
+  href: 'https://dynamics.microsoft.com/en-us/support/'

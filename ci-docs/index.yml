@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: A Súgótartalmak megkereséséhez keresse meg a megfelelő cikkeket.
   ms.author: mhart
-  ms.date: 10/29/2020
+  ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
-  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 03/15/2021
-  ms.locfileid: "5598464"
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036560"
 title: Dynamics 365 Customer Insights-dokumentáció
-summary: Keresse meg a hasznos erőforrásokat az ismerkedéshez, és ismerkedjen meg a Customer Insights funkcióinak és lehetőségeivel.
+summary: Hasznos erőforrásokat talál az első lépésekhez, és a Customer Insights funkcióinak és lehetőségeinek megismeréséhez.
 landingContent:
 - title: Customer Insights megismerése
   linkLists:
@@ -23,9 +23,9 @@ landingContent:
     - text: Customer Insights áttekintése
       url: overview.md
     - text: Kiadási tervek
-      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
-    - text: Saját környezet hozzáférése
-      url: https://home.ci.ai.dynamics.com/
+      url: /dynamics365-release-plan/
+    - text: A CDP felfedezése
+      url: https://dynamics.microsoft.com/ai/customer-insights/
 - title: Ismerkedés a célközönség-információkkal
   linkLists:
   - linkListType: get-started

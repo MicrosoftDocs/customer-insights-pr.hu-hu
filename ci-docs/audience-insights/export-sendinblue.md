@@ -9,12 +9,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 58ca0ae5ad4a3a291f4336984d14fefb23a58ab3
-ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
+ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2021
-ms.locfileid: "6314625"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036058"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Szegmensek exportálása Sendinblue-ba (előzetes verzió)
 

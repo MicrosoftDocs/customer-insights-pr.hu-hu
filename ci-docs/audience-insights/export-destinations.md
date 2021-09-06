@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 47bdcc5bb38587063e4414377568943f868107a3
-ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
+ms.openlocfilehash: be4d142e0f9f422cac459f603aa5dd8bb490321cfe1b2de58f4a128ae56f4ba3
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "6539346"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034685"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 

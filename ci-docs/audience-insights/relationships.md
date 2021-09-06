@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171167"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035234"
 ---
 # <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
 
@@ -82,7 +82,7 @@ Ez az oldal számos lehetőséget kínál a meglévő és új kapcsolatokhoz:
 
 ### <a name="explore-the-relationship-visualizer"></a>Fedezze fel a kapcsolatvizualizálót
 
-A kapcsolatvizualizálót megjelenít egy hálózati diagramot, hogy láthassa a meglévő kapcsolatok és azok számossága közötti kapcsolatot.
+A kapcsolatvizualizálót megjelenít egy hálózati diagramot, hogy láthassa a meglévő kapcsolatok és azok számossága közötti kapcsolatot. Emellett a kapcsolati útvonalat is ábrázolja.
 
 A nézet testreszabásához módosíthatja a dobozok helyzetét a húzásukkal a vásznon.
 
@@ -92,6 +92,20 @@ Választható beállítások:
 - **Exportálás képként**:Az aktuális nézet mentése képfájlként.
 - **Módosítás vízszintes/függőleges elrendezésre**: Módosítja az entitások és kapcsolatok elrendezését.
 - **Szerkesztés** : Az egyéni kapcsolatok tulajdonságainak frissítése a szerkesztőablakban, és módosítások mentése.
+
+### <a name="relationship-path"></a>Kapcsolat elérési útja
+
+A kapcsolati elérési út azokat az entitásokat írja le, amelyek a forrásentitás kapcsolatok célentitás közötti kapcsolattokkal kapcsolódnak. Olyan szegmens vagy mérték létrehozásakor használatos, amely nem csak az egyesített profilentitást, hanem más entitásokat is tartalmaz, és az egyesített profil entitás többféle beállítással érhető el.
+
+A kapcsolati elérési út tájékoztatja a rendszert, amely kapcsolatok érik el az egyesített profilentitást. A különböző kapcsolati elérési utak eltérő eredményeket adhatnak.
+
+Például az *eCommerce_eCommercePurchases* entitás a következő kapcsolatokkal rendelkezikaz *Ügyfél* entitáshoz:
+
+- eCommerce_eCommercePurchases > Ügyfél
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Ügyfél
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Ügyfél 
+
+A kapcsolati elérési út határozza meg, hogy mely entitásokat használhatja a mértékek vagy szegmensek szabályainak létrehozásakor. Ha a leghosszabb kapcsolati útvonalat választja, az valószínűleg kevesebb eredményt hoz, mivel az egyező rekordoknak az összes entitás részének kell lenniük. Ebben a példában az ügyfélnek az e-commerce(eCommerce_eCommercePurchases) elemen keresztül kell az értékesítési ponton (POS_posPurchases) vásárolnia az termékeket, és részt vennie a hűségprogramban (loyaltyScheme_loyCustomers). Az első lehetőség kiválasztásakor valószínűleg több eredményt kapna, mivel az ügyfeleknek csak egy további entitásban kell létezniük.
 
 ## <a name="manage-existing-relationships"></a>Meglévő kapcsolatok kezelése 
 
@@ -105,6 +119,6 @@ Válasszon ki egy kapcsolatot, és válasszon az alábbi lehetőségek közül:
 
 ## <a name="next-step"></a>Következő lépés
 
-A rendszerkapcsolatok és az egyéni kapcsolatok több adatforráson alapuló [szegmensek létrehozására](segments.md) szolgálnak, amelyek már nincsenek elszigetelve.
+A rendszer- és egyéni és kapcsolatok használhatók [szegmensek](segments.md) és [mértékek](measures.md) létrehozásához több adatforrás alapján, amelyek már nincsenek silózva.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: A Customer Insights adatok a Dynamics 365 Marketingbe való exportálása
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Dynamics 365 Marketingbe.
-ms.date: 03/03/2021
+ms.date: 08/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
+ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692484"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "7417208"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Szegmensek használata a Dynamics 365 Marketing alkalmazásban (előzetes verzió)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott csoportjaihoz fordulhat a Dynamics 365 Marketing alkalmazással. További tudnivalók: [szegmensek használata a Dynamics 365 Customer Insights szolgáltatásból a Dynamics 365 Marketing alkalmazással](/dynamics365/marketing/customer-insights-segments)
+A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott csoportjaihoz fordulhat a Dynamics 365 Marketing alkalmazással. További tudnivalók: [szegmensek használata a Dynamics 365 Customer Insights szolgáltatásból a Dynamics 365 Marketing alkalmazással](/dynamics365/marketing/customer-insights-segments).
+
+Ha a Dynamics 365 Marketing új lehetőségeit használja valós idejű ügyfélút-vezényleléshez egy Dataverse-szervezetben, nem kell szabványos exportálást létrehoznia a Dynamics 365 Marketing alkalmazásba. A célközönséggel kapcsolatos információk közvetlenül elérhetők a Dynamics 365 Marketingben, a Marketing és a Customer Insights összekapcsolása után. A meglévő exportálások törlése előtt tekintse át a dokumentációt, hogy [miként kapcsolható össze a célközönséggel kapcsolatos információk és a Dynamics 365 Marketing ügyfélút vezénylése](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Egy kapcsolat előfeltétele
 

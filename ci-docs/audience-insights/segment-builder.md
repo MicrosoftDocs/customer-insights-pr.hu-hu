@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685465"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377791"
 ---
 # <a name="create-and-manage-segments"></a>Szegmensek létrehozása és kezelése
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685465"
 > - Az attribútumok kiválasztására használható oldalsó panel folyamatosan elérhető lesz.
 > - Az entitáskapcsolatok elérési útjainak kiválasztására vonatkozó lehetőség.
 > Az új szegmensszerkesztő kipróbálásához küldjön „Request to enable the new segment builder” tárggyal e-mail a cihelp [at] microsoft.com címre. Tűntesse fel a szervezete nevét és a tesztkörnyezet azonosítóját.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="A szegmensszerkesztő elemei." lightbox="media/segment-builder-overview.png":::
+>
+> 1 . A szegmens rendszerezése szabályok és alszabályok szerint. Minden szabály vagy alszabály feltételekből áll. A feltételeket logikai operátorokkal egyesítése
+>
+> 2 . Válassza ki a szabályra vonatkozó entitások közötti [kapcsolati elérési utat](relationships.md). A kapcsolati elérési út határozza meg, hogy mely attribútumok használhatók egy feltételben.
+>
+> 3 – Szabályok és alszabályok kezelése. Szabály pozíciójának módosítása vagy törlése.
+>
+> 4 . Feltételek hozzáadása és a megfelelő szintű egymásba ágyazás kiépítése az alszabályokkal.
+>
+> 5 – Halmaz-műveletek alkalmazása a csatlakoztatott szabályokra.
+>
+> 6 – Az attribútumpanel használható entitásattribútumok hozzáadására vagy attribútumok alapján feltételek létrehozására. Az ablaktáblán a kijelölt szabály számára elérhető entitások és attribútumok listája látható a kijelölt kapcsolati útvonal alapján.
+>
+> 7 – Attribútumon alapuló feltételek hozzáadása a meglévő szabályokhoz és alszabályokhoz, illetve új szabályhoz.
+>
+> 8 – A változtatások visszavonása és ismétlése a szegmens létrehozása közben.
 
 Összetett szűrőket definiálhat az egyesített ügyfélentitás és a kapcsolódó entitások körül. A feldolgozást követően minden szegmens létrehoz egy csoport olyan ügyfélrekordot, amellyel az exportálás után műveletek végezhetők. A szegmensek kezelése a **Szegmensek** oldalon történik. 
 
@@ -64,7 +81,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A rendszer inaktív szegmen
 
    |Szám |Definíció  |
    |---------|---------|
-   |0     |Entity          |
+   |1     |Entity          |
    |2     |Attribútum          |
    |3    |Operátor         |
    |4    |Érték         |
@@ -147,6 +164,6 @@ A gyorsszegmensek segítségével gyorsan készíthet egyszerű, egy operátorra
 
 ## <a name="next-steps"></a>További lépések
 
-[Exportáljon egy szegmenst](export-destinations.md), és fedezze fel az [Ügyfélkártya](customer-card-add-in.md) és [Összekötők](export-power-bi.md) elemeket, az ügyfélszintű információkhoz.
+[Exportáljon egy szegmenst](export-destinations.md), és fedezze fel az [Ügyfélkártya integrációját](customer-card-add-in.md), hogy használhassa a szegmenseket más alkalmazásokban.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
