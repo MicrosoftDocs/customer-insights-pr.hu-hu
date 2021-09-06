@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: e53d87c4f633cba09fecbc1c219f0ac2ec6bb5598a7902cbcf7398d26d6d7c6b
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554024"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7029402"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Felhasználói profilok: Keresés & szűrőindex
 
@@ -60,7 +60,7 @@ Az **Ügyfelek** oldalon megjelenő **Szűrő** menüben szerepelhet több attri
 
 ## <a name="next-steps"></a>További lépések
 
-Az **Ügyfelek** oldalon ügyfélprofilokat kereshet, illetve az indexelt mezők használatával az összes ügyfélprofil egy részhalmazát láthatja.
+Tekintse át az [egyesített profilok lapot](customer-profiles.md) a profilok kereséséhez, vagy az indexelt mezők használatával tekintse meg az összes egyesített profil egy részhalmazát.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
