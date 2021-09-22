@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: aktivitási információk (előzetes verzió) képesség a(z) Dynamics 365 Customer Insights szolgáltatásban
+summary: Adatok gyűjtése a webhelyek számára. Interaktív módon megértheti az ügyfélkapcsolati tevékenységeket és a webhelyeken való használatot. Az aktivitási információk és az Audience Insights közötti mélységű integrációnak segítségével valós idejű viselkedéselemzéseit ügyfélprofil-jelentések segítségével gyarapíthatja. Az ügyfélprofilok webes tevékenységekkel való gyarapítása, hogy a releváns ügyféladatok mellett valós idejű viselkedési adatok is rendelkezésre jöjjön. A vállalat átalakítása az ügyféladatokból való közvetlen érték kihozása érdekében.
+metadata:
+  title: aktivitási információk (előzetes verzió) dokumentációja
+  description: Segítségközpont az aktivitási információkra mutató fontos hivatkozásokkal.
+  ms.service: customer-insights
+  ms.subservice: engagement-insights
+  ms.topic: hub-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.reviewer: mhart
+  ms.date: 07/30/2021
+  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.translationtype: HT
+  ms.contentlocale: hu-HU
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036241"
+landingContent:
+- title: Névjegy
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Képességek áttekintése
+      url: overview.md
+    - text: Kifejezések és koncepciók
+      url: glossary.md
+    - text: Elkötelezettségi információk felfedezése
+      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+- title: Bevezetés
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Első lépések
+      url: get-started.md
+    - text: Munkaterület létrehozása
+      url: create-workspace.md
+    - text: Módosítsa weboldalát
+      url: instrument-website.md
+- title: Jelentések
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Jelentések megtekintése
+      url: view-reports.md
+    - text: Egyéni jelentések létrehozása
+      url: custom-reports.md
+    - text: Egyesített profilok jelentés megtekintése
+      url: profile-reports.md
+    - text: Tölcsérjelentések létrehozása
+      url: funnel-reports.md
+- title: Események
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Finomított események létrehozása
+      url: refined-events.md
+    - text: Események exportálása
+      url: export-events.md
+    - text: Személyes adatok törlése és exportálása
+      url: delete-export-personal-data.md
+- title: Fejlesztői erőforrások
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Fejlesztői erőforrások
+      url: developer-resources.md
+    - text: WebSDK minta
+      url: websdk-sample.md
+    - text: Speciális SDK forgatókönyvek
+      url: advanced-SDK-implementation.md
+    - text: Android SDK Minta
+      url: get-started-android.md
+    - text: iOS SDK minta
+      url: get-started-ios.md
+- title: Adminisztráció
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Környezetek és munkaterületek kezelése
+      url: manage-environments-workspaces.md
+    - text: Csatlakozás a célközönség betekintési információihoz
+      url: configure-connections.md
+    - text: Cookie-k és felhasználói hozzájárulások kezelése
+      url: user-consent-storage.md
