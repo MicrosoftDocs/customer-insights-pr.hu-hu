@@ -1,19 +1,19 @@
 ---
 title: Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között
 description: Aktív kapcsolatot hozhat létre a célközönséggel kapcsolatos információk és az elkötelezettségi információk között, hogy lehetővé tegye az adatok kétirányú megosztását.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461016"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487110"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között
 
@@ -26,14 +26,14 @@ Használhatja a célközönséggel kapcsolatos információk egyesített profilj
 ## <a name="prerequisites"></a>Előfeltételek
 
 - Célközönséggel kapcsolatos információk profilokat egy saját Azure Data Lake Storage fiókban vagy egy [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;felügyelt adattóban kell tárolni. 
-
+- Emellett a célközönséggel kapcsolatos információk környezetnek szükséges egy társított Dataverse-környezet. Ha pedig az a környezet is Dataverse-t használ adattárolásra van használatban, akkor jelölje be az **Adatok megosztásának engedélyezése** beállítást az célközönség információkban. További információkért lásd: [Fizetett környezet létrehozása és konfigurálása a célközönség-információkban](../audience-insights/get-started-paid.md).
 - Rendszergazdai engedélyekre van szüksége az elkötelezettségi információkhoz és a célközönséggel kapcsolatos információk környezetekhez is.
-
 - A csatolt környezetnek ugyanabban a földrajzi régióban kell lennie.
 
 > [!NOTE]
 > - Ha a célközönséggel kapcsolatos információk előfizetése egy próbaverzió, amely, a célközönséggel kapcsolatos információk belülről kezelt adattavát használja, vegye fel velünk a kapcsolatot az [pirequest@microsoft.com](mailto:pirequest@microsoft.com) e-mail-címen segítségért. 
-> - Ha a célközönséggel kapcsolatos információk saját Azure Data Lake Storage tárhelyét használja az adatok tárolásához, akkor fel kell vennie egy elkötelezettséggel kapcsolatos információk szolgáltatásnevet a tárfiókjába. A részletekért látogasson el a [Kapcsolódás Azure Data Lake Storage-fiókhoz Azure szolgáltatásnévvel a célközönséggel kapcsolatos információkhoz](../audience-insights/connect-service-principal.md). Emellett a célközönséggel kapcsolatos információk környezetnek is lennie egy társított [Dataverse környezetének](../audience-insights/get-started-paid.md). 
+> - Ha a célközönséggel kapcsolatos információk saját Azure Data Lake Storage tárhelyét használja az adatok tárolásához, akkor fel kell vennie egy elkötelezettséggel kapcsolatos információk szolgáltatásnevet a tárfiókjába. A részletekért látogasson el a [Kapcsolódás Azure Data Lake Storage-fiókhoz Azure szolgáltatásnévvel a célközönséggel kapcsolatos információkhoz](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Környezethivatkozás létrehozása
 
@@ -75,6 +75,7 @@ A környezetek összekapcsolása után kiválaszthatja a kapcsolt környezetek o
 
    > [!IMPORTANT]
    > Ha ebben a lépésben nem ad hozzá konkrétan felhasználókat, akkor a rendszer elrejti az adatokat az elkötelezettségi információkban a felhasználók elől.
+   > Ahhoz, hogy a célközönséggel kapcsolatos információk megjelenjenek az elkötelezettséggel kapcsolatos információkban először [futtatnia kell egyesítési és későbbi folyamatokat](../audience-insights/merge-entities.md). A későbbi folyamatok azért fontosak, mert egyedi táblázatot hoznak létre, amely célközönséggel kapcsolatos információs szegmenseket előkészíti a megosztásra az elkötelezettséggel kapcsolatos információkkal. (Ha rendszerfrissítés van ütemezve, a későbbi folyamatokat automatikusan tartalmazza.)
 
 1. Ellenőrizze a kiválasztott elemeket, majd kattintson a **Befejezés** gombra.
 

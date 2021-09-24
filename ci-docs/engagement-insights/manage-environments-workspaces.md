@@ -4,17 +4,17 @@ description: Munkaterületek és környezetek létrehozása, átnevezése és t�
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 07/01/2021
+ms.date: 09/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: bf310b1a50ba7baac5d11d5f22ff42003fbba516efd7d165c00b59adc958da2e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034045"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486038"
 ---
 # <a name="manage-environments-and-workspaces"></a>Környezetek és munkaterületek kezelése
 
@@ -85,13 +85,11 @@ A munkaterület törlésével véglegesen eltávolítja annak összes tartalmát
 
 1. Válassza a **Tagok hozzáadása** lehetőséget, ha hozzáférést és szerepköröket [szeretne hozzárendelni](user-roles.md). Jelenleg csak a **Munkaterület-rendszergazda** érhető el.
 
-1. Ha beállít egy [kapcsolatot a célközönség-információkhoz](configure-connections.md), akkor kiválaszthatja a **Profiladatokhoz való hozzáférés engedélyezése** lehetőséget, hogy a tagok [felhasználói profilokon](profile-reports.md) alapuló jelentéseket láthassanak.
-
 1. Jelölje ki a **Tagok felvétele** lehetőséget, és adja hozzá a munkaterületéhez.
 
 ## <a name="manage-an-environment"></a>Egy környezet kezelése
 
-A környezet rendszergazdájaként a bal navigációs ablakból hozzáférhet egy környezethez. A környezetbeállítások, más környezet-rendszergazdák, munkaterületek és kapcsolatok konfigurálhatók az [kapcsolatok a célközönség-információkhoz](configure-connections.md) elemhez. A felügyeleti központban a különböző területek közötti mozgáshoz válassza ki a lapokat.
+A környezet rendszergazdájaként a bal navigációs ablakból hozzáférhet egy környezethez. Konfigurálhatja a környezetbeállításokat, más környezeti rendszergazdákat és a munkaterületeket. A felügyeleti központban a különböző területek közötti mozgáshoz válassza ki a lapokat.
 
 :::image type="content" source="media/New-environment.png" alt-text="Környezetfelügyeleti központ.":::
 
@@ -123,8 +121,6 @@ A környezet rendszergazdájaként a bal navigációs ablakból hozzáférhet eg
 
 1. Válassza a **Tagok hozzáadása** lehetőséget, ha tagokat szeretne frissíteni és szerepköröket [szeretne hozzárendelni](user-roles.md). Jelenleg csak a **Környezet-rendszergazda** érhető el.
 
-1. Ha beállít egy [kapcsolatot a célközönség-információkhoz](configure-connections.md), akkor kiválaszthatja a **Profiladatokhoz való hozzáférés engedélyezése** lehetőséget, hogy a tagok [felhasználói profilokon](profile-reports.md) alapuló jelentéseket láthassanak.
-
 1. Jelölje ki a **Tagok felvétele** lehetőséget, és adja hozzá a környezetéhez.
 
 ### <a name="delete-an-environment"></a>Környezet törlése
@@ -143,7 +139,7 @@ A környezeti rendszergazdák törölhetik a környezetet. A környezet törlés
 
 Ha kapcsolatokat hoz létre célközönség-információkhoz, egységes ügyfélprofilon alapuló, aktivitási információkhoz juthatnak a jelentések. 
 
-További információkért lásd: [Kapcsolatok konfigurálása](configure-connections.md).
+További információkért lásd: [Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="manage-personal-data"></a>Személyes adatok kezelése
 

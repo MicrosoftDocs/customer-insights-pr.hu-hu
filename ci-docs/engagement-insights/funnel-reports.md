@@ -4,17 +4,17 @@ description: Tölcsérjelentések használata annak megértése érdekében, hog
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032258"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498645"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Tölcsérjelentések létrehozása és kezelése
 
@@ -158,4 +158,21 @@ Módosíthatja a tölcsérjelentés nevét, törölheti, illetve módosíthatja 
 1. Válasszon ki egy nevet a jelentés megnyitásához.
 
 1. Jelölje ki a törölni kívánt lépést, majd kattintson az **Eltávolítás** gombra.
+
+## <a name="funnel-insights"></a>Tölcsérelemzések 
+
+Az elkötelezettségi információk mostantól tölcsérelemzéseket is nyújt az ügyfeleknek. A tölcsérelemzések segítségével alaposan megismerheti az ügyfelek viselkedését a tölcsérjelentés lépéseivel kapcsolatosan. Új tölcsérjelentés létrehozásakor és mentésekor a jelentéshez automatikusan létrejön a tölcsérelemzés. 
+
+A tölcsérelemzéseket a következő kategóriákból tekintheti meg, mind a fő szinten, mind a lépés szintjén: 
+
+ - Átalakítási arány 
+ - Váltásidő 
+ - Befejezés ideje 
+
+Ezek az információk segítségével mélyebben megismerheti az ügyfél viselkedését, és jobban megismerheti a tölcsérjelentésnél a kiesési pontokat és a konverziókat. 
+
+A tölcsér információk újraszámítása 24 óránként történik, illetve a tölcsérjelentés **mentésekor** is. 
+
+> [!NOTE]
+> A tölcsérre vonatkozó elemzések megtekintéséhez minden alkalommal mentenie kell a jelentést, amikor módosítja az adatokat. 
 

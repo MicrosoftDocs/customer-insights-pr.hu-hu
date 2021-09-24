@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 8a3d7f9276330a6daacbe9428d84a371b81bbefe
+ms.sourcegitcommit: 971716c761871cee390519cacef617dac21ecd60
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461106"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466351"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Viselkedési adatok felosztása demográfiai dimenziók használatával
 
@@ -29,7 +29,7 @@ Az egyesített profil földrajzi dimenziók használatával az elkötelezettség
 - Az elkötelezettségi információk környezet, amelyben az ügyfélprofil-adatok a célközönség információk környezethez kapcsolódnak, ahol az ügyfélprofilok létrejönnek. További információ: [Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Miután létrehozott egy kapcsolatot a célközönség információk és az elkötelezettségi információk környezetek között, akkor csak az ügyfélprofil adott tulajdonságaira vonatkozó adatokat szeretné látni, amelyek hasznosak lehetnek az elkötelezettségi információkban. További tájékoztatásért menjen a [Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezésére](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments) részbe.<!--note from editor: Suggested. -->
+> Miután létrehozott egy kapcsolatot a célközönség információk és az elkötelezettségi információk környezetek között, akkor csak az ügyfélprofil adott tulajdonságaira vonatkozó adatokat szeretné látni, amelyek hasznosak lehetnek az elkötelezettségi információkban. További tájékoztatásért menjen a [Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezésére](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments) részbe.
 
 ## <a name="create-a-new-custom-report"></a>Hozzon létre egy új egyéni jelentést
 

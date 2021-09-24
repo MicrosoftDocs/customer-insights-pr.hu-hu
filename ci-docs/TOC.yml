@@ -14,8 +14,14 @@
       href: audience-insights/overview.md
     - name: Új és frissített funkciók
       href: audience-insights/whats-new-audience-insights.md
-    - name: Új környezet létrehozása
-      href: audience-insights/get-started-paid.md
+    - name: Első lépések
+      items:
+        - name: Rövid útmutató
+          href: audience-insights/get-started.md
+        - name: Új környezet létrehozása
+          href: audience-insights/get-started-paid.md
+        - name: Célközönséggel kapcsolatos információk felfedezése
+          href: audience-insights/home.md
     - name: Tanulási modulok
       items:
         - name: Adatok betáplálása
@@ -68,6 +74,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Továbbfejlesztett címek
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Gazdagítás az Azure Maps-szolgáltatással
+          href: audience-insights/enrichment-azure-maps.md
         - name: Gazdagítás a HERE Technologies szolgáltatással
           href: audience-insights/enrichment-here.md
         - name: Bővítés Leadspace-szel
@@ -230,21 +238,15 @@
           href: audience-insights/apis.md
         - name: API-hivatkozások
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-    - name: A szolgáltatás korlátozásai
-      href: audience-insights/service-limits.md
-    - name: A GDPR szerinti DSR-kérelmek
-      href: audience-insights/gdpr.md
-- name: Elkötelezettségi információk (előzetes verzió)
+- name: Elkötelezettségi elemzések (előzetes verzió)
   items:
     - name: Súgó hub
       href: engagement-insights/index.yml
     - name: Képességek áttekintése
       href: engagement-insights/overview.md
-    - name: Ingyenes próbaverzió
-      href: 'https://pi.dynamics.com/'
     - name: Első lépések
       items:
-        - name: Első lépések
+        - name: Rövid útmutató
           href: engagement-insights/get-started.md
         - name: Munkaterület létrehozása
           href: engagement-insights/create-workspace.md
@@ -300,18 +302,10 @@
           href: engagement-insights/user-roles.md
         - name: Környezetek és munkaterületek kezelése
           href: engagement-insights/manage-environments-workspaces.md
-        - name: Kapcsolatok konfigurálása
-          href: engagement-insights/configure-connections.md
         - name: Cookie-k és felhasználói hozzájárulások kezelése
           href: engagement-insights/user-consent-storage.md
-    - name: GDPR
-      items:
-        - name: Személyes adatok törlése és exportálása
-          href: engagement-insights/delete-export-personal-data.md
     - name: Régiónkénti rendelkezésre állás.
       href: engagement-insights/regional-availability.md
-    - name: A szolgáltatás korlátozásai
-      href: engagement-insights/quotas.md
 - name: A célközönség és az elkötelezettségi információk integrálása
   items:
     - name: Összekapcsolhatja a célközönséggel kapcsolatos információkat az elkötelezettséggel kapcsolatos információkkal
@@ -320,5 +314,9 @@
       href: engagement-insights/integrate-audience-insights-segments.md
     - name: Viselkedési adatok felosztása demográfiai dimenziók használatával
       href: engagement-insights/curate-dimensions.md
+- name: A szolgáltatás korlátozásai
+  href: service-limits.md
+- name: DSR-jogok és kérelmek
+  href: dsr-rights-requests.md
 - name: Támogatás igénybevétele
-  href: 'https://dynamics.microsoft.com/en-us/support/'
+  href: 'https://dynamics.microsoft.com/support/'

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 726edb19a9fd97d80ae357103dc7d48ed38b005131ad44137b47d629a1c60b12
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45c81a037258e42d8975e0372c104865a9d4cbfe
+ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033864"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466627"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
 
@@ -126,6 +126,8 @@ A bővítési folyamat futtatása után lépjen a **Saját bővítések** pontra
 :::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után.":::
 
 A bővített adatok áttekintéséhez jelölje be a **Bővített adatok megtekintése** lehetőséget a diagramban. A márkák bővített adatai a **BrandAffinityFromMicrosoft** entitásba kerülnek. Az érdeklődési körök adatai az **InterestAffinityFromMicrosoft** entitásba kerülnek. Ezeket az entitásokat a **Bővítés** csoportban is megtekintheti az **Adatok** > **Entitások** helyen.
+
+Megjelenik egy diagram, amely tartalmazza a gyarapított ügyfélprofilok számát az idők során, és a gyarapított entitás előnézetét. A gyarapított entitás megnyitásához az előnézeti csempén válassza a **Továbbiak megjelenítése** lehetőséget.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>A bővítési adatok megtekintése az ügyfélkártyán
 

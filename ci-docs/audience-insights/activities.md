@@ -1,20 +1,20 @@
 ---
 title: Ügyféltevékenységek
-description: Az ügyféltevékenységek definiálása és a megtekintése az ügyfelek idővonalában.
-ms.date: 04/07/2021
+description: Ügyféltevékenységek meghatározása és azok megtekintése az ügyfélprofilok idővonalán.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033634"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494414"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
@@ -60,12 +60,15 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
       - **További részletek**: Mező, amely a tevékenységre vonatkozó releváns információkat tartalmazza.
       - **Ikon**: Ezt a tevékenységtípust leginkább képviselő ikon.
       - **Webcím**: A tevékenységre vonatkozó információkat tartalmazó URL-címet tartalmazó mező. Például a tevékenység forrását jelentő tranzakciós rendszer. Ez az URL-cím az adatforrás tetszőleges mezője lehet, vagy Power Query átalakítást használó új mezőként lehet kialakítani. Az URL-adatokat az *Egyesített tevékenység* entitás tárolja, amely az [API-k](apis.md) használatával lefelé irányulóan használható.
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Adja meg az ügyféltevékenység adatait egy Egyesített tevékenység entitásban.":::
+
+   - **Megjelenítés idősoron**
+      - Válassza ki , hogy meg szeretné-e jeleníteni ezt az információt az ügyfélprofilok idővonalnézetében. Az **Igen** lehetőséget választva a tevékenységet megjelenítheti az idővonalon vagy a **Nem** lehetőséget választva elrejtheti.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Adja meg az ügyféltevékenység adatait egy Egyesített tevékenység entitásban.":::
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. A **Befejezés és áttekintés** lehetőséget választva most már az **Egyéb** tevékenységtípussal mentheti a tevékenységet. 
 
-1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg *az Előfizetés* és a *SalesOrderLine* tevékenységtípusok szemantikailag leképezhetők, miután megállapodtak a mezők feltérképezéséről. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
+1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg a *Visszajelzés*, *Hűségprogram*, *SalesOrder*, *SalesOrderLine*, és *Előfizetés* tevékenységtípusok szemantikailag leképezhetők, miután megállapodtak a mezők feltérképezéséről. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. 
 

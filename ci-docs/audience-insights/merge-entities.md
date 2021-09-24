@@ -1,7 +1,7 @@
 ---
 title: Entitások egyesítése az adategyesítésben
 description: Entitások egyesítése az egyesített ügyfélprofilok létrehozásához.
-ms.date: 05/10/2021
+ms.date: 09/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6e64154dc58f679d13033fa55a60cd0c306f62f31548b8ce98ea1ed5f423b3e9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035005"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494322"
 ---
 # <a name="merge-entities"></a>Entitások összefésülése
 
@@ -66,7 +66,7 @@ Módosítsa az egyesített attribútumok megjelenítendő nevét. A kimeneti ent
 
 Zárjon ki egy attribútumot az egységes ügyfélprofilból. Ha a mező más folyamatokban – például szegmensekben – használatos, akkor az ügyfélprofilból való kizárás előtt távolítsa el ezekből a folyamatokból. 
 
-1. Válassza ki az egyesített mezőt.
+1. Válasszon egy egyesített mezőt.
   
 1. Válassza a **Továbbiak**, majd a **Kizárás** lehetőséget.
 
@@ -76,17 +76,40 @@ Zárjon ki egy attribútumot az egységes ügyfélprofilból. Ha a mező más fo
 
 Az összes kizárt mező megtekintéséhez az **EgyesítésMerge** oldalon válassza a **Kizárt mezők** lehetőséget. Ezen az ablaktáblán újra felveheti a kizárt mezőket.
 
+## <a name="edit-a-merged-field"></a>Egy egyesített mező szerkesztése
+
+1.  Válasszon egy egyesített mezőt.
+
+1.  Válassza a **Továbbiak**, majd a **Szerkesztés** lehetőséget.
+
+1.  Adja meg a mezők egyesítésének vagy összefésülésének módját a következő három lehetőség egyikével:
+    - **Fontosság**: A résztvevő mezőkhöz megadott fontossági rang alapján meghatározza a győztes értékét. Ez az alapértelmezett egyesítési beállítás. A fontosság sorrendjének beállításhoz válassza a **Mozgatás felfelé vagy lefelé** lehetőséget.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Fontosság beállítás a mezők egyesítése párbeszédpanelen."::: 
+    - **Legújabb**: A győztes értékét a leginkább friss alapján azonosítja. Az létrehozás idejének meghatározásához az egyesítés mezők hatókörében minden részt vevő entitáshoz dátum vagy numerikus mező szükséges.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Viszonosság beállítás a mezők egyesítése párbeszédpanelen.":::
+    - **Legérlegebbi**: A győztes értékét a leginkább régi alapján azonosítja. Az létrehozás idejének meghatározásához az egyesítés mezők hatókörében minden részt vevő entitáshoz dátum vagy numerikus mező szükséges.
+
+1.  Az összefésüldésben való részvételhez további mezőket is felvehet.
+
+1.  Az egyesített mező átnevezhető.
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
+
 ## <a name="manually-combine-fields"></a>Mezők manuális kombinálása
 
 Manuálisan adjon meg egy egyesített attribútumot. 
 
 1. Az **Egyesítés** oldalon válassza a **Mezők kombinálása** lehetőséget.
 
-1. Adja meg a **Nevet** és egy **Kimeneti mező nevét**.
+1. Adja meg az egyesítés győztesének irányelvét a **Mezők összevonása a következő alapján:** legördülő menüben.
 
 1. Válasszon ki egy hozzáadni kívánt mezőt. További mezők kombinálásához válassza ki a **Mezők hozzáadása** lehetőséget.
 
-1. Erősítse meg a kizárást.
+1. Adja meg a **Nevet** és egy **Kimeneti mező nevét**.
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
 
 1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
 
@@ -103,6 +126,27 @@ Egyes entitások több adatot tartalmaznak, mint mások. Ha egy entitás egy mez
 1. Erősítse meg a módosítást.
 
 1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
+
+## <a name="configure-customer-id-generation"></a>Egyedi ügyfélazonosító létrehozásának konfigurálása 
+
+A mezők egyesítésének konfigurálását követően megadhatja, hogyan hozza létre a CustomerId értékeket, az egyedi ügyfélprofil-azonosítókat. Az adategyesítési folyamat egyesítési lépése létrehozza az egyedi ügyfélprofil-azonosítót. Az azonosító az *Ügyfél* entitás CustomerId-azonosítója, amely az adategyesítési folyamat eredménye. 
+
+Az Ügyfél entitás CustomerId értéke a nem null győztes elsődleges kulcsok első értékének kivonatán alapul. Ezek a kulcsok az egyesítés és összefésülés fázisában használt entitásokből jönnek, és ezeket az egyezések sorrendje befolyásolja.Így a létrehozott CustomerID módosulhat, ha egy elsődleges kulcs értéke megváltozik az egyeztetés sorrendjének elsődleges entitásában. Emiatt előfordulhat, hogy az elsődleges kulcs értéke nem mindig ugyanazt az ügyfelet képviseli.
+
+A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elkerülje ezt a viselkedést.
+
+**Egyedi ügyfélazonosító konfigurálása**
+
+1. Válassza az **Egységesítés** > **Egyesítés** lehetőséget.
+
+1. A **Kulcsok** lapon válassza az **Egyesítés** lehetőséget. 
+
+1. Mutasson az egérrel a **CustomerId** sorra, és válassza a **Konfigurálás** lehetőséget.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Vezérlés az azonosítók generálásának testreszabásához.":::
+
+1. Jelöljön ki legfeljebb öt olyan mezőt, amely egyedi ügyfélazonosítót tartalmaz, és stabilabb. A konfigurációnak nem megfelelő rekordok a rendszer által konfigurált azonosítót kell használják.  
+
+1. Válassza a **Kész** lehetőséget, majd a módosítások alkalmazásához futtassa az egyesítési folyamatot.
 
 ## <a name="run-your-merge"></a>Az egyesítés futtatása
 

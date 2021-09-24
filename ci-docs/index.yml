@@ -7,12 +7,12 @@ metadata:
   ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.openlocfilehash: e6a658f43b382934ee9b9b55c54fc1dff3f4df72
+  ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036560"
+  ms.lasthandoff: 09/17/2021
+  ms.locfileid: "7498600"
 title: Dynamics 365 Customer Insights-dokumentáció
 summary: Hasznos erőforrásokat talál az első lépésekhez, és a Customer Insights funkcióinak és lehetőségeinek megismeréséhez.
 landingContent:
@@ -26,36 +26,36 @@ landingContent:
       url: /dynamics365-release-plan/
     - text: A CDP felfedezése
       url: https://dynamics.microsoft.com/ai/customer-insights/
-- title: Ismerkedés a célközönség-információkkal
+- title: Ismerkedés a Customer Insights szolgáltatással
   linkLists:
   - linkListType: get-started
     links:
     - text: Regisztráció a kipróbáláshoz
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Újdonságok
+    - text: A célközönséggel kapcsolatos információk újdonságai
       url: audience-insights/whats-new-audience-insights.md
-    - text: Célközönséggel kapcsolatos információk dokumentációja
-      url: audience-insights/index.yml
+    - text: Az elkötekezettséggel kapcsolatos információk újdonságai
+      url: https://docs.microsoft.com/dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Vegye fel a kapcsolatot
   linkLists:
   - linkListType: overview
     links:
     - text: Csatlakozzon a Dynamics 365-közösséghez
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-    - text: Ossza meg ötleteit!
+    - text: Ossza meg az ötleteit!
       url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Probléma bejelentése
+    - text: Probléma jelentése
       url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Célközönséggel kapcsolatos információk oktatóanyagok
+- title: Adatok megosztása a képességek között
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
-    - text: Új környezet létrehozása
-      url: audience-insights/home.md
-    - text: Egyesített ügyfélprofil létrehozása
-      url: /learn/modules/unified-customer-profile/
-    - text: Az alkalmazás használata
-      url: /learn/modules/working-with-customer-insights/
+    - text: Kapcsolat létrehozása a képességek között
+      url: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - text: Jelentésekben használható szegmensek létrehozása
+      url: engagement-insights/integrate-audience-insights-segments.md
+    - text: Profiltulajdonságok használata interaktív elemzéshez
+      url: engagement-insights/curate-dimensions.md
 - title: Célközönség-információk adatainak exportálása
   linkLists:
   - linkListType: how-to-guide

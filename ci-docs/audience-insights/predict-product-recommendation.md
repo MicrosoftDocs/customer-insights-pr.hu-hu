@@ -1,20 +1,20 @@
 ---
 title: Termékjavaslat-előrejelzések
 description: Olyan termékek előre jelzése, amelyekbe az ügyfél valószínűleg mag fog vásárolni vagy interakcióba lép velük.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034959"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494542"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Termékjavaslat-előrejelzés (előzetes verzió)
 
@@ -89,23 +89,24 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 ### <a name="add-required-data"></a>Szükséges adatok hozzáadása
 
-1. Válassza az **Adatok felvétele** mezőt az **Ügyféltranzakció-előzmények** alatt, és válassza azt az entitást, amely biztosítja a tranzakciós/vásárlási előzmény információt, amint azok részletezésre kerültek az [előfeltételekben](#prerequisites).
+1. Válassza az **Adatok hozzáadása** lehetőséget, és válassza ki azt a tevékenységtípust az oldalsó panelen, amely a tranzakcióhoz vagy a vásárlási előzményekhez szükséges adatokat tartalmazza.
 
-1. Képezze le a szemantikai mezőket olyan attribútumokra, melyek a beszerzési előzmények entitáson belül esnek, és válassza a **Tovább** lehetőséget. A mezők leírása az [előfeltételek](#prerequisites) között található.
-   > [!div class="mx-imgBorder"]
-   > ![Definiálja az entitás kapcsolatát.](media/product-recommendation-purchasehistorymapping.PNG "Vásárlási előzmények oldal, amely a kijelölt vásárlási előzmények entitásának mezőire leképezett szemantikus attribútumokat mutatja")
+1. A **Tevékenységek kiválasztása** alatt válassza ki az adott lehetőségeket a kijelölt tevékenységből, amelyekre a számítással koncentrálni szeretne.
 
-1. Ha az alábbi mezők nincsenek kitöltve, konfigurálja a kapcsolatokat beszerzési előzmények entitásából az *Ügyfél* entitással.
-    1. Válassza ki a **Beszerzési előzmények entitás**-t.
-    1. Válassza a **Mező** lehetőséget, mely azonosítja az ügyfelet a beszerzési előzmények entitásban. A mezőnek az *Ügyfél* entitás elsődleges ügyfél-azonosítójára kell vonatkoznia.
-    1. Válassza ki azt az **Ügyfél entitást**, amely egyezik az elsődleges ügyfélentitással.
-    1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
-       > [!div class="mx-imgBorder"]
-       > ![A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot.](media/model-purchase-join.png "A Vásárlási előzmények oldal megjeleníti az ügyféllel létrehozott kapcsolatot")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="A szemantikus típus alatti tevékenységek kiválasztását bemutató oldalsó panel.":::
+
+1. Ha a tevékenységet még nem képezte le szemantikus típusra, akkor válassza a **Szerkesztés** lehetőséget ehhez. Megnyílik az irányított élmény a szemantikus tevékenységek leképezéséhez. Képezze le az adatokat a kiválasztott tevékenységtípus kapcsolódó mezőihez.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Oldalbeállítás tevékenységtípus.":::
+
+1. Miután leképezi a tevékenységet a megfelelő szemantikai típusra, válassza a **Tovább** gombot a folytatáshoz 
+ 
+1. A szemantikus attribútumokat a modell futtatásához szükséges mezőkre kell leképezni.
 
 1. Válassza a **Mentés** parancsot.
 
 1. Válassza a **Következő** lehetőséget.
+
 
 ### <a name="configure-product-filters"></a>Termékszűrők konfigurálása
 

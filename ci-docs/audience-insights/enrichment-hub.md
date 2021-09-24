@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 07/01/2021
+ms.date: 08/31/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: a64bbd754d4013d0a6243074ac9f55991547be82b269047a9937b583baf98697
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032531"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7469985"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -29,6 +29,7 @@ A bővítések létrehozásához vagy módosításához Közreműködő vagy Ren
 
 A **felderítés** lapon a következő bővítések találhatók:
 
+- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
@@ -62,5 +63,17 @@ A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md)
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 
 A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
+
+## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
+
+A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
+
+A gyarapítás állapotának megtekintése
+
+1. Lépjen az **Adatok** > **Bővítés** pontra. 
+1. Az oldalpanel megnyitásához válassza ki a **Saját bővítések** lapot a Gyarapítás állapotának megtekintéséhez. 
+1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt. 
+1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget. 
+1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

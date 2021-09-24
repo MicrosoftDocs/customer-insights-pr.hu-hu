@@ -9,12 +9,12 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: eebe51d343f6afbed52a66c52ab6a60eb5cd410367fb2e4409eb8679f357c91e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 95caaa1f67a7740328b67face00acaea65452eb0
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033910"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494460"
 ---
 # <a name="first-run-experience"></a>Első tapasztalat
 
@@ -26,7 +26,7 @@ Az Dynamics 365 Customer Insights aktivitási információk szolgáltatásának 
 
 Aktív Microsoft Azure Active Directory-felhasználói fiókkal kell lennie. 
 
-1. Nyissa meg az [aktivitási információk](https://pi.dynamics.com/) webhelyet. 
+1. Nyissa meg az [aktivitási információk](https://home.ci.ai.dynamics.com/app/engagement-insights) webhelyet. 
 
 1. Bejelentkezés iskolai vagy munkahelyi fiókkal.
 

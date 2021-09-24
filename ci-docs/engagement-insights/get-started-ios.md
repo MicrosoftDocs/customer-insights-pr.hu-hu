@@ -4,17 +4,17 @@ description: Ismerje meg az iOS SDK személyre szabását és futtatását
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
+ms.date: 09/15/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: de8291fc429ae6433301a47bfdf9a3271b1b77294fd58448c7aa6bd0783edc97
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f05929435eeee9cf3f891ab18842c5861e39d5ba
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036876"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494233"
 ---
 # <a name="get-started-with-the-ios-sdk"></a>Első lépések az iOS SDK-val
 
@@ -45,11 +45,36 @@ Kezdje a folyamatot munkaterület kiválasztásával, az iOS mobil platform kiv�
 
 - Ha nem rendelkezik meglévő munkaterületekkel, válassza az **Új munkaterület** és kövesse a lépéseket az [új munkaterület](create-workspace.md) létrehozásához.
 
+- Munkaterület létrehozása után válassza a **Rendszergazda** > **Munkaterület** majd válassza a **Telepítési útmutatót**.
+
 ## <a name="configure-the-sdk"></a>Konfigurálja az SDK-t
 
-Miután letöltötte az SDK-t, Xcode-ban dolgozhat vele az események engedélyezéséhez és definiálásához.
+Miután letöltötte az SDK-t, Xcode-ban dolgozhat vele az események engedélyezéséhez és definiálásához. Kétféleképpen teheti ezt meg
 
-1. Munkaterület létrehozása után válassza a **Rendszergazda** > **Munkaterület** majd válassza a **Telepítési útmutatót**.
+### <a name="option-1-using-cocoapods-recommended"></a>1. lehetőség: A CocoaPods használata (ajánlott)
+A CocoaPods egy függőségkezelő Swift és az Objective-C Cocoa projektekhez. Használata megkönnyíti az elkötelezettségi információk SDK integrálását az iOS rendszerhez. A CocoaPods lehetővé teszi az elkötelezettségi információk SDK legújabb verziójára való frissítést is. A következő lépésekkel integrálhatja az Elkötelezettségi elemzések SDK-t készletet az Xcode projektbe a CocoaPods használatával. 
+
+1. Telepítse azCocoaPods programot. 
+
+1. Hozzon létre egy Podfile nevű új fájlt a projekt gyökérkönyvtárában, és adja hozzá a következő utasításokat.Cserélje YOUR_TARGET_PROJECT_NAME elemet az Xcode projekt nevére. 
+```objectivec
+platform :ios, '9.0'  
+
+ target '${YOUR_TARGET_PROJECT_NAME}' do 
+
+     use_frameworks!   
+
+     pod 'EIObjC.framework.debug' 
+
+     pod 'EIObjC.framework.release' 
+
+ end 
+```
+A fenti konfiguráció az SDK hibakeresési és kiadási verzióit is tartalmazza. Válassza ki, hogy melyik a legjobb a projekt számára.
+
+1. Telepítse a podot a következő paranccsal: `pod install --repo-update `
+
+### <a name="option-2-using-download-link"></a>2. lehetőség: A letöltési hivatkozás használata
 
 1. Töltse le az [elköteleződési információk iOS SDK-t](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-ios-sdk.zip), és helyezze az `EIObjC.xcframework` fájlt a `Frameworks` mappába.
 
