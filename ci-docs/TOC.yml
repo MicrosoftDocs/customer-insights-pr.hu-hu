@@ -242,7 +242,7 @@
   items:
     - name: Súgó hub
       href: engagement-insights/index.yml
-    - name: Képességek áttekintése
+    - name: Elkötelezettségi információk
       href: engagement-insights/overview.md
     - name: Első lépések
       items:
@@ -306,7 +306,7 @@
           href: engagement-insights/user-consent-storage.md
     - name: Régiónkénti rendelkezésre állás.
       href: engagement-insights/regional-availability.md
-- name: A célközönség és az elkötelezettségi információk integrálása
+- name: Adatok megosztása a képességek között
   items:
     - name: Összekapcsolhatja a célközönséggel kapcsolatos információkat az elkötelezettséggel kapcsolatos információkkal
       href: engagement-insights/integrate-audience-insights-engagement-insights.md
@@ -318,5 +318,3 @@
   href: service-limits.md
 - name: DSR-jogok és kérelmek
   href: dsr-rights-requests.md
-- name: Támogatás igénybevétele
-  href: 'https://dynamics.microsoft.com/support/'

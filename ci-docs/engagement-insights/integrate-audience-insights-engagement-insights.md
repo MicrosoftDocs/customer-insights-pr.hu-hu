@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
-ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
+ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/10/2021
-ms.locfileid: "7487110"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7559021"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között
 
@@ -54,6 +54,9 @@ A **Felügyelet** > **Környezet** beállításainak módosításával létrehoz
 ## <a name="enable-audience-insights-unified-profiles-attributes-and-segments"></a>A Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezése
 
 A környezetek összekapcsolása után kiválaszthatja a kapcsolt környezetek opcionális szolgáltatásait. Ezekkel a funkciókkal egységes profilattribútumokat és -szegmenseket érhet el célközönséggel kapcsolatos információkból az ügyféladatokon végzett interaktív elemzéshez.
+
+> [!IMPORTANT]
+> Ahhoz, hogy a célközönséggel kapcsolatos információk megjelenjenek az elkötelezettséggel kapcsolatos információkban először [futtatnia kell egyesítési és későbbi folyamatokat](../audience-insights/merge-entities.md). A későbbi folyamatok azért fontosak, mert egyedi táblázatot hoznak létre, amely célközönséggel kapcsolatos információs szegmenseket előkészíti a megosztásra az elkötelezettséggel kapcsolatos információkkal. (Ha rendszerfrissítés van ütemezve, a későbbi folyamatokat automatikusan tartalmazza.)
 
 **A webes adatok elemzése az elkötelezettséggel kapcsolatos információkban**
 
