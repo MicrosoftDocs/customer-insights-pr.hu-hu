@@ -1,7 +1,7 @@
 ---
 title: Kezdőlap célközönség-információkban
 description: Ismerje meg az alkalmazást a kezdőlapon.
-ms.date: 08/26/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 55c0313d1dbf7fb6774c058a6784cf02821d9133
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 4ab5497024cb15b103e96b0fc9a2e0739fd4691c
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469984"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617697"
 ---
 # <a name="explore-audience-insights"></a>Célközönséggel kapcsolatos információk felfedezése
 
@@ -23,7 +23,7 @@ A **Kezdőlap** oldal a [leképezés](map-entities.md) és [egyeztetés](match-e
 
 :::image type="content" source="media/home-page.png" alt-text="Képernyőkép a Kezdőlappról a mintaadatokkal.":::
 
-1 - Váltás a Customer Insights funkciói között 2 - A bal ablaktábla segítségével navigálhat a különböző területek között 3 - Ismerje meg, milyen környezetben dolgozik, és milyen környezetben kezel rendszergazdaként 4 - Személyes beállítások megadása a Customer Insights számára
+1 – Váltás a Customer Insights funkciói között 2 – A bal ablaktábla segítségével navigálhat a különböző területek között, és kiválaszthatja az elsődleges célt célközönséget 3 – Ismerje meg, milyen környezetben dolgozik, és milyen környezetben kezel rendszergazdaként 4 – Személyes beállítások megadása a Customer Insights számára
 
 A **Legutóbbi szegmensek** alatt a megadott demográfiai, viselkedési vagy tranzakciós attribútumok alapján megtekintheti az ügyfelek csoportjait. A [szegmensek létrehozása](segments.md) segít Önnek az ügyfélkört csoportosításában, és hogy jobban célozni tudja az üzleti tevékenységeket.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557355"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623012"
 ---
 # <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
 
@@ -67,6 +67,20 @@ A kapcsolat egy olyan *forrásentitásból* áll, amely tartalmazza az idegen ku
    - **Cél kulcsmezője**: A célentitás kulcsmezője. Példa: Az ügyfél használhatja a **CustomerID** kulcsmezőt.
 
 4. Az egyéni folyamat létrehozásához válassza a **Mentés** lehetőséget.
+
+## <a name="set-up-account-hierarchies"></a>Fiókhierarchiák beállítása
+
+Azok a környezetek, amelyek elsődleges célközönségként üzleti fiókokat használnak, konfigurálhatják a fiókhierarchiákat a kapcsolódó üzleti fiókokhoz. Ez lehet például egy olyan vállalat, amely külön üzleti egységekkel rendelkezik. 
+
+A szervezetek fiókhierarchiákat hoznak létre a partnerek és a partnerek közötti kapcsolatok kezelésére. A célközönséggel kapcsolatos információk funkció támogatja a szülő-gyermek fiókhierarchiákat, amelyek már léteznek a betöltött ügyféladatokban. Például partnerek a Dynamics 365 Sales alkalmazásból. Ezek a hierarchiák a **Kapcsolatok** lapon a célközönséggel apcsolatos információkban, a fiókhierarchia lap alatt konfigurálhatóak.
+
+1. Ugrás az **Adatok** > **Kapcsolatok** részre.
+1. A **Fiókhierarchia** lap kiválasztása.
+1. Az **Új fiókhierarchia** kiválasztása. 
+1. Adja meg a hierarchia nevét a **Számlahierarchia** ablaktáblán. A rendszer létrehoz egy nevet a kimeneti entitáshoz. A kimeneti név entitásának nevét módosíthatja.
+1. Válassza ki a fiókhierarchiát tartalmazó entitást. Ez általában ugyanabban az entitásban található, amely a partnerekből áll.
+1. A kijelölt entitásból válassza ki a **Fiókazonosítót** és a **Fölérendelt partnerazonosítót** 
+1. Válassza a **Mentés** lehetőséget a beállítások alkalmazásához és a partnerhierarchia véglegesíthez.
 
 ## <a name="view-relationships"></a>Kapcsolatok megtekintése
 

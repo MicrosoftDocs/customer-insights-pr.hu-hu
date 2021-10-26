@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása Klaviyoba
 description: További információ a kapcsolat konfigurálásához és a Klaviyoba való exportáláshoz.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 5f7c91afed8eeb1f767f1efc58dceb7782c37bb4
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385791"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619076"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Szegmenslisták exportálása a Klaviyoba (előzetes verzió)
 
@@ -28,10 +28,10 @@ Exportálja az egyesített ügyfélprofilok szegmenseit a Klaviyoba, és haszná
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 100 000 profilt exportálhat a Klaviyoba.
+- Exportálásonként legfeljebb 100 000 ügyfélprofilt exportálhat a Klaviyo szolgáltatásba.
 - A Klaviyoba történő exportálás szegmensekre korlátozódik.
-- Legfeljebb 1 millió profil Klaviyoba való exportálása eltarthat 20 percig. 
-- A Klaviyoba exportálható profilok száma a Klaviyoval kötött szerződésétől függ.
+- 1 millió ügyfélprofil exportálása a Klaviyo szolgáltatásba akár 20 percet is igénybe vehet. 
+- A Klaviyo alkalmazásba exportálható ügyfélprofilok száma a Klaviyoval kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Állítsa be a Klaviyoval való kapcsolatot
 
@@ -67,7 +67,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg [**Klaviyo listaazonosítóját**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Kötelező a szegmensek Klaviyoba történő exportálása.
+3. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Kötelező a szegmensek Klaviyoba történő exportálása.
 
 1. Válassza a **Mentés** parancsot.
 

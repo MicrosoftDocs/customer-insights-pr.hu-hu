@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 37c5d152a4cc91a90df8db387d25923ed150e238bc6b54c54f7bba59fbd48c82
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3689c7016454ed44e22b4d4ff5a338836a8fe288
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033221"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7605952"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -47,6 +47,7 @@ Kapcsolatok hozzáadásához [rendszergazdai engedélyekkel](permissions.md) kel
 1. Adja meg a szükséges adatokat a **Kapcsolat beállítása** ablaktáblán. 
    1. A **Megjelenítendő név** és a kapcsolat típusa ír le egy kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
    1. A pontos mezők attól függnek, hogy melyik szolgáltatáshoz kapcsolódik. A specifikus kapcsolattípus részleteiről a célszolgáltatásról szóló cikk nyújt részletes információt.
+   1. Ha [saját Key Vaultja segítségével](use-azure-key-vault.md) tárolja el a titkos kódokat, aktiválja a **Key Vault használatát**, és válassza ki a megfelelő kulcsot a listából.
 
 1. A kapcsolat létrehozásához válassza a **Mentés** lehetőséget.
 
@@ -93,3 +94,6 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 
 1. Jelölje be az **Eltávolít** lehetőséget a törlés megerősítéséhez.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Saját Key Vault által kezelt titkokkal való kapcsolat beállítása
+
+Egyes kapcsolatoknak szüksége van titkokra, például API-kulcsokra vagy jelszavakra. Egyes kapcsolatok a saját Key Vaultban tárolt titkokat támogatják. További információk a támogatott kapcsolatokról és arról, [hogyan lehet saját Key Vault eszközét beállítani a célközönséggel kapcsolatos információkhoz](use-azure-key-vault.md).

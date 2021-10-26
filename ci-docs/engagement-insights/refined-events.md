@@ -1,72 +1,97 @@
 ---
-title: Finomított események létrehozása és módosítása
-description: Finomított események létrehozása és módosítása.
+title: Események létrehozása és módosítása
+description: Hogyan hozhat létre és módosíthat finomított eseményeket?
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 04/30/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 0344bac5f4d43df853309f43c94d95f962937f77c936ed7305c5de4a08835f04
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 935dc4cd41218842e8406b747daef47de04e337a
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034777"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606220"
 ---
-# <a name="create-and-modify-refined-events"></a>Finomított események létrehozása és módosítása
+# <a name="create-and-modify-events"></a>Események létrehozása és módosítása
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
-
 
 Az esemény a felhasználói viselkedésnek, például a webhelyen végzett tevékenységnek megfelelő adat.
 
 - Az *alap* esemény akkor rögzít, amikor a felhasználó megtekint egy oldalt (esemény megtekintése), vagy együttműködik a tartalommal (műveletesemény).
 - A *finomított* esemény az alapesemények virtuális nézete. Az eseményeket definiálja tulajdonságok eltávolításával és hozzáadásával, illetve az események tulajdonságértékek alapján való szűrésével.
 
+## <a name="prerequisites"></a>Előfeltételek
+
+Az események megtekintése érdekében kapcsolja össze a webhely adatait az elemzési információkkal egy egyszerű kódrészlet segítségével. További információkért lásd [A webes SDK telepítése egy webhelyre](instrument-website.md) részt.
+
+ :::image type="content" source="media/new-events-connect-data.png" alt-text="Elsőként kapcsolja össze a hívásadatokat.":::
+
+## <a name="create-refined-events"></a>Finomított események létrehozása
+
 A finomított események segítségével leszűkítheti az alapeseményt [exportáláshoz](export-events.md), illetve eltávolíthatja azokat az eseményeket, amelyek nem szükségesek a kitettséghez vagy exportáláshoz.
 
-## <a name="create-refined-events"></a>Kifinomult események létrehozása
+> [!NOTE]
+> Miután hozzáadta a webes SDK-t a webhelyéhez, megtekintheti az alapeseményeket, és létrehozhatja a finomított eseményeket. 
 
-Alapeseményből háromféleképpen hozható létre finomított esemény. 
+Az alapesemények megtekintése:
 
-1. Lépjen az **Adatok**> **Események** elemre, és válasszon egyet az alábbi lehetőségek közül:
-    - Jelölje ki az **Új események** lehetőséget, majd válassza a **Finomított események létrehozása** lehetőséget.
-    - Válassza ki az alapeseményt, ha részletes nézetet nyit meg, majd válassza a felső menüből a **Finomított események létrehozása** parancsot.
-    - Az alapesemény helyi menüjének megnyitásához válassza a **További [...]** lehetőséget. Ezután válassza **Finomított esemény létrehozása** lehetőséget.
-    
-    :::image type="content" source="media/create-refined-events-options.png" alt-text="Finomított események létrehozási lehetőségei.":::
+1. Válassza a bal navigációs ablaktáblán az **Adatok** elemet.
 
-1. A **Finomított esemény létrehozása** párbeszédpanelen adja meg a következő adatokat:
+1. Az **Események** kiválasztása mezőben a munkaterületen található összes esemény felsorolása látható.
 
-- Ha új eseményt hoz létre, akkor válasszon ki egy eseményt az **Alapesemények** legördülő menüből.
-- Adja meg a nevet a **Finomított események megjelenítendő neve** mezőben.
-- Tetszés szerint szóközök használata nélkül is frissítheti a **Tényleges nevet**.
+    :::image type="content" source="media/data-events.png" alt-text="Új események megtekintése.":::
 
-3. A beállítások alkalmazásához válassza a **Létrehozás** lehetőséget.
+Az alapeseményből származó finomított esemény létrehozása: 
 
-1. A finomított esemény részletes nézetében válassza a **Tulajdonságok hozzáadása és eltávolítása** lehetőséget a **Tulajdonságok szerkesztése** ablak megnyitásához. 
+1. A képernyő tetején válassza az **Adat** > **Események** lehetőséget, és válassza a **+ Új események** lehetőséget.
 
-1. Jelölje be a jelölőnégyzeteket a mutatni kívánt, illetve elrejteni kívánt tulajdonságok kiválasztásához. 
-   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Tulajdonságok szerkesztése finomított eseményekhez.":::
+1. Az **Új események** párbeszédpanelen válassza ki az **Finomított emények létrehozása** lehetőséget, majd válassza a **Tovább** lehetőséget.
+   
+     :::image type="content" source="media/new-events-wizard.png" alt-text="Új események varázsló.":::
+     
+1. Az **Új események** párbeszédpanelen adja meg a következő adatokat:
 
-1. Válassza a **Megerősítés** lehetőséget a kijelölés alkalmazáshoz.
+   - Válasszon ki egy eseményt az **Alapesemények** legördülő menüből.
+   - Adja meg a nevet a **Finomított események megjelenítendő neve** mezőben.
+   - Tetszés szerint szóközök használata nélkül is frissítheti a **Tényleges nevet**.
 
-1. A konfiguráció mentéséhez válassza a **Mentés** lehetőséget.
+1. A beállítások alkalmazásához válassza a **Létrehozás** lehetőséget.
 
-## <a name="edit-refined-events"></a>Finomított események szerkesztése
-
-Módosíthatja a finomított esemény nevét és tulajdonságait.
+A esemény azonnal megjelenik az **Események** listában.
 
 ### <a name="edit-event-name"></a>Finomított esemény neve
 
-1. Lépjen az **Adatok** > **Események** pontra. 
-1. Válassza a valamely eseményhez tartozó **További [...]** elemet, majd válassza a **Név szerkesztése** lehetőséget.
-1. Frissítse az esemény nevét, és válassza az **Átnevezés** lehetőséget.
+Módosíthatja egy alap- vagy egy finomított esemény nevét és tulajdonságait.
 
-### <a name="edit-selected-properties"></a>Kijelölt tulajdonságok szerkesztése
+1. Lépjen az **Adatok** > **Események** pontra. 
+
+1. Válassza a valamely eseményhez tartozó **További [...]** elemet, majd válassza a **Név szerkesztése** lehetőséget.
+    
+     :::image type="content" source="media/create-refined-events-options.png" alt-text="Finomított események létrehozási lehetőségei.":::
+
+3. Frissítse az esemény nevét, és válassza az **Átnevezés** lehetőséget.
+
+### <a name="view-the-details-of-a-refined-event"></a>A finomított esemény adatainak megtekintése.
+
+1. Az **Esemény** listában jelölje ki az alap- vagy a finomított eseményt. 
+
+1. Válassza a **Tulajdonságok hozzáadása és eltávolítása** lehetőséget a képernyő tetején a **Tulajdonságok szerkesztése** ablak megnyitásához. 
+
+     :::image type="content" source="media/add-remove-properties.png" alt-text="Tulajdonságok hozzáadása és eltávolítása.":::
+
+1. Jelölje be a jelölőnégyzeteket a mutatni kívánt, illetve elrejteni kívánt tulajdonságok kiválasztásához. 
+
+   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Tulajdonságok szerkesztése finomított eseményekhez.":::
+
+1. Válassza a **Megerősítés** lehetőséget a kijelölés alkalmazáshoz, majd válassza a **Mentés** lehetőséget.
+
+
+### <a name="edit-selected-properties-for-a-refined-event"></a>Kiválasztott tulajdonságok szerkesztése egy finomított eseményhez
 
 1. A részletes nézet megnyitásához nyissa meg az **Adatok** > **Események** lehetőséget, és válassza ki a részletes nézetben megnyitni kívánt finomított eseményeket.
 1. Válassza a **Tulajdonságok hozzáadása és eltávolítása** lehetőséget. 

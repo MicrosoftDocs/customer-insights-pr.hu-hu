@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 34dc753aa9d2420ef8780d436e14c3c27377e4779eda0f83ca6b5424f2328f22
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4403c6f535f5dc60919be3717073d52640bbe61a
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031430"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619214"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Szegmenslista exportálása a Facebook Hirdetéskezelő (előzetes verzió)
 
@@ -30,7 +30,7 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 - Exportálásonként legfeljebb 10 millió ügyfélprofilt lehet a Facebook hirdetéskezelőbe exportálni.
 - A Facebook hirdetéskezelőbe való exportálás csak szegmensekre korlátozódik.
 - Kizárólag *ügyféllista* típusú célközönségek létrehozása vagy frissítése a Facebookon.
-- Az összesen 10 millió profillal rendelkező szegmensek exportálása akár 90 percig is eltarthat.
+- Az összesen 10 millió ügyfélprofilt vevő szegmensek exportálásának teljesítése akár 90 percet is igénybe vehet.
 
 ## <a name="set-up-connection-to-facebook-ads-manager"></a>Kapcsolat beállítása a Facebook Hirdetéskezelőhöz
 

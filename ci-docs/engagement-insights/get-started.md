@@ -4,18 +4,18 @@ description: A gyors kezdéshez szükséges segédanyagok áttekintése.
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 08/31/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 644b125f5d140627d357630ded88dd6838d6edb7
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: 3505c15c4319c8cc8823bcd89d3b8adc944a87dd
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494597"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623680"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights-engagement-insights-capability-public-preview"></a>Az Dynamics 365 Customer Insights aktivitási információk szolgáltatás (nyilvános előzetes verzió) megismerésének első lépései
 
@@ -39,33 +39,47 @@ Amikor első alkalommal látogatja meg a célközönséggel kapcsolatosa inform�
 
 1. Válassza ki a régiót, és jelölje be a jelölőnégyzetet, ha fel szeretné iratkozni e-mailben érkező frissítésekre és ajánlatokra.
 
-1. Tekintse át az **elkötelezettségi információk (előzetes verzió) használati feltételeit** és az **Adatvédelmi nyilatkozatot**, majd válassza a **Demó felfedezése** lehetőséget, és fogadja el ezeket a beállításokat.
+1. Tekintse át az elkötelezettségi információk (előzetes verzió) **használati feltételeit** és az **Adatvédelmi nyilatkozatot**, majd válassza a **Fedezze fel a demót** lehetőséget, és fogadja el ezeket a beállításokat.
 
 1. Fedezze fel a terméket egy sor mintaadat segítségével.
 
-##  <a name="step-3-set-up-a-workspace-and-add-code-to-your-website"></a>3. lépés: Munkaterület beállítása és kód hozzáadása a webhelyhez
+##  <a name="step-3-set-up-a-workspace-and-create-reports"></a>3. lépés: Munkaterület beállítása és jelentések létrehozása
 
 A munkaterületen valós időben megtekinthetők a felhasználói tevékenységek, illetve tárolhatók és kezelhetők a jelentések. Adja hozzá a kódot a webhelyhez az *események*, a felhasználóktól származó tevékenységadatok összegyűjtéséhez.
 
 1. [Munkaterület létrehozása](create-workspace.md) és tagok hozzáadása.
 
-1. [Adjon hozzá kódot webhelyéhez](instrument-website.md) vagy [mobilalkalmazásához](developer-resources.md#capture-events-from-mobile-apps) ,hogy lássa a munkaterületre érkező felhasználói tevékenységeket.
+1. Adjon hozzá kódot [webhelyéhez](instrument-website.md) vagy [mobilalkalmazásához](developer-resources.md#capture-events-from-mobile-apps), hogy lássa a munkaterületre érkező felhasználói tevékenységeket.
 
 1. Valós [idejű jelentés megtekintése](view-reports.md), amely az aktív felhasználókat böngésző, eszköz, operációs rendszer, hely és nyelv szerint jeleníti meg. Saját vizualizációk létrehozásához [egyéni jelentéseket](custom-reports.md) is létrehozhat.
+
+1. Hozzon létre [méreteket](dimensions.md) a látogatók új és visszatérő felhasználók szerint való rendezése érdekében, a felhasználói viselkedés jobb érthetősége érdekében [mérőszámokat](metrics.md), illetve a látogatók részcsoportját a jellemzők vagy a webhely-kapcsolati tevékenységek alapján azonosító [szegmenseket](segments.md).
     
 ## <a name="step-4-export-data-to-other-channels"></a>4. lépés: Adatok exportálása más csatornákba
 
-Létrehozhat *eseményeket* (virtuális nézetet) a webelemzési adatokból. Ezután szűrje és exportálja az adatokat ide: Azure Data Lake Storage. Az exportált adatokat betöltheti importálási adatforrásként. További információkért lásd: [Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között](integrate-audience-insights-engagement-insights.md).
+Létrehozhat *eseményeket* (virtuális nézetet) a webelemzési adatokból. Ezután szűrje és exportálja az adatokat ide: Azure Data Lake Storage. Az exportált adatokat betöltheti importálási adatforrásként.
 
 1. [Finomított események létrehozása](refined-events.md) exportálásra.
 
-1. [Exportálja az adatokat](export-events.md) az Data Lake Storage-be.
+1. [Az adatok exportálása](export-events.md) az Azure Data Lake Storage szolgáltatásba.
 
 1. [Hozzon létre kapcsolatot a célközönséggel kapcsolatos információk és az elkötelezettségi információk](integrate-audience-insights-engagement-insights.md) között, hogy megossza az adatokat a két képesség között.
 
+1. [A korábban hitelesített felhasználók webes eseményeinek felismerése](unknown-to-known.md) az **ismeretlenből ismert szolgáltatással**.
+
 1. Tekintse meg, hogyan [törölhet és exportálhat személyes adatokat tartalmazó eseményadatokat](delete-export-personal-data.md).
+
+## <a name="step-5-create-and-manage-funnel-reports"></a>5. lépés: Tölcsérjelentések létrehozása és kezelése
+
+A tölcsérjelentés a webhelyen vagy mobilalkalmazáson keresztül ügyfélút információkat gyűjt a lépésekről. A használatra elérhető profiljelentések és egyéni jelentések létrehozása mellett tölcsérjelentést is létrehozhat, amely meghatározza, hogy az ügyfelek milyen útvonalat használnak a vásárlás előtt. 
+
+1. [Hozzon létre egy tölcsérjelentést](funnel-reports.md), amely tájékoztatja a döntéseket, és azonosítja az optimalizálási és folyamatfejlesztésekkel kapcsolatos területeket.
+
+1. Hozzon létre többcsatornás jelentéseket, ha már használatban van a mobilalkalmazás az elkötelezettségi elemzések [Android SDK](get-started-android.md) vagy [iOS SDK](get-started-ios.md) segítségével.
+
+1. A [tölcsérelemzések](funnel-reports.md#funnel-insights) segítségével alaposan megismerheti az ügyfelek viselkedését a tölcsérjelentés lépéseivel kapcsolatosan.
  
-## <a name="step-5-stay-connected"></a>5. lépés: Kapcsolat fenntartása
+## <a name="step-6-stay-connected"></a>6. lépés: Kapcsolat fenntartása
 
 Nagyra értékeljük az aktív részvételét, és a jövőbeli kiadások fejlesztése során figyelembe vetünk minden releváns visszajelzést. Ossza meg visszajelzéseit, és számoljon be a problémákról a következő csatornák valamelyikével:
 - [Közösség](https://go.microsoft.com/fwlink/?linkid=2141648)

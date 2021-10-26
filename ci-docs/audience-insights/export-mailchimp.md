@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása a Mailchimpbe
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Mailchimpbe.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a6bdf43bb40345b868bf2e7d2c91de169c8ba841ba77f732f455f4c4d496a7f5
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 94a9fead56ce8c40b35d4eb41ebdc0d672798dce
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033542"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618616"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Szegmensek exportálása a Mailchimpbe (előzetes verzió)
 
@@ -29,10 +29,10 @@ Az egyesített ügyfélprofilok szegmenseinek Mailchimpbe való exportálásáva
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Legfeljebb 1 000 000 profilt exportálhat egyszerre a Mailchimpbe.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Mailchimp fájlba.
 - A Mailchimpbe való exportálás csak szegmensekre korlátozódik.
-- Az 1 millió profilból álló szegmensek exportálása akár három órát is igénybe fog venni. 
-- A Mailchimpbe exportálható profilok száma függ a Mailchimp szerződésről, és korlátozott.
+- Az 1 millió ügyfélprofilt vevő szegmensek exportálása akár három órát is igénybehat. 
+- Az Mailchimp alkalmazásba exportálható ügyfélprofilok száma az Mailchimppel kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Állítsa be a Mailchimppel való kapcsolatot
 
@@ -66,7 +66,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[MailChimp célközönség-azonosítóját](https://mailchimp.com/help/find-audience-id/)**
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. 
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. 
 
 1. Tetszés szerint exportálhatja az **Utónév** és **Vezetéknév** lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 

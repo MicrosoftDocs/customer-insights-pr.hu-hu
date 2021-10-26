@@ -1,7 +1,7 @@
 ---
 title: Mértékek létrehozása és felügyelete
 description: Definiálja a vállalkozás teljesítményét elemző és tükröző mértékeket.
-ms.date: 04/12/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3593a02ce89233cf1e66c6beee669dd6dd261ba3b0e1d2d0cc966731349d7d0b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7037011"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622973"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
@@ -26,15 +26,15 @@ A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az üg
 
 ## <a name="build-your-own-measure-from-scratch"></a>Saját mérték létrehozása az alapoktól
 
-Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. Az Ügyfél entitáshoz kapcsolattal beállított adatentitások adatattribútumainak segítségével mértéket állíthat össze. 
+Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. Mértéket állíthat össze olyan adatattribútumokkal, amelyek kapcsolatban vannak az egységes ügyfélprofil-entitással való kapcsolattal.
+
+# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
 
 1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
 
 1. Válassza az **Új** lehetőséget, és válassza a **Saját elkészítése** lehetőséget.
 
 1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
-   > [!NOTE]
-   > Ha az új mértékkonfigurációban csak két mező található (például az ügyfélazonosító és egy számítás), akkor a kimenet új oszlopként kerül a rendszer által létrehozott Customer_Measure nevű entitásba. A mérték értéke pedig az egyesített ügyfélprofilban is látható. Más mértékek létrehozzák a saját entitásaikat.
 
 1. A konfigurációs területen válassza az összesítési függvényt a **Funkció kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
    - **Sum**
@@ -53,7 +53,7 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
    1. Válassza az **Attribútumok** lapot. 
    1. Adatentitás: Válassza ki azt az entitást, amely a mérni kívánt attribútumot tartalmazza. 
    1. Adatattribútum: Válassza ki az összesítési függvényben az mérték kiszámításához használni kívánt attribútumot. Egyszerre csak egy attribútumot választhat ki.
-   1. Meglévő mértékből is kiválaszthat adatattribútumokat a **Mértékek** lapon. Másik lehetőségként megkeresheti egy entitást vagy mérték nevét is. 
+   1. Meglévő mértékből is kiválaszthat adatattribútumokat a **Mértékek** lapon, vagy másik lehetőségként megkereshet egy entitást vagy a mérték nevét is. 
    1. Válassza a **Hozzáadás** lehetőséget, ha a kijelölt attribútumot hozzá szeretne adni a mértékhez.
 
    :::image type="content" source="media/measure-attribute-selection.png" alt-text="Válassza ki a számításokban használni kívánt attribútumot.":::
@@ -73,11 +73,11 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
    1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem. Az *ügyfélszintű mértékek* létrehozásához alapértelmezés szerint a *CustomerID* dimenzió van kiválasztva. Ha *üzleti szintű mértékeket* szeretne létrehozni, eltávolíthatja az alapértelmezett dimenziót.
    1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
-1. Ha vannak olyan értékek az adatokban, amelyeket egész számra kell lecserélni, például a *nulla* értéket *0* értékre, akkor válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként.
+1. Ha az adatokban olyan értékek vannak, amelyekre egész értéket kell lecserélni, válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként. A *null* értéket cserélje ki például *0* értékkel.
 
 1. Ha a leképezett adatentitás és az *Ügyfél* entitás között több elérési út is van, válasszon egyet az azonosított [entitáskapcsolat-útvonalak közül](relationships.md). A mértékek eredményei a kiválasztott elérési úttól függően változhatnak. 
    
-   1. Válassza ki az **Adatbeállítások** lehetőséget, és válassza ki az entitás elérési útját, amely a mérték azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
+   1. Válassza ki a **Kapcsolat elérési útját**, és válassza ki az entitás elérési útját, amely a mérőszám azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
    1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Válassza ki a mértékhez tartozó entitás elérési utat.":::
@@ -92,7 +92,79 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. A listában az újonnan létrehozott mértékegységet a **Mértékek** listában jelenítheti meg.
 
+# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+
+1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
+
+1. Válassza az **Új** lehetőséget, és válassza a **Saját elkészítése** lehetőséget.
+
+1. Válassza a **Név szerkesztése** lehetőséget, és adjon **Nevet** a mértéknek. 
+
+1. A konfigurációs területen válassza az összesítési függvényt a **Funkció kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők: 
+   - **Sum**
+   - **Átlag**
+   - **Számlálás**
+   - **Egyedszámlálás**
+   - **Max**
+   - **Min**
+   - **Első:** az adatrekord első értékét veszi fel
+   - **Utolsó**: az adatrekordhoz hozzáadott utolsó értéket veszi fel
+
+   :::image type="content" source="media/measure-operators.png" alt-text="A mértékek számításához használható operátorok.":::
+
+1. Válassza az **Attribútum hozzáadása** lehetőséget a mérték létrehozásához szükséges adatok kiválasztásához.
+   
+   1. Válassza az **Attribútumok** lapot. 
+   1. Adatentitás: Válassza ki azt az entitást, amely a mérni kívánt attribútumot tartalmazza. 
+   1. Adatattribútum: Válassza ki az összesítési függvényben az mérték kiszámításához használni kívánt attribútumot. Egyszerre csak egy attribútumot választhat ki.
+   1. Meglévő mértékből is kiválaszthat adatattribútumokat a **Mértékek** lapon, vagy másik lehetőségként megkereshet egy entitást vagy a mérték nevét is. 
+   1. Válassza a **Hozzáadás** lehetőséget, ha a kijelölt attribútumot hozzá szeretne adni a mértékhez.
+
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Válassza ki a számításokban használni kívánt attribútumot.":::
+
+1. Összetettebb mértékek építéshez további attribútumokat adhat hozzá, vagy használhat operátorokat a mértékfüggvényben.
+
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Hozzon létre egy összetett mértéket a matematikai műveletek segítségével.":::
+
+1. Szűrők hozzáadásához válassza ki a **Szűrő** lehetőséget a konfigurációs területen. 
+  
+   1. Az **Attribútum hozzáadása** szakaszban a **Szűrők** ablaktáblán belül, jelölje ki a szűrők létrehozásához használni kívánt attribútumot.
+   1. Állítsa be a szűrőoperátorokat, hogy minden kijelölt attribútumhoz definiálja a szűrőt.
+   1. Válassza az **Alkalmaz** lehetőséget, ha a szűrőket hozzá szeretne adni a mértékhez.
+
+1. Dimenziók hozzáadásához válassza ki a **Dimenzió** lehetőséget a konfigurációs területen. A dimenziók oszlopként fognak megjelenni a mérték kimeneti entitásában.
+ 
+   1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem. Az *ügyfélszintű mértékek* létrehozásához alapértelmezés szerint a *CustomerID* dimenzió van kiválasztva. Ha *üzleti szintű mértékeket* szeretne létrehozni, eltávolíthatja az alapértelmezett dimenziót.
+   1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
+
+1. Ha az adatokban olyan értékek vannak, amelyekre egész értéket kell lecserélni, válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként. A *null* értéket cserélje ki például *0* értékkel.
+
+1. Az **Összesítő alfiókok** között válthat, ha [hierarchiával rendelkező partnerek vannak](relationships.md#set-up-account-hierarchies).
+   - Ha a beállítása **Ki**, az intézkedés minden egyes számlára kiszámításra kerül. Minden egyes fióknak saját eredménye lesz.
+   - Ha a beállítás **Be**, válassza a **Szerkesztés** lehetőséget, és válassza ki a fiókhierarchiát a betöltött hierarchia szerint. Az intézkedés eredménye csak egy lesz, mert alszámlákhoz van összesítve.
+
+1. Ha a leképezett adatentitás és az *Ügyfél* entitás között több elérési út is van, válasszon egyet az azonosított [entitáskapcsolat-útvonalak közül](relationships.md). A mértékek eredményei a kiválasztott elérési úttól függően változhatnak. 
+   
+   1. Válassza ki a **Kapcsolat elérési útját**, és válassza ki az entitás elérési útját, amely a mérőszám azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
+   1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz. 
+
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Válassza ki a mértékhez tartozó entitás elérési utat.":::
+
+1. Válassza a **...** lehetőséget a mértékből szármató számítás **Duplikálásához**, **Átnevezéséhez** vagy **Eltávolításához**.
+
+1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
+
+1. Válassza a **Futtatás** lehetőséget a konfigurált mértékhez tartozó eredmények kiszámításához. Válassza a **Mentés és bezárás** lehetőséget, ha meg szeretné tartani az aktuális konfigurációt, és a mértéket később szeretné futtatni.
+
+1. A listában az újonnan létrehozott mértékegységet a **Mértékek** listában jelenítheti meg.
+
+---
+
 ## <a name="use-a-template-to-build-a-measure"></a>Sablon használata mértékek építéséhez
+
+A leggyakrabban használt mértékeket előre definiált sablonok segítségével hozhatja létre. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
+
+# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
 
 A leggyakrabban használt mértékeket előre definiált sablonok segítségével hozhatja létre. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
 
@@ -140,6 +212,12 @@ A következő eljárás egy új mérték használatával való felépítés lép
 
 1. Most már a **Futtatás** lehetőséget is választhatja a mérték eredményének kiszámításához. Későbbi finomításhoz válassza a **Tervezet mentése** lehetőséget.
 
+# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+
+Ez a funkció csak az olyan környezetekben létrehozott mértékekhez érhetők el, ahol az egyéni ügyfelek elsődleges célként célközönség.
+
+---
+
 ## <a name="manage-your-measures"></a>Intézkedések kezelése
 
 A **Mértékek** lapon láthatja a mértékek listáját.
@@ -166,6 +244,5 @@ Válasszon ki egy mértéket a listából a következő lehetőségekhez:
 ## <a name="next-step"></a>Következő lépés
 
 Meglévő intézkedésekkel létrehozhat [egy ügyfélszegmenst](segments.md).
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

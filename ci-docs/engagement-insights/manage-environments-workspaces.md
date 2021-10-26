@@ -4,17 +4,17 @@ description: Munkaterületek és környezetek létrehozása, átnevezése és t�
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 09/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
-ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
+ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/09/2021
-ms.locfileid: "7486038"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645449"
 ---
 # <a name="manage-environments-and-workspaces"></a>Környezetek és munkaterületek kezelése
 
@@ -22,42 +22,20 @@ ms.locfileid: "7486038"
 
 ## <a name="overview"></a>Áttekintés
 
-A munkaterület olyan terület, amely tárolja és kezeli az eseményeket és jelentéseket. Itt valós időben lehet megtekinteni a felhasználói tevékenységeket. Munkaterület létrehozásakor kiválasztja a munkaterületre küldendő adatok típusát. Jelenleg a webes adatok és a mobilalkalmazások támogatottak.
+A témakör ismerteti, hogyan kezelhetők a munkaterületek és a környezetek a létrehozás után. 
 
-A környezet olyan hely, ahol a munkaterületeket és a kapcsolatokat kezelheti. A környezetek használata a szervezettől és a használt esettől függ. Lehetőség van például a következők létrehozására:
+- A *munkaterület* olyan terület, amely tárolja és kezeli az eseményeket és jelentéseket. Itt valós időben lehet megtekinteni a felhasználói tevékenységeket. Munkaterület létrehozásakor kiválasztja a munkaterületre küldendő adatok típusát. Jelenleg a webes adatok és a mobilalkalmazások támogatottak. További tudnivalók: [Munkaterület létrehozása és tagok hozzáadása](create-workspace.md).
 
--   Egyetlen környezet.
--   A teszt- és éles környezetek szétválasztása.
--   Környezeteket választhat szét a szervezeten belül egyes csoportokhoz vagy osztályokhoz, amelyek minden egyes szervezethez kapcsolódó eseményeket célközönség.
--   Környezeteket választhat szét a vállalat világszerte található különféle leányvállalatai számára is.
--   Célközönség-információk képesség kapcsolatai a Customer Insights eszközzel
+- A *környezet* olyan hely, ahol a munkaterületeket és a kapcsolatokat kezelheti. További információ: [Új környezet létrehozása](create-new-environment.md).
 
-## <a name="choose-an-environment-and-create-a-workspace"></a>Válasszon ki egy környezetet, és hozzon létre munkaterületet 
-
-Minden munkaterületnek környezetben kell lennie. Választhat meglévő környezetet, illetve létrehozhat újat munkaterület létrehozásakor. Ezt követően kiválaszthatja, hogy munkaterület-tagokat ad hozzá, és adatokat gyűjt.
-
-**Az első saját munkaterület létrehozásához**
-
-1. Az aktivitási információk segítségével válassza az **Új** lehetőségeket a munkaterület-átváltóból. 
-
-   :::image type="content" source="media/New-workspace.png" alt-text="Customer Insights oldal munkaterület-választója.":::
-
-1. Válasszon egy környezetet a listából, vagy válassza az **Új környezet létrehozása** lehetőséget.
-
-1. Adjon egy nevet a **Munkaterület neve** mezőben. 
-
-1. Válassza ki a létrehozni kívánt környezet típusát, attól függően, hogy mérni szeretné, mi történik egy webhelyen vagy egy mobilalkalmazásban. 
-
-1. A **Szerepkör** listából tagokat adhat hozzá, és hozzájuk rendelheti a jogosultsági szintjüket. A munkaterület létrehozásához válassza a **Befejezés**, illetve a **Tovább** gombra a kód telepítéséhez. 
-
-1. Telepítse a kódrészletet az adatok fogadásának elindításához, majd válassza a **Kész** lehetőséget. 
-
-## <a name="manage-a-workspace"></a>Munkaterület kezelése
+## <a name="manage-an-existing-workspace"></a>Meglévő munkaterület kezelése
 
 A környezetben egyidejűleg több munkaterület is fenntartható. A [szerepköre](user-roles.md) határozza meg, hogyan dolgozhat velük. 
 
  - A munkaterület kezeléséhez környezet-rendszergazdának vagy munkaterület-rendszergazdának kell lennie.
  - Munkaterület-rendszergazdaként átnevezheti a meglévő munkaterületeket, vagy törölheti azokat. 
+
+:::image type="content" source="media/workspace-edit.png" alt-text="Munkaterületi rendszergazdaközpont.":::
 
 ### <a name="edit-a-workspace-name"></a>A munkaterület nevének szerkesztése
 
@@ -75,7 +53,7 @@ A munkaterület törlésével véglegesen eltávolítja annak összes tartalmát
 
 1. Válassza a **Munkaterület törlése** lehetőséget. 
 
-1. A **munkaterület törlése** párbeszédablakban írja be a **TÖRLÉS MEGERŐSÍTÉSE** parancsot. 
+1. A **Munkaterület törlése** párbeszédpanelen írja be a **TÖRLÉS MEGERŐSÍTÉSE** parancsot minden felső beállításnál. 
 
 1. A munkaterület végleges törléséhez írja be a **Törlés** lehetőséget.
 
@@ -87,27 +65,11 @@ A munkaterület törlésével véglegesen eltávolítja annak összes tartalmát
 
 1. Jelölje ki a **Tagok felvétele** lehetőséget, és adja hozzá a munkaterületéhez.
 
-## <a name="manage-an-environment"></a>Egy környezet kezelése
+## <a name="manage-an-existing-environment"></a>Meglévő környezet kezelése
 
 A környezet rendszergazdájaként a bal navigációs ablakból hozzáférhet egy környezethez. Konfigurálhatja a környezetbeállításokat, más környezeti rendszergazdákat és a munkaterületeket. A felügyeleti központban a különböző területek közötti mozgáshoz válassza ki a lapokat.
 
-:::image type="content" source="media/New-environment.png" alt-text="Környezetfelügyeleti központ.":::
-
-### <a name="create-an-environment"></a>Környezet létrehozása
-
-1. A munkaterület választóban válassza a **+Új** lehetőséget.
-
-1. Az interaktív élményben nyissa meg a **Környezet** legördülő menüt, és válassza az **Új környezet létrehozása** lehetőséget. 
-
-1. Adja meg a **Környezet nevét**.
-
-   :::image type="content" source="media/create-environment.png" alt-text="Lépjen az interaktív élménybe a környezet részleteinek megadásához.":::
-
-1. Válassza ki a **Régiót**, és válassza a **Tovább** lehetőséget. 
-
-1. Adja meg a Munkaterület nevét, és adja meg, hogy milyen típusú munkaterületet szeretne létrehozni. 
-
-1.  Tetszés szerint tagokat is hozzáadhat, és kódrészletet másolhatja létrehozási folyamat befejezéséhez.
+:::image type="content" source="media/environment-edit.png" alt-text="Környezetfelügyeleti központ.":::
 
 ### <a name="rename-an-environment"></a>Környezet átnevezése
 
@@ -131,7 +93,7 @@ A környezeti rendszergazdák törölhetik a környezetet. A környezet törlés
 
 1. Válassza a **Környezet törlése** lehetőséget. 
 
-1. A **munkaterület törlése** párbeszédablakban írja be a **TÖRLÉS MEGERŐSÍTÉSE** parancsot. 
+1. A **Munkaterület törlése** párbeszédpanelen írja be a **TÖRLÉS MEGERŐSÍTÉSE** parancsot minden felső beállításnál. 
 
 1. A környezet végleges törléséhez válassza a **Törlés** lehetőséget.
 

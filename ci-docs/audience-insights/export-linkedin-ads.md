@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-adatok exportálása a LinkedIn Ads szolgáltatásba
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a LinkedIn Adsbe.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2cfaa37fd0ac697f29665792bab27a925d8ea1eede0519d424524a7e5accbfeb
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034226"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618294"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 
@@ -28,9 +28,9 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A LinkedIn Ads exportálásonként legfeljebb 100 000 profil exportálható.
+- Exportálásonként legfeljebb 100 000 ügyfélprofilt exportálhat a LinkedIn Ads hirdetésekbe.
 - A LinkedIn Ads szolgáltatásba való exportálás a szegmensekre korlátozódik.
-- 100 000 profil exportálása a LinkedIn Ads szolgáltatásba akár 10 percet is igénybe vehet. 
+- 100 000 ügyfélprofil exportálása a LinkedIn Ads hirdetésekbe akár 10 percet is igénybe vehet. 
 
 ## <a name="set-up-the-connection-to-linkedin-ads"></a>Állítsa be a LinkedIn Ads szolgáltatással való kapcsolatot
 
@@ -66,7 +66,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Válassza ki, hogy az adatokat a LinkedIn-en [kapcsolati célzáshoz](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) vagy [Vállalati célzáshoz](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) exportálja. 
 
-1. Az **Adategyeztetés** szakaszban válassza ki az egységes ügyfélprofil mezőjét, amely az ügyfél e-mail-címének felel meg. A szegmenseket exportálni kell a LinkedIn Ads-szolgáltatásba.
+1. A kapcsolattartók célzása érdekében az **Adatok egyeztetése** szakaszban jelöljön ki legalább egy olyan mezőt, amely az ügyfél e-mail címét, az Apple Ad ID azonosítót, a Google Ad ID azonosítót, a Google Felhasználói azonosítót, illetve a vezetéknevet tartalmazza. Ha a vállalat célzását választja, akkor jelöljön ki legalább egy olyan mezőt, amely cégnevet, e-mail tartományt, LinkedIn-oldal URL-címét, Tőzsdei szimbólumot vagy Webhelyet jelképez. Az exportálás további mezői választhatók ki. 
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. A LinkedIn Campaign Manager egyeztetett célközönségei automatikusan létrejönnek az exportálásra kiválasztott szegmensek nevével. Minden szegmens külön egyeztetett célközönséget eredményez. 
 

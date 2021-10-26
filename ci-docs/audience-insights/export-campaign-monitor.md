@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-adatok exportálása a Campaign Monitorra
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Campaign Monitorba.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d2cc3ec944faa1d77ffb44e8abb422d753c5625d0ccef75cbb7efb14cb7c3741
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031890"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618984"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Szegmensek exportálása a Campaign Monitorba (előzetes verzió)
 
@@ -28,10 +28,10 @@ Exportálja az egyesített ügyfélprofilok szegmensét a Campaign Monitorba, é
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A Campaign Monitorba exportálásonként legfeljebb 1 millió profil exportálható.
+- Exportálásonként legfeljebb 1 millió ügyfélprofilt exportálhat a Campaign Monitor szolgáltatásba.
 - A Campaign Monitorba való exportálás a szegmensekre korlátozódik.
-- 1 millió profil exportálása a Campaign Monitor alkalmazásba akár 20 percet is igénybe vehet. 
-- A Campaign Monitorba exportálható profilok száma a Campaign Monitorral kötött szerződéstől függ és az korlátozza.
+- 1 millió ügyfélprofil exportálása a Campaign Monitor szolgáltatásba akár 20 percet is igénybe vehet. 
+- A Campaign Monitor alkalmazásba exportálható ügyfélprofilok száma a Campaign Monitor kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Kapcsolat beállítása a Campaign Monitor alkalmazáshoz
 
@@ -66,7 +66,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 1. Adja meg a [**Campaign Monitor listaazonosítóját**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
    [Hozza létre az API-kulcsot](https://www.campaignmonitor.com/api/getting-started/) a Campaign Monitor **Fiókbeállításokból**, és először tekintse meg az API-lista azonosítóját.  
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell a Campaign Monitor alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell a Campaign Monitor alkalmazásba.
 
 1. Válassza a **Mentés** parancsot.
 

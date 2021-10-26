@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b67aa7477033222b0bc9512a962a1580edd973b4882ce925620ff5ec14f83fe3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fa1d4ffd9f77e128b5d804e4562e964561f4684f
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032715"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618685"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Felhasználói profilok bővítése egyéni adatokkal (előzetes verzió)
 
@@ -44,6 +44,8 @@ Az SFTP egyéni importálás konfigurálásához a következő előfeltételekne
 1.  Válassza a **Tovább** lehetőséget, és írja be az importálni kívánt adatfájl **Elérési útvonal** és **Fájlnév** részleteit.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Képernyőkép készítése az adathely megadásakor.":::
+
+1. Válassza a **Tovább** lehetőséget, és válassza ki az adatkészlet. Ez lehet az összes ügyfélprofil vagy egy szegmens.
 
 1. Válassza a **Következő** lehetőséget, és adja meg a bővítés nevét és a kimeneti entitás nevét. 
 
@@ -121,8 +123,8 @@ A bővítési folyamat befejeződése után áttekintheti az újonnan importált
 
 Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8d93a49a29c29103e189a6d4a42294c18dc28abd
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: db38778c0da862e119f9b374e07c82ead0d3a4f2
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7559021"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645585"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között
 
@@ -26,7 +26,7 @@ Használhatja a célközönséggel kapcsolatos információk egyesített profilj
 ## <a name="prerequisites"></a>Előfeltételek
 
 - Célközönséggel kapcsolatos információk profilokat egy saját Azure Data Lake Storage fiókban vagy egy [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;felügyelt adattóban kell tárolni. 
-- Emellett a célközönséggel kapcsolatos információk környezetnek szükséges egy társított Dataverse-környezet. Ha pedig az a környezet is Dataverse-t használ adattárolásra van használatban, akkor jelölje be az **Adatok megosztásának engedélyezése** beállítást az célközönség információkban. További információkért lásd: [Fizetett környezet létrehozása és konfigurálása a célközönség-információkban](../audience-insights/get-started-paid.md).
+- Emellett a célközönséggel kapcsolatos információk környezetnek szükséges egy társított Dataverse-környezet. Ha pedig az a környezet is Dataverse-t használ adattárolásra van használatban, akkor jelölje be az **Adatok megosztásának engedélyezése** beállítást az célközönség információkban. További tudnivalókért lásd: [Környezet létrehozása és konfigurálása a célközönséggel kapcsolatos információkban](../audience-insights/create-environment.md).
 - Rendszergazdai engedélyekre van szüksége az elkötelezettségi információkhoz és a célközönséggel kapcsolatos információk környezetekhez is.
 - A csatolt környezetnek ugyanabban a földrajzi régióban kell lennie.
 
@@ -49,7 +49,7 @@ A **Felügyelet** > **Környezet** beállításainak módosításával létrehoz
 
      :::image type="content" source="media/integrate2.png" alt-text="Válasszon egy célközönség-információk környezetet.":::
 
-1. Válasszon egy célközönség információk környezetet, majd válassza a **Tovább** lehetőséget a befejezéshez. Most már kiválaszthatja a kapcsolt környezetek opcionális szolgáltatásait.
+1. Válasszon egy célközönség információk környezetet, majd válassza a ***Tovább** lehetőséget a befejezéshez. Most már kiválaszthatja a kapcsolt környezetek opcionális szolgáltatásait.
  
 ## <a name="enable-audience-insights-unified-profiles-attributes-and-segments"></a>A Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezése
 

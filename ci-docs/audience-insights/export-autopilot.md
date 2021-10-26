@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása az Autopilotba
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Autopilotba.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9ada8a6f4e4546990a1360567b400033050119c4c4c9a3df1af8fcaab75e157
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4cceb64484e8e257a90b8cbaedff4419659bb399
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032028"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618432"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Szegmensek exportálása az Autopilotba (előzetes verzió)
 
@@ -28,10 +28,10 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Autopilotba, és hasz
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Összesen legfeljebb 100 000 ügyfélprofilt exportálhat az Autopilotba.
+- Összesen legfeljebb 100 000 ügyfélprofilt exportálhat az Autopilot szolgáltatásba.
 - Az Autopilotba való exportálás csak szegmensekre korlátozódik.
-- Akár 100 000 profil Autopilotba való exportálása néhány órát is igénybe vehet. 
-- Az Autopilotba exportálható profilok száma függ az Autopilot szerződésről, és korlátozott.
+- 100 000 ügyfélprofil exportálása a Autopilot szolgáltatásba akár néhány órát is igénybe vehet. 
+- Az Autopilot alkalmazásba exportálható ügyfélprofilok száma az Autopilottal kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-autopilot"></a>Állítsa be az Autopilottal való kapcsolatot
 
@@ -43,7 +43,7 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Autopilotba, és hasz
 
 1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-3. Adja meg az [Autopilot API-kulcsát](https://autopilot.docs.apiary.io/#).
+1. Adja meg az [Autopilot API-kulcsát](https://autopilot.docs.apiary.io/#).
 
 1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
 
@@ -63,7 +63,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Autopilot szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Fokozottan **javasoljuk, hogy ne exportáljon összesen 100 000-nél több ügyfélprofilt** az Autopilotba. 
 

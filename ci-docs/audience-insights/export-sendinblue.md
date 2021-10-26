@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása Sendinblue-ba
 description: További információ a kapcsolat konfigurálásához és az Sendinblue-ba való exportáláshoz.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b5924b2d4e7f0b11ce6478a31015fcbaaf44ff93
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036058"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617788"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Szegmensek exportálása Sendinblue-ba (előzetes verzió)
 
@@ -29,10 +29,10 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása kampányok létrehoz
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A Sendinblue-nak küldhető exportonként legfeljebb 1 millió profil.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Sendinblue fájlba.
 - Az Sendinblue-ba történő exportálás szegmensekre korlátozódik.
-- Az összesen 1 millió profillal rendelkező szegmensek exportálása akár 90 percet is igénybe vehet. 
-- Az Sendinblue-ba exportálható profilok száma a Sendinblue-val kötött szerződésétől függ.
+- Az összesen 1 millió ügyfélprofilt vevő szegmensek exportálása akár 90 percet is igénybe vehet. 
+- A Sendinblue alkalmazásba exportálható ügyfélprofilok száma a Sendinblue-val kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Sendinblue-val való kapcsolat beállítása
 
@@ -64,7 +64,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg **Sendinblue listaazonosítóját** 
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. 
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. 
 
 1. Opcionálisan exportálhat **utónév**, **vezetéknév**, és **telefon**-ra,hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 

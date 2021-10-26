@@ -1,7 +1,7 @@
 ---
 title: A környezetek létrehozása és kezelése
 description: Megismerheti, hogyan lehet regisztrálni a szolgáltatásra, és hogyan kezelhetők a környezetek.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034180"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645129"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
 
@@ -26,7 +26,7 @@ A környezet módosításához válassza ki az oldal jobb felső sarkában talá
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Képernyőkép a környezetváltáshoz használható vezérlőről.":::
 
-A rendszergazdák [létrehozhatnak](get-started-paid.md) és kezelhetnek környezeteket.
+A rendszergazdák [létrehozhatnak](create-environment.md) és kezelhetnek környezeteket.
 
 ## <a name="edit-an-existing-environment"></a>Egy meglévő környezet szerkesztése
 
@@ -36,23 +36,9 @@ A meglévő környezetek bizonyos részleteit szerkesztheti.
 
 2.  Kattintson a **Szerkesztés** ikonra.
 
-3. A **Környezet szerkesztése** mezőben frissítheti a környezet **Megejelenő nevét**, de a **Régió** vagy a **Típus** nem módosítható.
+3. A **Környezet szerkesztése** mezőben frissítheti a környezet beállításait.
 
-4. Ha egy környezet úgy van beállítva, hogy adatokat Azure Data Lake Storage -ban tároljon, frissítheti a **Fiókkulcs** billentyűt. A **partner neve** vagy a **tároló** neve azonban nem módosítható.
-
-5. Lehetőség van arra, hogy a fiókkulcs-alapú kapcsolatot az erőforrás- vagy előfizetés-alapú kapcsolatra is frissítheti. A frissítést követően a frissítés után nem térhet vissza a fiókkulcshoz. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
-
-6. Tetszés szerint megadhat egy Microsoft Dataverse környezet URL-címet az **Adatok megosztásának konfigurálása Microsoft Dataverseszel, és további képességek engedélyezése** alatt. Ezek a lehetőségek olyan alkalmazások és megoldások használatával való adatmegosztásra használhatók, amelyek Microsoft Dataverse-en, helyszíni adatforrásból származó adatokon vagy a használat [előrejelzéseken](predictions.md) alapulnak. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Microsoft Dataverse Managed Data Lake használatával.
-
-   > [!NOTE]
-   > - A Microsoft Dataverse Managed Data Lake használatával való adatmegosztás jelenleg nem támogatott, ha az adatokat a saját Azure Data Lake Storage tárhelyére menti.
-   > - [Hiányzó értékek becslése entitásban](predictions.md) és a PowerBi beágyazott jelentések a célközönség információkban (amennyiben engedélyezve vannak a környezetben) jelenleg nem támogatottak, ha engedélyezi az adatmegosztást a Microsoft Dataverse felügyelt adattóval.
-
-   Miután engedélyezi az adatok megosztását a Microsoft Dataverse-szel, az adatforrások és más folyamatok egyszeri teljes frissítése elkezdődik. Ha folyamatok futnak és, akkor nem fogja látni a lehetőséget, amelltel engedélyezhetné az adatok megosztását a Microsoft Dataverse-szel. Az adatmegosztás engedélyezéséhez várja meg, amíg befejeződnek vagy visszavonják ezeket a folyamatokat. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
-   
-   A folyamatok – például adatbetöltés vagy szegmenslétrehozás – futtatásakor a megfelelő mappák létrejönnek a fent megadott tárfiókban. A rendszer a futtatott folyamattól függően adatfájlokat és model.json fájlokat hoz létre, és ad hozzá a megfelelő almappákhoz.
+További információ a környezet beállításaival kapcsolatban: [Új környezet létrehozása](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Másolja a környezet konfigurációját
 

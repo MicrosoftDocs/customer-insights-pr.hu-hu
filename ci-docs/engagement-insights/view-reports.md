@@ -4,17 +4,17 @@ description: A rendelkezésre álló jelentések segítségével valós idejű t
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 06/18/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5ccdcb47db597154cf79b9f2e8fc238ab75dfde9
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036651"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582925"
 ---
 # <a name="view-reports"></a>Jelentések megtekintése
 
@@ -92,12 +92,18 @@ A **Valós idejű használat** áttekintést ad a mobilalkalmazás aktuális tev
 
 - A **Helyek** országonként, régiónként és városonként mutatnak információkat az app felhasználókról.
 
-## <a name="filter-by-time-or-value"></a>Szűrés idő vagy érték szerint
+## <a name="filter-by-time-or-date-range"></a>Szűrés idő- vagy dátumtartomány szerint
 
-Kiválaszthatja, hogy időkeret értékekre vagy értékekre összpontosítson egy webes vagy mobil jelentésben. 
+Egy webes vagy mobilos jelentésben kiválaszthatja a időkeret dátumtartományt, hogy egy értékre vagy időszakra összpontosítson. 
 
-- Egy időkeret kiválasztásához, válassza a **Több [...]** lehetőséget a jelentés legördülő listájából. Az időtartomány kiválasztása a valós idejű használati jelentéshez ki van kapcsolva; a valós idejű használati jelentés időtartománya a "most".
+- A kiválasztott időkeret a jelentés nézetének jobb felső sarkában jelöljön ki egy értéket a jelentés legördülő listájából. Választhat **Rögzített dátumtartományt** is. 
 
-- A legtöbb jelentésnél ki lehet választani egy értéket a diagramból vagy listából, ha a kiválasztott értékkel kell szűrni a jelentést.
+  :::image type="content" source="media/filter-by-time.png" alt-text="Szűrés idő- vagy dátumtartomány szerint.":::   
+
+- A legtöbb jelentésnél a jelentés szűréséhez jelöljön ki egy értéket egy diagramban vagy listában.
+
+> [!NOTE]
+> Az időtartomány kiválasztása a valós idejű használati jelentéshez ki van kapcsolva; a valós idejű használati jelentés időtartománya a "most".
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469985"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617558"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -27,16 +27,26 @@ A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra
 
 A bővítések létrehozásához vagy módosításához Közreműködő vagy Rendszergazdai engedélyekkel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).
 
-A **felderítés** lapon a következő bővítések találhatók:
+A **Felfedezés** lapon található az összes támogatott gyarapítási lehetőség.
 
-- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
+
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
-- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
-- A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
 - [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította
-- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül
+- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
+- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+
+# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+
+- A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
+- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
+- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
+- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+
+---
 
 A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beállítva, illetve hogy szerkesztheti-e a tulajdonságait.
 
@@ -58,7 +68,7 @@ A listában való kijelölésvel egyszerre futtathat vagy inaktiválhat több b�
 
 ## <a name="enrichments-and-connections"></a>Bővítések és kapcsolatok
 
-A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md) használatával konfigurálhatja, amelyekhez a rendszergazda hitelesítő adatokat állít be, és hozzájárul az adatok átviteléhez. A kapcsolat ezután a rendszergazdák és a közreműködők által is használható a bővítések konfigurálásához.  
+A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md) használatával konfigurálhatja, amelyekhez a rendszergazda hitelesítő adatokat állít be, és hozzájárul az adatok átviteléhez. A kapcsolatotokat a rendszergazdák és közreműködők is használhatják bővítmények beállítására.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 

@@ -2,8 +2,14 @@
   href: index.yml
 - name: Termék áttekintése
   href: overview.md
-- name: Próbaverzió létrehozása
-  href: audience-insights/get-started-trial.md
+- name: Ingyenes próbaverzió
+  items:
+    - name: Regisztráció ingyenes próbaverzióra
+      href: trial-signup.md
+    - name: Próbaverzió GYIK-ja
+      href: trial-FAQ.md
+- name: Kezdés fizetett licenccel
+  href: paid-license.md
 - name: Saját környezet hozzáférése
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Célközönséggel kapcsolatos információk
@@ -19,9 +25,11 @@
         - name: Rövid útmutató
           href: audience-insights/get-started.md
         - name: Új környezet létrehozása
-          href: audience-insights/get-started-paid.md
+          href: audience-insights/create-environment.md
         - name: Célközönséggel kapcsolatos információk felfedezése
           href: audience-insights/home.md
+    - name: Üzleti partnerek használata
+      href: audience-insights/work-with-business-accounts.md
     - name: Tanulási modulok
       items:
         - name: Adatok betáplálása
@@ -66,6 +74,8 @@
           href: audience-insights/relationships.md
         - name: Ügyféltevékenységek listázása
           href: audience-insights/activities.md
+        - name: Szemantikai leképezések meghatározása
+          href: audience-insights/semantic-mappings.md
     - name: Adatbővítés
       items:
         - name: Ügyfélprofilok bővítése
@@ -114,7 +124,7 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Előfizetési lemorzsolódás előrejelzése
               href: audience-insights/predict-subscription-churn.md
-            - name: Tranzakció lemorzsolódás előrejelzése
+            - name: Tranzakció-lemorzsolódás előrejelzése
               href: audience-insights/predict-transactional-churn.md
             - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
               href: audience-insights/custom-models.md
@@ -126,7 +136,7 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Példamutató az előfizetés lemorzsolódási előrejelzéshez
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Példamutató a tranzakció lemorzsolódás előrejelzéséhez
+            - name: Minta útmutató a tranzakciós lemorzsolódás előrejelzéséhez
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Termékjavaslat-előrejelzés mintaútmutató
               href: audience-insights/sample-guide-predict-product-recommendation.md
@@ -222,10 +232,14 @@
           href: audience-insights/connections.md
         - name: Több környezetet kezelése
           href: audience-insights/manage-environments.md
-        - name: 'Csatlakozás egy ADLS-tárfiókhoz, a Service Principal használatával'
-          href: audience-insights/connect-service-principal.md
         - name: Támogatott nyelvek
           href: audience-insights/supported-languages.md
+        - name: Biztonsági
+          items:
+            - name: Saját Kay Vault használata
+              href: audience-insights/use-azure-key-vault.md
+            - name: 'Csatlakozás egy ADLS-tárfiókhoz, a Service Principal használatával'
+              href: audience-insights/connect-service-principal.md
     - name: Bővíthetőség
       items:
         - name: A webes adatok integrálása az elkötelezettségi információk segítségével
@@ -248,6 +262,8 @@
       items:
         - name: Rövid útmutató
           href: engagement-insights/get-started.md
+        - name: Környezet létrehozása
+          href: engagement-insights/create-new-environment.md
         - name: Munkaterület létrehozása
           href: engagement-insights/create-workspace.md
         - name: Események rögzítése webhelyekről és mobilalkalmazásokból

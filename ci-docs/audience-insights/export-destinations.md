@@ -1,7 +1,7 @@
 ---
 title: Adatok exportálása a Customer Insightsból
 description: Exportálások kezelése az adatok megosztásához.
-ms.date: 06/14/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,25 +10,48 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: be4d142e0f9f422cac459f603aa5dd8bb490321cfe1b2de58f4a128ae56f4ba3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034685"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623119"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
-Az **Exportálások** lap megjeleníti az összes konfigurált exportálást. Az exportálások meghatározott adatokat osztanak meg különböző alkalmazásokkal. Ezek tartalmazhatnak ügyfélprofilokat vagy entitásokat, sémákat és leképezési részleteket. Mindegyik exportáláshoz szükség van egy [rendszergazda kapcsolatra, beállításra, hogy kezelhesse a hitelesítést és a hozzáférést](connections.md).
+Az **Exportálások** lap megjeleníti az összes konfigurált exportálást. Az exportálások meghatározott adatokat osztanak meg különböző alkalmazásokkal. Magukban foglalhatják az ügyfélprofilokat, entitásokat, sémákat és a leképezések részleteit. Mindegyik exportáláshoz szükség van egy [rendszergazda kapcsolatra, beállításra, hogy kezelhesse a hitelesítést és a hozzáférést](connections.md).
 
 Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások** lehetőségre. Minden felhasználói szerepkör megtekintheti a konfigurált exportálást. A parancssáv keresőmezőjében keresse meg az exportot a nevük, a kapcsolatnevük vagy a kapcsolattípusuk alapján.
 
-## <a name="set-up-a-new-export"></a>Új exportálás beállítása
+## <a name="export-types"></a>Exporttípusok
 
+Az exportálásnak két fő típusa van:  
+
+- A **Kimenő adatok exportálása** lehetővé teszi a közönségstatisztikákban elérhető bármely típusú entitás exportálását. Az exportáláshoz kiválasztott entitásokat a rendszer az összes adatmezővel, metaadatmal, sémával és leképezési részlettel exportálja. 
+- A **Szegmensexportálások** segítségével szegmensentitásokat exportálhat a célközönség információkból. A szegmensek az ügyfélprofilok listáját reprezentálják. Az exportálás konfigurálásakor a célrendszertől függően válassza ki a szerepelt adatmezőket, amelyekbe az adatokat exportálja. 
+
+### <a name="export-segments"></a>Szegmensek exportálása
+
+**Szegmensek exportálása üzleti partnerek (B2B) vagy egyéni ügyfelek környezetbe (B2C)**  
+A legtöbb exportálási lehetőség támogatja mindkét típusú környezetet. A szegmensek különböző célrendszerekbe való exportálása konkrét követelményekkel jár. Általában a kapcsolatfelvételi szegmenstag, az ügyfélprofil tartalmazza a kapcsolatfelvételi adatokat. Bár ez általában az egyéni ügyfeleken (B2C) alapuló szegmensekre jellemző, nem feltétlenül ez az eset az üzleti partnereken (B2B) alapuló szegmensekre. 
+
+**Üzleti partnerek környezetének szegmensexportálása (B2B)**  
+- Az üzleti partnerek környezetében a szegmensek a *partnerek* entitásán épülnek. A megfelelő partnerszegmensek exportálásához a célrendszernek támogatnia kell a partnerszegmenseket. Ez a [LinkedIn](export-linkedin-ads.md) esetében az az eset, amikor az exportálás definiálása során kiválasztja a **vállalat** beállítását.
+- Minden más célrendszerhez a kapcsolattartói entitás mezői szükségesek. Annak biztosításához, hogy a partnerszegmensek beolvassa az adatokat a kapcsolódó kapcsolattartókból, a szegmens definíciójának a kapcsolattartó entitás projektattribútumainak kell részét vennie. További információk a [szegmensek és projektattribútumok konfigurálásról](segment-builder.md).
+
+**Szegmensexportálás az egyes ügyfelek környezeteibe (B2C)**  
+- Az egyéni ügyfelek környezeteihez kapcsolódó szegmensek az *egységes ügyfélprofil* entitáson alapulnak. A célrendszerek (például egy e-mail-cím) követelményeinek megfelelő minden szegmens exportálható.
+
+**A szegmensexportálásra vonatkozó korlátozások**  
+- A külső célrendszerek korlátozhatják az exportálható ügyfélprofilok számát. 
+- Az egyes ügyfeleknél az exportálni kívánt szegmenstagok tényleges számát láthatja. Figyelmeztetés jelenik meg, ha egy szegmens túl nagy. 
+- Az üzleti partnerek esetében egy-egy szegmensben látható a partnerek száma; az esetleg kivetített kapcsolattartók száma azonban nem fog megjelenni. Bizonyos esetekben ez ahhoz az exportált szegmenshez vezethet, amely ténylegesen több ügyfélprofilt tartalmaz, mint amit a célrendszer elfogad. A célrendszer eredményeinek túllépése kihagyja az exportálást. 
+
+## <a name="set-up-a-new-export"></a>Új exportálás beállítása  
 Az exportálás beállításához vagy szerkesztéséhez elérhető kapcsolatokra van szüksége. A kapcsolatok a [felhasználói szerepkörtől](permissions.md) függnek:
-- A rendszergazdák minden kapcsolathoz rendelkeznek hozzáféréssel. Az exportálás beállításakor új kapcsolatokat is létrehozhatnak.
-- A közreműködő adott kapcsolatokhoz férhetnek hozzá. Ezek a rendszergazdáktól függnek, a kapcsolatok konfigurálásához és megosztásához. Az exportlista megmutatja, hogy a közreműködők szerkeszthetik-e vagy csak megtekinthetik-e az exportálást **Az Ön engedélyei** oszlopban. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- A megtekintők csak a meglévő exportálásokat tekinthetik meg, létrehozni azonban nem jogosultak.
+- A **rendszergazdák** minden kapcsolathoz rendelkeznek hozzáféréssel. Az exportálás beállításakor új kapcsolatokat is létrehozhatnak.
+- A **közreműködő** adott kapcsolatokhoz férhetnek hozzá. Ezek a rendszergazdáktól függnek, a kapcsolatok konfigurálásához és megosztásához. Az exportlista megmutatja, hogy a közreműködők szerkeszthetik-e vagy csak megtekinthetik-e az exportálást **Az Ön engedélyei** oszlopban. További tájékoztatásért menjen a [Munkatársak engedélyezése az exportáláshoz használható kapcsolat](connections.md#allow-contributors-to-use-a-connection-for-exports) oldalra.
+- A **Megtekintők** csak a meglévő exportálásokat tekinthetik meg, de nem hozhatják létre azokat.
 
 ### <a name="define-a-new-export"></a>Új exportálás definiálása
 

@@ -9,12 +9,12 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c958f58c927b76364f305dad8f524dde29b2a638
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: ce9579f3d31207e666665237fd8935bb86889f8d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558975"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617926"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 
@@ -35,9 +35,9 @@ Exportálja az egységes ügyfélprofilok szegmenseit a Google Ads célközöns�
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Legfeljebb 1 000 000 profilt exportálhat egyszerre a Google Adsbe.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Google Ads fájlba.
 - A Google Adsbe való exportálás csak szegmensekre korlátozódik.
-- Az összesen 1 000 000 profillal rendelkező szegmens exportálása a szolgáltatói oldalon megjelenő korlátozások miatt akár 5 percig is eltarthat. 
+- Az összesen 1 millió ügyfélprofilt biztosító szegmensek exportálása a szolgáltatói oldalon korlátozások miatt akár 5 percet is igénybehet. 
 - A Google Ads egyeztetése akár 48 óráig is eltarthat.
 
 ## <a name="set-up-connection-to-google-ads"></a>Kapcsolat beállítása a Google Adshez
@@ -74,7 +74,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[Google Ads célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, és válassza a **Csatlakozás** lehetőséget a Google Ads-kapcsolat kezdeményezéséhez.
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Google Adsbe.
 

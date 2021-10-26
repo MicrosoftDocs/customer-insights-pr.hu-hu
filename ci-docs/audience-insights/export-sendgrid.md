@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása a SendGridbe
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a SendGridbe.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 03df2ab5fce1da1f4f662e1975533f2b538b47dbdd5cf96aae4f1007163e3729
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: da3da5ea68d178deab3b9ab31dd810dee610f607
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036104"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617834"
 ---
 # <a name="export-segments-to-sendgrid-preview"></a>Szegmensek exportálása a SendGridbe (előzetes verzió)
 
@@ -29,10 +29,10 @@ Exportálja az egyesített ügyfélprofilok szegmenseit a SendGrid partnerlistá
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Összesen legfeljebb 100 000 profil a SendGrid számára.
+- Összesen legfeljebb 100 000 ügyfélprofilt lehet vele létrehozni a SendGrid számára.
 - A SendGridbe való exportálás csak szegmensekre korlátozódik.
-- Akár 100 000 profil SendGridbe való exportálása néhány órát is igénybe vehet. 
-- A SendGridbe exportálható profilok száma függ a SendGrid szerződésről, és korlátozott.
+- 100 000 ügyfélprofil exportálása a SendGrid szolgáltatásba akár néhány órát is igénybe vehet. 
+- A SendGrid alkalmazásba exportálható ügyfélprofilok száma a SendGriddel kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-sendgrid"></a>Állítsa be a SendGriddel való kapcsolatot
 
@@ -66,7 +66,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[SendGrid lista azonosítóját](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**.
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**, **Ország/régió**, **Állam** **Város** és **Irányítószám mezőben**.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**, **Ország/régió**, **Állam** **Város** és **Irányítószám mezőben**.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. **Javasoljuk, hogy ne exportáljon összesen 100 000-nél több ügyfélprofilt** a SendGridbe. 
 

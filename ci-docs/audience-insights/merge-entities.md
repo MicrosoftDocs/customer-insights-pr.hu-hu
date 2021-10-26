@@ -1,7 +1,7 @@
 ---
 title: Entitások egyesítése az adategyesítésben
 description: Entitások egyesítése az egyesített ügyfélprofilok létrehozásához.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494322"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648257"
 ---
 # <a name="merge-entities"></a>Entitások összefésülése
 
@@ -89,7 +91,7 @@ Az összes kizárt mező megtekintéséhez az **EgyesítésMerge** oldalon vála
     :::image type="content" source="media/recency-merge-option.png" alt-text="Viszonosság beállítás a mezők egyesítése párbeszédpanelen.":::
     - **Legérlegebbi**: A győztes értékét a leginkább régi alapján azonosítja. Az létrehozás idejének meghatározásához az egyesítés mezők hatókörében minden részt vevő entitáshoz dátum vagy numerikus mező szükséges.
 
-1.  Az összefésüldésben való részvételhez további mezőket is felvehet.
+1.  Az összefésülésben való részvételhez további mezőket adhat hozzá.
 
 1.  Az egyesített mező átnevezhető.
 
@@ -131,7 +133,7 @@ Egyes entitások több adatot tartalmaznak, mint mások. Ha egy entitás egy mez
 
 A mezők egyesítésének konfigurálását követően megadhatja, hogyan hozza létre a CustomerId értékeket, az egyedi ügyfélprofil-azonosítókat. Az adategyesítési folyamat egyesítési lépése létrehozza az egyedi ügyfélprofil-azonosítót. Az azonosító az *Ügyfél* entitás CustomerId-azonosítója, amely az adategyesítési folyamat eredménye. 
 
-Az Ügyfél entitás CustomerId értéke a nem null győztes elsődleges kulcsok első értékének kivonatán alapul. Ezek a kulcsok az egyesítés és összefésülés fázisában használt entitásokből jönnek, és ezeket az egyezések sorrendje befolyásolja.Így a létrehozott CustomerID módosulhat, ha egy elsődleges kulcs értéke megváltozik az egyeztetés sorrendjének elsődleges entitásában. Emiatt előfordulhat, hogy az elsődleges kulcs értéke nem mindig ugyanazt az ügyfelet képviseli.
+Az Ügyfél entitás CustomerId értéke a nem null győztes elsődleges kulcsok első értékének kivonatán alapul. Ezek a kulcsok az egyesítés és összefésülés fázisában használt entitásokből jönnek, és ezeket az egyezések sorrendje befolyásolja.Így a létrehozott CustomerID módosulhat, ha egy elsődleges kulcs értéke megváltozik az egyeztetés sorrendjének elsődleges entitásában. Előfordulhat, hogy az elsődleges kulcs értéke nem mindig ugyanazt az ügyfelet képviseli.
 
 A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elkerülje ezt a viselkedést.
 
@@ -139,7 +141,7 @@ A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elker�
 
 1. Válassza az **Egységesítés** > **Egyesítés** lehetőséget.
 
-1. A **Kulcsok** lapon válassza az **Egyesítés** lehetőséget. 
+1. Válassza ki a **Kulcsok** lapot. 
 
 1. Mutasson az egérrel a **CustomerId** sorra, és válassza a **Konfigurálás** lehetőséget.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Vezérlés az azonosítók generálásának testreszabásához.":::
@@ -147,6 +149,30 @@ A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elker�
 1. Jelöljön ki legfeljebb öt olyan mezőt, amely egyedi ügyfélazonosítót tartalmaz, és stabilabb. A konfigurációnak nem megfelelő rekordok a rendszer által konfigurált azonosítót kell használják.  
 
 1. Válassza a **Kész** lehetőséget, majd a módosítások alkalmazásához futtassa az egyesítési folyamatot.
+
+## <a name="group-profiles-into-households-or-clusters"></a>A csoportos profilokat háztartásokba vagy fürtökbe kell csoportosítani
+
+Az ügyfélprofilok generálási konfigurációs folyamatának részeként szabályokat határozhat meg, amelyek fürtbe csoportosítják a kapcsolódó profilokat. Jelenleg két fürttípus áll rendelkezésre: háztartási és egyéni fürtök. A rendszer automatikusan kiválasztja az előre definiált szabályokkal való használatot, ha az *Ügyfél* entitása a *Person.LastName* és *Location.Address* szemantikus mezőket tartalmazza. Az [egyező szabályokhoz](match-entities.md#define-rules-for-match-pairs) hasonlóan saját szabályokkal és feltételekkel is létrehozhat fürtöt.
+
+**Definiálás vagy fürt meghatározása**
+
+1. Válassza az **Egységesítés** > **Egyesítés** lehetőséget.
+
+1. Az **Egyesítés** lapon válassza a **Haladó** > **Fürt létrehozása** lehetőséget.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Új fürt létrehozásához szükséges vezérlő.":::
+
+1. Válasszon a **Háztartási** vagy az **Egyéni** fürt lehetőségekközül. Ha a *Person.LastName* és *Location.Address* szemantikus mezők léteznek az *Ügyfél* entitásban, a program automatikusan kiválasztja a címzett nevét.
+
+1. Adja meg a fürt nevét, és válassza a **Kész** lehetőséget.
+
+1. A létrehozott fürt kereséséhez válassza a **Fürtök** lapot.
+
+1. Adja meg a fürt definiáló szabályait és feltételeit.
+
+1. Válassza a **Futtatás** lehetőséget az egyesítési folyamat futtatásához és a fürt létrehozásához.
+
+Az egyesítési folyamat futtatása után a fürtazonosítók új mezőként kerülnek az *Ügyfél* entitásába.
 
 ## <a name="run-your-merge"></a>Az egyesítés futtatása
 

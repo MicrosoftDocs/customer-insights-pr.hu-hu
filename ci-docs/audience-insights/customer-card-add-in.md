@@ -1,7 +1,7 @@
 ---
 title: Ügyfélkártya bővítmény Dynamics 365-alkalmazásokhoz
 description: Ezzel a bővítménnyel a célközönségből származó adatok jeleníthetők a Dynamics 365-alkalmazásokban.
-ms.date: 05/18/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0f6c922104df229980b308136a4d764938121b35d6d744f41b1530bdb5515e7f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
+ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032991"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "7643433"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-360 fokos képet kaphat az ügyfeleiről közvetlenül a Dynamics 365 alkalmazásokban. Ha egy támogatott Dynamics 365-alkalmazásban telepíti az Ügyfélkártya bővítményt, megjelenítheti a demográfiai adatok, a betekintő információkat és a tevékenységek idővonalait. A bővítmény úgy olvassa be az adatokat a Customer Insightsból, hogy a művelet nincs hatással a csatlakoztatott Dynamics 365-alkalmazásban található adatokra. 
+360 fokos képet kaphat az ügyfeleiről közvetlenül a Dynamics 365 alkalmazásokban. A támogatott Dynamics 365 alkalmazásban telepített Ügyfélkártya-bővítmény segítségével megjeleníthet ügyfélprofil-mezőket, információkat és tevékenységi idővonalat. A bővítmény úgy olvassa be az adatokat a Customer Insightsból, hogy a művelet nincs hatással a csatlakoztatott Dynamics 365-alkalmazásban található adatokra.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -28,20 +30,19 @@ ms.locfileid: "7032991"
 - Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Microsoft Dataverse-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
 - Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
-- Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik:
-  - Mérték ellenőrzése: [Konfigurált mértékek](measures.md) szükségesek.
-  - Információk ellenőrzése: Az [előrejelzések](predictions.md) vagy az [egyéni modellek](custom-models.md) használatával létrehozott adatokra van szükség.
-  - Demográfiai ellenőrzés: Demográfiai mezők (például az életkor vagy a nemek) az egyesített ügyfélprofilban érhetők el.
-  - A dúsítási vezérlő: az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel.
-  - Idősor-vezérlő: [Konfigurált tevékenységeket](activities.md) igényel.
+- Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja értesíteni fogja, ha a kijelölt környezettípus miatt egy vezérlő nem érhető el. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
+  - **Mértékegység-vezérlő**: [Ügyfélattribútumok](measures.md) típusú, konfigurált intézkedéseket igényel.
+  - **Információk ellenőrzése**: Az [előrejelzések](predictions.md) vagy az [egyéni modellek](custom-models.md) használatával létrehozott adatokra van szükség.
+  - **Ügyféladatok vezérlő**: A profilból minden mező elérhető az egységes ügyfélprofilban.
+  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel.
+  - **Kapcsolattartók vezérlő**: A kapcsolattartók típusú szemantikus entitás definícióját igényli.
+  - **Idősor-vezérlő**: [Konfigurált tevékenységeket](activities.md) igényel.
 
 ## <a name="install-the-customer-card-add-in"></a>Az Ügyfélkártya bővítmény telepítése
 
 Az Ügyfélkártya bővítmény a Dynamics 365Customer Engagement alkalmazásihoz használható megoldás. A megoldás telepítéséhez nyissa meg az AppSource lehetőséget, és keresse meg a **Dynamics ügyfélkártyát**. Válassza ki az [ügyfélkártya bővítményt az AppSource megoldásban](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview), és válassza a **Letöltés most** lehetőséget.
 
-A megoldás telepítéséhez előfordulhat, hogy rendszergazdai hitelesítő adataival kell bejelentkeznie a Dynamics 365 alkalmazásba.
-
-Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
+A megoldás telepítéséhez előfordulhat, hogy rendszergazdai hitelesítő adataival kell bejelentkeznie a Dynamics 365 alkalmazásba. Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 
 ## <a name="configure-the-customer-card-add-in"></a>Az ügyfélkártya bővítmény konfigurálása
 
@@ -50,7 +51,7 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 1. Válassza ki a **Megjelenítendő név** hivatkozást a **Dynamics 365 Customer Insights ügyfélkártya bővítmény (előzetes verzió)** megoldáshoz.
 
    > [!div class="mx-imgBorder"]
-   > ![Megjelenítendő név választása.](media/select-display-name.png "Megjelenítendő név választása")
+   > ![Megjelenítendő név választása.](media/select-display-name.png "Megjelenítendő név választása.")
 
 1. Válassza a **Bejelentkezés** lehetőséget, és adja meg a Customer Insights konfigurálásához használt rendszergazdai fiók hitelesítő adatait.
 
@@ -64,7 +65,7 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
    - Ha egy partnert szeretne leképezni, akkor jelölje ki a mezőt az Ügyfél entitásban partner entitás azonosítójának megfelelő mezőben.
 
    > [!div class="mx-imgBorder"]
-   > ![Kapcsolattartó azonosítója mező.](media/contact-id-field.png "Kapcsolattartó azonosítója mező")
+   > ![Kapcsolattartó azonosítója mező.](media/contact-id-field.png "Kapcsolattartó azonosítója mező.")
 
 1. A beállítás mentéséhez válassza a **Konfiguráció mentése** lehetőséget.
 
@@ -73,17 +74,19 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 1. Rendelje hozzá a **Customer Insights-kártya testreszabója** szerepkört azokhoz a felhasználókhoz, akik testre szabják a kártyán megjelenített tartalmat a teljes szervezetre vonatkozóan.
 
 ## <a name="add-customer-card-controls-to-forms"></a>Ügyfélkártya-vezérlők hozzáadása űrlapokhoz
-  
+
+Az adott helyzettől függően vezérlőelemeket adhat hozzá a **Kapcsolattartó** űrlaphoz vagy a **Partner** űrlaphoz. Ha a célközönséggel kapcsolatos információk környezete üzleti partnerekhez van, javasolt a vezérlők felvétele a Partnerek űrlapra. Ebben az esetben cserélje le az alábbi lépésekben a "kapcsolattartót" a "partnerrel".
+
 1. Ha hozzá szeretné adni az ügyfélkártya vezérlőket a kapcsolattartói űrlaphoz, akkor nyissa meg a **Beállítások** > **Testreszabás** részt a Dynamics 365 megoldásban.
 
 1. Válassza ki **A rendszer testreszabása** lehetőséget.
 
 1. Tallózással keresse meg a **Kapcsolattartó** entitást, és bontsa ki, majd válassza az **Űrlapok** lehetőséget.
 
-1. Válassza ki azt a kapcsolattartói űrlapot, amelyhez hozzá szeretné adni az Ügyfélkártya vezérlőit.
+1. Válassza ki azt a kapcsolattartói űrlapot, amelyhez hozzá akarja adni az Ügyfélkártya vezérlőit.
 
     > [!div class="mx-imgBorder"]
-    > ![Válassza a Kapcsolattartói űrlapot.](media/contact-active-forms.png "Válassza a Kapcsolattartói űrlapot")
+    > ![Válassza a Kapcsolattartói űrlapot.](media/contact-active-forms.png "Válassza a Kapcsolattartói űrlapot.")
 
 1. A vezérlő hozzáadásához húzza az űrlapszerkesztő bármelyik mezőjét a **Mezőkezelőből** arra a helyre, ahol a demográfiai vezérlőt meg szeretné jeleníteni.
 
@@ -102,7 +105,8 @@ Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 1. Ha testre szeretné szabni, hogy mit szeretne megjeleníteni az egyéni vezérlőn, akkor válassza a jobb felső sarokban található szerkesztés gombot.
 
 ## <a name="upgrade-customer-card-add-in"></a>Ügyfélkártya bővítmény frissítése
-Az Ügyfélkártya bővítmény nem frissül automatikusan. A legújabb verzióra való frissítéshez kövesse a Dynamics 365 alkalmazásban, amelyhez telepítve van a bővítmény.
+
+Az Ügyfélkártya bővítmény nem frissül automatikusan. A legújabb verzióra való frissítéshez kövesse az alábbi lépéseket abban a Dynamics 365 alkalmazásban, amely telepítette a bővítményt.
 
 1. A Dynamics 365 alkalmazásban válassza a **Beállítások** > **Testreszabás**, majd a **Megoldások** lehetőséget.
 

@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-adatok exportálása a RollWorksra
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a RollWorksba.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d8ce4d867835dcb7cf56c6fffff4e25d1f5c109af0e401fc0eb8b3a7427c1de4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f8f6a79db9cb4bb109c03a464d9f8c7f3b862ad5
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034593"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617447"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Szegmensek exportálása a RollWorksba (előzetes verzió)
 
@@ -28,11 +28,11 @@ Exportálja az egyesített ügyfélprofilok szegmensét a RollWorksba, és haszn
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A RollWorks exportálásonként legfeljebb 250 000 profil exportálható.
-- A 100-nál kevesebb profillal rendelkező szegmensek nem exportálhatók a RollWorksba. 
+- Exportálásonként legfeljebb 250 000 ügyfélprofilt exportálhat a RollWorks szolgáltatásba.
+- A 100-nál kevesebb ügyfélprofillal rendelkező szegmensek nem exportálhatók a RollWorks szolgáltatásba. 
 - A RollWorksba való exportálás a szegmensekre korlátozódik.
-- 250 000 profil exportálása a RollWorks alkalmazásba akár 10 percet is igénybe vehet. 
-- A RollWorksba exportálható profilok száma a RollWorksszal kötött szerződéstől függ és az korlátozza.
+- 250 000 ügyfélprofil exportálása a RollWorks szolgáltatásba akár 10 percet is igénybe vehet. 
+- A RollWorks alkalmazásba exportálható ügyfélprofilok száma a RollWorks kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-rollworks"></a>Állítsa be a RollWorksszal való kapcsolatot
 
@@ -66,7 +66,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **RollWorks Advertiser azonosítót** [RollWorks Advertisable](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles) értéket.
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell a RollWorks alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell a RollWorks alkalmazásba.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Jelöljön ki egy legalább 100 tagból álló szegmenst. Kisebb szegmensek nem exportálhatók. Az exportálni kívánt szegmens maximális mérete exportálásonként 250 000 tag. 
 

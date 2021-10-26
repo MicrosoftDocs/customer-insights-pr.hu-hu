@@ -1,7 +1,7 @@
 ---
 title: Célközönség betekintési információinak szegmensei
 description: A szegmensek áttekintése, valamint információk a létrehozásukról és kezelésükről.
-ms.date: 05/03/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f1003b53b17e3ba2c37c0f2d94b89f7e97c2b6f10e28b7bbe93160e4c7f08d54
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036376"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617378"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -26,11 +26,19 @@ A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagj
 
 Új szegmens többféleképpen is létrehozható: 
 
-- Összetett szegmens a szegmensszerkesztővel: [Üres szegmens](segment-builder.md#create-a-new-segment)
-- Egyszerű szegmensek egyetlen operátorral: [Gyorsszegmens](segment-builder.md#quick-segments)
-- Hasonló ügyfelek keresése AI-alapú megoldással: [Hasonló ügyfelek](find-similar-customer-segments.md)
-- AI-alapú, mértékeken vagy attribútumokon alapuló javaslatok: [Javasolt szegmensek a mértékek javításához](suggested-segments.md)
-- Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md)
+# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
+
+- Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment) 
+- Egyszerű szegmensek egyetlen operátorral: [Gyorsszegmens](segment-builder.md#quick-segments) 
+- Hasonló ügyfelek keresése AI-alapú megoldással: [Hasonló ügyfelek](find-similar-customer-segments.md) 
+- AI-alapú, mértékeken vagy attribútumokon alapuló javaslatok: [Javasolt szegmensek a mértékek javításához](suggested-segments.md) 
+- Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md) 
+
+# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+
+- Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment)
+
+---
 
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
@@ -70,9 +78,9 @@ Exportálhat egy szegmenst a szegmensek oldaláról vagy az [exportálások olda
 
 1. Válassza az **Exportálás kezelése** lehetőséget a műveletek legördülő listából.
 
-1. Megnyílik az **Exportálás (előzetes verzió) szegmenshez** oldal. Láthatja az összes konfigurált exportálást export szerint csoportosítva, amely tartalmazza az aktuális szegmenst, vagy nem tartalmazza azt.
+1. Megnyílik az **Exportálás (előzetes verzió) szegmenshez** oldal. Az összes konfigurált exportálást csoportosítva láthatja, hogy azok tartalmazzák-e az aktuális szegmenst vagy sem.
 
-   1. Ha a kijelölt szegmenst egy exportáláshoz szeretné hozzáadni, jelölje ki a listában az exportálást, és válassza a **Szegmens hozzáadása** lehetőséget.
+   1. Ha a kijelölt szegmenst hozzá szeretné adni egy exportáláshoz, **Módosítsa** a megfelelő exportálást, és válassza ki a megfelelő szegmenst, majd mentse. Egyéni ügyfelek környezetében kiválaszthatja a listában az exportálást, és a **Hozzáadás szegmens** lehetőséget választhatja ugyanez eléréséhez.
 
    1. Ha új exportálást szeretne létrehozni a kijelölt szegmenssel, válassza az **Exportálás hozzáadása** lehetőséget. Az exporálások létrehozásával kapcsolatos további információkért lásd: [Új exportálás beállítása](export-destinations.md#set-up-a-new-export).
 

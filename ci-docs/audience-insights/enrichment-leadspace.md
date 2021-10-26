@@ -1,32 +1,32 @@
 ---
 title: A vállalati profilok bővítése a harmadik féltől származó bővítési Leadspace-szel
 description: Általános információk a Leadspace harmadik fél bővítésről.
-ms.date: 04/09/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: kishorem-MS
-ms.author: kishorem
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 34b73b37670ed45e2c31ea164c0788b793bee433829ce21317c83903f3fca1fe
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031706"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617404"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>A vállalati profilok bővítése Leadspace-szel (előzetes verzió)
 
-A Leadspace egy adatelemző vállalat, amely egy B2B ügyfél-adatplatformot biztosít. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések több attribútumot tartalmaznak,mint például a vállalatméret, székhely, iparág stb.
+A Leadspace egy adatelemző vállalat, amely egy B2B ügyfél-adatplatformot biztosít. Lehetővé teszi olyan környezetek számára, amelyek partnereken alapuló egységes ügyfélprofilokat tartalmaznak adataik gyarapítása érdekében. Az *ügyfélprofilok* gyarapítása attribútumokkal, például a vállalat méretével, helyével vagy iparágával. A *Kapcsolattartók* profiljainak bővítése attribútumokkal, például cím, személy vagy e-mail-ellenőrzés.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 A Leadspace konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 - Aktív Leadspace-licenccel rendelkezik.
-- A vállalatokhoz [egyesített ügyfélprofilok](customer-profiles.md) tartoznak.
-- A Leadspace kapcsolatot már konfigurálta egy rendszergazda, vagy rendelkezik [rendszergazdai](permissions.md#administrator) engedélyekkel, és a „végleges kulcs” (más néven **Leadspace token**). Termékeikkel kapcsolatos részletekért forduljon közvetlenül a [Leadspace-hez](https://www.leadspace.com/products/leadspace-on-demand/).
+- A partnereken alapuló [egységes ügyfélprofiljai](customer-profiles.md) vannak.
+- A Leadspace kapcsolatot már konfigurálta egy rendszergazda, vagy rendelkezik [rendszergazdai](permissions.md#administrator) engedélyekkel, és a „végleges kulcs” (más néven **Leadspace token**). Termékeikkel kapcsolatos részletekért forduljon közvetlenül a [Leadspace-hez](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
@@ -50,6 +50,10 @@ A Leadspace konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
+1. Jelölje be a jelölőnégyzetet, ha vannak gyarapítani kívánt *Kapcsolattartói profilok*. Célközönség insights automatikusan leképezi a kötelező mezőket.
+
+   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Leadspace kapcsolattartói rekordok gazdagítása.":::
+ 
 1. Adja meg a bővítés nevét, és válassza a **Bővítés memtése** lehetőséget a lehetőségek áttekintése után.
 
 
@@ -79,9 +83,10 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 További tájékoztatásért tekintse meg a [Leadspace API-kat](https://support.leadspace.com/hc/en-us/sections/201997649-API).
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
+
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

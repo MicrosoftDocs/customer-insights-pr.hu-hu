@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 75d597158233f75f0eb5f94389f9dba199d81719f2bbe4e5cc58d2a3afc7dcf8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032853"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645358"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -35,7 +35,7 @@ A adatforrások három fő módon adhatók hozzá:
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Adatok hozzáadása helyszíni adatforrásokból
 
-A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](get-started-paid.md).
+A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](create-environment.md).
 
 A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse-környezet társítva lett volna [a helyszíni adatátjárók használatára](/data-integration/gateway/service-gateway-app).
 

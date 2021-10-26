@@ -4,17 +4,17 @@ description: Metrikák létrehozása, szerkesztése és törlése.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 06/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 97189168e0f5586aad8be8089a1f9e27893c2115c7e805ddaab1efc00e11b860
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 79600a14bc7e98dfd066270f19c353fd007e1341
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034272"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623725"
 ---
 # <a name="view-and-create-metrics"></a>Metrikák megtekintése és létrehozása
 
@@ -38,21 +38,24 @@ Ezek a rendszermutatók az alapesemények meglévő eseménytulajdonságaira ép
 1. Válassza a bal navigációs ablaktáblán az **Adatok** elemet. 
 1. Jelölje ki a **Metrikák** lapot a munkaterület összes metrikája listájának megtekintéséhez. 
    > [!NOTE]
-   > A rendszer által generált metrikák csak olvashatók. Ezeket nem módosíthatja és nem törölheti. Csak egyéni metrikákat hozhat létre és szerkeszthet.
+   > A rendszer által generált metrikák csak olvashatók. A témák nem szerkeszthetők. Csak egyéni metrikákat hozhat létre és szerkeszthet.
 
 ## <a name="create-a-metric"></a>Metrika létrehozása
 
 A környezet- és munkaterület-rendszergazdák hozhatnak létre metrikákat. A metrikák létrehozása előtt az esemény tulajdonságait el kell küldeni a munkaterületre. Létrehozhat metrikákat az alapesemények által küldött eseménytulajdonságok alapján, vagy a webes SDK segítségével [küldhet egyéni eseménytulajdonságokat](advanced-SDK-implementation.md).
 
 1. Ugorjon az **Adatok** > **Metrikák** menübe.
-1. Válassz az **Új metrika** lehetőséget.
+1. Válassza az **Új mérőszám** lehetőséget az **Erőforrástár** és az **Új névtelen mérőszám** párbeszédpanel megnyitásához.
 
    :::image type="content" source="media/new-metric.png" alt-text="Metrika hozzáadása eseményhez.":::
 
-1. A formátum beállításának válassza az **Egész** vagy a **Dupla** adattípust. Az Egész szám egy egész szám. Dupla esetében egy–három tizedesjegyet választhat.
-1. Keresse meg az **Erőforrástár** ablaktáblában az esemény tulajdonságot, amely a metrika alapja.
-1. Válassza ki a tulajdonság melletti **pluszjelet (+)** a képletben való használathoz. Csak egyetlen tulajdonság alapján hozhat létre képletet. 
-1. Válasszon egyet a következők összesítő függvények közül. 
+1. Az **Új névtelen metrika** párbeszédpanelen válassza a **Formátum** legördülő listát, és válassza az **Egész szám** vagy a **Dupla** adattípust. Az Egész szám egy egész szám. Dupla értékként egy és három tizedesjegyet választhat.
+
+   :::image type="content" source="media/create-new-metric.png" alt-text="Új metrika létrehozása.":::
+   
+5. Keresse meg az **Erőforrástár** ablaktáblában az esemény tulajdonságot, amely a metrika alapja.
+6. Válassza ki a tulajdonság melletti **pluszjelet (+)** a képletben való használathoz. Csak egyetlen tulajdonság alapján hozhat létre képletet. 
+7. Válasszon egyet a következők összesítő függvények közül. 
 
    - Összeg: az összes érték számtani összege 
    - Átlag: az összes érték átlaga
@@ -68,12 +71,16 @@ A metrika esetében percet is igénybe vehet, mire [egyéni jelentések létreho
 
 ## <a name="edit-a-metric"></a>Metrika szerkesztése
 
+Csak az egyéni mérőszámok módosíthatók.
+
 1. Ugorjon az **Adatok** > **Metrikák** menübe.
 1. A listáról válassza ki a metrikát.
 1. A metrika definíciójának módosítása
 1. Válassza a **Mentés** parancsot.
 
 ## <a name="change-the-name-of-a-metric"></a>Egy metrika nevének megváltoztatása
+
+Csak az egyéni metrika nevét lehet módosítani.
 
 1. Ugorjon az **Adatok** > **Metrikák** menübe.
 1. Válassza a **Továbbiak [...]** lehetőséget egy metrikához, majd válassza a **Név szerkesztése** lehetőséget.
@@ -82,11 +89,15 @@ A metrika esetében percet is igénybe vehet, mire [egyéni jelentések létreho
 
 ## <a name="delete-a-metric"></a>Metrika törlése
 
+Csak az egyéni mérőszámok törölhetők.
+
 1. Ugorjon az **Adatok** > **Metrikák** menübe.
 1. Válassza a **Továbbiak [...]** lehetőséget egy metrikánál, majd válassza a **Törlés** lehetőséget.
 
    :::image type="content" source="media/delete-metric.png" alt-text="Metrika törlése egy eseménytől.":::
 
 1. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
+
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

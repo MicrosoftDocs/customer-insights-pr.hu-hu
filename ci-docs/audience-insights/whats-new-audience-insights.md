@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465208"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606083"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
@@ -26,6 +26,20 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>2021. szeptemberi frissítések
+
+A 2021. szeptemberi frissítések új szolgáltatásokat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="activities"></a>Tevékenységek
+
+- **Tevékenység idővonalának továbbfejlesztései** Kiterjesztettük a tevékenység ütemezésére vonatkozó szűrőket az ügyfélprofilok esetében. Az új szűrőtálat emellett tevékenységtípus és dátum szerint is szűrheti. A dátumok szűrhetők más feltételekkel. További információkért lásd a [Tevékenység ütemezésének megtekintése az ügyfélprofilon](activities.md#view-activity-timelines-on-customer-profiles) részt.
+
+### <a name="relationships"></a>Kapcsolatok
+
+- **Több ugrásos kapcsolattámogatás** A tevékenységek konfigurálásakor és az entitások közötti kapcsolatok definiálásakor több ugrásos kapcsolatokat használjon. A többugrásos kapcsolatok köztes entitás használatával két entitást kapcsolhat össze. A tevékenységek konfigurálásakor több ugrásból álló kapcsolat segítségével a tevékenységentitást egy köztes entitáshoz, majd egy ügyfélentitáshoz kapcsolhatja. A több ugrásból álló kapcsolatok több útvonalból álló kapcsolatok. További információt a [Több ugrásos kapcsolat](relationships.md#multi-hop-relationship) részben talál.
+
+- **Több útvonalból álló kapcsolattámogatás** A tevékenységek konfigurálásakor és az entitások közötti kapcsolatok definiálásakor több útvonalból álló kapcsolatokat használjon. A több elérési útvonalból álló kapcsolatok a forrásentitást egynél több entitáshoz kapcsolják. A tevékenységek konfigurálásakor több elérési útvonalból álló kapcsolat segítségével a tevékenységentitást több mint egy ügyfélentitáshoz kapcsolhatja. A több elérési útvonalból álló kapcsolatok több ugrásból álló kapcsolatok. További információt a [Több elérési útvonalból álló kapcsolat](relationships.md#multi-path-relationship) részben talál.
 
 ## <a name="august-2021-updates"></a>2021. augusztusi frissítések
 

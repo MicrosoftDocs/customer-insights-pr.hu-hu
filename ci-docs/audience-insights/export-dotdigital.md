@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása a DotDigitalbe
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a DotDigitalba.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f09be0dfa599c1ef7cf0055b7ce1df8784cf447ada64b56bc7543c214f9a5b99
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3e3a79603f9f5746ee176d3d4299a30510c7459e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034639"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618386"
 ---
 # <a name="export-segments-to-dotdigital-preview"></a>Szegmensek exportálása a DotDigitalba (előzetes verzió)
 
@@ -22,17 +22,17 @@ Az egyesített ügyfélprofilok szegmenseit exportálhatja a DotDigital címjegy
 
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
--   Rendelkezik [DotDigital-fiókkal](https://dotdigital.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
+-   [DotDigital fiókja](https://dotdigital.com/) van, és [API-felhasználót](https://support.dotdigital.com/hc/articles/115001718730-How-do-I-create-an-API-user) hozott létre. Kapcsolat létrehozásához az API-felhasználó hitelesítő adatait kell használnia
 -   A DotDigitalban és a megfelelő azonosítókban meglévő címjegyzékek találhatók. Az azonosító megtalálhatók az URL-címben, amikor kijelöli és megnyitja a címjegyzéket. További információért lásd: [DotDigital címjegyzékek](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   [Konfigurált szegmensekkel](segments.md) rendelkezik a célközönségi-információkban.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Legfeljebb 1 000 000 profilt exportálhat egyszerre a DotDigitalba.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a DotDigital fájlba.
 - A DotDigitalba való exportálás csak szegmensekre korlátozódik.
-- Az összesen 1 000 000 profillal rendelkező szegmens exportálása a szolgáltatói oldalon megjelenő korlátozások miatt akár 3 óráig is eltarthat. 
-- A DotDigitalba exportálható profilok száma függ a DotDigital szerződésről, és korlátozott.
+- Az összesen 1 millió ügyfélprofilt biztosító szegmensek exportálása a szolgáltatói oldalon korlátozások miatt akár 3 órát is igénybehet. 
+- A DotDigital alkalmazásba exportálható ügyfélprofilok száma a DotDigitallel kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-dotdigital"></a>Állítsa be a DotDigitallal való kapcsolatot
 
@@ -44,7 +44,7 @@ Az egyesített ügyfélprofilok szegmenseit exportálhatja a DotDigital címjegy
 
 1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Adja meg a **DotDigital felhasználói nevét és a jelszavát**.
+1. Adja meg a **DotDigital API-felhasználói nevét és a jelszavát**. 
 
 1. Adja meg a **[DotDigital címjegyzék-azonosítóját](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book)**.
 
@@ -67,7 +67,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a DotDigital szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév** , a **Teljes név**, a **Nem** és az **Irányítószám** mezőben.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév** , a **Teljes név**, a **Nem** és az **Irányítószám** mezőben.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a DotDigitalba.
 

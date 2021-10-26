@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-adatok exportálása a Snapchatre
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Snapchatbe.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 421dcd5ba5421597cf9dea71a9f9f25c7972a4f26fb49d4b042f8667a317ab5d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b7a929d65a730b60e77ae111b458c68d3cce2020
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033404"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618663"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Szegmensek exportálása a Snapchatbe (előzetes verzió)
 
@@ -29,7 +29,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét a Snapchatbe, és haszn�
 ## <a name="known-limitations"></a>Ismert korlátozások
 
 - A Snapchatbe való exportálás a szegmensekre korlátozódik.
-- 1 millió profil exportálása a Snapchat alkalmazásba akár 15 percet is igénybe vehet. 
+- 1 millió ügyfélprofil exportálása a Snapchat szolgáltatásba akár 15 percet is igénybe vehet. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Állítsa be a Snapchettel való kapcsolatot
 
@@ -63,7 +63,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a [**Snapchat célközönségazonosítót**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell a Snapchat alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell a Snapchat alkalmazásba.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. 
 

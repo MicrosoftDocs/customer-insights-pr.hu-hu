@@ -1,7 +1,7 @@
 ---
 title: LiveRamp összekötő
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a LiveRampbe.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7940db3efacad62ba16099849b3e3ca00d2a5cc1ed31e15a34209c0797e6ae13
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9a0a88fb58897e4d279c181f4cdb4f6c852da60
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035648"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618938"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Szegmensek exportálása a LiveRampbe&reg; (előzetes verzió)
 
@@ -58,7 +58,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
    > [!div class="mx-imgBorder"]
    > ![LiveRamp összekötő attribútum-hozzárendeléssel.](media/export-liveramp-segments.png "LiveRamp összekötő attribútum-hozzárendeléssel")
 
-1. Képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kiválasztott kulcsazonosítóhoz.
+1. Az *Ügyfél* entitása megfelelő attribútumainak leképezhető a kijelölt kulcsazonosítóra.
 
 1. Válassza az **Attribútum hozzáadása** lehetőséget a több attribútum leképzésének LiveRampbe küldéséhez.
 
