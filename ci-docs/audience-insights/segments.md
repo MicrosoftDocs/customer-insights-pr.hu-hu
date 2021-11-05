@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: ac33a6dcde4c710cecd3c6836aad3e26ce5c7de6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617378"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673836"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -26,7 +26,7 @@ A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagj
 
 Új szegmens többféleképpen is létrehozható: 
 
-# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
 - Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment) 
 - Egyszerű szegmensek egyetlen operátorral: [Gyorsszegmens](segment-builder.md#quick-segments) 
@@ -34,7 +34,7 @@ A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagj
 - AI-alapú, mértékeken vagy attribútumokon alapuló javaslatok: [Javasolt szegmensek a mértékek javításához](suggested-segments.md) 
 - Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md) 
 
-# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 - Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment)
 

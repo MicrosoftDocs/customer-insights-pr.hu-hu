@@ -1,7 +1,7 @@
 ---
 title: Szegmensek létrehozása a szegmensépítőben
 description: Hozzon létre ügyfelekből álló szegmenseket, és csoportosítsa őket különböző attribútumok alapján.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623015"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673553"
 ---
 # <a name="create-segments"></a>Szegmensek létrehozása
 
@@ -23,6 +23,7 @@ ms.locfileid: "7623015"
 > [!TIP]
 > - A gyorsszegmenseket csak az **egyes ügyfelek** környezetekben támogatja a rendszer.    
 > - Az **egyéni ügyfeleken** alapuló szegmensek automatikusan tartalmazzák a szegmenstagok rendelkezésre álló kapcsolattartási adatait. Az **üzleti partnerek** környezetében a szegmensek partnereken (vállalatokon vagy leányvállalatok) alapulnak. Ha egy szegmensben meg kell jelenni a kapcsolattartási adatok, használja a szegmensszerkesztő **Projekt attribútuma** funkcióját.
+>    - Ügyeljen arra, hogy a kapcsolattartó adatforrásai [ szemantikailag le legyenek leképezve a ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping) entitásra.
 
 ## <a name="segment-builder"></a>Szegmensépítő
 
@@ -52,7 +53,7 @@ A fenti példa a szegmentációs képességet szemlélteti. Meghatároztunk egy 
 
 Új szegmens többféleképpen is létrehozható. Ez a rész ismerteti, hogyan lehet a saját szegmenst a nulláról felépíteni. *Üres szegmenst* a meglévő entitások alapján, illetve a gépi tanulási modell *javasolt szegmensei* alapján is létrehozhat. További információ a [Szegmensek áttekintése](segments.md) részhez.
 
-A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rendszer inaktív szegmensként ment egy szegmenst. A szegmens konfigurálás befejezése után futtassa a szegmens aktiválásához. Másik lehetőségként az ***Aktiválhat** _ egy szegmenst is a _ *Minden szegmens** oldalról.
+A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rendszer inaktív szegmensként ment egy szegmenst. A szegmens konfigurálás befejezése után futtassa a szegmens aktiválásához. Másik lehetőségként **Aktiválhat** egy szegmenst a **Minden szegmens** oldalról.
 
 1. Lépjen a **Szegmensek** oldalra.
 
@@ -86,17 +87,25 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
 
    Az VAGY operátor használata esetén minden feltételnek a kapcsolati elérési útban szereplő entitáson kell alapulnia.
 
-   - Több szabályt is létrehozhat, hogy több ügyfélrekordot-halmazt hozzon létre. A csoportok kombinálhatók, hogy tartalmazzák az üzleti esethez szükséges ügyfeleket. Új szabály létrehozásához válassza az **Szabály hozzáadása** lehetőséget. Ha a megadott kapcsolati útvonal miatt nem lehet szabályt és entitást létrehozni, új szabályt kell létrehozni, hogy attribútumokat válasszon belőle.
+   - Több szabályt is létrehozhat, hogy több ügyfélrekordot-halmazt hozzon létre. A csoportok kombinálhatók, hogy tartalmazzák az üzleti esethez szükséges ügyfeleket. Új szabály létrehozásához válassza az **Szabály hozzáadása** lehetőséget. Ha a megadott kapcsolati útvonal miatt nem lehet egy szabályba bevetni az entitást, új szabályt kell létrehozni, hogy kiválassza a benne található attribútumokat.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Vegyen fel egy új szabályt egy szegmensbe, és válassza ki a halmaz operátorát.":::
 
    - Válasszon egyet a készletre vonatkozó operátorok közül: **Unió**, **Metszet** vagy **Kivétel**.
 
       - Az **Egyesülés** egyesíti a két csoportot.
-      - A **Metszet** a két csoport átfedését veszi. Csak az az adat *amely közös* kerül megtartásra mindkét egységesített csoportban.
-      - **Kivéve** kombinálja a két csoportot. Csak azon adat kerül megtartásra az A csoportban, amely *nem közös* a B csoport adatival.
+      - A **Metszet** a két csoport átfedését veszi. Csak azok az adatok maradnak az egyesített csoportban, amelyek mindkét csoportban *közösek*.
+      - **Kivéve** kombinálja a két csoportot. Csak az A csoportban lévő olyan adatokat tartja meg a rendszer, amelyek *nem közösek* a B csoport adataival.
 
-1. A szegmensek alapértelmezés szerint a definiált szűrőknek megfelelő ügyfélprofilok összes attribútumát tartalmazó kimeneti entitást hozzák létre. Ha egy szegmens nem az *Ügyfél* entitáson alapul, akkor ezekből az entitásokból további attribútumokat adhat a kimeneti entitáshoz. A **Projektattribútumok** kiválasztásával kiválaszthatja a kimeneti entitáshoz hozzáfűzni kívánt attribútumokat.  
+1. A szegmensek alapértelmezés szerint a definiált szűrőknek megfelelő ügyfélprofilok összes attribútumát tartalmazó kimeneti entitást hozzák létre. Ha egy szegmens nem az *Ügyfél* entitáson alapul, akkor ezekből az entitásokból további attribútumokat adhat a kimeneti entitáshoz. A **Projektattribútumok** kiválasztásával kiválaszthatja a kimeneti entitáshoz hozzáfűzni kívánt attribútumokat. 
+
+   > [!IMPORTANT]
+   > Az üzleti partnereken alapuló szegmensek esetében a szegmensben szerepelnie kell egy vagy több kapcsolattartó részleteinek a *ContactProfile* entitás mindegyik partneréből, hogy a szegmens aktiválható vagy exportálható legyen a kapcsolattartási adatokat igénylő célpontok felé. A *ContactProfile* entitásról a [Szemantikai leképezés](semantic-mappings.md) című részben olvasható további információ.
+   > A kapcsolattartók tervezett attribútumával rendelkező üzleti partnereken alapuló szegmensekre vonatkozó mintakimenet: 
+   >
+   > |Azonosító  |Számla neve  |Bevétel  |Kapcsolattartó neve  | Kapcsolattartó szerepköre|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100K | [Abbie Moss, Ruth Soto]  | [CEO, beszerzési vezető]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Példa a kimeneti entitáshoz hozzáadandó, az oldalpanelen kijelölt elővetített attribútumokra.":::
   
@@ -107,13 +116,14 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
    > - Ha a projektben használni kívánt attribútum egynél több ugrást tartalmaz az *Ügyfél* entitástól, ezt a kapcsolat határozza meg, az attribútumot az összes olyan szegmenslekérdezésben fel kell használni, amelyet most hoz létre. 
    > - Ha a projektben használni kívánt attribútum csak egy ugrást tartalmaz az *Ügyfél* entitástól, ennek az attribútumnak nem kell szerepelnie az épülő szegmenslekérdezés minden szabályában. 
    > - A **Vetített attribútumokat** figyelembe veszi a rendszer a beállított operátorok használatakor.
-   > - Az üzleti partnereken alapuló szegmensek esetében a szegmensben szerepelnie kell egy vagy több kapcsolattartónak, hogy a szegmens aktiválható vagy exportálható legyen a kapcsolattartási adatokat igénylő célpontok felé.
 
 1. A szegmens mentése és futtatása előtt válassza a Szegmens neve melletti **Részletek szerkesztése** lehetőséget. Adja meg a szegmens nevét, és frissítse a szegmens javasolt **Kimeneti entitás neve** értéket. A szegmenshez leírást is hozzáadhat.
 
 1. Válassza a **Futtatás** lehetőséget a szegmens mentéshez, aktiválásához és a szegmens feldolgozásának megkezdéséhez az összes szabály és feltétel alapján. Máskülönben inaktív szegmensként menti a rendszer.
-
+   
 1. A **Szegmensek** oldalra a **Vissza a szegmensekhez** elemre kattintva léphet vissza.
+
+1. A szegmens alapértelmezés szerint dinamikus szegmensként jön létre. Ez azt jelenti, hogy a rendszerfrissítés során frissül a szegmens. Ha [le szeretné állítani az automatikus frissítést](segments.md#manage-existing-segments), válassza ki a szegmenst, majd a **Statikussá tétel** lehetőséget. A statikus szegmensek bármikor [frissíthetők manuálisan](segments.md#refresh-segments).
 
 > [!TIP]
 > - A szegmensépítő nem javasol érvényes értékeket az entitásokból a feltételek operátorainak beállításakor. Az **Adatok** > **Entitások** helyen letöltheti az entitásadatokat, és láthatja, hogy mely értékek érhetők el.

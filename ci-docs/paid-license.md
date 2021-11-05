@@ -1,19 +1,19 @@
 ---
 title: Első lépések a Dynamics 365 Customer Insights fizetett licenccel
 author: m-hartmann
-description: Ismerkedjen meg a Dynamics 365 Customer Insights szolgáltatásban első alkalommal futtatott élményekkel, és fedezze fel a lehetőségeit.
+description: Ismerkedjen meg a Dynamics 365 Customer Insights szolgáltatásban első alkalommal futtatott élményekkel, és fedezze fel a hozzájuk tartozó funkciókat.
 ms.author: mhart
 ms.date: 10/05/2021
 ms.service: customer-insights
 ms.topic: overview
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 9f96a70d0cc316e8793921fedb0cc3fa4751c827
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645695"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673460"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Első lépések a Customer Insights beszerzését követően
 
@@ -29,7 +29,7 @@ Ha a szolgáltatást és a funkciókat szeretné kipróbálni, akkor tekintse me
 
 ## <a name="start-with-customer-insights"></a>Első lépések a Customer Insights szolgáltatással
 
-Az első futtatás során kiválasztja a fókuszt a Customer Insights segítségével, és a mintaadatok segítségével fedezze fel a lehetőségeket. Következő lépésként saját környezetet hozhat létre, és saját adatokat dolgozhat.
+Az első futtatás során kiválaszthatja a fókuszt a Customer Insights segítségével, és mintaadatok segítségével fedezheti fel a lehetőségeket. Következő lépésként saját környezetet hozhat létre, és saját adatokat dolgozhat.
 
 **Bejelentkezés első alkalommal**:
 

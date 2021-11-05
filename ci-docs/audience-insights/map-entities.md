@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-map
-ms.openlocfilehash: 7ee3feea8423f35f32ff471b3ed8eb3447584089
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: 8b84ed1a860e383e4eb3f7499be6d397ba3f1db1
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648165"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673266"
 ---
 # <a name="map-entities-and-attributes"></a>Entitások és attribútumok leképezése
 
@@ -96,7 +96,7 @@ Folytassa az egyesítési lépéseket, és gondoskodjon róla, hogy a kép URL-c
 
 A szervezetek (előnézet) esetében az attribútum típusát le kell képezni az "Organization.Name" értékhez
 > [!div class="mx-imgBorder"]
-> ![Elsődleges kulcs és attribútum B2B](media/configure-data-map-edit-b2b.png "Elsődleges kulcs és attribútum B2B")
+> ![Elsődleges kulcs és B-to-B típusú attribútum.](media/configure-data-map-edit-b2b.png "Elsődleges kulcs és üzleti számlák (B-to-B) típusú attribútum")
 
 ## <a name="next-step"></a>Következő lépés
 

@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623119"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673326"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
@@ -32,14 +32,14 @@ Az exportálásnak két fő típusa van:
 
 ### <a name="export-segments"></a>Szegmensek exportálása
 
-**Szegmensek exportálása üzleti partnerek (B2B) vagy egyéni ügyfelek környezetbe (B2C)**  
-A legtöbb exportálási lehetőség támogatja mindkét típusú környezetet. A szegmensek különböző célrendszerekbe való exportálása konkrét követelményekkel jár. Általában a kapcsolatfelvételi szegmenstag, az ügyfélprofil tartalmazza a kapcsolatfelvételi adatokat. Bár ez általában az egyéni ügyfeleken (B2C) alapuló szegmensekre jellemző, nem feltétlenül ez az eset az üzleti partnereken (B2B) alapuló szegmensekre. 
+**Szegmensek exportálása üzleti számlák (B-to-B) vagy egyéni ügyfelek környezetbe (B-to-C)**  
+A legtöbb exportálási lehetőség támogatja mindkét típusú környezetet. A szegmensek különböző célrendszerekbe való exportálása konkrét követelményekkel jár. Általában a kapcsolatfelvételi szegmenstag, az ügyfélprofil tartalmazza a kapcsolatfelvételi adatokat. Bár ez általában az egyéni ügyfeleken (B-to-C) alapuló szegmensekre jellemző, nem feltétlenül ez az eset az üzleti számlákon (B-to-B) alapuló szegmensekre. 
 
-**Üzleti partnerek környezetének szegmensexportálása (B2B)**  
+**Üzleti számlák környezetének szegmensexportálása (B-to-B)**  
 - Az üzleti partnerek környezetében a szegmensek a *partnerek* entitásán épülnek. A megfelelő partnerszegmensek exportálásához a célrendszernek támogatnia kell a partnerszegmenseket. Ez a [LinkedIn](export-linkedin-ads.md) esetében az az eset, amikor az exportálás definiálása során kiválasztja a **vállalat** beállítását.
 - Minden más célrendszerhez a kapcsolattartói entitás mezői szükségesek. Annak biztosításához, hogy a partnerszegmensek beolvassa az adatokat a kapcsolódó kapcsolattartókból, a szegmens definíciójának a kapcsolattartó entitás projektattribútumainak kell részét vennie. További információk a [szegmensek és projektattribútumok konfigurálásról](segment-builder.md).
 
-**Szegmensexportálás az egyes ügyfelek környezeteibe (B2C)**  
+**Szegmensexportálás az egyes ügyfelek környezeteibe (B-to-C)**  
 - Az egyéni ügyfelek környezeteihez kapcsolódó szegmensek az *egységes ügyfélprofil* entitáson alapulnak. A célrendszerek (például egy e-mail-cím) követelményeinek megfelelő minden szegmens exportálható.
 
 **A szegmensexportálásra vonatkozó korlátozások**  

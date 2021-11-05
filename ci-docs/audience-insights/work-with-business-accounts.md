@@ -1,7 +1,7 @@
 ---
 title: Első lépések az üzleti partnerek beállítása elsődleges célközönségként szolgáltatással
 description: További információ az üzleti partnerek beállítása elsődleges célközönségként Dynamics 365 Customer Insights szolgáltatásról.
-ms.date: 09/30/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wimohabb
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea036cf3a3623a314a6d0d7da85b2c30c030ccea
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ac5ae950a44f7f32e3cb9fdc0ffad05b78fddef0
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7644991"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673690"
 ---
 # <a name="work-with-business-accounts-in-audience-insights"></a>Üzleti fiókokkal való munka a célközönséggel kapcsolatos információkban
 
-A Dynamics 365 Customer Insights célközönséggel kapcsolatos információi lehetővé teszik a különböző elsődleges célközönségek – egyéni ügyfelek (B2C) és üzleti partnerek (B2B) – környezetének beállítását. B2C helyzetekben az adatok egyének köré központosulnak. A B2B esetében az elsődleges célközönség a partnerek – szervezetek vagy cégek – és kapcsolattartók. Ez a cikk segít a kötrnyezettel rendelkező üzleti partnereknek az első lépésekben. A környezeti fókusztól függően felsorolja a közönségstatisztika jellemzői közötti különbségeket. Ha többet szeretne megtudni a különbségekről, tekintse át a funkcióterületek dokumentációját. 
+A Dynamics 365 Customer Insights célközönséggel kapcsolatos információi lehetővé teszik a különböző elsődleges célközönségek – egyéni ügyfelek (B-to-C) és üzleti partnerek (B-to-B) – környezetének beállítását. A B-to-C helyzetekben az adatok egyének köré központosulnak. A B-to-B esetekben az elsődleges célközönség a partnerek – szervezetek vagy cégek – és a kapcsolattartók. Ez a cikk segít a kötrnyezettel rendelkező üzleti partnereknek az első lépésekben. A környezeti fókusztól függően felsorolja a közönségstatisztika jellemzői közötti különbségeket. Ha többet szeretne megtudni a különbségekről, tekintse át a funkcióterületek dokumentációját. 
 
 ## <a name="create-an-environment-for-business-accounts"></a>Hozzon létre környezetet az üzleti fiókokhoz
 
@@ -32,7 +32,7 @@ Az adatok egyesítése után [adja meg a fiókhierarchiákat](relationships.md#s
 
 Ha a szervezet egyéni ügyfelek és üzleti partnerek számára tart fenn környezeteket, a bal oldali ablaktáblában váltógomb segítségével kiválaszthatja az elsődleges célközönséget.
 
-:::image type="content" source="media/switch-primary-target-audience.PNG" alt-text="Váltógomb az elsődleges célközönség ügyfelek és üzleti partnerek közötti váltásra.":::
+:::image type="content" source="media/switch-primary-target-audience.png" alt-text="Váltógomb az elsődleges célközönség ügyfelek és üzleti partnerek közötti váltásra.":::
 
 ## <a name="supported-feature-areas"></a>Támogatott funkcióterületek
 

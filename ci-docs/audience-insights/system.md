@@ -1,7 +1,7 @@
 ---
 title: Rendszerkonfiguráció a célközönség információk funkcióban
 description: Ismerkedjen meg a rendszerbeállításokkal Dynamics 365 Customer Insights célközönség információkban.
-ms.date: 02/12/2021
+ms.date: 10/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,24 +9,24 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
+ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035910"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7651843"
 ---
 # <a name="system-configuration"></a>Rendszerkonfiguráció
 
 A **Rendszer** lap a következő füleket tartalmazza:
-- [Státusz](#status-tab)
+- [Állam](#status-tab)
 - [Ütemezés](#schedule-tab)
 - [API-használat](#api-usage-tab)
 - [Névjegy](#about-tab)
 - [Általános](#general-tab)
+- [Biztonsági](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Rendszer oldal.](media/system-tabs.png "Rendszer oldal")
+:::image type="content" source="media/system-tabs.png" alt-text="A Beállítások lap a rendszeroldalon.":::
 
 ## <a name="status-tab"></a>Állapot lap
 
@@ -84,9 +84,15 @@ A **Névjegy** lapon a szervezet **megjelenítendő neve**, az aktív **környez
 
 ## <a name="general-tab"></a>Általános lap
 
-Két beállítás szerepel az **Általános** lapon, a **Nyelv** és az **Ország/régió formátuma**.
+Az **Általános** lapon módosíthatja a nyelvet és az országot/régiót.
 
-Az alkalmazás [számos nyelvet támogat](supported-languages.md). Az előnyben részesített nyelv megváltoztatásához válasszon egy **nyelvet** a legördülő listából.
+A Customer Insights [számos nyelvet támogat](/dynamics365/get-started/availability). Az alkalmazás felhasználja nyelvpreferenciát, hogy egyes elemeket, mint például a menü, a címszövegek és a rendszerüzenetek, a preferált nyelven jelenítsen meg.
+
+A rendszer nem fordítja le a manuálisan bevitt és az importált adatokat.
+
+### <a name="update-the-settings"></a>Beállítások frissítése
+
+Az előnyben részesített nyelv megváltoztatásához válasszon egy **nyelvet** a legördülő listából.
 
 Ha módosítani szeretné a dátumok, időpontok és számok preferált formázását, használja az **ország/régiók formátuma** a legördülő listában. Ebben a mezőben egy formázási előnézet jelenik meg. A rendszer automatikusan ajánlani fog egy választási lehetőséget, amikor új nyelvet választ ki.
 
@@ -105,6 +111,13 @@ Az **API-használat** három szakaszból áll:
 
    A [valós idejű adatbetöltést](real-time-data-ingestion.md) használó műveletek tartalmaznak egy távcsőszimbólum gombot a valós idejű API-használat megtekintéséhez. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.   
    A **Valós idejű API-használati** ablakban a **Csoportosítás** mező segítségével választhatja ki, hogyan tudja a legjobban bemutatni a valós idejű interakciókat. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.
+
+## <a name="security-tab"></a>Biztonság lap
+
+A **Biztonság** lapon kezelheti a saját [Azure Key Vault kulcstartót](/azure/key-vault/general/basic-concepts), és összekapcsolhatja a környezettel.
+A dedikált kulcstartó a szervezet megfelelési határán belül a fázisok és a titkok használatára használható. Célközönséggel kapcsolatos információk az Azure Key Vaultban tárolt titkokat a külső rendszerekhez való [kapcsolatok beállítására](connections.md) használhatja.
+
+További információkért lásd: [Hozza magával saját Azure-kulcstartóját](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

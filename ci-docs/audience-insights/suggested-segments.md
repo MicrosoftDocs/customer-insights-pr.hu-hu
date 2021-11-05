@@ -1,7 +1,7 @@
 ---
 title: Gépitanulás-alapú ajánlott szegmensek
 description: Az gépi tanulás segíthet megtalálni új és érdekes szegmenseket az ügyfélattribútumok alapján.
-ms.date: 02/01/2021
+ms.date: 10/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: f743853826cee0427618abccfba27f10016a0f05cc674f5f7da2210366d60305
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 44e46bb650b6f090afcab3bc940d03a304e9c375
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028363"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673186"
 ---
 # <a name="suggested-segments-preview"></a>Javasolt szegmensek (előzetes verzió)
 
@@ -23,7 +23,7 @@ Az ügyfelek érdekes szegmenseit fedezheti fel egy AI-modell segítségével. E
 > [!NOTE]
 > A javasolt szegmensek funkció automatizált eszközöket használ az adatok kiértékeléséhez és az adatok alapján történő előrejelzéséhez, ezért megvan a képessége, hogy profilkészítési módszerként használható legyen, az Általános adatvédelmi rendelet („GDPR”) által meghatározott értelemben. A szolgáltatásnak az adatok feldolgozására való használatára a GDPR vagy más törvények vagy előírások vonatkozhatnak. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, ezzel a funkcióval együtt, megfeleljen a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="A Customer Insights javasolt szegmensek oldala egy oldalpanelen mutatja a javaslatok részleteit.":::
+:::image type="content" source="media/suggested-segments.png" alt-text="A javasolt szegmensek oldala, ahol megjelennek az oldalpanelen lévő javaslatok részletei.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>A fő teljesítménymutatók javítására javasolt szegmensek
 
@@ -49,7 +49,7 @@ A szegmensjavaslatok eltérőek, ha elsődleges attribútumként egy numerikus v
 
 Ha az elsődleges attribútumként egy numerikus attribútum, például az *éves jövedelem* vagy a *tagsági időszak*, a rendszer olyan szegmenseket javasol, amelyek az összes ügyfélhez képest magasabb vagy alacsonyabb átlagértékkel bírnak.
 
-Egy kategoriális attribútum, mint például az *ügyfél-elégedettség* mint elsődleges attribútum, olyan javasolt szegmenseket eredményez, amelyeknél az adott kategóriába tartozó ügyfelek aránya az adott kategóriába tartozó összes ügyfélhez képest magasabb vagy kisebb százalékú. Elsődleges attribútumként például az *ügyfél-elégedettséget* választja, amely három kategóriát tartalmaz (*Alacsony*, *Közepes* és *Magas*). Az egyes kategóriák esetében olyan szegmensek lesznek javasolva, amelyeknél az adott kategóriába tartozó ügyfelek százaléka jóval magasabb vagy alacsonyabb az ugyanabban a kategóriában található összes ügyfél arányával összehasonlítva. Ha az ügyfelek 22%-ának elégedettsége *Magas*, akkor csak azok a szegmensek javasoltak az adott kategóriához, amelyekben jóval magasabb vagy kisebb arányban vannak a *Magas* elégedettségű ügyfelek a 22%-hoz képest. Az egyéb kategóriák (*Alacsony* és *Közepes*) esetében is javasolva lesznek szegmensek, amennyiben statisztikailag szignifikánsak.
+Egy kategoriális attribútum, mint például az *ügyfél-elégedettség* mint elsődleges attribútum, olyan javasolt szegmenseket eredményez, amelyeknél az adott kategóriába tartozó ügyfelek aránya az adott kategóriába tartozó összes ügyfélhez képest magasabb vagy kisebb százalékú. Elsődleges attribútumként például az *ügyfél-elégedettséget* választja, amely három kategóriát tartalmaz (*Alacsony*, *Közepes* és *Magas*). Minden kategóriánál olyan szegmensek lesznek javasolva, amelyeknél az adott kategóriába tartozó ügyfelek aránya magasabb vagy kisebb az adott kategóriában lévő összes ügyfél arányához képest. Ha az ügyfelek 22%-ánál *Magas* az elégedettség szintje, akkor csak azok a szegmensek lesznek javasolva az adott kategóriához, amelyeknél magasabb vagy kisebb arányban vannak *Magas* magas elégedettségű ügyfelek a 22%-hoz képest. Az egyéb kategóriák (*Alacsony* és *Közepes*) esetében is javasolva lesznek szegmensek, amennyiben statisztikailag szignifikánsak.
 
 > [!NOTE]
 > Jelenleg csak az elsődleges kategorikus attribútumokat támogatjuk, amelyek legfeljebb 10 kategóriát tartalmaznak. Ha 10-től több kategóriával rendelkező elsődleges attribútum alapján szeretne látni a javaslatokat, akkor javasoljuk, hogy csoportosítsa egyes kategóriákat úgy, hogy a kategóriák számát 10-re vagy kevesebbre csökkentse. Ez a korlátozás csak az elsődleges attribútumok esetén érvényes. A befolyásoló kategoriális attribútumokhoz jelenleg legfeljebb 100 kategóriát támogatunk.
@@ -77,7 +77,7 @@ Egy kategoriális attribútum, mint például az *ügyfél-elégedettség* mint 
 
 Miután az AI modell már generálta a javaslatokat, megjelennek a **Szegmensek** > **Javaslatok (előzetes verzió)** részben.
  
-Válassza ki a javasolt szegmenst a javaslat részleteinek áttekintéshez, beleértve az átlagos érték és a szegmenstagok számának összehasonlítását. Emellett áttekintheti az attribútumértékeket és szabályokat is, amelyek alapján a AI modell a kiválasztott szegmens javaslását megtanulta.
+Válassza ki a javasolt szegmenst a javaslat részleteinek áttekintéshez. Emellett áttekintheti az attribútumértékeket és szabályokat is, amelyek alapján a AI modell a kiválasztott szegmens javaslását megtanulta.
 
 ## <a name="save-a-suggestion-as-a-segment"></a>Javaslat mentése szegmensként
 

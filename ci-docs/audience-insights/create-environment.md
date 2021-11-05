@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 95afd1fedb98a451e4978ee66be2ea98ad7a4a76
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645696"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673394"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Hozzon létre egy környezetet a közönséggel kapcsolats információkban
 
@@ -46,7 +46,7 @@ Az **Alapinformáció** lépésben válassza ki, hogy nulláról hoz-e létre k�
 
 Adja meg a következő részleteket:
    - **Név**: A környezet neve. Ha meglévő környezetből másolt, akkor ez a mező már ki van töltve, de ez módosítható.
-   - **Válasszon vállalkozást**: Válassza ki az célközönség elsődleges elemét. Az egyes ügyfelekkel (B2C) és [üzleti fiókokkal](work-with-business-accounts.md) (B2B) is dolgozhat.
+   - **Válassza ki a vállalkozását**: Válassza ki az elsődleges közönséget az új környezethez. Dolgozhat egyéni ügyfelekkel (B-to-C) vagy [üzleti fiókokkal](work-with-business-accounts.md) (B-to-B).
    - **Típus**: Adja meg, hogy szeretne-e termelési vagy tesztkörnyezetet létrehozni. A tesztkörnyezetek nem engedélyezik az ütemezett adatfrissítést, és előzetes megvalósításhoz és teszteléshez kínáljuk ezeket. A tesztkörnyezet környezetek ugyanazt az célközönség elsődleges környezetként használják, mint az éppen kijelölt éles környezet.
    - **Régió**: Az a régió, ahová a szolgáltatást telepítették és üzemeltetik.
 
@@ -54,7 +54,7 @@ Adja meg a következő részleteket:
 
 Az **Adattárolási** lépésben válassza ki, hogy hová tárolja az adatokat a célközönség információkból.
 
-Két lehetősége lesz: **Ügyfélelemzések tárolása** (a Customer Insights csapat által kezelt Azure Data Lake) és **Azure Data Lake Storage** (saját Azure Data Lake Storage). Alapértelmezés szerint a Customer Insights tárolóhely beállítás van kiválasztva.
+Két lehetőség közül választhat: **Customer Insights-tár** (a Customer Insights-csapat által kezelt Azure-adattó) vagy **Azure Data Lake Storage** (saját Azure Data Lake Storage). Alapértelmezés szerint a Customer Insights tárolóhely beállítás van kiválasztva.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Válassza az Azure Data Lake Storage szolgáltatást, hogy melyikben tárolja célközönséggel kapcsolatos információk adatait.":::
 
@@ -66,7 +66,7 @@ A rendszer az adatok Azure Data Lake Storage szolgáltatásba való mentésével
 > - Azure Data Lake Storage partnereknek ugyanabban az Azure-régióban, mint amit a környezet létrehozásakor kiválasztott.
 > - Azure Data Lake Storage-partnerek, amelyek *hierarchikus névtér* engedélyezve vannak.
 
-A Azure Data Lake Storage beállításhoz választhat az erőforrás-alapú és az előfizetés-alapú hitelesítési lehetőség között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). A **Tároló** neve `customerinsights` értékre változik, és nem módosítható.
+A Azure Data Lake Storage beállításhoz választhat az erőforrás-alapú és az előfizetés-alapú hitelesítési lehetőség között. További információ a [Kapcsolódás Azure Data Lake Storage-fiókhoz Azure-szolgáltatásnévvel](connect-service-principal.md) című cikkben található. A **Tároló** neve `customerinsights` értékre változik, és nem módosítható.
 
 Amikor befejeződnek a rendszerfolyamatok, például az adatok betöltése, a rendszer a megfelelő mappákat hozza létre a megadott tárfiókban. Az adatfájlok és a *model.json* fájlok a folyamat neve alapján jönnek létre, és kerülnek a mappákba.
 
@@ -76,14 +76,14 @@ Ha a Customer Insights több környezetét hozza létre, és úgy dönt, hogy az
    
 A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével.
 
-A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait a Dataverse Managed Data Lake használatával.
+A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait egy kezelt Dataverse-adattóval.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
 
 > [!NOTE]
 > A Customer Insights nem támogatja a következő adatmegosztási forgatókönyveket:
-> - Ha az összes adatot a saját maga Azure Data Lake Storage szolgáltatásához menti, akkor nem tudja engedélyezni az adatmegosztást a Microsoft Dataverse Managed Data Lake szolgáltatással.
-> - Ha engedélyezi az adatmegosztást a Microsoft Dataverse Managed Data Lake szolgáltatással, akkor nem fogja tudni [létrehozni az előre jelzett vagy hiányzó értékeket egy entitásban](predictions.md).
+> - Ha az összes adatot a saját Azure Data Lake Storage szolgáltatásához menti, akkor nem tudja engedélyezni az adatmegosztást a kezelt Dataverse-adattóval.
+> - Ha engedélyezi az adatmegosztást a Dataverse szolgáltatással, akkor nem fogja tudni [létrehozni az előrejelzett vagy hiányzó értékeket egy entitásban](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>4. lépés: A beállítások véglegesítése
 
@@ -93,10 +93,10 @@ A beállítások nagy része később is megváltoztatható. További tudnivaló
 
 ## <a name="work-with-your-new-environment"></a>Az új környezettel való munka
 
-Az alábbi cikkekből segítséget kaphat a Customer Insights konfigurálásával való megismerkedéshez. 
+A következő cikkekből segítséget kaphat a Customer Insights konfigurálásának első lépéseihez: 
 
 - [Adjon hozzá további felhasználókat, és rendeljen hozzá engedélyeket](permissions.md).
 - [Töltse be az adatforrásait](data-sources.md), és futtassa azokat az [adategyesítési folyamaton](data-unification.md) keresztül, hogy [egyesített ügyfélprofilokat](customer-profiles.md) kapjon.
 - [Bővítse az egységes ügyfélprofilokat](enrichment-hub.md), vagy futtasson [prediktív modelleket](predictions-overview.md).
-- [Hozzon létre szegmenseket](segments.md) az ügyfelek és a [mértékek](measures.md) csoportosítása és a teljesítménymutatók áttekintésének értékelése érdekében.
+- [Hozzon létre szegmenseket](segments.md) az ügyfelek és a [mértékek](measures.md) csoportosításához és a teljesítménymutatók áttekintéséhez.
 - [Állítson be kapcsolatokat](connections.md) és [exportálásokat](export-destinations.md) az adatok bizonyos részhalmazának más alkalmazásokban történő feldolgozásához.

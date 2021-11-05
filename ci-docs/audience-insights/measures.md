@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622973"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673466"
 ---
 # <a name="define-and-manage-measures"></a>Az intézkedések definiálása és kezelése
 
@@ -28,7 +28,7 @@ A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az üg
 
 Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. Mértéket állíthat össze olyan adatattribútumokkal, amelyek kapcsolatban vannak az egységes ügyfélprofil-entitással való kapcsolattal.
 
-# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
 1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
 
@@ -92,7 +92,7 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 1. A listában az újonnan létrehozott mértékegységet a **Mértékek** listában jelenítheti meg.
 
-# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 1. A célközönség információin belül nyissa meg a következőt: **Mérőszámok**.
 
@@ -164,7 +164,7 @@ Ez a rész végigvezeti egy új mértéknek a nulláról való létrehozásán. 
 
 A leggyakrabban használt mértékeket előre definiált sablonok segítségével hozhatja létre. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
 
-# <a name="individual-customers-b2c"></a>[Egyéni fogyasztók (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
 A leggyakrabban használt mértékeket előre definiált sablonok segítségével hozhatja létre. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
 
@@ -212,7 +212,7 @@ A következő eljárás egy új mérték használatával való felépítés lép
 
 1. Most már a **Futtatás** lehetőséget is választhatja a mérték eredményének kiszámításához. Későbbi finomításhoz válassza a **Tervezet mentése** lehetőséget.
 
-# <a name="business-accounts-b2b"></a>[Üzleti számlák (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 Ez a funkció csak az olyan környezetekben létrehozott mértékekhez érhetők el, ahol az egyéni ügyfelek elsődleges célként célközönség.
 

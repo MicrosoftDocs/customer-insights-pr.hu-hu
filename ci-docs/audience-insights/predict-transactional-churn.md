@@ -1,7 +1,7 @@
 ---
 title: Tranzakciólemorzsolódási előrejelzés
 description: Megjósolja, hogy fennáll-e az ügyfélnél annak veszélye, hogy a jövőben már nem az Ön termékeit vagy szolgáltatásait vásárolja meg.
-ms.date: 10/11/2021
+ms.date: 10/20/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ac484f74e388aa23422a89e25dabb555f2ad4118
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643380"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673048"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Tranzakciólemorzsolódási előrejelzés (előzetes verzió)
 
@@ -28,6 +28,32 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 > Próbálja ki az oktatóanyagot egy tranzakciós lemorzsolódási előrejelzés mintaadatok használatával: [Tranzakciós lemorzsolódási előrejelzés (előzetes verzió) útmutató](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
+
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
+
+- Legalább [közreműködői engedély](permissions.md) a Customer Insightsban.
+- Megfelelő üzleti ismeretek, hogy fel tudja mérni, mit jelent a vállalkozás számára a lemorzsolódás. Az idő alapú lemorzsolódás meghatározást támogatjuk, ami azt jelenti, hogy az ügyfelet lemorzsolódottnak tekintjük, egy meghatározott vásárlás nélkül eltelt idő után.
+- A tranzakciókkal/vásárlásokkal kapcsolatos adatok és a velük kapcsolatos előzmények:
+    - A Tranzakcióazonosítók, hogy meghatározhassa a vásárlásokat/tranzakciókat.
+    - Ügyfélazonosítók, egyeztetni a tranzakciókat az ügyfelekkel.
+    - Üzleti események dátumai, amely meghatározza a dátumot, amikor a tranzakció történt.
+    - A szemantikus adatréteg séma a vásárlásokhoz/tranzakciókhoz a következő információk szükségesek:
+        - **Tranzakcióazonosító**: Egy egyedi azonosító a vásárláshoz vagy tranzakcióhoz.
+        - **Tranzakció dátuma**: A vásárlás vagy tranzakció dátuma.
+        - **A tranzakció értéke**: A pénznembeli/számértékbeli értéke a tranzakciónak/elemnek.
+        - (Nem kötelező) **Egyedi termékazonosító**: A megvásárolt termék vagy szolgáltatás azonosítója, ha az adat a sortétel szintjén szerepel.
+        - (Nem kötelező) **Amennyiben ez a tranzakció visszatérítés**: Az igaz/hamis mező azonosítja, hogy ez a tranzakció visszatérítés volt-e vagy sem. Ha a **Tranzakció értéke** negatív, ezt az információt is felhasználjuk, a visszatérítés lehetőségeinek kikövetkeztetéséhez.
+- (Választható) Adatok az ügyfél tevékenységéről:
+    - Az azonos típusú tevékenységek megkülönböztetésére szolgáló tevékenységazonosítók.
+    - A tevékenységek ügyfelekhez rendelésére szolgáló ügyfél-azonosítók.
+    - A tevékenység adatai a tevékenység nevét és dátumát tartalmazzák.
+    - A felhasználói tevékenységekhez tartozó szemantikai adatséma a következőket tartalmazza:
+        - **Elsődleges kulcs:** Egy tevékenység egyedi azonosítója. Például, ha egy webhelylátogatás vagy egy használati rekord azt mutatja, hogy az ügyfél kipróbálta az egyik mintatermékét.
+        - **Időbélyegző:** Az elsődleges kulcs által azonosított esemény dátuma és időpontja.
+        - **Esemény:** A használni kívánt esemény neve. Például, ha egy mező neve "FelhasználóiMűvelet" egy élelmiszerboltban, ez egy ügyfél által történő kuponhasználatot jelenthet.
+        - **Részletek:** Részletes információk az eseményről. Például, ha egy mező neve "KuponÉrték" egy élelmiszerboltban, ez a kupon pénznembeli értékét jelentheti.
+
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 - Legalább [közreműködői engedély](permissions.md) a Customer Insightsban.
 - Megfelelő üzleti ismeretek, hogy fel tudja mérni, mit jelent a vállalkozás számára a lemorzsolódás. Az idő alapú lemorzsolódás meghatározást támogatjuk, ami azt jelenti, hogy az ügyfelet lemorzsolódottnak tekintjük, egy meghatározott vásárlás nélkül eltelt idő után.
@@ -59,6 +85,9 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
         - **Ország:** Az ügyfél országa.
         - **Iparág:** Az ügyfél iparágtípusa. A kávékatarazóban az "Iparág" nevű mező például arra utalhat, hogy kiskereskedelmi értékesítésben volt-e az ügyfél.
         - **Osztályozás:** A vállalat ügyfeleinek kategorizálása. Például egy kávéfőző "ValueSegment" nevű mezője lehet az ügyfél szintje a vevő mérete alapján.
+
+---
+
 - Javasolt adatjellemzők:
     - Elegendő előzményadat: A tranzakciós adatok a kijelölt időablak legalább duplájához. Lehetőség szerint két-három évnyi tranzakcióelőzmény. 
     - Ügyfelenkénti több vásárlás: Lehetőség szerint ügyfelenként legalább két tranzakció.
@@ -114,6 +143,32 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. Válassza a **Következő** lehetőséget.
 
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
+
+### <a name="add-additional-data-optional"></a>További adatok hozzáadása (nem kötelező)
+
+Konfigurálja az ügyféltevékenység entitásának és az *Ügyfél* entitásnak a kapcsolatát.
+
+1. Válassza ki a mezőt, amely azonosítja az ügyfelet az ügyféltevékenység táblában. Ez közvetlenül kapcsolásra kerülhet *Ügyfél* entitásának Elsődleges ügyfél-azonosítójához.
+
+1. Válassza ki azt az entitást, amely az elsődleges *Ügyfél* entitása.
+
+1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
+
+#### <a name="customer-activities"></a>Ügyféltevékenységek
+
+1. Tetszés szerint kiválaszthatja az **Adatok felvétele** az **Ügyféltevékenységek**-hezt.
+
+1. Válassza ki a használni kívánt adatokat tartalmazó szemantikus tevékenységtípust, majd a **Tevékenységek** szakaszban jelöljön ki egy vagy több tevékenységet.
+
+1. Válasszon ki egy, az éppen konfigurált ügyféltevékenység típusának megfelelő tevékenységtípust. Válassza az **Új létrehozása** lehetőséget és válasszon ki egy már elérhető tevékenységtípust, vagy hozzon létre egy új típust.
+
+1. Válassza a **Következő**, majd a **Mentés** elemet.
+
+1. Ha más ügyféltevékenységgel is rendelkezik, amelyet fel szeretne venni, ismételje meg a fenti lépéseket.
+
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
+
 ### <a name="select-prediction-level"></a>Előrejelzési szint kiválasztása
 
 A legtöbb előrejelzés ügyfélszinten jön létre. Bizonyos esetekben előfordulhat, hogy az üzleti igényeihez nem elég granulált. Ezzel a funkcióval például előre jelezheti egy ügyfél egy ágának lemorzsolódását, nem pedig az ügyfél egészének.
@@ -122,9 +177,9 @@ A legtöbb előrejelzés ügyfélszinten jön létre. Bizonyos esetekben előfor
 
 1. Bontsa ki azt az entitást, amelyből ki szeretné választani a másodlagos szintet, vagy használja a keresési szűrőt a kiválasztott beállítások szűréséhez.
 
-1. Válassza ki a másodlagos szintként használni kívánt attribútumot, majd válassza a **Hozzáadás** lehetőséget
+1. Válassza ki a másodlagos szintként használni kívánt attribútumot, majd válassza a **Hozzáadás** lehetőséget.
 
-1. Válassza a **Tovább** lehetőséget
+1. Válassza a **Következő** lehetőséget.
 
 > [!NOTE]
 > Az ebben a szakaszban elérhető entitások azért jelennek meg, mert kapcsolatban állnak az előző részben kiválasztott entitással. Ha nem látja a hozzáadni kívánt entitást, győződjön meg arról, hogy érvényes kapcsolat van a **Kapcsolatokban**. A konfigurációhoz csak egy-az-egyhez és sok-az-egyhez kapcsolatok érvényesek.
@@ -159,7 +214,7 @@ Konfigurálja az ügyféltevékenység entitásának és az *Ügyfél* entitásn
 
 1. Válassza a **Következő** lehetőséget.
 
-### <a name="provide-an-optional-list-of-benchmark-accounts-business-accounts-only"></a>Referenciapartnerek nem kötelező listájának megadása (csak üzleti partnerek)
+### <a name="provide-an-optional-list-of-benchmark-accounts"></a>Referenciapartnerek nem kötelező listájának megadása
 
 Adja meg a referenciaként használni kívánt üzleti ügyfelek és partnerek listáját. Megkapja a [referenciapartnerek adatait](#review-a-prediction-status-and-results), beleértve a lemorzsolódási pontszámukat és a legbefolyásosabb jellemzőket, amelyek hatással voltak a lemorzsolódásra.
 
@@ -168,6 +223,8 @@ Adja meg a referenciaként használni kívánt üzleti ügyfelek és partnerek l
 1. Válassza ki a referenciaként használt ügyfeleket.
 
 1. A folytatáshoz válassza a **Tovább** lehetőséget.
+
+---
 
 ### <a name="set-schedule-and-review-configuration"></a>Ütemezési és felülvizsgálati konfiguráció beállítása
 
@@ -201,6 +258,25 @@ Adja meg a referenciaként használni kívánt üzleti ügyfelek és partnerek l
 1. Kattintson a függőleges pontok ikonjára azon előrejelzés mellett, amelynek meg szeretné tekinteni az eredményeit, és kattintson a **Megtekintés** elemre.
 
    :::image type="content" source="media/model-subs-view.PNG" alt-text="Tekintse meg az előrejelzés eredményeit a vezérlőn.":::
+
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
+
+1. Az eredményoldalon lévő adatok három fő részben jelennek meg:
+   - **Betanítási modell teljesítménye**: A lehetséges értékek az A, B vagy C. Ez a pontszám jelzi az előrejelzés teljesítményét, és könnyebbé teheti a kimeneti entitásban tárolt eredmények használatára vonatkozó döntést. A pontszámok meghatározása a következő szabályok alapján történik: 
+        - **A** amikor egy modell legalább 50%-ban pontos az összes előrejelzéshez mérten, és amikor a pontos előrejelzések százalékos aránya a lemorzsolódó ügyfelekről nagyobb, mint a viszonyítási alapérték, ami a legalább 10%.
+            
+        - **B** amikor egy modell legalább 50%-ban pontos az összes előrejelzéshez mérten, és amikor a pontos előrejelzések százalékos aránya a lemorzsolódó ügyfelekről nagyobb, mint 10%, ami nagyobb, mint a viszonyítási alapérték.
+            
+        - **C** amikor egy modell előrejelzése kevesebb, mint 50%-ban pontos, vagy amikor a pontos előrejelzések százalékos aránya a lemorzsolódó ügyfelekről kisebb, mint a viszonyítási alapérték.
+               
+        - Az **Alapérték** adja meg az előrejelzés idejét a modell bemeneti ablakán (például egy év), és a modell létrehozza a különböző időrészleteket, azáltal, hogy kettéosztja, amíg az el nem éri az egy hónap vagy kevesebbet. Ezen töredékek segítségével üzleti szabályokat hozhat létre azon ügyfeleknek, akik nem vásároltak ebben az időkeretben. Ezek az ügyfelek lemorzsolódónak vannak tekintve. Az idő alapú üzleti szabály rendelkezik a legnagyobb képességgel, hogy előre jelezhesse, ki a fog a legvalószínűbben lemorzsolódni, a megadott alapérték modellen.
+            
+    - **Lemorzsolódási valószínűség (ügyfelek száma)**: Ügyfelek csoportjai a lemorzsolódás előrejelzett kockázata alapján. Ez az adat a későbbiekben segítséget jelenthet, ha magas lemorzsolódási kockázattal rendelkező ügyfelekhez szeretne szegmenst létrehozni. Az ilyen szegmensek segítségével felmérheti, hogy a szegmens tagsága esetén hol legyen a lezárás.
+       
+    - **Legbefolyásosabb tényezők**: Az előrejelzés létrehozásakor a rendszer számos tényezőt vesz figyelembe. A tényezők mindegyikének megvan a fontossága, az összesített előrejelzés számításaiban, melyet a modell hoz létre. Ezeket a tényezőket a saját eredményének előrejelzés, illetve később felhasználhatja ezeket az információkat olyan [szegmensek létrehozásához](segments.md), amelyek befolyásolhatják az ügyfelek számára a dezinformáció kockázatát.
+
+
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 1. Az eredményoldalon lévő adatok három fő részben jelennek meg:
    - **Betanítási modell teljesítménye**: A lehetséges értékek az A, B vagy C. Ez a pontszám jelzi az előrejelzés teljesítményét, és könnyebbé teheti a kimeneti entitásban tárolt eredmények használatára vonatkozó döntést. A pontszámok meghatározása a következő szabályok alapján történik: 
@@ -237,6 +313,11 @@ Adja meg a referenciaként használni kívánt üzleti ügyfelek és partnerek l
        Amikor a partnerek szintjén előrejelzi a lemorzsolódástt, minden egyes partnert figyelembe kell venni a lemorzsolódási szegmensek átlagos funkcióértékének összefésülésében. A másodlagos szinten minden egyes fióknál a lemorzsolódási szegmensek kijelzése az oldalpanelen kiválasztott elem másodlagos szintjétől függ. Ha például egy tételnek a termékkategóriák másodlagos szintje = irodai felszerelések, akkor csak azok a cikkek számítanak termékkategóriának, amelyekhez irodai felszerelések tartoznak, amikor a lemorzsolódási szegmensek átlagos funkcióértékét számítja ki. Ez a logika biztosítja, hogy a program megfelelő összehasonlítást alkalmaz a elem funkcióértékeivel az alacsony, közepes és nagy lemorzsolódási szegmensek átlagos értékeivel.
 
        Bizonyos esetekben az alacsony, közepes vagy nagy lemorzsolódási szegmensek átlagos értéke üres vagy nem érhető el, mivel a fenti definíció alapján nem érhetők el elemek, amelyek a megfelelő piaci szegmenshez tartoznak.
+       
+       > [!NOTE]
+       > Az átlagos alacsony, a közepes és a magas oszlopok alatti értékek értelmezése eltérő a kategorikus funkciók (például az ország vagy az iparág) esetében. Mivel az „átlag” funkcióérték nem vonatkozik a kategorikus funkciókra, az ezekben az oszlopokban található értékek az alacsony, a közepes vagy a magas lemorzsolódási szegmensek olyan hányadai, amelyek a kategorikus funkcióval azonos értékkel rendelkeznek az oldalpanelen kiválasztott elemhez képest.
+
+---
 
 ## <a name="manage-predictions"></a>Előrejelzések kezelése
 
