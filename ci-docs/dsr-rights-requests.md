@@ -1,6 +1,6 @@
 ---
 title: Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint | Microsoft Docs
-description: Adatalanyi kérelmekre adott válasz a Dynamics 365 Customer Insights célközönség-információ funkciójához.
+description: Válaszoljon az érintett Dynamics 365 Customer Insights célközönség elemzési képességre vonatkozó kéréseire.
 ms.date: 08/11/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
-ms.translationtype: HT
+ms.openlocfilehash: c116f7ce208c0288851a4b2230e27784ba3a5337
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483674"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732683"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint
 
@@ -24,7 +24,7 @@ Eltökélt célunk, hogy segítünk ügyfeleinknek megfelelni a GDPR követelmé
 
 ## <a name="audience-insights"></a>Célközönséggel kapcsolatos információk
 
-### <a name="responding-to-gdpr-data-subject-delete-requests-for-dynamics-365-customer-insights-audience-insights-capability"></a>GDPR adatalanyi törlési kérelmekre adott válasz a Dynamics 365 Customer Insights célközönség-információ funkciójához
+### <a name="responding-to-gdpr-data-subject-delete-requests-for-dynamics-365-customer-insights-audience-insights-capability"></a>A GDPR-adatfelelősökre adott válasz a Dynamics 365 Customer Insights célközönség elemzési képességre vonatkozó kérelmek törlése
 
 A személyes adatoknak a szervezet ügyféladatok közüli törléséhez való jog kulcsfontosságú védelmi elem az Általános adatvédelmi rendeletben (GDPR). A személyes adatok eltávolítása magába foglalja az összes személyes adat és a rendszer által létrehozott naplók eltávolítását, kivéve az auditnaplózási információkat.
 
@@ -39,7 +39,7 @@ A célközönség-információk a következő termékeken belüli élményeket k
 
 A Customer Insights rendszergazdák az alábbi lépések végrehajtásával eltávolíthatják az adatforrásban törölt ügyféladatokat:
 
-1. Jelentkezzen be a Dynamics 365 Customer Insights rendszerbe.
+1. Jelentkezzen be Dynamics 365 Customer Insights.
 2. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**
 3. A törölt ügyféladatokat tartalmazó minden egyes adatforráshoz a listából:
    1. Válassza a (...), majd a **Frissítés** lehetőséget.
@@ -52,7 +52,7 @@ A Customer Insights rendszergazdák az alábbi lépések végrehajtásával elt�
 
 Egy Customer Insights rendszergazda a Customer Insights ügyféladatok törlését az alábbi lépésekkel hajthatja végre:
 
-1. Jelentkezzen be a Dynamics 365 Customer Insights rendszerbe.
+1. Jelentkezzen be Dynamics 365 Customer Insights.
 2. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Engedélyek**.
 3. Jelölje be a törölni kívánt felhasznáó jelölőnégyzetét.
 4. Válassza az **Eltávolítás** lehetőséget.
@@ -79,7 +79,14 @@ Az adatok exportálásához a bérlői rendszergazda a következő lépéseket h
 2. Nyugtázza a felhasználó adatainak exportálását.
 3. Az exportált adatok a bérlői rendszergazdai e-mail címen keresztül fogadhatók.
 
-## <a name="engagement-insights"></a>Elkötelezettségi információk
+## <a name="consent-management-preview"></a>Hozzájáruláskezelés (előzetes verzió)
+
+A hozzájáruláskezelési képesség nem gyűjt közvetlenül felhasználói adatokat. Csak olyan hozzájárulási adatokat importál és dolgoz fel, amelyeket a felhasználók más alkalmazásokban biztosítanak.
+
+Ha el szeretné távolítani az adott felhasználók hozzájárulási adatait, távolítsa el azokat a hozzájáruláskezelési képességbe betöltött adatforrásokban. A adatforrás frissítése után az eltávolított adatok a Hozzájárulási központban is törlődnek. A beleegyezési entitást használó alkalmazások a frissítés után eltávolított adatokat is törlik a [forrásból](audience-insights/system.md#refresh-processes). Javasoljuk, hogy az adatforrásokat az érintett kérésére gyorsan frissítse, hogy távolítsa el a felhasználó adatait az összes többi folyamatból és alkalmazásból.
+
+
+## <a name="engagement-insights-preview"></a>Elkötelezettségi elemzések (előzetes verzió)
 
 ### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Végfelhasználók azonosítására alkalmas adatokat tartalmazó eseményadatok törlése és exportálása
 

@@ -1,7 +1,7 @@
 ---
 title: Entitások egyeztetése az adategyesítéshez
 description: Az entitások egyeztetése az adatkészletek kombinálása és egységes ügyfélprofilok létrehozása érdekében.
-ms.date: 02/23/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: 67e17495fa6da1cfac7ee4ee165e798364f6cb27
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648211"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732637"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -180,10 +180,7 @@ Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, �
 
 A sikeres futtatás eredményét, az egyesített ügyfélprofil entitást az **Entitások** oldalon találja. Az egyesített ügyfélentitás neve **Ügyfelek** a **Profilok** szakaszban. Az első sikeres egyezés futtatása létrehozza a egyesített *Ügyfél* entitást. Minden ezt követő egyezés kibontja az entitást.
 
-> [!TIP]
-> Az egyeztetési folyamat futtatása után válassza ki a folyamat állapotát a **Feladat részletei** ablaktábla megnyitásához. Áttekintést ad a feldolgozási időről, az utolsó feldolgozási dátumról, valamint a feladathoz kapcsolódó összes hibáról és figyelmeztetésről. Válassza a **Részletek megtekintése** lehetőséget, hogy lássa, mely entitások vettek részt az egyeztetési folyamatban, mely szabályok vonatkoztak rájuk, és hogy sikerült-e közzétenni a frissítéseket.  
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="A feladat állapotára mutató hivatkozás részleteinek lefúrási útvonala.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="review-and-validate-your-matches"></a>Egyeztetések áttekintése és ellenőrzése
 

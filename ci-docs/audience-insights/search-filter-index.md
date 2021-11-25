@@ -1,7 +1,7 @@
 ---
 title: Ügyfélprofilok keresése és szűrése
 description: Gyorsan megtalálhatja az egyesített ügyfelek profiljaira vonatkozó információkat, és szűrhet a megadott attribútumokra.
-ms.date: 01/19/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,19 +9,20 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 9eaeb0c93481283324f21122c9528ff5896b9866
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
-ms.translationtype: HT
+ms.openlocfilehash: e17d745974958b73683f1f9406c5ae95f2cbcb3c
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469986"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732037"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Felhasználói profilok: Keresés & szűrőindex
 
-Az ügyféladatok egységesítésének eredménye egy Ügyfélprofil entitás, amely egységes nézetet biztosít a teljes ügyfélkörre. Egy [adott ügyfélre vagy ügyfelek egy csoportjára vonatkozó információk](customer-profiles.md) gyors megkereséséhez konfigurálhatja a **Keresés** és a **Szűrés** lehetőségeket az **Ügyfelek** lapon . A cikkből megtudhatja, hogyan szerkeszthetik a rendszergazdák az attribútumokat a **Keresési és szűrési index** lapon, amely a felhasználók számára elérhető a kereséshez és a szűréshez.
+Az ügyféladatok egységesítésének eredménye egy Ügyfélprofil entitás, amely egységes nézetet biztosít a teljes ügyfélkörre. Egy [adott ügyfélre vagy ügyfelek egy csoportjára vonatkozó információk](customer-profiles.md) gyors megkereséséhez konfigurálhatja a [Keresés](customer-profiles.md) és a [Szűrés](customer-profiles.md) lehetőségeket az [Ügyfelek](customer-profiles.md) lapon . A cikkből megtudhatja, hogyan szerkeszthetik a rendszergazdák az attribútumokat a **Keresési és szűrési index** lapon, amely a felhasználók számára elérhető a kereséshez és a szűréshez.
 
-> [!div class="mx-imgBorder"]
-> ![Keresési szűrő.](media/search-filter.png "Keresési szűrő")
+   :::image type="content" source="media/search-filter.png" alt-text="Keresési szűrő":::
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="add-fields-and-specify-attributes"></a>Mezők hozzáadása és attribútumok megadása
 

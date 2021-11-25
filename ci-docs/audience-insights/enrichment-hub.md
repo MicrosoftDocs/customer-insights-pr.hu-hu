@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 09/30/2021
+ms.date: 11/05/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
-ms.translationtype: HT
+ms.openlocfilehash: de27da92118b83dafa0742b6a1e10ee315750c61
+ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673002"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "7770125"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -34,7 +34,7 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
+- [Demográfia](enrichment-experian.md) az Experiantól
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
 
@@ -42,6 +42,7 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
+- [A Microsoft által szolgáltatott továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
@@ -76,7 +77,7 @@ A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ez
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 
-A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
+A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gazdagítási állapot támogatott Experian, a Leadspace, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
 
 A gyarapítás állapotának megtekintése
 

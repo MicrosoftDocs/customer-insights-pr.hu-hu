@@ -1,7 +1,7 @@
 ---
 title: Részleges adatok kitöltése előrejelzések használatával
 description: Az előrejelzések segítségével töltse ki a hiányos ügyféladatokat.
-ms.date: 05/05/2020
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,31 +9,32 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
-ms.translationtype: HT
+ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645037"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732407"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Részleges adatok kiegészítése előrejelzésekkel
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki részleges adatait előrejelzésekkel (elavult)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Ez a funkció **·** **2021. november 5-én elavult lesz**. Az aktuális implementációk a funkció eltávolításáig működnek, de az alábbi utasításokkal nem hozhat létre új integrációkat.
 
 Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzett értékeket, amelyek segíthetik az ügyfél megértését. Az **Intelligencia** > **Előrejelzések** oldalon kiválaszthatja a **Saját előrejelzések** elemet a célközönség-információk más részein konfigurált előrejelzések megtekintéséhez, és lehetővé teszi a további testreszabást.
 
 > [!NOTE]
 > Ez a funkció nem használható, ha a környezet Azure Data Lake Gen 2 tárhelyet használ.
 >
-> Az előrejelzések funkció automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítésére az adott adatok alapján, és így képes a profilkészítési módszerként használni, abban az értelemben, ahogy ezt a kifejezést az általános adatvédelmi rendelet ("GDPR") meghatározza. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, az előrejelzésekkel együtt, megfelel a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.
+> Az előrejelzések funkció automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítésére az adott adatok alapján, és így képes a profilkészítési módszerként használni, abban az értelemben, ahogy ezt a kifejezést az általános adatvédelmi rendelet ("GDPR") meghatározza. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Ön felelős annak biztosításáért, hogy a Dynamics 365 Customer Insights használata, beleértve az előrejelzéseket is, megfeleljen az összes vonatkozó törvénynek és rendeletnek, beleértve a magánéletre, a személyes adatokra, a biometrikus adatokra, az adatvédelemre és a kommunikáció titkosságára vonatkozó törvényeket is.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskodjon arról, hogy a következő előfeltételek teljesüljenek:
 
-1. A szervezete rendelkezik egy példánnyal [beállítva a Microsoft Dataverse-ben](/ai-builder/build-model#prerequisites), amely ugyanabban a szervezetben található, mint a Customer Insights.
+1. A szervezetnek van egy [példánya](/ai-builder/build-model#prerequisites) Microsoft Dataverse, és ugyanabban a szervezetben van, mint a Customer Insights.
 
-2. A Célközönséggel kapcsolatos információk környezet csatolva van a Dataverse példányhoz.
+2. A célközönség insight környezete az Dataverse példányhoz van csatolva.
 
 További információ: [Új környezet létrehozása](create-environment.md).
 
@@ -60,6 +61,8 @@ További információ: [Új környezet létrehozása](create-environment.md).
    > ![Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók.](media/intelligence-categorymapping.png "Példa, amelyen kategóriákkal megfeleltetett mezőértékek láthatók")
 
 8. Válassza a **Kész** lehetőséget, és a rendszer feldolgozza az előrejelzést. A feldolgozás egy kis időt vesz igénbe, az adatok méretétől és összetettségétől függően. Az eredmények egy új entitásban lesznek elérhetők a létrehozott előrejelzés **Kimeneti entitásának neve** alapján.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Előrejelzés létrehozása a szegmens létrehozásakor
 
@@ -139,7 +142,7 @@ Az előrejelzés következő futtatása a létrehozott frissített modellt fogja
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 
-Ha hiba miatt nem tudja elvégezni a csatolási Dataverse folyamatot, megpróbálhatja manuálisan végrehajtani. A csatolási folyamat során két ismert probléma is előfordulhat:
+Ha hiba miatt nem tudja befejezni a csatolás Dataverse folyamatot, megpróbálhatja manuálisan befejezni a folyamatot. A csatolási folyamat során két ismert probléma is előfordulhat:
 
 - Nincs telepítve az Ügyfélkártya bővítmény megoldás.
     1. Hajtsa végre a [megoldás telepítésére és konfigurálására vonatkozó](customer-card-add-in.md) utasításokat.

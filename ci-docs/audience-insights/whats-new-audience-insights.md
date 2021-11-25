@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 08/31/2021
+ms.date: 11/04/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,23 +9,58 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
-ms.translationtype: HT
+ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
+ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673843"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "7753120"
 ---
-# <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
+# <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Újdonságok a Dynamics 365 Customer Insights célközönség elemzési képességében
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
+Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervek megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform kiadási terveket](/dynamics365/release-plans/).
 
 A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképpen meghatározva, nem kell semmilyen műveletet végrehajtania, és az alkalmazás automatikusan, leállás nélkül frissíthető.
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="october-2021-updates"></a>2021. októberi frissítések
+
+A 2021 októberében található frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="b-to-b"></a>B-B
+
+2021 októberétől üzleti fiókokkal és azok kapcsolódó kapcsolattartóival dolgozhat a Customer Insightsban. Korábban az alkalmazást többnyire az egyes fogyasztókra szabták. Számos jellemzőterületet frissítettek, hogy támogassák a B-B forgatókönyveket egy új környezettípus mellett. A támogatott B-ból B-funkciók áttekintését az [üzleti fiókokkal való együttműködés célközönség elemzésben című témakörben talál](work-with-business-accounts.md).
+
+A következő szakaszok rávilágítanak azokra a kulcsfontosságú területekre, amelyeket az üzleti fiókok és az egyes fogyasztók támogatására alakítottak ki.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Szegmensek exportálása üzleti számlák alapján
+
+A célközönség összes szegmensexportja üzleti számlákkal összefüggésben érhető el. A legtöbb szegmensexporthoz az [alapul szolgáló szegmensekben előrejelezett további konfigurációs és kapcsolattartási adatok](segment-builder.md#create-a-new-segment) érvényesek az üzleti fiókokra. További információ: [Szegmensek exportálása](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>A LinkedIn-hirdetések exportálásának használata üzleti fiókokkal
+
+A LinkedIn Ads exportálás mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti számlákkal összefüggésben. Amikor a LinkedIn-exportálás elsődleges fókuszának a vállalati célzást választja, exportálhat üzleti fiókokra épülő szegmenseket anélkül, hogy meg kellene vetítenének a kapcsolattartási adatokat. További információért látogasson el a [LinkedIn-hirdetések exportálásáról,](export-linkedin-ads.md) valamint a [kapcsolatfelvételi célzás és a vállalati célzás közötti](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting)[...](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) különbséghez. 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Az üzleti számlákon és azok hierarchiáján alapuló intézkedések létrehozása
+
+A mértékkészítő lehetővé teszi, hogy intézkedéseket hozzon létre az üzleti fiókok körül, és opcionálisan használja a hierarchiaadatokat. A hierarchiaadatok a mértékszámítás összegzésére szolgálnak egy fiókban és az összes kapcsolódó alszámlán. Létrehozhat például olyan intézkedéseket, mint például a teljes bevétel a hierarchiájuk által azonosított üzleti számlák minden csoportjához. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Szegmensek létrehozása üzleti számlák és azok hierarchiája alapján
+
+A szegmensépítő lehetővé teszi olyan üzleti fiókok szegmenseinek létrehozását, amelyek opcionálisan tartalmazzák a szegmens minden fiókjának kapcsolattartási adatait. Ha beállította a fiókhierarchiát, a szegmens létrehozásakor használhatja a fiókhierarchia adatait. További információ: [Új szegmens létrehozása](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Tartsa meg üzleti fiókjait mély betekintéssel a lemorzsolódási tendenciájukba
+
+Az ügyfél lemorzsolódása előrejelzés modell most már az üzleti fiókokat is támogatja. Nem csak egy fiók, hanem egy fiók és egy termék- vagy szolgáltatáskategória kombinációjának kombinációjára is kiértékelheti a lemorzsolódás kockázatát. Ez a kiegészítés segít megérteni, hogy egy fiók nagyobb valószínűséggel hagyja abba a vásárlást általában, vagy csak egy bizonyos áru- vagy szolgáltatáskategóriára. Az AI-modell további használatához felsorolja azokat az okokat is, amelyek miatt egy fiók valószínűleg lemorzsolódik. További információ: [Tranzakciós lemorzsolódás előrejelzés (előzetes verzió)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Üzleti fiók névjegyeinek megtekintése ügyfélnézetben
+
+Ha az üzleti fiókokat a kapcsolódó fiókokhoz van leképezve, a Customer Insights alkalmazás megjeleníti ezeket a kapcsolódó névjegyeket az ügyféladatok nézet részeként. További információ: [Ügyfélprofilok](customer-profiles.md).
+
 
 ## <a name="september-2021-updates"></a>2021. szeptemberi frissítések
 
@@ -78,7 +113,7 @@ A 2021 májusi frissítések számos funkciót, teljesítményfrissítést és h
 
 ### <a name="data-ingestion"></a>Adatok betöltése
 
-- **Metaadatok vagy entitásdefiníció megtekintése vagy módosítása az Azure Data Lake Storage**-tárhely adatainak csatolása esetén.Mostantól megtekintheti és szerkesztheti a metaadatokat vagy az entitásdefiníciókat célközönség elemzésekben, amikor adatokat csatol egy Common Data Model-mappából az Azure Data Lake Storage-tárhelyéről. Ez a képesség valós idejű visszajelzést, modellérvényesítést és hibaellenőrzést biztosít. Lehetővé teszi a model.json és a manifest.json egyszerű szerkesztését.
+- **Metaadatok vagy entitásdefiníciók megtekintése vagy módosítása a Azure Data Lake Storage Adatok csatolásakor** Mostantól megtekintheti és szerkesztheti a metaadatokat vagy az entitásdefiníciót célközönség elemzési adatokban, amikor adatokat csatol a Azure Data Lake Storage Common Data Model mappájából. Ez a képesség valós idejű visszajelzést, modellérvényesítést és hibaellenőrzést biztosít. Lehetővé teszi a model.json és a manifest.json egyszerű szerkesztését.
 
 ### <a name="extensibility"></a>Bővíthetőség
 
@@ -153,7 +188,7 @@ A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és
 
 ### <a name="data-ingestion"></a>Adatok betöltése
 
-- **Csatlakozzon helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Customer Insightshoz társított Power Platform vagy Dataverse környezetben található, átjárókat használó Power Platform adatfolyamok és helyszíni összekapcsolhatóságok előzetes verzióját. A Customer Insights környezetben létrehozott, kapcsolt Dataverse környezettel rendelkező új adatforrások alapértelmezés szerint Power Platform adatforrásokká fognak válni, helyszíni összekapcsolhatósággal, valamint az összekapcsolók és átalakítási lehetőségek gazdag készletével.
+- **Csatlakozás helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Power Platform adatfolyamok és helyszíni kapcsolat előnézetét a Customer Insights átjáróinak használatával egy kapcsolódó Power Platform vagy Dataverse környezet. A csatolt Dataverse környezettel rendelkező Ügyfélelemzési környezetben létrehozott új adatforrások alapértelmezés szerint Power Platform az adatfolyamokat, amelyek az helyszíni adatkapcsolatot, valamint az összekötők és átalakítási képességek gazdag készletét hozzák be.
 
 ### <a name="extensibility"></a>Bővíthetőség
 
@@ -167,7 +202,7 @@ A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és
    További tájékoztatás az [Exportálás az Constant Contactba](export-constant-contact.md) című témakörben olvasható.
 
 - **Szegmensek exportálása a RollWorksbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a RollWorksben is. Most már exportálhat szegmenseket a Customer Insightsból a RollWorks-közönségekbe, és ezeket használhatja a „B-to-B” hirdetések kiindulási értékeként.    
-   További tájékoztatás az [Adatok exportálása RollWorksbe ](export-rollworks.md)című témakörben olvasható.
+   További tájékoztatás az [Adatok exportálása RollWorksbe](export-rollworks.md) című témakörben olvasható.
 
 - **Szegmensek exportálása a Snapchatbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Snapchatben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Snapchat célközönségekbe, és ezeket használhatja a hirdetések kiindulási alapértékeként.     
    További tájékoztatás az [Adatok exportálása Snapchatbe](export-snapchat.md) című témakörben olvasható.
@@ -215,7 +250,7 @@ A 2021. februári frissítések számos szolgáltatást, teljesítménnyel kapcs
 
 - **A környezet másolása több típusú adatforrást támogat**
 
-  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kibővíti a környezet másolása funkciót olyan esetekre, amikor az adatforrások Microsoft Dataverse kezelt adattón alapulnak vagy a Common Data Model mappa van használva.
+  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kiterjeszti a másolási környezet funkcióit azokra az esetekre, amikor Microsoft Dataverse felügyelt adattón vagy Common Data Model mappán alapuló adatforrásokat használnak.
 
 ## <a name="january-2021-updates"></a>2021. januári frissítések
 
@@ -241,7 +276,7 @@ A 2021. januári frissítések számos szolgáltatást, teljesítménnyel kapcso
 
 #### <a name="system-administration"></a>Rendszergazda
 
-- **Az adatok zökkenőmentes megosztása a Microsoft Dataverse-szolgáltatással** most már megoszthatja a Customer Insights kimenetet a Microsoft Dataverse alkalmazással a Microsoft Dataverse Managed Data Lake használatával. Miután társít egy Dataverse környezetet a Customer Insights szolgáltatáshoz, lehetősége van engedélyezni az adatmegosztást.
+- **Zökkenőmentesen oszthatja meg az adatokat Microsoft Dataverse** Mostantól megoszthatja a Customer Insights kimenetet Microsoft Dataverse alkalmazásokkal a Microsoft Dataverse felügyelt adattó használatával. Miután társított egy Dataverse környezetet a Customer Insights szolgáltatáshoz, lehetősége van az adatmegosztás engedélyezésére.
   További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
 

@@ -1,26 +1,26 @@
 ---
-title: Első lépések az Android SDK-val
-description: Ismerje meg az Android SDK személyre szabását és futtatását
+title: Az Android SDK első lépések
+description: Ismerje meg, hogyan szabhatja személyre és futtathatja az Android SDK-t
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/15/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: a060ac60db71a7b0fb8c0d7a3b0e266004fbee6a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
-ms.translationtype: HT
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494278"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655345"
 ---
-# <a name="get-started-with-the-android-sdk"></a>Első lépések az Android SDK-val
+# <a name="get-started-with-the-android-sdk"></a>Az Android SDK első lépések
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Ez az oktatóanyag végigvezeti az Android alkalmazás a Dynamics 365 Customer Insights elköteleződési elemzések SDK-val történő instrumentálásának folyamatán. Öt perc múlva vagy hamarabb elkezdi látni az eseményeket a portálon.
+Ez az oktatóanyag végigvezeti Önt a Android alkalmazás Dynamics 365 Customer Insights elkötelezettségi elemzési SDK-val történő hangszerelésének folyamatán. Öt perc múlva vagy hamarabb elkezdi látni az eseményeket a portálon.
 
 ## <a name="configuration-options"></a>Konfigurációs beállítások
 A következő konfigurációs beállításokat lehet áttenni az SDK-ra:
@@ -31,23 +31,23 @@ A következő konfigurációs beállításokat lehet áttenni az SDK-ra:
 
 - Android Studio
 
-- Minimum Android API szint: 16 (Jelly Bean)
+- Minimális Android API szint: 16 (Jelly Bean)
 
 - Egy ingestion kulcs (lásd lejjebb a hozzáférési útmutatót)
 
 ## <a name="integrate-the-sdk-into-your-application"></a>SDK beágyazása az alkalmazásba
-Kezdje a folyamatot munkaterület kiválasztásával, az Android a mobil platform kiválasztásával és az Android SDK letöltésével.
+Kezdje a folyamatot egy munkaterület kiválasztásával, a Android mobilplatform kiválasztásával és a Android SDK letöltésével.
 
 - A munkaterület kijelöléséhez használja a bal oldali navigációs ablakban található munkaterület-kapcsolót.
 
 - Ha nem rendelkezik meglévő munkaterületekkel, válassza az **Új munkaterület** és kövesse a lépéseket az [új munkaterület](create-workspace.md) létrehozásához.
 
-- Munkaterület létrehozása után válassza a **Rendszergazda** > **Munkaterület** majd válassza a  **Telepítési útmutatót**. 
+- Munkaterület létrehozása után válassza a **Rendszergazda** > **Munkaterület** majd válassza a  **Telepítési útmutatót**.
 
 ## <a name="configure-the-sdk"></a>Konfigurálja az SDK-t
 
-Miután letöltötte az SDK-t, az Android Studio-ban dolgozhat vele az események engedélyezéséhez és definiálásához. Kétféleképpen teheti ezt meg:
-### <a name="option-1-using-jitpack-recommended"></a>1. lehetőség: A JitPack használata (ajánlott)
+Az SDK letöltése után Android Studio dolgozhat vele az események engedélyezéséhez és meghatározásához. Kétféleképpen teheti ezt meg:
+### <a name="option-1-use-jitpack-recommended"></a>1. lehetőség: Használja a JitPack-et (ajánlott)
 1. Adja hozzá a gyökér `build.gradle`-höz a JitPack-adattár csomagot:
     ```gradle
     allprojects {
@@ -61,13 +61,13 @@ Miután letöltötte az SDK-t, az Android Studio-ban dolgozhat vele az eseménye
 1. Adja hozzá a függőséget:
     ```gradle
     dependencies {
-        implementation 'com.github.microsoft:engagementinsights-sdk-android:1.0.0'
+        implementation 'com.github.microsoft:engagementinsights-sdk-android:v1.0.0'
         api 'com.google.code.gson:gson:2.8.1'
     }
     ```
 
-### <a name="option-2-using-download-link"></a>2. lehetőség: A letöltési hivatkozás használata
-1. Töltse le [az elköteleződési elemzések Android SDK-t](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), és helyezze a `eiandroidsdk-debug.aar` fájlt a `libs` mappába.
+### <a name="option-2-use-download-link"></a>2. lehetőség: Letöltési link használata
+1. Töltse le az [elkötelezettségi elemzési elemzéseket Android SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), és helyezze a fájlt a `eiandroidsdk-debug.aar``libs` mappába.
 
 1. Nyissa meg a projektszintű `build.gradle` fájlt, és adja hozzá a következő részleteket:
     ```gradle
@@ -83,22 +83,23 @@ Miután letöltötte az SDK-t, az Android Studio-ban dolgozhat vele az eseménye
     }
     ```
 
-1. Adja hozzá a hálózatra és internetre vonatkozó jogosultságot a `manifests` mappa alatt található `AndroidManifest.xml` fájlban. 
+## <a name="enable-auto-instrumentation"></a>Automatikus műszerezés engedélyezése
+
+1. Adja hozzá a hálózatra és internetre vonatkozó jogosultságot a `manifests` mappa alatt található `AndroidManifest.xml` fájlban.
     ```xml
     <manifest>
         ...
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
-    
-1. Az elköteleződési elemzések SDK konfigurációját az `AndroidManifest.xml` fájlon keresztül. 
 
-## <a name="enable-auto-instrumentation"></a>Automatikus műszerezés engedélyezése
+1. Az elköteleződési elemzések SDK konfigurációját az `AndroidManifest.xml` fájlon keresztül.
+
 1. Másolja az XML-kódrészlet a **Telepítési útmutató** -ból. `Your-Ingestion-Key` adatokat a rendszer automatikusan feltölti.
 
    > [!NOTE]
    > A `${applicationId}` szakaszt nem kell lecserélni. A rendszer automatikusan feltölti.
-   
+
 
    ```xml
    <application>
@@ -116,20 +117,24 @@ Miután letöltötte az SDK-t, az Android Studio-ban dolgozhat vele az eseménye
    </application>
    ```
 
-1. Engedélyezi vagy letiltja a `View` események automatikus rögzítését a felül található `autoCapture` mező `true` vagy `false` -ra állításával. Jelenleg az `Action` eseményeket manuálisan kell hozzáadni.
+1. Engedélyezi vagy letiltja a `View` események automatikus rögzítését a felül található `autoCapture` mező `true` vagy `false` -ra állításával. 
 
-1. (Nem kötelező) Az egyéb beállítások közé tartozik a végpont URL-címének beállítása. Az ingestion kulcs metaadatai között lehet hozzáadni `AndroidManifest.xml`-ben:
-    ```xml
+   >[!NOTE]
+   >`Action` az eseményeket manuálisan kell hozzáadni.
+
+1. (Nem kötelező) Az egyéb beállítások közé tartozik a végpont URL-címének beállítása. A betöltési kulcs metaadatai alá adhatók hozzá a `AndroidManifest.xml`.
+
+   ```xml
         <meta-data
             android:name="com.microsoft.engagementinsights.endpointUrl"
             android:value="https://some-endpoint-url.com" />
-    ```
+   ```
 
 ## <a name="implement-custom-events"></a>Egyéni események végrehajtása
 
 Az SDK inicializálása után az eseményekkel és azok tulajdonságaival is dolgozhat a `MainActivity` környezetben.
 
-    
+
 Java:
 ```java
 Analytics analytics = new Analytics();
@@ -141,7 +146,7 @@ var analytics = Analytics()
 ```
 
 ### <a name="set-property-for-all-events-optional"></a>Tulajdonság beállítása minden eseményhez (nem kötelező)
-    
+
 Java:
 ```java
 analytics.setProperty("year", 2021);

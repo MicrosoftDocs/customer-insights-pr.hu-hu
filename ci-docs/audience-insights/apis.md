@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 8404515a20529c00708d84813f3a022ad98c45362a2f1e68d7aa890d085071a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033588"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732267"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
-Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások elkészítéséhez a Customer Insight-ban szereplő adatai alapján.
+Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások létrehozásához a Customer Insightsban található adatok alapján.
 
 > [!IMPORTANT]
 > Az API-k részletes ismertetése a [Customer Insights API-k segédeletében](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) található. További információkat tartalmaznak a műveletekről, a paraméterekről és a válaszokról.
@@ -117,25 +117,25 @@ Ez a szakasz segítséget nyújt a Customer Insights API-k számára elérhető 
 
 ### <a name="c-nuget"></a>C# NuGet
 
-Ismerje meg a C# ügyféloldali függvénytárak használatának első lépéseit a NuGet.org webhelyről. A NuGet csomaggal kapcsolatos további információkért lásd: [Microsoft.Dynamics.CustomerInsights.Api](https://www.nuget.org/packages/Microsoft.Dynamics.CustomerInsights.Api/). A csomag jelenleg a netstandard2.0 és a netcoreapp2.0 keretrendszert célozza meg.
+További információ a NuGet.org C# ügyfélkönyvtárainak használatának megkezdéséről. A NuGet csomaggal kapcsolatos további információkért lásd: [Microsoft.Dynamics.CustomerInsights.Api](https://www.nuget.org/packages/Microsoft.Dynamics.CustomerInsights.Api/). A csomag jelenleg a netstandard2.0 és a netcoreapp2.0 keretrendszert célozza meg.
 
 #### <a name="add-the-c-client-library-to-a-c-project"></a>C# ügyféloldali függvénytár hozzáadása C#-projekthez
 
-1. A Visual Studio szolgáltatásban nyissa meg a **NuGet csomagkezelő** elemet a projekthez.
+1. A Visual Studio nyissa meg a **projekt NuGet** csomagkezelőjét.
 
 1. Keresse meg a **Microsoft.Dynamics.CustomerInsights.Api**.
 
 1. Válassza a **Telepítés** lehetőséget a csomag projekthez való hozzáadásához.
  
-   Másik lehetőségként futtassa ezt a parancsot a **NuGet csomagkezelő konzolon**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
+   Másik lehetőségként futtassa ezt a parancsot a **NuGet Csomagkezelő** konzolon :`Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="NuGet-csomag hozzáadása Visual Studio-projekthez.":::
+   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Adjon hozzá NuGet csomagot Visual Studio projekthez.":::
 
 #### <a name="use-the-c-client-library"></a>A C# ügyféloldali függvénytár használata
 
 1. Használja a [Microsoft hitelesítési függvénytárat (MSAL)](/azure/active-directory/develop/msal-overview), és használja a `AccessToken` meglévő [Azure alkalmazásregisztrációt](#create-a-new-app-registration-in-the-azure-portal).
 
-1. A token sikeres hitelesítése és megszerzése után hozzon létre egy új `HttpClient` elemet, vagy használjon egy meglévőt a kiegészítő **DefaultRequestHeaders "Authorization"** beállítást **Tulajdonos <access token>** értékre állítva, és az **Ocp-Apim-Subscription-Key** beállítást [**előfizetési kulcs** a Customer Insights környeuetről](#get-started-trying-the-customer-insights-apis).   
+1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt `HttpClient` a további **DefaultRequestHeaders "Authorization"** beállítással, amely **a "hozzáférési token"** és az **Ocp-Apim-Subscription-Key** beállításra van állítva az [**előfizetési kulcsra** a Customer Insights környezetből](#get-started-trying-the-customer-insights-apis).   
  
    Szükség esetén állítsa vissza az **Engedélyezés** fejlécet. Ha például a token lejárt.
 

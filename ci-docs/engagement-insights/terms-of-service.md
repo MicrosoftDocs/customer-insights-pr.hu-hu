@@ -9,22 +9,22 @@ ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: d43d3c49c81ab343db5623ee4f5ebeb100d3b2b7
-ms.sourcegitcommit: 302910e39153f4b5c850ed9b1a62cb867e4df358
-ms.translationtype: HT
+ms.openlocfilehash: e6b69a6f681c929ddc4fe1877e4ad1c45ffe5c57b42f1485f55728eb4f9988b6
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "6218941"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7774123"
 ---
 # <a name="microsoft-dynamics-365-customer-insights--engagement-insights-preview"></a>Microsoft DYNAMICS 365 CUSTOMER INSIGHTS – Aktivitási információk (előzetes verzió) 
 
-Az aktivitási információk (előzetes verzió) egy kiadás előtti előnézeti funkció, amely azt jelenti, hogy kisebb vagy eltérő biztonsági, adatvédelmi és adathely-helymeghatározási funkciókkal rendelkezik, mint azokkal a funkciókkal és képességekkel, amelyeket a rendszer a(z) Dynamics 365 Customer Insights alkalmazásban általában elérhetővé tesz. Az alábbi feltételek és a termékdokumentáció áttekintésével állapítsa meg, hogy az Aktivitási információk (előnézet) megfelelőek-e az adatokhoz.
+Az elkötelezettségi elemzések (előzetes verzió) egy kiadás előtti előnézeti képesség, ami azt jelenti, hogy kevesebb vagy más biztonsági, adatvédelmi és adathelyi intézkedéssel rendelkezik, mint a Dynamics 365 Customer Insights általánosan elérhetővé tett funkciók és képességek. Az alábbi feltételek és a termékdokumentáció áttekintésével állapítsa meg, hogy az Aktivitási információk (előnézet) megfelelőek-e az adatokhoz.
 
 ## <a name="preview-terms-of-service"></a>A SZOLGÁLTATÁSI FELTÉTELEK ELŐNÉZETE
 
 UTOLSÓ MÓDOSÍTÁS: 2020. OKTÓBER 
 
-Az Dynamics 365 Customer Insights - aktivitási információk (a Microsoft által biztosított adatforrásokkal együtt: Szolgáltatások) szolgáltatásainak előzetes verziójához való hozzáféréssel vagy azok használatával Ön elfogadja a jelen Megállapodás feltételeit. Ha nem fogadja el azokat, ne vegye igénybe a Szolgáltatásokat.
+A Dynamics 365 Customer Insights – Elkötelezettségi elemzések szolgáltatás-előnézetének elérésével vagy használatával (a Microsoft által biztosított adatforrásokkal, a "Szolgáltatások" szolgáltatásokkal együtt Ön elfogadja a jelen Szerződés feltételeit. Ha nem fogadja el azokat, ne vegye igénybe a Szolgáltatásokat.
 
 ## <a name="1-what-this-agreement-covers"></a>1. A JELEN SZERZŐDÉS HATÁLYA
 
@@ -154,7 +154,7 @@ A TÖRVÉNY ÁLTAL MEGENGEDETT LEGNAGYOBB MÉRTÉKBEN A MICROSOFT SEMMILYEN KÖR
 
 ### <a name="111-term"></a>11.1. Kifejezés
 
-A jelen Megállapodás azon a napon lép hatályba, amikor Ön először elfogadja azt. Ez a megállapodás minden olyan korábbi megállapodás helyébe lép, amely alapján Ön az Dynamics 365 Product Insights vagy bármely előzetes szolgáltatását használta. A jelen Megállapodás a következők közül a korábbi időpontban szűnik meg: (i) a Szolgáltatások kereskedelmi célú kiadásának első rendelkezésre állásának dátuma (ha van ilyen) vagy (ii) az a nap, amikor a Microsoft értesítést küld a felmondásról. A Microsoft bármikor, bármilyen okból és saját belátása szerint felfüggesztheti vagy megszüntetheti a Szolgáltatások egészéhez vagy bármely részéhez való hozzáférést, vagy felmondhatja a jelen Megállapodást.
+A jelen Megállapodás azon a napon lép hatályba, amikor Ön először elfogadja azt. Ez a megállapodás minden olyan korábbi megállapodást helyettesít, amely alapján ön Dynamics 365 Product Insights vagy bármely prekurzor szolgáltatást használt. A jelen Megállapodás a következők közül a korábbi időpontban szűnik meg: (i) a Szolgáltatások kereskedelmi célú kiadásának első rendelkezésre állásának dátuma (ha van ilyen) vagy (ii) az a nap, amikor a Microsoft értesítést küld a felmondásról. A Microsoft bármikor, bármilyen okból és saját belátása szerint felfüggesztheti vagy megszüntetheti a Szolgáltatások egészéhez vagy bármely részéhez való hozzáférést, vagy felmondhatja a jelen Megállapodást.
 
 ### <a name="112-effect-of-termination"></a>11.2. A felmondás hatása
 

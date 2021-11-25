@@ -1,7 +1,7 @@
 ---
 title: Entitások és adathalmazok
 description: Adatok megtekintése az Entitások lapon.
-ms.date: 04/16/2020
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 137de726b243b501491fcbe7866820aaee26097fcf379270c423c277374ae9a4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033818"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732083"
 ---
 # <a name="entities-in-audience-insights"></a>Entitások a célközönség-információkban
 
-Az [adatforrások konfigurálását követően nyissa](data-sources.md) meg az **Entitások** oldalt, és értékelje a beolvasott adatok minőségét. Az entitások adathalmazoknak számítanak. A Dynamics 365 Customer Insights több funkciója ezekre az entitásokra van építve. Az eredmények alapos áttekintése segítséget nyújt a lehetőségek kimenetének ellenőrzésében.
+Az [adatforrások konfigurálását követően nyissa](data-sources.md) meg az **Entitások** oldalt, és értékelje a beolvasott adatok minőségét. Az entitások adathalmazoknak számítanak. A Dynamics 365 Customer Insights több képessége épül ezek köré az entitások köré. Az eredmények alapos áttekintése segítséget nyújt a lehetőségek kimenetének ellenőrzésében.
 
 Az **Entitások** lap felsorolja az entitásokat, és több oszlopot is tartalmaz:
 
@@ -26,9 +26,10 @@ Az **Entitások** lap felsorolja az entitásokat, és több oszlopot is tartalma
 - **Forrás**: Az adatforrás típusa, amely be lett olvasva az entitásba
 - **Létrehozta**: Az entitást létrehozó személy neve
 - **Létrehozva**: Az entitás létrehozásának dátuma és időpontja
-- **Frisítette**: Az entitást frissítő személy neve
-- **Legutóbbi frissítés**: Az entitás utolsó módosításának dátuma és időpontja
-- **Legutóbbi frissítés**: Az utolsó adatfrissítés dátuma és időpontja
+- **Frissítve** : Az entitást frissített személy neve
+- **Állapot** : Részletek az entitás legutóbbi frissítéséről
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Adott entitás adatainak feltárása
 

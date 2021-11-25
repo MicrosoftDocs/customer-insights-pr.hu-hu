@@ -1,5 +1,5 @@
 ---
-title: Szolgáltatási korlátozások a Dynamics 365 Customer Insights szolgáltatásban
+title: Szolgáltatási korlátok Dynamics 365 Customer Insights
 description: A korlátozásokkal és kikötésekkel kapcsolatos tudnivalók.
 ms.date: 09/03/2021
 ms.service: customer-insights
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
-ms.translationtype: HT
+ms.openlocfilehash: eb25e050b8aa768e6e1d8d4c5adce6095cccc346
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483675"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7791984"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Szolgáltatási korlátok a Customer Insights képességeiben
 
@@ -22,11 +22,11 @@ A cikk ismerteti a beépített korlátozásokat a Customer Insights szolgáltat�
 
 ## <a name="audience-insights"></a>Célközönséggel kapcsolatos információk
 
-### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Szolgáltatási korlátozások a Dynamics 365 Customer Insights célközönség információkban
+### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Szolgáltatási korlátok Dynamics 365 Customer Insights célközönség elemzési képességben
 
 | Terület  | Korlátozások  | Megjegyzések |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Szegmensek és intézkedések | 100 szegmens vagy mérték | Az aktív [szegmensek](audience-insights/segments.md) számának és a [mértékek](audience-insights/measures.md) számának összege nem haladhatja meg a 100-at.  |
+| Szegmensek, intézkedések és előrejelzések | 300  | A szegmensek, intézkedések és előrejelzések összesített száma [...](audience-insights/segments.md) nem [...](audience-insights/measures.md)[...](audience-insights/predictions.md) haladhatja meg a 300-at.  |
 | Kapcsolatok | 20 mélységi szint az kapcsolatok elérési útjaiban. | A [szegmensek](audience-insights/segments.md) vagy [mértékek](audience-insights/measures.md) a szerkesztőfelület használatával való létrehozásakor az entitás elérési útjai a kezdő és a célentitás között legfeljebb 20 kapcsolati ugrást kaphatnak.  |
 
 

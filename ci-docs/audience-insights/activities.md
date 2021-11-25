@@ -1,7 +1,7 @@
 ---
 title: Ügyféltevékenységek
 description: Ügyféltevékenységek meghatározása és azok megtekintése az ügyfélprofilok idővonalán.
-ms.date: 09/27/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: bcb8d42963719f5d225556c31b3fc06db8573e5b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
-ms.translationtype: HT
+ms.openlocfilehash: c99ec2e7d5e4bf32a509bbe4c0c53999129b2305
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673141"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732463"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
-A [különböző adatforrásokból](data-sources.md) származó ügyféltevékenységek Dynamics 365 Customer Insightsban való egyesítésével időrendi sorrendben teheti a tevékenységeket. Vegye fel az idősort a Dynamics 365 alkalmazásokba az [Ügyfélkártya bővítmény](customer-card-add-in.md) megoldással, vagy egy Power BI irányítópultban.
+A Dynamics 365 Customer Insights különböző adatforrásaiból származó ügyféltevékenységek [...](data-sources.md) kombinálása olyan ütemterv létrehozásához, amely időrendben felsorolja a tevékenységeket. Az idővonalat a Dynamics 365-alkalmazásokba is belefoglalja az [Ügyfélkártya](customer-card-add-in.md) bővítmény-megoldásba, vagy egy Power BI irányítópultba.
 
 ## <a name="define-an-activity"></a>Egy tevékenység definiálása
 
@@ -82,9 +82,7 @@ Egy entitásben legalább egy **Dátum** típusú attribútumnak szerepelnie kel
 
 1. A **Tevékenységek** lapon válassza a **Futtatás** lehetőséget a tevékenység feldolgozásához. 
 
-> [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
-
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-activities"></a>Meglévő tevékenységek kezelése
 
