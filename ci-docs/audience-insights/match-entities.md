@@ -1,7 +1,7 @@
 ---
 title: Entitások egyeztetése az adategyesítéshez
-description: Az entitások egyeztetése az adatkészletek kombinálása és egységes ügyfélprofilok létrehozása érdekében.
-ms.date: 11/01/2021
+description: Entitások egyeztetése az egyesített ügyfélprofilok létrehozásához.
+ms.date: 11/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
+ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
+ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732637"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "7863814"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -224,17 +224,24 @@ Az egyezési paraméterek nagy része konfigurálható és finomhangolható.
 
 ## <a name="specify-custom-match-conditions"></a>Egyéni egyezés feltételeinek megadása
 
-Megadhat olyan feltételeket, hogy bizonyos rekordoknak mindig egyezniük kell vagy soha nem szabad egyezniük. Ezek a szabályok feltölthetők a szabványos egyezési folyamat felülbírálása érdekében. Ha például Gipsz Jakab 1 és Gipsz Jakab 2 található a rekordok között, előfordulhat, hogy a rendszer egy személyként egyezteti őket. Az egyéni egyezésszabályokkal megadhatja, hogy a profiljuk különböző személyekre hivatkozik. 
+Megadhatja azokat a feltételeket, amelyek felülírják az alapértelmezett egyezési logikát. Négy lehetőség áll rendelkezésre: 
+
+|Beállítás  |Description |Példa  |
+|---------|---------|---------|
+|Mindig egyezik     | Olyan értékeket határoz meg, amelyek mindig egyeznek.         |  Mindig *egyezik* Mike-kal és *MikeR-nal*.       |
+|Soha nem egyezik     | Olyan értékeket határoz meg, amelyek soha nem egyeznek meg.        | Soha ne egyezd *johnnal* és *Jonathannal*.        |
+|Egyéni megkerülő     | Olyan értékeket határoz meg, amelyeket a rendszernek mindig figyelmen kívül kell hagynia az egyeztetési fázisban. |  Hagyja figyelmen kívül a *11111 és az Ismeretlen értékeket* *a mérkőzés* során.        |
+|Aliasleképezés    | Olyan értékek meghatározása, amelyeket a rendszernek azonos értéknek kell tekintenie.         | *Tekintsd* Joe-t egyenlőnek *Joseph-el.*        |
 
 1. Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, és válassza az **Egyéni egyezés** lehetőséget az **Egyező rekordok részletei** szakaszban.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Képernyőkép az egyezésszabályok szakaszról, amelyen kiemelve látható az Egyéni egyezés vezérlő.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Képernyőkép az egyezésszabályok szakaszról, amelyen kiemelve látható az Egyéni egyezés vezérlő.":::
 
-1. Ha nincs beállítva egyéni egyezésszabály, új **Egyéni egyezés** ablaktábla látható, amely további részleteket tartalmaz.
+1. Az **Egyéni** ablaktáblán lépjen a **Rekordok** fülre.
 
-1. A **Sablon kitöltése** beállítással lekérhet egy olyan sablonfájlt, amellyel megadhatja, mely entitásokat kell mindig egyeztetni, vagy sosem egyeztetni. Két külön fájlban kell kitölteni a „mindig egyeztetendő” rekordokat és a „sosem egyeztetendő” rekordokat.
+1. Válassza ki az egyéni egyezés lehetőséget az **Egyéni típusú** legördülő menüből, és válassza a **Sablon letöltése** lehetőséget. Minden egyezési lehetőséghez külön sablonra van szükség.
 
-1. A sablon mezőket tartalmaz, amelyek meghatározzák az entitást és az egyéni egyeztetésben használandó entitás elsődleges kulcsértékeit. Ha például azt szeretné, hogy az *Értékesítés* entitás *12345* elsődleges kulcsa mindig megegyezzen a *Kapcsolattartó* entitás *34567* elsődleges kulcsával, töltse ki a sablont:
+1. Sablonfájl letöltése. Nyissa meg és töltse ki a részleteket. A sablon mezőket tartalmaz, amelyek meghatározzák az entitást és az egyéni egyeztetésben használandó entitás elsődleges kulcsértékeit. Ha például azt szeretné, hogy az *Értékesítés* entitás *12345* elsődleges kulcsa mindig megegyezzen a *Kapcsolattartó* entitás *34567* elsődleges kulcsával, töltse ki a sablont:
     - Entity1: Értékesítés
     - Entity1Key: 12345
     - Entity2: Kapcsolattartó
@@ -244,26 +251,32 @@ Megadhat olyan feltételeket, hogy bizonyos rekordoknak mindig egyezniük kell v
    
    Ha a deduplikáláshoz egyéni egyeztetést kíván megadni egy entitáson, akkor ugyanazt az entitást kell megadnia, mint az Entity1 és az Entity2, és állítson be különböző elsődleges kulcsértékeket.
 
-1. Az összes alkalmazni kívánt felülbírálás hozzáadását követően mentse a sablonfájlt.
+1. Az összes felülbírálás hozzáadása után mentse a sablonfájlt.
 
-1. Nyissa meg az **Adatok** > **Adatforrások** pontot, és töltse fel a sablonfájlokat új entitásként. A betöltés után ezekkel megadhatja az Egyeztetési konfigurációt.
+1. Nyissa meg az **Adatok** > **Adatforrások** pontot, és töltse fel a sablonfájlokat új entitásként.
 
-1. A fájlok feltöltése után, amikor az entitások rendelkezésre állnak, válassza ismét az **Egyéni egyeztetés** lehetőséget. Megjelennek a szerepeltetni kívánt entitások meghatározására szolgáló lehetőségek. Válassza ki a szükséges entitásokat a legördülő menüből.
+1. A fájlok feltöltése után, amikor az entitások rendelkezésre állnak, válassza ismét az **Egyéni egyeztetés** lehetőséget. Megjelennek a szerepeltetni kívánt entitások meghatározására szolgáló lehetőségek. Válassza ki a szükséges entitásokat a legördülő menüből, és válassza a **Kész** lehetőséget.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Képernyőkép a párbeszédablakról az egyéni egyezés esetének felülbírálása esetén.":::
 
-1. Jelölje ki a **Mindig egyeztetendő** és **Sosem egyeztetendő** lehetőségekhez használni kívánt entitásokat, és válassza a **Kész** lehetőséget.
+1. Az egyéni egyezés alkalmazása a használni kívánt egyezési lehetőségtől függ. 
+
+   - A **Mindig egyezés** vagy a Soha **egyezés** 1000 lépésnél folytassa a következő lépéssel.
+   - **Egyéni megkerülés** vagy **aliasleképezés** mezőben válassza a Szerkesztés lehetőséget egy **meglévő** egyezési szabályon, vagy hozzon létre egy új szabályt. A Normalizálások legördülő listában válassza az **Egyéni megkerülő** vagy **aliasleképezés** lehetőséget, és válassza a Kész **lehetőséget**.
 
 1. Az egyéni egyezési konfiguráció alkalmazáshoz válassza a **Mentés** lehetőséget az **Egyezés** lapon.
 
 1. Az egyeztetési folyamat futtatásához válassza a **Futtatás** lehetőséget a **Egyezés** oldalon. Az egyéni egyezési konfiguráció felülírja az egyéb megadott egyezési szabályokat.
 
-> [!TIP]
-> Lépjen az **Adatok** > **Entitások** pontra, és tekintse át a **ConflationMatchPair** entitást a felülbírálások alkalmazásának ellenőrzése érdekében.
+### <a name="known-issues"></a>Ismert problémák
+
+- Az önelkobzás nem jeleníti meg a normalizált adatokat a deduplikációs entitásokban. A deduplikáció során azonban belsőleg alkalmazza a normalizációt. Ez a tervezés minden normalizálás. 
+- Ha a szemantikai típusbeállítás törlődik a **Leképezési** fázisból, ha egy egyezés szabály aliasleképezést vagy egyéni megkerülést használ, a normalizálás nem lesz alkalmazva. Ez csak akkor történik meg, ha a mérkőzésszabály normalizálásának konfigurálása után törli a szemantikai típust, mert a szemantikai típus ismeretlen lesz.
+
 
 ## <a name="next-step"></a>Következő lépés
 
-Legalább egy egyeztetési párra vonatkozó egyeztetési folyamat végrehajtása után feloldhatja a lehetséges ellentmondásokat az adatokban, ha áttekinti az [**Egyesítés**](merge-entities.md) témakört.
+Miután befejezte a mérkőzés folyamatát legalább egy mérkőzéspárra, folytassa az [**Egyesítés**](merge-entities.md) lépéssel.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

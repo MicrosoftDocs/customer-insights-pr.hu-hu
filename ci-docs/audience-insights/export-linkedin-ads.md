@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
-ms.translationtype: HT
+ms.openlocfilehash: 867a6541734746f75a35faaa8d3861e0479d6114
+ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618294"
+ms.lasthandoff: 11/29/2021
+ms.locfileid: "7866891"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 
@@ -22,12 +22,13 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 
 ## <a name="prerequisites"></a>Előfeltételek
 
--   Van egy [LinkedIn Campaign Manager-fiókja](https://business.linkedin.com/marketing-solutions/ads) és ahhoz tartozó rendszergazdai hitelesítő adatai.
+-   [Rendelkezik LinkedIn Campaign Manager fiókkal és](https://business.linkedin.com/marketing-solutions/ads) a megfelelő rendszergazdai hitelesítő adatokkal.
 -   [Konfigurált szegmensekkel](segments.md) rendelkezik a célközönségi-információkban.
 -   Az exportált szegmensek ügyfélprofiljai egy e-mail-címmel rendelkező mezőt tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
+- A Customer Insights szegmensének legalább 300 egyedi profilt kell tartalmaznia. 
 - Exportálásonként legfeljebb 100 000 ügyfélprofilt exportálhat a LinkedIn Ads hirdetésekbe.
 - A LinkedIn Ads szolgáltatásba való exportálás a szegmensekre korlátozódik.
 - 100 000 ügyfélprofil exportálása a LinkedIn Ads hirdetésekbe akár 10 percet is igénybe vehet. 
@@ -48,7 +49,7 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 
 1. Válassza a **Kapcsolat** lehetőséget a Campaign Monitor kapcsolatának inicializálására.
 
-1. Válassza a **Hitelesítés a LinkedInnel** lehetőséget, és adja meg a LinkedIn Campaign Manager hitelesítő adatait.
+1. Válassza a **Authenticate with LinkedIn** lehetőséget, és adja meg rendszergazdai hitelesítő adatait LinkedIn Campaign Manager.
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
@@ -68,7 +69,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A kapcsolattartók célzása érdekében az **Adatok egyeztetése** szakaszban jelöljön ki legalább egy olyan mezőt, amely az ügyfél e-mail címét, az Apple Ad ID azonosítót, a Google Ad ID azonosítót, a Google Felhasználói azonosítót, illetve a vezetéknevet tartalmazza. Ha a vállalat célzását választja, akkor jelöljön ki legalább egy olyan mezőt, amely cégnevet, e-mail tartományt, LinkedIn-oldal URL-címét, Tőzsdei szimbólumot vagy Webhelyet jelképez. Az exportálás további mezői választhatók ki. 
 
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. A LinkedIn Campaign Manager egyeztetett célközönségei automatikusan létrejönnek az exportálásra kiválasztott szegmensek nevével. Minden szegmens külön egyeztetett célközönséget eredményez. 
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. A LinkedIn Campaign Manager egyező közönségei automatikusan létrejönnek az exportálni kívánt szegmensek nevével. Minden szegmens külön egyeztetett célközönséget eredményez. 
 
 1. Válassza a **Mentés** parancsot.
 
@@ -79,6 +80,6 @@ Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
-Amikor engedélyezi Dynamics 365 Customer Insights számára, hogy adatokat továbbítson a LinkedIn Ads számára, akkor lehetővé teszi az adatok továbbítását a Dynamics 365 Customer Insights megfelelési határán kívülre is, beleértve az esetlegesen bizalmas adatokat is, például a Személyes adatokat. A Microsoft az Ön utasítására továbbítja az adatokat, de Ön a felelős azért, hogy a LinkedIn Ads megfeleljen az esetleges adatvédelmi vagy biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
+Ha engedélyezi Dynamics 365 Customer Insights adatokat továbbíthat a LinkedIn-hirdetéseknek, engedélyezi az adatok továbbítását a Dynamics 365 Customer Insights megfelelőségi határán kívül, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft az Ön utasítására továbbítja az adatokat, de Ön a felelős azért, hogy a LinkedIn Ads megfeleljen az esetleges adatvédelmi vagy biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 
-A funkció használatának leállítása érdekében az Ön Dynamics 365 Customer Insights rendszergazdája bármikor eltávolíthatja ezt az exportálási célhelyet.
+A Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célt, hogy leállítsa a funkció használatát.
