@@ -1,7 +1,7 @@
 ---
 title: Szegmensekre vonatkozó hozzájárulási szabályok aktiválása
 description: Kövesse az alábbi lépéseket a hozzájárulási adatok összekapcsolásához és a hozzájárulási ellenőrzések aktiválásához célközönség elemzésben. A rendszergazda letilthatja a hozzájárulás-ellenőrzéseket is.
-ms.date: 11/03/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
-ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
+ms.openlocfilehash: 552cb0739c4d17266dd028638df067f3384b738a
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7790779"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884077"
 ---
 # <a name="activate-consent-rules"></a>Hozzájárulási szabályok aktiválása
 
@@ -38,7 +38,7 @@ A Hozzájárulási központba importált hozzájárulási adatokkal (előzetes v
 
 1. A **Hozzájárulás csatolása az ügyfélprofilokhoz** szakaszban válassza ki azt az attribútumot, amely azonosítóként van használva a hozzájárulási adatok ügyféladatokhoz való kapcsolásához. Valószínűleg telefonszám vagy e-mail cím lesz. 
 
-1. A **·** beállítások alkalmazásához válassza a Mentés lehetőséget.
+1. A **beállítások** alkalmazásához válassza a Mentés lehetőséget.
 
 ## <a name="disable-consent-checks"></a>Hozzájárulás-ellenőrzések letiltása
 
@@ -49,3 +49,6 @@ Ahhoz, hogy a rendszergazda ne használjon beleegyezési adatokat célközönsé
 1. Válassza a **Beleegyezés (előnézet)** fület.
 
 1. A **Hozzájárulás-ellenőrzések engedélyezése** szakaszban állítsa a váltást **Ki** gombra.
+
+> [!TIP]
+> A hozzájárulás-kezelési képesség használatának leállításához olvassa el [a Rendszerbeállítások a Hozzájárulási központban (előzetes verzió)](../consent-management/system-settings.md) című témakört.

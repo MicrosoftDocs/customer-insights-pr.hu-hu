@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása a SFTP gazdaszámítógépekhez
+title: Ügyfélelemzési adatok exportálása SFTP-állomásokra (videó)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az SFTP helyre.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a54025588945e4db6ab800dca034520b5f08d49b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 568e5826175417175bd09435d697031f0ab64223
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673919"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927560"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Szegmensek és egyéb adatok exportálása az SFTP-be (előzetes verzió)
 
@@ -28,6 +28,7 @@ Az ügyféladatokat külső alkalmazásokban használhatja, ha exportálja őket
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
+- A tűzfalak mögötti SFTP-célpontok jelenleg nem támogatottak. 
 - Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória. 
 - Az legfeljebb 100 millió ügyfélprofillal rendelkező entitások exportálása 90 percet is igénybe fog venni, ha két processzormag és 1 Gb memória ajánlott minimális konfigurációját használja. 
 

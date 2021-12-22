@@ -1,7 +1,7 @@
 ---
-title: Továbbfejlesztett címek bővítése
+title: Címjavító gazdagodás (videó)
 description: A Microsoft modelljeivel rendelkező ügyfélprofilok címinformációinak bővítése és normalizálása.
-ms.date: 07/25/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: f56be1f4ecdac124ed76a0fb0eb1e313099248bf
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: d2c174b7882382faf4c363198982317ee21fdd4b
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643399"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927514"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Ügyfélprofilok bővítése továbbfejlesztett címekkel
 
@@ -101,6 +101,16 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
 Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+
+### <a name="overview-card"></a>Áttekintő kártya
+
+Az áttekintő kártya részletesen ismerteti a dúsítás lefedettségét. 
+
+* **Feldolgozott és módosított ügyfelek** : A sikeresen gazdagított ügyfélprofilok száma.
+
+* **Feldolgozott és nem módosított vevők** : A felismert, de nem módosított ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
+
+* **Nem feldolgozott és nem módosított ügyfelek** : A nem felismert profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy a gazdagodás által nem támogatottak.
 
 ## <a name="next-steps"></a>További lépések
 

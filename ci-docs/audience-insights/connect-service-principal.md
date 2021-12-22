@@ -1,7 +1,7 @@
 ---
 title: Csatlakozás egy Azure Data Lake Storage-fiókhoz egy szolgáltatásnév segítségével
 description: Azure szolgáltatásnév használata a saját adattó csatlakoztatására.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
-ms.translationtype: HT
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645175"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900261"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Csatlakozás egy Azure Data Lake Storage-fiókhoz egy Azure szolgáltatásnév segítségével
 
-Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlátozott engedélyekkel kell rendelkezniük. Ahelyett, hogy az alkalmazások teljes jogosultsággal rendelkező felhasználóként jelentkezzenek be, az Azure egyszerű szolgáltatásneveket biztosít. A cikkből megtudhatja, hogyan kapcsolódhat a Dynamics 365 Customer Insights alkalmazással egy Azure Data Lake Storage fiókhoz tárfiókkulcsok helyett egy Azure szolgáltatásnév használatával. 
+Ez a cikk azt ismerteti, hogyan kapcsolódhat Dynamics 365 Customer Insights egy Azure Data Lake Storage fiókhoz Egy Azure-egyszerű szolgáltatásnév használatával a Storage-fiókkulcsok helyett. 
 
-A szolgáltatásnév segítségével biztonságos módon [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrásként](connect-common-data-model.md), illetve [létrehozhat vagy frissíthet egy környezetet](create-environment.md).
+Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlátozott engedélyekkel kell rendelkezniük. Ahelyett, hogy az alkalmazások teljes jogosultsággal rendelkező felhasználóként jelentkezzenek be, az Azure egyszerű szolgáltatásneveket biztosít. Az egyszerű egyszerű szolgáltatásokkal biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát](connect-common-data-model.md) adatforrás, illetve környezetet hozhat létre vagy [frissíthet](create-environment.md).
 
 > [!IMPORTANT]
 > - A Data Lake Storage-fiók esetében, amely használni foga az egyszerű szolgáltatásnevet a [hierarchikus szolgáltatásnév engedélyezése szükséges](/azure/storage/blobs/data-lake-storage-namespace).
-> - Az egyszerű szolgáltatásnév létrehozásához rendszergazdai előfizetéssel kell rendelkezni az Azure-előfizetéshez.
+> - Rendszergazdai engedélyekre van szükség az Azure-előfizetéshez egy egyszerű szolgáltatás létrehozásához.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Azure szolgáltatásnév létrehozása a Customer Insightshoz
 
-Mielőtt létrehoznál egy új szolgáltatásnevet az célközönséggel kapcsolatos információkhoz vagy az elkötelezettségi információkhoz, ellenőrizze, hogy szerepel-e már a szervezetben.
+Mielőtt új szolgáltatásnév-szolgáltatást hozna létre a Customer Insightshoz, ellenőrizze, hogy már létezik-e a szervezetben.
 
 ### <a name="look-for-an-existing-service-principal"></a>Meglévő egyszerű szolgáltatásnév keresése
 

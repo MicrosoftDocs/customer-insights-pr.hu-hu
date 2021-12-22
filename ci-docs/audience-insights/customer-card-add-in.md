@@ -1,20 +1,20 @@
 ---
-title: Ügyfélkártya bővítmény Dynamics 365-alkalmazásokhoz
+title: Ügyfélkártya-bővítmény a Dynamics 365-alkalmazásokhoz (videó)
 description: Ezzel a bővítménnyel a célközönségből származó adatok jeleníthetők a Dynamics 365-alkalmazásokban.
-ms.date: 09/30/2021
+ms.date: 12/07/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: pkieffer
-ms.author: philk
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
-ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
-ms.translationtype: MT
+ms.openlocfilehash: f3d613d7183fd0af2998cd081d08d4316c7a5628
+ms.sourcegitcommit: ae3b92926ea1adfcc50e4bfd000b06ea0ccfc0ee
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7792030"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "7921868"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
@@ -27,20 +27,20 @@ ms.locfileid: "7792030"
 ## <a name="prerequisites"></a>Előfeltételek
 
 - A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ahhoz, hogy a Dynamics 365-adatok leképezzék az célközönség elemzési ügyfélprofilokat, [azokat a Dynamics 365 alkalmazásból kell betömni a Microsoft Dataverse-összekötővel](connect-power-query.md).
+- Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Microsoft Dataverse-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
 - Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
 - Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja értesíteni fogja, ha a kijelölt környezettípus miatt egy vezérlő nem érhető el. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
   - **Mértékegység-vezérlő**: [Ügyfélattribútumok](measures.md) típusú, konfigurált intézkedéseket igényel.
-  - **Információk ellenőrzése**: Az [előrejelzések](predictions.md) vagy az [egyéni modellek](custom-models.md) használatával létrehozott adatokra van szükség.
+  - **Intelligencia-vezérlés** : Előrejelzések vagy egyéni modellek felhasználásával generált adatokra van [szükség](predictions-overview.md).
   - **Ügyféladatok vezérlő**: A profilból minden mező elérhető az egységes ügyfélprofilban.
-  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártya bővítmény támogatja ezeket a gazdagodásokat: [a Microsoft által biztosított](enrichment-microsoft.md) márkák, a Microsoft által nyújtott [...](enrichment-microsoft.md) érdekek.
+  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártya bővítmény támogatja ezeket a gazdagításokat: [a Microsoft által biztosított](enrichment-microsoft.md) márkák, a Microsoft által biztosított [érdeklődési körök és a](enrichment-microsoft.md) Microsoft által [szolgáltatott Office-elkötelezettségi](enrichment-office.md) adatok.
   - **Kapcsolattartók vezérlő**: A kapcsolattartók típusú szemantikus entitás definícióját igényli.
   - **Idősor-vezérlő**: [Konfigurált tevékenységeket](activities.md) igényel.
 
 ## <a name="install-the-customer-card-add-in"></a>Az Ügyfélkártya bővítmény telepítése
 
-Az Ügyfélkártya bővítmény a Dynamics 365Customer Engagement alkalmazásihoz használható megoldás. A megoldás telepítéséhez lépjen a AppSource és keresse meg a **Dynamics ügyfélkártyát**. Válassza ki a [Vevőkártya bővítményt](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) AppSource, és válassza a **Get It Now** lehetőséget.
+Az Ügyfélkártya bővítmény a Dynamics 365Customer Engagement alkalmazásihoz használható megoldás. A megoldás telepítéséhez nyissa meg az AppSource lehetőséget, és keresse meg a **Dynamics ügyfélkártyát**. Válassza ki az [ügyfélkártya bővítményt az AppSource megoldásban](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview), és válassza a **Letöltés most** lehetőséget.
 
 A megoldás telepítéséhez előfordulhat, hogy rendszergazdai hitelesítő adataival kell bejelentkeznie a Dynamics 365 alkalmazásba. Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 
@@ -48,7 +48,7 @@ A megoldás telepítéséhez előfordulhat, hogy rendszergazdai hitelesítő ada
 
 1. Rendszergazdaként nyissa meg a Dynamics 365 **Beállítások** szakaszát, és válassza a **Megoldások** lehetőséget.
 
-1. Válassza ki a **·** Dynamics 365 Customer Insights **ügyfélkártya-bővítmény (előzetes verzió) megoldás megjelenítendő név** hivatkozását.
+1. Válassza ki a **Megjelenítendő név** hivatkozást a **Dynamics 365 Customer Insights ügyfélkártya bővítmény (előzetes verzió)** megoldáshoz.
 
    > [!div class="mx-imgBorder"]
    > ![Megjelenítendő név választása.](media/select-display-name.png "Megjelenítendő név választása.")

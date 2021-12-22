@@ -1,5 +1,5 @@
 ---
-title: Hasonló ügyfelek keresése AI-val
+title: Hasonló ügyfelek keresése AI-val (videó)
 description: Hasonló ügyfél-szegmensek keresése mesterséges intelligenciával.
 ms.date: 06/25/2020
 ms.service: customer-insights
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7c447609bd54de0780dd14aae9f05c7c24b8cce5
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
-ms.translationtype: MT
+ms.openlocfilehash: 7999c4964773c3b5c49537027a2ed67f0ad57ec5
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799685"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903893"
 ---
 # <a name="similar-customers-preview"></a>Hasonló ügyfelek (előzetes verzió)
 
@@ -23,7 +23,7 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
-> A *Hasonló ügyfelek megkeresése* automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítéséhez az adatok alapján, és így egy olyan képessége van, ami profilalkotáshoz használható az Általános adatvédelmi rendelet („GDPR”) definíciója szerint. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Ön felelős annak biztosításáért, hogy a Dynamics 365 Customer Insights használata, beleértve az előrejelzéseket is, megfeleljen az összes vonatkozó törvénynek és rendeletnek, beleértve a magánéletre, a személyes adatokra, a biometrikus adatokra, az adatvédelemre és a kommunikáció titkosságára vonatkozó törvényeket is.
+> A *Hasonló ügyfelek megkeresése* automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítéséhez az adatok alapján, és így egy olyan képessége van, ami profilalkotáshoz használható az Általános adatvédelmi rendelet („GDPR”) definíciója szerint. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, az előrejelzésekkel együtt, megfelel a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.
 
 ## <a name="finding-similar-customers"></a>Hasonló ügyfelek keresése
 

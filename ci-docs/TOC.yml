@@ -4,7 +4,7 @@
   href: overview.md
 - name: Ingyenes próbaverzió
   items:
-    - name: Regisztráció az ingyenes próbára
+    - name: Regisztráció ingyenes próbaverzióra
       href: trial-signup.md
     - name: Próbaverzió GYIK-ja
       href: trial-FAQ.md
@@ -48,7 +48,7 @@
           href: audience-insights/connect-power-query.md
         - name: Common Data Model-mappa hozzáadása adatforrásként
           href: audience-insights/connect-common-data-model.md
-        - name: Dataverse kezelt adattó hozzáadása
+        - name: Dataverse felügyelt adattó hozzáadása
           href: audience-insights/connect-dataverse-managed-lake.md
         - name: Adatforrások növekményes frissítése
           href: audience-insights/incremental-refresh-data-sources.md
@@ -84,7 +84,7 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Továbbfejlesztett címek
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Vállalati adatok javítása
+        - name: Továbbfejlesztett vállalati adatok
           href: audience-insights/enrichment-enhanced-company-data.md
         - name: Gazdagítás az Azure Maps-szolgáltatással
           href: audience-insights/enrichment-azure-maps.md
@@ -92,8 +92,10 @@
           href: audience-insights/enrichment-here.md
         - name: Bővítés Leadspace-szel
           href: audience-insights/enrichment-leadspace.md
-        - name: Bővítés Experiannal
+        - name: Bővítés Experian -nal
           href: audience-insights/enrichment-experian.md
+        - name: Gazdagítás Office 365 adatokkal
+          href: audience-insights/enrichment-office.md
         - name: Gazdagítás az SFTP egyéni importálással
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Szegmensek
@@ -144,8 +146,6 @@
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Azure Machine Learning-kísérletek
               href: audience-insights/azure-machine-learning-experiments.md
-            - name: Kísérletezés az Azure Machine Learning stúdióval
-              href: audience-insights/machine-learning-studio-experiments.md
         - name: Előrejelzések kezelése
           href: audience-insights/manage-predictions.md
         - name: Szegmensek létrehozása előrejelzések alapján
@@ -166,7 +166,7 @@
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse analitika
+            - name: Azure Synapse Analytics
               href: audience-insights/export-azure-synapse-analytics.md
             - name: Adobe Campaign Standard
               href: audience-insights/export-adobe-campaign-standard.md
@@ -182,7 +182,7 @@
               href: audience-insights/export-dynamics365-marketing.md
             - name: Dynamics 365 Sales
               href: audience-insights/export-dynamics365-sales.md
-            - name: Facebook Hirdetéskezelő
+            - name: Facebook hirdetéskezelő
               href: audience-insights/export-facebook.md
             - name: Google Ads
               href: audience-insights/export-google-ads.md
@@ -216,7 +216,7 @@
           items:
             - name: A Dynamics 365 Ügyfélkártya bővítménye
               href: audience-insights/customer-card-add-in.md
-            - name: Microsoft Teams (bot)
+            - name: Microsoft Teams (robot)
               href: audience-insights/export-teams-bot.md
             - name: Power Apps
               href: audience-insights/export-power-apps.md
@@ -240,13 +240,15 @@
               href: audience-insights/use-azure-key-vault.md
             - name: 'Csatlakozás egy ADLS-tárfiókhoz, a Service Principal használatával'
               href: audience-insights/connect-service-principal.md
+            - name: Diagnosztikai naplók exportálása
+              href: audience-insights/diagnostics.md
     - name: Bővíthetőség
       items:
         - name: A webes adatok integrálása az elkötelezettségi információk segítségével
           href: audience-insights/integrate-engagement-insights.md
         - name: A Common Data Model-entitássémák áttekintése
           href: audience-insights/entity-schemas.md
-        - name: Ügyfélelemzési adatok Dataverse
+        - name: A Customer Insights-adatok a Dataverse-ben
           href: audience-insights/customer-insights-dataverse.md
         - name: Az API-k használata
           href: audience-insights/apis.md
@@ -338,11 +340,11 @@
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Web SDK-minta
           href: engagement-insights/websdk-sample.md
-        - name: Android SDK bemutató
+        - name: Android SDK oktatóanyag
           href: engagement-insights/get-started-android.md
-        - name: Android SDK-minta
+        - name: Android SDK minta
           href: engagement-insights/androidsdk-sample.md
-        - name: iOS SDK bemutató
+        - name: iOS SDK oktatóanyag
           href: engagement-insights/get-started-ios.md
         - name: iOS SDK minta
           href: engagement-insights/iossdk-sample.md

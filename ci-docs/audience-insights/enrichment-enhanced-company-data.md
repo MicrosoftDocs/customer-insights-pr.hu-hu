@@ -1,7 +1,7 @@
 ---
 title: Vállalati adatok javítása
 description: Gazdagítsa és normalizálja a vállalati adatokat a Microsoft modelljeivel.
-ms.date: 11/15/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
-ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
+ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "7813921"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927585"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
 
@@ -83,6 +83,16 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
 Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+
+### <a name="overview-card"></a>Áttekintő kártya
+
+Az áttekintő kártya részletesen ismerteti a dúsítás lefedettségét. 
+
+* **Feldolgozott és módosított ügyfelek** : A sikeresen gazdagított ügyfélprofilok száma.
+
+* **Feldolgozott és nem módosított vevők** : A felismert, de nem módosított ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
+
+* **Nem feldolgozott és nem módosított ügyfelek** : A nem felismert profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy a gazdagodás által nem támogatottak.
 
 ## <a name="next-steps"></a>További lépések
 

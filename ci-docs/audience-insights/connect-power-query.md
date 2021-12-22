@@ -1,7 +1,7 @@
 ---
-title: Adatok betöltése Power Query összekötőn keresztül
+title: Adatok betöltése Power Query-összekötőn keresztül (Videó)
 description: Összekötők Power Query alapú adatforrásokhoz.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: MT
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732221"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903843"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Csatlakozás Power Queryhoz adatforráshoz
 
-A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséhez. Ezeknek az összekötőknek a többségét Dynamics 365 Customer Insights támogatja. Power Query csatlakozón alapuló adatforrások hozzáadása általában a következő szakaszban leírt lépéseket követi. A használt csatlakozótól függően azonban eltérő információra van szükség. További információkért tekintse meg az egyes összekötők dokumentációját a [Power Query-összekötő referencia](/power-query/connectors/).
+A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséhez. A legtöbb ilyen csatlakozót a támogatja Dynamics 365 Customer Insights. 
+
+Az adatforrások hozzáadása Power Query összekötők alapján általában az ebben a szakaszban ismertetett lépéseket követi. A használt csatlakozótól függően azonban eltérő információra van szükség. További információért tekintse meg az egyes csatlakozók dokumentációját a [Power Query csatlakozó hivatkozásában](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,14 +30,11 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
 
 1. Válassza az **Adatforrás hozzáadása** lehetőséget.
 
-1. Válassza az **Adatok importálása** módszert, és válassza a **Tovább** lehetőséget.
+1. Válassza **a Microsoft Power Query** lehetőséget, majd válassza a Tovább **lehetőséget**.
 
-1. Adja meg a adatforrás **Nevét**, majd válassza a **Következő** lehetőséget a adatforrás létrehozásához. Névvel kapcsolatos irányelvek: 
-   - Kezdje egy betűvel.
-   - Csak betűket és számokat használjon. Speciális karakterek és szóközök nem adhatók meg.
-   - 3–64 karakter használható.
+1. Adja meg a adatforrás **Nevét**, majd válassza a **Következő** lehetőséget a adatforrás létrehozásához.
 
-1. Válassza ki az egyik [elérhető csatlakozót](#available-power-query-data-sources). Ebben a példában a **Szöveg/CSV** összekötőt választjuk.
+1. Válassza ki az egyik [elérhető csatlakozót](#available-power-query-data-sources). Ebben a példában a **Szöveg/CSV** csatlakozót választjuk.
 
 1. Adja meg a kijelölt összekötő **Kapcsolati beállításaiban** a szükséges adatokat, és az adatok előnézetének megtekintéséhez válassza a **Tovább** lehetőséget.
 
@@ -50,7 +49,7 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
 
 1. A adatforráshoz további entitások hozzáadásához válassza az **Adatok beolvasása** elemet a **Lekérdezések szerkesztése** párbeszédpanelen.
 
-   Ezek az átalakítások erősen ajánlottak:
+   Javasoljuk, hogy a következő átalakításokat használja:
 
    - Ha egy CSV-fájlból tölti be az adatokat, az első sor gyakran tartalmaz fejléceket. Nyissa meg a **Tábla átalakítása** elemet, és válassza **Fejlécek használata első sorként** lehetőséget.
    - Ügyeljen arra, hogy az adattípus megfelelően legyen beállítva.
@@ -61,7 +60,7 @@ A Power Query a csatlakozók széles körét biztosítja az adatok betöltéséh
 
 ## <a name="available-power-query-data-sources"></a>Rendelkezésre álló Power Query-adatforrások
 
-Tekintse meg a [Power Query-összekötő referencia](/power-query/connectors/) dokumentumot azon összekötők listájának megjelenítéséhez, amelyeket kiválaszthat adatok importálásához a Customer Insights alkalmazásba. 
+Tekintse meg a [Power Query összekötő](/power-query/connectors/) hivatkozását azon összekötők listájáról, amelyekkel adatokat importálhat a Customer Insights szolgáltatásba. 
 
 Azok az összekötők, amelyeknél a **Customer Insights (adatfolyamok)** oszlopában egy pipa látható érhetők el új adatforrások létrehozásához a Power Query-re építve. Egy adott csatlakozó dokumentációjának áttekintésével többet megtudhat az előfeltételekről, a korlátozásokról és egyéb részletekről.
 
@@ -70,7 +69,7 @@ Azok az összekötők, amelyeknél a **Customer Insights (adatfolyamok)** oszlop
 > [!NOTE]
 > Előfordulhat, hogy az alkalmazás egyik folyamatában (például *szegmentálás*, *egyeztetés* vagy *egyesítés*) jelenleg használt adatforrások nem módosíthatók. 
 >
-> A **Beállítások** oldal használatával nyomon követheti az egyes aktív folyamatok állapotát. A folyamat befejeződésekor visszaléphet az **Adatforrások** lapra, és elvégezheti a változtatásokat.
+> A **Beállítások** lapon nyomon követheti az egyes aktív folyamatok előrehaladását. A folyamat befejeződésekor visszaléphet az **Adatforrások** lapra, és elvégezheti a változtatásokat.
 
 1. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**.
 

@@ -1,7 +1,7 @@
 ---
 title: Entitások és adathalmazok
 description: Adatok megtekintése az Entitások lapon.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,51 +9,57 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732083"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900430"
 ---
 # <a name="entities-in-audience-insights"></a>Entitások a célközönség-információkban
 
-Az [adatforrások konfigurálását követően nyissa](data-sources.md) meg az **Entitások** oldalt, és értékelje a beolvasott adatok minőségét. Az entitások adathalmazoknak számítanak. A Dynamics 365 Customer Insights több képessége épül ezek köré az entitások köré. Az eredmények alapos áttekintése segítséget nyújt a lehetőségek kimenetének ellenőrzésében.
+Az [adatforrások konfigurálását követően nyissa](data-sources.md) meg az **Entitások** oldalt, és értékelje a beolvasott adatok minőségét. Az entitások adathalmazoknak számítanak. A Dynamics 365 Customer Insights több funkciója ezekre az entitásokra van építve. Az eredmények alapos áttekintése segítséget nyújt a lehetőségek kimenetének ellenőrzésében.
 
-Az **Entitások** lap felsorolja az entitásokat, és több oszlopot is tartalmaz:
+Az **Entitások** lap felsorolja az entitásokat, és a következő oszlopokat tartalmazza:
 
-- **Név**: Az adatentitás neve. Ha az entitás neve mellett egy figyelmeztető szimbólum látható, az azt jelenti, hogy az adott entitáshoz tartozó adatok nem töltődtek be sikeresen.
-- **Forrás**: Az adatforrás típusa, amely be lett olvasva az entitásba
-- **Létrehozta**: Az entitást létrehozó személy neve
-- **Létrehozva**: Az entitás létrehozásának dátuma és időpontja
-- **Frissítve** : Az entitást frissített személy neve
-- **Állapot** : Részletek az entitás legutóbbi frissítéséről
+- **Név** : Az adatszolgáltató neve. Ha az entitás neve mellett egy figyelmeztető szimbólum látható, az azt jelenti, hogy az adott entitáshoz tartozó adatok nem töltődtek be sikeresen.
+- **Forrás** : Az entitást betömő adatforrás típusa.
+- **Frissítve** : Az entitás legutóbbi frissítésének időpontja.
+- **Állapot** : Részletek az entitás legutóbbi frissítéséről.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Adott entitás adatainak feltárása
 
-Jelöljön ki egy entitást az adott entitáshoz tartozó különböző mezők és bejegyzések feltáráshoz.
+1. A célközönség információin belül nyissa meg a következőt: **Adatok** > **Entitások**.
+1. Az **Entitások** lapon jelöljön ki egy entitást a részletek lap megnyitásához.  
+1. Fedezze fel az adott entitáshoz tartozó különböző mezőket és rekordokat.
 
-> [!div class="mx-imgBorder"]
-> ![Entitás kiválasztása](media/data-manager-entities-data.png "Entitás kiválasztása")
-
-- Az **Adatok** lapon megjelenik az entitás egyéni rekordjainak részleteit tartalmazó táblázat.
+- Az **Attribútumok** lap alapértelmezés szerint ki van választva, és megjelenik rajta egy táblázat, amelyben áttekinthetők a kiválasztott entitás részletei (például a mezőnevek vagy az adattípusok). A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek a típusok olyan szemantikus típusok, amelyek eltérhetnek az attribútumok adattípusaitól. Az alábbi mezőben az *E-mail* mezőben van *Szöveg* adattípus, de a (szemantikus) Common Data Model típus lehet *E-mail* vagy *EmailAddress*.
 
 > [!div class="mx-imgBorder"]
 > ![Mezők tábla.](media/data-manager-entities-fields.PNG "Mezők tábla")
 
-- Az **Attribútumok** lap alapértelmezés szerint ki van választva, és megjelenik rajta egy táblázat, amelyben áttekinthetők a kiválasztott entitás részletei (például a mezőnevek vagy az adattípusok). A **Típus** oszlop a Common Data Modelhez társított típusokat jeleníti meg, amelyeket vagy a rendszer automatikusan azonosít, vagy a felhasználók [kézzel leképeznek](map-entities.md). Ezek a típusok olyan szemantikus típusok, amelyek eltérhetnek az attribútumok adattípusaitól. Az alábbi mezőben az *E-mail* mezőben van *Szöveg* adattípus, de a (szemantikus) Common Data Model típus lehet *E-mail* vagy *EmailAddress*.
-
 > [!NOTE]
-> Mindkét tábla csak az entitás adatainak mintáját jeleníti meg. Ha meg szeretné tekinteni a teljes adatkészlet, nyissa meg az **Adatforrások** oldalt, jelöljön kiegy entitást, válassza a **Szerkesztés** lehetőséget, majd tekintse meg az entitás adatait aPower Query-szerkesztővel, amint az az [Adatforrásokban](data-sources.md) látható.
+> Ezen az oldalon csak az entitás adataiból egy minta látható. Ha meg szeretné tekinteni a teljes adatkészlet, nyissa meg az **Adatforrások** oldalt, jelöljön kiegy entitást, válassza a **Szerkesztés** lehetőséget, majd tekintse meg az entitás adatait aPower Query-szerkesztővel, amint az az [Adatforrásokban](data-sources.md) látható.
 
-Ha többet szeretne megtudni az entitásban lévő adatokról, akkor az **Összesítés** oszlop az adatokra vonatkozó néhány fontos jellemzőt tartalmaz az adatokról, például a nullák, a hiányzó értékek, az egyedi értékek, a számlálók és a disztribúciók, az Ön adatai szerint.
-
-Az adatok összegzésének megjelenítéséhez válassza ki a diagram ikont.
+Ha többet szeretne megtudni az entitásban lévő adatokról, akkor az **Összesítés** oszlop az adatokra vonatkozó néhány fontos jellemzőt tartalmaz az adatokról, például a nullák, a hiányzó értékek, az egyedi értékek, a számlálók és a disztribúciók, az Ön adatai szerint. Az adatok összegzésének megjelenítéséhez válassza ki a diagram ikont.
 
 > [!div class="mx-imgBorder"]
 > ![Összegzés szimbólum.](media/data-manager-entities-summary.png "Adatok összesítése tábla")
+
+- Az **Adatok** lapon megjelenik az entitás egyéni rekordjainak részleteit tartalmazó táblázat. A felsorolt adatok az entitás adattípusától függenek.
+
+> [!div class="mx-imgBorder"]
+> ![Entitás kiválasztása](media/data-manager-entities-data.png "Entitás kiválasztása")
+
+- A **Jelentések** lap (amely egyes entitások számára elérhető) lehetővé teszi az adatok megjelenítését jelentés létrehozásával, és az alábbi oszlopokat tartalmazza:
+
+  - **Jelentés neve** : A jelentés neve.
+  - **Készítette:** Az entitást létrehozó személy neve.
+  - **Létrehozva** : Az entitás létrehozásának dátuma és időpontja.
+  - **Szerkesztette**: Az entitást módosító személy neve.
+  - **Szerkesztette** : Az entitásmódosítás dátuma és időpontja. 
 
 ## <a name="entity-specific-information"></a>Entitásspecifikus információk
 
@@ -73,8 +79,7 @@ A következő ellenőrzések a betöltött adatokon futnak a sérült bejegyzés
 
 - A mező értéke nem egyezik meg az oszlopa adattípusával.
 - A mezők olyan karaktereket tartalmaznak, amelyek hatására az oszlopok nem egyeznek meg a várt sémával. Például: nem megfelelően formázott idézőjelek, lezáratlan idézőjelek, vagy újsor karakterek.
-- Ha vannak datetime/date/datetimeset oszlopok, akkor azok formátumát meg kell adni a modellben, ha az nem követik a szabványos ISO formátumot.
-
+- Ha vannak datetime/date/datetimeoffset oszlopok, formátumukat meg kell adni a modellben, ha nem követi a szabványos ISO formátumot.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

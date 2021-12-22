@@ -1,7 +1,7 @@
 ---
 title: Egyéni gépi tanulás modellek | Microsoft Docs
 description: Munka az Azure Machine Learning megoldásból származó modellekkel a Dynamics 365 Customer Insights alkalmazásban.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032945"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881787"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
+
+> [!NOTE]
+> A Machine Learning Studio (klasszikus) támogatása 2024. augusztus 31-én ér véget. Javasoljuk, hogy az adott időpontig váltson az [Azure](/azure/machine-learning/overview-what-is-azure-machine-learning) gépi tanulás.
+>
+> 2021. december 1-jétől nem hozhat létre új Machine Learning Studio (klasszikus) erőforrásokat. 2024. augusztus 31-ig továbbra is használhatja a meglévő Machine Learning Studio (klasszikus) erőforrásokat. További információ: [Áttelepítés az Azure-gépi tanulás](/azure/machine-learning/migrate-overview).
+
 
 Az **Információk** > **Egyéni modellek** ponttal kezelheti a munkafolyamatokat az Azure Machine Learning-modellek alapján. A munkafolyamatok segítségével kiválaszthatja azokat az adatokat, amelyekből betekintést szeretne létrehozni, és leképezi az eredményeket az egyesített ügyféladatokat. Az egyéni ML modellek készítésével kapcsolatos további információkért lásd: [Az Azure Machine Learning-alapú modellek használata](azure-machine-learning-experiments.md).
 
@@ -26,7 +32,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Jelenleg ez a szolgáltatás támogatja a [Machine Learning Studio (klasszikus)](https://studio.azureml.net) verzióján és az [Azure Machine Learning kötegelt folyamaton](/azure/machine-learning/concept-ml-pipelines) keresztül közzétett webszolgáltatásokat .
+- Ez a szolgáltatás támogatja [az Azure-on gépi tanulás kötegelt folyamatokon keresztül közzétett webszolgáltatásokat](/azure/machine-learning/concept-ml-pipelines).
 
 - A funkció használatához az Azure Studio-példányhoz társított Azure Data Lake Gen2-fiókra van szükség. További információ: [Azure Data Lake Storage Gen2 tárfiók létrehozása](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 1. Ha az Azure Machine Learning-előfizetése egy másik bérlőn belül van, mint a Customer Insights, akkor válassza a **bejelentkezés** lehetőséget a kijelölt szervezethez tartozó hitelesítő adatokkal.
 
-1. Jelölje ki a webszolgáltatáshoz társított **Munkaterületeket**. Két szakasz van felsorolva, egy az Azure Machine Learning v1 (Machine Learning Studio (klasszikus)) és az Azure Machine Learning v2 (Azure Machine Learning). Ha nem tudja biztosan, hogy melyik munkaterület a megfelelő a Machine Learning Studio (klasszikus) webszolgáltatáshoz, válassza a **Bármelyik** lehetőséget.
+1. Jelölje ki a webszolgáltatáshoz társított **Munkaterületeket**. 
 
-1. Válassza ki a Machine Learning Studio (klasszikus) webszolgáltatást vagy Azure Machine Learning folyamat lehetőséget a **Modellt tartalmazó webszolgáltatás** legördülő menüben. Azután válassza a **Következő** elemet.
-   - További információ a [webszolgáltatás közzétételéről a Machine Learning Studio (classic) szolgáltatásban](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - További információ a [folyamatok közzétételéről az Azure Machine Learning a tervezővel](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) vagy az [SDK-val](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). A folyamatokat a [folyamatvégpont](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run) alatt közzé kell tenni.
+1. Válassza ki az Azure gépi tanulás folyamatot a **webszolgáltatásban, amely tartalmazza a modell** legördülő menüt. Azután válassza a **Következő** elemet.    
+   További információ a [folyamatok közzétételéről az Azure Machine Learning a tervezővel](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) vagy az [SDK-val](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). A folyamatokat a [folyamatvégpont](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run) alatt közzé kell tenni.
 
 1. Minden egyes **Webszolgáltatás-bemenetnél** válassza ki a megfelelő **Entitást** a célközönség-információkból, és válassza a **Következő** elemet.
    > [!NOTE]
@@ -62,9 +67,6 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
    > ![Munkafolyamat konfigurálása.](media/intelligence-screen2-updated.png "Munkafolyamat konfigurálása")
 
 1. Állítsa be a következő tulajdonságokat a **Modell kimeneti paraméterek** lépésében:
-   - Machine Learning Studio (klasszikus)
-      1. Adja meg a kimeneti **Entitás nevét**, amelyet a webszolgáltatás kimenetének eredményére szeretne beáramlani.
-   - Azure Machine Learning
       1. Adja meg a kimeneti **Entitás nevét**, amelyet a folyamat kimenetének eredményére szeretne beáramlani.
       1. Válassza ki a **kimeneti adattár paraméter nevét** a kötegfolyamathoz a legördülő listából.
       1. Válassza ki a **Kimeneti útvonal paraméter nevét** a kötegfolyamathoz a legördülő listából.
@@ -93,9 +95,6 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 1. Minden egyes **Webszolgáltatás-bemenetnél** frissítheti a megfelelő **Entitást** a célközönség-információkból, és válassza a Következő elemet. Azután válassza a **Következő** elemet.
 
 1. Állítsa be a következő tulajdonságokat a **Modell kimeneti paraméterek** lépésében:
-   - Machine Learning Studio (klasszikus)
-      1. Adja meg a kimeneti **Entitás nevét**, amelyet a webszolgáltatás kimenetének eredményére szeretne beáramlani.
-   - Azure Machine Learning
       1. Adja meg a kimeneti **Entitás nevét**, amelyet a folyamat kimenetének eredményére szeretne beáramlani.
       1. Válassza ki a **kimeneti adattár paraméter nevét** a tesztelési folyamathoz.
       1. Válassza ki a **kimeneti útvonal paraméter nevét** a tesztelési folyamathoz.

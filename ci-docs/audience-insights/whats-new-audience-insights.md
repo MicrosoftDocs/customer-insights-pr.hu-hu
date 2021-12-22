@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 11/04/2021
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,23 +9,35 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753120"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884265"
 ---
-# <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Újdonságok a Dynamics 365 Customer Insights célközönség elemzési képességében
+# <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervek megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform kiadási terveket](/dynamics365/release-plans/).
+Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
 
 A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképpen meghatározva, nem kell semmilyen műveletet végrehajtania, és az alkalmazás automatikusan, leállás nélkül frissíthető.
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="november-2021-updates"></a>2021. novemberi frissítések
+
+A 2021. novemberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="segment-membership-now-available-in-dataverse"></a>Szegmenstagság már elérhető a Dataverse
+
+Az ügyfélprofilok szegmenstagsági adatai mostantól Dataverse elérhetők az ügyfélprofilokkal és elemzési adatokkal együtt. A Dynamics 365 műveletalkalmazások és a modellvezérelt alkalmazások használhatják ezeket az adatokat, és megkereshetik a szegmens tagsági adatait egy adott ügyfél számára.
+
+### <a name="activities-support-contact-level-details-for-business-accounts"></a>Tevékenységek támogatják az üzleti fiókok kapcsolattartási szintű adatait
+
+Mostantól konfigurálhatja, megjelenítheti és szűrheti a névjegyek tevékenységeit az üzleti fiók tevékenységének ütemtervén, hogy jobban megértse, mely partnerkapcsolatok vettek részt bizonyos tevékenységekben.
 
 ## <a name="october-2021-updates"></a>2021. októberi frissítések
 
@@ -43,7 +55,7 @@ A célközönség összes szegmensexportja üzleti számlákkal összefüggésbe
 
 #### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>A LinkedIn-hirdetések exportálásának használata üzleti fiókokkal
 
-A LinkedIn Ads exportálás mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti számlákkal összefüggésben. Amikor a LinkedIn-exportálás elsődleges fókuszának a vállalati célzást választja, exportálhat üzleti fiókokra épülő szegmenseket anélkül, hogy meg kellene vetítenének a kapcsolattartási adatokat. További információért látogasson el a [LinkedIn-hirdetések exportálásáról,](export-linkedin-ads.md) valamint a [kapcsolatfelvételi célzás és a vállalati célzás közötti](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting)[...](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) különbséghez. 
+A LinkedIn Ads exportálás mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti számlákkal összefüggésben. Amikor a LinkedIn-exportálás elsődleges fókuszának a vállalati célzást választja, exportálhat üzleti fiókokra épülő szegmenseket anélkül, hogy meg kellene vetítenének a kapcsolattartási adatokat. További információért látogasson el a [LinkedIn-hirdetések exportálásáról,](export-linkedin-ads.md) valamint a [kapcsolatfelvételi célzás és a vállalati célzás közötti](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting)[különbséghez](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
 
 #### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Az üzleti számlákon és azok hierarchiáján alapuló intézkedések létrehozása
 
@@ -113,7 +125,7 @@ A 2021 májusi frissítések számos funkciót, teljesítményfrissítést és h
 
 ### <a name="data-ingestion"></a>Adatok betöltése
 
-- **Metaadatok vagy entitásdefiníciók megtekintése vagy módosítása a Azure Data Lake Storage Adatok csatolásakor** Mostantól megtekintheti és szerkesztheti a metaadatokat vagy az entitásdefiníciót célközönség elemzési adatokban, amikor adatokat csatol a Azure Data Lake Storage Common Data Model mappájából. Ez a képesség valós idejű visszajelzést, modellérvényesítést és hibaellenőrzést biztosít. Lehetővé teszi a model.json és a manifest.json egyszerű szerkesztését.
+- **Metaadatok vagy entitásdefiníció megtekintése vagy módosítása az Azure Data Lake Storage**-tárhely adatainak csatolása esetén.Mostantól megtekintheti és szerkesztheti a metaadatokat vagy az entitásdefiníciókat célközönség elemzésekben, amikor adatokat csatol egy Common Data Model-mappából az Azure Data Lake Storage-tárhelyéről. Ez a képesség valós idejű visszajelzést, modellérvényesítést és hibaellenőrzést biztosít. Lehetővé teszi a model.json és a manifest.json egyszerű szerkesztését.
 
 ### <a name="extensibility"></a>Bővíthetőség
 
@@ -188,7 +200,7 @@ A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és
 
 ### <a name="data-ingestion"></a>Adatok betöltése
 
-- **Csatlakozás helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Power Platform adatfolyamok és helyszíni kapcsolat előnézetét a Customer Insights átjáróinak használatával egy kapcsolódó Power Platform vagy Dataverse környezet. A csatolt Dataverse környezettel rendelkező Ügyfélelemzési környezetben létrehozott új adatforrások alapértelmezés szerint Power Platform az adatfolyamokat, amelyek az helyszíni adatkapcsolatot, valamint az összekötők és átalakítási képességek gazdag készletét hozzák be.
+- **Csatlakozzon helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Customer Insightshoz társított Power Platform vagy Dataverse környezetben található, átjárókat használó Power Platform adatfolyamok és helyszíni összekapcsolhatóságok előzetes verzióját. A Customer Insights környezetben létrehozott, kapcsolt Dataverse környezettel rendelkező új adatforrások alapértelmezés szerint Power Platform adatforrásokká fognak válni, helyszíni összekapcsolhatósággal, valamint az összekapcsolók és átalakítási lehetőségek gazdag készletével.
 
 ### <a name="extensibility"></a>Bővíthetőség
 
@@ -202,7 +214,7 @@ A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és
    További tájékoztatás az [Exportálás az Constant Contactba](export-constant-contact.md) című témakörben olvasható.
 
 - **Szegmensek exportálása a RollWorksbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a RollWorksben is. Most már exportálhat szegmenseket a Customer Insightsból a RollWorks-közönségekbe, és ezeket használhatja a „B-to-B” hirdetések kiindulási értékeként.    
-   További tájékoztatás az [Adatok exportálása RollWorksbe](export-rollworks.md) című témakörben olvasható.
+   További tájékoztatás az [Adatok exportálása RollWorksbe ](export-rollworks.md)című témakörben olvasható.
 
 - **Szegmensek exportálása a Snapchatbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Snapchatben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Snapchat célközönségekbe, és ezeket használhatja a hirdetések kiindulási alapértékeként.     
    További tájékoztatás az [Adatok exportálása Snapchatbe](export-snapchat.md) című témakörben olvasható.
@@ -250,7 +262,7 @@ A 2021. februári frissítések számos szolgáltatást, teljesítménnyel kapcs
 
 - **A környezet másolása több típusú adatforrást támogat**
 
-  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kiterjeszti a másolási környezet funkcióit azokra az esetekre, amikor Microsoft Dataverse felügyelt adattón vagy Common Data Model mappán alapuló adatforrásokat használnak.
+  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kibővíti a környezet másolása funkciót olyan esetekre, amikor az adatforrások Microsoft Dataverse kezelt adattón alapulnak vagy a Common Data Model mappa van használva.
 
 ## <a name="january-2021-updates"></a>2021. januári frissítések
 
@@ -276,7 +288,7 @@ A 2021. januári frissítések számos szolgáltatást, teljesítménnyel kapcso
 
 #### <a name="system-administration"></a>Rendszergazda
 
-- **Zökkenőmentesen oszthatja meg az adatokat Microsoft Dataverse** Mostantól megoszthatja a Customer Insights kimenetet Microsoft Dataverse alkalmazásokkal a Microsoft Dataverse felügyelt adattó használatával. Miután társított egy Dataverse környezetet a Customer Insights szolgáltatáshoz, lehetősége van az adatmegosztás engedélyezésére.
+- **Az adatok zökkenőmentes megosztása a Microsoft Dataverse-szolgáltatással** most már megoszthatja a Customer Insights kimenetet a Microsoft Dataverse alkalmazással a Microsoft Dataverse Managed Data Lake használatával. Miután társít egy Dataverse környezetet a Customer Insights szolgáltatáshoz, lehetősége van engedélyezni az adatmegosztást.
   További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
 

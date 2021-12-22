@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de27da92118b83dafa0742b6a1e10ee315750c61
-ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.openlocfilehash: e44e973bf7713ed5c31dfb9849419decd4ad1c78
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "7770125"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884219"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -34,7 +34,7 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [Demográfia](enrichment-experian.md) az Experiantól
+- [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
 
@@ -46,6 +46,7 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+- [A Microsoft által megadott fiókkapcsolati adatok](enrichment-office.md)
 
 ---
 
@@ -77,7 +78,7 @@ A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ez
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 
-A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gazdagítási állapot támogatott Experian, a Leadspace, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
+A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
 
 A gyarapítás állapotának megtekintése
 
