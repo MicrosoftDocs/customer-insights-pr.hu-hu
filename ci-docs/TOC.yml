@@ -44,7 +44,7 @@
       items:
         - name: Adatforrások áttekintése
           href: audience-insights/data-sources.md
-        - name: Adatforrások hozzáadása Power Query összekötőn keresztül
+        - name: Adatforrások hozzáadása Power Query összekötőkön keresztül
           href: audience-insights/connect-power-query.md
         - name: Common Data Model-mappa hozzáadása adatforrásként
           href: audience-insights/connect-common-data-model.md
@@ -80,7 +80,7 @@
       items:
         - name: Ügyfélprofilok bővítése
           href: audience-insights/enrichment-hub.md
-        - name: Márkahűség és érdeklődési körök
+        - name: Márkák és érdeklődési körök
           href: audience-insights/enrichment-microsoft.md
         - name: Továbbfejlesztett címek
           href: audience-insights/enrichment-enhanced-addresses.md
@@ -130,6 +130,8 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Tranzakció-lemorzsolódás előrejelzése
               href: audience-insights/predict-transactional-churn.md
+            - name: Érzelmek elemzése az ügyfelek visszajelzésében
+              href: audience-insights/sentiment-analysis.md
             - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
               href: audience-insights/custom-models.md
             - name: Részben hiányzó adatok kitöltése

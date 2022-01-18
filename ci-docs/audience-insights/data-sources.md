@@ -4,18 +4,17 @@ description: Megismerkedhet vele, hogyan importálhat különböző forrásokbó
 ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.custom: intro-internal
-ms.openlocfilehash: 6846c73cb156aaa049e2656c8e327bcba1f73abc
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
+ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900362"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "7977832"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -29,7 +28,7 @@ A választott lehetőségtől függően tekintse meg a adatforrás hozzáadásá
 
 A következő adatforrásokat adhatja hozzá:
 
-- [Power Query csatlakozók](connect-power-query.md)
+- [Power Query Csatlakozók](connect-power-query.md)
 - [Common Data Model](connect-common-data-model.md)
 - [Microsoft Dataverse tó](connect-dataverse-managed-lake.md)
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: cff696834e3dad00ce5b0f1b5bcb13d86354a4e7
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
-ms.translationtype: HT
+ms.openlocfilehash: 6a9575de922bc2ff9c9d2212b99b4c0c8b61ab0e
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617604"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967822"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teams robot a Dynamics 365 Customer Insights (előzetes verzió) szolgáltatáshoz
 
@@ -33,6 +33,8 @@ A robot beállításához és konfigurálásához a következő előfeltételekn
 - A Customer Insights és a Teams ugyanabban a szervezetben található.
 - A környezet az elsődleges célközönség ügyfelekre van állítva. Az üzleti fiókok nem támogatottak.
 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Konfigurálja a robotot
 
 1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.

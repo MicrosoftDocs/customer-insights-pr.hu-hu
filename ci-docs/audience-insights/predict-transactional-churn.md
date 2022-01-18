@@ -1,7 +1,7 @@
 ---
-title: Tranzakciós lemorzsolódás előrejelzés (videó)
+title: Tranzakciós lemorzsolódás előrejelzés (videót tartalmaz)
 description: Megjósolja, hogy fennáll-e az ügyfélnél annak veszélye, hogy a jövőben már nem az Ön termékeit vagy szolgáltatásait vásárolja meg.
-ms.date: 10/20/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ad87e0fd848168d1a18f28f2ac5c507bb01e1f28
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
-ms.translationtype: HT
+ms.openlocfilehash: 602a86a67006925faac00add8e089d28f7071c14
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904075"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967750"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Tranzakciólemorzsolódási előrejelzés (előzetes verzió)
 
@@ -103,10 +103,10 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. Válassza ki az **Ügyféllemorzsolódási modell (előnézet)** csempét, és ott válassza az **A modell használata** menüpontot.
 
-1. Válassza az **Ügyfél-lemorzsolódás modell** ablakában válassza a **Tranzakció**, majd az **Első lépések** lehetőséget.
+1. A **Vevő lemorzsolódási modell (előnézet)** ablaktáblán válassza a Tranzakció lehetőséget, **és válassza az Első lépések** **lehetőséget**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Képernyőfelvétel a kiválasztott tranzakciós lehetőséggel az Ügyfél-lemorzsolódás modell ablaktáblán.":::
-
+ 
 ### <a name="name-model"></a>Név modell
 
 1. Adja meg a modell nevét; ez különbözteti majd meg a többi modelltől.
@@ -117,11 +117,11 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 ### <a name="define-customer-churn"></a>Ügyfél-lemorzsolódás meghatározása
 
-1. Állítsa be a napok ablakot, hogy megjósolhassa a lemorzsolódást a **Beazonosítani azokat az ügyfeleket, akik esetleg lemorzsolódhatnak a következő időszakban** mezőben. Például, megjósolhatja a lemorzsolódás kockázatát egy ügyfele esetében, a következő 90 napban, hogy ehhez igazíthassa marketingmegőrzési törekvéseit. A lemorzsolódási kockázat becslése egy hosszabb vagy rövidebb időintervallumra megnehezítheti a tényezők kezelését a lemorzsolódási kockázat-profiljában, de ez leginkább az Ön által meghatározott üzleti igényektől függ.
+1. Állítsa be a **előrejelzés ablakot**. Például, megjósolhatja a lemorzsolódás kockázatát egy ügyfele esetében, a következő 90 napban, hogy ehhez igazíthassa marketingmegőrzési törekvéseit. A lemorzsolódási kockázat becslése egy hosszabb vagy rövidebb időintervallumra megnehezítheti a tényezők kezelését a lemorzsolódási kockázat-profiljában, de ez leginkább az Ön által meghatározott üzleti igényektől függ.
    >[!TIP]
-   > A **Mentés és bezárás** gombbal bármikor mentheti vázlatként az előrejelzést. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
+   > A **piszkozatok mentése lehetőség** kiválasztásával bármikor beállíthatja a előrejelzés piszkozatként történő mentéséhez. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
 
-1. Adja meg a napok számát, hogy meghatározhasson egy lemorzsolódást az **Az ügyfél lemorzsolódott, ha nem történt vásárlás ekkor:** mezőben. Például, ha egy ügyfél nem vásárolt az elmúlt 30 napban, vállalkozása számára lemorzsolódónak tekinthető. 
+1. Adja meg a lemorzsolódás meghatározásához megadott napok számát a **Lemorzsolódás definíció** mezőben. Például, ha egy ügyfél nem vásárolt az elmúlt 30 napban, vállalkozása számára lemorzsolódónak tekinthető. 
 
 1. A folytatáshoz válassza a **Tovább** lehetőséget.
 
@@ -129,19 +129,16 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. Válassza az **Adatok hozzáadása** lehetőséget, és válassza ki azt a tevékenységtípust az oldalsó panelen, amely a tranzakcióhoz vagy a vásárlási előzményekhez szükséges adatokat tartalmazza.
 
-1. A **Tevékenységek kiválasztása** alatt válassza ki az adott lehetőségeket a kijelölt tevékenységből, amelyekre a számítással koncentrálni szeretne.
+1. A Tevékenységek kiválasztása csoportban **válassza ki az adott tevékenységeket abból a kiválasztott** tevékenységtípusból, amelyre a számítást összpontosítani szeretné.
 
-   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="A szemantikus típus alatti tevékenységek kiválasztását bemutató oldalsó panel.":::
+   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="A szemantikus típus alatti tevékenységek kiválasztását bemutató oldalsó panel.":::
 
-1. Ha a tevékenységet még nem képezte le szemantikus típusra, akkor válassza a **Szerkesztés** lehetőséget ehhez. Megnyílik az irányított élmény a szemantikus tevékenységek leképezéséhez. Képezze le az adatokat a kiválasztott tevékenységtípus kapcsolódó mezőihez.
+   Ha a tevékenységet még nem képezte le szemantikus típusra, akkor válassza a **Szerkesztés** lehetőséget ehhez. Megnyílik az irányított élmény a szemantikus tevékenységek leképezéséhez. Képezze le az adatokat a kiválasztott tevékenységtípus kapcsolódó mezőihez.
 
-   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Oldalbeállítás tevékenységtípus.":::
+1. A szemantikus attribútumokat a modell futtatásához szükséges mezőkre kell leképezni. Ha az alábbi mezők nincsenek megadva, konfigurálja a kapcsolatokat a beszerzési előzmények entitásából az *Ügyfélentitás* között. Válassza a **Mentés** parancsot.
 
-1. Miután leképezi a tevékenységet a megfelelő szemantikai típusra, válassza a **Tovább** gombot a folytatáshoz
+1. A **Szükséges adatok hozzáadása lépésben válassza a** Tovább gombot **a** folytatáshoz, ha nem szeretne további tevékenységeket hozzáadni.
 
-1. A szemantikus attribútumokat a modell futtatásához szükséges mezőkre kell leképezni. Ha az alábbi mezők nincsenek megadva, konfigurálja a kapcsolatokat a beszerzési előzmények entitásából az *Ügyfélentitás* között.
-
-1. Válassza a **Következő** lehetőséget.
 
 # <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 

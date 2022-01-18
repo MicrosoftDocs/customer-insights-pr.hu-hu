@@ -1,7 +1,7 @@
 ---
 title: Termékjavaslat-előrejelzések
 description: Olyan termékek előre jelzése, amelyekbe az ügyfél valószínűleg mag fog vásárolni vagy interakcióba lép velük.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
-ms.translationtype: HT
+ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494542"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967797"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Termékjavaslat-előrejelzés (előzetes verzió)
 
@@ -54,7 +54,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 > [!NOTE]
 > - A modellhez az ügyfelek tranzakciós előzményeire van szükség. A tranzakció meghatározása nagyon rugalmas. A felhasználó és termék közötti interakciót leíró adatok bemeneti adatként is működhetnek. Például termékvásárlás, tanfolyamon vagy eseményen való részvétel.
-> - Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több vásárlási entitás van, akkor egyesítse őket a Power Query-ben az adatbetöltés előtt.
+> - Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési entitás van, az adatbetöltés előtt őket kell Power Query behozni.
 > - Ha a megrendelés és a megrendelés részletei eltérő entitások, akkor a modell használata előtt kapcsolja össze őket. A modell nem működik csak egy entitás megrendelésazonosítójával vagy bizonylatazonosítójával.
 
 
@@ -79,11 +79,11 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 1. Állítsa be az ügyfélnek javasolni kívánt **Termékek számát**. Ez az érték attól függ, hogy a szállítási módja hogyan tölti ki az adatokat. Ha három terméket javasolhat, ennek megfelelően állítsa be ezt az értéket.
    
    >[!TIP]
-   > A **Mentés és bezárás** gombbal bármikor mentheti vázlatként az előrejelzést. A vázlat-előrejelzés a **Saját előrejelzések** lapon található.
+   > A **piszkozatok mentése lehetőség** kiválasztásával bármikor beállíthatja a előrejelzés piszkozatként történő mentéséhez. A vázlat-előrejelzés a **Saját előrejelzések** lapon található.
 
-1. Válassza ki, hogy **Javasol olyan termékeket, amelyeket az ügyfelek a közelmúltban vásároltak**.
+1. Válassza ki, hogy a vevők által nemrégiben vásárolt termékeket is bele szeretné-e foglalni a **Vásárlások ismétlése várt** mezőbe.
 
-1. Ha azt választotta, hogy *nem* javasolja a nemrég megvásárolt termékeket, akkor állítsa be a **Visszatekintő ablakot**. Ez a beállítás megadja az időkeretet, amit a modell figyelembe, mielőtt újra javasolja a terméket a felhasználónak. Például jelezheti, hogy egy ügyfél két évente vásárol laptopot. Ez az ablak az utóbbi két év vásárlási előzményeit fogja megmutatni, és ha talál ilyen elemet, akkor a rendszer kiszűri az elemet a javaslatok közül.
+1. Állítsa be a **Visszanéző ablakot**. Ez a beállítás megadja az időkeretet, amit a modell figyelembe, mielőtt újra javasolja a terméket a felhasználónak. Például jelezheti, hogy egy ügyfél két évente vásárol laptopot. Ez az ablak az utóbbi két év vásárlási előzményeit fogja megmutatni, és ha talál ilyen elemet, akkor a rendszer kiszűri az elemet a javaslatok közül.
 
 1. Válassza a **Tovább** lehetőséget
 

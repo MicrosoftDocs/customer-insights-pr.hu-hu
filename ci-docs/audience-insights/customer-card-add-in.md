@@ -1,7 +1,7 @@
 ---
-title: Ügyfélkártya-bővítmény a Dynamics 365-alkalmazásokhoz (videó)
+title: Ügyfélkártya-bővítmény a Dynamics 365-alkalmazásokhoz (videót tartalmaz)
 description: Ezzel a bővítménnyel a célközönségből származó adatok jeleníthetők a Dynamics 365-alkalmazásokban.
-ms.date: 12/07/2021
+ms.date: 12/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: f3d613d7183fd0af2998cd081d08d4316c7a5628
-ms.sourcegitcommit: ae3b92926ea1adfcc50e4bfd000b06ea0ccfc0ee
-ms.translationtype: HT
+ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
+ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "7921868"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "7945430"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
@@ -27,12 +27,12 @@ ms.locfileid: "7921868"
 ## <a name="prerequisites"></a>Előfeltételek
 
 - A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ha a Dynamics 365-adatokat le szeretné képezni a célközönségadatok ügyfélprofiljaira, akkor [a Microsoft Dataverse-összekötőt kell használni a Dynamics 365-alkalmazásból való betöltéshez](connect-power-query.md).
+- Ahhoz, hogy a Dynamics 365-adatok leképezzék az célközönség elemzési ügyfélprofilokat, javasoljuk, hogy [az összekötővel a Dynamics 365 alkalmazásból nyelje Microsoft Dataverse le](connect-power-query.md). Ha más módszert használ a Dynamics 365 névjegyek (vagy fiókok) betöltésére, az `contactid``accountid` adategyesítési folyamat térképi lépésében meg kell győződnie arról, hogy a (vagy ) mező [az adott adatforrás elsődleges kulcsa](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
 - Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
 - Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja értesíteni fogja, ha a kijelölt környezettípus miatt egy vezérlő nem érhető el. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
   - **Mértékegység-vezérlő**: [Ügyfélattribútumok](measures.md) típusú, konfigurált intézkedéseket igényel.
-  - **Intelligencia-vezérlés** : Előrejelzések vagy egyéni modellek felhasználásával generált adatokra van [szükség](predictions-overview.md).
+  - **Intelligencia-vezérlés** : Előrejelzések vagy egyéni modellek segítségével generált adatokra van [szükség](predictions-overview.md).
   - **Ügyféladatok vezérlő**: A profilból minden mező elérhető az egységes ügyfélprofilban.
   - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártya bővítmény támogatja ezeket a gazdagításokat: [a Microsoft által biztosított](enrichment-microsoft.md) márkák, a Microsoft által biztosított [érdeklődési körök és a](enrichment-microsoft.md) Microsoft által [szolgáltatott Office-elkötelezettségi](enrichment-office.md) adatok.
   - **Kapcsolattartók vezérlő**: A kapcsolattartók típusú szemantikus entitás definícióját igényli.

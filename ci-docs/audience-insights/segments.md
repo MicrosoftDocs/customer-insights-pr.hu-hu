@@ -4,17 +4,17 @@ description: A szegmensek áttekintése, valamint információk a létrehozásuk
 ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
+ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 56978c984a91e85e86956e7eac1d59609c349b6a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 740d293b21f43b50201f23fcba109318823ef3af
+ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732591"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "7978062"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
