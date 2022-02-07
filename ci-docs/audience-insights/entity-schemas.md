@@ -9,16 +9,11 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 66d846c3e9404ca7993cae742ea6e16833233fba
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
-ms.translationtype: HT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7380746"
 ---
+
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 A [Common Data Model](/common-data-model/) leíró specifikáció, és olyan szabványos entitások nyílt forrású gyűjteménye, amelyek az üzleti és termelékenységi alkalmazás általánosan használt fogalmait és tevékenységeit jelképezik. Ez a modell kiterjed a megfigyelési és analitikai adatokra is. A Common Data Model olyan jól meghatározott, moduláris és bővíthető üzleti entitásokat kínál, mint például Fiók, Üzleti Egység, Eset, Névjegy, Érdeklődő, Lehetőség, és Termék, továbbá a szállítók, a dolgozók és a vásárlók közötti kommunikáció és kapcsolathoz tevékenységeket és szolgáltatói szerződéseket. Bárki létrehozhat és bővíthet Common Data Model meghatározásokat, hogy további üzleti-specifikus ötleteket lehessen rögzíteni.
 

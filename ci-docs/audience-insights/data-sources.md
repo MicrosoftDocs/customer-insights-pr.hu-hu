@@ -1,6 +1,6 @@
 ---
 title: Adatforrások kiválasztása adatok betöltéséhez
-description: Megismerkedhet vele, hogyan importálhat különböző forrásokból származó adatokat.
+description: 'Megismerkedhet vele, hogyan importálhat különböző forrásokból származó adatokat.'
 ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,11 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977832"
 ---
+
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 A célközönség-információk funkció a Dynamics 365 Customer Insights szolgáltatásban összekapcsolja az adatokat források széles köréből. A adatforrások összeskapcsolását gyakran nevezik *adatbetöltésnek*. Az adatok betöltése után [egyesítheti](data-unification.md) és műveleteket hajthat végre rajtuk.
 
@@ -39,7 +34,7 @@ A következő adatforrásokat adhatja hozzá:
 
 A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Dataflowst a Customer Insightsban úgy engedélyezheti, hogy [a Microsoft Dataverse környezet URL-címét](create-environment.md) a környezet beállításakor megadja.
 
-A környezet Ügyfélelemzéssel való társítása után létrehozott Dataverse [Power Platform adatforrások alapértelmezés szerint adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) használnak. Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása előtt létező Dataverse [adatforrásokat helyszíni adatátjáró használatával távolíthatja el és hozhatja létre](/data-integration/gateway/service-gateway-app) újra.
+A környezet Ügyfélelemzéssel való társítása Dataverse után létrehozott adatforrások alapértelmezés szerint adatfolyamokat használnak [Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása Dataverse előtt [meglévő adatforrásokat helyszíni adatátjárók](/data-integration/gateway/service-gateway-app) használatával távolíthatja el és hozhatja létre újra.
 
 A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
 

@@ -1,7 +1,7 @@
 ---
 title: Vállalati adatok javítása
 description: Gazdagítsa és normalizálja a vállalati adatokat a Microsoft modelljeivel.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,15 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
-ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "7927585"
 ---
+
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
 
-A Microsoft modelljei és a lefordított vállalati adatok segítségével javíthatja, kiegészítheti és szabványosíthatja vállalati profiljait. A common data model formátumot fogjuk használni a [jobb pontosság és betekintés](/common-data-model/schema/core/applicationcommon/account) érdekében.
+A Microsoft modelljei és a lefordított vállalati adatok segítségével javíthatja, kiegészítheti és szabványosíthatja vállalati profiljait. A common data model formátumot [fogjuk használni a](/common-data-model/schema/core/applicationcommon/account) jobb pontosság és betekintés érdekében.
 
 ## <a name="how-we-enhance-company-data"></a>Hogyan javítjuk a vállalati adatokat
 
-Modellünk kétlépcsős folyamaton megy keresztül a vállalati profil javítása érdekében. Először is normalizálja a cég nevét. Például a *Microsoft* Corp-ot kijavítják és szabványosítják a *Microsoft Corporation számára*. Megpróbálja megtalálni a mérkőzést a Microsoft összeállított vállalati adataiban. Ha egyezést találunk, a cég profilját az összeállított vállalati adatainkból származó információkkal gazdagítjuk, beleértve a vállalat nevét is.
+Modellünk kétlépcsős folyamaton megy keresztül a vállalati profil javítása érdekében. Először is normalizálja a cég nevét. Például a *Microsoft Corp-ot* kijavítják és szabványosítják a Microsoft Corporation *számára*. Megpróbálja megtalálni a mérkőzést a Microsoft összeállított vállalati adataiban. Ha egyezést találunk, a cég profilját az összeállított vállalati adatainkból származó információkkal gazdagítjuk, beleértve a vállalat nevét is.
 
 
 ### <a name="example"></a>Példa
@@ -58,7 +53,7 @@ A továbbfejlesztett adatoknak van néhány korlátja. Az alábbi listában szer
 
 1. Lépjen az **Adatok** > **Bővítés** pontra.
 
-1. Válassza **az Adatok gazdagítása lehetőséget a** **Továbbfejlesztett vállalati** adatlapon.
+1. Válassza **az Adatok** gazdagítása lehetőséget a **Továbbfejlesztett vállalati adatlapon**.
 
    :::image type="content" source="media/enhanced-company-data-tile.png" alt-text="Dúsítási csempe a vállalati adatok gazdagító központjában.":::
 
@@ -82,17 +77,17 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
-Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+A gazdagított adatok mintáját a Gazdagított ügyfelek előnézeti csempéjén **tekintheti meg**. Válassza az **További** információk lehetőséget, és válassza az Adatok **fület az** egyes dúsított profilok részletes megtekintéséhez.
 
 ### <a name="overview-card"></a>Áttekintő kártya
 
 Az áttekintő kártya részletesen ismerteti a dúsítás lefedettségét. 
 
-* **Feldolgozott és módosított ügyfelek** : A sikeresen gazdagított ügyfélprofilok száma.
+* **Feldolgozott és módosított** vállalatok: A sikeresen gazdagodott ügyfélvállalati profilok száma.
 
-* **Feldolgozott és nem módosított vevők** : A felismert, de nem módosított ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
+* **Feldolgozott és nem módosított** vállalatok: Az ügyfélvállalati profilok száma, amelyeket felismertek, de nem változtattak meg. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
 
-* **Nem feldolgozott és nem módosított ügyfelek** : A nem felismert profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy a gazdagodás által nem támogatottak.
+* **Nem feldolgozott és nem módosított** vállalatok: A nem felismert ügyfélvállalati profilok száma. Ez általában olyan bemeneti adatok esetében fordul elő, amelyek érvénytelenek vagy a gazdagítás által nem támogatottak.
 
 ## <a name="next-steps"></a>További lépések
 

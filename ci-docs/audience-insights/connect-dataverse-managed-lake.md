@@ -9,25 +9,20 @@ author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-ms.openlocfilehash: fecf3e33b5bc1eec17006fc196004be902c03b40
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900154"
 ---
+
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Ez a cikk arról nyújt tájékoztatást, hogy a felhasználók hogyan Dataverse csatlakozhatnak gyorsan a felügyelt tó analitikai entitásaihoz. Microsoft Dataverse 
+
+Ez a cikk arról nyújt tájékoztatást, hogy a felhasználók hogyan Dataverse csatlakozhatnak gyorsan a Microsoft Dataverse felügyelt tó analitikai entitásaihoz. 
 
 > [!NOTE]
-> A Dataverse felügyelt tóban elérhető entitások listájának folytatásához és megtekintéséhez rendszergazdának kell lennie a szervezetben.
+> A felügyelt tóban elérhető entitások listájának folytatásához és megtekintéséhez rendszergazdának Dataverse kell lennie a szervezetben.
 
 ## <a name="important-considerations"></a>Fontos tényezők
 
-Az online szolgáltatásokban, például az Azure Data Lake Storage esetében tárolt adatok az adatok feldolgozásának vagy tárolásának helyétől eltérő helyen tárolhatók, vagy a Dynamics 365 Customer Insights megoldásban is tárolhatók.Az online szolgáltatásokban tárolt adatok importálásával vagy az ahhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a Dynamics 365 Customer Insights .  [További információ a Microsoft Trust Centerben](https://www.microsoft.com/trust-center).
+Az online szolgáltatásokban, például az Azure Data Lake Storage esetében tárolt adatok az adatok feldolgozásának vagy tárolásának helyétől eltérő helyen tárolhatók, vagy a Dynamics 365 Customer Insights megoldásban is tárolhatók.Az online szolgáltatásokban tárolt adatok importálásával vagy az ahhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a Dynamics 365 Customer Insights. [További információ a Microsoft Trust Centerben](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Csatlakozás egy Dataverse felügyelt tóhoz
 

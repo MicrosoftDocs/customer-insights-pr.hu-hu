@@ -1,7 +1,7 @@
 ---
 title: Entitások egyesítése az adategyesítésben
 description: Entitások egyesítése az egyesített ügyfélprofilok létrehozásához.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732775"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Entitások összefésülése
 
 Az egyesítési fázis az adategységesítési folyamat legutolsó szakasza. Célja az ütköző adatok feloldása. Az adatütközés egyik példája egy ügyfélnév, amely két adathalmazban is megtalálható, de kis eltéréssel („Grant Marshall” és „Grant Marshal”), vagy egy telefonszám, ami csak formátumában tér el (617-803-091X és 617803091X). Az ütköző adatpontok egyesítése attribútumonként történik.
@@ -99,11 +94,13 @@ Az összes kizárt mező megtekintéséhez az **EgyesítésMerge** oldalon vála
 
 1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
 
-## <a name="manually-combine-fields"></a>Mezők manuális kombinálása
+## <a name="combine-fields-manually"></a>Mezők manuális kombinálása
 
-Manuálisan adjon meg egy egyesített attribútumot. 
+Manuálisan adjon meg egy egyesített attribútumot.
 
-1. Az **Egyesítés** oldalon válassza a **Mezők kombinálása** lehetőséget.
+1. Az Egyesítés **lapon válassza az** Összevonás **lehetőséget**.
+
+1. Válassza a **Mezők** lehetőséget.
 
 1. Adja meg az egyesítés győztesének irányelvét a **Mezők összevonása a következő alapján:** legördülő menüben.
 
@@ -114,6 +111,26 @@ Manuálisan adjon meg egy egyesített attribútumot.
 1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
 
 1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
+
+## <a name="combine-a-group-of-fields"></a>Mezők csoportjának egyesítése
+
+Mezők csoportját egyetlen egységként kezelje. Ha például a rekordjaink tartalmazzák a Cím1, Cím2, Város, Állam és Zip mezőket. Valószínűleg nem akarunk egyesülni egy másik rekord Cím2-ben, azt gondolva, hogy ez teljesebbé teszi az adatainkat.
+
+1. Az Egyesítés **lapon válassza az** Összevonás **lehetőséget**.
+
+1. Válassza a **Mezők** csoportosítása lehetőséget.
+
+1. Adja meg az egyesítési győztes házirendet a **Rang csoportokban legördülő menü szerint**.
+
+1. Válassza a Hozzáadás **lehetőséget**, és válassza ki, hogy további mezőket vagy további csoportokat szeretne-e hozzáadni a mezőkhöz.
+
+1. Adjon meg egy **nevet** és egy **kimeneti nevet** minden kombinált mezőhöz.
+
+1. **Adja meg a mezőcsoport nevét**. 
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
 
 ## <a name="change-the-order-of-fields"></a>Mezők sorrendjének módosítása
 

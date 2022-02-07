@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
-description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 12/02/2021
+description: 'Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,11 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: MT
-ms.contentlocale: hu-HU
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884265"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
 
@@ -27,13 +22,57 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+
+## <a name="december-2021-updates"></a>2021 decemberi frissítések
+
+A 2021. decemberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Ügyfélelemzési naplók továbbítása az Azure Monitorba
+
+A Customer Insights közvetlen integrációt biztosít az Azure Monitorral. Ez a funkció magában foglalja a naplózási eseményeket és a működési eseményeket. Azure Monitor erőforrás-naplók lehetővé teszik a naplók figyelését és küldését az Azure Storage-ba, az Azure Log Analyticsbe, vagy streamelheti őket az Azure Event Hubs.
+
+További információ: [Továbbítás naplózása az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Ügyfélprofilok gazdagítása elkötelezettségi adatokkal
+
+A from-adatok Microsoft Office 365 segítségével gazdagíthatja ügyfélfiók-profiljait az alkalmazásokon keresztüli Office 365 elkötelezettségekkel kapcsolatos elemzésekkel. Az elkötelezettségi adatok e-mail és értekezlet-tevékenységből állnak, amelyet a fiók szintjén összesítünk. Például egy üzleti fiókból származó e-mailek száma vagy a fiókkal való találkozók száma. Az egyes felhasználókra vonatkozó adatok nem lesznek megosztva. Ez a gazdagodás a következő régiókban érhető el: Egyesült Királyság, Európa, Észak-Amerika.
+
+További információ: [Ügyfélprofilok gazdagítása elkötelezettségi adatokkal (előzetes verzió)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Speciális adategyesítési funkciók
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Ütközéskezelési házirendek engedélyezése az egyes attribútumszintek szintjén
+
+Ha egy entitáson belüli vevői rekordokat deduplikál, előfordulhat, hogy nem kell teljes rekordot választania győztesként. Most lehetővé tesszük, hogy az egyes attribútumok szabályai alapján egyesítse a különböző rekordok legjobb mezőit. Dönthet például úgy, hogy megtartja a legújabb e-mailt és a legteljesebb címet a különböző rekordokból. 
+
+Mostantól külön egyesítési szabályokat határozhat meg az egyes attribútumokhoz, miközben egyetlen entitáson belül deduplikálja és egyesíteni a rekordokat. Korábban csak egyetlen egyesítési szabályt választhatott ki (a rekordok vezetése a recency data completeness alapján), és ezt a szabályt rekordszinten alkalmazták az összes attribútumra. Ez nem ideális, ha a meg szeretné őrizni kívánt adatok egy része megtalálható az A rekordban, és más jó adatok találhatók a B rekordban.
+
+További információ lásd: [A deduplikáció meghatározása az egyezési entitásban](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Egyéni szabályok az egyeztetéshez
+
+Vannak olyan esetek, amikor meg kell adnia egy kivételt az általános szabályok alól, hogy ne egyezzen a rekordoknak. Ez akkor fordulhat elő, ha több személy elegendő információt oszt meg, így a rendszer egyetlen személyként egyezik meg velük. Például az azonos vezetéknév ikrek ugyanabban a városban élnek, és megosztják a születési dátumot.
+
+A kivételek biztosítják, hogy az egységesítési szabályokban a helytelen adategyesítés kezelhető legyen. Egy szabályhoz több kivételt is hozzáadhat.
+
+További információ: [Kivételek hozzáadása egy szabályhoz](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>További ütközéskezelési szabályzatok biztosítása és attribútumok csoportosításának engedélyezése
+
+Ez a funkció lehetővé teszi, hogy mezők egy csoportját egyetlen egységként kezelje. Ha például a rekordjaink tartalmazzák a Cím1, Cím2, Város, Állam és Zip mezőket. Valószínűleg nem akarunk egyesülni egy másik rekord Address2-ben, azt gondolva, hogy ez teljesebbé teszi az adatainkat.
+
+Most már kombinálhat egy kapcsolódó mezőcsoportot, és egyetlen egyesítési házirendet alkalmazhat a csoportra. 
+
+További információ: [Mezők](merge-entities.md#combine-a-group-of-fields) csoportjának egyesítése.
+
+
 ## <a name="november-2021-updates"></a>2021. novemberi frissítések
 
 A 2021. novemberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
 
 ### <a name="segment-membership-now-available-in-dataverse"></a>Szegmenstagság már elérhető a Dataverse
 
-Az ügyfélprofilok szegmenstagsági adatai mostantól Dataverse elérhetők az ügyfélprofilokkal és elemzési adatokkal együtt. A Dynamics 365 műveletalkalmazások és a modellvezérelt alkalmazások használhatják ezeket az adatokat, és megkereshetik a szegmens tagsági adatait egy adott ügyfél számára.
+Az ügyfélprofilok szegmenstagsági adatai mostantól elérhetők Dataverse az ügyfélprofilokkal és elemzési adatokkal együtt. A Dynamics 365 műveletalkalmazások és a modellvezérelt alkalmazások használhatják ezeket az adatokat, és megkereshetik a szegmens tagsági adatait egy adott ügyfél számára.
 
 ### <a name="activities-support-contact-level-details-for-business-accounts"></a>Tevékenységek támogatják az üzleti fiókok kapcsolattartási szintű adatait
 
@@ -45,17 +84,17 @@ A 2021 októberében található frissítések új funkciókat, teljesítményfr
 
 ### <a name="b-to-b"></a>B-B
 
-2021 októberétől üzleti fiókokkal és azok kapcsolódó kapcsolattartóival dolgozhat a Customer Insightsban. Korábban az alkalmazást többnyire az egyes fogyasztókra szabták. Számos jellemzőterületet frissítettek, hogy támogassák a B-B forgatókönyveket egy új környezettípus mellett. A támogatott B-ból B-funkciók áttekintését az [üzleti fiókokkal való együttműködés célközönség elemzésben című témakörben talál](work-with-business-accounts.md).
+2021 októberétől üzleti fiókokkal és azok kapcsolódó kapcsolattartóival dolgozhat a Customer Insightsban. Korábban az alkalmazást többnyire az egyes fogyasztókra szabták. Számos jellemzőterületet frissítettek, hogy támogassák a B-B forgatókönyveket egy új környezettípus mellett. A támogatott B-ból B-funkciókról a Munkahelyi üzleti fiókokkal célközönség elemzési adatok című témakörben talál [áttekintést](work-with-business-accounts.md).
 
 A következő szakaszok rávilágítanak azokra a kulcsfontosságú területekre, amelyeket az üzleti fiókok és az egyes fogyasztók támogatására alakítottak ki.
 
 #### <a name="export-segments-based-on-business-accounts"></a>Szegmensek exportálása üzleti számlák alapján
 
-A célközönség összes szegmensexportja üzleti számlákkal összefüggésben érhető el. A legtöbb szegmensexporthoz az [alapul szolgáló szegmensekben előrejelezett további konfigurációs és kapcsolattartási adatok](segment-builder.md#create-a-new-segment) érvényesek az üzleti fiókokra. További információ: [Szegmensek exportálása](export-destinations.md#export-segments).
+A célközönség összes szegmensexportja üzleti számlákkal összefüggésben érhető el. A legtöbb szegmensexporthoz az alapul szolgáló szegmensekben előrejelezett [további konfigurációs és](segment-builder.md#create-a-new-segment) kapcsolattartási adatok érvényesek az üzleti fiókokra. További információ: [Szegmensek exportálása](export-destinations.md#export-segments).
 
 #### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>A LinkedIn-hirdetések exportálásának használata üzleti fiókokkal
 
-A LinkedIn Ads exportálás mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti számlákkal összefüggésben. Amikor a LinkedIn-exportálás elsődleges fókuszának a vállalati célzást választja, exportálhat üzleti fiókokra épülő szegmenseket anélkül, hogy meg kellene vetítenének a kapcsolattartási adatokat. További információért látogasson el a [LinkedIn-hirdetések exportálásáról,](export-linkedin-ads.md) valamint a [kapcsolatfelvételi célzás és a vállalati célzás közötti](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting)[különbséghez](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
+A LinkedIn Ads exportálás mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti számlákkal összefüggésben. Amikor a LinkedIn-exportálás elsődleges fókuszának a vállalati célzást választja, exportálhat üzleti fiókokra épülő szegmenseket anélkül, hogy meg kellene vetítenének a kapcsolattartási adatokat. További információért látogasson el a LinkedIn-hirdetések exportálásáról, [valamint a kapcsolatfelvételi célzás](export-linkedin-ads.md) és [a vállalati célzás](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) közötti különbségről [.](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) 
 
 #### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Az üzleti számlákon és azok hierarchiáján alapuló intézkedések létrehozása
 
@@ -63,11 +102,11 @@ A mértékkészítő lehetővé teszi, hogy intézkedéseket hozzon létre az ü
 
 #### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Szegmensek létrehozása üzleti számlák és azok hierarchiája alapján
 
-A szegmensépítő lehetővé teszi olyan üzleti fiókok szegmenseinek létrehozását, amelyek opcionálisan tartalmazzák a szegmens minden fiókjának kapcsolattartási adatait. Ha beállította a fiókhierarchiát, a szegmens létrehozásakor használhatja a fiókhierarchia adatait. További információ: [Új szegmens létrehozása](segment-builder.md#create-a-new-segment).
+A szegmensépítő lehetővé teszi olyan üzleti fiókok szegmenseinek létrehozását, amelyek opcionálisan tartalmazzák a szegmens minden fiókjának kapcsolattartási adatait. Ha beállította a fiókhierarchiát, a szegmens létrehozásakor használhatja a fiókhierarchia adatait. További információ: [Új szegmens](segment-builder.md#create-a-new-segment) létrehozása.
 
 #### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Tartsa meg üzleti fiókjait mély betekintéssel a lemorzsolódási tendenciájukba
 
-Az ügyfél lemorzsolódása előrejelzés modell most már az üzleti fiókokat is támogatja. Nem csak egy fiók, hanem egy fiók és egy termék- vagy szolgáltatáskategória kombinációjának kombinációjára is kiértékelheti a lemorzsolódás kockázatát. Ez a kiegészítés segít megérteni, hogy egy fiók nagyobb valószínűséggel hagyja abba a vásárlást általában, vagy csak egy bizonyos áru- vagy szolgáltatáskategóriára. Az AI-modell további használatához felsorolja azokat az okokat is, amelyek miatt egy fiók valószínűleg lemorzsolódik. További információ: [Tranzakciós lemorzsolódás előrejelzés (előzetes verzió)](predict-transactional-churn.md).
+Az ügyfél lemorzsolódása előrejelzés modell most már az üzleti fiókokat is támogatja. Nem csak egy fiók, hanem egy fiók és egy termék- vagy szolgáltatáskategória kombinációjának kombinációjára is kiértékelheti a lemorzsolódás kockázatát. Ez a kiegészítés segít megérteni, hogy egy fiók nagyobb valószínűséggel hagyja abba a vásárlást általában, vagy csak egy bizonyos áru- vagy szolgáltatáskategóriára. Az AI-modell további használatához felsorolja azokat az okokat is, amelyek miatt egy fiók valószínűleg lemorzsolódik. További információ: [Tranzakciólemorzs előrejelzés (előzetes verzió)](predict-transactional-churn.md).
 
 #### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Üzleti fiók névjegyeinek megtekintése ügyfélnézetben
 
