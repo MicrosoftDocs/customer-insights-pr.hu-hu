@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: MT
+ms.openlocfilehash: 413746e1896928d2c648ba59d67d4247a173da57
+ms.sourcegitcommit: 21854bb66ffa53948f659886f2e131236539ae88
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732267"
+ms.lasthandoff: 02/08/2022
+ms.locfileid: "8100143"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
-Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások létrehozásához a Customer Insightsban található adatok alapján.
+Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások elkészítéséhez a Customer Insight-ban szereplő adatai alapján.
 
 > [!IMPORTANT]
 > Az API-k részletes ismertetése a [Customer Insights API-k segédeletében](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) található. További információkat tartalmaznak a műveletekről, a paraméterekről és a válaszokról.
@@ -35,7 +35,7 @@ Ez a cikk leírja, hogyan érheti el az Customer Insights API-kat, hozhat létre
  
    Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsok újbóli generálásához válassza az **Elsődleges újbóli létrehozása** vagy a **Másodlagos újbóli létrehozása** beállítást a **Rendszergazda** > **Engedélyek** > **API-k** között.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Customer Insights API-k engedélyezése.":::
+<!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
 1. Az **API-k kipróbálásához** válassza az [API-k kipróbálása](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetőséget.
 
@@ -49,7 +49,7 @@ Ez a cikk leírja, hogyan érheti el az Customer Insights API-kat, hozhat létre
 
 A HTTP-válasz hamarosan az alábbiakban jelenik meg.
 
-   :::image type="content" source="media/try-apis.gif" alt-text="Hogyan tesztelje az API-kat.":::
+<!--   :::image type="content" source="media/try-apis.gif" alt-text="How to test the APIs."::: -->
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Hozzon létre egy új alkalmazásregisztrációt az Azure Portalon
 
@@ -65,7 +65,7 @@ Ezek a lépések segítenek a Customer Insights API-k használatának megkezdés
 
 1. Az új alkalmazás regisztrálásával nyissa meg az **API-engedélyeket**.
 
-   :::image type="content" source="media/app-registration-1.gif" alt-text="API-engedélyek beállítása az alkalmazásregisztrációban.":::
+<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
 
 1. Válassza az **Engedély hozzáadása** lehetőséget, és az oldalsó panelben válassza a **Customer Insights** lehetőséget.
 
@@ -77,7 +77,7 @@ Ezek a lépések segítenek a Customer Insights API-k használatának megkezdés
 
 Használhatja az alkalmazás/ügyfélazonosítót az alkalmazásregisztrációhoz a Microsoft hitelesítési függvénytárral (MSAL), hogy megszerezze a tulajdonosi jogkivonatot, amelyet elküldhet a kéréssel az API-nak.
 
-:::image type="content" source="media/grant-admin-consent.gif" alt-text="Hogyan engedélyezzünk rendszergazdai hozzájárulást.":::
+<!-- :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 Az MSAL-lel kapcsolatos további információkért tekintse át a [Microsoft hitelesítési függvénytár (MSAL) áttekintése](/azure/active-directory/develop/msal-overview).
 
@@ -103,7 +103,7 @@ Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-
 
 1. Válassza a **Rendszergazdai hozzájárulás biztosítása a következőhöz:** lehetőséget az alkalmazásregisztráció befejezéséhez.
 
-   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Hogyan engedélyezzünk rendszergazdai hozzájárulást.":::
+ <!--  :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 1. Következtetésképp hozzá kell adnunk az alkalmazásregisztráció nevét felhasználóként a Customer Insightsban.  
    
@@ -117,31 +117,31 @@ Ez a szakasz segítséget nyújt a Customer Insights API-k számára elérhető 
 
 ### <a name="c-nuget"></a>C# NuGet
 
-További információ a NuGet.org C# ügyfélkönyvtárainak használatának megkezdéséről. A NuGet csomaggal kapcsolatos további információkért lásd: [Microsoft.Dynamics.CustomerInsights.Api](https://www.nuget.org/packages/Microsoft.Dynamics.CustomerInsights.Api/). A csomag jelenleg a netstandard2.0 és a netcoreapp2.0 keretrendszert célozza meg.
+Ismerje meg a C# ügyféloldali függvénytárak használatának első lépéseit a NuGet.org webhelyről. A NuGet csomaggal kapcsolatos további információkért lásd: [Microsoft.Dynamics.CustomerInsights.Api](https://www.nuget.org/packages/Microsoft.Dynamics.CustomerInsights.Api/). A csomag jelenleg a netstandard2.0 és a netcoreapp2.0 keretrendszert célozza meg.
 
 #### <a name="add-the-c-client-library-to-a-c-project"></a>C# ügyféloldali függvénytár hozzáadása C#-projekthez
 
-1. A Visual Studio nyissa meg a **projekt NuGet** csomagkezelőjét.
+1. A Visual Studio szolgáltatásban nyissa meg a **NuGet csomagkezelő** elemet a projekthez.
 
 1. Keresse meg a **Microsoft.Dynamics.CustomerInsights.Api**.
 
 1. Válassza a **Telepítés** lehetőséget a csomag projekthez való hozzáadásához.
  
-   Másik lehetőségként futtassa ezt a parancsot a **NuGet Csomagkezelő** konzolon :`Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
+   Másik lehetőségként futtassa ezt a parancsot a **NuGet csomagkezelő konzolon**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Adjon hozzá NuGet csomagot Visual Studio projekthez.":::
+ <!--  :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Add NuGet package to Visual Studio project."::: -->
 
 #### <a name="use-the-c-client-library"></a>A C# ügyféloldali függvénytár használata
 
 1. Használja a [Microsoft hitelesítési függvénytárat (MSAL)](/azure/active-directory/develop/msal-overview), és használja a `AccessToken` meglévő [Azure alkalmazásregisztrációt](#create-a-new-app-registration-in-the-azure-portal).
 
-1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt `HttpClient` a további **DefaultRequestHeaders "Authorization"** beállítással, amely **a "hozzáférési token"** és az **Ocp-Apim-Subscription-Key** beállításra van állítva az [**előfizetési kulcsra** a Customer Insights környezetből](#get-started-trying-the-customer-insights-apis).   
+1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt `HttpClient` a további **DefaultRequestHeaders "Engedélyezés"** beállításával **Bearer "hozzáférési token"** és **Ocp-Apim-Subscription-Key** értékre az előfizetési kulcsra [**a** Customer Insights környezetéből](#get-started-trying-the-customer-insights-apis).   
  
    Szükség esetén állítsa vissza az **Engedélyezés** fejlécet. Ha például a token lejárt.
 
 1. Adja át ezt a `HttpClient` elemet a `CustomerInsights` ügyfél felépítéséhez.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Httpclient mintája.":::
+<!--   :::image type="content" source="media/httpclient-sample.png" alt-text="Sample of httpclient."::: -->
 
 1. Indítson hívást a klienssel a „bővítmény módszerekhez”, például `GetAllInstancesAsync`. Ha az alapul szolgáló `Microsoft.Rest.HttpOperationResponse` elem elérését részesíti előnyben, használja a "http-üzenetek módszereit", például `GetAllInstancesWithHttpMessagesAsync`.
 

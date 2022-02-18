@@ -3,18 +3,18 @@ title: Próbaverzió GYIK – Dynamics 365 Customer Insights
 description: Megoldások a Customer Insights próbaverzió beállításával és kezelésével kapcsolatos gyakori kérdésekre. Tájékoztatás a platform- és alkalmazásspecifikus problémák megoldásához.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 02/10/2022
 ms.topic: get-started
 ms.service: customer-insights
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2837ae13b4150310193a2d09d59aed66b4a69c69
-ms.sourcegitcommit: e6020c178a61beb0ee31a031c11ded914d10d995
+ms.openlocfilehash: f63ed39ba8c710d0c0149e0944efaafe27e7b9bb
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/13/2021
-ms.locfileid: "7642878"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8115971"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Dynamics 365 Customer Insights próbaverzió GYIK
 
@@ -24,7 +24,7 @@ ms.locfileid: "7642878"
 
 Ez az alkalmazás egy felhőalapú szolgáltatás, amelyhez egy naprakész webböngészőn kívül nincs szükség speciális szoftverre, azonban érvényesek bizonyos korlátozások. A legjobb próbaidőszak érdekében ne használja inkgnito módban a próbawebhelyet, és válassza ki a önhöz legközelebbi próbahelyet. [További információ a webes alkalmazással kapcsolatos követelményekről.](/power-platform/admin/web-application-requirements)
 
-### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Hogyan regisztrálhatok a próbaverziót Microsoft 365-bérlő nélkül?
+### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Hogyan iratkozhatok fel a tárgyalásra bérlő nélkül Microsoft 365?
 
 Megadhat egy nem munkahelyi e-mail címet, és létrehozunk önnek egy fiókot és bérlőt.
 
@@ -43,7 +43,7 @@ Amikor feliratkozik a próbaverzióra, egy e-mailt kap a próbaverzió adataival
 
 ### <a name="how-do-i-add-more-users-to-a-trial"></a>Hogyan lehetséges további felhasználók hozzáadása a próbaverzióhoz?
 
-Felhasználók hozzáadásához lépjen a [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) a próbaverziós rendszergazdai fiókkal. Kövesse a [felügyeleti központ útmutatását](/microsoft-365/admin/add-users/add-users), hogy további felhasználókat adjon hozzá a próbaverzió licenckorlátjáig. Ha a hozzáadott felhasználó már rendelkezik Microsoft 365-fiókkal, rendeljen hozzá megfelelő biztonsági szerepkör a próbaverziós szervezetben. További információ: [Biztonsági szerepkör hozzárendelése egy felhasználóhoz](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
+Felhasználók hozzáadásához lépjen a [Microsoft 365 felügyeleti központba](https://admin.microsoft.com) a próbaverzió felügyeleti fiókjával. Kövesse a [felügyeleti központ útmutatását](/microsoft-365/admin/add-users/add-users), hogy további felhasználókat adjon hozzá a próbaverzió licenckorlátjáig. Ha a hozzáadni kívánt felhasználó már rendelkezik Microsoft 365 fiókkal, rendeljen hozzá megfelelő biztonsági szerepkör a próbaverziós org-ban. További információt a biztonsági szerepkör hozzárendelése felhasználóhoz című témakörben [talál](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
 
 ### <a name="how-many-users-can-i-add-to-my-trial-environment"></a>Hány felhasználót lehet hozzáadni a próbakörnyezethez?
 
@@ -63,7 +63,7 @@ A próbaverziót közvetlenül az alkalmazásban is kibővítheti. A próbaverzi
 
 Általában javasoljuk, hogy a Customer Insights fizetett verziójára való frissítéskor elölről kezdje a saját adataival. 
 
-Ha csak a célközönség használja, akkor a Customer Insights megvásárlásakor másolhatja az adatokat a próbakörnyezetből. Önnek kell a Customer Insights próbaverzió rendszergazdájának és a Microsoft 365-bérlő globális rendszergazdájának vagy a szervezet Dynamics 365 rendszergazdájának lennie ahhoz, hogy a beállításokat a próbakörnyezetből fizetett környezetbe át tudja telepíteni. 
+Ha csak a célközönség használja, akkor a Customer Insights megvásárlásakor másolhatja az adatokat a próbakörnyezetből. A beállítások próbaverzióból fizetett környezetbe való áttelepítéséhez a Customer Insights próbaverzió rendszergazdájának és a bérlő globális rendszergazdájának Microsoft 365, illetve a szervezet Dynamics 365 rendszergazdájának kell lennie. 
 
 Miután először bejelentkezett a Customer Insights fizetett példányába, a rendszer kéri, hogy hozzon létre egy új környezetet. Ebben a folyamatban megadhatja, hogy a konfigurációt egy meglévő környezetből másolja át, és a beállítások nagy részét áttelepíti. Ha rendelkezik a fenti jogosultságokkal, akkor a próbakörnyezet megjelenik ebben a listában. További információ: [Környezetkonfiguráció másolása](audience-insights/manage-environments.md#copy-the-environment-configuration).
 
@@ -82,8 +82,9 @@ Miután feliratkozott a próbaverzióra, megérkezik az alkalmazás főképerny�
 
 A Customer Insights szolgáltatásainak legtöbb szolgáltatása elérhető a próbaverzióban.
 
-Nem érhetők el a következő funkciók: 
+A következő funkciók nem érhetők **el**: 
 - Nem hozhat létre olyan új környezeteket, amelyek saját Azure Data Lake Storage-fiókját használják.
+- A próbaverziós környezet nem törölhető. 
 
 ### <a name="how-long-does-the-trial-last"></a>Meddig tart a próbaverzió?
 

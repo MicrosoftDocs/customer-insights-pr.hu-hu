@@ -2,6 +2,22 @@
   href: index.yml
 - name: Termék áttekintése
   href: overview.md
+- name: Képzési katalógus
+  items:
+    - name: Első lépések
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Adatok betáplálása
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Egyesített ügyfélprofil létrehozása
+      href: /learn/modules/unified-customer-profile/
+    - name: Célközönség elemzések segítségével végzett munka
+      href: /learn/modules/working-with-customer-insights/
+    - name: Adatok gazdagítása és előrejelzések
+      href: /learn/modules/enrich-data/
+    - name: Külső kapcsolatok kezelése
+      href: /learn/modules/configure-third-party-connections/
+    - name: Customer Insights adminisztrációja
+      href: /learn/modules/administer-customer-data-platform/
 - name: Ingyenes próbaverzió
   items:
     - name: Regisztráció ingyenes próbaverzióra
@@ -30,21 +46,11 @@
           href: audience-insights/home.md
     - name: Üzleti partnerek használata
       href: audience-insights/work-with-business-accounts.md
-    - name: Tanulási modulok
-      items:
-        - name: Adatok betáplálása
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Egyesített ügyfélprofil létrehozása
-          href: /learn/modules/unified-customer-profile/
-        - name: Az alkalmazás használata
-          href: /learn/modules/working-with-customer-insights/
-        - name: Az adatok és az előrejelzések gyarapítása
-          href: /learn/modules/enrich-data/
     - name: Adatforrások
       items:
         - name: Adatforrások áttekintése
           href: audience-insights/data-sources.md
-        - name: Adatforrások hozzáadása Power Query összekötőkön keresztül
+        - name: Adatforrások hozzáadása összekötők segítségével Power Query
           href: audience-insights/connect-power-query.md
         - name: Common Data Model-mappa hozzáadása adatforrásként
           href: audience-insights/connect-common-data-model.md
@@ -94,7 +100,7 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Bővítés Experian -nal
           href: audience-insights/enrichment-experian.md
-        - name: Gazdagítás Office 365 adatokkal
+        - name: Gazdagodás adatokkal Office 365
           href: audience-insights/enrichment-office.md
         - name: Gazdagítás az SFTP egyéni importálással
           href: audience-insights/enrichment-SFTP-custom-import.md
@@ -130,7 +136,7 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Tranzakció-lemorzsolódás előrejelzése
               href: audience-insights/predict-transactional-churn.md
-            - name: Érzelmek elemzése az ügyfelek visszajelzésében
+            - name: Hangulat elemzése az ügyfelek visszajelzéseiben
               href: audience-insights/sentiment-analysis.md
             - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
               href: audience-insights/custom-models.md
@@ -256,7 +262,7 @@
           href: audience-insights/apis.md
         - name: API-hivatkozások
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Hozzájáruláskezelés (előzetes verzió)
+- name: Hozzájárulás kezelése (előzetes verzió)
   items:
     - name: Súgó hub
       href: consent-management/index.yml
@@ -272,13 +278,13 @@
       items:
         - name: Hozzájárulási adatok importálása
           href: consent-management/import-consent-data.md
-        - name: Hozzájárulási adatok beállítása és hozzájárulási beállítások alkalmazása
+        - name: Hozzájárulási adatok megadása és hozzájárulási beállítások alkalmazása
           href: consent-management/set-consent-rules.md
     - name: Hozzájárulási adatok kezelése
       items:
-        - name: Hozzájárulási szabályok engedélyezése célközönség elemzésben
+        - name: Hozzájárulási szabályok engedélyezése célközönség elemzésekben
           href: audience-insights/activate-consent.md
-        - name: Alapértelmezett hozzájárulási szabályok kezelése célközönség elemzési szegmensekben
+        - name: Alapértelmezett hozzájárulási szabályok kezelése célközönség elemzési szegmensben
           href: audience-insights/change-default-consent-rules.md
     - name: Beállítások és felhasználók kezelése
       items:
@@ -286,7 +292,7 @@
           href: consent-management/system-settings.md
         - name: Felhasználók és engedélyek kezelése
           href: consent-management/manage-users.md
-    - name: Hozzájárulási adatok felhasználása
+    - name: Hozzájárulási adatok használata
       items:
         - name: Előrejelzések létrehozása hozzájárulási adatokkal
           href: consent-management/predictions-consent-data.md
@@ -372,3 +378,5 @@
   href: service-limits.md
 - name: DSR-jogok és kérelmek
   href: dsr-rights-requests.md
+- name: Támogatás igénybevétele
+  href: /power-platform/admin/get-help-support

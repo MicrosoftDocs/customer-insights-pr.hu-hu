@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
-ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
-ms.translationtype: MT
+ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/06/2021
-ms.locfileid: "7892341"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088116"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Hozzon létre egy környezetet a közönséggel kapcsolats információkban
 
@@ -28,7 +28,7 @@ A szervezetek minden Customer Insights licenchez *két* környezetet hozhatnak l
 
 ## <a name="create-a-new-environment"></a>Új környezet létrehozása
 
-Miután megvásárolta a Customer Insights előfizetéses licencét, a Microsoft 365 bérlő globális rendszergazdája kap egy e-mailt, amely meghívja őt a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. 
+A Customer Insights előfizetési licencének megvásárlása után a Microsoft 365 bérlő globális rendszergazdája e-mailt kap, amely meghívja őket a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. 
 
 Az interaktív élmény végigvezeti az új környezettel kapcsolatos összes szükséges információgyűjtés lépéseit. A környezetek létrehozásához célközönség környezetek kezeléséhez [rendszergazdai engedélyekre](permissions.md) van szüksége.
 
@@ -64,7 +64,7 @@ A rendszer az adatok Azure Data Lake Storage szolgáltatásba való mentésével
 > A Customer Insights jelenleg a következőket támogatja:
 > - A Microsoft Dataverse által felügyelt Data Lake-ben tárolt Power BI adatfolyamokból származó feldolgozott entitások.  
 > - Azure Data Lake Storage partnereknek ugyanabban az Azure-régióban, mint amit a környezet létrehozásakor kiválasztott.
-> - Azure Data Lake Storage-partnerek, amelyek *hierarchikus névtér* engedélyezve vannak.
+> - Azure Data Lake Storage gen2 fiókok, amelyek *hierarchikus névterét* engedélyezve. Az Azure Data Lake Gen1 tárfiókok nem támogatottak.
 
 A Azure Data Lake Storage beállításhoz választhat az erőforrás-alapú és az előfizetés-alapú hitelesítési lehetőség között. További információ a [Kapcsolódás Azure Data Lake Storage-fiókhoz Azure-szolgáltatásnévvel](connect-service-principal.md) című cikkben található. A **Tároló** neve `customerinsights` értékre változik, és nem módosítható.
 
@@ -79,7 +79,7 @@ A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a 
 A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait egy kezelt Dataverse-adattóval.
 
 > [!IMPORTANT]
-> Ügyfélelemzések, és Dataverse ugyanabban a régióban kell lenniük az adatmegosztás engedélyezéséhez.
+> A Customer Insights-nak Dataverse ugyanabban a régióban kell lennie az adatmegosztás engedélyezéséhez.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
 
