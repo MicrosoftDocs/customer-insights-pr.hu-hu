@@ -11,7 +11,7 @@ ms.author: philk
 manager: shellyha
 ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
 ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/18/2021
 ms.locfileid: "7934890"

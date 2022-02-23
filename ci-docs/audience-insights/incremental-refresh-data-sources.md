@@ -11,7 +11,7 @@ ms.author: adkuppa
 manager: shellyha
 ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
 ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/08/2021
 ms.locfileid: "7900271"

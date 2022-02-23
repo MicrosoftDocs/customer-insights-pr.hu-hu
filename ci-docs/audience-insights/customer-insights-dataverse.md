@@ -11,7 +11,7 @@ ms.author: wimohabb
 manager: shellyha
 ms.openlocfilehash: 6f74559b34a95ed976a4e353c2dbabe59e1a8839
 ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/29/2021
 ms.locfileid: "7866937"

@@ -11,7 +11,7 @@ ms.author: wameng
 manager: shellyha
 ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
 ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/13/2022
 ms.locfileid: "7967797"

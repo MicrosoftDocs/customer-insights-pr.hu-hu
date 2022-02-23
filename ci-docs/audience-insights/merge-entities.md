@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-merge
+- ci-merge
+ms.openlocfilehash: eb08ab38d23bf22a17896b63c93e6821431b002a
+ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.translationtype: HT
+ms.contentlocale: hu-HU
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "8046567"
 ---
-
 # <a name="merge-entities"></a>Entitások összefésülése
 
 Az egyesítési fázis az adategységesítési folyamat legutolsó szakasza. Célja az ütköző adatok feloldása. Az adatütközés egyik példája egy ügyfélnév, amely két adathalmazban is megtalálható, de kis eltéréssel („Grant Marshall” és „Grant Marshal”), vagy egy telefonszám, ami csak formátumában tér el (617-803-091X és 617803091X). Az ütköző adatpontok egyesítése attribútumonként történik.

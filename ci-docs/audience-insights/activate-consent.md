@@ -11,7 +11,7 @@ ms.reviewer: mhart
 manager: shellyha
 ms.openlocfilehash: 552cb0739c4d17266dd028638df067f3384b738a
 ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/03/2021
 ms.locfileid: "7884077"

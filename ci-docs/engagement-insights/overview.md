@@ -11,7 +11,7 @@ ms.topic: overview
 ms.manager: shellyha
 ms.openlocfilehash: 03f7bbd62e0e421af53ead413db98f1f9eccfd3e
 ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2022
 ms.locfileid: "7977878"

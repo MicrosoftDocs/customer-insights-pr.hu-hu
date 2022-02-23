@@ -12,7 +12,7 @@ ms.topic: conceptual
 ms.manager: shellyha
 ms.openlocfilehash: 71ec4841303bd17d3f605547be8d6032c58a7b21
 ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2022
 ms.locfileid: "7977578"

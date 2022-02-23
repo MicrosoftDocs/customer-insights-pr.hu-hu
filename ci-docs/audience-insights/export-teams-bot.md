@@ -11,7 +11,7 @@ ms.author: sthe
 manager: shellyha
 ms.openlocfilehash: 6a9575de922bc2ff9c9d2212b99b4c0c8b61ab0e
 ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/13/2022
 ms.locfileid: "7967822"

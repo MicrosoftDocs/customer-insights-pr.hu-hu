@@ -11,7 +11,7 @@ ms.author: cadesantha
 manager: shellyha
 ms.openlocfilehash: c99ec2e7d5e4bf32a509bbe4c0c53999129b2305
 ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/02/2021
 ms.locfileid: "7732463"

@@ -11,7 +11,7 @@ ms.author: zacook
 manager: shellyha
 ms.openlocfilehash: 5972d5b191ded7db14e2ebe9a4a26570a8ea60ba
 ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2022
 ms.locfileid: "7978016"

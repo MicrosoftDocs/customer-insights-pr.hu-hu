@@ -11,7 +11,7 @@ ms.author: jodahl
 manager: shellyha
 ms.openlocfilehash: a30e09b5ed491c8d36019b5f0d35e0a2f7a0199c
 ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/03/2021
 ms.locfileid: "7889776"

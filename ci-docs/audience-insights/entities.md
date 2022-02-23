@@ -11,7 +11,7 @@ ms.author: mukeshpo
 manager: shellyha
 ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
 ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/08/2021
 ms.locfileid: "7900430"

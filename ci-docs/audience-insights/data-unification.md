@@ -13,7 +13,7 @@ searchScope:
 - ci-unify
 ms.openlocfilehash: c5422c9b60c21923caf4d9dc9baeec575cba093f
 ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2022
 ms.locfileid: "7977462"

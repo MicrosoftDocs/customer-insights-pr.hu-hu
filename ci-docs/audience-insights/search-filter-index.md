@@ -11,7 +11,7 @@ ms.author: nimagen
 manager: shellyha
 ms.openlocfilehash: e17d745974958b73683f1f9406c5ae95f2cbcb3c
 ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/02/2021
 ms.locfileid: "7732037"

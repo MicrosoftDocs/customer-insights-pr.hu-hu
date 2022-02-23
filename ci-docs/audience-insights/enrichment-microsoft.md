@@ -11,7 +11,7 @@ ms.author: kishorem
 manager: shellyha
 ms.openlocfilehash: 346c79d0a4d5cd5c47e91c195a48d3a153db0dc0
 ms.sourcegitcommit: 9d3c9e4eb2ce20996a4f4fb44c42e3fe020c5b48
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 11/11/2021
 ms.locfileid: "7793707"

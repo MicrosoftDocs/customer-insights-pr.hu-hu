@@ -10,7 +10,7 @@ ms.manager: shellyha
 ms.custom: intro-internal
 ms.openlocfilehash: e17b66217415c0b554a449f0d992deec7e2d96e7
 ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 01/15/2022
 ms.locfileid: "7977675"

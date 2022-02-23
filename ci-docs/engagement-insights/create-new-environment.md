@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.manager: shellyha
 ms.openlocfilehash: 8ff04a6b2ffbd513a77f7f8a33358f3d8f559c7e
 ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 10/22/2021
 ms.locfileid: "7673645"

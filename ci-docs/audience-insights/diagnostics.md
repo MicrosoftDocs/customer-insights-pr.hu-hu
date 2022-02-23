@@ -11,7 +11,7 @@ ms.author: bkief
 manager: shellyha
 ms.openlocfilehash: d962c359d70a068fcf939b61e340f86de088b419
 ms.sourcegitcommit: 0c3c473e0220de9ee3c1f1ee1825de0b3b3663c3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 12/14/2021
 ms.locfileid: "7920868"
