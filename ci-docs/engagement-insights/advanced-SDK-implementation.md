@@ -4,17 +4,17 @@ description: Speciális forgatókönyvek, amelyek figyelembe vehetőek a webhely
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/27/2021
+ms.date: 11/12/2020
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 4c6646ecadbb604000d6c95b685cf6e420969a6d
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: 7455d276035bfaf1f8a93d0e3b0b0884353a4010715c05d1d696309f7eb4b233
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558705"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036331"
 ---
 # <a name="advanced-web-sdk-instrumentation"></a>Speciális webes SDK-eszközök
 
@@ -33,20 +33,20 @@ Az `IUser` objektum a következő karakterlánc-tulajdonságokat tartalmazza:
 - **authType**: A hitelesített felhasználói azonosító bekért hitelesítési típusa.
 - **név**: A felhasználó neve.
 - **e-mail**: A felhasználó e-mail-címe.
-
-A következő példa egy felhasználói információkat küldő kódrészletet mutat be. Ahol a funkciókat csillag * szimbólum előzi meg, cserélje le a függvényt az egyéni implementációra:
+    
+A következő példa egy felhasználói információkat küldő kódrészletet mutat be. Ahol a *-val megjegyzett Funkciók láthatók, helyettesítse be az értékek hívásának megvalósításával:  
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     user:{
@@ -58,25 +58,25 @@ window, document
 […]
 ```
 
-A felhasználói adatokat a `setUser(user: IUser)` API meghívásával is megadhatja. A `setUser` API meghívása után küldött telemetria tartalmazza a felhasználói adatokat.
+A felhasználói adatokat úgy is megadhatja, ha az SDK-n lehívja az `setUser(user: IUser)` API-t. A `setUser API` lehívása után küldött telemetria tartalmazza a felhasználói adatokat.
 
 ## <a name="adding-custom-properties-for-each-event"></a>Egyéni tulajdonságok hozzáadása minden eseményhez
 
-Az SDK lehetővé teszi az egyéni tulajdonságok megadását, amelyek minden eseményhez elküldhetők. Az egyéni tulajdonságokat kulcs-érték párokat tartalmazó objektumként adhatja meg (az érték lehet `string | number | boolean` típusú). Az objektumot hozzáadhatja egy `props` nevű tulajdonsághoz, amely hasonlít az `src`, `name` és `cfg` tulajdonsághoz a kódrészlet konfigurációjában.
+Az SDK lehetővé teszi az egyéni tulajdonságok megadását, amelyek minden eseményhez elküldhetők. Az egyéni tulajdonságokat kulcs-érték párokat tartalmazó objektumként adhatja meg (az érték lehet `string | number | boolean` típusú). Az objektumot egy `props` nevű tulajdonságban lehet hozzáadni, hasonlóan a `src`, `name` és `cfg` tulajdonságokhoz a kódrészlet konfigurációjában. 
 
 A következő példa az egyéni tulajdonságokat küldő kódrészletet mutat be:
 
 ```
 […]
-window, document
+window, document 
 {
-    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
-    name:"myproject",
-    cfg:{
-      ingestionKey:<paste your ingestion key>",
-      autoCapture:{
-        view:true,
-        click:true
+    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
+    name:"myproject",      
+    cfg:{ 
+      ingestionKey:<paste your ingestion key>", 
+      autoCapture:{ 
+        view:true, 
+        click:true 
       }
     },
     props:{
@@ -87,7 +87,7 @@ window, document
 […]
 ```
 
-Az egyéni tulajdonságokat külön külön, a `setProperty(name: string, value: string | number | boolean)` API meghívásával is megadhatja.
+Egyéni tulajdonságokat egyénileg is megadhat, ha az SDK-n lehívja az `setProperty(name: string, value: string | number | boolean)` API-t.
 
 ## <a name="sending-custom-events"></a>Egyéni események küldése
 

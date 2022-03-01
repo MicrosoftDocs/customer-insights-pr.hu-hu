@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 02/07/2022
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5c3dda3b9bae828857258025ff79958ee22bdb6f
-ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/07/2022
-ms.locfileid: "8098792"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673002"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -37,17 +37,14 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 - [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [A Microsoft által szolgáltatott továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- [A Microsoft által megadott fiókkapcsolati adatok](enrichment-office.md)
 
 ---
 

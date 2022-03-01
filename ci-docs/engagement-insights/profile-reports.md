@@ -1,34 +1,39 @@
 ---
-title: Egyedi (OOB) profiljelentések engedélyezése
-description: Hogyan hozhat létre egyedi (OOB) profiljelentéseket különböző csoportokba a különböző eredetű termékekből, korból és megyéből vagy régióból.
+title: Egyedi profiljelentések engedélyezése
+description: Hogyan hozhat létre egyedi profiljelentéseket különböző csoportokba a különböző eredetű termékekből, korból és megyéből vagy régióból.
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 10/01/2021
+ms.date: 05/03/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: cba2c112e9e475ceb047fe627fb41e6c8a27e1e7
-ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
+ms.openlocfilehash: bf2ec67c9fb99918b87841d3c0b131934e31b58b
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/30/2021
-ms.locfileid: "7582789"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486123"
 ---
-# <a name="out-of-box-oob-unified-profile-reports"></a>Egyedi (OOB) egységes profiljelentések engedélyezése
+# <a name="out-of-box-profile-reports"></a>Egyedi profiljelentések
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Az egységes profiljelentés olyan jelentések gyűjteménye adatvizualizáció amelyek segítségével megértheti, hogyan viselkednek a felhasználók. A Customer Insights célközönséggel kapcsolatos információk képességhez való kapcsolódással az Aktivitási információk szolgáltatásban az OOB-jelentések egységes ügyfélprofilokkal kapcsolatos információkat jeleníthet meg. Ez a jelentés tartalmazza a profilok számát nem, életkor és földrajzi elhelyezkedés szerint csoportosítva. Az ügyfélprofilokkal kapcsolatos információkért lásd: [Ügyfélprofilok](../audience-insights/customer-profiles.md).
+A jelentések az adatvizualizációs gyűjtemények, amelyek segítenek jobban megérteni a felhasználók viselkedését. Ha a Customer Insights célközönség-információihoz csatlakozik, akkor az aktivitási információk egy olyan jelentést mutatnak, amelyek egységesített ügyfélprofilokkal kapcsolatos információkat tartalmaznak. Ez a jelentés tartalmazza a profilok számát nem, életkor és földrajzi elhelyezkedés szerint csoportosítva.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A környezet rendszergazdáinak létre kell hozniuk egy kapcsolatot az [elkötelezettségi elemzések és a célközönséggel kapcsolatos információk](integrate-audience-insights-engagement-insights.md) között.
+A célközönség-információk környezetnek az adatokat ügyfél által felügyelt Azure Data Lake Storage-fiókokban kell tárolnia.
+
+Ha a célközönség-információk szolgáltatásának vagy környezetének próbaverzióját használja egy Customer Insights által felügyelt adatkapcsolati szolgáltatásban, akkor segítségért [forduljon hozzánk](https://go.microsoft.com/fwlink/?linkid=2145734).  
+
 
 ## <a name="enable-the-customer-profile-report"></a>Az ügyfélprofil-jelentés engedélyezése
 
-Miután meghatározta az elkötelezettségi elemzések és a célközönséggel kapcsolatos adatok közötti kapcsolatot, a rendszergazda hozzáférést adhat a szervezet más tagjainak a jelentés megtekintése érdekében. A kapcsolatot létrehozó környezet-rendszergazda automatikusan hozzáfér a jelentéshez. 
+A környezet rendszergazdának [össze kell kapcsolnia az elkötelezettségi információkat és célközönség információkat](integrate-audience-insights-engagement-insights.md).
+
+A kapcsolat részleteinek megadása után a rendszergazda hozzáférést adhat a szervezet más tagjainak a jelentés megtekintése érdekében. A kapcsolatot létrehozó környezet-rendszergazda automatikusan hozzáfér a jelentéshez. 
 
 A kapcsolat befejezése után a **Profilok** funkció elérhető lesz a bal navigációs ablaktáblában. 
 

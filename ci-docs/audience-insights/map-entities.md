@@ -1,22 +1,20 @@
 ---
-title: Entitások és attribútumok leképezése az adategyesítéshez
-description: Válassza ki azokat az entitásokat, attribútumokat, elsődleges kulcsokat és szemantikus típusokat, amelyek az adatokat az egységes ügyfélprofilhoz leképezik.
-ms.date: 10/18/2020
+title: Entitások leképezése az adategyesítésben
+description: Adatok leképezése az egyesített ügyfélprofilok létrehozásához.
+ms.date: 09/25/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: adkuppa
 manager: shellyha
-searchScope:
-- ci-map
-ms.openlocfilehash: 8b84ed1a860e383e4eb3f7499be6d397ba3f1db1
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: e98c7717f7707d43a9fd1fc6f6b0e9c49e4e7ee0
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673266"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4406015"
 ---
 # <a name="map-entities-and-attributes"></a>Entitások és attribútumok leképezése
 
@@ -37,14 +35,14 @@ Az Adategyesítés általános folyamatáról az [Egységesítés](data-unificat
 3. Válassza ki a használni kívánt entitásokat és attribútumokat az *egyeztetés* és *egyesítés* fázisokban. A kötelező attribútumokat egyenként is kijelölheti egy entitásból, illetve az összes attribútumot szerepeltetheti egy entitásban, ha bejelöli az **Összes mező belefoglalása** jelölőnégyzetet az entitás szintjén. Javasoljuk, hogy legalább két entitást válasszon az adategyesítési folyamat előnyeinek kiaknázásához.
 
    > [!div class="mx-imgBorder"]
-   > ![Példa entitások hozzáadására.](media/data-manager-configure-map-add-entities-example.png "Példa entitások hozzáadására")
+   > ![Példa entitások hozzáadására](media/data-manager-configure-map-add-entities-example.png "Példa entitások hozzáadására")
 
    Ebben a példában az **eCommerceContacts** és az **loyCustomers** entitásokat adjuk hozzá. Ezen entitások kiválasztásával betekintést nyerhet, hogy mely online üzleti ügyfelek tagjai a törzsvásárlói programnak.
    
    A kulcsszavakkal az összes attribútum és entitás közül keresheti ki a leképezni kívánt szükséges attribútumokat.
    
      > [!div class="mx-imgBorder"]
-   > ![Példa keresési mezőkre.](media/data-manager-configure-map-search-fields-example.png "Példa keresési mezőkre")
+   > ![Példa keresési mezőkre](media/data-manager-configure-map-search-fields-example.png "Példa keresési mezőkre")
 
 4. Válassza az **Alkalmaz** lehetőséget a kijelölések jóváhagyásához.
 
@@ -57,7 +55,7 @@ Az entitások kijelölése után a **Leképezés** lap megjeleníti a kijelölt 
 - **Attribútum szemantikai típusa**: Az attribútumai kategóriái, például e-mail cím vagy név. Ha AI modelleket szeretne használni a szemantika intelligens előrejelzéséhoz, időt takaríthat meg, és javíthatja a pontosságot, beállíthatja az **intelligens leképezés** értékét **BE** értékre. Az intelligens leképezés kiemeli az AI-alapú szemantikai ajánlást a **típus** mezőben. Ha a beállítás értéke **KI**, akkor rendszeres leképezési javaslatokat lát majd. A választható lehetőségek listájából tetszőleges szemantikai típust választhat, és felülbírálhatja a javasolt kijelölést.
 
 > [!div class="mx-imgBorder"]
-> ![az attribútum típusa és a szemantikai előrejelzés.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Az attribútum típusa és a szemantikai előrejelzés")
+> ![az attribútum típusa és a szemantikai előrejelzés](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Az attribútum típusa és a szemantikai előrejelzés")
 
 Az egyéni szemantikus típus hozzáadása is lehetséges. Válassza ki egy attribútum típus mezőjét, majd írja be a szemantikus attribútum-típus nevét. Így a rendszer által automatikusan azonosított attribútum-típusokat is módosíthatja.
 
@@ -66,7 +64,7 @@ Minden attribútum, amelyhez a rendszer automatikusan azonosít egy szemantikai 
 A szemantikai típusokhoz automatikusan nem leképezett attribútumok az **Adatok definiálása a nem leképezett mezőkben** szakaszban vannak összegyűjtve. Jelölje ki a nem leképezett attribútumok szemantikai típus mezőjét, vagy írja be az egyéni attribútumtípus nevét.
 
 > [!div class="mx-imgBorder"]
-> ![Elsődleges kulcs és attribútum típusa.](media/data-manager-configure-map-add-attributes.png "Elsődleges kulcs és attribútum típusa")
+> ![Elsődleges kulcs és attribútum típusa](media/data-manager-configure-map-add-attributes.png "Elsődleges kulcs és attribútum típusa")
 
 > [!NOTE]
 > Egy mezőnek a szemantika Person.FullName típushoz kell lennie leképezve, hogy fel legyen töltve az ügyfél neve az ügyfélkártyában. Ellenkező esetben az ügyfélkártyák neve nem lesz látható. 
@@ -78,7 +76,7 @@ A szemantikai típusokhoz automatikusan nem leképezett attribútumok az **Adato
 2. Adja hozzá vagy távolítsa el az attribútumokat és entitásokat a **Mezők szerkesztése** ablaktáblában. A keresés vagy a görgetés segítségével keresse meg és jelölje ki az érintett attribútumokat és entitásokat. Az attribútumok és entitások nem távolíthatók el, ha már egyeztetve lettek.
 
    > [!div class="mx-imgBorder"]
-   > ![Entitások hozzáadása vagy eltávolítása.](media/configure-data-map-edit.png "Entitások hozzáadása vagy eltávolítása")
+   > ![Entitások hozzáadása vagy eltávolítása](media/configure-data-map-edit.png "Entitások hozzáadása vagy eltávolítása")
 
 3. Válassza az **Alkalmaz** lehetőséget.
 
@@ -96,7 +94,7 @@ Folytassa az egyesítési lépéseket, és gondoskodjon róla, hogy a kép URL-c
 
 A szervezetek (előnézet) esetében az attribútum típusát le kell képezni az "Organization.Name" értékhez
 > [!div class="mx-imgBorder"]
-> ![Elsődleges kulcs és B-to-B típusú attribútum.](media/configure-data-map-edit-b2b.png "Elsődleges kulcs és üzleti számlák (B-to-B) típusú attribútum")
+> ![Elsődleges kulcs és attribútum B2B](media/configure-data-map-edit-b2b.png "Elsődleges kulcs és attribútum B2B")
 
 ## <a name="next-step"></a>Következő lépés
 
@@ -104,6 +102,3 @@ Az adategyesítési folyamat részeként nyissa meg az **Egyeztetés** oldalt. T
 
 > [!TIP]
 > Tekintse meg a következő videótL [Első lépések: Egyesített ügyfél profillétrehozása](https://youtu.be/oBfGEhucAxs).
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Power BI-csatlakozó
 description: Útmutató a Dynamics 365 Customer Insights összekötő használatához a Power BI megoldásban.
-ms.date: 07/23/2021
-ms.reviewer: mhart
+ms.date: 09/21/2020
+ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: stefanie-msft
-ms.author: sthe
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: a0ca431dbea839fe271cf3a512cd3a5dde6d920d396056e91b33bcf7ed84272a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035510"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4405983"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI összekötő (előzetes verzió)
 
@@ -23,7 +23,7 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 ## <a name="prerequisites"></a>Előfeltételek
 
 - Az egyesített ügyfélprofilokkal rendelkezik.
-- A [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) legújabb verziója telepítve van a számítógépére. [További információk: Power BI Desktop](/power-bi/desktop-what-is-desktop).
+- A számítógépen telepítve van a [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) legújabb verziója . [További információk: Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-what-is-desktop).
 
 ## <a name="configure-the-connector-for-power-bi"></a>Az összekötő beállítása a Power BI számára
 
@@ -31,7 +31,7 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 
 1. Válassza a **Továbbiak megtekintése** elemet, és keressen erre: **Dynamics 365 Customer Insights**
 
-1. Válassza a **Kapcsolódás** lehetőséget.
+1. Jelölje ki az eredményt, és válassza a **Kapcsolódás** lehetőséget.
 
 1. **Jelentkezzen be** ugyanazzal a szervezeti fiókkal, amelyet a Customer Insights esetében használ, és válassza a **Csatlakozás** lehetőséget.
    > [!NOTE]
@@ -39,7 +39,7 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 
 1. A **Navigátor** párbeszédpanelen. megtekintheti az összes olyan környezet listáját, amelyhez hozzáféréssel rendelkezik. Bontson ki egy környezetet, és nyissa meg bármelyik mappát (entitások, intézkedések, szegmensek, bővítések). Nyissa meg például az **Entitások** mappát, és tekintse meg az összes importálható entitást.
 
-   ![Power BI összekötő navigátor.](media/power-bi-navigator.png "Power BI összekötő navigátor")
+   ![Power BI összekötő navigátor](media/power-bi-navigator.png "Power BI összekötő navigátor")
 
 1. Jelölje be a szerepeltetni és betölteni kívánt entitások melletti jelölőnégyzeteket, és válassza a **Betöltés** elemet. Többe entitást is kiválaszthat több környezetből.
 
@@ -47,32 +47,8 @@ Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. Tov�
 
 ## <a name="large-data-sets"></a>Nagy adathalmazok
 
-A Customer Insights Power BI-csatlakozója az egymillió ügyfélprofilig terjedő adatkészletek feldolgozására szolgál. A nagyobb adathalmazok importálása működhet, de hosszú időt igényel. Emellett a folyamat a Power BI-korlátozásai miatt időtúllépés is előfordulhat. További információkért lásd [Power BI: Nagyméretű adathalmazokra vonatkozó ajánlások](/power-bi/admin/service-premium-what-is#large-datasets). 
+A Customer Insights Power BI-csatlakozója az egymillió ügyfélprofilig terjedő adatkészletek feldolgozására szolgál. A nagyobb adathalmazok importálása működhet, de hosszú időt igényel. Emellett a folyamat a Power BI-korlátozásai miatt időtúllépés is előfordulhat. További információkért lásd [Power BI: Nagyméretű adathalmazokra vonatkozó ajánlások](https://docs.microsoft.com/power-bi/admin/service-premium-what-is#large-datasets). 
 
 ### <a name="work-with-a-subset-of-data"></a>Munka az adatok egy részhalmazával
 
 Érdemes lehet az adatok egy részhalmazával dolgozni. Létrehozhatók például olyan [szegmensek](segments.md), amelyek nem exportálják az összes ügyfélrekordot a Power BI-be.
-
-## <a name="troubleshooting"></a>Hibaelhárítás
-
-### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>A Customer Insights környezet nem jelenik meg a Power BI alatt
-
-Azok a környezetek, amelyek egynél több definiált [kapcsolattal](relationships.md) rendelkeznek két egyforma entitás között a célközönséggel kapcsolatos információkban, nem lesznek elérhetők a Power BI-összekötőben.
-
-A duplikált kapcsolatok azonosíthatók és eltávolíthatóak kapcsolatok.
-
-1. Az célközönség kapcsolatos információkban menjen az **Adatok** > **Kapcsolatok** részbe annál a környezetél, ahonnan a Power BI hiányzik.
-2. Duplikált kapcsolatok azonosítása:
-   - Ellenőrizze, hogy egynél több kapcsolat van-e definiálva ugyanazon két entitás között.
-   - Ellenőrizze, hogy két olyan entitás között van-e kapcsolat, amelyek egyaránt szerepelnek az egyesítési folyamatban. Az egyesítési folyamatban szereplő összes entitás között implicit kapcsolat van definiálva.
-3. Távolítsa el az azonosított duplikált kapcsolatokat.
-
-A duplikált kapcsolatok eltávolítását, próbálja meg újra konfigurálni az Power BI-összekötőt. A környezetnek immár elérhetőnek kell lennie.
-
-### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Hibák a dátummezőkben az entitások betöltésekor a Power BI Desktopban
-
-Az olyan entitások betöltésekor, amelyek olyan mezőket tartalmaznak, amelyek dátumformátuma HH/NN/ÉÉÉÉ, a nem egyező területiformátumok miatt hibákba ütközhet. Ez az eltérés akkor fordul elő, ha a Power BI Desktop-fájl az angol (Egyesült Államok) nyelvtől más területi beállításra van beállítva, mert a célközönség információk dátummezőit amerikai formátumban menti a program.
-
-A Power BI Desktop fájlnak egyetlen területi beállítása van, amelyet az adatok beolvasásakor alkalmaz a program. A dátummezők helyes értelmezése érdekében, állítsa be a .BPI-fájl területi beállítását angol (Egyesült Államok) formátumra. [Ismerje meg, hogyan módosíthatja egy Power BI Desktop fájl területi beállítását](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

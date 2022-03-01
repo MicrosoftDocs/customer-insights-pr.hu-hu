@@ -1,58 +1,64 @@
 ---
 title: Adatforrások kiválasztása adatok betöltéséhez
 description: Megismerkedhet vele, hogyan importálhat különböző forrásokból származó adatokat.
-ms.date: 12/06/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ca979527c9cb8418e12af4a74513033047e4901c
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046591"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887897"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 A célközönség-információk funkció a Dynamics 365 Customer Insights szolgáltatásban összekapcsolja az adatokat források széles köréből. A adatforrások összeskapcsolását gyakran nevezik *adatbetöltésnek*. Az adatok betöltése után [egyesítheti](data-unification.md) és műveleteket hajthat végre rajtuk.
 
 ## <a name="add-a-data-source"></a>Adatforrás felvétele
 
-A választott lehetőségtől függően tekintse meg a adatforrás hozzáadásának részletes cikkeit.
+A kiválasztott lehetőségtől függően olvassa el a részletes cikkeket az adatforrás hozzáadásáról.
 
-A következő adatforrásokat adhatja hozzá:
+A adatforrások három fő módon adhatók hozzá:
 
-- [Power Query Csatlakozók](connect-power-query.md)
-- [Common Data Model](connect-common-data-model.md)
-- [Microsoft Dataverse tó](connect-dataverse-managed-lake.md)
-
-> [!NOTE]
-> Ha a próbaverziót használja, az importálási módszerek szakasz tartalmaz egy **Customer Insights adattár** opciót. Ezzel a beállítással választhatja ki a különböző iparágak számára elérhető mintaadatkészletet. További információ: [Dynamics 365 Customer Insights trial](../trial-signup.md).
+- [Több tucat Power Query-összekötőn keresztül](connect-power-query.md)
+- [Common Data Model-mappából](connect-common-data-model.md)
+- [Saját Common Data Service tóból](connect-common-data-service-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Adatok hozzáadása helyszíni adatforrásokból
 
-A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. A Dataflowst a Customer Insightsban úgy engedélyezheti, hogy [a Microsoft Dataverse környezet URL-címét](create-environment.md) a környezet beállításakor megadja.
+A helyszíni Audience Insights-ban az adatok betöltése a helyi adatforrásokból a Power Platform adatfolyamok alapján támogatott. A Customer Insightsban úgy engedélyezhetők az adatfolyamok, ha a környezet beállításakor [meg van adva a Microsoft Dataverse környezet URL-címe](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-A környezet Ügyfélelemzéssel való társítása Dataverse után létrehozott adatforrások alapértelmezés szerint adatfolyamokat használnak [Power Platform](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása Dataverse előtt [meglévő adatforrásokat helyszíni adatátjárók](/data-integration/gateway/service-gateway-app) használatával távolíthatja el és hozhatja létre újra.
+A Dataverse környezet Customer Insights-cal való társítása után létrehozott adatforrások alapértelmezés szerint [Power Platform adatfolyamokat](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) fognak használni. Az adatfolyamok az adatátjárók használatával támogatják a helyszíni összekapcsolhatóságot. Távolítsa el, majd hozza létre újból az adatforrásokat, amelyek azelőtt léteztek, hogy a Dataverse környezet társítva lett volna a helyszíni adatátjárók használatára.
 
-A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
+A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan hivatkozások láthatóak, amelyekre kattintva a Power Platform környezetbe mehet, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Képernyőkép az adatforrások oldalról, amely a Power Platform környezetre mutató hivatkozásokat tartalmazza.":::
 
 ## <a name="review-ingested-data"></a>A betöltött adatok áttekintése
 
 Látni fogja az egyes betöltött adatforrások nevét, állapotát, valamint az adatoknak az adott forrásra vonatkozó utolsó frissítését. Az adatforrások listáját minden oszlop szerint rendezheti.
 
 > [!div class="mx-imgBorder"]
-> ![Adatforrás hozzáadva.](media/configure-data-datasource-added.png "Adatforrás hozzáadva")
+> ![Adatforrás hozzáadva](media/configure-data-datasource-added.png "Adatforrás hozzáadva")
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+|Állapot  |Adatfolyam leírása  |
+|---------|---------|
+|Sikeres   |A adatforrás betöltése sikeres volt, ha egy idő szerepel a **Frissített** oszlopban.
+|Nem kezdődött el   |Az adatforrás még nem tartalmaz adatokat vagy még vázlat módban van.         |
+|Frissítés    |Az adatbetöltés folyamatban van. A művelet a **Műveletek** oszlop **Frissítés leállítása** parancsával vonható vissza. A adatforrás frissítésének leállítása visszaállítja azt az utolsó frissítéskori állapotára.       |
+|Sikertelen     |Az adatbetöltés hibákba ütközött.         |
 
-Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok áttekinthetők az **Entitások** lapról. További információ: [Entitások](entities.md).
+A további részletekért válassza ki az adatforrás **Állapot** oszlopát. A **Folyamat részletei** ablaktáblában bontsa ki az **Adatforrások** részt. Válassza a **Részletek megtekintése** elemet a frissítési állapot további adatai áttekintéséhez, többek között hiba részleteit és a lefelé irányuló folyamat frissítéseit.
+
+Az adatok betöltése eltarthat egy ideig. A sikeres frissítés után a betöltött adatok áttekinthetők az **Entitások** lapról. További információ: [Entitások](entities.md).
 
 ## <a name="refresh-a-data-source"></a>Adatforrás frissítése
 
@@ -62,9 +68,9 @@ Nyissa meg a **Rendszergazda** > **Rendszer** > [**Ütemezés**](system.md#sched
 
 Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lépéseket:
 
-1. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**.
+1. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**
 
-2. Jelölje be a frissíteni kívánt adatforrás melletti függőleges ellipszist, és válassza a legördülő menüből a **Frissítés** lehetőséget.
+2. Jelölje ki a frissíteni kívánt adatforrás melletti függőleges ellipszist, és válassza a **Frissítés** elemet a legördülő listából.
 
 3. Az adatforrás most már a manuális frissítésre váltja ki. Egy adatforrás frissítése frissíteni fogja az entitássémát és az adatokat a frissítésben megadott összes adatforrás számára.
 
@@ -74,7 +80,7 @@ Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lép
 
 1. A célközönség információin belül nyissa meg a következőt **Adatok** > **Adatforrások**.
 
-2. Jelölje be a törölni kívánt adatforrás melletti függőleges ellipszist, és válassza a legördülő menüből a **Törlés** lehetőséget.
+2. Jelölje ki az eltávolítani kívánt adatforrás melletti függőleges három pontot, és a legördülő menüben válassza a **Törlés** parancsot.
 
 3. Hagyja jóvá a törlést.
 

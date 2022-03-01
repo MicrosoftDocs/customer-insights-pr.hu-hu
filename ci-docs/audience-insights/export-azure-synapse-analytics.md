@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-adatok exportálása az Azure Synapse Analytics rendszerbe
 description: Ismerje meg, hogyan konfigurálhatja az Azure Synapse Analytics rendszerrel kiépített kapcsolatot.
-ms.date: 01/05/2022
+ms.date: 04/12/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 6f630b8fb03bf615ada6d40fe27a91975d0c856e
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
+ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951045"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5977380"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Aadtok exportálása az Azure Synapse Analytics rendszerbe (előzetes verzió)
 
@@ -49,8 +49,6 @@ Az Azure-ban:
 
 ### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
 
-Kapcsolat létrehozásához a szolgáltatásnévnek és a Customer Insights felhasználói fiókjának olvasó engedélyekkel kell **rendelkeznie** ahhoz az *erőforráscsoporthoz,* ahol a Synapse Analytics munkaterület található. Ezenkívül a szolgáltatásnévnek és a Synapse Analytics munkaterületen lévő felhasználónak **Synapse rendszergazdai engedélyekre van** szüksége. 
-
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
 1. A kapcsolat konfigurálásához válassza a **Kapcsolat hozzáadása**, majd az **Azure Synapse Analytics** lehetőséget, vagy válassza a **Beállítás** lehetőséget az **Azure Synapse Analytics** csempén.
@@ -65,7 +63,7 @@ Kapcsolat létrehozásához a szolgáltatásnévnek és a Customer Insights felh
 
 ### <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. Ha az exportálást megosztott kapcsolattal szeretné konfigurálni, legalább közreműködő engedélyre van szüksége **a** Customer Insightsban. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
@@ -76,16 +74,12 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 1. Adjon meg egy felismerhető **megjelenítendő nevet** és egy **adatbázisnevet** az exportáláshoz.
 
 1. Válassza ki, hogy melyik entitásokat szeretné exportálni az Azure Synapse Analytics alkalmazásba.
-   > [!NOTE]
-   > A [Common Data Model mappán](connect-common-data-model.md) alapuló adatforrások nem támogatottak.
 
-2. Válassza a **Mentés** parancsot.
+1. Válassza a **Mentés** parancsot.
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
 Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand).
-
-A Synapse Analytics-be exportált adatok lekérdezéséhez **Storage Blob-adatokra olvasó hozzáférésre van szüksége** az exportálás munkaterületén található céltárolóhoz. 
 
 ### <a name="update-an-export"></a>Exportálás frissítése
 

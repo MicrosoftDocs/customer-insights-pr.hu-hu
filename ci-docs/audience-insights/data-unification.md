@@ -5,18 +5,19 @@ ms.date: 10/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
+ms.custom: intro-internal
 searchScope:
 - ci-unify
-ms.openlocfilehash: c5422c9b60c21923caf4d9dc9baeec575cba093f
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 694bfd0e407975af64ca0971a73fe4c3f5ba5a23
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977462"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648074"
 ---
 # <a name="data-unification-overview"></a>Az Adategyesítés áttekintése
 

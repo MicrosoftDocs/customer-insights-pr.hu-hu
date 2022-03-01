@@ -1,7 +1,7 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 03/02/2022
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,315 +9,27 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 0e25ed4e4e25b130fda410d4ba1c78caded7f0f9
-ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2022
-ms.locfileid: "8088288"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270435"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>A célközönséggel kapcsolatos újdonságok a Dynamics 365 Customer Insights-ban.
 
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
+Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](https://docs.microsoft.com/dynamics365/release-plans/).
 
-Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
+A következő videót is megtekinthet, hogy többet tudhasson meg az utolsó hat hónapban tervezett képességekről.
+
+> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
 
 A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképpen meghatározva, nem kell semmilyen műveletet végrehajtania, és az alkalmazás automatikusan, leállás nélkül frissíthető.
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
-
-
-## <a name="january-2022-updates"></a>2022. januári frissítések
-
-A 2022. januári frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="sentiment-analysis-of-your-customers-feedback"></a>Az ügyfél visszajelzéseinek hangulatelemzése
-
-A Customer Insights egy új, AI-alapú funkciót kínál az ügyfelek hangulatának szintetizálásához és bizonyos üzleti szempontok azonosításához, mint a célzott fejlesztések lehetőségeihez. Az ügyfelek írásbeli visszajelzéseinek elemzésével pontos betekintést kaphat alacsony költséggel. A természetes nyelvi feldolgozás (NLP) modelljei által működtetett hangulatelemzés, amely minden ügyfélazonosítóhoz két származtatott betekintést hoz létre. A hangulat pontszám (-5-5) és az alkalmazandó üzleti szempontok listája. 
-
-További információt a Hangulat elemzése az ügyfelek visszajelzéseiben (Előzetes verzió) című témakörben [talál](sentiment-analysis.md).
-
-
-## <a name="december-2021-updates"></a>2021 decemberi frissítések
-
-A 2021. decemberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Ügyfélelemzési naplók továbbítása az Azure Monitorra
-
-A Customer Insights közvetlen integrációt biztosít az Azure Monitorral. Ez a funkció magában foglalja a naplózási eseményeket és az operatív eseményeket. Az Azure Monitor erőforrásnaplói lehetővé teszik a naplók figyelése és elküldése az Azure Storageba, az Azure Log Analytics-be, vagy streamelheti őket az Azure Event Hubs.
-
-További információt a Bejelentkezés az [Azure Monitorral (Előzetes verzió) című témakörben talál Dynamics 365 Customer Insights](diagnostics.md).
-
-### <a name="enrich-customer-profiles-with-engagement-data"></a>Ügyfélprofilok gazdagítása elkötelezettségi adatokkal
-
-Ahonnan származó Microsoft Office 365 adatok segítségével gazdagodhat az ügyfélfiók-profilokkal az alkalmazásokon keresztüli Office 365 elkötelezettségekkel kapcsolatos elemzésekkel. Az elkötelezettségi adatok e-mail és értekezleti tevékenységből állnak, amelyeket a fiók szintjén összesítünk. Például az üzleti fiókból származó e-mailek száma vagy a fiókkal való értekezletek száma. Az egyes felhasználókra vonatkozó adatok nincsenek megosztva. Ez a dúsítás a következő régiókban érhető el: Egyesült Királyság, Európa, Észak-Amerika.
-
-További információt az Ügyfélprofilok gazdagítása elköteleződési adatokkal (Előzetes verzió) című témakörben [talál](enrichment-office.md).
-
-### <a name="advanced-data-unification-features"></a>Speciális adategyesítési szolgáltatások
-
-#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Ütközéskezelési házirendek engedélyezése egyéni attribútumszinten
-
-Ha egy entitáson belül vevőrekordokat hoz ki, előfordulhat, hogy nem kell győztesként teljes rekordot választania. Most lehetővé tesszük, hogy egyesítse a különböző rekordok legjobb mezőit az egyes attribútumok szabályai alapján. Dönthet például úgy, hogy megtartja a legutóbbi e-mailt és a legteljesebb címet a különböző rekordokból. 
-
-Mostantól külön egyesítési szabályokat határozhat meg az egyes attribútumokhoz, miközben egyetlen entitáson belül deduplikál és egyesíti a rekordokat. Korábban csak egyetlen egyesítési szabályt engedtünk ki (a reklenciás adatok teljessége alapján nyilvántartást vezet), és ezt a szabályt rekordszinten alkalmazták az összes attribútumra. Ez nem ideális, ha a megtartani kívánt adatok egy része megtalálható az A nyilvántartásban, és más jó adatok a B rekordban találhatók.
-
-További információ lásd: [A deduplikáció meghatározása az egyezési entitásban](match-entities.md#define-deduplication-on-a-match-entity).
-
-#### <a name="custom-rules-for-matching"></a>Egyéni szabályok az egyeztetéshez
-
-Vannak olyan időszakok, amikor kivételt kell megadnia az általános szabályok alól ahhoz, hogy a REKORDOK NE egyezzenek meg. Ez akkor fordulhat elő, ha több személy elegendő információt oszt meg, hogy a rendszer egyetlen személyként illeszkedik hozzájuk. Például az azonos vezetéknév ikrek, ugyanabban a városban élnek, és megosztják a születési dátumot.
-
-A kivételek biztosítják, hogy az egyesítési szabályokban kezelhető legyen a helytelen adategyesítés. Egy szabályhoz több kivételt is hozzáadhat.
-
-További információt a Kivételek hozzáadása szabályhoz [című témakörben talál](match-entities.md#add-exceptions-to-a-rule).
-
-#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>További ütközéskezelési házirendek biztosítása és attribútumok csoportosításának engedélyezése
-
-Ez a funkció lehetővé teszi, hogy egy mezőcsoportot egyetlen egységként kezeljen. Ha például a rekordjaink a Cím1, a Cím2, a Város, az Állapot és a Zip mezőket tartalmazzák. Valószínűleg nem akarunk egyesülni egy másik rekord Address2-ben, azt gondolva, hogy ez teljesebbé tenné az adatainkat.
-
-Mostantól kombinálhat kapcsolódó mezők egy csoportját, és egyetlen egyesítési szabályzatot alkalmazhat a csoportra. 
-
-További információt a Mezők [csoportjának egyesítése című témakörben talál](merge-entities.md#combine-a-group-of-fields).
-
-
-## <a name="november-2021-updates"></a>2021. novemberi frissítések
-
-A 2021. novemberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="segment-membership-now-available-in-dataverse"></a>A szegmenstagság már elérhető a Dataverse
-
-Az ügyfélprofilok szegmenstagsági adatai mostantól elérhetők Dataverse az ügyfélprofilokkal és elemzésekkel együtt. A Dynamics 365 műveletalkalmazások és modellvezérelt alkalmazások használhatják ezeket az adatokat, és megkereshetik a szegmenstagság részleteit egy adott ügyfél számára.
-
-### <a name="activities-support-contact-level-details-for-business-accounts"></a>A tevékenységek támogatják az üzleti számlák kapcsolattartási szintű adatait
-
-Mostantól konfigurálhatja, megjelenítheti és szűrheti az üzleti fiók tevékenységi ütemtervében lévő kapcsolattartók tevékenységeit, hogy jobban megértse, mely partnerpartnerek vettek részt az egyes tevékenységekben.
-
-## <a name="october-2021-updates"></a>2021. októberi frissítések
-
-A 2021. októberi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="b-to-b"></a>B-B-hez
-
-2021 októberétől az üzleti partnerekkel és a kapcsolódó kapcsolattartókkal dolgozhat a Customer Insights alkalmazásban. Korábban az alkalmazást többnyire az egyéni fogyasztókra szabták. Számos jellemzőterületet frissítettek, hogy támogassák a B-B forgatókönyveket az új környezeti típuson felül. A támogatott B-to-B funkciók áttekintéséhez olvassa el a Üzleti fiókok célközönség elemzésekben című [témakört](work-with-business-accounts.md).
-
-A következő szakaszok kiemelik azokat a kulcsfontosságú területeket, amelyeket az üzleti számlák és az egyéni fogyasztók támogatására alakítottak ki.
-
-#### <a name="export-segments-based-on-business-accounts"></a>Szegmensek exportálása üzleti számlák alapján
-
-A célközönség elemzésekben szereplő összes szegmensexport elérhető az üzleti számlákkal összefüggésben. A legtöbb szegmensexporthoz további konfigurációs és [kapcsolattartási adatokra van szükség, amelyek az alapul szolgáló szegmensekben vannak előrevetített](segment-builder.md#create-a-new-segment) adatok, hogy érvényesek legyenek az üzleti számlákra. További információt a Szegmensek [exportálása című témakörben talál](export-destinations.md#export-segments).
-
-#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>A LinkedIn Ads exportálásának használata üzleti fiókokkal
-
-A LinkedIn Ads exportálása mostantól elérhető a kapcsolattartók és a vállalati célzás számára az üzleti fiókok összefüggésében. Amikor a vállalati célzást választja a LinkedIn-exportálás elsődleges fókuszaként, exportálhat üzleti számlákra épülő szegmenseket anélkül, hogy ügyféladatokat kellene kivetítene. További információért lépjen a LinkedIn Ads exportálásával kapcsolatos [dokumentumokban, valamint a kapcsolatfelvételi célzás](export-linkedin-ads.md) és [a vállalati célzás közötti](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) különbségben [.](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) 
-
-#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Intézkedések létrehozása az üzleti számlák és hierarchiájuk alapján
-
-A mértékszerkesztő lehetővé teszi, hogy mértékeket hozzon létre az üzleti számlák körül, és opcionálisan használja a hierarchiaadatokat. A hierarchiaadatok a mértékszámítás összesítésére szolgálnak egy fiókban és az összes kapcsolódó alfiókban. Létrehozhat például olyan mértékeket, mint a hierarchiájuk által azonosított üzleti számlák minden egyes csoportjának teljes bevétele. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
-
-#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Szegmensek létrehozása az üzleti számlák és hierarchiájuk alapján
-
-A szegmensszerkesztő lehetővé teszi az üzleti számlák olyan szegmenseinek létrehozását, amelyek opcionálisan tartalmazzák a szegmens egyes fiókjaihoz szükséges kapcsolattartási adatokat. Ha beállította a fiókhierarchiát, a szegmens létrehozásához használhatja a fiókhierarchia adatait. További információt a Új szegmens [létrehozása című témakörben talál](segment-builder.md#create-a-new-segment).
-
-#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Tartsa meg üzleti fiókjait mély betekintéssel a lemorzsolódási tendenciájukba
-
-Az ügyfél lemorzsolódása előrejelzés modell mostantól az üzleti számlákat is támogatja. Nemcsak egy fiók, hanem egy fiók és egy tőled vásárolt termék- vagy szolgáltatáskategória kombinációjának kockázatát is értékelheti. Ez a kiegészítés segít megérteni, hogy egy fiók nagyobb valószínűséggel hagyja-e abba a vásárlást tőled általában, vagy csak egy bizonyos áru- vagy szolgáltatáskategóriára. Az AI-modell további használata érdekében felsorolja azokat az okokat is, amelyek miatt egy fiók valószínűleg lemorzsolódik. További információt a Tranzakció lemorzsolódás előrejelzés (előzetes verzió) című témakörben [talál](predict-transactional-churn.md).
-
-#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Üzleti fiók névjegyeinek megtekintése Vevő nézetben
-
-Ha az üzleti fiókok a kapcsolódó fiókokhoz vannak leképezve, a Customer Insights alkalmazás megjeleníti ezeket a kapcsolódó névjegyeket az ügyféladatok nézet részeként. További információ: [Ügyfélprofilok](customer-profiles.md).
-
-
-## <a name="september-2021-updates"></a>2021. szeptemberi frissítések
-
-A 2021. szeptemberi frissítések új szolgáltatásokat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="activities"></a>Tevékenységek
-
-- **Tevékenység idővonalának továbbfejlesztései** Kiterjesztettük a tevékenység ütemezésére vonatkozó szűrőket az ügyfélprofilok esetében. Az új szűrőtálat emellett tevékenységtípus és dátum szerint is szűrheti. A dátumok szűrhetők más feltételekkel. További információkért lásd a [Tevékenység ütemezésének megtekintése az ügyfélprofilon](activities.md#view-activity-timelines-on-customer-profiles) részt.
-
-### <a name="relationships"></a>Kapcsolatok
-
-- **Több ugrásos kapcsolattámogatás** A tevékenységek konfigurálásakor és az entitások közötti kapcsolatok definiálásakor több ugrásos kapcsolatokat használjon. A többugrásos kapcsolatok köztes entitás használatával két entitást kapcsolhat össze. A tevékenységek konfigurálásakor több ugrásból álló kapcsolat segítségével a tevékenységentitást egy köztes entitáshoz, majd egy ügyfélentitáshoz kapcsolhatja. A több ugrásból álló kapcsolatok több útvonalból álló kapcsolatok. További információt a [Több ugrásos kapcsolat](relationships.md#multi-hop-relationship) részben talál.
-
-- **Több útvonalból álló kapcsolattámogatás** A tevékenységek konfigurálásakor és az entitások közötti kapcsolatok definiálásakor több útvonalból álló kapcsolatokat használjon. A több elérési útvonalból álló kapcsolatok a forrásentitást egynél több entitáshoz kapcsolják. A tevékenységek konfigurálásakor több elérési útvonalból álló kapcsolat segítségével a tevékenységentitást több mint egy ügyfélentitáshoz kapcsolhatja. A több elérési útvonalból álló kapcsolatok több ugrásból álló kapcsolatok. További információt a [Több elérési útvonalból álló kapcsolat](relationships.md#multi-path-relationship) részben talál.
-
-## <a name="august-2021-updates"></a>2021. augusztusi frissítések
-
-A 2021. júliusi és augusztusi frissítések egy új funkciót, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
-
-### <a name="extensibility"></a>Bővíthetőség
-
-- **Szegmenseket Klaviyoba** Az exportálási célpontokat kiterjesztettük a [Klaviyo](export-klaviyo.md) szolgáltatásra is. A szegmensek exportálásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából a Klaviyo szolgáltatással. 
-
-
-## <a name="june-2021-updates"></a>2021. júniusi frissítések
-
-A 2021. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
-
-### <a name="data-ingestion"></a>Adatok betöltése
-
-- **Továbbfejlesztett adategyesítési folyamat frissítései** Mostantól részletesebb, továbbfejlesztett dinamikus állapotfrissítéseket lehet megtekinteni az [adategyesítési folyamat](data-unification.md) lépéseinél. A funkció segítségével nyomon követheti a részletes folyamatot, így megértheti a folyamatot, és cselekedhet, ha valamelyik lépés figyelmet igényel.
-
-### <a name="extensibility"></a>Bővíthetőség
-
-- **Szegmensek és egyéb adatok exportálása a Salesforce Marketing Cloudba** Kiterjesztettük az exportálási célokat a [Salesforce Marketing Cloud](export-salesforce.md) tárhelyre is. Mostantól exportálhat a szegmenseket és más típusú adatokat a Salesforce Marketing Cloud szolgáltatásba márkanévvel ellátott SFTP-exportálással. Az adatok importálása teljesen automatizálni lehet a Salesforce-ban, és hatékonyabb marketingkampányok létrehozásához használhatók fel.  
- 
-- **Szegmenseket ActiveCampaign-be** Az exportálási célpontokat kiterjesztettük az [Aktív Campaignre](export-active-campaign.md) is. A szegmensek exportálásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából az ActiveCampaign szolgáltatással.
- 
-- **Szegmenseket Sendinblue-ba** Az exportálási célpontokat kiterjesztettük a [Sendinblue](export-sendinblue.md) szolgáltatásra is. A szegmensek exportálásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából az Sendinblue szolgáltatással.
- 
-### <a name="ux-updates"></a>UK-frissítések 
-
-- **Új és továbbfejlesztett Ügyfelek oldal és profilrészletek oldal** Átalakítottuk az Ügyfelek oldalt és a profilrészletek oldalakat a jobb felhasználói élmény és jobb teljesítmény érdekében. A módosítások segítségével megtekintheti, rendezheti, keresheti és szűrheti az ügyfeleket. A szűrők mostantól megjelennek az URL-ben, és így zökkenőmentesen megoszthatja a keresési eredményeket más felhasználókkal. A keresési eredmények szegmensként is menthetők.    
-  Az ügyfélprofilok részletes lapja mostantól különféle alszakaszokba (például demográfiai adatok, azonosítók egyéb profilattribútumok) vannak rendezve olvashatóság javítása érdekében. A profil részletei oldalon található egyéb szakaszok mostantól interaktívak. A tevékenységek szakasz például most már lehetővé teszi a szűrést és a rendezést.
-
-
-## <a name="may-2021-updates"></a>2021. májusi frissítések
-
-A 2021 májusi frissítések számos funkciót, teljesítményfrissítést és hibajavítást tartalmaznak.
-
-### <a name="data-ingestion"></a>Adatok betöltése
-
-- **Metaadatok vagy entitásdefiníció megtekintése vagy módosítása az Azure Data Lake Storage**-tárhely adatainak csatolása esetén.Mostantól megtekintheti és szerkesztheti a metaadatokat vagy az entitásdefiníciókat célközönség elemzésekben, amikor adatokat csatol egy Common Data Model-mappából az Azure Data Lake Storage-tárhelyéről. Ez a képesség valós idejű visszajelzést, modellérvényesítést és hibaellenőrzést biztosít. Lehetővé teszi a model.json és a manifest.json egyszerű szerkesztését.
-
-### <a name="extensibility"></a>Bővíthetőség
-
-- **Továbbfejlesztett szegmensexport, egyéni ütemezés és duplikáció:** Mostantól egy listában [egy adott szegmensének összes exportja látható](export-destinations.md#view-exports-and-export-details). Ez az új nézet segít kezelni egy adott szegmens használatát, illetve egy meglévő adaptálását vagy új exportálások létrehozását.    
-  [Egyéni frissítési ütemezéseket](export-destinations.md#schedule-and-run-exports) az egyes exportálásokhoz és egyszerre több exportáláshoz is definiálhat. Eddig minden exportálás minden rendszerfrissítéssel futtatva lett.    
-  Ahelyett, hogy új exportot hozna létre a semmiből, elkezdheti egy meglévő alapján, hogy időt takarítson meg.
-
-- **Szegmensek exportálása a Microsoft Advertising-szolgáltatásba** Kiterjesztettük az exportálási célhelyeket, amelyek immár a Microsoft Advertising-szolgáltatásra is kiterjednek. Hozzon létre ügyfélegyezési célközönségeket a Microsoft Advertising szolgáltatásban az egyesített ügyfélprofilok adataival, és használja a célközönségeket a hirdetési kampányokhoz. További információ: [Szegmensek exportálása a Microsoft Advertising-szolgáltatásba](export-microsoft-advertising.md).
-
-- **Szegmensek exportálása LinkedIn Ads-szolgáltatásba** Kiterjesztettük exportálási célokat a LinkedIn Ads-szolgáltatásra is, és lehetővé tesszük a Kapcsolattartókra célzást, valamint a Vállalatokra célzást is a LinkedIn-en keresztül az egyesített ügyfélprofil-adatok exportálásával. További információ: [Szegmensek exportálása a LinkedIn Ads-szolgáltatásba](export-linkedin-ads.md).
-
-
-- **Szegmensek exportálása az Omnisend-szolgáltatásba** Kiterjesztettük az exportálási célhelyeket, amelyek most már az Ominsend szolgáltatásra is kiterjednek. A célközönésg információk szolgáltatásban létrehozott szegmensek felhasználásával kampányokat hozhat létre, e-mail-marketing szolgáltatást biztosíthat és előnyt kovácsolhat az ügyfelek meghatározott csoportjából az Omnisend szolgáltatással. További tájékoztatás a [Szegmensek exportálása az Omnisend szolgáltatásba](export-omnisend.md) című témakörben olvasható
-
-### <a name="predictions"></a>Előrejelzések
-
-- **Bemeneti adatok használhatósági jelentése** A bemeneti adatok használhatósági jelentése egységes képet ad azokról a hibákról és figyelmeztetésekről, amelyeket a gyári előrejelzések generálhatnak. Ajánlásokat is ad a modell teljesítményének javítására.    
-  A jelentés a modell betanítási folyamatának befejezése után érhető el. Minden modellhez külön-külön van létrehozva, függetlenül attól, hogy sikeresen befejeződött-e vagy sem.
-  Jelenleg ez a funkció csak a Tranzakciólemorzsolódási modellhez érhető el. További információ: [Bemeneti adatok használhatósági jelentése](manage-predictions.md#input-data-usability-report).
-
-### <a name="relationships"></a>Kapcsolatok
-
-- **Kapcsolat vizualizáló** A kapcsolat vizualizáló nézet lehetővé teszi az entitások és azok számossága közötti összes meglévő kapcsolat megtekintését. Kapcsolatok most csoportokba vannak rendezve: felhasználó által létrehozott, rendszer és örökölt kapcsolatok. A nézetet képként is exportálhatja. További tudnivalók: [Kapcsolatok megtekintése](relationships.md#view-relationships). 
-
-## <a name="april-2021-updates"></a>2021. áprilisi frissítések
-
-A 2021. áprilisi frissítések számos funkciót, teljesítményfrissítést és hibajavítást tartalmaznak.
-
-### <a name="data-unification"></a>Adategyesítés
- 
-- **Továbbfejlesztett egyesítési környezet az adategyesítéshez**    
-  
-   Mostantól az adategyesítési folyamat egyesítési konfigurációjában továbbfejlesztett felhasználói élményt kínálunk. A változások közé tartozik az egyesített mezők intuitív sorrendbe rendezése, valamint a kombinált és az egyedülálló mezők részletes statisztikai adatai.
-
-- **Az entitások újrarendezése és az összes forrásrekordot Ügyfél entitásba történő konfigurálása**  
-      
-   Mostantól újrarendezheti és eltávolíthatja az adategyesítési folyamat összevonási tervében lévő entitásokat. A megoldás rugalmas lehetőséget kínál az egyeztetési folyamatban szereplő entitások üzleti igények szerinti átrendezésére. Emellett lehetséges, hogy az összes nem egyeztetett bejegyzés szerepeljen a végső *Ügyfél* entitásban, ami lehetővé teszi számukra az ügyfélprofil adathalmazának definiálását.
-
-### <a name="enrichments"></a>Bővítések
-
- - **Új bővítés: Továbbfejlesztett címek**    
-  
-   Izgatottan mutatjuk be az új bővítést, amely az ügyféladatokban szereplő címeket fejleszti tovább. Az adatokban szereplő címek strukturálatlanok, hiányosak vagy helytelenek lehetnek. Ez a funkció a Microsoft modelljeivel normalizálja és bővíti a címeket a Common Data Model formátumba, hogy pontosabbak és részletesebbek legyenek.
- 
-   További információ: [Az ügyfélprofilok bővítése továbbfejlesztett címekkel](enrichment-enhanced-addresses.md).
-
-- **Interaktív konfigurációs környezet a bővítéshez**    
-  
-   A bővítés konfigurálási környezetetét egyszerű, interaktív környezetté alakítottuk. Most már egyértelmű, lépésekre bontott folyamat áll rendelkezésre a bővítések létrehozásához és szerkesztéséhez.
- 
-   Ezenkívül különválasztottuk a külső gyártótól származó bővítések kapcsolatainak konfigurációját, hogy ugyanazt a kapcsolatot több bővítés is használhassa. Csak rendszergazdák konfigurálhatják az új kapcsolatokat, de a létrehozott kapcsolatok elérhetők mind a rendszergazdák, mind a munkatársak számára.    
-
-   További tudnivalókért lásd: [Kapcsolatok áttekintése](connections.md).
-
-- **Azonos típusú többszörös bővítések**    
-  
-   A felhasználók most már létrehozhatnak és kezelhetnek több, ugyanolyan bővítési típusba tartozó bővítést is. Létrehozhat például két külön címbővítést, hogy két különböző ügyfélszegmenst bővítsen. A korlátok arra vonatkoznak, hogy hány ugyanolyan típusú bővítést lehet létrehozni, és a bővítés típusától függően eltérnek.
-  
-   További információkért lásd: [Az ügyfelek profiljainak bővítése](enrichment-hub.md).
-
-## <a name="march-2021-updates"></a>2021 márciusi frissítések
-
-A 2021 márciusi frissítések számos funkciót, teljesítményfrissítést és hibajavítást tartalmaznak.
-
-### <a name="activities"></a>Tevékenységek
-
-- **Tevékenység varázsló és szemantikus típusok**
-
-   Továbbfejlesztettük és frissítettük a tevékenységleképezési szolgáltatást, hogy útmutatóként szolgáljon a tevékenységleképezések létrehozáshoz, és egyszerűbbé tegye azt. Ebben az új élményben a felhasználók interaktív élményben részesülnek, amely segíthet a folyamat egyes lépéseinek elvégzésében. A tevékenységleképezési lépésben a felhasználó nemcsak a különböző tevékenységtípusokból választhat, hanem kiválaszthatja, hogy szemnatikusan szeretné-e leképezni az adatokat az *Előfizetés* és/vagy *SalesOrderLine* ipraági standard sémákhoz, amelyeket a lefelé irányuló folyasztáshoz is lehet használni.   
-
-   További információ: [Ügyféltevékenységek](activities.md).
-
-### <a name="data-ingestion"></a>Adatok betöltése
-
-- **Csatlakozzon helyszíni adatforrásokhoz Power Platform adatfolyamok és átjárók használatával** Örömmel jelentjük be a Customer Insightshoz társított Power Platform vagy Dataverse környezetben található, átjárókat használó Power Platform adatfolyamok és helyszíni összekapcsolhatóságok előzetes verzióját. A Customer Insights környezetben létrehozott, kapcsolt Dataverse környezettel rendelkező új adatforrások alapértelmezés szerint Power Platform adatforrásokká fognak válni, helyszíni összekapcsolhatósággal, valamint az összekapcsolók és átalakítási lehetőségek gazdag készletével.
-
-### <a name="extensibility"></a>Bővíthetőség
-
-- **Kapcsolatokba és exportálásokba rendezett exportálások** Az **Exportálás céljai** lap nevét megváltoztattuk **Kapcsolatok** lapra, és egy külön oldalt adtunk hozzá az **Exportálások** lehetőségekhez. A frissítés részeként a meglévő exportálásokat kapcsolatpárokba állítjuk össze, illetve egy kapcsolatot használó exportálásba. A rendszergazdák most már jobban átláthatják a kimenő adatokat a **Kapcsolatok** oldalon. Minden felhasználói szerepkörnek van hozzáférése az **Exportálások** laphoz, de csak a rendszergazdák engedélyezhetik a munkatársaknak, hogy megosztott kapcsolatokkal szerkesszék az adott exportálásokat.     
-  További tudnivalókhoz lásd: [Kapcsolatok áttekintése](connections.md) és [Exportálások áttekintése](export-destinations.md).
-
-- **Szegmensek exportálása a Campaign Monitorba** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Campaign Monitorben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Campaign Monitor listáiba, és ezeket használhatja a marketingkampányok kiindulási alapértékeként.    
-   További tájékoztatás az [Exportálás a Campaign Monitorba](export-campaign-monitor.md) című témakörben olvasható.
-
-- **Szegmensek exportálása az Constant Contactba** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók az Constant Contactban is. Mostantól exportálhatja a szegmenseket a Customer Insightsból az Constant Contact listáiba, és ezeket használhatja a marketingkampányok kiindulási alapértékeként.   
-   További tájékoztatás az [Exportálás az Constant Contactba](export-constant-contact.md) című témakörben olvasható.
-
-- **Szegmensek exportálása a RollWorksbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a RollWorksben is. Most már exportálhat szegmenseket a Customer Insightsból a RollWorks-közönségekbe, és ezeket használhatja a „B-to-B” hirdetések kiindulási értékeként.    
-   További tájékoztatás az [Adatok exportálása RollWorksbe ](export-rollworks.md)című témakörben olvasható.
-
-- **Szegmensek exportálása a Snapchatbe** Kiterjesztettük az exportálási célhelyeket, amelyek most már megtalálhatók a Snapchatben is. Mostantól exportálhatja a szegmenseket a Customer Insightsból a Snapchat célközönségekbe, és ezeket használhatja a hirdetések kiindulási alapértékeként.     
-   További tájékoztatás az [Adatok exportálása Snapchatbe](export-snapchat.md) című témakörben olvasható.
-
-### <a name="predictions"></a>Előrejelzések
-
-- **Használja a termékszűrőket a prediktív termékjavaslatokban** A termékjavaslat modellhez hozzáadtunk egy képességet, amelynek segítségével termékszűrőket is használhat. Mostantól létrehozhat egy olyan előrejelzést, amely a termékek egy alkészletét használja.    
-   További információkért lásd: [Termékszűrők konfigurálása](predict-product-recommendation.md#configure-product-filters).
-
-- **Szegmensek létrehozása modellelőrejelzésekből** Egy olyan lehetőséget adtunk hozzá, amellyel gyorsan hozhat létre szegmenseket egy előrejelzés eredményeinek segítségével. A modell eredményei oldalról egyszerűen létrehozhat egy új szegmenst az új **Szegmens létrehozása** lehetőséggel.    
-  További információért lásd: [Szegmens létrehozása saját modell előrejelzés alapján](prediction-based-segment.md).
-
-- **A termékre vonatkozó javaslatok magyarázatai** Az AI-modell által a termékre vonatkozó javaslatok előállításához szükséges alapvető tényezőket ismerteti, valamint azt, hogy milyen mértékben járulnak hozzá ezek a tényezők a termékre vonatkozó javaslatokhoz. Ez az információ jelenik meg a modell eredményeinek képernyőjén.    
-   További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-product-recommendation.md#review-a-prediction-status-and-results) című témakört.
-
-## <a name="february-2021-updates"></a>2021. februári frissítések
-
-A 2021. februári frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
-
-#### <a name="extensibility"></a>Bővíthetőség
-
-- **Szegmensek exportálása az AdRoll alkalmazásba**
-
-  Az exportálási célpontokat kiterjesztettük az AdRollra is. Mostantól exportálhatja a szegmenseket a Customer Insightsból az AdRoll-célközönségekbe, és ezeket használhatja a hirdetések alapértékeként. További információért lásd: [Összekötő a AdRoll szolgáltatáshoz](export-adroll.md).
-
-#### <a name="segments"></a>Szegmensek
- 
-- **Szegmens megkettőzése**
-  
-  Ha új szegmenst szeretne létrehozni egy meglévő alapján, akkor most duplikálhatja a szegmenst, és a tovább finomítás érdekében szerkesztheti azt. 
-
-- **További attribútumok hozzáadása egy szegmenshez**
-
-  Mostantól attribútumokat is felvehet a szegmens kimenetébe, még akkor is, ha ezek az attribútumok nem részei az ügyfélprofilnak. Az előfizetési azonosítókat például akkor is felveheti egy szegmensbe, ha része annak az előfizetési entitásnak, amely M:1 kapcsolatban áll az ügyfélentitással. Amíg az attribútum az ügyfélentitáshoz kapcsolódó entitáshoz tartozik, ezeket az attribútumokat most már átveheti.  
-
-#### <a name="predictions"></a>Előrejelzések
-
-- **Prediktív termékjavaslatok létrehozása**
-
-  Ha megérti, hogy az ügyfelek minek megvásárlása iránt érdeklődnek, az egyik első lépés az üzleti bevételek javításához és az ügyfelek hűségének kiépítéséhez a személyre szabás és az elköteleződés révén. Ha az ügyfél érdeklődésének nem megfelelő termékekre vonatkozó javaslatokat tesz, akkor kapcsolódási problémát teremthet az ügyfél és a vállalata között, és végül korlátozza az ügyfél általános potenciális bevételeit és tapasztalatait. 
-
-  Mostantól saját adatok használatával előrejelzéseket készíthet arra nézve, hogy milyen termékeket vásárolnak majd a jövőben az ügyfelek. További információkat a [Termékjavaslat-előrejelzések](predict-product-recommendation.md) részben talál.
-
-#### <a name="system-administration"></a>Rendszergazda
-
-- **A környezet másolása több típusú adatforrást támogat**
-
-  A rendszergazdák ugyanannak a szervezetnek az új környezetére másolhatják a környezetkonfigurációkat. Ez a funkció kibővíti a környezet másolása funkciót olyan esetekre, amikor az adatforrások Microsoft Dataverse kezelt adattón alapulnak vagy a Common Data Model mappa van használva.
 
 ## <a name="january-2021-updates"></a>2021. januári frissítések
 
@@ -347,6 +59,462 @@ A 2021. januári frissítések számos szolgáltatást, teljesítménnyel kapcso
   További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
 
+## <a name="december-2020-updates"></a>2020 decemberi frissítések
+
+A 2020. decemberi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-december-2020"></a>Új és frissített szolgáltatások 2020 decemberében
+
+#### <a name="data-enrichment"></a>Adatbővítés
+
+- **Továbbfejlesztett márka- és érdeklődésaffinitás bővítések**
+  
+  Egyszerűsítettük az affinitási pontszámainkat, hogy könnyebben megérthetőek és használhatóak. Most már gyorsan azonosíthatja az ügyfeleket az alapján, hogy mennyi affinitást mutatnak van egy adott márka vagy érdeklődés irányában.
+
+  Emellett új konfigurációs lehetőségeket is hozzáadtunk, hogy jobban szabályozni tudjuk, hogyan szeretné, hogy az ügyfélprofilokat bővíteni. 
+
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+
+- **Annak szabályozása, hogy mely profilokat bővítse**
+
+  Most már csak az ügyfélprofilok egy részhalmazát bővítheti azzal a lehetőséggel, hogy az alapértelmezett ügyfélentitás helyett egy szegmens entitást válasszon. Hozzon létre egy szegmenst a vevőprofilokkal, amelyeket bővíteni szeretne és válassza ki a bővítési adatkészlete az ügyféladatkészlethez.
+  Ez a funkció jelenleg csak az Experian és a HERE Technologies által biztosított bővítésekhez érhető el. Hamarosan lehetővé fogjuk tenni, hogy ez a képességet további bővítésekhez is.
+
+  További információ: [Ügyfélprofilok bővítése demográfiai az Experian demográfiai adataival](enrichment-experian.md) vagy [Ügyfélprofilok bővítése a HERE Technologies segítségével](enrichment-here.md).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **A szegmensek aktiválása az Autopilot segítségével**
+
+  Exportálhat szegmenseket az Autopilotba és használhatja ezeket marketingcélokra. További információért lásd: [Autopilot összekötő (előzetes verzió)](export-autopilot.md).
+
+- **A szegmensek aktiválása a SendGrid segítségével**
+
+  Exportálhat szegmenseket a SendGridbe, és használhatja ezeket marketingcélokra. További információért lásd: [Csatlakozó a SendGrid szolgáltatáshoz](export-sendgrid.md).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Frissített környezetkezelési élmény**
+  
+  Mostantól közvetlenül az alkalmazásfejléc környezetválasztójában hozhat létre, szerkeszthet, törölhet és állíthat vissza környezeteket. 
+  
+  Ezenkívül a használt környezet a környezetpanel tetején lesz rögzítve, így többé nem kell keresnie.
+
+  További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
+
+## <a name="november-2020-updates"></a>2020. novemberi frissítések
+
+A 2020-as novemberi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-november-2020"></a>Új és frissített szolgáltatások 2020 novemberében
+
+#### <a name="data-enrichment"></a>Adatbővítés
+
+- **Olvassa be saját bővítési adatait a Secure File Transfer Protocol (SFTP) egyéni importálás segítségével**
+  
+  Az SFTP egyéni importálás lehetővé teszi, hogy olyan bővítési adatokat importáljon, amik még nem mentek keresztül az adategységesítési folyamaton. Tudjon meg többet az SFTP egyéni importálásról.
+
+  További információkért lásd: [Ügyfélprofilok gazdagítása egyéni adatokkal (előnézet)](enrichment-SFTP-custom-import.md).
+ 
+- **Az ügyféladatok gazdagítása helyadatokkal a HERE Technologies szolgáltatásból**
+
+  A HERE Technologies adatbővítési szolgáltatásaival pontosabb helyértelmezést hozhat létre az ügyfelekről a cím normalizálásával, földrajzi hosszúság és szélesség kinyerésével stb. Tudjon meg többet HERE Technologies szolgáltatáson keresztül történő gazdagításról.
+
+  További információkért lásd: [Ügyfélprofilok gazdagítása a HERE Technologies segítségével](enrichment-here.md).
+
+#### <a name="data-unification"></a>Adategyesítés
+
+- **Az adatprofil készítésének engedélyezési rugalmassága a kiválasztott entitásokon és mezőkön a tárfiókján**
+
+  Kijelölheti, hogy melyik adatentitást és mezőt szeretné a Common Data Model mappájából az Azure Data Lake-tárfiókjában engedélyezni adatprofilozásra az adatbetöltési folyamat részeként.
+
+  További információkért lásd: [Csatlakozás a Common Data Model mappájához](connect-common-data-model.md#connect-to-a-common-data-model-folder).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **A szegmensek aktiválása a Google Ads segítségével**
+
+  Exportáljon szegmenseket a Google Ads célközönséglistából és használja ezeket a listákat, hogy reklámozhasson a Google Search, Google Display Network, YouTube és Gmail felületein. Tudjon meg többet a szegmensek aktiválásáról a Google Ads segítségével.
+
+  További információért lásd: [Csatlakozó a Google Ads szolgáltatáshoz](export-google-ads.md).
+
+- **A szegmensek aktiválása a Marketo segítségével**
+
+  Exportáljon szegmenseket a Marketo célközönségekbe és használja ezeket a célközönségeket a marketing-automatizálásra. Tudjon meg többet a szegmensek aktiválásáról Marketo segítségével. 
+
+  További információért lásd: [Csatlakozó a Marketo szolgáltatáshoz](export-marketo.md).
+
+- **A szegmensek aktiválása a DotDigital segítségével**
+
+  Exportáljon szegmenseket a DotDigitalba és használja ezeket marketingcélokra. Tudjon meg többet a szegmensek aktiválásáról a DotDigital segítségével. 
+
+  További információért lásd: [Csatlakozó a DotDigital szolgáltatáshoz](export-dotdigital.md).
+
+#### <a name="predictions"></a>Előrejelzések
+
+- **Tranzakció lemorzsolódás előrejelzése**
+
+  A tranzakciólemorzsolódási előrejelzés funkció lehetővé teszi, hogy egy adattudós segítsége nélkül megjósolja annak a valószínűségét, hogy egy ügyfél abbahagyja egy termék vagy szolgáltatás vásárlását.  Az előrejelzési pontszám használatával kombinálhatja az információkat ügyfeleiről, mint például az ügyfélérték, hogy szegmenseket hozhasson létre a magas lemorzsolódási kockázatról egy nagy értékű ügyfél esetében. Ennek a szegmensnek a használatával közvetlenül megcélozhat egy ügyfelet a marketing tevékenységein keresztül, az ügyféltámogatáson, vagy más forgatókönyvek segítségével, hogy csökkentse a lemorzsolódási kockázatot.
+ 
+  Állítsa be a lemorzsolódás meghatározását idő alapú ablak-specifikusra az üzletéhez, és határozza meg, hogy egy ügyfél mikor tekintendő lemorzsolódónak. Például, egy élelmiszerüzlet valószínűleg lemorzsolódónak minősítene egy ügyfelet, ha az nem vásárolt semmit az elmúlt 30 napban.
+ 
+  Ha folytatja az előrejelzés létrehozását, megmutatjuk Önnek, mely adatok szükségesek, és engedélyezzük az adatleképezést az üzletéről, azon mezőkre, amelyek szükségesek, hogy előre jelezzék a vásárlóinak lemorzsolódását. Emellett az ütemezést újratanításra is állíthatja, így a modell új információn alapul a rendszerében, és ennek megfelelően változtatja az üzleti körülményeket.
+ 
+  További információért lásd: [Tranzakciólemorzsolódási előrejelzés (előnézet)](predict-transactional-churn.md).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Környezet visszaállítása**
+
+  Állítson mindent alaphelyzetbe egy környezeten belül egy kiválasztott példányon, hogy megkezdhesse a frissítést.
+
+  További információt lásd: [Egy már meglevő környezet visszaállítása](manage-environments.md#reset-an-existing-environment).
+
+
+- **Csatlakozás az Azure Data Lake-tárfiókjához, fő szolgáltatás használatával**
+
+  Írjon hozzá további kimeneti adatokat vagy olvassa adatait tárfiókjából az Azure fő szolgáltatás használatával. A meglévő tárfiók-kapcsolatok segítségével tovább használhatja fiókkulcsát. Emellett egy olyan frissítési beállítást is ajánlanak, mellyel használhatja a fő szolgáltatást előremozdulásához. Az új kapcsolatok a fő szolgáltatás hitelesítési módszerén fognak alapulni az Ön tárfiókján.
+
+  További információkért lásd: [Csatlakozás az Azure Data Lake Storage Gen2 fiókjához az Azure fő szolgáltatás célközönség információk funkcióján keresztül](connect-service-principal.md).
+
+## <a name="october-2020-updates"></a>2020. októberi frissítések
+
+A 2020-as októberi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-october-2020"></a>Új és frissített szolgáltatások 2020 októberében
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Exportálás a Mailchimpbe**
+
+Exportáljon szegmenseket a meglévő célközönség-listákhoz a Mailchimpben, hogy a személyre szabott e-mail élményét biztosíthassa felhasználóinak.
+
+További információért lásd: [Csatlakozó a Mailchimp szolgáltatáshoz](export-mailchimp.md).
+
+#### <a name="data-enrichment"></a>Adatbővítés
+
+- **Az egyező forrásrekordok törlése az Egyezési entitásban**
+
+Adja meg a másodpéldányok törlési szabályait az entitásokban az egyezési folyamat használatával, hogy meghatározhassa a duplikált rekordokat. Egyesítse őket egy rekordba és csatolja hozzá az összes forrásrekordot ehhez az egyesített rekordhoz. Ez a duplikátum-mentesített rekord ezután felhasználásra kerül az entitáson keresztüli egyeztetési folyamatban.
+
+További információ lásd: [A deduplikáció meghatározása az egyezési entitásban](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Vezénylés: Új frissítési beállítás az Egyesítésben**
+
+Egészen a mai napig, amikor egyesítési folyamatot folytat, a rendszer lefuttatta mindazon későbbi folyamatokat, amelyek az egységesítési és a további folyamatok. Most már ellenőrizhető az egyesítési folyamat kimenetét (az egységesített ügyfélentitást) mielőtt használná ezt a későbbi feldolgozásban, mint a szegmensek vagy a mennyiségek.
+Az egyesítési oldalon most már választhatja, hogy csak az egyesítési lépést futtatja le, és így csak ezt folyamatot futtatja. Hogy frissítsen minden későbbi folyamatot is, választhatja az egyesítési és későbbi folyamatok futtatása opciót. 
+
+## <a name="september-2020-updates"></a>2020. szeptemberi frissítések
+
+A 2020. szeptemberi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-september-2020"></a>Új és frissített szolgáltatások 2020. szeptemberben
+
+#### <a name="activities"></a>Tevékenységek
+
+- **Attribútum-szemantika intelligens előrejelzése**
+
+Ez az új funkció azt jósolja, hogy milyen szemantikai típusú bemeneti attribútumok kerülnek át az adategyesítési folyamatba. Gépi tanulás modelleket használ, amelyek javítják a pontosságot és időt takarítanak meg.
+
+#### <a name="enrichments"></a>Bővítések
+
+- **Demográfiai adatok bővítése az Experian szolgáltatásból**
+
+A demográfiai bővítés a Experianból mostantól elérhető az előzetes verzióban. A Experian a fogyasztói és üzleti hitel-jelentési és marketing szolgáltatások globális vezetője. Az [Experian adatbővítési szolgáltatásai segítségével](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage) mélyebben megismerheti az ügyfeleket, ha bővíti az ügyfelek profilját demográfiai adatokkal, például a háztartás méretével, a jövedelemmel és más információkkal.
+
+A funkció használatához aktív Experian-előfizetésnek kell lennie.
+
+További információkért lásd: [Ügyfelek profiljainak gazdagítása az Experianból](enrichment-experian.md)
+
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **Feladatrészletek panel**
+
+A feladat részletei ablaktábla segítségével megtekintheti a rendszer által futtatott feladatokra vonatkozó részleteket. A konfigurálással és a megoldásokkal kapcsolatos problémák azonosítására szolgáló praktikus módszer.
+Tekintse át a hibaüzeneteket, tekintse meg, hogyan kezeli a lehetséges problémákat.
+ 
+- **További oldalakhoz hozzáadott adatok feldolgozása**
+
+Ez a javítás az **entitások** és az **ügyfelek** oldalon található entitások állapotára vonatkozó információkat ad meg.
+ 
+Emellett a folyamatok előrehaladásával, valamint a feladat részleteivel is megtekintheti mindkét oldalon.
+
+- **A rendszer állapotának javítása oldal**
+
+Javítottuk az állapot részletei tábla struktúráját a **rendszer** > **Állapot** pontban az adatexportálások áttekintésekor.
+ 
+Emellett a **részletek** oszlopban szereplő hibák részletesebbek és hasznosíthatók is. 
+ 
+- **A visszavonás visszaállítja a feladatot az előző állapotba**
+
+Amikor visszavon egy feladatot, például a egyeztetési folyamatban, vissza fog térni a legutolsó állapotába. Ha például tegnap befejezte a egyeztetési folyamatot, és ma visszavonja, akkor a tegnapi sikeres állapotra vált vissza.
+
+
+## <a name="august-2020-updates"></a>2020. augusztusi frissítések
+
+A 2020. augusztusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-august-2020"></a>Új és frissített szolgáltatások 2020. augusztusban
+
+#### <a name="data-unification"></a>Adategyesítés
+
+- **A leképezési fázis jobb élménye az adatok egyesítése során**
+
+  Az adategyesítési folyamat leképezés fázisában tapasztalható élmény lehetővé teszi az entitások, attribútumok kiválasztását, és szemantikai elemek megadását egy zökkenőmentesebb módon.
+
+  A változások:
+  
+  - entitások és mezők hozzáadásához szükséges kevesebb kapcsolati tevékenység
+  - továbbfejlesztett keresési lehetőségek a leképezési lapon
+  - a javasolt típusú mező vizuális és egyszerű azonosítása
+
+#### <a name="enrichment"></a>Dúsítás
+
+- **Érdeklődés affinitások bővítése elérhető több piacon**
+
+  Az érdeklődési affinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyféladatokat több, ezekre a piacokra vonatkozó érdeklődési körrel gazdagíthatja. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
+
+
+## <a name="july-2020-updates"></a>2020. júliusi frissítések
+
+A 2020. júliusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-july-2020"></a>2020. júliusban bevezetett új és frissített funkciók
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Power Automate-trigger teljesített egyesítési folyamathoz**
+
+  Kibővítettük a triggereket a Power Automate-hoz, és lehetővé tettük, hogy értesítést vagy műveletet hozzon létre az egyesítési folyamat (Megfeleltetés/Egyeztetés/Egyesítés) frissítésének befejeződése után.    
+  További információ: [Power Automate összekötő](export-power-automate.md)
+
+#### <a name="enrichment"></a>Dúsítás
+
+- **A márkaaffinitások bővítése elérhető több piacon**
+
+  A márkaaffinitások elérhetőségét az Egyesült Államokon kívül további öt piacra is kiterjesztjük: Kanadára, Ausztráliára, az Egyesült Királyságra, Franciaországra és Németországra. Ezzel a kiterjesztéssel az ügyfelek adatait a helyi márkákkal bővítheti ezeken a piacokon. Az ezeken a piacokon található ügyfelek profiljait is bővítjük a Microsoft Graph helyi tulajdonosi adatainak használatával.
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md)
+
+## <a name="june-2020-updates"></a>2020. júniusi frissítések
+
+A 2020. júniusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-june-2020"></a>2020. júniusban bevezetett új és frissített funkciók
+
+#### <a name="enrichment"></a>Bővítés
+
+- **A Leadspace-ből származó vállalati adatokkal való bővítés**
+  
+  Az egyesített ügyfelek profiljaiban adja meg azokat a mezőket, amelyek a kapcsolódó vállalati adatok Leadspace-ben való keresésére szolgálnak. A bővítési folyamat futtatása után a B2B-profilok több attribútummal lesznek bővítve, beleértve a vállalat méretét, helyét, iparágát stb.    
+  Az együttműködés lehetővé teszi az adatok minőségének javítását harmadik féltől származó szolgáltatások bevitelével. A bővítés használatához a Leadspace licenc szükséges ahhoz, hogy hozzáférjenek a B2B vállalati adatokhoz. Ez a rendszer azt a licencet fogja használni, hogy adatait folyamatosan gyarapítsa.    
+  További információkért lásd: [Vállalati profilok bővítése a Leadspace-szel](enrichment-leadspace.md).
+
+- **A bővítési központ oldala**
+
+  Az első és a harmadik féltől származó bővítési szolgáltatóktól származó összes rendelkezésre álló adatbővítés ugyanazon a helyen van beállítva. Az adatbővítés konfigurálása zökkenőmentes élmény, amelyet egy közös helyről lehet kezelni.    
+  További információkért lásd: [Az ügyfelek profiljainak bővítése](enrichment-hub.md).
+
+- **Különálló márka- és érdeklődési kör hűség bővítése**
+
+  A márkák és érdeklődési körök hűsége immár két független bővítés formájában érhető el. A szétválasztott bővítések révén rugalmasan konfigurálhatja és kezelheti azokat egyénileg, az üzleti igényektől és szükségletektől függően.    
+  További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft-graph.md).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Kattintható URL-címek az egyesített tevékenységekhez a Dynamics 365 ügyfélkártya-bővítményében**
+
+  Az egységesített tevékenységek az Ügyfélkártya-bővítményben most már kattintható URL-ek lesznek, hogyha példa URL-ek lettek megadva a tevékenységek konfigurálásánál.    
+  További információ: [Ügyfélkártya bővítmény](customer-card-add-in.md).
+
+- **A Dynamics 365 ügyfélkártya-bővítményben elérhető márka- és érdeklődésikör-hűségek**
+
+  A Dynamics 365 ügyfélkártya-bővítmény új vezérlője lehetővé teszi, hogy a Dynamics 365-ben megjelenő ügyfélkapcsolati alkalmazásokban a kapcsolattartókon megjelenjenek márka- és érdeklődésikör-hűségek.    
+  További információ: [Ügyfélkártya bővítmény](customer-card-add-in.md).
+
+- **További Power Automate eseményindítók**
+
+  Kibővítettük a triggereket a Power Automate-hez a következő triggerek hozzáadásával:
+  - Értesítés kérése vagy művelet végrehajtása az automatizált teljes frissítés (adatforrások, Egyesítés, szegmensek, mérőszámok, exportálás) befejeződésekor
+  - Küszöbérték definiálása egy üzleti intézkedéshez. Létrehozhat például egy értesítést, amelyet a rendszer a megadott küszöb átlépésekor küld el. Emellett az eseményindító olyan adatokat hoz át, amelyekkel összetettebb munkafolyamatok is létrehozhatók a Power Automate alkalmazásban.    
+  További információ: [Power Automate összekötő](export-power-automate.md)
+
+- **Exportálás a Facebook Ads Managerbe**
+  
+  Ezzel a funkcióval szegmenseket exportálhat a Facebook ADS Managerbe. A szegmensek exportálásra kerültek mint egyéni célközönségek, hogy egységesített ügyfélprofiloknál kerülhessenek felhasználásra a Facebook-on marketingkampányoknál és reklámoknál. Az egyéni célközönségek is használhatók kampányok létrehozásához az Instagramon a Facebook Ads Manageren keresztül.    
+  További tudnivalókért lásd: [a Facebook Ads Manager összekötője](export-facebook.md).
+
+#### <a name="predictions"></a>Előrejelzések
+
+- **Előfizetési lemorzsolódás előrejelzése**
+
+  Interaktív felületet követhet a lemorzsolódási előrejezések létrehozásához az előfizetési területeken, például felhőszolgáltatások, ügyféltagságok és más területeken. 
+
+  Az előfizetési lemorzsolódás előrejelzése funkció lehetővé teszi, hogy megjósolja annak valószínűségét, hogy egy ügyfél nem folytatja az előfizetéses termékeket vagy szolgáltatásokat adatszekértő bevonása nélkül. A előrejelzési pontszám segítségével összekapcsolhatja az ügyfelekkel kapcsolatos egyéb információkat, hogy a nagy lemorzsolódás kockázatát jelentő szegmenseket hozzon létre. Ennek a szegmensnek a használatával közvetlenül megcélozhat egy ügyfelet a marketingben, az ügyféltámogatásban és más forgatókönyveken, hogy csökkentse a lemorzsolódás veszélyét egyes specifikus vásárlóknál, és hogy növelje bevételeit, csökkentse költségeit.
+
+  A tapasztalaton belül a lemorzsolódás meghatározását a vállalatra jellemző időalapú ablakként állíthatja be. Előfordulhat például, hogy a havi előfizetési folyamattal rendelkező videóstreamelési vállalat lemorzsolódottként kezelhet egy ügyfelet az előfizetés lejárata után 15 nappal.
+
+  Ahogy továbbhalad az előrejelzésen, végigvezetjük a szükséges adatokon, és lehetővé tesszük, hogy leképezze a vállalkozásával kapcsolatos adatokat az ügyfél-lemorzsolódás előrejelzéséhez szükságes mezőkkel. Az üzleti adatok módosításakor az ütemezést beállíthatja úgy is, hogy a rendszert átképezze az új információk alapján a változó üzleti körülményekhez való alkalmazkodáshoz.    
+  További információkért lásd: [Előfizetési lemorzsolódás előrejelzése (előzetes verzió)](predict-subscription-churn.md).
+
+#### <a name="segments"></a>Szegmensek
+
+- **Hasonló ügyfelek keresése**
+  
+  Hasonló ügyfelek keresése az ügyfélkörben mesterséges intelligencia használatával. A bináris besorolás gépi tanulási modellje a kibontott szegmensben lévő ügyfelekhez hasonlítja a hasonlóságok pontszámát. A pontszám a forrás-szegmensben lévő ügyfelekhez való hasonlóságon alapul. A hasonlósági pontszámtól függően az ügyfelek profiljait az újonnan létrehozott szegmenshez adja hozzá a rendszer.
+
+  A digitális marketingben hasonmás modellezésnek is nevezik, de AI modellt használ, hogy segítsen megtalálni azokat az ügyfeleket, akik hasonlóak az ügyfelei egy másik fontos szegmenséhez, úgy hogy több attribútumot vesz figyelembe. Ez nem csak lehetővé teszi, hogy kiválassza az attribútumokat, de azt is lehetővé teszi, hogy megadhatja azoknak az ügyfeleknek a maximális számát, akik ebben az új szegmensben kell lenniük. Az AI modell ezután a kiválasztott attribútumok alapján kiszámítja a hasonlósági pontszámokat az egyes ügyfelekre, és a magasabb átlagos hasonlósági pontszámmal rendelkező ügyfeleket keres. Az eredményül kapott szegmens olyan ügyfeleket fog tartalmazni, akik az eredeti szegmensben szereplő ügyfélhez hasonlónak tűnnek.    
+  További információkért lásd: [Hasonló ügyfelek](find-similar-customer-segments.md).
+
+- **Szegmensátfedések és differenciálók**
+
+  A szegmens átfedéssel megtekintheti, hogy hány és melyik ügyfél közös két vagy több szegmensben. Például, hogy a nagy költésű szegmens átfedése milyen a nagy elégedettségű ügyfelek szegmensével, vagy hogy a lemorzsolódó ügyfélszegmens hogyan van átfedésben az alacsony elégedettségű ügyfelek szegmensével. Ezenkívül elemezheti, hogy az átfedés hogyan változik az Ön által választott extra attribútum alapján.
+
+  A szegmensdifferenciálók azt mutatják, hogy mi különbözteti meg az egyik szegmenst az ügyfelek többi részétől vagy egy másik szegmenstől. Mindössze annyit kell tennie, hogy azonosítja a szegmenset, és a rendszer azonosítja a profil attribútumait és mérőszámait, amelyek megkülönböztetik a szegmenst a differenciálók rangsorolt listájának formájában – a legerősebb differenciálótól a leggyengébbig.    
+  További információk: [Szegmens betekintő információi (előzetes verzió)](segment-insights.md).
+
+- **Szegmens élettartama**
+  
+  Adja meg a szegmens aktiválásához vagy inaktiválásához alkalmas ütemezést.    
+  További tudnivalókért lásd: [A Meglévő szegmensek kezelése](segments.md#manage-existing-segments).
+
+## <a name="may-2020-updates"></a>2020. májusi frissítések
+
+A 2020. májusi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-may-2020"></a>Új és frissített funkciók 2020. májusában
+
+#### <a name="data-ingestion"></a>Adatok betöltése
+
+- **Valós idejű adatbetöltés: előzménynézetek**
+
+  A valós idejű frissítések betöltésére szolgáló API-verzióval akár 30 napra vonatkozóan is megtekintheti a frissítések összesített előzményeit. Az összes sikeres vagy sikertelen API-hívás összesítéséhez hozzáférhet, beleértve azok eredményét, a forrásrendszert és más hasznos metaadatokat.    
+  További információ: [Valós idejű adatbetöltés](real-time-data-ingestion.md).
+
+- **Valós idejű adatbetöltés: profilfrissítések**
+
+  A valós idejű adatbetöltés kiterjesztése lehetővé teszi, hogy másodpercen belül megtekintse bizonyos felhasználói profilok mezőinek változásait.    
+  A tevékenységekre vonatkozó valós idejű funkciók mellet a rendszer támogatja az alacsony késleltetésű frissítéseket a profil mezőkhöz. A profil típusú mezők valós idejű frissítéseihez lejárati idő tartozik, ezért nem helyettesítik az ütemezett frissítéseket.    
+  További információ: [Valós idejű adatbetöltés](real-time-data-ingestion.md).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Frissített idősor és tördelés az Ügyfélkártya bővítményben**
+
+  Az Ügyfélkártya-bővítmény idővonala végeredményben egyezik a tevékenység-idővonallal. A tördelés az idővonalon javult, amely akár 50 tevékenységet is megjeleníthet egyszerre. Azt is lehetővé teszi, hogy több tevékenységet töltsön be az idővonalon.    
+  További információ: [Ügyfélkártya bővítmény](customer-card-add-in.md).
+
+- **Power Automate eseményindító szegmensmódosításokhoz**
+
+  A Power Automate eseményindítói meghatározzák, hogy miből hozhat létre folyamatot. Az újonnan hozzáadott eseményindító segítségével meghatározhatja a szegmenshez tartozó küszöbértéket. Létrehozhat például egy értesítést, amelyet a rendszer a megadott küszöb átlépésekor küld el.    
+  További információ: [Power Automate összekötő](export-power-automate.md).
+
+- **Többvállalatos támogatás egyéni modellekhez**
+
+  Egyéni modellek munkafolyamatának konfigurálása egy másik Azure Machine Learning-bérlővel. Bejelentkezhet az Azure Machine Learning bérlőbe, amikor létrehoz egy új munkafolyamatot az egyéni modellekhez. Ez a képessége kibővítése a meglévő képességnek, amellyel integrálhatja saját Azure Machine Learning webszolgáltatását.    
+  További tudnivalókat az [Egyéni gépi tanulás modellek](custom-models.md) című rész tartalmaz.
+
+#### <a name="segments"></a>Szegmensek
+
+- **Entitás elérési útjának automatizálása**
+
+  Amikor a felhasználók létrehoznak egy szegmenst, meg kell hogy adják az entitás elérési útját. Ez a képesség az első lépése az entitás elérési útja meghatározásának automatizálásában, hogy Ön a tervezett szegmentálási kritériumra koncentrálhasson.    
+  Ha az entitás, amely alapján az ügyfeleket szegmentálni szeretné, közvetlenül kapcsolódik az egyesített ügyfélentitáshoz, akkor többé nem kell megadnia az entitás elérési útját. Ha azonban egynél több lehetséges entitás elérési út van, akkor továbbra is manuálisan kell azt definiálni.
+
+- **Több szegmensre vonatkozó műveletek**
+  
+  A felhasználók több szegmenst is kijelölhetnek, és műveleteket végezhetnek rajtuk, például a szegmenseket frissíthetik egyetlen kattintással.    
+
+- **Szegmensek frissítése**
+
+  A felhasználók frissíthetnek egyetlen szegmenst, vagy kiválaszthatják csak azokat a szegmenseket módosíthatják, amelyeket frissíteni kívánnak.    
+
+  
+- **Az összetett szegmensek javításai**
+
+  A felhasználók más szegmenseken alapuló szegmenseket hozhatnak létre, módosíthatnak és törölhetnek. Például létrehozható egy szegmens egy másik szegmensen, amely egy harmadik szegmensen lett létrehozva.    
+
+- **Szegment listaoldal**
+
+  A szegmensek oldal új kialakítása egy listaformátumot használ, amely lehetővé teszi több szegmens egyszerre történő megjelenítését. A keresési mezővel gyorsan megkereshetők a szegmensek. A felhasználók mostantól több szegmensen is alkalmazhatnak olyan műveleteket,mint a letöltés vagy törlés. Az új trend élmény szegmensek jelentős változásainak gyors meghatározásához használható.    
+  További információ: [Szegmensek létrehozása és kezelése](segments.md).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **A Customer Insights elérhető a Microsoft Dynamics 365 Online Government-szolgáltatásban**
+
+  Az interakciók több és több csatornájának köszönhetően a polgárok adatai elszórva vannak a számtalan rendszerben, ami silózott adatokhoz vezet, és a polgárokkal folytatott interakcióra vonatkozó információk töredékes nézetéhez. Anélkül, hogy teljes képet kapnának a polgárok interakcióról a csatornákon, lehetetlen, hogy a kormányok átfogó modernizálást hajtsanak végre. A Microsoft elkötelezett amellett, hogy támogassa a kormányzati szektor technológiai igényeit, hogy az lépést tudjon tartani a polgárok elvárásaival a következetes és reszponzív élmények tekintetében.    
+  A 2020-as 1. kiadási hullámmal a Dynamics 365 Customer Insights elérhető lesz a Government Community Cloud (GCC) számára, amely egy környezet, amely úgy lett létrehozva, hogy megfeleljen az Egyesült Államok kormányzati szervei magasabb megfelelőségi igényeinek. Az ügynökségek egységes képet kapnak a polgárokról, és beépített AI-t használnak a kommunikációt javító betekintések, a munkatársak felhatalmazása és a közösségek átalakítása céljából, miközben csökkenthetik az informatikai összetettséget, és megfelelnek az Egyesült Államok megfelelőségi és biztonsági normáinak. A Dynamics 365 Government teljesíti az Egyesült Államok Federal Risk and Authorization Management Program (FedRAMP) magas szintű követelményeit, lehetővé téve az amerikai szövetségi hivatalok számára a költségmegtakarítást és elérhetővé téve a Microsoft Cloud mindenre kiterjedő biztonságát.
+
+## <a name="april-2020-updates"></a>2020. áprilisi frissítések
+
+A 2020-as áprilisi frissítések számos szolgáltatást, teljesítménnyel kapcsolatos frissítést és hibajavítást tartalmaznak.
+
+### <a name="new-and-updated-features-in-april-2020"></a>Új és frissített funkciók 2020. áprilisában
+
+#### <a name="activities"></a>Tevékenységek
+
+- **Tevékenység entitás leképezése normál tevékenységtípushoz**
+  
+  A tevékenység konfigurációja és tárhelye jelenleg egy statikus kialakításon alapul, amellyel egy idővonalon tekinthetők meg. A tevékenységek szemantikai értelmezése, amely több felhasználásra is alkalmas az AI-modellekben, jelenleg nincs kihasználva teljes mértékben. Azt tervezzük, hogy a tevékenység idővonala dinamikusabb lesz, a tevékenységtípus és a tevékenységek jobb szemantikai értelmezése alapján. Ez a funkció a Common Data Model-szolgáltatásban meghatározott tevékenységtípus azonosítását célozza minden egyes betöltött tevékenység esetében.
+  További információ: [Ügyféltevékenységek](activities.md).
+
+#### <a name="data-ingestion"></a>Adatok betöltése
+
+- **Valós idejű adatbetöltés: tevékenységek**
+  
+  A valós idejű adatbetáplálás azonnali módon biztosítja az adatokat a felhasználáshoz, amíg a következő ütemezett frissítés be nem hívja az adatokat az adatforrásból.    
+  További információ: [Valós idejű adatbetöltés](real-time-data-ingestion.md).
+
+- **Az adatok előkészítésének javítása**
+  
+  Tudjon meg többet az entitásba betöltött adatokról. Az adatösszesítéssel megismerheti azokat az adatminőségi tulajdonságokat, amelyek segíthetnek a megfelelő lépések megtételében.    
+  További tudnivalók: [Entitásadatok felfedezése](entities.md#exploring-a-specific-entitys-data).
+
+- **A Dynamics 365 analitikus adatainak betöltése a Common Data Service-szolgáltatással**
+  
+  A Common Data Service az adatforrások létrehozásának egy lehetséges módja. A meglévő Dynamics 365-ügyfelek az elemző entitásokat táplálhatnak be a Common Data Service-szolgáltatásból a Customer Insights alkalmazásba. Egyetlen adatforrás egyidejűleg használhat két megegyező Common Data Service-felügyelte adattavat a Customer Insights-környezetben.    
+  További információ: [Kapcsolódás a Common Data Service felügyelt adattó adataihoz](connect-common-data-service-lake.md).
+
+#### <a name="extensibility"></a>Bővíthetőség
+
+- **Exportálás LiveRampbe**
+
+  Az adatok aktiválása a LiveRamp® megoldásban, hogy a digitális, a közösségi és a TV-ökoszisztémákban több mint 500 platformot csatlakoztasson. Adatait a LiveRamp alkalmazásban hirdetési kampányok célzására, elrejtésére és személyre szabására használhatja.    
+  További információ: [LiveRamp&reg; összekötő](export-liveramp.md).
+
+- **Customer Insights Teams bővítmény**
+  
+  A robot keresési lehetőségeket biztosít az egyesített ügyfelek profiljaihoz. A megjelenő ügyfél profilból egy legfeljebb 15 mezőt tartalmazó kártyát jelenít meg. A többszörös egyezések olyan eredménylistát adnak vissza, ahol lehetőség van a profilok kiválasztására.    
+  További információkért lásd: [Teams robot a Customer Insights alkalmazáshoz](export-teams-bot.md).
+
+#### <a name="measures"></a>Mértékek
+
+- **Listaoldal mérése**
+  
+  Az mérések oldalainak tökéletesítése magában foglalja a műveletek támogatását egy méréshez vagy több egyszerre végzett méréshez. Emellett a keresési mező segítségével gyorsan megkeresheti és nyomon követheti a méréseket.    
+  További információ: [Szegmensek létrehozása és kezelése](segments.md).
+
+- **Az összetett mérések javításai**
+  
+  A felhasználók más mérésken alapuló méréseket hozhatnak létre, módosíthatnak és törölhetnek. Például létrehozható egy mérés egy másik mérésben, amely egy harmadik mérésben lett létrehozva.
+
+#### <a name="segments"></a>Szegmensek
+
+- **Egy másik operátor**
+  
+  A Halmazban operátor több lehetséges sztringérték használatával lehetővé teszi az ügyfelek szegmentálását. Az operátor hozzáadását megelőzően az ilyen szegmenseket több VAGY feltétellel kellett létrehozni. A Halmazban operátorral egyetlen feltétellel teheti ezt meg.    
+  További információ: [Szegmensek létrehozása és kezelése](segments.md).
+
+#### <a name="system-administration"></a>Rendszergazda
+
+- **A konfigurációs beállítások másolása új környezetbe**
+  
+  Másolja konfigurációit egyik környezetből a másikba. Új környezet létrehozásakor kiválaszthat egy meglévő környezetet, amelyből a konfigurációt másolni szeretné. Jelenleg az adatforrásokat, az adategyesítést, a kapcsolatokat, az méréseket és a szegmenseket lehetséges másolni. Adatforrás hitelesítő adatokat és a tényleges adatokat nem másolja a rendszer.    
+  További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

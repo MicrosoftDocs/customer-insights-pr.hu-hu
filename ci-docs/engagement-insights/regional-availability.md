@@ -4,26 +4,26 @@ description: További információk a régiókról és földrajzi területekről
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 09/28/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: 82591919b44eaac8a251d7fdb148253d5cac23c3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645404"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483300"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Régiónkénti rendelkezésre állás a Dynamics 365 Customer Insights alkalmazáshoz
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Az Elkötelezettségi információk, a Dynamics 365 Customer Insights egy képessége fokozatosan lesz bevezetve több régióba, ahol az ügyfelek tárolhatják adataikat. Az [új környezet létrehozásakor](create-new-environment.md) a rendszergazdák választhatnak egy régiót. 
+Az Elkötelezettségi információk, a Dynamics 365 Customer Insights egy képessége fokozatosan lesz bevezetve több régióba, ahol az ügyfelek tárolhatják adataikat. Az [új környezet létrehozásakor](manage-environments-workspaces.md#create-an-environment) a rendszergazdák választhatnak egy régiót. 
 
-Amikor első alkalommal állítja be az Elkötelezettségi információkat, akkor az [irányított első futtatási élményen](quickstart.md) végighaladva kiválasztja a megfelelő régiót. Később minden új környezet lehetőséget ad a régió kiválasztására ahol az adatokat tárolni fogja.
+Amikor első alkalommal állítja be az Elkötelezettségi információkat, akkor az [irányított első futtatási élményen](quickstart.md) végighaladva kiválasztja a megfelelő régiót. Később minden új környezet lehetővé teszi annak a régiónak a kiválasztását, ahol az adatok tárolva lesznek.
 
-Jelenleg az USA és az Európa régiókat támogatjuk. A felhasználók a következő régiók közül választhatnak: USA nyugati régiója, USA keleti régiója, Észak-Európa és Nyugat-Európa.
+Jelenleg két földrajzi régió van: USA és Európa. A felhasználók választhatnak az USA nyugati régiója és az Észak-Európa régió közül választhat.
 
 A szervezet különböző régiókban képes üzemeltetni a környezeteket. Az "A" környezet például az USA nyugati régiójában, míg a B környezet az Észak-Európa régióban tárolja az adatokat.
 

@@ -1,75 +1,50 @@
 ---
 title: A Customer Insights adatok exportálása az Azure Blob Storage rendszerbe
-description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Blob Storage-ba.
-ms.date: 10/06/2021
-ms.reviewer: mhart
+description: Megismerheti, hogyan konfigurálható a kapcsolat az Azure Blob Storage rendszerhez.
+ms.date: 09/18/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d02c09a1869d0099db4861b65ac8ff006914873e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: 925b53260e7c633e17d7f172d2dd2d581e982e10
+ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7605841"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4667142"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Exportálja a szegmenslistát és az egyéb adatokat az Azure Blob Storage-ba (előzetes verzió)
+# <a name="connector-for-azure-blob-storage-preview"></a>Az Azure Blob Storage (előzetes verzió) összekötője
 
-A Customer Insights-adatokat a Blob Storage-ban tárolhatja, vagy segítségével adatait más alkalmazásokba továbbíthatja.
+A Customer Insights adatijat tárolhatja egy Azure Blob Storage-ban, vagy segítségével adatokat vihet át más alkalmazásokba.
 
-## <a name="known-limitations"></a>Ismert korlátozások
+## <a name="configure-the-connector-for-azure-blob-storage"></a>Az Azure Blob Storage összekötőjének konfigurálása
 
-1. Az Azure Blob Storage esetében a [Normál teljesítmény és a Magasabb szintű teljesítményszint](/azure/storage/blobs/storage-blob-performance-tiers) közül választhat. Ha a Felsőkategóriás teljesítményszintet választja, akkor válassza a megfelelő [fióktípusként a premium blockblobok](/azure/storage/common/storage-account-overview#types-of-storage-accounts) lehetőséget.
+1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
 
-## <a name="set-up-the-connection-to-blob-storage"></a>Állítsa be a Blob Storage-tárhelyel való kapcsolatot
+1. Az **Azure Blob Storage** alatt válassza a **Beállítás** lehetőséget.
 
-1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
+1. Írja be a **Partner nevét**, a **Partner kulcsát** és a **Tárolót** az Azure Blob Storage fiókjához.
+    - Az Azure Blob Storage fióknév és fiókkulcs megkeresésével kapcsolatos további tudnivalókat lásd: [A tárolófiók beállításainak kezelése az Azure Portal webhelyen](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Azure Blob Storage** lehetőséget a kapcsolat konfigurálásához.
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben.
 
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
-
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
-
-1. Adja meg a Blob Storage fiókja **Fióknevét**, **Fiókkulcsát**, és **Tárolóját**.
-    - Ha szeretne többet megtudni arról, hogyan találja meg a Blob Storage fiók nevét és fiókkulcsát, olvassa el a [Tárfiók beállításainak kezelése az Azure-portálon](/azure/storage/common/storage-account-manage) részt.
-    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
-
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
-
-## <a name="configure-an-export"></a>Exportálás konfigurálása
-
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
-
-> [!IMPORTANT]
-> Ha bekapcsolta az Azure Blob Storage-fiók ideiglenes törlési beállítását, az exportálás sikertelen lesz. Kikapcsolhatja az ideiglenes törlést, ha adatokat szeretne a blobokba exportálni. További információ: [Blob ideiglenes törlésének engedélyezése](/azure/storage/blobs/soft-delete-blob-enable.md)
-
-1. Menjen az **Adatok** > **Exportálások** lehetőségre.
-
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
-
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Azure Blob Storage szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
+1. Válassza a **Következő** lehetőséget.
 
 1. Jelölje be a jelölőnégyzetet azon entitások mellett, amelyeket exportálni szeretne erre a célhelyre.
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
+Az exportált adatok tárolása a konfigurált Azure Blob Storage tárolóban történik. A tárolóban a következő elérési utak jönnek létre automatikusan:
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut.     
-
-Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-Az exportált adatok az Ön által konfigurált Blob Storage tárolóban lesznek tárolva. A tárolóban a következő elérési utak jönnek létre automatikusan:
-
-- A rendszer által létrehozott forrásoldali entitások és entitások esetén:   
-  `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
+- A rendszer által létrehozott forrásoldali entitások és entitások esetén: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
   - Példa: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
- 
-- Az exportált entitások model.json fájlja a(z) %ExportDestinationName% szinten lesz.  
+- Az exportált entitások model.json eleme a %ExportDestinationName% szinten lesz.
   - Példa: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+## <a name="export-the-data"></a>Az adatok exportálása
+
+[Igény szerint exportálhatja az adatot](/export-destinations.md#export-data-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.

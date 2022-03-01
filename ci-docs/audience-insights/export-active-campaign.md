@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása ActiveCampaign-be
 description: További információ a kapcsolat konfigurálásához és az ActiveCampaign-hez való exportáláshoz.
-ms.date: 10/08/2021
+ms.date: 06/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4fbdd5a51a3df35d31ad072eef64d20ee967d7ee
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 6d85fa9836618e27f7f3da6ce17c07b4bc89e187
+ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618156"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6314626"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Szegmensek exportálása ActiveCampaign-be (előzetes verzió)
 
@@ -28,9 +28,9 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az ActiveCampaign-be, é
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 1 millió ügyfélprofil exportálható az ActiveCampaign fájlba, és a művelet akár 90 percet is igénybe vehet.
+- Az ActiveCampaign-be exportálhat exportonként akár 1 millió profilt, és akár 90 percet is igénybe vehet.
 - Az ActiveCampaign-be történő exportálás szegmensekre korlátozódik.
-- Az ActiveCampaign alkalmazásba exportálható ügyfélprofilok száma az ActiveCampaign szolgáltatással kötött szerződéstől függ, és csak korlátozott.
+- Az ActiveCampaign-be exportálható profilok száma az ActiveCampaign-nel kötött szerződésétől függ.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Állítsa be az ActiveCampaign-nel való kapcsolatot
 
@@ -64,7 +64,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg [**ActiveCampaign listaazonosítóját**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
 
-1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Kötelező a szegmensek ActiveCampaign-be történő exportálása. Opcionálisan exportálhat utónév, vezetéknév és telefonon, hogy személyre szabottabb e-maileket hozzon létre. Válassza az Attribútum hozzáadása lehetőséget a mezők leképezéséhez.
+3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Kötelező a szegmensek ActiveCampaign-be történő exportálása. Opcionálisan exportálhat utónév, vezetéknév és telefonon, hogy személyre szabottabb e-maileket hozzon létre. Válassza az Attribútum hozzáadása lehetőséget a mezők leképezéséhez.
 
 1. Válassza a **Mentés** parancsot.
 

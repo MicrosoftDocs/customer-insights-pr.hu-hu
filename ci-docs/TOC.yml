@@ -2,30 +2,8 @@
   href: index.yml
 - name: Termék áttekintése
   href: overview.md
-- name: Képzési katalógus
-  items:
-    - name: Első lépések
-      href: /learn/modules/get-started-customer-data-platform/
-    - name: Adatok betáplálása
-      href: /learn/modules/ingest-data-customer-insights/
-    - name: Egyesített ügyfélprofil létrehozása
-      href: /learn/modules/unified-customer-profile/
-    - name: Célközönség elemzések segítségével végzett munka
-      href: /learn/modules/working-with-customer-insights/
-    - name: Adatok gazdagítása és előrejelzések
-      href: /learn/modules/enrich-data/
-    - name: Külső kapcsolatok kezelése
-      href: /learn/modules/configure-third-party-connections/
-    - name: Customer Insights adminisztrációja
-      href: /learn/modules/administer-customer-data-platform/
-- name: Ingyenes próbaverzió
-  items:
-    - name: Regisztráció ingyenes próbaverzióra
-      href: trial-signup.md
-    - name: Próbaverzió GYIK-ja
-      href: trial-FAQ.md
-- name: Kezdés fizetett licenccel
-  href: paid-license.md
+- name: Próbaverzió létrehozása
+  href: audience-insights/get-started-trial.md
 - name: Saját környezet hozzáférése
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Célközönséggel kapcsolatos információk
@@ -41,16 +19,24 @@
         - name: Rövid útmutató
           href: audience-insights/get-started.md
         - name: Új környezet létrehozása
-          href: audience-insights/create-environment.md
+          href: audience-insights/get-started-paid.md
         - name: Célközönséggel kapcsolatos információk felfedezése
           href: audience-insights/home.md
-    - name: Üzleti partnerek használata
-      href: audience-insights/work-with-business-accounts.md
+    - name: Tanulási modulok
+      items:
+        - name: Adatok betáplálása
+          href: /learn/modules/ingest-data-customer-insights/
+        - name: Egyesített ügyfélprofil létrehozása
+          href: /learn/modules/unified-customer-profile/
+        - name: Az alkalmazás használata
+          href: /learn/modules/working-with-customer-insights/
+        - name: Az adatok és az előrejelzések gyarapítása
+          href: /learn/modules/enrich-data/
     - name: Adatforrások
       items:
         - name: Adatforrások áttekintése
           href: audience-insights/data-sources.md
-        - name: Adatforrások hozzáadása összekötők segítségével Power Query
+        - name: Adatforrások hozzáadása Power Query összekötőn keresztül
           href: audience-insights/connect-power-query.md
         - name: Common Data Model-mappa hozzáadása adatforrásként
           href: audience-insights/connect-common-data-model.md
@@ -80,18 +66,14 @@
           href: audience-insights/relationships.md
         - name: Ügyféltevékenységek listázása
           href: audience-insights/activities.md
-        - name: Szemantikai leképezések meghatározása
-          href: audience-insights/semantic-mappings.md
     - name: Adatbővítés
       items:
         - name: Ügyfélprofilok bővítése
           href: audience-insights/enrichment-hub.md
-        - name: Márkák és érdeklődési körök
+        - name: Márkahűség és érdeklődési körök
           href: audience-insights/enrichment-microsoft.md
         - name: Továbbfejlesztett címek
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Továbbfejlesztett vállalati adatok
-          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Gazdagítás az Azure Maps-szolgáltatással
           href: audience-insights/enrichment-azure-maps.md
         - name: Gazdagítás a HERE Technologies szolgáltatással
@@ -100,8 +82,6 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Bővítés Experian -nal
           href: audience-insights/enrichment-experian.md
-        - name: Gazdagodás adatokkal Office 365
-          href: audience-insights/enrichment-office.md
         - name: Gazdagítás az SFTP egyéni importálással
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Szegmensek
@@ -134,10 +114,8 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Előfizetési lemorzsolódás előrejelzése
               href: audience-insights/predict-subscription-churn.md
-            - name: Tranzakció-lemorzsolódás előrejelzése
+            - name: Tranzakció lemorzsolódás előrejelzése
               href: audience-insights/predict-transactional-churn.md
-            - name: Hangulat elemzése az ügyfelek visszajelzéseiben
-              href: audience-insights/sentiment-analysis.md
             - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
               href: audience-insights/custom-models.md
             - name: Részben hiányzó adatok kitöltése
@@ -148,12 +126,14 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Példamutató az előfizetés lemorzsolódási előrejelzéshez
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Minta útmutató a tranzakciós lemorzsolódás előrejelzéséhez
+            - name: Példamutató a tranzakció lemorzsolódás előrejelzéséhez
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Termékjavaslat-előrejelzés mintaútmutató
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Azure Machine Learning-kísérletek
               href: audience-insights/azure-machine-learning-experiments.md
+            - name: Kísérletezés az Azure Machine Learning stúdióval
+              href: audience-insights/machine-learning-studio-experiments.md
         - name: Előrejelzések kezelése
           href: audience-insights/manage-predictions.md
         - name: Szegmensek létrehozása előrejelzések alapján
@@ -242,14 +222,10 @@
           href: audience-insights/connections.md
         - name: Több környezetet kezelése
           href: audience-insights/manage-environments.md
-        - name: Biztonsági
-          items:
-            - name: Saját Kay Vault használata
-              href: audience-insights/use-azure-key-vault.md
-            - name: 'Csatlakozás egy ADLS-tárfiókhoz, a Service Principal használatával'
-              href: audience-insights/connect-service-principal.md
-            - name: Diagnosztikai naplók exportálása
-              href: audience-insights/diagnostics.md
+        - name: 'Csatlakozás egy ADLS-tárfiókhoz, a Service Principal használatával'
+          href: audience-insights/connect-service-principal.md
+        - name: Támogatott nyelvek
+          href: audience-insights/supported-languages.md
     - name: Bővíthetőség
       items:
         - name: A webes adatok integrálása az elkötelezettségi információk segítségével
@@ -262,40 +238,6 @@
           href: audience-insights/apis.md
         - name: API-hivatkozások
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Hozzájárulás kezelése (előzetes verzió)
-  items:
-    - name: Súgó hub
-      href: consent-management/index.yml
-    - name: Képességek áttekintése
-      href: consent-management/overview.md
-    - name: Első lépések
-      items:
-        - name: Első lépések
-          href: consent-management/get-started.md
-        - name: Fogalmak és szakkifejezések
-          href: consent-management/glossary.md
-    - name: Hozzájárulási adatok importálása
-      items:
-        - name: Hozzájárulási adatok importálása
-          href: consent-management/import-consent-data.md
-        - name: Hozzájárulási adatok megadása és hozzájárulási beállítások alkalmazása
-          href: consent-management/set-consent-rules.md
-    - name: Hozzájárulási adatok kezelése
-      items:
-        - name: Hozzájárulási szabályok engedélyezése célközönség elemzésekben
-          href: audience-insights/activate-consent.md
-        - name: Alapértelmezett hozzájárulási szabályok kezelése célközönség elemzési szegmensben
-          href: audience-insights/change-default-consent-rules.md
-    - name: Beállítások és felhasználók kezelése
-      items:
-        - name: Rendszerbeállítások konfigurálása
-          href: consent-management/system-settings.md
-        - name: Felhasználók és engedélyek kezelése
-          href: consent-management/manage-users.md
-    - name: Hozzájárulási adatok használata
-      items:
-        - name: Előrejelzések létrehozása hozzájárulási adatokkal
-          href: consent-management/predictions-consent-data.md
 - name: Elkötelezettségi elemzések (előzetes verzió)
   items:
     - name: Súgó hub
@@ -306,8 +248,6 @@
       items:
         - name: Rövid útmutató
           href: engagement-insights/get-started.md
-        - name: Környezet létrehozása
-          href: engagement-insights/create-new-environment.md
         - name: Munkaterület létrehozása
           href: engagement-insights/create-workspace.md
         - name: Események rögzítése webhelyekről és mobilalkalmazásokból
@@ -378,5 +318,3 @@
   href: service-limits.md
 - name: DSR-jogok és kérelmek
   href: dsr-rights-requests.md
-- name: Támogatás igénybevétele
-  href: /power-platform/admin/get-help-support

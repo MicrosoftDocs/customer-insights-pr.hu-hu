@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: A Súgótartalmak megkereséséhez keresse meg a megfelelő cikkeket.
   ms.author: mhart
-  ms.date: 03/02/2022
+  ms.date: 10/29/2020
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e154b37f57bb2765f48a9f6b38f86dffcb05f403
-  ms.sourcegitcommit: a371fc1e75b2321e45d3f972a3ac84c725f8cc38
+  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
+  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
   ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 02/10/2022
-  ms.locfileid: "8107202"
+  ms.lasthandoff: 03/15/2021
+  ms.locfileid: "5598464"
 title: Dynamics 365 Customer Insights-dokumentáció
-summary: Hasznos erőforrásokat talál az első lépésekhez, és a Customer Insights funkcióinak és lehetőségeinek megismeréséhez.
+summary: Keresse meg a hasznos erőforrásokat az ismerkedéshez, és ismerkedjen meg a Customer Insights funkcióinak és lehetőségeivel.
 landingContent:
 - title: Customer Insights megismerése
   linkLists:
@@ -23,61 +23,39 @@ landingContent:
     - text: Customer Insights áttekintése
       url: overview.md
     - text: Kiadási tervek
-      url: /dynamics365/release-plans/
-    - text: A CDP felfedezése
-      url: https://dynamics.microsoft.com/ai/customer-insights/
-  - linkListType: learn
-    links:
-    - text: Customer Insights tanulási útvonal
-      url: /learn/paths/build-customer-insights/
-- title: Ismerkedés a Customer Insights szolgáltatással
+      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Saját környezet hozzáférése
+      url: https://home.ci.ai.dynamics.com/
+- title: Ismerkedés a célközönség-információkkal
   linkLists:
   - linkListType: get-started
     links:
     - text: Regisztráció a kipróbáláshoz
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: A célközönséggel kapcsolatos információk újdonságai
+    - text: Újdonságok
       url: audience-insights/whats-new-audience-insights.md
-    - text: Rövid útmutató
-      url: audience-insights/get-started.md
-  - linkListType: learn
-    links:
-    - text: Első lépések
-      url: /learn/modules/get-started-customer-data-platform/
-- title: Célközönséggel kapcsolatos információk felügyelete
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: A rendszer konfigurálása
-      url: audience-insights/system.md
-    - text: Felhasználói engedélyek meghatározása
-      url: audience-insights/permissions.md
-    - text: Több környezetet kezelése
-      url: audience-insights/manage-environments.md
-  - linkListType: learn
-    links:
-    - text: Customer Insights adminisztrációja
-      url: /learn/modules/administer-customer-data-platform/
+    - text: Célközönséggel kapcsolatos információk dokumentációja
+      url: audience-insights/index.yml
 - title: Vegye fel a kapcsolatot
   linkLists:
   - linkListType: overview
     links:
     - text: Csatlakozzon a Dynamics 365-közösséghez
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-    - text: Ossza meg az ötleteit!
+    - text: Ossza meg ötleteit!
       url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Probléma jelentése
+    - text: Probléma bejelentése
       url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Adatok megosztása a képességek között
+- title: Célközönséggel kapcsolatos információk oktatóanyagok
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: tutorial
     links:
-    - text: Kapcsolat létrehozása a képességek között
-      url: engagement-insights/integrate-audience-insights-engagement-insights.md
-    - text: Jelentésekben használható szegmensek létrehozása
-      url: engagement-insights/integrate-audience-insights-segments.md
-    - text: Profiltulajdonságok használata interaktív elemzéshez
-      url: engagement-insights/curate-dimensions.md
+    - text: Új környezet létrehozása
+      url: audience-insights/home.md
+    - text: Egyesített ügyfélprofil létrehozása
+      url: /learn/modules/unified-customer-profile/
+    - text: Az alkalmazás használata
+      url: /learn/modules/working-with-customer-insights/
 - title: Célközönség-információk adatainak exportálása
   linkLists:
   - linkListType: how-to-guide
@@ -88,6 +66,16 @@ landingContent:
       url: audience-insights/customer-card-add-in.md
     - text: Power BI-csatlakozó
       url: audience-insights/export-power-bi.md
+- title: Célközönséggel kapcsolatos információk felügyelete
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: A rendszer konfigurálása
+      url: audience-insights/system.md
+    - text: Felhasználói engedélyek meghatározása
+      url: audience-insights/permissions.md
+    - text: Több környezetet kezelése
+      url: audience-insights/manage-environments.md
 - title: Elkötelezettségi információkről (előzetes verzió)
   linkLists:
   - linkListType: overview

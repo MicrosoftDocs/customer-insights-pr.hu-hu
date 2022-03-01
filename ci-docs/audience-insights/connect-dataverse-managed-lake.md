@@ -1,7 +1,7 @@
 ---
 title: Csatlakozás táblákhoz a Microsoft Dataverse-ben
 description: Adatok importálása Microsoft Dataverse felügyelt adattóből.
-ms.date: 12/06/2021
+ms.date: 07/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,25 +9,22 @@ author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-ms.openlocfilehash: 436345d8932820eb4c517a9e9164b1377c1f62d3
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: f92d64723e6a4d2fcebdbb3758519d4bfd4aeaf4
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046428"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692577"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
 
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-
-Ez a cikk arról nyújt tájékoztatást, hogy a felhasználók hogyan Dataverse csatlakozhatnak gyorsan a Microsoft Dataverse felügyelt tó analitikai entitásaihoz. 
-
-> [!NOTE]
-> A felügyelt tóban elérhető entitások listájának folytatásához és megtekintéséhez rendszergazdának Dataverse kell lennie a szervezetben.
+A cikk bemutatja, hogy a Dataverse felhasználók miként kapcsolódhat gyorsan felügyelt entitásaikhoz a Dataverse felügyelt tóban. A Dataverse szervezet rendszergazdájának kell lennie ahhoz, hogy folytathassa, és megtekintse a felügyelt tóban elérhető entitások listáját.
 
 ## <a name="important-considerations"></a>Fontos tényezők
 
-Az online szolgáltatásokban, például az Azure Data Lake Storage esetében tárolt adatok az adatok feldolgozásának vagy tárolásának helyétől eltérő helyen tárolhatók, vagy a Dynamics 365 Customer Insights megoldásban is tárolhatók.Az online szolgáltatásokban tárolt adatok importálásával vagy az ahhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a Dynamics 365 Customer Insights. [További információ a Microsoft Trust Centerben](https://www.microsoft.com/trust-center).
+Az online szolgáltatásokban, például az Azure Data Lake Storage esetében tárolt adatok az adatok feldolgozásának vagy tárolásának helyétől eltérő helyen tárolhatók, vagy a Dynamics 365 Customer Insights megoldásban is tárolhatók. Az online szolgáltatásokban tárolt adatok importálásával vagy az ahhoz való kapcsolódással Ön elfogadja, hogy az adatok átvihetők és tárolhatók a Dynamics 365 Customer Insights alkalmazásban.  [Ismerje meg a Microsoft adatvédelmi központot](https://www.microsoft.com/trust-center)
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Csatlakozás egy Dataverse felügyelt tóhoz
 
@@ -35,9 +32,12 @@ Az online szolgáltatásokban, például az Azure Data Lake Storage esetében t�
 
 2. Válassza az **Adatforrás hozzáadása** lehetőséget.
 
-3. Válassza ki **Microsoft Dataverse** és válassza a Tovább **lehetőséget**.
+3. Válassza a **Kapcsolódás Microsoft Dataverse felügyelt tóhoz** lehetőséget, majd válassza a **Tovább** lehetőséget.
 
-4. Adjon meg egy **Nevet** az adatforrás számára, majd válassza a **Tovább** elemet. 
+4. Adjon meg egy **Nevet** az adatforrás számára, majd válassza a **Tovább** elemet. Névvel kapcsolatos irányelvek: 
+   - Kezdje egy betűvel.
+   - Csak betűket és számokat használjon. Speciális karakterek és szóközök nem adhatók meg.
+   - 3–64 karakter használható.
 
 5. Adja meg a **Kiszolgálói címét**, a Dataverse-szervezethez majd válassza a **Bejelentkezés** lehetőséget.
 

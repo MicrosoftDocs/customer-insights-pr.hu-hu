@@ -1,48 +1,38 @@
 ---
 title: A Customer Insights adatok a Dynamics 365 Salesbe való exportálása
-description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Dynamics 365 Salesbe.
-ms.date: 03/03/2021
-ms.reviewer: mhart
+description: Megismerheti, hogyan konfigurálható a kapcsolat a Dynamics 365 Sales megoldással.
+ms.date: 08/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d8a35424f4271b350b8d84e72a01deb6d69652a0
-ms.sourcegitcommit: 08a5dfcc4f9d293c8e7ac4fef604bc52985b1b78
+ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "8090926"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643821"
 ---
-# <a name="use-segments-in-dynamics-365-sales-preview"></a>Szegmensek használata a Dynamics 365 Sales alkalmazásban (előzetes verzió)
+# <a name="connector-for-dynamics-365-sales-preview"></a>Dynamics 365 Sales összekötője (előzetes verzió)
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 A Dynamics 365 Sales modullal az ügyféladatokból marketinglistákat hozhat létre, nyomon követheti a munkafolyamatokat, és promóciós anyagokat küldhet ki.
 
-## <a name="known-limitations"></a>Ismert korlátozások
+## <a name="prerequisite"></a>Előfeltétel
 
-- A Dynamics 365 Sales-be irányuló export szegmensenként 100 000 tagra korlátozódik.
-- A Dynamics 365 Sales szegmensexportja akár 3 órát is igénybe vehet. 
+[A betöltött Dynamics 365 Salest használó Common Data Service](connect-power-query.md) kapcsolattartói rekordjai.
 
-## <a name="prerequisite-for-connection"></a>A kapcsolat előfeltétele
+## <a name="configure-the-connector-for-sales"></a>A Sales összekötő beállítása
 
-1. A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Sales alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Sales alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Sales alkalmazásba a Microsoft Dataverse használatával](connect-power-query.md).
+1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
 
-   > [!NOTE]
-   > Ha szegmenseket exportál a célközönséggel kapcsolatos információkból a Sales nem hoz létre új kapcsolattartói rekordokat a Sales példányban. A Sales kapcsolattartói bejegyzéseket be kell tölteni a célközönség kapcsolatos információkba és adatforrásként használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.
+1. A **Dynamics 365 Sales** alatt válassza a **Beállítás** lehetőséget.
 
-## <a name="set-up-the-connection-to-sales"></a>Állítsa be a Sales rendszerrel való kapcsolatot
-
-1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
-
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Dynamics 365 Sales** lehetőséget a kapcsolat konfigurálásához.
-
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
-
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.
 
 1. Adja meg a szervezet értékesítési URL-címét a **Kiszolgáló címe** mezőben.
 
@@ -50,24 +40,12 @@ A Dynamics 365 Sales modullal az ügyféladatokból marketinglistákat hozhat l�
 
 1. Az ügyfélazonosító mező leképezése a Dynamics 365 kapcsolattartói azonosítóhoz.
 
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
-
-## <a name="configure-an-export"></a>Exportálás konfigurálása
-
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
-
-1. Menjen az **Adatok** > **Exportálások** lehetőségre.
-
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
-
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Dynamics 365 Sales szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. Válassza a **Következő** lehetőséget.
 
 1. Jelöljön ki egy vagy több szegmenst.
 
-1. Válassza a **Mentés** lehetőséget
+1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
+## <a name="export-the-data"></a>Az adatok exportálása
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+[Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.

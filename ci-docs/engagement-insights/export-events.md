@@ -4,23 +4,23 @@ description: A finomított események és az alapesemények exportálása.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 04/30/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7881f8f63134170a7f76e3c75dcfc5fa8930754b
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: faa0c3afb08d1c0282b2164ed914637ce9aad88117af37ba44fdb81e7610e574
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7606221"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032388"
 ---
 # <a name="export-events"></a>Események exportálása
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Az esemény a felhasználói viselkedésnek megfelelő. Akkor rögzíti, amikor a felhasználó megtekint egy oldalt (esemény megtekintése), vagy együttműködik a tartalommal (műveletesemény). Amikor döntést hoz arról, hogy az adatok mely tulajdonságait szeretné megjeleníteni a jelentésben, az adatok virtuális nézetét nevezzük *finomított eseménynek*. További tudnivalók: [Események létrehozása és módosítása](refined-events.md).
+Az esemény a felhasználói viselkedésnek megfelelő. Akkor rögzíti, amikor a felhasználó megtekint egy oldalt (esemény megtekintése), vagy együttműködik a tartalommal (műveletesemény). Amikor döntést hoz arról, hogy az adatok mely tulajdonságait szeretné megjeleníteni a jelentésben, az adatok virtuális nézetét nevezzük *finomított eseménynek*. 
 
 - A külső tárolóba exportálhatók események és eseményesemények. 
 - Az exportálás továbbítási adatfolyam. Az adatfolyam nem töltődhet újra. 
@@ -45,28 +45,26 @@ Az exportálás beállítása előtt hozzáféréssel és aktív előfizetéssel
 
 ## <a name="export-events"></a>Események exportálása
 
-Az **Események exportálása** párbeszédpanel kétféleképpen jelennek meg: 
+Az események exportálásának két módja van: 
 - Válassza az **Adatok** > **Export** menüpontot, és válassza az **Új export** lehetőséget.
 - Válassza az **Adat** > **Események**, majd a **Több [...]** lehetőséget az exportálni kívánt esemény mellett, majd válassza az **Exportálás** parancsot a legördülő menüből. 
 
-:::image type="content" source="media/new-export.png" alt-text="Új export létrehozása.":::
-
 Az exportálás létrehozásához szükséges lépések végigvezetik a következő lépéseken:
 
-1. Adja meg az **Exportálás nevét**, majd válassza a **Tovább** lehetőséget.
+1. Adja meg az **Export nevét**.
 
 1. Az **Események kiválasztása** legördülő listában válassza ki az alapeseményeket és pontosított eseményeket, hogy szerepeljenek az exportálásban. 
 
-1. A **Fájlstruktúra** szakaszban válassza ki a lépésmennyiséget (óránként vagy naponta), hogy új fájlokat hozzon létre a céltárolóban, majd válassza a **Tovább** lehetőséget. Az események importálása folyamatosan meg fog érkezni.
+1. A **Fájlstruktúra** alatt válassza ki a lépésméretet, ha új fájlokat hoz létre a céltárolóban. Az események importálása folyamatosan meg fog érkezni.
 
-1. A **Formátum kiválasztása** párbeszédpanelen válassza ki az exportálás formátumát. Választhat a **Common Data Model**, a **CSV** és a **JSON** formátumok közül. Az exportálás más Dynamics 365 alkalmazásokkal való használathoz a **Common Data Model** formátumot javasoljuk.
+1. Válassza ki az exportálás formátumát. Választhat a **Common Data Model**, a **CSV** és **JSON formátum** közül. Az exportálás más Dynamics 365-alkalmazásokkal való használata a Common Data Model formátum használata ajánlott.
 
-1. Adja meg a Azure Data Lake Storage Gen 2 helyet a **Cél kiválasztása** párbeszédpanelen.
+1. A **Célhely kiválasztása** lépésben adja meg a Azure Data Lake Storage Gen 2 helyet.
     1. Az **ADLS Gen 2 fiók neve** annak a tárolófióknak a neve, amelybe menteni szeretné az exportálást. 
     1. A **mappa elérési útja** határozza meg, hogy az exportálás hol tárolható a storage-fiók fájlrendszerében és könyvtárstruktúrájában.
     1. A **megosztott kulcs** az Azure portálon érhető el a storage-fiókhoz.
 
-1. Ellenőrizze és erősítse meg a megadott beállításokat a befejezéshez.
+1. Kijelölések átttekintése és megerősítése.
 
 ## <a name="view-and-manage-exports"></a>Exportok megjelenítése és kezelése
 

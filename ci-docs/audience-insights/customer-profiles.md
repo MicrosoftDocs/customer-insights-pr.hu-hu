@@ -1,71 +1,75 @@
 ---
 title: Ügyfélprofilok megtekintése
 description: Az egyesített ügyféladatok kombinált nézetének lekérése.
-ms.date: 09/30/2021
+ms.date: 12/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 07d2206372f89cd7dcd9df84c87024a6f87d5eac
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623272"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896330"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
-Az **Ügyfelek** oldal a egyesített ügyfélprofilok összesített nézetét jeleníti meg. Az ügyfélprofilok az [egységesített ügyfélentitás létrehozása után](data-unification.md) érhetők el. A lapon ügyfeleket kereshet, és meghatározhatja az adott keresés indexét.
+Az **Ügyfelek** lap az [összes adatforrásból](data-sources.md) összegyűjtött profiladatok alapján jeleníti meg az ügyfelek kombinált nézetét . Az ügyfelek profiljai csak az [egyesített ügyfél entitáslétrehozása](data-unification.md) után érhetők el. Ügyeljen arra, hogy az adatok egyesítésének folyamatát végrehajtsa, hogy bővített nézetet kapjon az ügyfelekről. Az oldal segítségével megkeresheti az ügyfeleket is.
 
-Az ügyfelek egyének vagy szervezetek is lehetnek. Minden ügyfélprofilt egy csempe képvisel. A több bejegyzéshez használja az oldalszámvezérlőket. A kártya megjeleníti az *Ügyfél* entitás mezőit a **Keresés és szűrő** indexében meghatározottak szerint. Válassza ki a mozaikot, ha látni fogja a kijelölt ügyfél adatait egy [Ügyfél adatai lap](customer-profiles.md#customer-details-page) nevű dedikált oldalon.
+Az ügyfelek lehetnek egyének vagy szervezetek (előzetes verzió). Minden egyes ügyfél- vagy szervezeti profilt egy csempe képvisel. A csempét kiválasztva megtekintheti az adott ügyfélre vagy szervezetre vonatkozó további információkat. További rekordok megtekintéséhez használja a lap alján található oldalszámozási vezérlőket.
 
 > [!div class="mx-imgBorder"] 
-> ![Az Ügyfelek oldal mutatja az eredmény csempéket](media/customers-page-result-tiles-B2C.png "Az Ügyfelek oldal mutatja az eredmény csempéket")
+> ![B2C ügyfélprofilok](media/profiles-customers.png "B2C ügyfélprofilok")
+
+Szervezetek (előzetes verzió)
+> [!div class="mx-imgBorder"] 
+> ![B2B ügyfélprofilok](media/profile-customers-b2b.png "B2B ügyfélprofilok")
 
 > [!NOTE]
-> Ha a navigációban az **Ügyfelek** lehetőséget választva nem látja a mozaikokat, a rendszergazdának legalább [egy kereshető attribútumot meg kell határoznia](search-filter-index.md) a **Keresés és szűrés indexben**.
+> Ha nem látja a csempéket, amikor a navigációban kiválasztja az **Ügyfelek** elemet, a rendszergazdának [legalább egy kereshető attribútumot meg kell adnia](search-filter-index.md) a **Keresési és szűrőindex** pontban.
 
 ## <a name="search-for-customers"></a>Ügyfelek keresése
 
-Az ügyfelek megkereséséhez írja be a nevet vagy más attribútumot a keresőmezőbe. A keresés csak az adategyesítési folyamat során létrehozott _Ügyfél_ entitáson belül működik.
+Az ügyfelek megkereséséhez írja be a nevet vagy más attribútumot a keresőmezőbe. A keresés csak az adategyesítési folyamat során létrehozott ügyfélprofil entitáson belül működik.
 
-Rendszergazdaként a kereshető attribútumokat a **keresési & szűrő indexe** oldalon adhatja meg. További tájékoztatásért keresse fel a [Keresés és szűrő index kezelése](search-filter-index.md) oldalon található adatokat.
+Rendszergazdaként a kereshető attribútumokat a **keresési & szűrő indexe** oldalon adhatja meg. További tudnivalókért lásd: [A keresési és szűrési index kezelése](search-filter-index.md).
 
 ## <a name="filter-customers"></a>Ügyfelek szűrése
 
-Az ügyfeleket az _Ügyfél_ entitása mezői szerint szűrheti. A kereséshez hasonlóan az adminisztrátornak először meg kell határoznia a mezőket kereshetőként a **keresési & szűrő index** oldal használatával.
+Az ügyfelek az ügyfélprofil entitás mezői alapján szűrhetők. A kereséshez hasonlóan az adminisztrátornak először meg kell határoznia a mezőket kereshetőként a **keresési & szűrő index** oldal használatával.
 
-1. Válassza a **Szűrők megjelenítése** lehetőséget az **Ügyfelek** lapon.
+1. Válassza a **Szűrő** lehetőséget az **Ügyfelek** oldalon.
 
-1. Jelölje be a jelölőnégyzetet azon attribútumok mellett, amelyek alapján az ügyfeleket szűrni szeretné.
+2. Jelölje be a jelölőnégyzetet azon attribútumok mellett, amelyek alapján az ügyfeleket szűrni szeretné.
 
-1. Távolítsa el a szűrőket a **Szűrők törlése** lehetőséggel az **Ügyfelek** oldalon.
+   > [!div class="mx-imgBorder"] 
+   > ![Ügyfélprofilok](media/profiles-customers3.png "Ügyfélprofilok")
 
-## <a name="customer-details-page"></a>Ügyféladatok oldal
+3. Távolítsa el a szűrőket a **Szűrők törlése** lehetőséggel az **Ügyfelek** oldalon.
 
-Az **Ügyféladatok oldal** megnyitásához válassza ki bármelyik ügyfélcsempét. Ez a nézet a kijelölt ügyfélre vonatkozóan egységesített információkat tartalmaz. Az ügyfelek adatai a következő tartalmakat tartalmazzák:
+##  <a name="customer-details-page"></a>Ügyféladatok oldal
 
-**Ügyfélprofil mozaikja**: Ez a mozaik mutatja a egyesített _Ügyfél_ entitás különböző értékeit. Ha egy mezőnek nincs értéke a kijelölt ügyfélprofilhoz, akkor nem fog megjelenni. A mozaik szakaszokra van felosztva:  
-  - Az első szakasz a mezők előre megadott halmazát, majd a keresés és szűrőindex részét képezi. Ha a profil ilyen mezőket tartalmaz, akkor a címhez kapcsolódó mezők egyetlen sorban vannak kombinálva. 
-  - **Kapcsolattartók ehhez az ügyfélhez**: Üzleti partnerek környezetében az ügyfélhez kapcsolódó összes kapcsolattartó második szakaszként látható. Minden kapcsolattartó megjelenik a saját mezőivel. Az üres mezők rejtettek.
-  - **További mezők**: A kijelölt ügyfél fennmaradó mezőit jeleníti meg az adatok kivételével. 
-  - **IDs**: Felsorolja az összeset a megfelelő entitásnév alatt. A mezőket a szemantikájaik azonosítják, és ezek minősítik őket.
+Az **Ügyféladatok oldal** megnyitásához válassza ki bármelyik ügyfélcsempét. Ez a nézet a kijelölt ügyfélre vonatkozóan egységesített információkat tartalmaz.
 
-**Tevékenység ütemezése**: A tevékenységek konfigurálása esetén az adatokat jeleníti meg. Az idővonal nézet időrendi sorrendben rendezi a kijelölt ügyfél tevékenységeit, kezdve a legújabb tevékenységgel. További információt az [Ügyféltevékenységek](activities.md) részben találhat.
+Az ügyféladatok a következőket tartalmazza:
 
-**Elemzések**:  
-  - **Mérés**: Azt mutatja, hogy egy vagy több ügyfélattribútum-méri-e a konfigurált attribútumot. Magukban foglalják az egyéni ügyfelek szintjén az ügyfelekhez számított fő teljesítménymutatókat. További tájékoztatásért menjen a [Definiálás és kezelés](measures.md) oldalra.
+-   **Ügyfélprofil csempéje:** Ez a csempe megjeleníti az egyesített ügyfélprofil entitás különböző értékeit. Az adatok között szerepelhet az e-mail-cím, a név, a város stb. 
 
-  - **Lehetséges érdeklődés, potenciális érdeklődés**: Megmutatja, hogy beállított-e márka vagy érdeklődés gyarapítására. A kiválasztott ügyfélprofilhoz hasonló profillal épülő potenciális érdeklődési okat és feltételeket képvisel. További tájékoztatást az [Ügyfélprofilok gyarapítása márkahűséggel és érdeklődéssel](enrichment-microsoft.md) oldalon találhat.
+-   **Lehetséges érdeklődési körök, lehetséges márkák:** Azt mutatja, hogy konfigurált-e belső bővítést. Lehetséges érdeklődési köröket és márkahűségeket jelent egy olyan ügyfélre vonatkozóan, akinek a profilja hasonló lehet ehhez az ügyfélhez. További információkért lásd: [Ügyfélprofilok bővítése márka- és érdeklődésikör-hűséggel](enrichment-microsoft.md).
 
-Az ügyfélkeresési lapra való visszatéréshez válassza a **Vissza az ügyfelekhez** lehetőséget.
+-   **Mérőszámok:** Azt mutatja, hogy adott típus egy vagy több mérőszámáz konfigurálta-e: az ügyfél attribútumára vonatkozó mérőszámok. Magukban foglalják az egyéni ügyfelek szintjén az ügyfelekhez számított fő teljesítménymutatókat. További információ: [Mérőszámok meghatározása és kezelése](measures.md).
 
-## <a name="next-steps"></a>További lépések
+-   **Tevékenység idővonala:** Azt mutatja, hogy van-e konfigurált tevékenysége. Az Idősornézet az ügyfél időrendben rendezett tevékenységeit tartalmazza, a legutóbbi tevékenységtől kezdve. További információ: [Ügyféltevékenységek](activities.md).
 
-[Vegyen fel további adatforrásokat](data-sources.md), [gyarapítsa az egységes profilokat](enrichment-hub.md), vagy [hozzon létre szegmenseket](segments.md) a más alkalmazásokban egységesített ügyfélprofilokkal való munkához.
+A **Visszatérés az Ügyfelekhez** lehetőséggel visszatérhet az ügyfelek keresési oldalára.
+
+## <a name="next-steps"></a>Következő lépések
+
+[További adatforrások hozzáadása](data-sources.md) vagy az [ügyfelek szegmensének létrehozása](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

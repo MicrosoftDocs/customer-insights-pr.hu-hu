@@ -1,20 +1,20 @@
 ---
 title: Felhasználói engedélyek kezelése
 description: További információk az engedélyekről és a felhasználói szerepkörökről.
-ms.date: 03/25/2021
-ms.reviewer: mhart
+ms.date: 10/27/2020
+ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: NimrodMagen
-ms.author: nimagen
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 430ad902a5a75552243bc4a094361a749364383717278f687dd6e8ef33749c6f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7de78c0ef71ec5b83870d396de36a7dcabbd14e5
+ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028317"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "4689223"
 ---
 # <a name="user-permissions"></a>Felhasználói engedélyek
 
@@ -31,7 +31,7 @@ Háromféle típusú szerepkör van:
 - A **Bővítés** oldal megtekintése felfedezése.
 - Fedezzen fel és exportáljon entitásokat az **Entitások** lap használatával.
 - A rendszerfolyamatok állapotának megtekintése a **Rendszer** oldalon történik.
-- Az exportálások megtekintése az **Exportálások** lapon.
+- Szegmensek exportálása a **Szegmensek** lapról.
 - Telepítse és használja a **Power BI Customer Insights** irányítópultot.
 
 ## <a name="contributor"></a>Közreműködő
@@ -43,7 +43,6 @@ Háromféle típusú szerepkör van:
 - Hozzon létre szegmenseket a **Szegmensek** oldalán.
 - Hozzon létre mérőszámokat a **Mérőszámok** oldalon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (csak a belső bővítések esetében).
-- Az exportálások kezelése és létrehozása a közreműködőkkel megosztott kapcsolatok alapján. [További információk arról, hogyan engedélyezik a rendszergazdák a közreműködőknek az exportálásokhoz használható kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Adminisztrátor
 
@@ -51,9 +50,8 @@ Háromféle típusú szerepkör van:
 - A beállításokat a **Rendszer** oldalon módosíthatja, beleértve a munkanyelvet és a rendszerfolyamatok frissítési ütemezését.
 - Az engedélyeket megtekintheti és hozzáadhatja az **Engedélyek** oldalon.
 - Az Ügyfelek oldalra vonatkozóan beállíthatja a Keresés és Szűrés meghatározásait a **Keresési és szűrési index** oldalon (amely az **Ügyfelek** oldalról elérhető).
-- Kezelje a kapcsolatokat, és engedélyezze őket az egyéb felhasználói szerepkörökkel rendelkezők számára a **Kapcsolatok** lapon.
+- Meghatározhatja a Dynamics 365 Sales szegmens célhelyeit a **Exportálási célhelyek** oldalon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (az összes bővítés esetében).
-- Exportálás kezelése és létrehozása az **Exportálások** lapon.
 - Telepítheti és használhatja az **Ügyfélkártya bővítményt**.
 - Adja hozzá és használja a **Power Apps összekötőt**.
 - [Customer Insights API-k](apis.md) használatának engedélyezése.
@@ -76,6 +74,3 @@ A célközönség-információkban keresse meg a **Rendszergazda** > **Engedély
 - A szerepköröket a **szerepkör** oszlopban kell megadni.
 - Válassza ki az oszlop címét, hogy az adott oszlop értéke alapján rendezze az eredményeket.
 - Adott felhasználók megkereséséhez használja a lap tetején található **Keresés** mezőt.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

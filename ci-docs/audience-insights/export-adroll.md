@@ -1,7 +1,7 @@
 ---
 title: Customer Insights adatok exportálása az AdRollba
-description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az AdRollba.
-ms.date: 10/08/2021
+description: Megismerheti, hogyan konfigurálható a kapcsolat az AdRoll szolgáltatással.
+ms.date: 02/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,40 +9,32 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f9373ea18e77723c988392a5a2959baa66d8eae9
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 6fedd549c2e7de362f36e3fb23d363200bb92a04
+ms.sourcegitcommit: d24e52150fe5a4fab45128e12d6a03637771d9b9
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617352"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "5697077"
 ---
-# <a name="export-segments-to-adroll-preview"></a>Szegmensek exportálása az AdRollba (előzetes verzió)
+# <a name="connector-for-adroll-preview"></a>Az AdRoll összekötője (előzetes verzió)
 
 Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és használja őket a hirdetésekben. 
 
-## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
+## <a name="prerequisites"></a>Előfeltételek
 
 -   Rendelkezik [AdRoll-fiókkal](https://www.adroll.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
 -   [Konfigurált szegmensekkel](segments.md) rendelkezik a célközönségi-információkban.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
-## <a name="known-limitations"></a>Ismert korlátozások
+## <a name="connect-to-adroll"></a>Csatlakozás az AdRollhoz
 
-- Egyszerre legfeljebb 250 000 ügyfélprofilt exportálhat az AdRoll szolgáltatásba.
-- A 100-nál kevesebb ügyfélprofillal rendelkező szegmensek nem exportálhatók az AdRoll szolgáltatásba. 
-- Az AdRollba való exportálás csak szegmensekre korlátozódik.
-- 250 000 ügyfélprofil exportálása az AdRoll szolgáltatásba akár 10 percet is igénybe vehet. 
-- Az AdRoll alkalmazásba exportálható ügyfélprofilok száma az AdRoll szolgáltatás kötött szerződéstől függ, és csak korlátozott.
+1. Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.
 
-## <a name="set-up-connection-to-adroll"></a>Állítsa be az AdRollal való kapcsolatot
+1. A **AdRoll** részben válassza a **Beállítás** lehetőséget.
 
-1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **AdRoll** lehetőséget a kapcsolat konfigurálásához.
-
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
-
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+   :::image type="content" source="media/AdRoll_config.PNG" alt-text="Az AdRoll-kapcsolat konfigurációs ablaktáblája.":::
 
 1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
 
@@ -52,32 +44,29 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és haszná
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
+1. Adja meg az **AdRoll hirdetői azonosítóját** [AdRoll hirdethetőség](https://help.adroll.com/hc/en-us/articles/212011838-Advertiser-Profiles).
 
-## <a name="configure-an-export"></a>Exportálás konfigurálása
+1. Az Exportálás konfigurálásához válassza a **Tovább** lehetőséget.
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+## <a name="configure-the-connector"></a>Konfigurálja az összekötőt
 
-1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell az AdRollba.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
-
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az AdRoll szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
-
-1. Adja meg **AdRoll hirdetői azonosítóját**. További információ: [AdRoll Hirdetői Profilok](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
-
-1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell az AdRollba.
-
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Jelöljön ki egy legalább 100 tagból álló szegmenst. Kisebb szegmensek nem exportálhatók. Továbbá az exportálni kívánt szegmens maximális mérete exportálásonként 250 000 tag. 
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Jelöljön ki egy legalább 100 tagból álló szegmenst. Kisebb szegmensek nem exportálhatók. Az exportálni kívánt szegmens maximális mérete exportálásonként 250 000 tag. 
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
+## <a name="export-the-data"></a>Az adatok exportálása
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
+[Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.
 
-Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+## <a name="known-limitations"></a>Ismert korlátozások
 
+- Összesen exportálásonként legfeljebb 250 000 ügyfélprofilt exportálhat az AdRollba.
+- 100-nál kevesebb profillal rendelkező szegmensek nem exportálhatók az AdRollba. 
+- Az AdRollba való exportálás csak szegmensekre korlátozódik.
+- Legfeljebb 250 000 profil az AdRollba való exportálása eltarthat 10 percig. 
+- A Marketoba exportálható profilok száma függ a AdRoll szerződéstől, és korlátozott.
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
