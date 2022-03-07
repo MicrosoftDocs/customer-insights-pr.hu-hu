@@ -3,26 +3,25 @@ title: Tranzakcionális lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálja a mezőn kívüli lemorzsolódás-előrejelzési modellt.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 19befa17524aba4543f0d8a5f5f7d6f5a88b2322f1264b88fa0b31641610592a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029448"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354604"
 ---
-# <a name="transactional-churn-prediction-preview-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési (előnézet) példamutató
+# <a name="transactional-churn-prediction-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési példamutató
 
-Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával. Az ebben az útmutatóban használt összes adat nem valós ügyféladatok, és a Contoso adathalmaz része, amely a *Demo* környezetben található a Customer Insights előfizetésén belül.
+Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával. Az ebben az útmutatóban felhasznált adatok nem valós ügyféladatok, és részei a Contoso-adatkészletnek, ami megtalálható a *Bemutató* környezetben a Customer Insights Előfizetésében.
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy olyan cég, amely kiváló minőségű kávékat és kávéfőzőket gyárt, amelyeket a Contoso Coffee weboldalon keresztül értékesítenek. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
+A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -31,7 +30,7 @@ A Contoso egy olyan cég, amely kiváló minőségű kávékat és kávéfőzők
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Olvassa el a cikkeket [az adatok betáplálásáról](data-sources.md) és [az adatforrások importálásáról a Power Query csatlakozók használatával](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
+Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások összekötők [használatával Power Query történő importálásáról szóló cikkeket](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
@@ -149,7 +148,7 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>3. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.
 
-Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépésekért lásd az [Előfizetés lemorzsolódási előrejelzés (előnézet)](predict-subscription-churn.md) című cikket. 
+Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépéseket az [Előfizetés lemorzsolódás előrejelzés](predict-subscription-churn.md) cikkben találja. 
 
 1. Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.
 

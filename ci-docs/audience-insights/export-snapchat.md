@@ -1,20 +1,19 @@
 ---
 title: Customer Insights-adatok exportálása a Snapchatre
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Snapchatbe.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6565ab81599abcc0f94465e1153f08e0bc119839
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
-ms.translationtype: HT
+ms.openlocfilehash: 7eac3307b3f82b6c5ebc3d66d6563ae50696ed65
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124046"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227251"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Szegmensek exportálása a Snapchatbe (előzetes verzió)
 
@@ -29,7 +28,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét a Snapchatbe, és haszn�
 ## <a name="known-limitations"></a>Ismert korlátozások
 
 - A Snapchatbe való exportálás a szegmensekre korlátozódik.
-- 1 millió profil exportálása a Snapchat alkalmazásba akár 15 percet is igénybe vehet. 
+- 1 millió ügyfélprofil exportálása a Snapchat szolgáltatásba akár 15 percet is igénybe vehet. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Állítsa be a Snapchettel való kapcsolatot
 
@@ -63,7 +62,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a [**Snapchat célközönségazonosítót**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell a Snapchat alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell a Snapchat alkalmazásba.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. 
 

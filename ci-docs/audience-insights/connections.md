@@ -3,18 +3,20 @@ title: Egyéb szolgáltatásokhoz való kapcsolódás a Customer Insightsból.
 description: Adatok megosztása más szolgáltatásokkal.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
-ms.translationtype: HT
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304975"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354387"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -47,6 +49,7 @@ Kapcsolatok hozzáadásához [rendszergazdai engedélyekkel](permissions.md) kel
 1. Adja meg a szükséges adatokat a **Kapcsolat beállítása** ablaktáblán. 
    1. A **Megjelenítendő név** és a kapcsolat típusa ír le egy kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
    1. A pontos mezők attól függnek, hogy melyik szolgáltatáshoz kapcsolódik. A specifikus kapcsolattípus részleteiről a célszolgáltatásról szóló cikk nyújt részletes információt.
+   1. Ha [saját Key Vaultja segítségével](use-azure-key-vault.md) tárolja el a titkos kódokat, aktiválja a **Key Vault használatát**, és válassza ki a megfelelő kulcsot a listából.
 
 1. A kapcsolat létrehozásához válassza a **Mentés** lehetőséget.
 
@@ -93,3 +96,6 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 
 1. Jelölje be az **Eltávolít** lehetőséget a törlés megerősítéséhez.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Saját Key Vault által kezelt titkokkal való kapcsolat beállítása
+
+Egyes kapcsolatoknak szüksége van titkokra, például API-kulcsokra vagy jelszavakra. Egyes kapcsolatok a saját Key Vaultban tárolt titkokat támogatják. További információk a támogatott kapcsolatokról és arról, [hogyan lehet saját Key Vault eszközét beállítani a célközönséggel kapcsolatos információkhoz](use-azure-key-vault.md).

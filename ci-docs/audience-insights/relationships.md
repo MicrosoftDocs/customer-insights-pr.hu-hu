@@ -1,20 +1,32 @@
 ---
 title: Az entitások és entitásútvonalak közti kapcsolatok.
 description: Kapcsolatok létrehozása és kezelése a több adatforrásból származó entitások között.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
-ms.translationtype: HT
+searchScope:
+- ci-semantic-mapping
+- ci-entities
+- ci-relationships
+- ci-activities
+- ci-activities-wizard
+- ci-measures
+- ci-segments
+- ci-segment-builder
+- ci-measure-builder
+- ci-measure-template
+- ci-permissions
+- customerInsights
+ms.openlocfilehash: db8822aa9e89afb9dc16428af6ca202de789ba1c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171167"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355708"
 ---
 # <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
 
@@ -68,6 +80,20 @@ A kapcsolat egy olyan *forrásentitásból* áll, amely tartalmazza az idegen ku
 
 4. Az egyéni folyamat létrehozásához válassza a **Mentés** lehetőséget.
 
+## <a name="set-up-account-hierarchies"></a>Fiókhierarchiák beállítása
+
+Azok a környezetek, amelyek elsődleges célközönségként üzleti fiókokat használnak, konfigurálhatják a fiókhierarchiákat a kapcsolódó üzleti fiókokhoz. Ez lehet például egy olyan vállalat, amely külön üzleti egységekkel rendelkezik. 
+
+A szervezetek fiókhierarchiákat hoznak létre a partnerek és a partnerek közötti kapcsolatok kezelésére. A célközönséggel kapcsolatos információk funkció támogatja a szülő-gyermek fiókhierarchiákat, amelyek már léteznek a betöltött ügyféladatokban. Például partnerek a Dynamics 365 Sales alkalmazásból. Ezek a hierarchiák a **Kapcsolatok** lapon a célközönséggel apcsolatos információkban, a fiókhierarchia lap alatt konfigurálhatóak.
+
+1. Ugrás az **Adatok** > **Kapcsolatok** részre.
+1. A **Fiókhierarchia** lap kiválasztása.
+1. Az **Új fiókhierarchia** kiválasztása. 
+1. Adja meg a hierarchia nevét a **Számlahierarchia** ablaktáblán. A rendszer létrehoz egy nevet a kimeneti entitáshoz. A kimeneti név entitásának nevét módosíthatja.
+1. Válassza ki a fiókhierarchiát tartalmazó entitást. Ez általában ugyanabban az entitásban található, amely a partnerekből áll.
+1. A kijelölt entitásból válassza ki a **Fiókazonosítót** és a **Fölérendelt partnerazonosítót** 
+1. Válassza a **Mentés** lehetőséget a beállítások alkalmazásához és a partnerhierarchia véglegesíthez.
+
 ## <a name="view-relationships"></a>Kapcsolatok megtekintése
 
 A Kapcsolatok oldal felsorolja az összes létrehozott kapcsolatot. Minden sor egy kapcsolatot jelent, amely a forrásentitásra, a célentitásra és a számosságra vonatkozó részleteket is tartalmazza. 
@@ -82,7 +108,7 @@ Ez az oldal számos lehetőséget kínál a meglévő és új kapcsolatokhoz:
 
 ### <a name="explore-the-relationship-visualizer"></a>Fedezze fel a kapcsolatvizualizálót
 
-A kapcsolatvizualizálót megjelenít egy hálózati diagramot, hogy láthassa a meglévő kapcsolatok és azok számossága közötti kapcsolatot.
+A kapcsolatvizualizálót megjelenít egy hálózati diagramot, hogy láthassa a meglévő kapcsolatok és azok számossága közötti kapcsolatot. Emellett a kapcsolati útvonalat is ábrázolja.
 
 A nézet testreszabásához módosíthatja a dobozok helyzetét a húzásukkal a vásznon.
 
@@ -92,6 +118,56 @@ Választható beállítások:
 - **Exportálás képként**:Az aktuális nézet mentése képfájlként.
 - **Módosítás vízszintes/függőleges elrendezésre**: Módosítja az entitások és kapcsolatok elrendezését.
 - **Szerkesztés** : Az egyéni kapcsolatok tulajdonságainak frissítése a szerkesztőablakban, és módosítások mentése.
+
+## <a name="relationship-paths"></a>Kapcsolat elérési útjai
+
+A kapcsolati elérési út azokat az entitásokat írja le, amelyek a forrásentitás és a célentitás közötti kapcsolattal kapcsolódnak. Olyan szegmens vagy mérték létrehozásakor használatos, amely nem csak az egyesített profilentitást, hanem más entitásokat is tartalmaz, és az egyesített profil entitás többféle beállítással érhető el. 
+
+A kapcsolati elérési út tájékoztatja a rendszert, hogy mely kapcsolatokon keresztül érje el az egyesített profilentitást. A különböző kapcsolati elérési utak eltérő eredményeket adhatnak.
+
+Például az *eCommerce_eCommercePurchases* entitás a következő kapcsolatokkal rendelkezikaz *Ügyfél* entitáshoz:
+
+- eCommerce_eCommercePurchases > Ügyfél
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Ügyfél
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Ügyfél 
+
+A kapcsolati elérési út határozza meg, hogy mely entitásokat használhatja amikor szabályokat hoz létre a mértékekhez vagy szegmensekhez. Ha a leghosszabb kapcsolati útvonalat választja, az valószínűleg kevesebb eredményt hoz, mivel az egyező rekordoknak az összes entitás részének kell lenniük. Ebben a példában az ügyfélnek az e-commerce(eCommerce_eCommercePurchases) elemen keresztül kell az értékesítési ponton (POS_posPurchases) vásárolnia az termékeket, és részt vennie a hűségprogramban (loyaltyScheme_loyCustomers). Az első lehetőség kiválasztásakor valószínűleg több eredményt kapna, mivel az ügyfeleknek csak egy további entitásban kell létezniük.
+
+### <a name="direct-relationship"></a>Közvetlen kapcsolat
+
+A kapcsolat **közvetlen kapcsolatnak** minősül, ha egy forrásentitás csak egy kapcsolaton keresztül hivatkozik egy célentitásra.
+
+Ha például egy *eCommerce_eCommercePurchases* nevű tevékenységentitás az *eCommerce_eCommerceContacts* entitáshoz csak egy *ContactId* elemen keresztül kapcsolódik., az közvetlen kapcsolat.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="A forrásentitás közvetlenül kapcsolódik a célentitáshoz.":::
+
+#### <a name="multi-path-relationship"></a>Kapcsolat több elérési úttal
+
+A **Kapcsolat több elérési úttal** a közvetlen kapcsolatok egy speciális típusa, amely a forrásentitást egynél több célentitáshoz kapcsolja.
+
+Ha például egy *eCommerce_eCommercePurchases* nevű tevékenységentitás két célentitáshoz kapcsolódik, a *eCommerce_eCommerceContacts* és a *loyaltyScheme_loyCustomers* entitáshoz is, akkor ez több útvonalból álló kapcsolat.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="A forrásentitás több ugrásból álló kapcsolaton keresztül közvetlenül kapcsolódik egynél több célentitáshoz.":::
+
+### <a name="indirect-relationship"></a>Követett kapcsolat
+
+A kapcsolat **közvetett kapcsolatnak** minősül, ha egy forrásentitás egy vagy több további entitáshoz kapcsolódik, mielőtt hivatkozna egy célentitásra.
+
+#### <a name="multi-hop-relationship"></a>Több ugrásos kapcsolat
+
+A *több ugrásból álló kapcsolat* olyan *közvetett kapcsolat*, amely lehetővé teszi egy forrásentitásnak egy célentitáshoz való kapcsolását egy vagy több más közvetítő entitáson keresztül.
+
+Ha például egy *eCommerce_eCommercePurchasesWest* nevű tevékenységentitás egy *eCommerce_eCommercePurchasesEast* nevű köztes entitáshoz csatlakozik, majd egy *eCommerce_eCommerceContacts* nevű célentitáshoz kapcsolódik, akkor ez több ugrásból álló kapcsolat.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="A forrásentitás közvetlenül kapcsolódik egy köztes entitással rendelkező célentitáshoz.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Kapcsolat több ugrással és több elérési úttal
+
+A több ugrással és több elérési úttal rendelkező kapcsolatok használhatók **több ugrásból, több útvonalból álló kapcsolatok** létrehozásához. Ez a speciális típus egyesíti a **több ugrásból** és **több útvonalból** álló kapcsolatokat. Köztes entitások használatával egynél több célentitáshoz is kapcsolódhat.
+
+Ha például egy *eCommerce_eCommercePurchasesWest* nevű tevékenységentitás egy *eCommerce_eCommercePurchasesEast* nevű köztes entitáshoz csatlakozik, majd a *eCommerce_eCommerceContacts* and *loyaltyScheme_loyCustomers* célentitásokhoz kapcsolódik, akkor ez több útvonalból álló kapcsolat.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="A forrásentitás közvetlenül kapcsolódik az egyik célentitáshoz, és egy köztes entitáson keresztül kapcsolódik egy másik célentitáshoz.":::
 
 ## <a name="manage-existing-relationships"></a>Meglévő kapcsolatok kezelése 
 
@@ -105,6 +181,6 @@ Válasszon ki egy kapcsolatot, és válasszon az alábbi lehetőségek közül:
 
 ## <a name="next-step"></a>Következő lépés
 
-A rendszerkapcsolatok és az egyéni kapcsolatok több adatforráson alapuló [szegmensek létrehozására](segments.md) szolgálnak, amelyek már nincsenek elszigetelve.
+A rendszer- és egyéni és kapcsolatok használhatók [szegmensek](segments.md) és [mértékek](measures.md) létrehozásához több adatforrás alapján, amelyek már nincsenek silózva.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

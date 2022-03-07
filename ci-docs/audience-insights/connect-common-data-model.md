@@ -2,19 +2,23 @@
 title: Common Data Model-adatok összekapcsolása egy Azure Data Lake-fiókkal
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
 ms.date: 01/25/2022
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a871d65bd79d3246984e23fb52210c8dc7259b8
-ms.sourcegitcommit: 7a99f3490e6582c2bc2b38019ed1898348b0eaba
-ms.translationtype: HT
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- ci-attach-cdm
+- customerInsights
+ms.openlocfilehash: 1e3b28316c06d6a15dd5690837c365b0677a882e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/25/2022
-ms.locfileid: "8027055"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354930"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 
@@ -26,13 +30,13 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 
 - Az adatbetöltés kizárólag csak az Azure Data Lake *Gen2* tárfiókokat támogatja. Az Azure Data Lake Gen1 tárfiókok nem használhatók adatok betöltésére.
 
-- Az Azure Data Lake Storage-fióknak engedélyeznie [kell hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
+- Az Azure Data Lake-tárfiókban engedélyeznie [kell hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Az Azure-egyszerű szolgáltatásnév használatával történő hitelesítéshez ügyeljen arra, hogy az a bérlőn legyen konfigurálva. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md).
 
 - Az Azure Data Lake, amelyhez kapcsolódni szeretne, és be szeretné tölteni az adatokat, ugyanabban az Azure régióban kell lennie, mint a Dynamics 365 Customer Insights-környezet. A Common Data Model-mappába egy másik Azure-régióban található adattóból való kapcsolódás nem támogatott. A környezet Azure-régiójának megismeréséhez lépjen a **Rendszergazda** > **Rendszer** > **Névjegy** elemre a célközönség-információkban.
 
-- Az online szolgáltatásokban tárolt adatok más helyen is tárolhatók, mint ahol az adatokat feldolgozzák vagy tárolják a Dynamics 365 Customer Insights.Az online szolgáltatásokban tárolt adatok importálásával vagy az ahhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a Dynamics 365 Customer Insights. [További információ a Microsoft Trust Centerben](https://www.microsoft.com/trust-center).
+- Az online szolgáltatásokban tárolt adatok más helyen tárolhatók, mint ahol az adatokat feldolgozzák vagy tárolják a Dynamics 365 Customer Insights.Az online szolgáltatásokban tárolt adatok importálásával vagy az azokhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a .Dynamics 365 Customer Insights  [További információ a Microsoft Adatvédelmi központban](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-common-data-model-folder"></a>Csatlakozás egy Common Data Model-mappához
 
@@ -40,11 +44,11 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
 
 1. Válassza az **Adatforrás hozzáadása** lehetőséget.
 
-1. Válassza az Azure Data Lake Storage lehetőséget, adja meg **a adatforrás nevét**, majd válassza a Tovább **lehetőséget**.**·**
+1. Válassza az **Azure Data Lake Storage lehetőséget**, adja meg **a adatforrás nevét**, majd válassza a Tovább **lehetőséget**.
 
-   - Ha a rendszer kéri, válassza ki az iparághoz tartozó mintakészletek egyikét, majd válassza a Tovább **lehetőséget**. 
+   - Ha a rendszer kéri, válassza ki az iparághoz tartozó minta adatkészletek egyikét, majd válassza a Tovább **lehetőséget**. 
 
-1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). Adja meg a **kiszolgáló címét**, válassza a **bejelentkezést**, majd válassza a Tovább **lehetőséget**.
+1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információkért lásd: [Célközönség-információk összekapcsolása az Azure Data Lake Storage Gen2 fiókjához az Azure egyszerű szolgáltatásnévvel](connect-service-principal.md). Írja be a **Kiszolgáló címét**, válassza a Bejelentkezés **lehetőséget**, majd válassza a Tovább **lehetőséget**.
    > [!div class="mx-imgBorder"]
    > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez.](media/enter-new-storage-details.png)
    > [!NOTE]
@@ -57,11 +61,11 @@ A cikkből megtudhatja, hogyan lehet a Common Data Model mappából adatokat bet
    > [!NOTE]
    > A környezetben más adatforrással társított egyéb model.json vagy manifest.json fájlok nem jelennek meg a listában.
 
-1. A kiválasztott model.json vagy manifest.json fájlban megjelenik az elérhető entitások listája. Tekintse át és válassza ki az elérhető entitások listájából, majd válassza a Mentés **lehetőséget**. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
+1. A kijelölt model.json vagy manifest.json fájlban megjelenik az elérhető entitások listája. Tekintse át és válasszon az elérhető entitások listájából, majd válassza a Mentés **lehetőséget**. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
    > [!div class="mx-imgBorder"]
    > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból.](media/review-entities.png)
 
-8. Adja meg, hogy mely adatkapcsolatok engedélyezik az adatprofilozást, majd válassza a Mentés **lehetőséget**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
+8. Adja meg, hogy mely adategyeteket szeretné engedélyezni az adatprofilozást, majd válassza a Mentés **lehetőséget**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
    > [!div class="mx-imgBorder"]
    > ![Adatprofil-készítést megjelenítő párbeszédpanel.](media/dataprofiling-entities.png)
 

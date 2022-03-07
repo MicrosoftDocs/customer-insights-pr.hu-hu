@@ -1,20 +1,19 @@
 ---
 title: Customer Insights-adatok exportálása az Ominsend-szolgáltatásba
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Ominsendbe.
-ms.date: 05/21/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8bd692819fa8451ded5e74191ee717f81f87425d
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
-ms.translationtype: HT
+ms.openlocfilehash: 15fc6fc2426ad3958268e5bcc200b8eb2b0fd13a
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124502"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226765"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Szegmensek exportálása az Ominsendbe (előzetes verzió)
 
@@ -28,9 +27,9 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Ominsendbe, és haszn
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Az Omnisendbe exportálhat exportálásonként akár 1 millió profilt, és ez akár 4 órát is igénybe vehet.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil exportálható az Omnisend fájlba, és a művelet akár 4 órát is igénybe vehet.
 - Az Ominsendbe való exportálás a szegmensekre korlátozódik.
-- Az Omnisendbe exportálható profilok száma az Omnisenddel kötött szerződésétől függ.
+- Az Omnisend alkalmazásba exportálható ügyfélprofilok száma az Omnisend szolgáltatással kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-omnisend"></a>Állítsa be az Ominsenddel való kapcsolatot
 
@@ -62,7 +61,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Ominsend szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell az Ominsendbe. Tetszés szerint exportálhatja az Utónév, Vezetéknév, Cím, Ország/Régió, Állam, Város és Irányítószám lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell az Ominsendbe. Tetszés szerint exportálhatja az Utónév, Vezetéknév, Cím, Ország/Régió, Állam, Város és Irányítószám lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 
 1. Válassza a **Mentés** parancsot.
 

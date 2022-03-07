@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/04/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 5e301b4ff0a7586fb143b154b773791b3bd645b7
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
-ms.translationtype: HT
+ms.openlocfilehash: 1f82ff588c2ffbe82c3ee7df2498ac2cca2bad31
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648120"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225427"
 ---
 # <a name="create-a-new-environment"></a>Új környezet létrehozása 
 
@@ -40,13 +39,13 @@ A környezet olyan hely, ahol a munkaterületeket és a kapcsolatokat kezelheti.
 
 1. Válassza ki a **Régiót**, és válassza a **Tovább** lehetőséget. 
 
-1. Írjon be egy **Munkaterület nevet**, amely lehetővé teszi adott webhelyre vagy alkalmazásokra vonatkozó adatok gyűjtését. További tudnivalókkal kapcsolatban lásd: [Munkaterület létrehozása](create-workspace.md).
+1. Írjon be egy **munkaterületnevet**, amely lehetővé teszi bizonyos webhelyek vagy alkalmazások adatainak gyűjtésére. További tudnivalókkal kapcsolatban lásd: [Munkaterület létrehozása](create-workspace.md).
 
-1. Válassza ki a létrehozni kívánt **Munkaterület-típust** (web vagy mobil). 
+1. Válassza ki a **létrehozni kívánt munkaterülettípust** (web vagy mobil). 
 
 1. Válassza a **Speciális beállítások** megjelenítése lehetőséget, ha engedélyezni vagy letiltani szeretné ezeket a nem kötelező beállításokat:
 
-   - Állítja a kapcsolót az **Ismeretlenből ismert** lehetőségről "enabled" (Engedélyezve) értékre, hogy a webes eseményeket a korábban hitelesített felhasználókhoz társítsa. További információkért lásd: [Webes események felismerése a korábban hitelesített látogatóktól](unknown-to-known.md)
+   - Állítja a kapcsolót az **Ismeretlenből ismert** lehetőségről "enabled" (Engedélyezve) értékre, hogy a webes eseményeket a korábban hitelesített felhasználókhoz társítsa. További információt a Korábban hitelesített látogatók webes eseményeinek felismerése című témakörben [talál](unknown-to-known.md).
    - Állítsa a **Botok által generált forgalom** kapcsolót "engedélyezett" állásba, hogy eltávolítsa a robotok általi webes forgalmat ezen a munkaterületen. 
 
 1. Válassza a **Kész** lehetőséget. 

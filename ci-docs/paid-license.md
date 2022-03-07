@@ -1,25 +1,24 @@
 ---
 title: Első lépések a Dynamics 365 Customer Insights fizetett licenccel
 author: m-hartmann
-description: Ismerkedjen meg a Dynamics 365 Customer Insights szolgáltatásban első alkalommal futtatott élményekkel, és fedezze fel a lehetőségeit.
+description: Ismerkedjen meg a Dynamics 365 Customer Insights szolgáltatásban első alkalommal futtatott élményekkel, és fedezze fel a hozzájuk tartozó funkciókat.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
-ms.topic: overview
+ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
-ms.translationtype: HT
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645695"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350134"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Első lépések a Customer Insights beszerzését követően
 
 Ez a cikk azt mutatja be, hogyan kell első lépéseket tenni azt követően, hogy a szervezet megvásárolta a Dynamics 365 Customer Insights előfizetést. Ha meg szeretné vásárolni a Customer Insights alkalmazást, akkor használja a [Dynamics 365 Customer Insights weboldalon](https://dynamics.microsoft.com/ai/customer-insights/) felsorolt kapcsolatfelvételi lehetőségeket. 
 
-Miután megvásárolta a Customer Insights előfizetéses licencét, a Microsoft 365 bérlő globális rendszergazdája kap egy e-mailt, amely meghívja őt a környezet létrehozására. 
+A Customer Insights előfizetési licencének megvásárlása után a Microsoft 365 bérlő globális rendszergazdája e-mailt kap, amely meghívja őket a környezet létrehozására. 
 
 A Customer Insights bérlőnként van licencelve, és többféle képességet is tartalmaz. Az alapértelmezett kvóta növeléséhez több kapacitást és licencet is vásárolhat. 
 - [Árazás áttekintése](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
@@ -29,7 +28,7 @@ Ha a szolgáltatást és a funkciókat szeretné kipróbálni, akkor tekintse me
 
 ## <a name="start-with-customer-insights"></a>Első lépések a Customer Insights szolgáltatással
 
-Az első futtatás során kiválasztja a fókuszt a Customer Insights segítségével, és a mintaadatok segítségével fedezze fel a lehetőségeket. Következő lépésként saját környezetet hozhat létre, és saját adatokat dolgozhat.
+Az első futtatás során kiválaszthatja a fókuszt a Customer Insights segítségével, és mintaadatok segítségével fedezheti fel a lehetőségeket. Következő lépésként saját környezetet hozhat létre, és saját adatokat dolgozhat.
 
 **Bejelentkezés első alkalommal**:
 
@@ -40,10 +39,7 @@ Az első futtatás során kiválasztja a fókuszt a Customer Insights segítség
 
 ## <a name="create-your-own-environment"></a>Saját környezet létrehozása
 
-Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Az ilyen adatok segítségével megismerkedhet az alkalmazás funkcióival és megismerkedhet vele. Ha saját adatokat kíván használni, létre kell hoznia egy olyan környezetet, amely abban a képességben van, hogy dolgozni szeretne.
-
-- [Hozzon létre egy környezetet a közönséggel kapcsolats információkban.](audience-insights/get-started-paid.md)
-- [Hozzon létre egy környezetet az elkötelezettségi elemzésekben.](engagement-insights/create-new-environment.md) 
+Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Az ilyen adatok segítségével megismerkedhet az alkalmazás funkcióival és megismerkedhet vele. A saját adatok használatához környezetet kell [létrehoznia](audience-insights/get-started-paid.md).
 
 
 

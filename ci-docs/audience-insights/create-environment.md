@@ -1,21 +1,23 @@
 ---
 title: A Customer Insights alkalmazásban létrehozott környezetek
 description: A Dynamics 365 Customer Insights licencelt előfizetéssel rendelkező környezetek létrehozására vonatkozó lépések.
-ms.date: 12/06/2021
+ms.date: 02/24/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
-ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
-ms.translationtype: HT
+searchScope:
+- ci-home
+- customerInsights
+ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/03/2022
-ms.locfileid: "8088116"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354098"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Hozzon létre egy környezetet a közönséggel kapcsolats információkban
 
@@ -76,12 +78,14 @@ Ha a Customer Insights több környezetét hozza létre, és úgy dönt, hogy az
    
 A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével.
 
-A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét. Válassza az **Adatmegosztás engedélyezése** lehetőséget, ha meg szeretné osztani a Customer Insights kimeneti adatait egy kezelt Dataverse-adattóval.
+Biztosítsa saját Microsoft Dataverse környezetét az adatok (profilok és elemzések) megosztásához a, például a Dynamics 365 Marketing vagy a modellvezérelt alkalmazások alapján Dataverse Power Apps. Hagyja üresen ezt a mezőt, ha nincs saját Dataverse környezete, és mi kiépítünk önnek egyet.
+
+A környezethez Dataverse való csatlakozás lehetővé teszi [az adatforrások helyszíni adatainak beolvasását is adatfolyamok és átjárók Power Platform használatával](data-sources.md#add-data-from-on-premises-data-sources). A környezethez [való csatlakozással beépített előrejelzés modelleket](predictions-overview.md?tabs=b2c#out-of-box-models) is használhat Dataverse.
 
 > [!IMPORTANT]
 > A Customer Insights-nak Dataverse ugyanabban a régióban kell lennie az adatmegosztás engedélyezéséhez.
 
-:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus engedélyezve Microsoft Dataverse a net új példányok esetén.":::
 
 > [!NOTE]
 > A Customer Insights nem támogatja a következő adatmegosztási forgatókönyveket:

@@ -1,22 +1,21 @@
 ---
 title: Termékjavaslat-előrejelzések
 description: Olyan termékek előre jelzése, amelyekbe az ügyfél valószínűleg mag fog vásárolni vagy interakcióba lép velük.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
-ms.translationtype: HT
+ms.openlocfilehash: b9a9c7eb4ee3f2f0510a609757a36e5d5796a2f7
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494542"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355754"
 ---
-# <a name="product-recommendation-prediction-preview"></a>Termékjavaslat-előrejelzés (előzetes verzió)
+# <a name="product-recommendation-prediction"></a>Termékjavaslat-előrejelzések
 
 A termékjavaslati modell prediktív termékjavaslatokat hoz létre. Az ajánlások a korábbi vásárlási viselkedésen és a hasonló vásárlási mintával rendelkező ügyfeleken alapulnak. Új termékjavaslat-előrejelzéseket az **Információk** > **Előrejelzések** lapon hozhat létre. Az Ön által létrehozott többi előrejelzés megtekintéséhez válassza a **Saját előrejelzések** lehetőséget.
 
@@ -54,7 +53,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 > [!NOTE]
 > - A modellhez az ügyfelek tranzakciós előzményeire van szükség. A tranzakció meghatározása nagyon rugalmas. A felhasználó és termék közötti interakciót leíró adatok bemeneti adatként is működhetnek. Például termékvásárlás, tanfolyamon vagy eseményen való részvétel.
-> - Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több vásárlási entitás van, akkor egyesítse őket a Power Query-ben az adatbetöltés előtt.
+> - Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési entitás van, az adatbetöltés előtt egyesülte őket Power Query.
 > - Ha a megrendelés és a megrendelés részletei eltérő entitások, akkor a modell használata előtt kapcsolja össze őket. A modell nem működik csak egy entitás megrendelésazonosítójával vagy bizonylatazonosítójával.
 
 
@@ -62,7 +61,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 1. A Customer Insights szolgáltatásban lépjen az **Intelligencia** > **Előrejelzések** részre.
 
-1. Válassza ki a **Termékjavaslat-modell (előzetes verzió)** csempét, és ott válassza az **A modell használata** menüpontot.
+1. Jelölje ki a **Termékjavaslatok modellcsempét**, és válassza a A modell használata **lehetőséget**.
    > [!div class="mx-imgBorder"]
    > ![Terméka javaslati modell csempéje a Modell használata gombbal.](media/product-recommendation-usethismodel.PNG "Terméka javaslati modell csempéje a Modell használata gombbal")
 
@@ -79,11 +78,11 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 1. Állítsa be az ügyfélnek javasolni kívánt **Termékek számát**. Ez az érték attól függ, hogy a szállítási módja hogyan tölti ki az adatokat. Ha három terméket javasolhat, ennek megfelelően állítsa be ezt az értéket.
    
    >[!TIP]
-   > A **Mentés és bezárás** gombbal bármikor mentheti vázlatként az előrejelzést. A vázlat-előrejelzés a **Saját előrejelzések** lapon található.
+   > A előrejelzés piszkozatként történő mentéséhez bármikor kiválaszthatja **a Piszkozat** mentése lehetőséget. A vázlat-előrejelzés a **Saját előrejelzések** lapon található.
 
-1. Válassza ki, hogy **Javasol olyan termékeket, amelyeket az ügyfelek a közelmúltban vásároltak**.
+1. Válassza ki, hogy a vevők által a közelmúltban vásárolt termékeket a Beszerzések ismétlése várható **mezőben** szeretné-e feltüntetni.
 
-1. Ha azt választotta, hogy *nem* javasolja a nemrég megvásárolt termékeket, akkor állítsa be a **Visszatekintő ablakot**. Ez a beállítás megadja az időkeretet, amit a modell figyelembe, mielőtt újra javasolja a terméket a felhasználónak. Például jelezheti, hogy egy ügyfél két évente vásárol laptopot. Ez az ablak az utóbbi két év vásárlási előzményeit fogja megmutatni, és ha talál ilyen elemet, akkor a rendszer kiszűri az elemet a javaslatok közül.
+1. Állítsa be a **Visszanézés ablakot**. Ez a beállítás megadja az időkeretet, amit a modell figyelembe, mielőtt újra javasolja a terméket a felhasználónak. Például jelezheti, hogy egy ügyfél két évente vásárol laptopot. Ez az ablak az utóbbi két év vásárlási előzményeit fogja megmutatni, és ha talál ilyen elemet, akkor a rendszer kiszűri az elemet a javaslatok közül.
 
 1. Válassza a **Tovább** lehetőséget
 

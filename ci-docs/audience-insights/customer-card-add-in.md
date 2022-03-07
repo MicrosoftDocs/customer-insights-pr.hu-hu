@@ -3,18 +3,22 @@ title: Ügyfélkártya-bővítmény Dynamics 365-alkalmazásokhoz (videót tarta
 description: Ezzel a bővítménnyel a célközönségből származó adatok jeleníthetők a Dynamics 365-alkalmazásokban.
 ms.date: 02/02/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: ce6c8fab84fd4c5dfc9f78b91dde3483a1d358c1
-ms.sourcegitcommit: 11308ed275b4b25a35576eccfcae9dda9e2c2784
-ms.translationtype: HT
+searchScope:
+- ci-customers-page
+- ci-search-filter
+- ci-customer-card
+- customerInsights
+ms.openlocfilehash: d67d8e2cb30cf20de204bfb293bb8ce81c7bb2f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "8085251"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353868"
 ---
 # <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
 
@@ -27,7 +31,7 @@ ms.locfileid: "8085251"
 ## <a name="prerequisites"></a>Előfeltételek
 
 - A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a célközönség elemzések ügyfélprofiljaira, javasoljuk, hogy [az összekötő használatával Microsoft Dataverse a Dynamics 365 alkalmazásból nyugtassák be őket](connect-power-query.md). Ha a Dynamics 365-kapcsolattartók (vagy partnerek) beolvasására más módszert használ, meg kell győződnie arról, hogy az adategyesítési folyamat térképlépésében a `contactid` (vagy `accountid`) mező van beállítva az [adott adatforrás elsődleges kulcsaként](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a célközönség elemzések ügyfélprofiljaira, javasoljuk, hogy [az összekötő használatával Microsoft Dataverse a Dynamics 365 alkalmazásból nyugtassák be őket](connect-power-query.md). Ha más módszert használ a Dynamics 365-kapcsolattartók (vagy partnerek) beolvasására, meg kell győződnie arról, hogy az adategyesítési folyamat térképlépésében a `contactid` (vagy `accountid`) mező van beállítva az adott adatforrás elsődleges [kulcsaként](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját [hozzá kell adni felhasználóként](permissions.md) a célközönség betekintési információihoz.
 - Az adatok csak akkor kereshetők,ha a célközönség betekintési információihoz [konfigurálja a keresési és szűrőfunkciókat](search-filter-index.md).
 - Minden bővítményellenőrzés a célközönség információi között szereplő konkrét adatokra hagyatkozik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja értesíteni fogja, ha a kijelölt környezettípus miatt egy vezérlő nem érhető el. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
@@ -131,7 +135,7 @@ A vezérlők még a megfelelően konfigurált azonosítómezők esetén sem tal�
 1. Győződjön meg arról, hogy a kártyabővetítványt az utasításoknak megfelelően konfigurálta: [A vevőkártya-bővítmény konfigurálása](#configure-the-customer-card-add-in) 
 
 1. Tekintse át az adatbetöltési konfigurációt. Szerkessze a partnerazonosító GUID azonosítóját tartalmazó Dynamics 365 rendszer adatforrás. Ha a partnerazonosító GUID azonosítója nagybetűkkel jelenik meg a Power Query szerkesztőben, próbálkozzon a következőkkel: 
-    1. A adatforrás szerkesztőben Power Query való megnyitásához módosítsa a adatforrás.
+    1. A adatforrás szerkesztéséhez nyissa meg a adatforrás a Szerkesztőben Power Query.
     1. Jelölje ki a partnerazonosító oszlopot.
     1. Az elérhető műveletek megtekintéséhez válassza az Átalakítás **lehetőséget** a fejlécsávon.
     1. Válassza a **kisbetűt**. Ellenőrizze, hogy a táblázatban szereplő GUID-ok kisbetűsek-e.

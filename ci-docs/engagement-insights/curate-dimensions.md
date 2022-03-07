@@ -2,18 +2,17 @@
 title: Viselkedési adatok felosztása demográfiai dimenziók használatával (összeállított dimenziók)
 description: Az egyesített profilok összeállított dimenziói használatával engedélyezheti célközönség információk ügyfélprofil-tulajdonságait.
 ms.date: 07/27/2021
-ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
-ms.translationtype: HT
+ms.openlocfilehash: 95395e09bc0ba5ba93138957c62105f31c709e91
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461106"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8233050"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Viselkedési adatok felosztása demográfiai dimenziók használatával
 
@@ -29,7 +28,7 @@ Az egyesített profil földrajzi dimenziók használatával az elkötelezettség
 - Az elkötelezettségi információk környezet, amelyben az ügyfélprofil-adatok a célközönség információk környezethez kapcsolódnak, ahol az ügyfélprofilok létrejönnek. További információ: [Hivatkozás létrehozása a célközönséggel kapcsolatos információk és az elkötelezettségi információk között](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Miután létrehozott egy kapcsolatot a célközönség információk és az elkötelezettségi információk környezetek között, akkor csak az ügyfélprofil adott tulajdonságaira vonatkozó adatokat szeretné látni, amelyek hasznosak lehetnek az elkötelezettségi információkban. További tájékoztatásért menjen a [Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezésére](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments) részbe.<!--note from editor: Suggested. -->
+> Miután létrehozott egy kapcsolatot a célközönség információk és az elkötelezettségi információk környezetek között, akkor csak az ügyfélprofil adott tulajdonságaira vonatkozó adatokat szeretné látni, amelyek hasznosak lehetnek az elkötelezettségi információkban. További tájékoztatásért menjen a [Célközönséggel kapcsolatos információk egyesített profiljai attribútumainak és szegmenseinek engedélyezésére](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments) részbe.
 
 ## <a name="create-a-new-custom-report"></a>Hozzon létre egy új egyéni jelentést
 

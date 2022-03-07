@@ -3,18 +3,20 @@ title: Tevékenység alapján javasolt szegmensek.
 description: A gépi tanulás segítségével új, érdekes szegmenseket találhat az ügyféltevékenység alapján.
 ms.date: 05/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: 46e8970f7fd116cb1654c94751923ce2a213ff87dd7bc7ee731a62bbd0093513
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+searchScope:
+- ci-segment-suggestions
+- customerInsights
+ms.openlocfilehash: 9c10a32b770ea110a1166f20f72116a3a12cb92e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028409"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354466"
 ---
 # <a name="suggested-segments-based-on-activity-data-preview"></a>Tevékenységadatok alapján javasolt szegmensek (előzetes verzió)
 

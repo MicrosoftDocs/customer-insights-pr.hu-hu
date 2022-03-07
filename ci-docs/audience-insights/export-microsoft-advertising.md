@@ -1,20 +1,19 @@
 ---
 title: A Customer Insights adatok exportálása a Microsoft Advertising-szolgáltatásba
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Microsoft Advertising-szolgáltatásba.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c2ac92de2718cf7f0622b407bf198a7a7e50a37b
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
-ms.translationtype: HT
+ms.openlocfilehash: 8f009ed0258ded424340061e5320dd7df68c199f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124501"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226894"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Szegmensek exportálása a Microsoft Advertising-szolgáltatásba (előzetes verzió)
 
@@ -29,9 +28,9 @@ Customer Insights szegmensek exportálása a Microsoft Advertising-szolgáltatá
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Microsoft Advertising exportálásonként legfeljebb 500 ezer profil exportálható.
+- Exportálásonként legfeljebb 500 000 ügyfélprofilt exportálhat a Microsoft Advertising szolgáltatásba.
 - A Microsoft Advertising-szolgáltatásba való exportálás a szegmensekre korlátozódik.
-- 500 ezer profil exportálása a Microsoft Advertising alkalmazásba akár 10 percet is igénybe vehet. 
+- 500 000 ügyfélprofil exportálása a Microsoft Advertising szolgáltatásba akár 10 percet is igénybe vehet. 
 
 
 ## <a name="set-up-the-connection-to-microsoft-advertising"></a>Állítsa be a Microsoft Advertising-szolgáltatással való kapcsolatot
@@ -68,7 +67,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **Microsoft Advertising ügyfélazonosítóját és fiókazonosítóját**. Az Ügyfélazonosítót (`cid`) és a Fiókazonosítót (`aid`) az URL-cím paramétereiben találja, amikor bejelentkezett a Microsoft Advertising-szolgáltatásba.
 
-1. Az **Adategyeztetés** szakaszban, az **E-mail** mezőben válassza ki az egységes ügyfélprofil mezőjét az ügyfél e-mail-címével. A szegmenseket exportálni kell a Microsoft Advertising alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét tartalmazó mezőt. A szegmenseket exportálni kell a Microsoft Advertising alkalmazásba.
 
 1. Válassza a **Mentés** parancsot.
 

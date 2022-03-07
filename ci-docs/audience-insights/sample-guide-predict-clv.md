@@ -3,18 +3,17 @@ title: Ügyfélélettartam-érték előrejelzése mintaútmutató
 description: Ezzel a mintaútmutatóval próbálhatja ki az ügyfélélettartam-érték előrejelzése modellt.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
-ms.translationtype: HT
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129948"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354834"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Ügyfélélettartam-érték (CLV) előrejelzés mintaútmutató
 
@@ -22,7 +21,7 @@ Ez az útmutató a mintaadatok felhasználásával átfogóan ismerteti az Ügyf
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso kiváló minőségű kávékat és kávéfőzőket gyártó vállalat. A termékeket a Contoso Coffee weboldalán keresztül értékesítik. A vállalat meg akarja érteni azt az értéket (bevételt), amelyet ügyfeleik a következő 12 hónapban generálhatnak. Ismerve az ügyfeleik várható értékét a következő 12 hónapra vonatkozóan segít nekik a marketingerőfeszítéseiket a nagy értékű ügyfelek felé irányítani.
+A Contoso egy kiváló minőségű kávéfőzőket gyártó vállalat. A termékeket a Contoso Coffee weboldalukon keresztül értékesítik. A vállalat meg akarja érteni azt az értéket (bevételt), amelyet ügyfeleik a következő 12 hónapban generálhatnak. Ismerve az ügyfeleik várható értékét a következő 12 hónapra vonatkozóan segít nekik a marketingerőfeszítéseiket a nagy értékű ügyfelek felé irányítani.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -31,7 +30,7 @@ A Contoso kiváló minőségű kávékat és kávéfőzőket gyártó vállalat.
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Tekintse át az [adatbetöltéssel kapcsolatos információk](data-sources.md) és az [adatforrások importálása Power Query csatlakozók használatával](connect-power-query.md) cikkeket. A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban.
+Tekintse át az adatforrások összekötők használatával [történő beolvasásáról](data-sources.md) és [importálásáról szóló cikkeket Power Query](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
@@ -123,9 +122,9 @@ Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy
 
 1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
 
-1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** lehetőséget elsődleges forrásként, amely minden rekordot magában foglal.
+1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
 
-1. Az **Entitás 2** legördülő listájában válassza ki a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
+1. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
 
    ![Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.](media/unify-match-order.png)
 
@@ -133,16 +132,16 @@ Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy
 
 1. Adja hozzá az első feltételt a FullName segítségével.
 
-   - Az eCommerceContacts lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
-   - A loyCustumers lehetőséghez válassza ki a **FullName** opciót a legördülő listából.
-   - Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
+   - Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
+   - A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
+   - Válassza a **Normalizálás** legördülő menüt, és válassza a **Típus (Telefon, Név, Cím, ...)** lehetőséget.
    - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 
 1. Adja meg a nevét **FullName, Email**, az új szabályhoz.
 
    - Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   - Az eCommerceContacts entitáshoz válassza az **Email** legördülő lehetőséget.
-   - Az loyCustomers entitáshoz válassza az **Email** legördülő lehetőséget.
+   - Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
+   - Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben.
    - Hagyja üresen a Normalizálást.
    - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
 
@@ -164,7 +163,7 @@ Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>3. feladat – Ügyfél élettartamra vetített értékének előrejelzése
 
-Az egységes ügyfélprofilok segítségével immár futtathatja az ügyfél élettartamra vetített értékének előrejelzését. A részletes lépésekért lásd: [Ügyfél élettartamra vetített értékének előrejelzése (előzetes verzió)](predict-customer-lifetime-value.md).
+Az egységes ügyfélprofilok segítségével immár futtathatja az ügyfél élettartamra vetített értékének előrejelzését. A részletes lépéseket az Ügyféléletérték előrejelzés című témakörben [talál](predict-customer-lifetime-value.md).
 
 1. Lépjen az **Információk**  > **Előrejelzések** lapra, és válassza ki az **Ügyfél élettartamának értékmodellje** lehetőséget.
 

@@ -1,24 +1,23 @@
 ---
 title: Customer Insights entitások sémája a Common Data Modellben
 description: Entitások használata a Common Data Model rendszerben.
-ms.date: 04/17/2020
+ms.date: 08/13/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
-ms.translationtype: HT
+ms.openlocfilehash: f0af2a6d8a90ff01ea9d4eeb29f34113261fd0d4
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692308"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231016"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 A [Common Data Model](/common-data-model/) leíró specifikáció, és olyan szabványos entitások nyílt forrású gyűjteménye, amelyek az üzleti és termelékenységi alkalmazás általánosan használt fogalmait és tevékenységeit jelképezik. Ez a modell kiterjed a megfigyelési és analitikai adatokra is. A Common Data Model olyan jól meghatározott, moduláris és bővíthető üzleti entitásokat kínál, mint például Fiók, Üzleti Egység, Eset, Névjegy, Érdeklődő, Lehetőség, és Termék, továbbá a szállítók, a dolgozók és a vásárlók közötti kommunikáció és kapcsolathoz tevékenységeket és szolgáltatói szerződéseket. Bárki létrehozhat és bővíthet Common Data Model meghatározásokat, hogy további üzleti-specifikus ötleteket lehessen rögzíteni.
 
@@ -42,7 +41,7 @@ A további tudnivalókért lásd a [Customer Insights sémák a Common Data Mode
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Entitások megtekintése a Common Data Model entitás-navigátor használatával
 
-Az entitások a [Common Data Model entitásnavigátorban](https://microsoft.github.io/CDM/) tekinthetők meg. Válassza ki: **Betöltés GitHub-ról!** gombot és navigáljon a **foundationCommon** > **crmCommon** > **solutions** > **customerInsights** helyre, ahol megtalálja a Customer Insights entitásokat és azok definícióit.
+Az entitások a [Common Data Model entitásnavigátorban](https://microsoft.github.io/CDM/) tekinthetők meg. A Customer Insights-entitások és definícióik listájának a kiválasztásával jelöljön ki egy entitást az Információs alkalmazás szakaszból.
 > [!div class="mx-imgBorder"]
 > ![A CDM-entitásnavigator CustomerActivity entitást mutatja.](media/CDM-entity-navigator.png "A CDM-entitásnavigator CustomerActivity entitást mutatja")
 

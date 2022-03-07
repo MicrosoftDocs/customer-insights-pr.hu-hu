@@ -1,20 +1,25 @@
 ---
-title: Címjavítási gazdagodás (videót tartalmaz)
+title: Címbővítés gazdagítása (videót tartalmaz)
 description: A Microsoft modelljeivel rendelkező ügyfélprofilok címinformációinak bővítése és normalizálása.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+searchScope:
+- ci-data-sources-enrichment
+- ci-data-sources-enrichment-details
+- ci-enrichments
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: 067757019078d3a46b224ba259d2d097dfbbe381
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934926"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353639"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Ügyfélprofilok bővítése továbbfejlesztett címekkel
 
@@ -100,17 +105,17 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
-Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+A bővített adatok **mintáját a Gazdagított vevők előnézeti** csempéjén tekintheti meg. Válassza a Továbbiak megtekintése lehetőséget **, és válassza az Adatok** lapot az **egyes bővített profil részletes nézetének eléréséhez.**
 
 ### <a name="overview-card"></a>Áttekintő kártya
 
-Az áttekintő kártya részletesen ismerteti a dúsítás lefedettségét. 
+Az áttekintő kártya a gazdagodás lefedettségének részleteit mutatja. 
 
-* **Feldolgozott és módosított ügyfelek** : A sikeresen gazdagított ügyfélprofilok száma.
+* **Feldolgozott és módosított** címek: A sikeresen gazdagított címmel rendelkező ügyfélprofilok száma.
 
-* **Feldolgozott és nem módosított vevők** : A felismert, de nem módosított ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
+* **Feldolgozott és nem módosított** címek: A felismert, de nem módosított címmel rendelkező ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagodás nem javítható.
 
-* **Nem feldolgozott és nem módosított ügyfelek** : A nem felismert profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy a gazdagodás által nem támogatottak.
+* **A nem feldolgozott és nem módosított** címek: A nem felismert címmel rendelkező profilok száma. Általában olyan bemeneti adatokhoz, amelyek érvénytelenek vagy nem támogatják a gazdagodást.
 
 ## <a name="next-steps"></a>További lépések
 

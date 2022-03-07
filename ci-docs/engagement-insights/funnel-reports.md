@@ -4,17 +4,16 @@ description: Tölcsérjelentések használata annak megértése érdekében, hog
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 09/17/2021
-ms.service: customer-insights
+ms.date: 09/21/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
-ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
-ms.translationtype: HT
+ms.openlocfilehash: 7bb961c5ba8d42f704eefe0dcb22e561367f3efb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/17/2021
-ms.locfileid: "7498645"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226263"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Tölcsérjelentések létrehozása és kezelése
 
@@ -163,13 +162,23 @@ Módosíthatja a tölcsérjelentés nevét, törölheti, illetve módosíthatja 
 
 Az elkötelezettségi információk mostantól tölcsérelemzéseket is nyújt az ügyfeleknek. A tölcsérelemzések segítségével alaposan megismerheti az ügyfelek viselkedését a tölcsérjelentés lépéseivel kapcsolatosan. Új tölcsérjelentés létrehozásakor és mentésekor a jelentéshez automatikusan létrejön a tölcsérelemzés. 
 
+:::image type="content" source="media/funnel-insights.png" alt-text="Tölcsérelemzések.":::
+
+> [!NOTE]
+> A tölcsérelemezések csak olyan tölcsérlépésekhez generálhatók, amelyek **nem** tartalmaznak egyéni dimenziókat. Ha a tölcsér minden lépéséhez használható tölcsérelemzéseket szeretne létrehozni, akkor az elkötelezettségi információk gyári dimenzióit kell használni a tölcsérlépések létrehozásához. 
+
 A tölcsérelemzéseket a következő kategóriákból tekintheti meg, mind a fő szinten, mind a lépés szintjén: 
 
- - Átalakítási arány 
+ - Átalakítási arány
+ -    A konverziós arány a pénztár és a vásárlás között 22%.
  - Váltásidő 
+ -    A Kosár és a Pénztár közötti átmenet átlagos ideje 23 perc. 
  - Befejezés ideje 
+ -    A tölcsér befejezéséhez szükséges átlagos idő az ügyfelek részéről 47 perc. 
 
 Ezek az információk segítségével mélyebben megismerheti az ügyfél viselkedését, és jobban megismerheti a tölcsérjelentésnél a kiesési pontokat és a konverziókat. 
+
+A különböző lépésekre lebontott információk összehasonlításhoz válassza a **Lépés részletezésének megtekintése** vagy sz **Összehasonlítás másik lépésekkel** elemzési kártyákat. Ezek a tölcsér egyes lépéseinél összehasonlító sávdiagramot jelenítenek meg. 
 
 A tölcsér információk újraszámítása 24 óránként történik, illetve a tölcsérjelentés **mentésekor** is. 
 

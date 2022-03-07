@@ -2,19 +2,21 @@
 title: Szegmensinformációk a meglevő szegmensekről
 description: Szerezzen információkat a meglevő szegmensekről, hogy felfedezhesse a különbségeket és egyezéseket.
 ms.date: 06/10/2020
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 1f90b0d18331584fce306da38bd31faea93ef97e
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
+searchScope:
+- ci-segment-insights
+- customerInsights
+ms.openlocfilehash: 8ae832c69c89bee08b8ef36ed99233b6e8e5a0f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732315"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355570"
 ---
 # <a name="segment-insights-preview"></a>Szegmensekkel kapcsolatosa információk (előzetes verzió)
 

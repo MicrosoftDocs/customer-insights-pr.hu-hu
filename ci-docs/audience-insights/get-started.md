@@ -5,17 +5,19 @@ ms.reviewer: mhart
 ms.author: mhart
 author: m-hartmann
 ms.date: 08/31/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5e8545bc9bf0d953150248fa859c6ca71a12f9cf
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
-ms.translationtype: HT
+searchScope:
+- ci-home
+- customerInsights
+ms.openlocfilehash: 2776b2292560f9ea61a06d2b1b7bc7811d35c860
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645267"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353716"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights-audience-insights-capability"></a>Első lépések a Dynamics 365 Customer Insights célközönséggel kapcsolatos információk képességével
 
@@ -37,7 +39,7 @@ Amikor első alkalommal jelentkezik be a célközönséggel kapcsolatosa inform�
 
 Az egyesített profilok az adatokkal kapcsolatos információk és a műveletek alapjai. Különböző forrásokból származó adatok behozása és az adategyesítési folyamat futtatása a unified profilok kombinálása érdekében. Határozza meg a kapcsolatokat az entitások közötti, használja a bővítési funkciót, hogy információkat adjon a profilokhoz. 
 
-1. Adatok betöltése többféle lehetőségből származó adatforrások létrehozásával. Válasszon a [Power Query-összekötők](connect-power-query.md), egy [Common Data Model mappa](connect-common-data-model.md) vagy a [Microsoft Dataverse](connect-common-data-service-lake.md) között. 
+1. Adatok betöltése többféle lehetőségből származó adatforrások létrehozásával. Válasszon az összekötők [Power Query, a](connect-power-query.md) Common Data Model mappa [vagy a között](connect-common-data-model.md)[Microsoft Dataverse](/dynamics365/customer-insights/audience-insights/connect-dataverse-managed-lake). 
 
 1. Futtassa az [adategyesítési folyamatot](data-unification.md), menjen végig a [leképezésen](map-entities.md), az [egyeztetésen](match-entities.md) és az [egyesítési](merge-entities.md) fázison.
 

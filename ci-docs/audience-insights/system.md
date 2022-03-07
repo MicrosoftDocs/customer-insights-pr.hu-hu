@@ -1,24 +1,30 @@
 ---
 title: Rendszerkonfiguráció a célközönség információk funkcióban
-description: További információ a rendszerbeállításokról Dynamics 365 Customer Insights célközönség elemzési képességben.
+description: Ismerkedjen meg a rendszerbeállításokkal Dynamics 365 Customer Insights célközönség információkban.
 ms.date: 11/01/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 1b790106f8b9617d0c1f244e1d15a74c7ef9a82b
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
+searchScope:
+- ci-system-status
+- ci-system-schedule
+- ci-system-about
+- ci-system-general
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 2c52f7b8a7d41ae4a985745c7b79bbc62f59bb5a
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732364"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354232"
 ---
 # <a name="system-configuration"></a>Rendszerkonfiguráció
 
-A rendszerkonfigurációk célközönség elemzési adatok eléréséhez a bal oldali navigációs sávon válassza a Rendszergazdai rendszer lehetőséget **·** > **a** rendszerfeladatok és folyamatok listájának megtekintéséhez.
+Ha célközönség elemzésekben szeretné elérni a rendszerkonfigurációkat, a bal oldali navigációs sávon válassza az **AdminSystem** > **lehetőséget** a rendszerfeladatok és folyamatok listájának megtekintéséhez.
 
 A **Rendszer** lap a következő füleket tartalmazza:
 - [Állam](#status-tab)
@@ -32,13 +38,13 @@ A **Rendszer** lap a következő füleket tartalmazza:
 
 ## <a name="status-tab"></a>Állapot lap
 
-Az **Állapot lapon nyomon követheti a** tevékenységek, az adatbetöltés, az adatexport és számos más fontos termékfolyamat előrehaladását. Tekintse át a lapon található információkat az aktív feladatok és folyamatok teljességének biztosítása érdekében.
+Az **Állapot lapon** nyomon követheti a feladatok előrehaladását, az adatbetöltést, az adatexportot és számos más fontos termékfolyamatot. Tekintse át az ezen a lapon található információkat, hogy biztosítsa az aktív tevékenységek és folyamatok teljességét.
 
-Ez a lap a különböző folyamatok állapot- és feldolgozási adatainak tábláit tartalmazza. Minden tábla nyomon követi a feladat **Nevét**, valamint a hozzá tartozó entitást, a legutóbbi futtatás **Állapotát**, illetve azt, mikor történt a **Legutóbbi frissítés**. Az utolsó több futtatás részleteit a tevékenység vagy a folyamat nevének kiválasztásával tekintheti meg. 
+Ez a lap a különböző folyamatok állapot- és feldolgozási adatainak tábláit tartalmazza. Minden tábla nyomon követi a feladat **Nevét**, valamint a hozzá tartozó entitást, a legutóbbi futtatás **Állapotát**, illetve azt, mikor történt a **Legutóbbi frissítés**. Az utolsó néhány futtatás részleteit a feladat vagy folyamat nevének kiválasztásával tekintheti meg. 
 
-Válassza ki a tevékenység vagy folyamat melletti állapotot az **Állapot** oszlopban a **Haladás részletei ablaktábla megnyitásához.**
+A Folyamat részletei **ablaktábla megnyitásához válassza ki a feladat vagy folyamat melletti állapotot az** **Állapot** oszlopban.
 
-   :::image type="content" source="media/system-progress-details.png" alt-text="A rendszer előrehaladásának részletei ablaktábla":::
+   :::image type="content" source="media/system-progress-details.png" alt-text="Rendszer állapota részletei ablaktábla":::
 
 ### <a name="status-definitions"></a>Állapotdefiníciók
 
@@ -46,45 +52,49 @@ A rendszer a következő állapotokat használja a feladatokhoz és folyamatokho
 
 |Állam  |Definíció  |
 |---------|---------|
-|Visszavonva |A feldolgozást a felhasználó megszakította, mielőtt befejeződött volna.   |
+|Megszakított |A feldolgozást a felhasználó megszakította, mielőtt befejeződött volna.   |
 |Sikertelen   |Az adatbetöltés hibákba ütközött.         |
-|Nem sikerült  |A feldolgozás sikertelen volt.  |
-|Nincs elindítva   |Az adatforrás még nem tartalmaz adatokat vagy még vázlat módban van.         |
-|Feldolgozás folyamatban  |A tevékenység vagy a folyamat folyamatban van.  |
+|Nem sikerült  |A feldolgozás nem sikerült.  |
+|Nem kezdődött el   |Az adatforrás még nem tartalmaz adatokat vagy még vázlat módban van.         |
+|Feldolgozás folyamatban  |Feladat vagy folyamat folyamatban van.  |
 |Frissítés    |Az adatbetöltés folyamatban van. A művelet a **Műveletek** oszlop **Frissítés leállítása** parancsával vonható vissza. A adatforrás frissítésének leállítása visszaállítja azt az utolsó frissítéskori állapotára.       |
-|Kihagyva  |A feladat vagy a folyamat kimaradt. Egy vagy több olyan alsóbb szintű folyamat kimaradt vagy hibás volt, amelytől ez a feladat függ.|
-|Sikerült  |A tevékenység vagy folyamat sikeresen befejeződött. Adatforrások esetén azt jelzi, hogy az adatok sikeresen betöltése megtörtént, ha a Frissített oszlopban időt **·** említenek.|
-|Feldolgozási sorban | A feldolgozás várólistára kerül, és az összes upstream feladat és folyamat befejezése után kezdődik. További információ: [Folyamatok frissítése](#refresh-processes).|
+|Kihagyva  |A feladat vagy folyamat kimaradt. Egy vagy több olyan alsóbb szintű folyamat kimaradt vagy hibás volt, amelytől ez a feladat függ.|
+|Sikerült  |A feladat vagy folyamat sikeresen befejeződött. Adatforrások esetén azt jelzi, hogy az adatok sikeresen be lettek iktatva, ha a **Frissítés** oszlopban szerepel egy idő.|
+|Feldolgozási sorban | A feldolgozás várólistára kerül, és az összes upstream feladat és folyamat befejezése után kezdődik. További információt a Folyamatok [frissítése című témakörben talál](#refresh-processes).|
 
 ### <a name="refresh-processes"></a>Folyamatok frissítése
 
-A feladatok és folyamatok frissítése a konfigurált ütemezés szerint [...](#schedule-tab) fut. 
+A feladatok és folyamatok frissítése a [konfigurált ütemezés](#schedule-tab) szerint történik. 
 
-|Folyamat  |Ismertetés  |
+|Folyamat  |Description  |
 |---------|---------|
-|Tevékenység  |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. Az Insights a feldolgozástól függ.|
-|Elemzés összekapcsolása |Manuálisan fut (egyszeri frissítés). A szegmensektől függ.  |
-|Elemzés előkészítése |Manuálisan fut (egyszeri frissítés). A szegmensektől függ.  |
+|Tevékenys.  |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. Az Insights a feldolgozástól függ.|
+|Elemzés összekapcsolása |Manuálisan fut (egyszeri frissítés). Szegmenstől függ.  |
+|Elemzés előkészítése |Manuálisan fut (egyszeri frissítés). Szegmenstől függ.  |
 |Adatok előkészítése   |Az egyesüléstől függ.   |
 |Adatforrások   |Nem függ más folyamattól. A egyeztetés a folyamat sikeres befejezésétől függ.  |
 |Bővítések   |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. |
-|Exportcélpontok |Manuálisan fut (egyszeri frissítés). A szegmensektől függ.  |
-|Elemzések |Manuálisan fut (egyszeri frissítés). A szegmensektől függ.  |
-|Információk   |Az egyesüléstől függ.   |
-|Egyeztetés |Az egyeztetés definíciójában használt adatforrások feldolgozásából függ.      |
-|Mérőszámok  |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ.  |
+|Úticélok exportálása |Manuálisan fut (egyszeri frissítés). Szegmenstől függ.  |
+|Elemzések |Manuálisan fut (egyszeri frissítés). Szegmenstől függ.  |
+|Intelligencia   |Az egyesüléstől függ.   |
+|Match |Az egyeztetés definíciójában használt adatforrások feldolgozásából függ.      |
+|Mértékek  |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ.  |
 |Összefűzés   |Az egyeztetési folyamat befejezésétől függ. A szegmensek, a mértékek, a bővítés, a keresés, a tevékenységek, az előrejelzések és az adatok előkészítése a folyamat sikeres befejezésének függvénye.   |
 |Profilok   |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. |
 |Keresés   |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. |
 |Szegmensek  |Manuálisan fut (egyszeri frissítés). Az egyesítési folyamattól függ. Az Insights a feldolgozástól függ.|
 |Rendszer   |Az egyeztetési folyamat befejezésétől függ. A szegmensek, a mértékek, a bővítés, a keresés, a tevékenységek, az előrejelzések és az adatok előkészítése a folyamat sikeres befejezésének függvénye.   |
-|Felhasználó  |Manuálisan fut (egyszeri frissítés). Az entitásoktól függ.  |
+|User  |Manuálisan fut (egyszeri frissítés). Az entitásoktól függ.  |
 
-Válassza ki egy folyamat állapotát a teljes feladat előrehaladási részleteinek megtekintéséhez. A fenti frissítési folyamatok segíthetnek megérteni, hogy mit tehet egy **kihagyott vagy várólistára helyezett feladat vagy folyamat kezelése** **·** érdekében.
+Válassza ki a folyamat állapotát a teljes feladat előrehaladási részleteinek megtekintéséhez. A fenti frissítési folyamatok segíthetnek megérteni, hogy mit tehet a **kihagyott vagy** várólistás **feladat** vagy folyamat kezelése érdekében.
 
 ## <a name="schedule-tab"></a>Ütemezés lap
 
 Használja az **Ütemezés** lapot, hogy ütemezze az automatikus frissítéseket minden egyes [betáplált adatforrásához](data-sources.md). Az automatikus frissítéssel biztosítható, hogy az adatforrásokból származó frissítések megjelenjenek az egyesített ügyfélprofilokban.
+
+> [!NOTE]
+> Az Ön által kezelt adatforrások a saját ütemezésük szerint frissülnek. Az Ön által kezelt adatforrások frissítésének ütemezéséhez konfigurálja az adott adatforrás frissítési beállításait az **Adatforrások** lapon.
+> :::image type="content" source="media/PPDF-edit-refresh.png" alt-text="Power Platform Adatfolyam-frissítési beállítások.":::
 
 1. A célközönség információkban nyissa meg a **Rendszergazda** > **Rendszer** menüt és válassza az **Ütemezés** lapot.
 
@@ -127,7 +137,7 @@ Az **API-használat** három szakaszból áll:
 
 -  **Műveletek** – egy táblázat sorokkal minden elérhető API-művelethez, és részletek a műveletek használatáról. Az [API-hivatkozáshoz](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) válassza ki egy művelet nevét.
 
-   A valós idejű adatbetöltést használó műveletek [...](real-time-data-ingestion.md) tartalmaznak egy távcső szimbólummal ellátott gombot a valós idejű API-használat megtekintéséhez. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.   
+   A valós idejű adatbetöltést [használó](real-time-data-ingestion.md) műveletek tartalmaznak egy binokuláris szimbólummal ellátott gombot a valós idejű API-használat megtekintéséhez. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.   
    A **Valós idejű API-használati** ablakban a **Csoportosítás** mező segítségével választhatja ki, hogyan tudja a legjobban bemutatni a valós idejű interakciókat. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.
 
 ## <a name="security-tab"></a>Biztonság lap

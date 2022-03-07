@@ -3,18 +3,17 @@ title: Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint | Micro
 description: Adatalanyi kérelmekre adott válasz a Dynamics 365 Customer Insights célközönség-információ funkciójához.
 ms.date: 08/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
-ms.translationtype: HT
+ms.openlocfilehash: e095eb4f8e194f314d7d6baf6fa6a7a319319d2a
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483674"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350272"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint
 
@@ -79,71 +78,78 @@ Az adatok exportálásához a bérlői rendszergazda a következő lépéseket h
 2. Nyugtázza a felhasználó adatainak exportálását.
 3. Az exportált adatok a bérlői rendszergazdai e-mail címen keresztül fogadhatók.
 
-## <a name="engagement-insights"></a>Elkötelezettségi információk
+## <a name="consent-management-preview"></a>Hozzájárulás kezelése (előzetes verzió)
 
-### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Végfelhasználók azonosítására alkalmas adatokat tartalmazó eseményadatok törlése és exportálása
+A hozzájáruláskezelési képesség nem gyűjt közvetlenül felhasználói adatokat. Csak olyan hozzájárulási adatokat importál és dolgoz fel, amelyeket a felhasználók más alkalmazásokban adnak meg.
 
-A következő részek ismertetik, hogyan törölhetők és exportálhatók a személyes adatokat tartalmazó eseményadatok.
+Az egyes felhasználókra vonatkozó hozzájárulási adatok eltávolításához távolítsa el azokat a hozzájáruláskezelő képességbe betöltött adatforrásokban. A adatforrás frissítése után az eltávolított adatok a Hozzájárulási központban is törlődnek. A beleegyező entitást használó alkalmazások a frissítés után [eltávolított adatokat is törlik a forráson](audience-insights/system.md#refresh-processes). Javasoljuk, hogy az adatforrások gyors frissítése az érintett kérésére válaszolva távolítsa el a felhasználó adatait az összes többi folyamatból és alkalmazásból.
 
-Adatok törléséhez vagy exportálásához:
 
-1. Címkézze fel a személyes adatokat tartalmazó eseménytulajdonságokat.
-2. Törölje vagy exportálja az adott értékekkel (például egy megadott felhasználói azonosítóval) kapcsolatos adatokat.
+<!-- ## Engagement insights (preview)
 
-#### <a name="tag-and-update-event-properties"></a>Címkézzel fel és frissítse az eseménytulajdonságokat
+### Deleting and exporting event data containing end user identifiable information
 
-A személyes adatok egy esemény tulajdonságszinten vannak címkézve. Első lépésként címkézni kell a törléshez vagy exportáláshoz figyelembe venni használt tulajdonságokat.
+The following sections describe how to delete and export event data that might contain personal data.
 
-Ha személyes adatokat tartalmazóként címkézni akar egy esemény tulajdonságot, hajtsa végre a következő lépéseket:
+To delete or export data:
 
-1. Nyissa meg az eseményt tartalmazó munkaterületet.
+1. Tag event properties that contain data with personal information.
+2. Delete or export data associated with specific values (for example: a specified user ID).
 
-1. Az **Adatok** > **Események** megnyitása esetén a kijelölt munkaterületen megjelenik az események listája.
+#### Tag and update event properties
+
+Personal data is tagged on an event property level. First, tag the properties being considered for deletion or export.
+
+To tag an event property as containing personal information, follow these steps:
+
+1. Open the workspace containing the event.
+
+1. Go to **Data** > **Events** to see the list of events in the selected workspace.
   
-1. Válassza ki a felcímkézni kívánt eseményt.
+1. Select the event you want to tag.
 
-1. Válassza a **Tulajdonságok szerkesztése** lehetőséget, ha meg szeretné nyitni a kijelölt esemény összes tulajdonságát tartalmazó ablaktáblát.
+1. Select **Edit properties** to open the pane listing all properties of the selected event.
      
-1. Válassza a **...** lehetőséget, majd a **Szerkesztés** lehetőséget, ha el szeretné érni a **Tulajdonság frissítése** párbeszédpanelt.
+1. Select **...** and then choose **Edit** to reach the **Update property** dialog.
 
-   ![Esemény szerkesztése.](engagement-insights/media/edit-event.png "Esemény szerkesztése")
+   ![Edit event.](engagement-insights/media/edit-event.png "Edit event")
 
-1. Válassza a **Tulajdonság frissítése** ablakban a **...** lehetőséget a jobb felső sarokban, majd válassza az **EUII-mező tartalma** lehetőséget. A módosítások mentéséhez válassza a **Frissítés** lehetőséget.
+1. In the **Update Property** window, choose **...** in the upper right corner, and then choose the **Contains EUII** box. Choose **Update** to save your changes.
 
-   ![Módosítások mentése.](engagement-insights/media/update-property.png "Módosítások mentése")
+   ![Save your changes.](engagement-insights/media/update-property.png "Save your changes")
 
    > [!NOTE]
-   > Minden alkalommal, amikor megváltozik az eseménysémája, vagy új eseményt hoz létre, szükség esetén ajánlott kiértékelni a társított eseménytulajdonságokat, illetve visszacímkézni őket személyes adatokként.
+   > Every time the event schema changes or you create a new event, it's recommended that you evaluate the associated event properties and tag or untag them as containing personal data, if necessary.
 
-#### <a name="delete-or-export-tagged-event-data"></a>Címkézett eseményadatok törlése vagy exportálása
+#### Delete or export tagged event data
 
-Ha az előző lépésben leírtaknak megfelelően az összes eseménytulajdonság címkéje meg van jelölve, a környezet rendszergazdája törlési kérelmet adhat ki a címkézett eseményadatokra.
+If all event properties have been tagged appropriately as described in the previous step, an environment admin can issue a deletion request against the tagged event data.
 
-Az EUII-törlési vagy -exportálási kérelmek kezelése
+To manage EUII deletion or export requests
 
-1. Menjen a **Felügyelet** > **Környezet** > **Beállítások** pontra.
+1. Go to **Admin** > **Environment** > **Settings**.
 
-1. A **végfelhasználói azonosító adatok kezelése (EUII)** szakaszban válassza az **EUII kezelése** lehetőséget.
+1. In the **Manage end user identifiable information (EUII)** section, select **Manage EUII**.
 
-##### <a name="deletion"></a>Törlés
+##### Deletion
 
-Törléshez vesszővel elválasztott felhasználói azonosítók listáját adhatja meg a **Végfelhasználó azonosítására alkalmas adatok törlése (EUII)** szakaszban. Ezután a rendszer az aktuális környezet összes projektje címkézett eseménytulajdonságával összehasonlítja ezeket azazonosítókat a pontos karakterlánc-egyezésen keresztül. 
+For deletion, you can enter a list of comma-separated user IDs in the **Delete end user identifiable information (EUII)** section. These IDs will then be compared with all tagged event properties of all projects in the current environment via exact string matching. 
 
-Ha egy tulajdonságérték egyezik az egyik megadottazonosítóval, a társított eseményt véglegesen törli a rendszer. A művelet nem véglegessége miatt a **Törlés** lehetőséget választva meg kell erősítenie a törlést.
+If a property value matches one of the provided IDs, the associated event will be permanently deleted. Due to the irreversibility of this action, you must confirm the deletion after selecting **Delete**.
 
-##### <a name="export"></a>Export
+##### Export
 
-Az exportálási folyamat azonos a törlési folyamattal, amikor a **Végfelhasználó azonosítására alkalmas adatok exportálása** szakaszban definiálja az esemény tulajdonságértékeket. Emellett meg kell adnia egy **Azure blob storage URL**-címet is az exportálási cél megadásához. Az Azure Blob URL-címnek tartalmaznia kell egy [megosztott hozzáférési aláírást (SAS)](/azure/storage/common/storage-sas-overview).
+The export process is identical to the deletion process when it comes to defining event property values in the **Export end user identifiable information (EUII)** section. Additionally, you'll need to provide an **Azure blob storage URL** to specify the export destination. The Azure Blob URL must include a [Shared Access Signature (SAS)](/azure/storage/common/storage-sas-overview).
 
-Az **Exportálás** lehetőség kiválasztása után az aktuális csoport egyező címkézett tulajdonságokat tartalmazó eseményei CSV formátumban exportálva lesznek az exportálási célba.
+After selecting **Export**, all events of the current team that contain matching tagged properties will be exported in CSV format to the export destination.
 
-### <a name="good-practices"></a>Jó gyakorlatok
+### Good practices
 
-* Próbálja meg elkerülni a személyes adatokat tartalmazó események küldését.
-* Ha EUII-adatokat tartalmazó eseményeket kell küldenie, korlátozza az EUII-adatokat tartalmazó események és eseménytulajdonságok számát. Ideális esetben csak egyetlen ilyen eseményre korlátozza magát.
-* Győződjön meg róla, hogy csak néhány személy fér hozzá az elküldött személyes adatokhoz.
-* Személyes adatokat tartalmazó események esetén ügyeljen arra, hogy egyetlen tulajdonsággal olyan egyedi azonosítót állítson be, amely egyszerűen csatolható egy adott felhasználóhoz (például felhasználói azonosítóhoz). Ez megkönnyíti az adatok exportálását vagy törlését.
-* Eseményenként csak egy tulajdonságot címkéz fel személyes adatokat tartalmazóként. Ideális esetben csak egyedi azonosítót tartalmazó fájl.
-* Ne címkézzen fel olyan tulajdonságokat, amelyek részletes értékeket tartalmaznak (például a kérelem teljes szövegét). Az aktivitási információk szolgáltatás pontos karakterlánc-egyezést használ annak eldöntéséhez, hogy mely eseményeket kell törölni vagy exportálni.
+* Try to avoid sending any events that contain personal data.
+* If you need to send events containing EUII data, limit the number of events and event properties that contain EUII data. Ideally, limit yourself to one such event.
+* Make sure that as few people as possible have access to the sent personal data.
+* For events containing personal data, make sure that you set one property to emit a unique identifier that can easily be linked to a specific user (for example, a user ID). This makes it easier to segregate data and to export or delete the right data.
+* Only tag one property per event as containing personal data. Ideally one that only contains a unique identifier.
+* Do not tag properties containing verbose values (for example, an entire request body). Engagement insights capability uses exact string matching when deciding which events to delete or export. -->
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

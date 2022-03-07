@@ -1,20 +1,19 @@
 ---
 title: Customer Insights-adatok exportálása a Salesforce Marketing Cloud-ba
 description: További információ a kapcsolat konfigurálásához és a Salesforce Marketing Cloud-ba való exportáláshoz.
-ms.date: 06/24/2021
+ms.date: 07/23/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 123f8b2dbb6140785dec6c1b4164d2f513f66a53
-ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
-ms.translationtype: HT
+ms.openlocfilehash: 17a608a64433cdc395e0b503a42b6290db5c39ec
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2021
-ms.locfileid: "6314624"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8230207"
 ---
 # <a name="export-segments-and-other-data-to-salesforce-marketing-cloud-preview"></a>Szegmensek és egyéb adatok exportálása a Salesforce Marketing Cloud-ba (előzetes verzió)
 
@@ -23,11 +22,6 @@ Használja az ügyféladatokat a Salesforce Marketing Cloud szolgáltatásban eg
 ## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
 
 - Egy SFTP állomás és a hozzájuk tartozó rendszergazdai hitelesítő adatok elérhetősége. [Az SFTP-helyek beállítása a Salesforce Marketing Cloud szolgáltatáshoz](https://help.salesforce.com/articleView?id=sf.mc_es_configure_enhanced_ftp.htm&type=5) 
-
-## <a name="known-limitations"></a>Ismert korlátozások
-
-- Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória. 
-- Az ajánlott minimális konfiguráció használata esetén az entitások legfeljebb 100 millió ügyfélprofillal való exportálása 90 percet is igénybe vehet. 
 
 ## <a name="set-up-the-connection-to-salesforce-marketing-cloud"></a>A Salesforce Marketing Cloud kapcsolatának beállítása
 

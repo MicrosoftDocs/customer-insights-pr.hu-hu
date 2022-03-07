@@ -1,37 +1,44 @@
 ---
 title: Ügyfélprofilok bővítése a Microsoftból származó adatokkal
-description: Használja a Microsoft tulajdonát képező adatokat az ügyféladatok márkahűséggel és érdeklődéssel való bővítésre.
-ms.date: 06/14/2021
+description: A Microsoft saját adataival gazdagítsa ügyféladatait affinitásokkal és elérés megoszlása.
+ms.date: 03/02/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
-ms.translationtype: HT
+searchScope:
+- ci-enrichments
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: 12704ec46832e9463e6115db6c4df64e72bf4f97
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305159"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372676"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Az ügyfelek profiljainak bővítése márkahűséggel és érdeklődési körökkel (előzetes verzió)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Ügyfélprofilok gazdagítása affinitásokkal és elérés megoszlása (előzetes verzió)
 
-Használja a Microsoft tulajdonát képező adatokat az ügyféladatok márkahűséggel és érdeklődéssel való bővítésre. Ezek az affinitások az Ön ügyfeleihez hasonló demográfiai jellemzőkkel rendelkező emberek adatain alapulnak. Ez az információ segíti az ügyfelek jobb megértését és szegmentálásukban a márkahűségük és érdeklődésük alapján.
+Használja a Microsoft saját adatait, hogy gazdagítsa ügyféladatait márka affinitásokkal, érdeklődési affinitásokkal és elérés megoszlása (SoV). Ezek az affinitások és a SoV az ügyfelekhez hasonló demográfiai adatokon alapulnak. Ezek az információk segítenek abban, hogy jobban megértse és szegmentálja ügyfeleit az adott márkákhoz és érdekekhez való affinitásuk vagy SoV alapján.
 
 A célközönség-információkban lépjen az **Adatok** > **Bővítés** a [bővítések konfigurálásához és megtekintéséhez](enrichment-hub.md).
 
-A márkaaffinitások bővítésének konfigurálásához nyissa meg a **Felfedezés** lapot, és válassza a **Saját adatok bővítése** elemet a **Márkák** csempén.
+A márkaaffinitások és a SoV-gazdagodás konfigurálásához lépjen a **Felfedezés** fülre, és válassza **az Adatok** gazdagítása lehetőséget a **Márkák** csempén.
 
-Az érdeklődésikör-affinitások bővítésének konfigurálásához nyissa meg a **Felfedezés** lapot, és válassza a **Saját adatok bővítése** elemet az **Érdeklődési körök** csempén.
+Az érdeklődési affinitások és a SoV-gazdagodás konfigurálásához lépjen a **Felfedezés** fülre, és válassza **az Adatok** gazdagítása lehetőséget az **Érdeklődések** csempén.
 
    > [!div class="mx-imgBorder"]
-   > ![Márkák és érdeklődési mozaikok](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
+   > ![Márkák és érdeklődési mozaikok.](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
 
-## <a name="how-we-determine-affinities"></a>Hogyan határozzuk meg a márkahűséget
+## <a name="how-we-determine-affinities-and-sov"></a>Hogyan határozzuk meg az affinitásokat és a SoV-t
 
-A Microsoft online keresési adatait használjuk fel különböző demográfiai szegmensek (kor, gender vagy hely szerint meghatározva) megkerséséhez, például márkahűség és érdeklődési kör. A márka vagy az érdeklődési kör online keresési mennyisége határozza meg, hogy egy demografikus szegmens mekkora hűséggel rendelkezik a többi szegmenssel összehasonlítva az adott márkához vagy érdeklődési körhöz.
+A Microsoft online keresési adatait arra használjuk, hogy megtaláljuk a márkák és érdeklődési körök affinitását és soV-ját a különböző demográfiai szegmensekben (életkor, nem vagy hely szerint meghatározva). Egy márka vagy érdeklődés online keresési volumene képezi az affinitás vagy a SoV meghatározásának alapját. Mindegyik más perspektívát biztosít az ügyfelek megértéséhez.
+
+- Az affinitás a demográfiai szegmensek közötti összehasonlító. Ezeket az információkat olyan demográfiai szegmensek azonosítására használhatja, amelyek más szegmensekhez képest a legnagyobb affinitással rendelkeznek egy adott márkához vagy érdeklődéshez.
+
+- Elérés megoszlása a kiválasztott márkák vagy érdekek összehasonlító része. Ezeket az információkat felhasználhatja annak azonosítására, hogy melyik márka vagy érdeklődés rendelkezik a legmagasabb hangmegosztással egy adott demográfiai szegmensben, összehasonlítva az Ön által kiválasztott más márkákkal vagy érdeklődési körökkel.
 
 ## <a name="affinity-level-and-score"></a>Affinitás szintje és pontszám
 
@@ -48,6 +55,10 @@ Az *Affinitás szintje* négy szintből áll, és egy 100 pontos skálán szám�
 |Alacsony     | 1-34        |
 
 Az affinitás méréséhez használt részletességtől függően használhatja az affinitás szintjét vagy a pontszámot is. Pontosabban szabályozható az affinitási pontszám.
+
+## <a name="share-of-voice-sov"></a>Elérés megoszlása (SoV)
+
+A SoV-t egy 100 pontos skálán számítjuk ki. A teljes SoV az összes márkában vagy érdeklődési körben minden gazdagított ügyfélprofil esetében 100-ra emelkedik. Az affinitásokkal ellentétben a SoV az Ön által kiválasztott márkákhoz és érdekekhez viszonyítva van. A "Microsoft" SoV-értékei például eltérőek lehetnek, ha a kiválasztott márkák ("Microsoft", "GitHub") és ("Microsoft", "LinkedIn") szemben vannak.
 
 ## <a name="supported-countriesregions"></a>Támogatott országok/régiók
 
@@ -82,7 +93,7 @@ Tekintse át az alapértelmezett bővítési beállításokat, és szükség sze
 
 ### <a name="select-entity-to-enrich"></a>Entitás kiválasztása bővítéshez
 
-Válassza a **Bővített entitás** lehetőséget, és válassza a Microsoft vállalati adataival gyarapítani kívánt entitásokat. Kiválaszthatja a Vevő entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+Válassza a Bővített entitás **lehetőséget**, és válassza ki a Microsoft adataival gazdagítani kívánt adatkészlet. Kiválaszthatja a Vevő entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
 
 ### <a name="map-your-fields"></a>Mezők megfeleltetése
 
@@ -116,26 +127,25 @@ Futtassa a bővítést a márkák, érdeklődési körök konfigurálása és a 
 
 Az ügyféladatok méretétől függően előfordulhat, hogy a bővítés futtatása néhány percig is eltarthat.
 
-> [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. A Feladat egyik feladatának **Lásd részletek** kiválasztása után további információkat talál: feldolgozási idő, utolsó feldolgozási dátum, valamint a feladathoz kapcsolódó összes hiba és figyelmeztetés.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
 A bővítési folyamat futtatása után lépjen a **Saját bővítések** pontra, és nézze át a bővített ügyfelek teljes számát és a márkák vagy érdeklődési körök lebontását a bővített ügyfelek profiljaiban.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után.":::
 
-A bővített adatok áttekintéséhez jelölje be a **Bővített adatok megtekintése** lehetőséget a diagramban. A márkák bővített adatai a **BrandAffinityFromMicrosoft** entitásba kerülnek. Az érdeklődési körök adatai az **InterestAffinityFromMicrosoft** entitásba kerülnek. Ezeket az entitásokat a **Bővítés** csoportban is megtekintheti az **Adatok** > **Entitások** helyen.
+Talál egy diagramot, amely tartalmazza a gazdagított ügyfélprofilok számát az idő múlásával és a gazdagított entitások előnézetét. Tekintse át a bővített adatokat a Továbbiak megtekintése **az Affinitási szint** vagy **elérés megoszlása** **diagramok között.** A márkák gazdagított adatai a **BrandAffinityFromMicrosoft** és **a BrandShareOfVoiceFromMicrosoft** szervezetekhez vezetnek. Az érdeklődési körökre vonatkozó adatok a **InterestAffinityFromMicrosoft** és **a InterestShareOfVoiceFromMicrosoft** entitások. Ezeket az entitásokat a **Bővítés** csoportban is megtekintheti az **Adatok** > **Entitások** helyen.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>A bővítési adatok megtekintése az ügyfélkártyán
 
-A márka és a érdeklődés affinitásokat az ügyfélkártyákon is meg lehet tekinteni. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán megkeresheti a márkákra vagy az érdeklődési körökre vonatkozó diagramokat, amelyek szerint az adott ügyfél demográfiai profiljához tartozó személyek affinitással rendelkeznek.
+A márka és az érdeklődés SoV az egyes ügyfélkártyákon is megtekinthető. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán a márka vagy az érdeklődés SoV diagramjait találja az adott ügyfél demográfiai profiljában szereplő személyek alapján.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya.":::
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md) és [intézkedéseket](measures.md), továbbá [exportálja az adatokat](export-destinations.md) , hogy személyre szabott élményt nyújtson ügyfeleinek.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

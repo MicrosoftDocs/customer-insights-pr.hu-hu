@@ -5,16 +5,15 @@ author: m-hartmann
 ms.author: mhart
 ms.date: 09/30/2021
 ms.topic: get-started
-ms.service: customer-insights
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: dc1ea94ad55886c605d27caea031e00964f6f7c8
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
-ms.translationtype: HT
+ms.openlocfilehash: 1b50da077cb0584ca9f277b276d0e9ebb46b2c5d
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645494"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350226"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Regisztráció a Dynamics 365 Customer Insights ingyenes próbaverziójára
 
@@ -32,23 +31,12 @@ A próbaverzió betöltése néhány pillanatot vesz igénybe, és majd elkezdhe
 
 A próbaverziós környezet olyan funkciókat tartalmaz, mint a fizetett verzió. Az alábbi hivatkozások végigvezetik Önt néhány kulcsfontosságú funkció használatán.
 
-### <a name="audience-insights"></a>Célközönséggel kapcsolatos információk
-
 - [Gyorskonfigurálás a célközönséggel kapcsolatos információkhoz.](audience-insights/get-started.md)
 - [Adjon hozzá további felhasználókat, és rendeljen hozzá engedélyeket.](audience-insights/permissions.md)
 - [Töltse be az adatforrásait](audience-insights/data-sources.md), és futtassa azokat az [adategyesítési folyamaton](audience-insights/data-unification.md) keresztül, hogy [egyesített ügyfélprofilokat](audience-insights/customer-profiles.md) kapjon.
 - [Bővítse az egységes ügyfélprofilokat](audience-insights/enrichment-hub.md), vagy futtasson [prediktív modelleket](audience-insights/predictions-overview.md).
 - Hozzon létre [szegmenseket](audience-insights/segments.md) az ügyfelek és a [mértékek](audience-insights/measures.md) csoportosítása és a teljesítménymutatók áttekintésének értékelése érdekében.
 - Állítson be [kapcsolatokat](audience-insights/connections.md) és [exportálásokat](audience-insights/export-destinations.md) az adatok bizonyos részhalmazának más alkalmazásokban történő feldolgozásához.
-
-### <a name="engagement-insights"></a>Elkötelezettségi információk
-
-- [Gyorskonfigurálás az elkötelezettségi elemzésekhez.](engagement-insights/get-started.md)
-- [Munkaterület létrehozása](engagement-insights/create-workspace.md) és tagok hozzáadása.
-- [Adja hozzá a kódot a webhelyéhez](engagement-insights/instrument-website.md) vagy a [mobilalkalmazáshoz](engagement-insights/developer-resources.md#capture-events-from-mobile-apps).
-- [Valós idejű jelentések](engagement-insights/view-reports.md) megtekintése vagy [egyéni jelentések](engagement-insights/custom-reports.md) létrehozása.
-- [Finomított események létrehozása](engagement-insights/refined-events.md) exportálásra.
-- [Az adatok exportálása](engagement-insights/export-events.md) az Azure Data Lake Storage szolgáltatásba.
 
 ## <a name="additional-resources"></a>További információforrások
 

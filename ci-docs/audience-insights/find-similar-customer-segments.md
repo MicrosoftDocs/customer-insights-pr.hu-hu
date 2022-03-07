@@ -1,24 +1,29 @@
 ---
-title: Hasonló ügyfelek keresése AI-val
+title: Hasonló ügyfelek keresése AI-val (videót tartalmaz)
 description: Hasonló ügyfél-szegmensek keresése mesterséges intelligenciával.
 ms.date: 06/25/2020
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ee4d24ae0ae39c689956f70efe46c4226876484e6da6282dc874cec37bd287e2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+searchScope:
+- ci-segment-builder
+- ci-segment-insights
+- customerInsights
+ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034546"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355248"
 ---
 # <a name="similar-customers-preview"></a>Hasonló ügyfelek (előzetes verzió)
 
 Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügyfélkörön belül mesterséges intelligencia segítségével. A szolgáltatás használatához legalább egy szegmensnek létre kell lennie hozva. A meglévő szegmens feltételeinek kibővítésével a szegmenshez hasonló ügyfelek kereshetők meg.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
 > A *Hasonló ügyfelek megkeresése* automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítéséhez az adatok alapján, és így egy olyan képessége van, ami profilalkotáshoz használható az Általános adatvédelmi rendelet („GDPR”) definíciója szerint. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, az előrejelzésekkel együtt, megfelel a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.

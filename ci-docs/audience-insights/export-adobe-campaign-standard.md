@@ -3,18 +3,17 @@ title: Customer Insights adatok exportálása az Adobe Campaign Standardbe
 description: Ismerje meg, hogyan lehet célközönséggel kapcsolatos információk szegmenseit használni az Adobe Campaign Standard szolgáltatásban.
 ms.date: 03/29/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: d301b4f0cb875303fb3d373b77177acd1c1f5219cd6f23c2a1d29ce67a222eab
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 6b90ee53236fdd601ecdfd8e6117a15269a08084
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032166"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227761"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insights-szegmensek használata az Adobe Campaign Standard szolgáltatásban(előzetes verzió)
 

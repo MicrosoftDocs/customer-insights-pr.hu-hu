@@ -1,93 +1,224 @@
 ---
 title: Entitások egyesítése az adategyesítésben
 description: Entitások egyesítése az egyesített ügyfélprofilok létrehozásához.
-ms.date: 04/16/2020
-ms.service: customer-insights
+ms.date: 01/28/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
-ms.translationtype: HT
+searchScope:
+- ci-match
+- ci-merge
+- ci-relationships
+- customerInsights
+ms.openlocfilehash: c7743104bf89d9a2a741f1b358a89ed0240be024
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896514"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355848"
 ---
 # <a name="merge-entities"></a>Entitások összefésülése
 
 Az egyesítési fázis az adategységesítési folyamat legutolsó szakasza. Célja az ütköző adatok feloldása. Az adatütközés egyik példája egy ügyfélnév, amely két adathalmazban is megtalálható, de kis eltéréssel („Grant Marshall” és „Grant Marshal”), vagy egy telefonszám, ami csak formátumában tér el (617-803-091X és 617803091X). Az ütköző adatpontok egyesítése attribútumonként történik.
 
+:::image type="content" source="media/merge-fields-page.png" alt-text="Oldalak egyesítése az adategyesítési folyamatban; az egységes ügyfélprofilt meghatározó egyesített mezőket tartalmazó táblázat látható.":::
+
 Az [egyeztetési fázis](match-entities.md) befejezése után megkezdheti az egyesítési fázist az **Egyesítés** csempe kiválasztásával az **Egységesítés** oldalon.
 
 ## <a name="review-system-recommendations"></a>Rendszer javaslatainak áttekintése
 
-Az **Egyesítés** oldalon kiválaszthat és kizárhat attribútumokat az egységesített ügyfélprofil entitáson belüli egyesítésből (amely a konfigurációs folyamat eredménye). A rendszer automatikusan egyesít néhány attribútumot.
+Az **Adatok** > **Egységesítés** > **Egyesítés** részen válassza ki és zárja ki az egységes ügyfélprofilon belül egyesítendő attribútumokat. Az egységes ügyfélprofil az adategyesítési folyamat eredménye. A rendszer automatikusan egyesít néhány attribútumot.
 
-### <a name="view-merged-attributes"></a>Egyesített attribútumok megtekintése
+Ha meg szeretné tekinteni az egyik automatikusan egyesített attribútumban szereplő attribútumokat, jelölje ki az egyesített attribútumot a tábla **Ügyfélmezők** lapján. Az egyesített attribútumot alkotó attribútumok két új sorban fognak megjelenni az egyesített attribútum alatt.
 
-Ha meg szeretné tekinteni az automatikusan egyesített attribútumok egyikében szereplő attribútumokat, jelölje ki az egyesített attribútumot. Az egyesített attribútumot alkotó két attribútum két új sorban fog megjelenni az egyesített attribútum alatt.
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a>Egyesített mezők szétválasztása, átnevezése, kizárása és szerkesztése
 
-> [!div class="mx-imgBorder"]
-> ![Egyesített attribútum kiválasztása](media/configure-data-merge-profile-attributes.png "Egyesített attribútum kiválasztása")
+Módosíthatja, hogy a rendszer hogyan dolgozza fel az egyesített attribútumokat az egységes ügyfélprofil létrehozásához. Válassza a **Továbbiak** lehetőséget, és válassza ki a módosítandó elemet.
 
-### <a name="separate-merged-attributes"></a>Egyesített attribútumok szétválasztása
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Lehetőségek a Mutass többet legördülő menüben az egyesített attribútumok kezeléséhez.":::
 
-Ha az automatikusan egyesített attribútumok bármelyikét szét szeretné választani vagy visszavonni az egyesítést keresse meg az attribútumot a **Profilattribútumok** táblában.
+További információkat a következő szakaszokban talál.
 
-1. Válassza a három pont (...) választógombot.
+## <a name="separate-merged-fields"></a>Egyesített mezők szétválasztása
+
+Az egyesített mezők szétválasztásához keresse meg az attribútumot a táblázatban. A szétválasztott mezők egyéni adatpontokként jelennek meg az egységes ügyfélprofilban. 
+
+1. Válassza ki az egyesített mezőt.
   
-2. A legördülő listában válassza a **Mezők szétválasztása** lehetőséget.
+1. Válassza a **Továbbiak**, majd a **Mezők szétválasztása** lehetőséget.
+ 
+1. Erősítse meg a szétválasztást.
 
-### <a name="remove-merged-attributes"></a>Egyesített attribútumok eltávolítása
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
 
-Ha egy attribútumot ki szeretne zárni a végső Ügyfélprofil entitásból, keresse meg a **Profilattribútumok** táblában.
+## <a name="rename-merged-fields"></a>Egyesített mezők átnevezése
 
-1. Válassza a három pont (...) választógombot.
+Módosítsa az egyesített attribútumok megjelenítendő nevét. A kimeneti entitás neve nem módosítható.
+
+1. Válassza ki az egyesített mezőt.
   
-2. A legördülő listában válassza a **Nincs egyesítés** lehetőséget.
+1. Válassza a **Továbbiak**, majd az **Átnevezés** lehetőséget.
 
-   Az attribútum átkerül az **Eltávolítva ügyfélrekordból** szakaszba.
+1. Erősítse meg a módosított megjelenítendő nevet. 
 
-## <a name="manually-add-a-merged-attribute"></a>Egyesített attribútum manuális hozzáadása
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
 
-Egyesített attribútum hozzáadásához nyissa meg az **Egyesítés** oldalt.
+## <a name="exclude-merged-fields"></a>Egyesített mezők kizárása
 
-1. Válassza az **Egyesített attribútum kiválasztása** elemet.
+Zárjon ki egy attribútumot az egységes ügyfélprofilból. Ha a mező más folyamatokban – például szegmensekben – használatos, akkor az ügyfélprofilból való kizárás előtt távolítsa el ezekből a folyamatokból. 
 
-2. Adjon meg egy **Nevet**, amellyel be tudja később azonosítani az **Egyesítés** oldalon.
+1. Válasszon egy egyesített mezőt.
+  
+1. Válassza a **Továbbiak**, majd a **Kizárás** lehetőséget.
 
-3. Tetszés szerint megadhat egy **Megjelenítendő név** értéket is, amely megjelenik az egységesített Ügyfélprofil entitásban.
+1. Erősítse meg a kizárást.
 
-4. Konfigurálja az **Ismétlődő attribútumok kiválasztása** lehetőséget, hogy kiválassza azokat az attribútumokat, amelyeket egyesíteni szeretne az egyeztetett entitásokból. Az attribútumok keresésére is lehetőség van.
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
 
-5. Állítsa be a **Rangsor fontosság szerint** elemet, hogy rangsorolja az egyik attribútumot a többi felett. Ha például a *WebAccountCSV* entitás tartalmazza a legpontosabb információkat a *Teljes nevek* attribútumáról, az entitást a *ContactCSV* fölé rangsorolhatja a *WebAccountCSV* kiválasztásával. Ennek eredményeként a *WebAccountCSV* az első prioritásba kerül, míg a *ContactCSV* második helyre kerül, amikor a *Teljes név* attribútum értékeit kéri le.
+Az összes kizárt mező megtekintéséhez az **EgyesítésMerge** oldalon válassza a **Kizárt mezők** lehetőséget. Ezen az ablaktáblán újra felveheti a kizárt mezőket.
+
+## <a name="edit-a-merged-field"></a>Egy egyesített mező szerkesztése
+
+1.  Válasszon egy egyesített mezőt.
+
+1.  Válassza a **Továbbiak**, majd a **Szerkesztés** lehetőséget.
+
+1.  Adja meg a mezők egyesítésének vagy összefésülésének módját a következő három lehetőség egyikével:
+    - **Fontosság**: A résztvevő mezőkhöz megadott fontossági rang alapján meghatározza a győztes értékét. Ez az alapértelmezett egyesítési beállítás. A fontosság sorrendjének beállításhoz válassza a **Mozgatás felfelé vagy lefelé** lehetőséget.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Fontosság beállítás a mezők egyesítése párbeszédpanelen."::: 
+    - **Legújabb**: A győztes értékét a leginkább friss alapján azonosítja. Az létrehozás idejének meghatározásához az egyesítés mezők hatókörében minden részt vevő entitáshoz dátum vagy numerikus mező szükséges.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Viszonosság beállítás a mezők egyesítése párbeszédpanelen.":::
+    - **Legérlegebbi**: A győztes értékét a leginkább régi alapján azonosítja. Az létrehozás idejének meghatározásához az egyesítés mezők hatókörében minden részt vevő entitáshoz dátum vagy numerikus mező szükséges.
+
+1.  Az összefésülésben való részvételhez további mezőket adhat hozzá.
+
+1.  Az egyesített mező átnevezhető.
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
+
+## <a name="combine-fields-manually"></a>Mezők manuális egyesítése
+
+Manuálisan adjon meg egy egyesített attribútumot.
+
+1. Az Egyesítés **lapon válassza az** Egyesítése **lehetőséget**.
+
+1. Válassza a **Mezők** lehetőséget.
+
+1. Adja meg az egyesítés győztesének irányelvét a **Mezők összevonása a következő alapján:** legördülő menüben.
+
+1. Válasszon ki egy hozzáadni kívánt mezőt. További mezők kombinálásához válassza ki a **Mezők hozzáadása** lehetőséget.
+
+1. Adja meg a **Nevet** és egy **Kimeneti mező nevét**.
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget. 
+
+## <a name="combine-a-group-of-fields"></a>Mezők csoportjának egyesítése
+
+Mezők csoportját egyetlen egységként kezelje. Ha például a rekordjaink a Cím1, a Cím2, a Város, az Állapot és a Zip mezőket tartalmazzák. Valószínűleg nem akarunk egyesülni egy másik rekord Address2-ben, azt gondolva, hogy ez teljesebbé tenné az adatainkat
+
+1. Az Egyesítés **lapon válassza az** Egyesítése **lehetőséget**.
+
+1. Válassza a **Mezők** csoportja beállítást.
+
+1. Adja meg az egyesítés nyertese házirendet a **Rangsorolás csoportok** legördülő listában.
+
+1. Válassza a Hozzáadás **lehetőséget**, és válassza ki, hogy szeretne-e további mezőket vagy további csoportokat hozzáadni a mezőkhöz.
+
+1. Adjon meg egy **nevet** és egy **kimeneti nevet** minden kombinált mezőhöz.
+
+1. Adja meg **a mezők csoportjának nevét**. 
+
+1. Válassza a **Kész** lehetőséget a módosítások alkalmazásához.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
+
+## <a name="change-the-order-of-fields"></a>Mezők sorrendjének módosítása
+
+Egyes entitások több adatot tartalmaznak, mint mások. Ha egy entitás egy mezőre vonatkozóan a legfrissebb adatokat tartalmazza, az értékek egyesítésekor prioritást adhat neki a többi entitáshoz képest.
+
+1. Válassza ki az egyesített mezőt.
+  
+1. Válassza a **Továbbiak**, majd a **Szerkesztés** lehetőséget.
+
+1. A **Mezők kombinálása** panelen válassza a **Mozgatás le/fel** lehetőséget a sorrend megadásához, vagy húzza a kívánt helyre az elemeket.
+
+1. Erősítse meg a módosítást.
+
+1. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
+
+## <a name="configure-customer-id-generation"></a>Egyedi ügyfélazonosító létrehozásának konfigurálása 
+
+A mezők egyesítésének konfigurálását követően megadhatja, hogyan hozza létre a CustomerId értékeket, az egyedi ügyfélprofil-azonosítókat. Az adategyesítési folyamat egyesítési lépése létrehozza az egyedi ügyfélprofil-azonosítót. Az azonosító az *Ügyfél* entitás CustomerId-azonosítója, amely az adategyesítési folyamat eredménye. 
+
+Az Ügyfél entitás CustomerId értéke a nem null győztes elsődleges kulcsok első értékének kivonatán alapul. Ezek a kulcsok az egyesítés és összefésülés fázisában használt entitásokből jönnek, és ezeket az egyezések sorrendje befolyásolja.Így a létrehozott CustomerID módosulhat, ha egy elsődleges kulcs értéke megváltozik az egyeztetés sorrendjének elsődleges entitásában. Előfordulhat, hogy az elsődleges kulcs értéke nem mindig ugyanazt az ügyfelet képviseli.
+
+A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elkerülje ezt a viselkedést.
+
+**Egyedi ügyfélazonosító konfigurálása**
+
+1. Válassza az **Egységesítés** > **Egyesítés** lehetőséget.
+
+1. Válassza ki a **Kulcsok** lapot. 
+
+1. Mutasson az egérrel a **CustomerId** sorra, és válassza a **Konfigurálás** lehetőséget.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Vezérlés az azonosítók generálásának testreszabásához.":::
+
+1. Jelöljön ki legfeljebb öt olyan mezőt, amely egyedi ügyfélazonosítót tartalmaz, és stabilabb. A konfigurációnak nem megfelelő rekordok a rendszer által konfigurált azonosítót kell használják.  
+
+1. Válassza a **Kész** lehetőséget, majd a módosítások alkalmazásához futtassa az egyesítési folyamatot.
+
+## <a name="group-profiles-into-households-or-clusters"></a>A csoportos profilokat háztartásokba vagy fürtökbe kell csoportosítani
+
+Az ügyfélprofilok generálási konfigurációs folyamatának részeként szabályokat határozhat meg, amelyek fürtbe csoportosítják a kapcsolódó profilokat. Jelenleg két fürttípus áll rendelkezésre: háztartási és egyéni fürtök. A rendszer automatikusan kiválasztja az előre definiált szabályokkal való használatot, ha az *Ügyfél* entitása a *Person.LastName* és *Location.Address* szemantikus mezőket tartalmazza. Az [egyező szabályokhoz](match-entities.md#define-rules-for-match-pairs) hasonlóan saját szabályokkal és feltételekkel is létrehozhat fürtöt.
+
+**Definiálás vagy fürt meghatározása**
+
+1. Válassza az **Egységesítés** > **Egyesítés** lehetőséget.
+
+1. Az **Egyesítés** lapon válassza a **Haladó** > **Fürt létrehozása** lehetőséget.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Új fürt létrehozásához szükséges vezérlő.":::
+
+1. Válasszon a **Háztartási** vagy az **Egyéni** fürt lehetőségekközül. Ha a *Person.LastName* és *Location.Address* szemantikus mezők léteznek az *Ügyfél* entitásban, a program automatikusan kiválasztja a címzett nevét.
+
+1. Adja meg a fürt nevét, és válassza a **Kész** lehetőséget.
+
+1. A létrehozott fürt kereséséhez válassza a **Fürtök** lapot.
+
+1. Adja meg a fürt definiáló szabályait és feltételeit.
+
+1. Válassza a **Futtatás** lehetőséget az egyesítési folyamat futtatásához és a fürt létrehozásához.
+
+Az egyesítési folyamat futtatása után a fürtazonosítók új mezőként kerülnek az *Ügyfél* entitásába.
 
 ## <a name="run-your-merge"></a>Az egyesítés futtatása
 
 Függetlenül attól, hogy kézzel egyesíti-e az attribútumokat, vagy a rendszer egyesíti-e őket, bármikor futtathatja az egyesítést. A folyamat indításához az **Egyeztetés** oldalon válassza a **Futtatás** elemet.
 
 > [!div class="mx-imgBorder"]
-> ![Adatok egyesítése Mentés és Futtatás](media/configure-data-merge-save-run.png "Adatok egyesítése Mentés és Futtatás")
+> ![Adatok egyesítése Mentés és Futtatás.](media/configure-data-merge-save-run.png "Adatok egyesítése Mentés és Futtatás")
 
-A további módosítások elvégzéséhez és a lépés újrafuttatásához visszavonhat egy folyamatban lévő egyesítést. Válassza ki a **Frissítés folyamatban...** szöveget és válassza a **Feladat megszakítása** lehetőséget a megjelenő oldalpanelen.
+Ha csak az egységesített ügyfélentitásban szereplő kimenetet szeretné látni, válassza a **Csak az Egyesítés futtatása** lehetőséget. A lefelé irányuló folyamatok [a frissítési ütemezésében meghatározottak szerint](system.md#schedule-tab) frissülnek.
 
-Miután a **Frissítés folyamatban...** szöveg **Sikeres** elemre módosul, az egyesítés befejeződött, és megoldotta az adatokban levő ellentmondásokat a meghatározott házirendek alapján. Az egyesített és a nem egyesített attribútumok szerepelnek az egyesített profil entitásban. A kizárt attribútumok nem szerepelnek az egyesített profil entitásban.
+Ha a saját módosításaival szeretné frissíteni a rendszert, válassza az **Egyesítési és lefelé irányuló folyamatok futtatása** lehetőséget. Minden folyamat (beleértve a bővítést, a szegmenseket és a mértékeket is) újrafut. Miután az összes lefelé irányuló folyamat befejeződött, az ügyfélprofilokban megjelennek a végrehajtott módosítások.
 
-Ha nem először sikerült az egyesítés futtatása, a rendszer automatikusan újrafuttatja az összes későbbi folyamatot, beleértve a bővítést, a szegmentálást és az intézkedéseket. Az összes folyamat újrafuttatását követően az ügyfelek profiljai tükrözik az elvégzett módosításokat.
+Ha további módosításokat szeretne végrehajtani, majd újrafuttatná a lépést, megszakíthatja a folyamatban lévő egyesítést. Válassza ki a **Frissítés folyamatban...** szöveget és válassza a **Feladat megszakítása** lehetőséget a megjelenő oldalpanelen.
 
-> [!TIP]
-> A feladatokhoz/folyamatokhoz [hatféle állapot](system.md#status-types) tartozhat. Emellett a legtöbb folyamat [más alsóbb szintű folyamatoktól is függ](system.md#refresh-policies). Kiválaszthatja egy folyamat állapotát, és megtekintheti a hozzá tartozó teljes feladat folyamatának részleteit. Miután kiválasztotta a **Részletek megtekintése** lehetőséget a feladat egyik feladatához, további információk jelennek meg: feldolgozási idő, legutóbbi feldolgozás dátuma, és a feladathoz társított összes hiba és figyelmeztetés.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="A feladat állapotára mutató hivatkozás részleteinek lefúrási útvonala.":::
 
 ## <a name="next-step"></a>Következő lépés
 
 Konfigurálja a [tevékenységek](activities.md), [bővítés](enrichment-hub.md) vagy [kapcsolatok](relationships.md) elemet, és még több információt kaphat ügyfeleiről.
 
-Ha már beállította a tevékenységeket, a dúsítást vagy a kapcsolatok, vagy ha a szegmenseket definiálta, akkor a rendszer automatikusan feldolgozza a legfrissebb ügyféladatokat.
-
-
-
+Ha már konfigurált tevékenységeket, bővítést vagy szegmenseket, akkor a rendszer automatikusan feldolgozza őket, hogy a legújabb ügyféladatokat lehessen használni.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

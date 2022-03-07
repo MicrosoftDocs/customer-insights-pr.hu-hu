@@ -3,18 +3,17 @@ title: Ügyfélprofilok gyarapítása az Azure Maps szolgáltatásból származ�
 description: Az Azure Maps független gyártótól származó bővítésre vonatkozó általános információk.
 ms.date: 08/31/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 63f241c27ec86f357c83a301d6797f9ff87c2241
-ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
+ms.openlocfilehash: cb1c0778a398ef6d338ce6cf9e199eae0c344a5c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/01/2021
-ms.locfileid: "7466765"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226452"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Ügyfélprofilok bővítése az Azure Maps segítségével (előzetes verzió)
 
@@ -44,7 +43,7 @@ Az Azure Maps adatbővítésének konfigurálása érdekében teljesülnie kell 
 
     :::image type="content" source="media/enrichment-azure-maps-configuration-customer-data-set.png" alt-text="Képernyőkép az ügyféladatkészlet kiválasztásakor.":::
 
-1. Válassza ki, hogy a mezőket elsődleges és/vagy másodlagos címre szeretné-e leképezni. Mezőleképezést is megadhat a címekhez, és mindkét cím esetében külön-külön bővítheti a profilokat, például egy otthoni és egy munkahelyi cím esetében. Válassza a **Következő** lehetőséget.
+1. Válassza ki, hogy a mezőket elsődleges és/vagy másodlagos címre szeretné-e leképezni. Mezőleképezést is megadhat a címekhez, és mindkét cím esetében külön-külön bővítheti a profilokat &mdash; például egy otthoni és egy munkahelyi cím esetében. Válassza a **Következő** lehetőséget.
 
 1. Határozza meg, hogy melyik mezőket kell használni az egyesített profiljaiból az egyező helyadatok kereséséhez az Azure Mapsből. A kijelölt elsődleges vagy másodlagos címhez az **Utca 1** és a **Irányítószám** mező szükséges. A nagyobb egyezési pontosság érdekében további mezőket adhat hozzá.
 
@@ -53,7 +52,7 @@ Az Azure Maps adatbővítésének konfigurálása érdekében teljesülnie kell 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
 1. Döntse el, hogy módosítani szeretné-e a **Speciális beállításokat**. Ezek maximális rugalmasságot biztosítanak a speciális esetek kezeléshez, de a legtöbb esetben az alapértelmezett értékek megfelelőek lesznek:
-   - **Címek típusa**: Az alapértelmezett viselkedés az, hogy a gyarapítás akkor is a legjobb címet adja vissza, ha nem teljes. Ha például csak a teljes címeket szeretne kapni – tehát házszámot is tartalma címeket – törölje az összes jelölőnégyzet jelölését a **Pontcímek** kivételével. 
+   - **Címek típusa**: Az alapértelmezett viselkedés az, hogy a gyarapítás akkor is a legjobb címet adja vissza, ha nem teljes. Ha például csak a teljes címeket szeretne kapni &mdash; tehát házszámot is tartalma címeket &mdash; törölje az összes jelölőnégyzet jelölését a **Pontcímek** kivételével. 
    - **Nyelv**: A rendszer alapértelmezés szerint annak a régiónak a nyelvén ad eredményül címeket, amelyhez a cím hozzá van tartozik. Ha egységesített címnyelvet kell használnia, válassza ki a nyelvet a legördülő menüből. Ha például az **angolt** választja, a **Copenhagen, Denmark** érték lesz visszaküldve a **København, Danmark** helyett.
 
 1. Adjon nevet a bővítésnek.
@@ -84,9 +83,9 @@ A bővítési folyamat befejezése után áttekintheti az újonnan bővített ü
 
 Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
 
-## <a name="next-steps"></a>Következő lépések
+## <a name="next-steps"></a>További lépések
 
-Építsen a bővített ügyféladatokra. Hozzon létre [szegmenseket](segments.md), [mértékeket](measures.md) , sőt [exportálhatja az adatokat](export-destinations.md), hogy személyre szabott élményeket tudjon nyújtani az ügyfeleknek.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

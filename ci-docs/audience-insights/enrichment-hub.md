@@ -1,21 +1,25 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 09/30/2021
+ms.date: 02/18/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
-ms.translationtype: HT
+searchScope:
+- ci-enrichments
+- ci-enrichment-details
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673002"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372718"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -37,14 +41,18 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 - [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
+- [Forrás](enrichment-liveramp.md) : LiveRamp AbiliTec
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
 - A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
+- [A Microsoft által szolgáltatott továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
 - A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
 - [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
 - [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
+- [A Microsoft által megadott fiókkapcsolati adatok](enrichment-office.md)
 
 ---
 
@@ -73,6 +81,10 @@ A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md)
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 
 A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
+
+## <a name="enrich-data-sources-before-unification"></a>Adatforrások gazdagítása az egyesítés előtt
+
+Az adategyesítés előtt gazdagíthatja az ügyféladatokat, hogy növelje az adategyezés minőségét. További információ: [adatforrás gazdagodás](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 

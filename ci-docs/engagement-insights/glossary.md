@@ -5,16 +5,15 @@ author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
 ms.date: 11/12/2020
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: fd6513f66777f8be312c8b594d52836ac325f2825e9d019d2ba0f49c587cf8ca
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: 56048037a397bf153d54f9e1c8b1664219557ddf
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035739"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225289"
 ---
 # <a name="engagement-insights-capability-glossary"></a>aktivitási információk képesség szószedete
 

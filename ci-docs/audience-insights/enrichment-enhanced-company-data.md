@@ -1,33 +1,32 @@
 ---
 title: Vállalati adatok javítása
 description: Gazdagítsa és normalizálja a vállalati adatokat a Microsoft modelljeivel.
-ms.date: 11/15/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
-ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
+ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "7813921"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229406"
 ---
-# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
+# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Cégprofilok gazdagítása továbbfejlesztett vállalati adatokkal
 
-A Microsoft modelljei és a lefordított vállalati adatok segítségével javíthatja, kiegészítheti és szabványosíthatja vállalati profiljait. A common data model formátumot fogjuk használni a [jobb pontosság és betekintés](/common-data-model/schema/core/applicationcommon/account) érdekében.
+A Microsoft modelljeinek és lefordított vállalati adatainak használatával javíthatja, kiegészítheti és szabványosíthatja vállalati profiljait. A jobb pontosság és betekintés érdekében a [Common Data Model formátumot](/common-data-model/schema/core/applicationcommon/account) fogjuk használni.
 
 ## <a name="how-we-enhance-company-data"></a>Hogyan javítjuk a vállalati adatokat
 
-Modellünk kétlépcsős folyamaton megy keresztül a vállalati profil javítása érdekében. Először is normalizálja a cég nevét. Például a *Microsoft* Corp-ot kijavítják és szabványosítják a *Microsoft Corporation számára*. Megpróbálja megtalálni a mérkőzést a Microsoft összeállított vállalati adataiban. Ha egyezést találunk, a cég profilját az összeállított vállalati adatainkból származó információkkal gazdagítjuk, beleértve a vállalat nevét is.
+Modellünk kétlépcsős folyamaton megy keresztül a vállalati profil javítása érdekében. Először is normalizálja a vállalat nevét. Például a *Microsoft Corp-ot* kijavítják és szabványossá teszik a Microsoft Corporation *számára*. Megpróbál egyezést találni a Microsoft összeállított vállalati adataiban. Ha egyezést találunk, a cég profilját az összeállított cégadatokból származó információkkal gazdagítjuk, beleértve a cég nevét is.
 
 
 ### <a name="example"></a>Példa
 
-Előfordulhat, hogy a vállalati adatok nem követik a szabványosított formátumot, és helyesírási hibákat tartalmaznak. A modell megpróbálja kijavítani ezeket a problémákat, és következetes információkat hoz létre.
+Előfordulhat, hogy a vállalat adatai nem szabványosított formátumot követnek, és helyesírási hibákat tartalmaznak. A modell megpróbálja kijavítani ezeket a problémákat, és konzisztens információkat létrehozni.
 
 ```Input
 Microsft
@@ -49,26 +48,26 @@ Microsft
 
 A továbbfejlesztett adatoknak van néhány korlátja. Az alábbi listában szereplő elemeket a modell nem támogatja.
 
-1.  Erősítse meg a vállalat személyazonosságát. Nem ellenőrizzük, hogy a bemenet meglévő szervezet-e, vagy hogy egy vállalat a kimenetet használja-e szabványos névként.
-2.  Átfogóan lefedi a vállalatokat világszerte. A Microsoft összeállított vállalati adatai globális lefedettséggel rendelkeznek, de a legtöbb lefedettséget Ausztráliában, Kanadában, az Egyesült Királyságban és az Egyesült Államokban kínálják.
-3.  Szabványosítsa a vállalati címeket világszerte. Jelenleg támogatjuk a címek szabványosítását ezekben az országokban vagy régiókban: Ausztrália, Kanada, Franciaország, Németország, Olaszország, Japán, Egyesült Királyság és az Egyesült Államok.
-4.  Garantálja az adatok pontosságát vagy frissességét. Mivel az üzleti információk gyakran változnak, nem tudjuk garantálni, hogy a megadott továbbfejlesztett vállalati adatok mindig pontosak vagy naprakészek.
+1.  Erősítse meg a vállalat személyazonosságát. Nem ellenőrizzük, hogy a bemenet egy meglévő szervezet-e, vagy hogy egy vállalat a kimenetet használja-e szabványos neveként.
+2.  Átfogóan lefedi a vállalatokat világszerte. A Microsoft összeállított vállalati adatai globális lefedettséggel vannak, de a legtöbb lefedettséget Ausztráliában, Kanadában, az Egyesült Királyságban és az Egyesült Államokban kínálják.
+3.  A vállalati címek szabványosítása globálisan. Jelenleg támogatjuk a címek szabványosítását ezekben az országokban vagy régiókban: Ausztrália, Kanada, Franciaország, Németország, Olaszország, Japán, Egyesült Királyság és az Egyesült Államok.
+4.  Garantálja az adatok pontosságát vagy frissességét. Mivel az üzleti információk gyakran megváltoznak, nem tudjuk garantálni, hogy a megadott továbbfejlesztett vállalati adatok mindig pontosak vagy naprakészek.
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
 1. Lépjen az **Adatok** > **Bővítés** pontra.
 
-1. Válassza **az Adatok gazdagítása lehetőséget a** **Továbbfejlesztett vállalati** adatlapon.
+1. Válassza a Bővített vállalati adatok **csempén az** Adatok **gazdagítása lehetőséget**.
 
-   :::image type="content" source="media/enhanced-company-data-tile.png" alt-text="Dúsítási csempe a vállalati adatok gazdagító központjában.":::
+   :::image type="content" source="media/enhanced-company-data-tile.png" alt-text="Gazdagító csempe a vállalati adatok gazdagító központjában.":::
 
 1. Válassza ki az **Ügyféladatok beállítva** lehetőséget, majd a bővíteni kívánt címeket tartalmazó entitást. Az *Ügyfél* entitás kiválasztásával az összes ügyfélprofilban lévő címeket bővítheti, de kijelölhet olyan szegmensentitást is, amely csak az adott szegmensben található ügyfélprofilok címeit bővíti.
 
-1. Válassza ki, hogy a vállalati profilokból mely típusú mezőket kell használni a Microsoft által összeállított vállalati adatokkal való egyeztetéshez. Ez a beállítás hatással van a következő lépésben elérhető leképezési mezőkre.
+1. Válassza ki, hogy a vállalati profilok mely típusú mezőit használja a Microsoft lefordított vállalati adataival való egyeztetéshez. Ez a beállítás hatással van a következő lépésben elérhető leképezési mezőkre.
 
-1.  Az egyesített vevői entitás vállalati mezőinek leképezése. Minél több kulcsazonosítót és mezőt térképez fel, annál nagyobb a valószínűsége a magasabb egyezési aránynak.
+1.  A vállalati mezők leképezése az egyesített ügyfél entitásból. Minél több kulcsfontosságú azonosítót és mezőt térképez fel, annál nagyobb a valószínűsége a magasabb egyezési aránynak.
 
-    :::image type="content" source="media/enhanced-company-data-mapping.png" alt-text="Adatleképezési lépés a vállalat gazdagításának konfigurálásakor.":::
+    :::image type="content" source="media/enhanced-company-data-mapping.png" alt-text="Adatleképezési lépés a vállalati gazdagodás konfigurálásakor.":::
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
@@ -82,7 +81,17 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
-Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+A bővített adatok **mintáját a Gazdagított vevők előnézeti** csempéjén tekintheti meg. Válassza a Továbbiak megtekintése lehetőséget **, és válassza az Adatok** lapot az **egyes bővített profil részletes nézetének eléréséhez.**
+
+### <a name="overview-card"></a>Áttekintő kártya
+
+Az áttekintő kártya a gazdagodás lefedettségének részleteit mutatja. 
+
+* **Feldolgozott és módosított** vállalatok: A sikeresen gazdagított ügyfélvállalati profilok száma.
+
+* **Feldolgozott és nem módosított** vállalatok: Az ügyfélvállalati profilok száma, amelyeket felismertek, de nem változtattak meg. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagodás nem javítható.
+
+* **Nem feldolgozott és nem módosított** vállalatok: A fel nem ismert ügyfélvállalati profilok száma. Ez általában olyan bemeneti adatok esetében történik, amelyek érvénytelenek vagy a gazdagítás nem támogatja őket.
 
 ## <a name="next-steps"></a>További lépések
 

@@ -5,16 +5,15 @@ author: britl
 ms.reviewer: mhart
 ms.author: britl
 ms.date: 09/27/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: ad835f762226d62fdb0f544627f2a76ff09a1ffd
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
-ms.translationtype: HT
+ms.openlocfilehash: 99e1c04877993a9cd81912e3d400402aab06a7de
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558860"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231025"
 ---
 # <a name="install-the-web-sdk-on-a-website"></a>A webes SDK telepítése egy webhelyre
 

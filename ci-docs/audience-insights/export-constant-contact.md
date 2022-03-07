@@ -1,20 +1,19 @@
 ---
 title: Customer Insights-adatok exportálása az Constant Contactra
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Constant Contactba.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 29f4320c798db62609283e3c48f0b47a4f0b982f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
-ms.translationtype: HT
+ms.openlocfilehash: 8841945814397ffa70c56638a8bed25499c1a06f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124276"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226406"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Szegmensek exportálása az Állandó kapcsolattartóba (előzetes verzió)
 
@@ -28,10 +27,10 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Az Constant Contact exportálásonként legfeljebb 1 millió profil exportálható.
+- Exportálásonként legfeljebb 1 millió ügyfélprofilt exportálhat a Constant Contact szolgáltatásba.
 - Az Constant Contactba való exportálás a szegmensekre korlátozódik.
-- 1 millió profil exportálása az Constant Contact alkalmazásba akár 1 órát is igénybe vehet. 
-- Az Constant Contactba exportálható profilok száma az Constant Contacttal kötött szerződéstől függ és az korlátozza.
+- 1 millió ügyfélprofil exportálása a Constant Contact szolgáltatásba akár 1 órát is igénybe vehet. 
+- A Constant Contact alkalmazásba exportálható ügyfélprofilok száma a Constant Contacttal kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Kapcsolat beállítása Constant Contacthoz
 
@@ -47,7 +46,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 
 1. Válassza a **Kapcsolat** lehetőséget az Constant Contact kapcsolatának inicializálására.
 
-1. Válassza a **Hitelesítés az AdRollal** lehetőséget, és adja meg az Constant Contact rendszergazdai hitelesítő adatait. 
+1. Válassza a **Hitelesítés állandó kapcsolattartóval** lehetőséget, és adja meg a rendszergazdai hitelesítő adatokat az Állandó kapcsolattartóhoz. 
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
@@ -65,7 +64,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg az [**Constant Contact listájának azonosítóját**](https://app.constantcontact.com/pages/contacts/ui#lists). Nyisson meg egy listát az Constant Contactban, és keresse meg a lista azonosítóját az URL-címben.
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. A szegmenseket exportálni kell az Constant Contact alkalmazásba.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell az Constant Contact alkalmazásba.
 
 1. Alternatív lehetőségként exportálhatja az Utónév és Vezetéknév mezőket további mezőként személyre szabottabb e-mailek létrehozásához. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 

@@ -1,26 +1,26 @@
 ---
-title: Az Android SDK első lépések
-description: Ismerje meg, hogyan szabhatja személyre és futtathatja az Android SDK-t
+title: Első lépések az Android SDK-val
+description: Ismerje meg az Android SDK személyre szabását és futtatását
 author: britl
 ms.reviewer: mhart
+ms.custom: intro-internal
 ms.author: britl
 ms.date: 10/19/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
-ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
-ms.translationtype: HT
+ms.openlocfilehash: b06822b2c2d6a859bdf808f7800baef43c4ab874
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7655345"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226172"
 ---
-# <a name="get-started-with-the-android-sdk"></a>Az Android SDK első lépések
+# <a name="get-started-with-the-android-sdk"></a>Első lépések az Android SDK-val
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Ez az oktatóanyag végigvezeti Önt a Android alkalmazás Dynamics 365 Customer Insights elkötelezettségi elemzési SDK-val történő hangszerelésének folyamatán. Öt perc múlva vagy hamarabb elkezdi látni az eseményeket a portálon.
+Ez az oktatóanyag végigvezeti az Android alkalmazás a Dynamics 365 Customer Insights elköteleződési elemzések SDK-val történő instrumentálásának folyamatán. Öt perc múlva vagy hamarabb elkezdi látni az eseményeket a portálon.
 
 ## <a name="configuration-options"></a>Konfigurációs beállítások
 A következő konfigurációs beállításokat lehet áttenni az SDK-ra:
@@ -31,12 +31,12 @@ A következő konfigurációs beállításokat lehet áttenni az SDK-ra:
 
 - Android Studio
 
-- Minimális Android API szint: 16 (Jelly Bean)
+- Minimum Android API szint: 16 (Jelly Bean)
 
 - Egy ingestion kulcs (lásd lejjebb a hozzáférési útmutatót)
 
 ## <a name="integrate-the-sdk-into-your-application"></a>SDK beágyazása az alkalmazásba
-Kezdje a folyamatot egy munkaterület kiválasztásával, a Android mobilplatform kiválasztásával és a Android SDK letöltésével.
+Kezdje a folyamatot munkaterület kiválasztásával, az Android a mobil platform kiválasztásával és az Android SDK letöltésével.
 
 - A munkaterület kijelöléséhez használja a bal oldali navigációs ablakban található munkaterület-kapcsolót.
 
@@ -46,8 +46,8 @@ Kezdje a folyamatot egy munkaterület kiválasztásával, a Android mobilplatfor
 
 ## <a name="configure-the-sdk"></a>Konfigurálja az SDK-t
 
-Az SDK letöltése után Android Studio dolgozhat vele az események engedélyezéséhez és meghatározásához. Kétféleképpen teheti ezt meg:
-### <a name="option-1-use-jitpack-recommended"></a>1. lehetőség: Használja a JitPack-et (ajánlott)
+Miután letöltötte az SDK-t, az Android Studio-ban dolgozhat vele az események engedélyezéséhez és definiálásához. Kétféleképpen teheti ezt meg:
+### <a name="option-1-use-jitpack-recommended"></a>1. lehetőség: JitPack használata (ajánlott)
 1. Adja hozzá a gyökér `build.gradle`-höz a JitPack-adattár csomagot:
     ```gradle
     allprojects {
@@ -67,7 +67,7 @@ Az SDK letöltése után Android Studio dolgozhat vele az események engedélyez
     ```
 
 ### <a name="option-2-use-download-link"></a>2. lehetőség: Letöltési link használata
-1. Töltse le az [elkötelezettségi elemzési elemzéseket Android SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), és helyezze a fájlt a `eiandroidsdk-debug.aar``libs` mappába.
+1. Töltse le [az elköteleződési elemzések Android SDK-t](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), és helyezze a `eiandroidsdk-debug.aar` fájlt a `libs` mappába.
 
 1. Nyissa meg a projektszintű `build.gradle` fájlt, és adja hozzá a következő részleteket:
     ```gradle
@@ -122,7 +122,7 @@ Az SDK letöltése után Android Studio dolgozhat vele az események engedélyez
    >[!NOTE]
    >`Action` az eseményeket manuálisan kell hozzáadni.
 
-1. (Nem kötelező) Az egyéb beállítások közé tartozik a végpont URL-címének beállítása. A betöltési kulcs metaadatai alá adhatók hozzá a `AndroidManifest.xml`.
+1. (Nem kötelező) Az egyéb beállítások közé tartozik a végpont URL-címének beállítása. Ezek hozzáadhatók a betöltési kulcs metaadatai alatt a `AndroidManifest.xml`.
 
    ```xml
         <meta-data

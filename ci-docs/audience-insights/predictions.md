@@ -2,39 +2,42 @@
 title: Részleges adatok kitöltése előrejelzések használatával
 description: Az előrejelzések segítségével töltse ki a hiányos ügyféladatokat.
 ms.date: 11/01/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732407"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354006"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki részleges adatait előrejelzésekkel (elavult)
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki a részleges adatokat előrejelzésekkel (elavult)
 
 > [!IMPORTANT]
-> Ez a funkció **·** **2021. november 5-én elavult lesz**. Az aktuális implementációk a funkció eltávolításáig működnek, de az alábbi utasításokkal nem hozhat létre új integrációkat.
+> Ez a **funkció 2021. november 5-től** elavult **lesz**. A jelenlegi implementációk a funkció eltávolításáig folytatják a munkát, de az alábbi utasítások alapján nem hozhat létre új integrációkat.
 
 Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzett értékeket, amelyek segíthetik az ügyfél megértését. Az **Intelligencia** > **Előrejelzések** oldalon kiválaszthatja a **Saját előrejelzések** elemet a célközönség-információk más részein konfigurált előrejelzések megtekintéséhez, és lehetővé teszi a további testreszabást.
 
 > [!NOTE]
 > Ez a funkció nem használható, ha a környezet Azure Data Lake Gen 2 tárhelyet használ.
 >
-> Az előrejelzések funkció automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítésére az adott adatok alapján, és így képes a profilkészítési módszerként használni, abban az értelemben, ahogy ezt a kifejezést az általános adatvédelmi rendelet ("GDPR") meghatározza. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Ön felelős annak biztosításáért, hogy a Dynamics 365 Customer Insights használata, beleértve az előrejelzéseket is, megfeleljen az összes vonatkozó törvénynek és rendeletnek, beleértve a magánéletre, a személyes adatokra, a biometrikus adatokra, az adatvédelemre és a kommunikáció titkosságára vonatkozó törvényeket is.
+> Az előrejelzések funkció automatizált eszközöket használ az adatok értékelésére és az előrejelzések készítésére az adott adatok alapján, és így képes a profilkészítési módszerként használni, abban az értelemben, ahogy ezt a kifejezést az általános adatvédelmi rendelet ("GDPR") meghatározza. Ha az ügyfél ezt a funkciót adatok feldolgozására használja, az a GDPR vagy más törvények és szabályozások hatálya alá tartozhat. Felelős azért, hogy biztosítsa, hogy a Dynamics 365 Customer Insights használata, az előrejelzésekkel együtt, megfelel a vonatkozó törvényeknek és szabályozásoknak, többek között az adatvédelemmel, személyes adatokkal, biometrikus adatokkal, adatok védelmével és a kommunikáció titkosságával kapcsolatos törvényeknek.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskodjon arról, hogy a következő előfeltételek teljesüljenek:
 
-1. A szervezetnek van egy [példánya](/ai-builder/build-model#prerequisites) Microsoft Dataverse, és ugyanabban a szervezetben van, mint a Customer Insights.
+1. A szervezete rendelkezik egy példánnyal [beállítva a Microsoft Dataverse-ben](/ai-builder/build-model#prerequisites), amely ugyanabban a szervezetben található, mint a Customer Insights.
 
-2. A célközönség insight környezete az Dataverse példányhoz van csatolva.
+2. A Célközönséggel kapcsolatos információk környezet csatolva van a Dataverse példányhoz.
 
 További információ: [Új környezet létrehozása](create-environment.md).
 
@@ -113,7 +116,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 ## <a name="edit-a-prediction"></a>Előrejelzés szerkesztése
 
-Előrejelzés létrehozása után testreszabhatja az AI Builder modelljét, amellyel növelheti a modell hatékonyságát.  
+Miután létrehozott egy előrejelzés, testreszabhatja a modellt a AI Builder modell hatékonyságának növelése érdekében.  
 
 1. A célközönség információin belül nyissa meg a következőt: **Információk** > **Előrejelzések** > **Saját előrejelzések**.
 
@@ -121,14 +124,14 @@ Előrejelzés létrehozása után testreszabhatja az AI Builder modelljét, amel
 
 3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Megtekintés** lehetőséget.
 
-4. Válassza a **Testreszabás az AI Builder segítségével** lehetőséget.
+4. Válassza **a Testreszabás lehetőséget a területen AI Builder**.
 
-5. Frissítse a modellt az AI Builder alkalmazásban. [További információ az AI Builderben található modellek kezeléséről](/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Frissítse a modellt a AI Builder. [További információ az AI Builderben található modellek kezeléséről](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Az előrejelzés következő futtatása a létrehozott frissített modellt fogja használni.
 
 > [!NOTE]
-> Az AI Builder rendszerben létrehozott új modellek nem jelennek meg célközönség-információkban, kivéve ha a modell a fentiekben felsorolt tapasztalatokból jött létre.
+> A létrehozott AI Builder új modellek csak akkor jelennek meg célközönség elemzésekben, ha a modellt a fent felsorolt tapasztalatokból hozták létre.
 
 ## <a name="remove-a-prediction"></a>Előrejelzés eltávolítása
 
@@ -142,7 +145,7 @@ Az előrejelzés következő futtatása a létrehozott frissített modellt fogja
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 
-Ha hiba miatt nem tudja befejezni a csatolás Dataverse folyamatot, megpróbálhatja manuálisan befejezni a folyamatot. A csatolási folyamat során két ismert probléma is előfordulhat:
+Ha hiba miatt nem tudja elvégezni a csatolási Dataverse folyamatot, megpróbálhatja manuálisan végrehajtani. A csatolási folyamat során két ismert probléma is előfordulhat:
 
 - Nincs telepítve az Ügyfélkártya bővítmény megoldás.
     1. Hajtsa végre a [megoldás telepítésére és konfigurálására vonatkozó](customer-card-add-in.md) utasításokat.

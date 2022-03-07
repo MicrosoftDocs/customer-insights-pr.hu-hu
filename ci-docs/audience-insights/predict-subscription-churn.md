@@ -1,22 +1,21 @@
 ---
-title: Előfizetési lemorzsolódás előrejelzése
+title: Előfizetési lemorzsolódás előrejelzés (videót tartalmaz)
 description: Előrejelzi, hogy az ügyfélnél fennáll-e annak veszélye, hogy a jövőben nem az Ön vállalatánál fizet elő termékekre vagy szolgáltatásokra.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
-ms.translationtype: HT
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799731"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354696"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Előfizetési lemorzsolódás előrejelzése (előzetes verzió)
+# <a name="subscription-churn-prediction"></a>Előfizetési lemorzsolódás előrejelzése
 
 Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az ügyfélnél fennáll-e annak veszélye, hogy a jövőben nem az Ön vállalatánál fizet elő termékekre vagy szolgáltatásokra. Az előfizetési lemorzsolódást jelző új előrejelzés az **Információk** > **Előrejelzések** oldalon hozható létre. Az Ön által létrehozott többi előrejelzés megtekintéséhez válassza a **Saját előrejelzések** lehetőséget.
 
@@ -63,7 +62,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 ## <a name="create-a-subscription-churn-prediction"></a>Előfizetési lemorzsolódás előrejelzésének létrehozása
 
 1. A célközönség információin belül nyissa meg a következőt **Információk** > **Előrejelzések**.
-1. Válassza ki az **Előfizetési lemorzsolódás előrejelzése (előzetes verzió)** csempét, majd az **Adott modell használata** lehetőséget.
+1. Jelölje ki az **Előfizetés lemorzsolódási modellcsempét**, és válassza a A modell használata **lehetőséget**.
    > [!div class="mx-imgBorder"]
    > ![Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal.](media/subscription-churn-usethismodel.PNG "Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal")
 
@@ -77,7 +76,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 1. Adja meg **Az előfizetés óta eltelt napok** számát; ez az az érték, ami után a vállalat lemorzsolódottnak tekint egy ügyfelet. Ezt az időszakot általában olyan üzleti tevékenységekkel szokták összevetni, amelyek az ügyfél elvesztését hivatottak megakadályozni (ajánlatok vagy egyéb marketinges erőfeszítések).
 1. Adja meg a számot **A napok száma a jövőben a lemorzsolódás megjósolásához** alatt, hogy beállítsa az ablakot a lemorzsolódás előrejelzéséhez. Például megjósolhatja a lemorzsolódás kockázatát az ügyfelek számára a következő 90 nap során, hogy az megfeleljen a marketing megtartási törekvéseinek. A hosszabb vagy rövidebb időszakokra visszavethető lemorzsolódási kockázata előrejelzése az adott üzleti követelményektől függően nehezebben tudja figyelembe venni a lemorzsolódási kockázat profiljában lévő tényezőket. A folytatáshoz válassza a **Tovább** lehetőséget.
    >[!TIP]
-   > A **Mentés és bezárás** gombbal bármikor mentheti vázlatként az előrejelzést. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
+   > A előrejelzés piszkozatként történő mentéséhez bármikor kiválaszthatja **a Piszkozat** mentése lehetőséget. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
 
 ### <a name="add-required-data"></a>Szükséges adatok hozzáadása
 
