@@ -3,31 +3,24 @@ title: A Customer Insights adatok a Dynamics 365 Salesbe való exportálása
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Dynamics 365 Salesbe.
 ms.date: 03/03/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-searchScope:
-- ci-export
-- customerInsights
-ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: 9f11ab189117da5bcc1aee843b73962ec6615e82
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355020"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692346"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Szegmensek használata a Dynamics 365 Sales alkalmazásban (előzetes verzió)
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 A Dynamics 365 Sales modullal az ügyféladatokból marketinglistákat hozhat létre, nyomon követheti a munkafolyamatokat, és promóciós anyagokat küldhet ki.
-
-## <a name="known-limitations"></a>Ismert korlátozások
-
-- A Dynamics 365 Sales-be irányuló export szegmensenként 100 000 tagra korlátozódik.
-- A Dynamics 365 Sales szegmensexportja akár 3 órát is igénybe vehet. 
 
 ## <a name="prerequisite-for-connection"></a>A kapcsolat előfeltétele
 

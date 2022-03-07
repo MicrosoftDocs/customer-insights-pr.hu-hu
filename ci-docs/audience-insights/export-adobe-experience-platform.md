@@ -1,36 +1,37 @@
 ---
-title: Customer Insights adatok exportálása az Adobe Experience Platform szolgáltatásba
-description: Ismerje meg, hogyan lehet célközönséggel kapcsolatos információk szegmenseit használni az Adobe Experience Platform szolgáltatásban.
+title: A Customer Insights adatainak exportálása az Adobe Experience Platformba
+description: További információ a célközönség elemzési szegmensek használatáról az Adobe Experience Platformon.
 ms.date: 03/29/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 9010af3c42823ce0dd8685bf71c109aef8d3f635
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227715"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305527"
 ---
-# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insights szegmensek használata az Adobe Experience Platform szolgáltatásban (előzetes verzió)
+# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>A Customer Insights-szegmensek használata az Adobe Experience Platformban (előzetes verzió)
 
-A célközönségi elemzések felhasználójaként Dynamics 365 Customer Insights -ban előfordulhat, hogy szegmenseket hozott létre, hogy hatékonyabbá tegye marketingkampányait a releváns célközönségek megcélzásával. Ha használni szeretné a célközönséggel kapcsolatosa információkat az Adobe Experience Platform felületen és olyan alkalmazásokban, mint az Adobe Campaign Standard néhány, a cikkben felvázolt lépést el kell végeznie.
+A célközönségi elemzések felhasználójaként Dynamics 365 Customer Insights -ban előfordulhat, hogy szegmenseket hozott létre, hogy hatékonyabbá tegye marketingkampányait a releváns célközönségek megcélzásával. Az Adobe Experience Platformban és az Adobe Campaign Standardhoz hasonló alkalmazásokban található célközönség-információs szegmensek használatához a jelen cikkben ismertetett lépéseket kell követnie.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="A jelen cikkben ismertetett lépések folyamatábrája.":::
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   Dynamics 365 Customer Insights licenc
--   Adobe Experience Platform licenc
--   Adobe Campaign Standard licenc
+-   Adobe Experience Platform-licenc
+-   Adobe Campaign Standard-licenc
 -   Azure Blob Storage-fiók
 
 ## <a name="campaign-overview"></a>Kampány áttekintése
 
-Hogy jobban megérthesse, hogyan használhatók fel a célközönséggel kapcsolatos információk szegmensei az Adobe Experience Platform szolgáltatásban, nézzünk meg egy kitalált mintakampányt.
+Hogy jobban meg tudja érteni, hogyan használhatja a célközönség-információs szegmenseket az Adobe Experience Platformban, tekintsünk át egy kitalált mintakampányt.
 
 Tegyük fel, hogy a vállalata havi előfizetéses szolgáltatást kínál egyesült államokbeli ügyfeleinek. Meg szeretné határozni azokat az ügyfeleket, akiknek az előfizetései a következő nyolc napban megújításra esedékesek, de még nem újították meg előfizetésüket. Ezeknek az ügyfeleknek a megtartása érdekében e-mailben szeretne promóciós ajánlatot küldeni nekik az Adobe Experience Platform segítségével.
 
@@ -92,7 +93,7 @@ Az exportálási cél mentése után az **Adatok** > **Exportálások** lehetős
 Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#run-exports-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
 
 > [!NOTE]
-> Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licenc engedélyezett korlátján belül van.
+> Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licencének megengedett korlátjan belül van.
 
 Az exportált adatokat a rendszer a fent beállított Azure Blob Storage tárolóban tárolja. A következő mappa elérési útja automatikusan létrejön a tárolóban:
 
@@ -104,29 +105,29 @@ Az exportált entitások *model.json* fájlja az *%ExportDestinationName%* szint
 
 Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
 
-## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Az élmény adatmodell (XDM) definiálás az Adobe Experience Platform szolgáltatásban
+## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>A Tapasztalati adatmodell (XDM) definiálása az Adobe Experience Platformon
 
-Mielőtt a célközönséggel kapcsolatos információkból az exportált adatokat használhatnánk az Adobe Experience Platform szolgáltatásban , meg kell határozni az élmény adatmodell sémát, és [be kell állítani az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Mielőtt az célközönség-információkból exportált adatokat használhatjuk az Adobe Experience Platformon belül, meg kell határozni a Tapasztalat adatmodell sémáját, és [konfigurálni kell az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Ismerje meg, [mi az az XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html), és ismerje meg a [sémaösszetétel alapjait](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
-## <a name="import-data-into-adobe-experience-platform"></a>Adatok importálása a Adobe Experience Platform rendszerbe
+## <a name="import-data-into-adobe-experience-platform"></a>Adatok importálása az Adobe Experience Platformba
 
-Most, hogy minden a helyén van, a profilok létrehozásához importálni kell az előkészített célközönség adatokat a célközönéggel kapcsolatos információkból az Adobe Experience Platform szolgáltatásba.
+Most, hogy minden a helyén van, a profilok létrehozásához importálni kell az előkészített célközönségadatokat az célközönség-információkból az Adobe Experience Platformba.
 
 Először [hozzon létre egy Azure Blob Storage-forráskapcsolatot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-A forráskapcsolat definiálása után [konfiguráljon egy adatfolyamot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) egy felhőalapú tároló kötegfájl-kapcsolathoz, hogy a szegmens kimenete célközönség információkból importálható kegyen az Adobe Experience Platform szolgáltatásba.
+A forráskapcsolat definiálása után [konfigurálja egy felhőalapú tároló kötegfájl-kapcsolat adatfolyamát](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials), hogy a szegmens kimenetét a célközönség-információkból az Adobe Experience Platformba importálja.
 
-## <a name="create-an-audience-in-adobe-campaign-standard"></a>Az célközönség létrehozása az Adobe Campaign Standardben
+## <a name="create-an-audience-in-adobe-campaign-standard"></a>A célközönség létrehozása az Adobe Campaign Standardban
 
-A kampányhoz szükséges e-mail elküldéséhez az Adobe Campaign Standardot használjuk. Az adatoknak az Adobe Experience Platform szolgáltatásba történő importálása után [létre kell hozni egy célközönséget](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) az Adobe Campaign Standardbe az Adobe Experience Platform adataival.
+A kampányhoz szükséges e-mail elküldéséhez az Adobe Campaign Standardot használjuk. Miután importálta az adatokat az Adobe Experience Platformba, [létre kell hozni egy célközönséget](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) az Adobe Campaign Standardban, az Adobe Experience Platform adatai segítségével.
 
 
-A [szegmensszerkesztő használata](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) az Adobe Campaign Standardben a célközönség-adatokon alapuló új információk meghatározására az Adobe Experience Platform-szolgáltatásban.
+Ismerje meg, hogyan [használható a szegmensszerkesztő](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) az Adobe Campaign Standardban egy célközönség meghatározásához az Adobe Experience Platform adatai alapján.
 
-## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Az e-mail létrehozása és elküldése a Adobe Campaign Standard segítségével
+## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Az e-mail létrehozása és elküldése az Adobe Campaign Standard használatával
 
 Hozza létre az e-mail tartalmát, majd [tesztelje, és küldje el](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) az e-mailt.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="E-mail minta az Adobe Campaign Standardben megújítási ajánlattal.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="E-mail minta az Adobe Campaign Standard megújítási ajánlatával.":::

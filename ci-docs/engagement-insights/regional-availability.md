@@ -5,20 +5,21 @@ author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
 ms.date: 09/28/2021
+ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: 08435e651c3706257b8c0548e6e9bbf98f39dce9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
+ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228109"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "7564597"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Régiónkénti rendelkezésre állás a Dynamics 365 Customer Insights alkalmazáshoz
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Az Elkötelezettségi információk, a Dynamics 365 Customer Insights egy képessége fokozatosan lesz bevezetve több régióba, ahol az ügyfelek tárolhatják adataikat. Az [új környezet létrehozásakor](create-new-environment.md) a rendszergazdák választhatnak egy régiót. 
+Az Elkötelezettségi információk, a Dynamics 365 Customer Insights egy képessége fokozatosan lesz bevezetve több régióba, ahol az ügyfelek tárolhatják adataikat. Az [új környezet létrehozásakor](manage-environments-workspaces.md#create-an-environment) a rendszergazdák választhatnak egy régiót. 
 
 Amikor első alkalommal állítja be az Elkötelezettségi információkat, akkor az [irányított első futtatási élményen](quickstart.md) végighaladva kiválasztja a megfelelő régiót. Később minden új környezet lehetőséget ad a régió kiválasztására ahol az adatokat tárolni fogja.
 

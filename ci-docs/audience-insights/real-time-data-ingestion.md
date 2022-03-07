@@ -2,21 +2,19 @@
 title: Valós idejű adatbetöltés és korlátozások.
 description: Általános információk a valós idejű képességekről a célközönséggel kapcsolatosan.
 ms.date: 10/27/2020
-ms.reviewer: mhart
+ms.reviewer: nikeller
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-searchScope:
-- ci-system-api-usage
-- customerInsights
-ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
+ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355478"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "4689178"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Valós idejű adatbetöltés (előzetes verzió)
 
@@ -56,7 +54,7 @@ A valós idejű API-k segítségével közzétehet egy új tevékenységet a for
 
 A valós idejű API-khoz két módon lehet kapcsolódni:
 
-- [közvetett módon](#connect-via-the-dynamics-365-customer-insights-connector), a [Dynamics 365 Customer Insights.összekötő](/connectors/customerinsights/) használatával
+- [közvetett módon](#connect-via-the-dynamics-365-customer-insights-connector), a [Dynamics 365 Customer Insights.összekötő](https://docs.microsoft.com/connectors/customerinsights/) használatával
 - [közvetlenül](#connect-directly-to-the-real-time-api), kóddal
 
 Mindkettőnél az alábbi előfeltételek egyaránt érvényesek:
@@ -68,13 +66,13 @@ Mindkettőnél az alábbi előfeltételek egyaránt érvényesek:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Csatlakozás a Dynamics 365 Customer Insights-összekötőn keresztül
 
-A valós idejű API képes betölteni adatokat egy dedikált Power Platform-összekötőből, a [Dynamics 365 Customer Insights-összekötőből](/connectors/customerinsights/) anélkül, hogy írni és üzembe kell helyezni a kódot.    
-Az összekötő ugyanolyan valós idejű műveleteket hajthat végre, mint az API-t. A prémium összekötőkhöz érvényes licenccel kell rendelkezniük. További információkért lásd: [Power Apps és Power Automate licencelési GYIK](/power-platform/admin/powerapps-flow-licensing-faq).
+A valós idejű API képes betölteni adatokat egy dedikált Power Platform-összekötőből, a [Dynamics 365 Customer Insights-összekötőből](https://docs.microsoft.com/connectors/customerinsights/) anélkül, hogy írni és üzembe kell helyezni a kódot.    
+Az összekötő ugyanolyan valós idejű műveleteket hajthat végre, mint az API-t. A prémium összekötőkhöz érvényes licenccel kell rendelkezniük. További információkért lásd: [Power Apps és Power Automate licencelési GYIK](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps és/vagy Power Automate](/connectors/)
-- Azure [Logic Apps](/azure/connectors/apis-list)
+- Power Platform [Power Apps és/vagy Power Automate](https://docs.microsoft.com/connectors/)
+- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
 
-A folyamatok létrehozásáról a [Power Automate-dokumentáció](/power-automate/) tartalmaz további tudnivalókat.
+A folyamatok létrehozásáról a [Power Automate-dokumentáció](https://docs.microsoft.com/power-automate/) tartalmaz további tudnivalókat.
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Közvetlen kapcsolódás a valós idejű API-hoz
 
@@ -85,7 +83,6 @@ Az API-kra vonatkozó részletek, beleértve a paramétereket és válaszokat, m
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>A valós idejű használatát felmérése telemetriával
 
-Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#api-usage-tab) elérhető. 
+Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#api-usage-tab) a **Felügyelet** > **Rendszer** > **API-használat** részen érhető el. A **Műveletek** táblázat API-műveletek sorai, amelyek a valós idejű módszerekkel tartalmaznak egy gombot, hogy megtekinthesse a valós idejű API-használatot. A gomb vizuálisan egy távcsőként kerül megjelenítésre. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.
 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+A **Csoportosítás szempontja** választóval megadhatja, hogyan szeretné megjeleníteni a valós idejű interakciókat egy, a legutóbbi 24 órától a legutóbbi 30 napig terjedő intervallumot megjeleníteni képes idővonalon. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.

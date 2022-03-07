@@ -3,21 +3,18 @@ title: Felhasználói engedélyek kezelése
 description: További információk az engedélyekről és a felhasználói szerepkörökről.
 ms.date: 03/25/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-searchScope:
-- ci-permissions
-- ci-system-security
-- customerInsights
-ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 8638489dba908d4504278916d2c28454e3ea9e18
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355940"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760376"
 ---
 # <a name="user-permissions"></a>Felhasználói engedélyek
 

@@ -1,22 +1,20 @@
 ---
 title: A Customer Insights-adatok a Microsoft Dataverse-ben
 description: Az Customer Insights-entitások használata táblákként a Microsoft Dataverse-ben.
-ms.date: 11/25/2021
+ms.date: 06/15/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-searchScope:
-- ci-system-diagnostic
-- customerInsights
-ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355432"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650045"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>A Customer Insights-adatok használata a Microsoft Dataverse-ben
 
@@ -26,7 +24,11 @@ A Customer Insights lehetőséget biztosít a kimeneti entitások elérhetővé 
 
 **Meglévő Dataverse-környezettel rendelkező szervezetek**
 
-Azok a szervezetek, amelyek már használják a Dataverse-t, [használhatják meglévő Dataverse-környezetüket](create-environment.md), ha a rendszergazda beállítja a célközönséggel kapcsolatos információkat. Azáltal, hogy az URL-t ad meg a Dataverse-környezethez, ez csatolja az új célközönség információk környezethez. A lehető legjobb teljesítmény biztosítása érdekében a Customer Insights szolgáltatást és a Dataverse-környezeteket ugyanabban a régióban kell üzemeltetni.
+Azok a szervezetek, amelyek már használják a Dataverse-t, [használhatják meglévő Dataverse-környezetüket](get-started-paid.md), ha a rendszergazda beállítja a célközönséggel kapcsolatos információkat. Azáltal, hogy az URL-t ad meg a Dataverse-környezethez, ez csatolja az új célközönség információk környezethez. A lehető legjobb teljesítmény biztosítása érdekében a Customer Insights szolgáltatást és a Dataverse-környezeteket ugyanabban a régióban kell üzemeltetni.
+
+Egy Dataverse-környezet csatolásához bontsa ki a **Speciális beállítások** lehetőséget a célközönséggel kapcsolatos információk környezet létrehozásakor. Adja meg a **Microsoft Dataverse-környezet URL-címét**, és jelölje be a jelölőnégyzetet az **Adatmegosztás engedélyezéséhez**.
+
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
 
 **Új szervezet**
 
@@ -47,7 +49,6 @@ A célközönség információk egyes kimeneti entitásai táblaként érhetők 
 - [CustomerMeasure](#customermeasure)
 - [Dúsítás](#enrichment)
 - [Előrejelzés](#prediction)
-- [Szegmenstagság](#segment-membership)
 
 
 ### <a name="customerprofile"></a>CustomerProfile
@@ -124,16 +125,3 @@ Ez a tábla a modell-előrejelzések kimenetét tartalmazza.
 | Értékek               | JSON-sztring | A modell által előállított attribútumok listája |
 | msdynci_predictionid | GUID        | A msdynci_identifier elemhez generált determinisztikus GUID | 
 | msdynci_identifier   | Sztring      |  `Model|ModelProvider|CustomerId`                      |
-
-### <a name="segment-membership"></a>Szegmenstagság
-
-Ez a tábla az ügyfélprofilok szegmenstagsági adatait tartalmazza.
-
-| Column        | Type | Description                        |
-|--------------------|--------------|-----------------------------|
-| Vevőkód        | Sztring       | Ügyfélprofil-azonosító        |
-| SegmentProvider      | Sztring       | A szegmenseket közzétett alkalmazás. Alapértelmezett: célközönség elemzések         |
-| SegmentMembershipType | Sztring       | Az ügyfél típusa ez a szegmens tagsági rekord. Többféle típust támogat, például Vevőt, Kapcsolattartót vagy Partnert. Alapértelmezett: Vevő  |
-| Szegmensek       | JSON-sztring  | Azon egyedi szegmensek listája, amelyeknek az ügyfélprofil tagja      |
-| msdynci_identifier  | Sztring   | A szegmenstagsági rekord egyedi azonosítója `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID-azonosító      | Determinisztikus GUID, amelyet a következőből generáltak: `msdynci_identifier`          |

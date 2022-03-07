@@ -1,29 +1,92 @@
 ### YamlMime:Landing
-title: Az elkötelezettségi elemzések előnézete véget ér
-summary: Az Dynamics 365 Customer Insights engagement insights képesség előnézete 2022. február 15-én ért véget. Ez a változás azt jelenti, hogy a Customer Insights próbaverziós élménye már nem tartalmazza a tölcsérek és más jelentéskészítési funkciók létrehozásának lehetőségét. Meghívjuk Önt, hogy fedezze fel és értékelje a Customer Insights számos más funkcióját, a Microsoft Customer Data Platformot (CDP). Ha kérdése van a képesség előnézetének megszűnésével kapcsolatban, forduljon közvetlenül a Microsoft-fiók csapatához. A fiókcsapatod naprakészen tartja Önt a közelgő indításokkor. Köszönjük!
+title: Elkötelezettségi információk a Dynamics 365 Customer Insights alkalmazásban (előzetes verzió)
+summary: Adatok gyűjtése a webhelyek számára. Interaktív módon megértheti az ügyfélkapcsolati tevékenységeket és a webhelyeken való használatot. Az aktivitási információk és az Audience Insights közötti mélységű integrációnak segítségével valós idejű viselkedéselemzéseit ügyfélprofil-jelentések segítségével gyarapíthatja. Az ügyfélprofilok webes tevékenységekkel való gyarapítása, hogy a releváns ügyféladatok mellett valós idejű viselkedési adatok is rendelkezésre jöjjön. A vállalat átalakítása az ügyféladatokból való közvetlen érték kihozása érdekében.
 metadata:
   title: aktivitási információk (előzetes verzió) dokumentációja
   description: Segítségközpont az aktivitási információkra mutató fontos hivatkozásokkal.
+  ms.service: customer-insights
   ms.subservice: engagement-insights
   ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.reviewer: mhart
   ms.date: 09/15/2021
-  ms.openlocfilehash: 99933c69c791da12815ebee3edb6413276b19b09
-  ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
-  ms.translationtype: MT
+  ms.openlocfilehash: bf2e40b1ca304e7b26687eaff298d2e70615cd2b
+  ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+  ms.translationtype: HT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 02/25/2022
-  ms.locfileid: "8350502"
+  ms.lasthandoff: 09/15/2021
+  ms.locfileid: "7494187"
 landingContent:
-- title: Vegye fel a kapcsolatot
+- title: Névjegy
   linkLists:
   - linkListType: overview
     links:
-    - text: Csatlakozzon a Dynamics 365-közösséghez
-      url: https://go.microsoft.com/fwlink/?linkid=2073991
-    - text: Ossza meg az ötleteit!
-      url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Probléma jelentése
-      url: https://go.microsoft.com/fwlink/?linkid=2079641
+    - text: Képességekkel kapcsolatos előnyök
+      url: overview.md
+    - text: Szószedet
+      url: glossary.md
+    - text: Új és frissített funkciók
+      url: /dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
+- title: Bevezetés
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Első lépések
+      url: get-started.md
+    - text: Munkaterület létrehozása
+      url: create-workspace.md
+    - text: Módosítsa weboldalát
+      url: instrument-website.md
+- title: Jelentés megtekintése és szűrése
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Jelentések megtekintése
+      url: view-reports.md
+    - text: Egyesített profilok jelentés megtekintése
+      url: profile-reports.md
+    - text: Közönségszegmensek használata a jelentések szűréséhez
+      url: integrate-audience-insights-segments.md
+- title: Elemzés
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tölcsérjelentések létrehozása
+      url: funnel-reports.md
+    - text: Viselkedési adatok elemzése
+      url: curate-dimensions.md
+    - text: Egyéni jelentések létrehozása
+      url: custom-reports.md
+    - text: Finomított események létrehozása
+      url: refined-events.md
+    - text: Események exportálása
+      url: export-events.md
+- title: Fejlesztői erőforrások
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Fejlesztői erőforrások
+      url: developer-resources.md
+    - text: WebSDK minta
+      url: websdk-sample.md
+    - text: Speciális SDK forgatókönyvek
+      url: advanced-SDK-implementation.md
+    - text: Android SDK Minta
+      url: get-started-android.md
+    - text: iOS SDK minta
+      url: get-started-ios.md
+- title: Adminisztráció
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Környezetek és munkaterületek kezelése
+      url: manage-environments-workspaces.md
+    - text: Csatlakozás a célközönség betekintési információihoz
+      url: integrate-audience-insights-engagement-insights.md
+    - text: Cookie-k és felhasználói hozzájárulások kezelése
+      url: user-consent-storage.md
+    - text: Személyes adatok törlése és exportálása
+      url: delete-export-personal-data.md
+    - text: A szolgáltatás korlátozásai
+      url: ../service-limits.md

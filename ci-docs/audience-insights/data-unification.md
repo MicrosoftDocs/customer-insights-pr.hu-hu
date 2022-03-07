@@ -1,22 +1,20 @@
 ---
-title: Ügyfelek egységes nézetének létrehozása
-description: Az adategyesítési folyamatban az adatokkal egyetlen főadatkészletet hozhat létre az ügyfélprofilok alapján.
-ms.date: 10/18/2021
-ms.reviewer: mhart
+title: Adategyesítés
+description: Megismerheti, hogyan egyesítheti a betöltött adatot.
+ms.date: 04/16/2020
+ms.reviewer: adkuppa
+ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
-author: adkuppa
-ms.author: adkuppa
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-searchScope:
-- ci-map
-- customerInsights
-ms.openlocfilehash: 2012d32494ccd4639cbffbb81d4f6eac1258e23b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: 44f97696ec91dc488dd6a7528e186abb99c8288b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353822"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269655"
 ---
 # <a name="data-unification-overview"></a>Az Adategyesítés áttekintése
 

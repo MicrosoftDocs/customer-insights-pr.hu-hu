@@ -3,17 +3,18 @@ title: Customer Insights adatok exportálása Sendinblue-ba
 description: További információ a kapcsolat konfigurálásához és az Sendinblue-ba való exportáláshoz.
 ms.date: 10/08/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8d870ff31ce2d441e619ac18899c4d1b6c69ca41
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: b5924b2d4e7f0b11ce6478a31015fcbaaf44ff93
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231422"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617788"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Szegmensek exportálása Sendinblue-ba (előzetes verzió)
 

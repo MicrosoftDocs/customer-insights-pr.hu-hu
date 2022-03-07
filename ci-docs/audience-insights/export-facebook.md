@@ -1,19 +1,20 @@
 ---
-title: Ügyfélelemzési adatok exportálása a Hirdetéskezelőbe Facebook (videót tartalmaz)
+title: Ügyfélelemzési adatok exportálása Facebook a Hirdetéskezelőbe (videó)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Facebook Hirdetéskezelő.
 ms.date: 04/15/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 781cf10e1bb5ddaf82d4a17c7a77e0c43c41a1c2
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: 4b2dc2ff8e5286209bd2ec94df42e82f0944715c
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8226498"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904167"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Szegmenslista exportálása a Facebook Hirdetéskezelő (előzetes verzió)
 

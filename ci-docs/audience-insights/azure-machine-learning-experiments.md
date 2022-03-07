@@ -1,23 +1,24 @@
 ---
 title: Azure Machine Learning-kísérletek
 description: Használjon Azure Machine Learning alapú modelleket a Dynamics 365 Customer Insights alkalmazásban.
-ms.date: 12/02/2021
+ms.date: 11/30/2020
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3c3bed3dca40be748140a8b339191e6a42725714
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228891"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597422"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Használjon Azure Machine Learning alapú modelleket
 
-A Dynamics 365 Customer Insights egyesített adatok a forrása a gépi tanulás modellek létrehozásának, amelyek további üzleti ismereteket hozhatnak létre. A Customer Insights a saját egyéni modelljeinek használatával integrálódik az Azure Machine Learning rendszerbe.
+A Dynamics 365 Customer Insights egyesített adatok a forrása a gépi tanulás modellek létrehozásának, amelyek további üzleti ismereteket hozhatnak létre. A Customer Insights integrál a Machine Learning Studióval (klasszikus) és az Azure Machine Learninggel a saját egyéni modelljei használatához. A Machine Learning Studio (klasszikus) verzióra épülő kísérletekre vonatkozóan a [Machine Learning Studio (klasszikus) kísérletek](machine-learning-studio-experiments.md) című rész tartalmaz példákat. 
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -34,7 +35,7 @@ A Dynamics 365 Customer Insights egyesített adatok a forrása a gépi tanulás 
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Az Azure Machine Learning tervező használata
 
-Az Azure gépi tanulás designer vizuális vásznat biztosít, ahol adathalmazokat és modulokat húzhat. A tervező által létrehozott kötegelt csővezetékek a Customer Insights szolgáltatásba integrálhatók, ha ennek megfelelően vannak konfigurálva. 
+Az Azure Machine Learning tervező vizuális vásznat biztosít, ahol húzással mozgathat adathalmazokat és modulokat, hasonlóképp a Machine Learning Studio (klasszikus) verzióhoz. A tervező által létrehozott kötegelt csővezetékek a Customer Insights szolgáltatásba integrálhatók, ha ennek megfelelően vannak konfigurálva. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Az Azure Machine Learning SDK használata
 
@@ -51,7 +52,7 @@ Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Custome
      Nyissa meg a tervezőben az **oszlopok kiválasztása az adathalmazban**, és válassza a **beállítás folyamatparaméterként**, ahol megadja a paraméter nevét.
 
      > [!div class="mx-imgBorder"]
-     > ![Az adathalmaz paraméterezései a tervezőben.](media/intelligence-designer-dataset-parameters.png "Az adathalmaz paraméterezései a tervezőben")
+     > ![Az adathalmaz paraméterezései a tervezőben](media/intelligence-designer-dataset-parameters.png "Az adathalmaz paraméterezései a tervezőben")
    
 * DataSet paraméter az SDK (Python) alkalmazásban
    
@@ -77,7 +78,7 @@ Létre kell hoznia az adathalmazokat ahhoz, hogy az entitások adatait a Custome
 
 * A tervező biztosítja az [exportálási adatmodult](/azure/machine-learning/algorithm-module-reference/export-data), amely lehetővé teszi a folyamat kimenetének exportálását az Azure Storage rendszerbe. Jelenleg a modulnak az **Azure Blob Storage** adattár típust kell használnia, és paraméterré kell alakítani az **adattár** és a relatív **elérési út** elemeket. A Customer Insights mindkét paramétert felülbírálja a folyamat végrehajtása során a termékhez elérhető adattár és elérési út értékével.
    > [!div class="mx-imgBorder"]
-   > ![Adatmodell-konfiguráció exportálása.](media/intelligence-designer-importdata.png "Adatmodell-konfiguráció exportálása")
+   > ![Adatmodell-konfiguráció exportálása](media/intelligence-designer-importdata.png "Adatmodell-konfiguráció exportálása")
    
 * Amikor kódot használ a származtatott kimenet írásakor, feltöltheti a kimenetet a megfelelő elérési útra a munkaterületen található *regisztrált adattáron* belül. Ha az elérési út és az adattár paraméterei a folyamatban vannak, a Customer Insights képes olvasni és importálni a származtatott kimenetet. Jelenleg egyetlen táblázatos kimenet támogatott CSV formátumban. Az elérési útnak tartalmaznia kell a könyvtárat és a fájlnevet.
 

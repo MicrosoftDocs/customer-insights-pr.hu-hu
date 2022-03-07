@@ -1,26 +1,24 @@
 ---
-title: Növekményes frissítés -alapú adatforrások esetén Power Query
-description: Frissítse a nagy adatforrások új és frissített adatait a alapján Power Query.
+title: A Power Queryn alapuló adatforrások növekményes frissítése
+description: Az új és frissített adatok frissítése a nagyméretű adatforrásoknál Power Query alapján.
 ms.date: 12/06/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-searchScope:
-- ci-system-schedule
-- customerInsights
-ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353685"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900271"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Növekményes frissítés adatforrások alapján Power Query
+# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>A Power Queryn alapuló adatforrások növekményes frissítése
 
-Ez a cikk a növekményes frissítés konfigurálását ismerteti a Power Query.
+Ez a cikk azt ismerteti, hogyan konfigurálható az adatforrások növekményes frissítése Power Query alapján.
 
 Az adatforrások növekményes frissítése a következő előnyöket nyújtja:
 
@@ -30,13 +28,13 @@ Az adatforrások növekményes frissítése a következő előnyöket nyújtja:
 
 ## <a name="configure-incremental-refresh"></a>Növekményes frissítés konfigurálása
 
-Célközönség elemzések lehetővé teszik a növekményes betöltést Power Query támogató adatforrások növekményes frissítését. Például a dátum és idő típusú mezőkkel rendelkező Azure SQL-adatbázisokat, amelyek jelzik az adatbejegyzések legutóbbi frissítését.
+A célközönség-információk lehetővé teszi a növekményes betöltést támogató Power Query keresztül importált adatforrások növekményes frissítésére. Például a dátum és idő típusú mezőkkel rendelkező Azure SQL-adatbázisokat, amelyek jelzik az adatbejegyzések legutóbbi frissítését.
 
-1. [Hozzon létre egy új adatforrás a alapján Power Query](connect-power-query.md).
+1. [Új adatforrás létrehozása a Power Query alapján ](connect-power-query.md).
 
-1. Adjon nevet **a** adatforrás.
+1. Adja meg **a** adatforrás nevét.
 
-1. Válasszon ki egy adatforrás, amely támogatja a növekményes frissítést, például [az Azure SQL-adatbázist](/power-query/connectors/azuresqldatabase).
+1. Válasszon ki egy adatforrás, amely támogatja a növekményes frissítést, például [az Azure SQL adatbázist](/power-query/connectors/azuresqldatabase).
 
 1. Jelölje ki a betölteni kívánt entitásokat vagy táblákat.
 

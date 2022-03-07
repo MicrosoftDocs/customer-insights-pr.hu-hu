@@ -2,18 +2,19 @@
 title: Szolgáltatási korlátozások a Dynamics 365 Customer Insights szolgáltatásban
 description: A korlátozásokkal és kikötésekkel kapcsolatos tudnivalók.
 ms.date: 09/03/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9bf8f03b785fb3035e3fc979a3304d4e98fd8d28
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
-ms.translationtype: MT
+ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350410"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483675"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Szolgáltatási korlátok a Customer Insights képességeiben
 
@@ -21,25 +22,27 @@ A cikk ismerteti a beépített korlátozásokat a Customer Insights szolgáltat�
 
 ## <a name="audience-insights"></a>Célközönséggel kapcsolatos információk
 
+### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Szolgáltatási korlátozások a Dynamics 365 Customer Insights célközönség információkban
+
 | Terület  | Korlátozások  | Megjegyzések |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Szegmensek, intézkedések és előrejelzések | 300  | A szegmensek [,](audience-insights/segments.md) intézkedések [és](audience-insights/measures.md) előrejelzések [együttes száma](audience-insights/predictions.md) nem haladhatja meg a 300-at.  |
+| Szegmensek és intézkedések | 100 szegmens vagy mérték | Az aktív [szegmensek](audience-insights/segments.md) számának és a [mértékek](audience-insights/measures.md) számának összege nem haladhatja meg a 100-at.  |
 | Kapcsolatok | 20 mélységi szint az kapcsolatok elérési útjaiban. | A [szegmensek](audience-insights/segments.md) vagy [mértékek](audience-insights/measures.md) a szerkesztőfelület használatával való létrehozásakor az entitás elérési útjai a kezdő és a célentitás között legfeljebb 20 kapcsolati ugrást kaphatnak.  |
 
-<!--
-## Engagement insights
 
-### Workspace and event quotas
+## <a name="engagement-insights"></a>Elkötelezettségi információk
 
-Engagement insights is a highly scalable application that can support millions of events per second. During public preview, events have a volume threshold. There's also a limit to the number of workspaces in an organization.
+### <a name="workspace-and-event-quotas"></a>Munkaterület és eseménykvóták
 
-### Engagement insights limits
+Az aktivitási információk egy nagyon méretezhető alkalmazás, amely másodpercenként több millió eseményt képes támogatni. Nyilvános előzetes verzió esetén az eseményeknek mennyiségi küszöbértékük van. A szervezeten belül a munkaterületek száma is korlátozott.
 
-- Maximum event volume per workspace  = 100 events per second
+### <a name="engagement-insights-limits"></a>Aktivitási információk korlátozásai
 
-- Maximum number of workspaces per organization = 100
+- Munkaterületenként maximális eseménymennyiség = 100 esemény másodpercenként
 
-When events exceed the threshold, it can lead to loss of data in reports based on those events. You can [contact support](https://go.microsoft.com/fwlink/?linkid=2145734) to request a volume increase before you exceed limits. We'll work with you to determine your need for a volume increase and support your request.
--->
+- A munkaterületek maximális száma szervezetenként = 100
+
+Ha az események túllépik a küszöbértéket, akkor adatvesztéshez vezethetnek a jelentésekben ezen események alapján. A [támogatási szolgálattól](https://go.microsoft.com/fwlink/?linkid=2145734) kérhet nagyobb mennyiségeket a határértékek túllépése előtt. Segítünk Önnek a mennyiségi növekedés meghatározásában és kérésének támogatásában.
+
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

@@ -5,15 +5,16 @@ author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
 ms.date: 10/01/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: e8cdfc07b67b78febc1d50b3b1fd44ab94448e64
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: 3fa801bfc8b0aee65c21b90de2423a3d5d5e4e26
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232151"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582880"
 ---
 # <a name="create-and-edit-custom-reports"></a>Egyéni jelentések létrehozása és szerkesztése
 

@@ -1,101 +1,64 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 02/18/2022
+ms.date: 04/09/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.custom: intro-internal
-searchScope:
-- ci-enrichments
-- ci-enrichment-details
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
-ms.translationtype: MT
+ms.openlocfilehash: c8e4a7247ccf575a62440038180010916b09d51b
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372718"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954490"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
 Adatok felhasználása olyan forrásokból, mint például a Microsoft és más partnerek az ügyféladatok bővítése céljából.
 
-:::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala.":::
+:::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala":::
 
-A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra a bővítési lehetőségek használatához.  
-
+A célközönség-információkban lépjen az **Adatok** > **Bővítés** pontra a bővítési lehetőségek használatához.    
 A bővítések létrehozásához vagy módosításához Közreműködő vagy Rendszergazdai engedélyekkel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).
 
-A **Felfedezés** lapon található az összes támogatott gyarapítási lehetőség.
-
-# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
+A **felderítés** lapon a következő bővítések találhatók:
 
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
 - A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
-- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
-- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
-- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
-- [Forrás](enrichment-liveramp.md) : LiveRamp AbiliTec
-
-# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
-
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
-- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [A Microsoft által szolgáltatott továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
-- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
-- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- [A Microsoft által megadott fiókkapcsolati adatok](enrichment-office.md)
-
----
+- [Demográfia](enrichment-experian.md) az Experiantól
+- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította
+- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül
 
 A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beállítva, illetve hogy szerkesztheti-e a tulajdonságait.
 
 ## <a name="manage-existing-enrichments"></a>Meglévő bővítések kezelése
 
-Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
+Nyissa meg a **Saját bővítések** lehetőséget az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
 
-Az elérhető lehetőségekért válassza ki a bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
+A rendelkezésre álló lehetőségek megtekintéséhez válasszon egy bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket.
 
-:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek.":::
+:::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek":::
 
 - **Nézet** a bővítés részleteinek megtekintése a bővített ügyfelek profiljainak számával.
 - **Szerkesztheti** bővítés konfigurációját.
 - A bővítés **Futtatásával** frissítheti az ügyfelek profiljait a legfrissebb adatokkal.
 - **Inaktiválhat** egy meglévő bővítést, hogy leállítsa annak automatikus frissítését az egyes ütemezett frissítések során. Az utolsó sikeres frissítésből származó adatok továbbra is elérhetők lesznek. **Aktiválhat** egy inaktív bővítést az automatikus frissítés újraindításához minden ütemezett frissítéshez.
-- A bővítés **Törlése**.
+- Egy bővítés **törlése**.
 
-A listában való kijelölésvel egyszerre futtathat vagy inaktiválhat több bővítést. A megtekintése és szerkesztés lehetőségek nem érhetők el tömeges műveletként. Egyszerre csak egy bővítéssel működnek.
+Egyszerre több bővítést is futtathat vagy inaktiválhat, ha kijelöli azokat a listából. A beállítások megtekintése és szerkesztése nem érhető el tömeges műveletként, és egyszerre csak egy bővítéshez használható.
 
 ## <a name="enrichments-and-connections"></a>Bővítések és kapcsolatok
 
-A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md) használatával konfigurálhatja, amelyekhez a rendszergazda hitelesítő adatokat állít be, és hozzájárul az adatok átviteléhez. A kapcsolatotokat a rendszergazdák és közreműködők is használhatják bővítmények beállítására.  
+A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md) használatával konfigurálhatja, amelyekhez a rendszergazda hitelesítő adatokat állít be, és hozzájárul az adatok átviteléhez. A kapcsolat ezután a rendszergazdák és a közreműködők által is használható a bővítések konfigurálásához.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 
-A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
-
-## <a name="enrich-data-sources-before-unification"></a>Adatforrások gazdagítása az egyesítés előtt
-
-Az adategyesítés előtt gazdagíthatja az ügyféladatokat, hogy növelje az adategyezés minőségét. További információ: [adatforrás gazdagodás](data-sources-enrichment.md).
-
-## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
-
-A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
-
-A gyarapítás állapotának megtekintése
-
-1. Lépjen az **Adatok** > **Bővítés** pontra. 
-1. Az oldalpanel megnyitásához válassza ki a **Saját bővítések** lapot a Gyarapítás állapotának megtekintéséhez. 
-1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt. 
-1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget. 
-1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat. 
+A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmensre vonatkozó adatok bővítése. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

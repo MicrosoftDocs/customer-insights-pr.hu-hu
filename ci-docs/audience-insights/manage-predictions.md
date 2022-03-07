@@ -1,19 +1,20 @@
 ---
 title: Megosztott feladatok előrejelzés forgatókönyvekhez
 description: Ismerje meg az előrejelzések kezelését, hibaelhárítását és finomítását.
-ms.date: 11/01/2021
+ms.date: 05/17/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 8c5d8b0395452c8da1631f09cffeddfc811e6d29
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.openlocfilehash: eaccf23a81ca4de19763b761cc5a27c14515fe522ee36dc78f294208b681966e
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230795"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036468"
 ---
 # <a name="manage-predictions"></a>Előrejelzések kezelése
 
@@ -49,12 +50,12 @@ A jelentés következő oszlopai hasznos információkat tartalmaznak a modell a
 
 :::image type="content" source="media/input-data-usability-report.png" alt-text="Példa egy bemeneti adatok használhatósági jelentésére, amely egy hibákat, figyelmeztetéseket és ajánlásokat megjelenítő táblázatot mutat be.":::
 
-- **Név:** A hiba, figyelmeztetés vagy ajánlás leíró neve.
-- **Lépés:** Modellfázis, vonat vagy pontszám, amelyre az információ vonatkozik.
-- **Állapot:** Az információ súlyossága (hiba, figyelmeztetés, ajánlás).
-- **Oszlopnév:** Egy entitás oszlopa, amelyet módosítani kell a modell teljesítményének javítása érdekében.
-- **Entitás neve:** Annak az entitásnak a neve, amelyet módosítani kell a modell teljesítményének javítása érdekében.
-- **Részletek:** Részletek a hibáról, figyelmeztetésről vagy ajánlásról.
+- Név: A hiba, figyelmeztetés vagy ajánlás leíró neve.
+- Lépés: Modellfázis, tanítás vagy pontszám, amelyre az információ hivatkozik.
+- Állapot: Az információ súlyossága (hiba, figyelmeztetés, ajánlás).
+- Oszlopnév: Oszlop egy entitásban, amelyet módosítani kell a modell teljesítményének javítása érdekében.
+- Entitásnév: Az entitás neve, amelyet módosítani kell a modell teljesítményének javítása érdekében.
+- Részletek: Részletek a hibáról, figyelmeztetésről vagy ajánlásról.
 
 ## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
 
@@ -65,8 +66,6 @@ Az előrejelzések automatikusan frissülnek az [adatok beállítások között 
 1. Kattintson a frissíteni kívánt előrejelzés mellett lévő pontokra.
 
 1. Válassza a **Frissítés** lehetőséget.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="delete-a-prediction"></a>Előrejelzés törlése
 
