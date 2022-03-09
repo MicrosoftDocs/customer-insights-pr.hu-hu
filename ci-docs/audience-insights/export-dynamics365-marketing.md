@@ -1,57 +1,72 @@
 ---
 title: A Customer Insights adatok a Dynamics 365 Marketingbe való exportálása
-description: Megismerheti, hogyan konfigurálható a kapcsolat a Dynamics 365 Marketing megoldással.
-ms.date: 02/01/2021
-ms.reviewer: philk
-ms.service: customer-insights
+description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Dynamics 365 Marketingbe.
+ms.date: 08/24/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a06920b8ff25d7102ccd14ae68cf42fe91fa1ee6
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
-ms.translationtype: HT
+searchScope:
+- ci-export
+- customerInsights
+ms.openlocfilehash: d3254bf13b843fe8e1b6e6db49dd6ee1dc22290c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269057"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353914"
 ---
-# <a name="connector-for-dynamics-365-marketing-preview"></a>Dynamics 365 Marketing összekötője (előzetes verzió)
+# <a name="use-segments-in-dynamics-365-marketing-preview"></a>Szegmensek használata a Dynamics 365 Marketing alkalmazásban (előzetes verzió)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott csoportjaihoz fordulhat a Dynamics 365 Marketing alkalmazással. További tudnivalók: [szegmensek használata a Dynamics 365 Customer Insights szolgáltatásból a Dynamics 365 Marketing alkalmazással](https://docs.microsoft.com/dynamics365/marketing/customer-insights-segments)
 
-## <a name="prerequisite"></a>Előfeltétel
+A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott csoportjaihoz fordulhat a Dynamics 365 Marketing alkalmazással. További tudnivalók: [szegmensek használata a Dynamics 365 Customer Insights szolgáltatásból a Dynamics 365 Marketing alkalmazással](/dynamics365/marketing/customer-insights-segments).
 
-- A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Marketing alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Marketing alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Marketing alkalmazásba a Common Data Services használatával](connect-power-query.md).
+Ha a Dynamics 365 Marketing új lehetőségeit használja valós idejű ügyfélút-vezényleléshez egy Dataverse-szervezetben, nem kell szabványos exportálást létrehoznia a Dynamics 365 Marketing alkalmazásba. A célközönséggel kapcsolatos információk közvetlenül elérhetők a Dynamics 365 Marketingben, a Marketing és a Customer Insights összekapcsolása után. A meglévő exportálások törlése előtt tekintse át a dokumentációt, hogy [miként kapcsolható össze a célközönséggel kapcsolatos információk és a Dynamics 365 Marketing ügyfélút vezénylése](/dynamics365/marketing/real-time-marketing-ci-profile).
+
+## <a name="prerequisite-for-a-connection"></a>Egy kapcsolat előfeltétele
+
+- A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Marketing alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Marketing alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Marketing alkalmazásba a Microsoft Dataverse használatával](connect-power-query.md).
 
   > [!NOTE]
   > Ha szegmenseket exportál a célközönséggel kapcsolatos információkból a Marketing nem hoz létre új kapcsolattartói rekordokat a Marketing példányban. A Marketing kapcsolattartói bejegyzéseket be kell tölteni a célközönség kapcsolatos információkba és adatforrásként használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.
 
-## <a name="configure-the-connector-for-marketing"></a>A Marketing összekötő beállítása
+## <a name="set-up-connection-to-marketing"></a>Állítsa be a Marketinggel való kapcsolatot
 
-1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. A **Dynamics 365 Marketing** alatt válassza a **Beállítás** lehetőséget.
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Dynamics 365 Marketing** lehetőséget a kapcsolat konfigurálásához.
 
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Adja meg a szervezet Marketing URL-címét a **Kiszolgáló címe** mezőben.
 
 1. A **Kiszolgáló rendszergazdai fiókja** területen válassza a **Bejelentkezés** lehetőséget, és válasszon egy Dynamics 365 Marketing fiókot.
 
-1. Az ügyfélazonosító mező leképezése a Dynamics 365 kapcsolattartói azonosítóhoz.
+1. Rendelje hozzá a Vevő entitás Ügyfélazonosító mezőjét a Dynamics 365 ügyfélazonosítójához.
 
-1. Válassza a **Következő** lehetőséget.
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
+
+## <a name="configure-an-export"></a>Exportálás konfigurálása
+
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+
+1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Dynamics 365 Marketing szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
 1. Jelöljön ki egy vagy több szegmenst.
 
 1. Válassza a **Mentés** parancsot.
 
-## <a name="export-the-data"></a>Az adatok exportálása
+Az exportálás mentése nem futtatja azonnal az exportálást.
 
-[Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.
-
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -4,27 +4,26 @@ description: Információk az SDK-król és a használatukról.
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
-ms.service: customer-insights
+ms.date: 09/27/2021
 ms.subservice: engagement-insights
-ms.topic: how-to
+ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: 5880e9507cc192424989c7fc9c2733ac5d770a7be8a2b42a446ffd8681fa7612
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
-ms.translationtype: HT
+ms.openlocfilehash: da848e6b155248bd308386d7e23a36131a2e78de
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036286"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231361"
 ---
 # <a name="developer-resources-overview"></a>Fejlesztői erőforrások áttekintése
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Ez a cikk az összes használható kódrészletet és mintát sorolja fel gyors hivatkozásként. Szerezze be egy esemény feladójának kódját a platformhoz, és kövesse az oktatóanyagokat. 
+Ez a cikk felsorolja az összes elérhető szoftverfejlesztői eszközkészlet (SDK) kódrészletet és mintát a fejlesztők számára, hogy megoszthassák az adatokat a Dynamics 365 Customer Insights alkalmazással. Az oktatóanyagok segítségével kérje le a platformspecifikus események kódját.
 
 ## <a name="capture-events-from-websites"></a>Események rögzítése webhelyekről
 
-- [A kód hozzáadása kódrészlet webhelyen](instrument-website.md)
+- [A webhely felszerelése](instrument-website.md)
 - [Web SDK-minta](websdk-sample.md)
 - [Speciális webes SDK-eszközök](advanced-SDK-implementation.md)
 

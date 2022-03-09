@@ -1,24 +1,26 @@
 ---
 title: A környezetek létrehozása és kezelése
 description: Megismerheti, hogyan lehet regisztrálni a szolgáltatásra, és hogyan kezelhetők a környezetek.
-ms.date: 10/14/2021
-ms.service: customer-insights
+ms.date: 12/06/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+searchScope:
+- ci-system-about
+- customerInsights
+ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645129"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354282"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 ## <a name="switch-environments"></a>Váltás a környezetek között
 
@@ -39,6 +41,22 @@ A meglévő környezetek bizonyos részleteit szerkesztheti.
 3. A **Környezet szerkesztése** mezőben frissítheti a környezet beállításait.
 
 További információ a környezet beállításaival kapcsolatban: [Új környezet létrehozása](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Csatlakozás a Microsoft Dataverse-hoz
+   
+A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével.
+
+A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét.
+
+> [!IMPORTANT]
+> A Customer Insights-nak Dataverse ugyanabban a régióban kell lennie az adatmegosztás engedélyezéséhez.
+
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
+
+> [!NOTE]
+> A Customer Insights nem támogatja a következő adatmegosztási forgatókönyveket:
+> - Ha az összes adatot a saját Azure Data Lake Storage szolgáltatásához menti, akkor nem tudja engedélyezni az adatmegosztást a kezelt Dataverse-adattóval.
+> - Ha engedélyezi az adatmegosztást a Dataverse szolgáltatással, akkor nem fogja tudni [létrehozni az előrejelzett vagy hiányzó értékeket egy entitásban](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Másolja a környezet konfigurációját
 
@@ -67,7 +85,8 @@ A következő adatok *nem* lesznek másolva:
 
 - Ügyfélprofilok.
 - Adatforrás hitelesítő adatai. A hitelesítő adatokat meg kell adnia minden adatforráshoz, és manuálisan kell frissítenie az adatforrásokat.
-- Adatforrások a Common Data Model mappából és Dataverse a kezelt Data Lake-ből. Ezeket az adatforrásokat manuálisan, ugyanolyan néven kell létrehoznia, mint a forráskörnyezetében.
+
+- A Common Data Model mappából származó adatforrások és a Dataverse használatával kezelt adattó. Ezeket az adatforrásokat manuálisan, ugyanolyan néven kell létrehoznia, mint a forráskörnyezetében.
 
 Környezet másolásakor egy megerősítő üzenet jelenik meg, amely szerint létrejött az új környezet. Válassza az **Ugrás az adatforrásokhoz** lehetőséget az adatforrások listájának megjelenítéséhez.
 

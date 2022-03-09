@@ -3,20 +3,24 @@ title: Ügyfélélettartam érték (CLV) előrejelzése
 description: Az aktív ügyfelek jövőbeli bevételi lehetőségeinek előrejelzése a jövőre vonatkozóan.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
-ms.translationtype: HT
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954582"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355792"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Ügyfélélettartam-érték (CLV) előrejelzése (előzetes verzió)
+# <a name="customer-lifetime-value-clv-prediction"></a>Ügyfélélettartam érték (CLV) előrejelzése
 
 Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a funkció segíthet különböző célok elérésében: 
 - Értékes ügyfelek azonosítása és ezen információ feldolgozása
@@ -65,7 +69,7 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
     - Adatok teljessége: A bemeneti adatok kötelező mezőiben legfeljebb az értékek 20%-a hiányzik.   
 
 > [!NOTE]
-> - A modellhez az ügyfelek tranzakciós előzményeire van szükség. Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több vásárlási/tranzakciós entitás van, akkor egyesítheti őket a Power Query-ben az adatbetöltés előtt.
+> - A modellhez az ügyfelek tranzakciós előzményeire van szükség. Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési/tranzakciós entitás van, az adatbetöltés előtt be lehet őket Power Query őket.
 > - További ügyféltevékenység-adat esetén (nem kötelező) azonban annyi ügyféltevékenység-entitást adhat hozzá, amennyit a modellel figyelembe szeretne vetetni.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Ügyfélélettartam-érték előrejelzésének létrehozása
@@ -74,7 +78,7 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
 
 1. Válassza az **Ügyfélélettartam értéke** csempét, és válassza a **Modell használata** lehetőséget. 
 
-1. Az **Ügyfél élettartam értéke (előzetes verzió)** ablaktáblában válassza az **Első lépések** lehetőséget.
+1. A Vevő élettartam értéke **ablaktáblán válassza az** Első lépések **lehetőséget**.
 
 1. **Nevezze el ezt a modellt** és a **Kimeneti entitás nevét**, hogy megkülönböztesse őket az egyéb modellektől vagy entitásoktól.
 
@@ -149,7 +153,6 @@ A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat é
 
 1. Válassza a **Következő** lehetőséget.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>A modellkonfiguráció áttekintése és futtatása
 
 1. Az **Ellenőrizze a modell részleteit** lépésben ellenőrizze a előrejelzés konfigurációját. A megjelenített érték alatt lévő **Szerkesztés** beállítással az előrejelzési konfiguráció bármelyik részéhez visszaléphet. A folyamatjelzőből egy konfigurációs lépést is kiválaszthat.
@@ -170,11 +173,10 @@ A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat é
 - **Állapot**: A futtatott előrejelzés állapota.
     - **Feldolgozási sorban**: Az előrejelzés további folyamatok befejezésére vár.
     - **Frissítés**: Az előrejelzés jelenleg fut, hogy a kimeneti entitásba kerülő eredményt hozhassa létre.
-    - **Sikertelen**: Az előrejelzés lefuttatása sikertelen. [Ellenőrizze a naplókat](#troubleshoot-a-failed-prediction) a további részletekért.
+    - **Sikertelen**: Az előrejelzés lefuttatása sikertelen. [Ellenőrizze a naplókat](manage-predictions.md#troubleshoot-a-failed-prediction) a további részletekért.
     - **Sikeres**: Az Előrejelzés lefuttatása sikeresen megtörtént. Válassza a **Megtekintés** lehetőséget a függőleges három pont alatt a kiválasztott előrejelzés megtekintéséhez.
 - **Szerkesztve**: Az előrejelzés konfigurációjának módosítási dátuma.
 - **Legutóbbi frissítés**: A dátum, amikor az előrejelzés frissítette a kimeneti entitásban szereplő eredményeket.
-
 
 ### <a name="review-prediction-results"></a>Előrejelzési eredmények áttekintése
 
@@ -216,28 +218,8 @@ Az eredményoldalon lévő adatok három fő részben jelennek meg.
 
 - **Legbefolyásosabb tényezők**: A CLV-előrejelzés a AI-modell bemeneti adatain alapuló számos tényezőt figyelembe vesz. Az egyes tényezők fontosságát a rendszer kiszámítja a modell által létrehozott összesített előrejelzésekhez. Ezekkel a tényezőkkel ellenőrizheti az előrejelzés eredményeit. Ezek a tényezők további képet adnak a legbefolyásosabb tényezőkről is, amelyek hozzájárultak a CLV minden ügyfélre való előrejelzése során.
 
-## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
+## <a name="manage-predictions"></a>Előrejelzések kezelése
 
-Az előrejelzések automatikusan frissülnek az [adatai frissítési ütemezésével](system.md#schedule-tab) megegyezően, ahogy az a beállításokban konfigurálva van. Ezeket Ön manuálisan is frissíteni tudja.
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-2. Kattintson a frissíteni kívánt előrejelzés mellett lévő pontokra.
-3. Válassza a **Frissítés** lehetőséget.
-
-## <a name="delete-a-prediction"></a>Előrejelzés törlése
-
-Az előrejelzés törlésével annak kimeneti entitása is törlésre kerül.
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-2. Kattintson a törölni kívánt előrejelzés mellett lévő pontokra.
-3. Válassza a **Törlés** lehetőséget.
-
-## <a name="troubleshoot-a-failed-prediction"></a>A sikertelen előrejelzés hibáinak elhárítása.
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-2. Válassza ki a függőleges ellipsziseket amellett az előrejelzés mellet, melynek hibanaplóját meg szeretné tekinteni.
-3. Válassza ki a **Naplók** menüpontot.
-4. Tekintse át a hibákat. Többféle típusú hiba fordulhat elő; a leírásból kiderül, milyen feltétel okozta a hibát. Például egy hiba, amely szerint nem áll rendelkezésre elegendő adat a pontos előrejelzéshez, általában további adatok betöltésével oldható meg a célközönséggel kapcsolatos információkba.
-
+Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

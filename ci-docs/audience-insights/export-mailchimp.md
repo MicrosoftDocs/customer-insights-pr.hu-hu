@@ -1,22 +1,21 @@
 ---
 title: Customer Insights adatok exportálása a Mailchimpbe
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Mailchimpbe.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b94a8e8b6bb867ca04a64007d592b22fbd700618
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
-ms.translationtype: HT
+ms.openlocfilehash: f7a33f2eddb6b625ddb8663b97103de75beab44c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5759881"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226849"
 ---
-# <a name="export-segment-lists-to-mailchimp-preview"></a>Szegmenslisták exportálása a Mailchimpbe (előzetes verzió)
+# <a name="export-segments-to-mailchimp-preview"></a>Szegmensek exportálása a Mailchimpbe (előzetes verzió)
 
 Az egyesített ügyfélprofilok szegmenseinek Mailchimpbe való exportálásával hírleveleket és e-mail-kampányokat hozhat létre.
 
@@ -29,16 +28,16 @@ Az egyesített ügyfélprofilok szegmenseinek Mailchimpbe való exportálásáva
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Legfeljebb 1 000 000 profilt exportálhat egyszerre a Mailchimpbe.
+- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Mailchimp fájlba.
 - A Mailchimpbe való exportálás csak szegmensekre korlátozódik.
-- Az 1 millió profilból álló szegmensek exportálása akár három órát is igénybe fog venni. 
-- A Mailchimpbe exportálható profilok száma függ a Mailchimp szerződésről, és korlátozott.
+- Az 1 millió ügyfélprofilt vevő szegmensek exportálása akár három órát is igénybehat. 
+- Az Mailchimp alkalmazásba exportálható ügyfélprofilok száma az Mailchimppel kötött szerződéstől függ, és csak korlátozott.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Állítsa be a Mailchimppel való kapcsolatot
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Autopilot** lehetőséget a kapcsolat konfigurálásához.
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Mailchimp** lehetőséget a kapcsolat konfigurálásához.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
@@ -66,7 +65,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[MailChimp célközönség-azonosítóját](https://mailchimp.com/help/find-audience-id/)**
 
-3. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. 
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. 
 
 1. Tetszés szerint exportálhatja az **Utónév** és **Vezetéknév** lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 

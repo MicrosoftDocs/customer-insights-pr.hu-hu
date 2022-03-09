@@ -1,40 +1,39 @@
 ---
-title: A Customer Insights adatainak exportálása az Adobe Campaign Standardba
-description: Ismerje meg, hogyan használhatja a célközönség-infomációs szegmenseket az Adobe Campaign Standardban.
+title: Customer Insights adatok exportálása az Adobe Campaign Standardbe
+description: Ismerje meg, hogyan lehet célközönséggel kapcsolatos információk szegmenseit használni az Adobe Campaign Standard szolgáltatásban.
 ms.date: 03/29/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
-ms.translationtype: HT
+ms.openlocfilehash: 6b90ee53236fdd601ecdfd8e6117a15269a08084
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305389"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227761"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>A Customer Insights-szegmensek használata az Adobe Campaign Standardban (előzetes verzió)
+# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insights-szegmensek használata az Adobe Campaign Standard szolgáltatásban(előzetes verzió)
 
-A célközönségi elemzések felhasználójaként Dynamics 365 Customer Insights -ban előfordulhat, hogy szegmenseket hozott létre, hogy hatékonyabbá tegye marketingkampányait a releváns célközönségek megcélzásával. Az Adobe Experience Platformban és az Adobe Campaign Standardhoz hasonló alkalmazásokban található célközönség-információs szegmensek használatához a jelen cikkben ismertetett lépéseket kell követnie.
+A célközönségi elemzések felhasználójaként Dynamics 365 Customer Insights -ban előfordulhat, hogy szegmenseket hozott létre, hogy hatékonyabbá tegye marketingkampányait a releváns célközönségek megcélzásával. Ha használni szeretné a célközönséggel kapcsolatosa információkat az Adobe Experience Platform felületen és olyan alkalmazásokban, mint az Adobe Campaign Standard néhány, a cikkben felvázolt lépést el kell végeznie.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="A jelen cikkben ismertetett lépések folyamatábrája.":::
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   Dynamics 365 Customer Insights licenc
--   Adobe Campaign Standard-licenc
+-   Adobe Campaign Standard licenc
 -   Azure Blob Storage-fiók
 
 ## <a name="campaign-overview"></a>Kampány áttekintése
 
-Hogy jobban meg tudja érteni, hogyan használhatja a célközönség-információs szegmenseket az Adobe Experience Platformban, tekintsünk át egy kitalált mintakampányt.
+Hogy jobban megérthesse, hogyan használhatók fel a célközönséggel kapcsolatos információk szegmensei az Adobe Experience Platform szolgáltatásban, nézzünk meg egy kitalált mintakampányt.
 
 Tegyük fel, hogy a vállalata havi előfizetéses szolgáltatást kínál egyesült államokbeli ügyfeleinek. Meg szeretné határozni azokat az ügyfeleket, akiknek az előfizetései a következő nyolc napban megújításra esedékesek, de még nem újították meg előfizetésüket. Ezeknek az ügyfeleknek a megtartása érdekében e-mailben szeretne promóciós ajánlatot küldeni nekik az Adobe Campaign Standard segítségével.
 
-Ebben a példában egy promóciós e-mail-kampányt egyszer szeretnénk futtatni. Ez a cikk nem terjed ki a kampány egynél több esetben való futtatásának esetére. A célközönség-információk és az Adobe Campaign Standard azonban beállítható úgy is, hogy ismétlődő kampány esetén is működjön.
+Ebben a példában egy promóciós e-mail-kampányt egyszer szeretnénk futtatni. Ez a cikk nem terjed ki a kampány egynél több esetben való futtatásának esetére. A célközönséggel kapcsolatos információk és az Adobe Campaign Standard beállítható úgy, hogy ismétlődő kampány esetén is működjenek.
 
 ## <a name="identify-your-target-audience"></a>Azonosítsa a célközönséget
 
@@ -54,9 +53,9 @@ Az azonosított célközönség segítségével konfigurálható az exportálás
 
 1. A célközönség információkban menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Adobe Campaign** lehetőséget a kapcsolat konfigurálához, vagy válassza a **Beállítás** lehetőséget az **Adobe Campaign** csempében.
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Adobe Campaign** lehetőséget a kapcsolat konfigurálához, vagy válassza a **Beállítás** lehetőséget az **Adobe Campaign** csempén.
 
-   :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Az Adobe Campaign Standard konfigurációs csempéje.":::
+   :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurációs csempe az Adobe Campaign Standard számára.":::
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
@@ -80,7 +79,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Adobe Campaign szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
+1. Az **Exportálási kapcsolat** mezőben válasszon kapcsolatot az Adobe Campaign szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
 1. Válassza ki az exportálni kívánt szegmenst. Ebben a példában ez a **ChurnProneCustomers**.
 
@@ -88,14 +87,14 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Válassza a **Következő** lehetőséget.
 
-1. Most leképezzük a célközönség-információk szegmens **Forrás** mezőit az Adobe Campaign Standard profilsémában szereplő **Cél** mezők neveire.
+1. Most leképezzük a Célközönséggel kapcsolatos információk szegmens **Forrás** mezőit az Adobe Campaign Standard profilsémában szereplő **Cél** mezőnevekre.
 
-   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Az Adobe Campaign Standard-összekötő mezőleképezése.":::
+   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Az Adobe Campaign Standard összekötő mezőleképezése.":::
 
-   Ha további attribútumokat szeretne hozzáadni, válassza az **Attribútum hozzáadása** lehetőséget. A cél neve nem lehet azonos a forrásmező nevével, így továbbra is leképezheti a célközönség-információkból származó szegmens kimenetét az Adobe Campaign Standard szolgáltatásba, ha mezőknek a két rendszerben nem ugyanaz a neve.
+   Ha további attribútumokat szeretne hozzáadni, válassza az **Attribútum hozzáadása** lehetőséget. A célnév eltérhet a forrásmező nevétől, így továbbra is leképezheti célközönség szegmens kimenetét célközönséggrl kapcsolatos információkból az Adobe Campaign Standardbe ha a mezőknek nem ugyanaz a neve a két rendszerben.
 
    > [!NOTE]
-   > Az e-mail-címet identitásmezőként használja a rendszer, de a célközönség-információk ügyfélprofil egyéb azonosítói segítségével az adatokat leképezheti az Adobe Campaign Standardra.
+   > Az e-mail címet identitásmezőként használja a rendszer, de a célközönséggel kapcsolatos információk ügyfélprofilból bármely más azonosítót használhat az adatok leképezéséhez az Adobe Campaign Standard irányába.
 
 1. Válassza a **Mentés** parancsot.
 
@@ -104,7 +103,7 @@ Az exportálási cél mentése után az **Adatok** > **Exportálások** lehetős
 Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#run-exports-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
 
 > [!NOTE]
-> Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licencének megengedett korlátjan belül van.
+> Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licenc engedélyezett korlátján belül van.
 
 Az exportált adatokat a rendszer a fent beállított Azure Blob Storage tárolóban tárolja. A következő mappa elérési útja automatikusan létrejön a tárolóban:
 
@@ -112,32 +111,32 @@ Az exportált adatokat a rendszer a fent beállított Azure Blob Storage tárol�
 
 Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo_ChurnProneCustomers_1613059542.csv
 
-## <a name="configure-adobe-campaign-standard"></a>Adobe Campaign Standard konfigurálása
+## <a name="configure-adobe-campaign-standard"></a>Az Adobe Campaign Standard konfigurálása
 
-Ha egy szegmenst exportál célközönség-információkból, akkor az előző lépésben az exportálási cél meghatározása során kiválasztott oszlopokat tartalmazza. Ezek az adatok használhatók [profilok létrehozásához az Adobe Campaign Standardban](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/about-profiles.html#managing-profiles).
+Ha egy szegmenst exportál célközönség-információkból, akkor az előző lépésben az exportálási cél meghatározása során kiválasztott oszlopokat tartalmazza. Ezek az adatok használhatók [profilok létrehozásához az Adobe Campaign Standard](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/about-profiles.html#managing-profiles) szolgáltatásban.
 
-A szegmens az Adobe Campaign Standardban való használata esetén két további mezőre is ki kell bővítenünk a profilsémát az Adobe Campaign Standardban. Ismerje meg, hogyan [bővítheti a profilerőforrást](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) az Adobe Campaign Standard új mezőivel.
+Egy szegmens használatához az Adobe Campaign Standard szolgáltatásban ki kell bővítenünk a profilsémát az Adobe Campaign Standardben, hogy két további mezőt is tartalmazzon. Megismerheti, hogyan [bővítheti a profilerőforrást](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) az Adobe Campaign Standard új mezőivel.
 
 A példában ezek a mezők a *Szegmens neve és a Szegmens dátuma (nem kötelező)*.
 
-Ezeket a mezőket arra használjuk, hogy azonosítsuk a kampányhoz megcélozni kívánt Adobe Campaign Standard-profilokat.
+Ezeket a mezőket arra használjuk, hogy azonosítsuk az Adobe Campaign Standard azon profiljait, amelyeket meg szeretnénk célozni ebben a kampányban.
 
 Ha az Adobe Campaign Standardban nincs más rekord, mint amit importálni fog, ezt a lépést kihagyhatja.
 
-## <a name="import-data-into-adobe-campaign-standard"></a>Adatok importálása az Adobe Campaign Standard programba
+## <a name="import-data-into-adobe-campaign-standard"></a>Adatok importálása az Adobe Campaign Standardbe
 
-Most, hogy minden a helyén van, a profilok létrehozásához importálni kell az előkészített célközönségadatokat az célközönség-információkból az Adobe Campaign Standardba. Ismerje meg, [hogyan importálhat profilokat az Adobe Campaign Standardba](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) munkafolyamatok használatával.
+Most, hogy minden a helyén van, a profilok létrehozásához importálni kell az előkészített célközönség adatokat a célközönéggel kapcsolatos információkból az Adobe Campaign Standardbe a profilok létrehozásához. Ismerje meg, [hogyan importálhat profilokat az Adobe Campaign Standardbe](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) munkafolyamattal.
 
-Az alábbi képen látható importálási munkafolyamat úgy van konfigurálva, hogy nyolc óránként fusson, és keresse meg az exportált célközönségi elemzések szegmenseket (.csv fájl az Azure Blob Storage-ban). A munkafolyamat meghatározott oszloprendben bontja ki a .csv fájl tartalmát. Ez a munkafolyamat az alapvető hibakezelés végrehajtásához készült, és biztosítja, hogy minden rekordhoz tartozzon e-mail-cím, mielőtt az adatokat átveszi az Adobe Campaign Standardban. A munkafolyamat a szegmens nevét is kinyeri a fájlnévből, mielőtt az Adobe Campaign Standard profiladataiba lépne.
+Az alábbi képen látható importálási munkafolyamat úgy van konfigurálva, hogy nyolc óránként fusson, és keresse meg az exportált célközönségi elemzések szegmenseket (.csv fájl az Azure Blob Storage-ban). A munkafolyamat meghatározott oszloprendben bontja ki a .csv fájl tartalmát. Ez a munkafolyamat az alapvető hibakezelés végrehajtásához készült, és gondoskodik arról, hogy minden rekordnak legyen e-mail címe, mielőtt a az Adobe Campaign Standardben hidratálnák az adatokat. A munkafolyamat a szegmens nevét is kinyeri a fájlnévből, mielőtt az Adobe Campaign Standard profiladataiba lépne.
 
-:::image type="content" source="media/ACS-import-workflow.png" alt-text="Képernyőkép az importálási munkafolyamatról az Adobe Campaign Standard felhasználói felületén.":::
+:::image type="content" source="media/ACS-import-workflow.png" alt-text="Képernyőkép az importálási munkafolyamatról a Adobe Campaign Standard felhasználói felületen.":::
 
-## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>A célközönség lekérése az Adobe Campaign Standardban
+## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>Az célközönség beolvasása az Adobe Campaign Standardbe
 
-Miután megtörtént az adatok importálása az Adobe Campaign Standardba, [létrehozhat egy munkafolyamatot](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data), és [lekérdezheti](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) az ügyfeleket a *Szegmensnév* és *Szegmens dátuma* alapján, hogy kiválaszthassa a mintakampányhoz beazonosítótt profilokat.
+Miután megtörtént az adatok importálása az Adobe Campaign Standard szolgáltatásba, [létrehozhat egy munkafolyamatot](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data), és a *Szegmensnév* és a *Szegmensdátum* alapján [lekérdezheti](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) az ügyfeleket a mintakampányhoz azonosított profilok kiválasztásához.
 
-## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Az e-mail létrehozása és elküldése az Adobe Campaign Standard használatával
+## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Az e-mail létrehozása és elküldése a Adobe Campaign Standard segítségével
 
 Hozza létre az e-mail tartalmát, majd [tesztelje, és küldje el](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) az e-mailt.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="E-mail minta az Adobe Campaign Standard megújítási ajánlatával.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="E-mail minta az Adobe Campaign Standardben megújítási ajánlattal.":::

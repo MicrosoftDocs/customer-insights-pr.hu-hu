@@ -1,42 +1,48 @@
 ---
 title: Customer Insights adatok exportálása az Autopilotba
-description: Megismerheti, hogyan konfigurálható a kapcsolat a Autopilottal.
-ms.date: 12/08/2020
+description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Autopilotba.
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6d039c4afd84eaad942d214d4e6fb8ef7b1ec72a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
-ms.translationtype: HT
+ms.openlocfilehash: 7a7a67a52fcf39da8d50bd95817d25470fc90b6f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596133"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227669"
 ---
-# <a name="connector-for-autopilot-preview"></a>Az Autopilot összekötője (előzetes verzió)
+# <a name="export-segments-to-autopilot-preview"></a>Szegmensek exportálása az Autopilotba (előzetes verzió)
 
 Exportálja az egyesített ügyfélprofilok szegmenseit az Autopilotba, és használja őket kampányokhoz és e-mail marketinghez az Autopilotban. 
 
-## <a name="prerequisites"></a>Előfeltételek
+## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
 -   Rendelkezik [Autopilot-fiókkal](https://www.autopilothq.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
 -   [Konfigurált szegmensekkel](segments.md) rendelkezik a célközönségi-információkban.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
-## <a name="connect-to-autopilot"></a>Csatlakozás az AutoPilothoz
+## <a name="known-limitations"></a>Ismert korlátozások
 
-1. Válassz a **Rendszergazda** > **Célok exportálása** lehetőséget.
+- Összesen legfeljebb 100 000 ügyfélprofilt exportálhat az Autopilot szolgáltatásba.
+- Az Autopilotba való exportálás csak szegmensekre korlátozódik.
+- 100 000 ügyfélprofil exportálása a Autopilot szolgáltatásba akár néhány órát is igénybe vehet. 
+- Az Autopilot alkalmazásba exportálható ügyfélprofilok száma az Autopilottal kötött szerződéstől függ, és csak korlátozott.
 
-1. Az **Autopilot** részben válassza a **Beállítás** lehetőséget.
+## <a name="set-up-connection-to-autopilot"></a>Állítsa be az Autopilottal való kapcsolatot
 
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben az export helyének.
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-   :::image type="content" source="media/export-autopilot.PNG" alt-text="Az Autopilot-kapcsolat konfigurációs ablaktáblája.":::
+1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Autopilot** lehetőséget a kapcsolat konfigurálásához.
 
-1. Adja meg az **Autopilot API kulcsát** [Autopilot API-kulcs](https://autopilot.docs.apiary.io/#).
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Adja meg az [Autopilot API-kulcsát](https://autopilot.docs.apiary.io/#).
 
 1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
 
@@ -44,26 +50,27 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Autopilotba, és hasz
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
-1. Az Exportálás konfigurálásához válassza a **Tovább** lehetőséget.
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
-## <a name="configure-the-connector"></a>Konfigurálja az összekötőt
+## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-1. Az **Adategyeztetés** szakaszban az **E-mail** mezőben jelölje ki az egyesített ügyfélprofil ügyfél e-mail-címét jelképező mezőjét. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**.
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
+
+1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Autopilot szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Ismételje meg ugyanezeket a lépéseket az egyéb választható mezőkön, például az **Utónév**, a **Vezetéknév**.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Fokozottan **javasoljuk, hogy ne exportáljon összesen 100 000-nél több ügyfélprofilt** az Autopilotba. 
 
 1. Válassza a **Mentés** parancsot.
 
-## <a name="export-the-data"></a>Az adatok exportálása
+Az exportálás mentése nem futtatja azonnal az exportálást.
 
-[Igény szerint exportálhatja az adatot](export-destinations.md). Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) együtt is lefut.
-
-## <a name="known-limitations"></a>Ismert korlátozások
-
-- Összesen legfeljebb 100 000 ügyfélprofilt exportálhat az Autopilotba.
-- Az Autopilotba való exportálás csak szegmensekre korlátozódik.
-- Akár 100 000 profil Autopilotba való exportálása néhány órát is igénybe vehet. 
-- Az Autopilotba exportálható profilok száma függ az Autopilot szerződésről, és korlátozott.
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

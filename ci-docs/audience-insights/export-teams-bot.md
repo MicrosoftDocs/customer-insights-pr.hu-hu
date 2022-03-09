@@ -1,20 +1,19 @@
 ---
 title: Robot a Microsoft Teamshez
 description: Az egyesített ügyfélprofilok keresése a Microsoft Teams robot segítségével tekinthető meg.
-ms.date: 04/21/2020
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e563619f40be859f3f02638adbd60b80423182b3
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
-ms.translationtype: HT
+ms.openlocfilehash: d6b016c1ec35e26ce6449333234edfd218bc9354
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554383"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232105"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teams robot a Dynamics 365 Customer Insights (előzetes verzió) szolgáltatáshoz
 
@@ -31,7 +30,10 @@ A robot beállításához és konfigurálásához a következő előfeltételekn
 - Az [egyesítési eljárás](data-unification.md) teljes.
 - A mezők hozzáadódnak a [keresési és a szűrő indexhez](search-filter-index.md).
 - A Customer Insights és a Teams ugyanabban a szervezetben található.
+- A környezet az elsődleges célközönség ügyfelekre van állítva. Az üzleti fiókok nem támogatottak.
 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Konfigurálja a robotot
 
 1. A célközönség információin belül nyissa meg a következőt **Rendszergazda** > **Exportálási célhelyek**.
