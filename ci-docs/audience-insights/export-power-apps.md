@@ -10,7 +10,7 @@ ms.author: nikeller
 manager: shellyha
 ms.openlocfilehash: ae2a3b7c05e9ed860da31853c47af2aec8634e7a
 ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/16/2022
 ms.locfileid: "8229034"
