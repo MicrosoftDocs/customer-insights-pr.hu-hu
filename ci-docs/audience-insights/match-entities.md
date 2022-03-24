@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 3c0dd9c417e569ed37d8122c637072893732418a
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
-ms.translationtype: HT
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372630"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376925"
 ---
 # <a name="match-entities"></a>Entitások egyeztetése
 
@@ -39,18 +39,18 @@ Mindegyik egyezés két vagy több entitást egyesül egyetlen, összesített en
 > Az entitások hierarchiájának kiválasztásában két szempont segíthet:
 >
 > - Válassza ki azt az entitást, amely a legteljesebb és legmegbízhatóbb profiladatokkal rendelkezik az ügyfelekről elsődleges entitásként.
-> - Elsődleges entitásként válassza ki azt az entitást, amely több, más entitással közös attribútummal (például névvel, telefonszámmal vagy e-mail címmel) rendelkezik.
+> - Válassza ki azt az entitást, amely több attribútummal rendelkezik, amelyek közösek más entitásokkal (például név, telefonszám vagy e-mail cím) elsődleges entitásként.
 
 1. Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, és válassza a **Sorrend beállítása** lehetőséget az egyeztetési fázisának indításához.
-1. Válassza ki **az Entitásrendelés lehetőséget**. Válassza például az **eCommerce:eCommerceContacts-ot** elsődleges entitásként, a **LoyaltyScheme:loyCustomers** pedig a második entitást. 
+1. Válassza ki **az Entitás rendelés lehetőséget**. Válassza például az **eCommerce:eCommerceContacts** lehetőséget elsődleges egységként, és **a LoyaltyScheme:loyCustomers** lehetőséget második entitásként. 
 1. Ha azt szeretné, hogy az entitás minden bejegyzése egyedi vevőként legyen, és minden következő entitáshoz igazodjon, válassza az Összes belefoglalása **lehetőséget**.
 1. Válassza a **Kész** lehetőséget. 
 
-Az egyezési sorrend megadása után a megadott egyezési párok a **DataUnifyMatch** **·** > **Párosított rekordok részletei** > **szakaszában** jelennek meg. A kulcsmetrikák üresek, amíg az egyezési folyamat be nem fejeződik.
+Az egyezési sorrend megadása után a megadott egyezési párok megjelennek a **DataUnifyMatch** **·** > **Egyeztetett rekordok részletei szakaszában.** > **·** A kulcsmetrikák üresek, amíg az egyezési folyamat be nem fejeződik.
 
 :::image type="content" source="media/match-page.png" alt-text="Képernyőkép az adategyesítési folyamat Egységesítés területén található Megfeleltetés oldalról.":::
   
-Az *eCommerce:eCommerceContacts* elsődleges entitást a rendszer megfelelteti a következő *LoyaltyScheme:loyCustomers* entitással. Az első egyezési lépésből származó adatkészlet a következő entitással egyezik meg, ha kettőnél több entitással van.
+Az *eCommerce:eCommerceContacts* elsődleges entitást a rendszer megfelelteti a következő *LoyaltyScheme:loyCustomers* entitással. Az első egyezési lépésből származó adatkészlet a következő entitással van párosítva, ha kettőnél több entitással rendelkezik.
 
 ## <a name="define-rules-for-match-pairs"></a>Egyezéspárok szabályainak meghatározása
 
@@ -60,7 +60,7 @@ Egy entitásnév mellett szereplő **Szabályok szükségesek** figyelmeztetés 
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Képernyőkép az Egyező bejegyzés részletei szakaszról, amelyen kiemelve látható a szabályok hozzáadására szolgáló vezérlő.":::
 
-1. Az egyezési szabályok meghatározásához válassza **a Szabály** hozzáadása az entitás alatt az **Egyező rekordok részletei** szakaszban.
+1. Az egyezési szabályok meghatározásához válassza **a Szabály** hozzáadása lehetőséget az Entitás alatt az **Egyező rekordok részletei** szakaszban.
 
 1. A **Szabály létrehozása** panelben konfigurálja a szabály feltételeit.
 
@@ -74,12 +74,12 @@ Egy entitásnév mellett szereplő **Szabályok szükségesek** figyelmeztetés 
      - Számjegyek: Más numerális rendszereket, például a római számjegyeket arab számokká alakít át. A *VIII* számból *8* lesz.
      - Szimbólumok: Minden szimbólumot és különleges karaktert eltávolít. A *Head&Shoulder* kifejezésből *HeadShoulder* lesz.
      - Szöveg kisbetűsre: Minden karaktert kisbetűsre alakít át. Az *ALL CAPS and Title Case* kifejezés *all caps and title case* lesz.
-     - Típus (Telefon, név, cím, szervezet): Szabványosítja a neveket, címeket, telefonszámokat, címeket stb. 
+     - Típus (Telefon, Név, Cím, Szervezet): Szabványosítja a neveket, címeket, telefonszámokat, címeket, címeket stb. 
      - Unicode-ból ASCII: A Unicode-jelölést átalakítja ASCII-karakterekké. A */u00B2* jelölésből *2* lesz.
      - Szóköz: Az összes szóköz eltávolítása. A *Hello   World* kifejezésből *HelloWorld* lesz.
 
    - **Pontosság**: Az adott feltételre alkalmazandó pontossági szint beállítása. 
-     - **Alap**: Válasszon az *Alacsony*, *Közepes*, *Magas* és *Pontos* közül. Válassza az Pontos **lehetőséget**, ha csak a 100 százaléknak megfelelő rekordok egyezéséhez. Válasszon másik szintet, ha nem 100%-ban egyező rekordokat szeretne egyeztetni.
+     - **Alap**: Válasszon az *Alacsony*, *Közepes*, *Magas* és *Pontos* közül. Válassza az Pontos **lehetőséget**, ha csak a 100 százalékosnak megfelelő rekordoknak felel meg. Válasszon másik szintet, ha nem 100%-ban egyező rekordokat szeretne egyeztetni.
      - **Egyéni**: Állítsa be, hogy a rekordoknak hány százalékban kell egyezniük. A rendszer csak az ezt a küszöbértéket meghaladó rekordokat egyezteti.
 
 1. A **Név** mezőbe írja be a szabály nevét.
@@ -102,7 +102,7 @@ Ha csak akkor szeretne entitásokat egyeztetni, amikor több feltétel is teljes
 
 ### <a name="add-rules-to-a-match-pair"></a>Szabályok hozzáadása egyezéspárhoz
 
-Az egyezési szabályok feltételek egy csoportját jelentik. Ha több attribútumon alapuló feltételek szerint szeretné egyeztetni az entitásokat, adjon hozzá további szabályokat.
+Az egyezési szabályok feltételek egy csoportját jelentik. Ha az entitásokat több attribútumon alapuló feltételek szerint szeretné egyeztetni, adjon hozzá további szabályokat.
 
 1.  Lépjen az **Adatok** > **Egyesítés** > **Megfeleltetés** lehetőségre, és válassza azon entitás **Szabály hozzáadása** elemét, amelyhez szabályokat akar hozzáadni.
 
@@ -113,7 +113,7 @@ Az egyezési szabályok feltételek egy csoportját jelentik. Ha több attribút
 
 ### <a name="change-the-entity-order-in-match-rules"></a>Az entitások sorrendjének módosítása az egyezési szabályokban
 
-Az egyezési szabályokhoz tartozó entitásokat átrendezheti a feldolgozás sorrendjének módosításához. A módosított sorrend miatt ütköző szabályokat a rendszer eltávolítja. Az eltávolított szabályokat újra létre kell hozni frissített konfigurációval.
+Az egyezési szabályok entitásait átrendezheti a feldolgozás sorrendjének módosításához. A módosított sorrend miatt ütköző szabályokat a rendszer eltávolítja. Az eltávolított szabályokat újra létre kell hozni frissített konfigurációval.
 
 1. Lépjen az **Adatok** > **Egységesítés** > **Egyezés** részre, és válassza a **Szerkesztés** lehetőséget.
 
@@ -127,7 +127,7 @@ Az egyezési szabályokhoz tartozó entitásokat átrendezheti a feldolgozás so
 
 Az [entitások közötti egyezés szabályok](#define-rules-for-match-pairs) mellett a deduplikációkat is megadhatja. A *deduplikáció* egy másik folyamat, amikor a rekordokat megfeleltetik. Azonosítja a duplikált bejegyzéseket, és egy rekordba egyesíti őket. A forrásrekordokat a rendszer összekapcsolja az egyesített rekordokat alternatív azonosítókkal.
 
-A duplikált rekordok a entitások közötti egyeztetési folyamatban használatosak. A deduplikáció az egyes entitásokon történik, és konfigurálható minden egyezőpárban használt entitáshoz.
+A deduplikált rekordokat az entitások közötti egyeztetési folyamatban használják. A deduplikáció az egyes entitásokon történik, és konfigurálható az egyezési párokban használt összes entitáshoz.
 
 A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincsenek konfigurálva, a rendszer által definiált szabályokat kell alkalmazni. Az összes rekordot egyetlen rekordba kombinálja, mielőtt átadja az entitásadatokat az entitások közötti egyeztetésnek a jobb teljesítmény érdekében.
 
@@ -135,7 +135,7 @@ A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincs
 
 1. Nyissa meg az **Adatok** > **Egységesítés** > **Egyeztetés**-t.
 
-1. **A Deduplikált rekordok részletei** szakaszban válassza az Entitások **beállítása lehetőséget**. Abban az esetben, ha a deduplikációra vonatkozó szabályok már létre vannak hozva, válassza a **Szerkesztés** lehetőséget.
+1. A Deduplikált rekordok részletei **szakaszban válassza az** Entitások **beállítása lehetőséget**. Abban az esetben, ha a deduplikációra vonatkozó szabályok már létre vannak hozva, válassza a **Szerkesztés** lehetőséget.
 
 1. Az **Egyesítési beállítások** panelen válassza ki azokat az entitásokat, amelyeken a deduplikációt futtatni szeretné.
 
@@ -144,12 +144,12 @@ A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincs
       - **Legújabb**: A nyertes rekordot az időbeli frissesség alapján adja meg. Az időbeli frissesség definiálásához dátum vagy numerikus mező szükséges.
       - **Legrégebbi**: A nyertes rekord a legkevésbé friss rekord lesz. Az időbeli frissesség definiálásához dátum vagy numerikus mező szükséges.
 
-   1. Ha deduplikációs szabályokat szeretne definiálni egy entitás egyes attribútumaihoz, válassza a Speciális **lehetőséget**. Dönthet például úgy, hogy megtartja a legutóbbi e-mailt és a legteljesebb címet a különböző rekordokból. Bontsa ki az entitást az összes attribútumának megtekintéséhez, és határozza meg, hogy melyik beállítást használja az egyes attribútumokhoz. Ha recency-alapú beállítást választ, meg kell adnia egy dátum/idő mezőt is, amely meghatározza a reklenciát. 
+   1. Ha az entitás egyes attribútumaira vonatkozó deduplikációs szabályokat meg szeretné határozni, válassza a Speciális **lehetőséget**. Például dönthet úgy, hogy megtartja a legutóbbi e-mail címet és a legteljesebb címet a különböző rekordokból. Bontsa ki az entitást az összes attribútum megtekintéséhez, és határozza meg, hogy melyik beállítást használja az egyes attribútumokhoz. Ha a recency-alapú beállítást választja, meg kell adnia egy dátum/idő mezőt is, amely meghatározza a pontosságot. 
  
       > [!div class="mx-imgBorder"]
       > ![Deduplikációs szabályok 1. lépése.](media/match-selfconflation.png "Deduplikációs szabályok 1. lépése")
 
-   1. Válassza a Kész **lehetőséget** a deduplikációra vonatkozó egyesítési beállítások alkalmazásához.
+   1. Válassza a Kész **lehetőséget** az egyesítési beállítások deduplikációra való alkalmazásához.
  
 1. Miután az entitások ki vannak jelölve, és az egyesítési preferencia be van állítva, válassza az **Szabály hozzáadása** lehetőséget a deduplikációs szabályok entitás szintjén történő definiálásához.
    - A **Mező kiválasztása** felsorolja az adott entitásból származó összes elérhető mezőt. Válassza ki, hogy melyik mezőt szeretné ellenőrizni a duplikált elemekkel kapcsolatban. Válassza ki a mezőket, amelyek valószínűleg egyediek minden egyes ügyfélnél. Például egy e-mail-cím, vagy a név, a város és a telefonszám kombinációja.
@@ -167,7 +167,7 @@ A deduplikációs szabályok megadása nem kötelező. Ha ilyen szabályok nincs
 
 1. Minden megadott egyéni egyezési szabály felülírja a deduplikációs szabályokat. Ha egy deduplikációs szabály azonosítja az egyező bejegyzéseket, és az egyéni egyeztetési szabály beállítása a rekorokhoz Soha ne egyezzen, akkor a két rekord egyeztetése nem történik meg.
 
-1. Az egyeztetési folyamat [futtatása után](#run-the-match-process) a deduplikációs statisztikák a legfontosabb metrikák csempéin láthatók.
+1. Az egyezési folyamat [futtatása után](#run-the-match-process) a deduplikációs statisztikák megjelennek a legfontosabb metrikák csempéin.
 
 ### <a name="deduplication-output-as-an-entity"></a>Deduplikáció kimenete entitásként
 
@@ -181,15 +181,17 @@ A deduplikált kimeneti entitás a következő információkat tartalmazza:
 - A deduplikációs szabályok definiáló mezői.
 - Szabály és Pontszám mezők, amelyekben a deduplikációs szabályok alkalmazva lettek és az egyeztető algoritmus által visszaadott pontszám is megegyezik.
  
-## <a name="include-enriched-entities-preview"></a>Bővített entitások belefoglalása (előzetes verzió)
+## <a name="include-enriched-entities-preview"></a>Gazdagított entitások belefoglalása (előzetes verzió)
 
-Ha adatforrás szinten gazdagította az entitásokat, az egyeztetési folyamat futtatása előtt jelölje ki őket. A gazdagított entitások javíthatják az egyesítési eredményeket. További információt a Adatforrások gazdagítása [című témakörben talál](data-sources-enrichment.md). 
+Ha adatforrás szinten gazdagította az entitásokat, jelölje ki őket az egyezési folyamat futtatása előtt. A gazdagodott entitások javíthatják az egyesülési eredményeket. További információt az adatforrások [gazdagítása című témakörben talál](data-sources-enrichment.md). 
 
-1. Lépjen a DataUnifyMatch oldalra, **és válassza** > **a Gazdagított entitások** > **használata lehetőséget a lap** tetején.**·**
+A gazdagított entitás tartalmazza az eredeti adatforrás mezőket és a gazdagított mezőket. Tehát, ha úgy dönt, hogy a gazdagított entitással dolgozik, a meglévő konfigurációt ez nem befolyásolja. Előfordulhat azonban, hogy frissítenie kell az egyezési szabályokat a gazdagított mezők használatához.
 
-1. **A Bővített entitások** használata ablaktáblán válasszon ki egy vagy több bővített entitást.
+1. Nyissa meg a **DataUnifyMatch** > **·** > **elemet,** és válassza **a gazdagított entitások** használata lehetőséget a lap tetején.
 
-1. Válassza a **Kész** lehetőséget. Bárhol is használják a forrás entitást (például egyezési sorrendet vagy szabályokat), a program automatikusan a gazdagított entitásra változik.
+1. **A Gazdagított entitások** használata ablaktáblán válasszon ki egy vagy több gazdagított entitást.
+
+1. Válassza a **Kész** lehetőséget. Bárhol is használják a forrástenitást (például egyezési sorrendet vagy szabályokat), a program automatikusan a gazdagított entitásra módosítja.
   
 ## <a name="run-the-match-process"></a>Az egyeztetési folyamat futtatása
 
@@ -245,15 +247,15 @@ Az egyezési paraméterek nagy része konfigurálható és finomhangolható.
 
 ### <a name="add-exceptions-to-a-rule"></a>Kivételek hozzáadása szabályhoz
 
-A legtöbb esetben az entitásegyeztetés egyedi felhasználói profilokhoz vezet, konszolidált adatokkal. A hamis pozitív és hamis negatívok ritka eseteinek dinamikus kezeléséhez kivételeket határozhat meg egy egyezési szabályhoz. Az egyezési szabályok feldolgozása után kivételeket alkalmazunk, és elkerüljük az összes olyan rekord egyeztetését, amely megfelel a kivételfeltételeknek.
+A legtöbb esetben az entitásegyeztetés egyedi felhasználói profilokhoz vezet konszolidált adatokkal. A hamis pozitív és hamis negatívok ritka eseteinek dinamikus kezeléséhez kivételeket határozhat meg egyezési szabályhoz. A kivételek az egyezési szabályok feldolgozása után kerülnek alkalmazásra, és elkerülik az összes olyan rekord egyeztetését, amely megfelel a kivételfeltételeknek.
 
-Ha például az egyezési szabály egyesíti vezetéknév, a várost és a születési dátumot, a rendszer azonosítja az ugyanazzal a vezetéknév rendelkező ikreket, akik ugyanabban a városban élnek, mint ugyanaz a profil. Megadhat olyan kivételt, amely nem egyezik meg a profilokkal, ha az egyesíteni kívánt entitások utónév nem egyeznek meg.
+Ha például a mérkőzésszabály vezetéknév, várost és születési dátumot kombinál, a rendszer azonosítja azokat az ikreket, akik ugyanazzal a vezetéknév, akik ugyanabban a városban élnek, mint ugyanaz a profil. Megadhat olyan kivételt, amely nem egyezik meg a profilokkal, ha az egyesített entitások utónév nem azonosak.
 
 1. Lépjen az **Adatok** > **Egyesítés** > **Megfeleltetés** lehetőségre, és válassza azon szabály **Szerkesztés** elemét, amelyhez feltételeket akar hozzáadni.
 
-1. A Szabály szerkesztése ablaktáblán válassza a **Kivétel hozzáadása lehetőséget** **.**
+1. A Szabály **szerkesztése ablaktáblán válassza a** Kivétel **hozzáadása lehetőséget**.
 
-1. Adja meg a kivételfeltételeket. 
+1. Adja meg a kivételi feltételeket. 
 
 1. A szabály mentéséhez válassza a **Kész** gombot.
 
@@ -263,10 +265,10 @@ Megadhat olyan feltételeket, amelyek felülírják az alapértelmezett egyezés
 
 |Beállítás  |Description |Példa  |
 |---------|---------|---------|
-|Mindig egyezik     | A mindig egyező értékeket határozza meg.         |  Mindig egyezik *Mike-kal* és *MikeR-nal*.       |
+|Mindig egyezik     | Olyan értékeket határoz meg, amelyek mindig egyeznek.         |  Mindig egyeznek *Mike-kal* és *MikeR-ral*.       |
 |Soha nem egyezik     | Olyan értékeket határoz meg, amelyek soha nem egyeznek meg.        | Soha ne egyezzen *Johnnal* és *Jonathannal*.        |
-|Egyéni megkerülő     | Olyan értékeket határoz meg, amelyeket a rendszernek mindig figyelmen kívül kell hagynia az egyezési fázisban. |  Figyelmen kívül hagyja a 11111 *és* ismeretlen *értékeket* az egyezés során.        |
-|Aliasleképezés    | Olyan értékek meghatározása, amelyeket a rendszernek azonos értéknek kell tekintenie.         | Tekintsd *Joe-t* egyenlőnek *Józseffel*.        |
+|Egyéni megkerülő     | Olyan értékeket határoz meg, amelyeket a rendszernek mindig figyelmen kívül kell hagynia az egyezési fázisban. |  Hagyja figyelmen kívül az 11111 *és* az Ismeretlen *értékeket* a mérkőzés során.        |
+|Aliasleképezés    | Olyan értékek meghatározása, amelyeket a rendszernek azonos értéknek kell tekintenie.         | Tekintsd Úgy *, hogy Joe* egyenlő *Józseffel*.        |
 
 1. Válassza az **Adatok** > **Egységesítés** > **Egyeztetés** lehetőséget, és válassza az **Egyéni egyezés** lehetőséget az **Egyező rekordok részletei** szakaszban.
 
@@ -274,7 +276,7 @@ Megadhat olyan feltételeket, amelyek felülírják az alapértelmezett egyezés
 
 1. **Az Egyéni** ablaktáblán lépjen a **Rekordok** lapra.
 
-1. Válassza ki az egyéni egyezés beállítást az Egyéni típusú **legördülő listából, és válassza** a **Letöltés sablont**. Minden egyezéshez külön sablonra van szükség.
+1. Válassza ki az egyéni egyezés opciót az Egyéni típus legördülő listából, és válassza a **Sablon letöltése lehetőséget** **.** Minden egyeztetési lehetőséghez külön sablonra van szükség.
 
 1. Nyissa meg a letöltött sablonfájlt, és töltse ki a részleteket. A sablon mezőket tartalmaz, amelyek meghatározzák az entitást és az egyéni egyeztetésben használandó entitás elsődleges kulcsértékeit. Ha például azt szeretné, hogy az *Értékesítés* entitás *12345* elsődleges kulcsa mindig megegyezzen a *Kapcsolattartó* entitás *34567* elsődleges kulcsával, töltse ki a sablont:
     - Entity1: Értékesítés
@@ -294,10 +296,10 @@ Megadhat olyan feltételeket, amelyek felülírják az alapértelmezett egyezés
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Képernyőkép a párbeszédablakról az egyéni egyezés esetének felülbírálása esetén.":::
 
-1. Az egyéni egyezés alkalmazása a használni kívánt egyezés beállítástól függ. 
+1. Az egyéni egyezés alkalmazása a használni kívánt egyezési beállítástól függ. 
 
-   - A **Mindig egyezzen** vagy **soha egyezzen**, folytassa a következő lépéssel.
-   - Egyéni **megkerülési** vagy **Alias-hozzárendelés esetén** válassza a Szerkesztés **meglévő egyezési szabályon lehetőséget**, vagy hozzon létre egy új szabályt. A Normalizálások legördülő listában válassza az Egyéni megkerülési **vagy** Aliasleképezési **lehetőséget, és válassza a** Kész **lehetőséget**.
+   - A **Mindig egyezés** vagy **a Soha ne egyezés** esetén folytassa a következő lépéssel.
+   - Egyéni megkerülés **vagy** Alias-hozzárendelés esetén **válassza** a Szerkesztés **lehetőséget** egy meglévő egyezési szabályon, vagy hozzon létre egy új szabályt. A Normalizációk legördülő listában válassza az Egyéni bypass vagy aliasleképezés **lehetőséget, és válassza a** Kész lehetőséget.**·** **·**
 
 1. Az egyéni egyezési konfiguráció alkalmazáshoz válassza a **Mentés** lehetőséget az **Egyezés** lapon.
 
@@ -305,13 +307,13 @@ Megadhat olyan feltételeket, amelyek felülírják az alapértelmezett egyezés
 
 #### <a name="known-issues"></a>Ismert problémák
 
-- Az önkonferálás nem jeleníti meg a deduplikációs entitások normalizált adatait. A deduplikáció során azonban belsőleg normalizálódik. Ez a tervezés minden normalizálás. 
-- Ha a szemantikai típusbeállítást eltávolítja a **Leképezés** fázisban, amikor egy egyezési szabály Alias-hozzárendelést vagy Egyéni megkerülést használ, a normalizálás nem lesz alkalmazva. Ez csak akkor történik meg, ha törli a szemantikai típust az egyezési szabály normalizálásának konfigurálása után, mert a szemantikai típus ismeretlen lesz.
+- Az önkonfliktus nem jeleníti meg a normalizált adatokat a deduplikációs entitásokban. A normalizációt azonban a deduplikáció során belsőleg alkalmazza. Ez a terv szerint minden normalizációhoz. 
+- Ha a szemantikai típusbeállítás eltávolításra kerül a **Térkép** fázisban, amikor egy egyezési szabály alias-hozzárendelést vagy egyéni megkerülést használ, a normalizálás nem lesz alkalmazva. Ez csak akkor történik meg, ha az egyezési szabály normalizálásának konfigurálása után törli a szemantikai típust, mert a szemantikai típus ismeretlen lesz.
 
 
 ## <a name="next-step"></a>Következő lépés
 
-Miután befejezte legalább egy egy pár egyezési folyamatát, folytassa az [**Egyesítés**](merge-entities.md) lépéssel.
+Miután befejezte az egyezési folyamatot legalább egyezéspár esetében, folytassa az [**Egyesítés**](merge-entities.md) lépéssel.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

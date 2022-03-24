@@ -8,44 +8,44 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: eebaaf18795e80dd1ba16a15a23844d685c94c6e
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
-ms.translationtype: HT
+ms.openlocfilehash: 56f6a8ad20224922f9968f0ad3b6a0e0a400214b
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8373065"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376582"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Adatforrások gazdagítása (előzetes verzió)
 
-Az adategyesítés előtt olyan forrásokból származó adatokat használhat, mint a Microsoft és más partnerek. Adatforrás gazdagodások segítenek nagyobb adat teljességet és minőséget eredményezni, ami segíthet jobb eredmények elérésében az adatok egyesítése után. Például a címek normalizált és szabványosított formátumának használata növeli az egyezési eredmények minőségét. A támogatott gazdagodások listáját a támogatott adatforrás gazdagodási lehetőségek című témakörben [talál](#supported-data-source-enrichments).
+Az adatok egyesítése előtt olyan forrásokból származó adatokat használhat, mint a Microsoft és más partnerek. Adatforrás dúsítások segítenek nagyobb adattömörséget és minőséget eredményezni, ami segíthet jobb eredmények elérésében az adatok egyesítése után. Például a címek normalizált és szabványosított formátumának használata növeli az egyezés eredményeinek minőségét. A támogatott gazdagodások listáját a támogatott adatforrás dúsítási lehetőségek című témakörben [találja](#supported-data-source-enrichments).
 
-## <a name="enrich-a-data-source"></a>Gazdagítani egy adatforrás
+## <a name="enrich-a-data-source"></a>Gazdagítsa a adatforrás
 
-A gazdagodások létrehozásához vagy szerkesztéséhez közreműködő vagy rendszergazdai engedéllyel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).  
+Gazdagodás létrehozásához vagy szerkesztéséhez közreműködő vagy rendszergazdai engedéllyel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).  
 
-1. Lépjen a DataUnify-ra **·** > **·**. Válassza ki a gazdagítani kívánt entitást, és jelöljön ki egy attribútumot elsődleges kulcsként az entitáshoz. További információt az Elsődleges kulcs kiválasztása című témakörben [talál](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Nyissa meg a **DataUnify** > **oldalt**. Válassza ki a gazdagítani kívánt entitást, és válasszon ki egy attribútumot elsődleges kulcsként az entitáshoz. További információt az Elsődleges kulcs kiválasztása című témakörben [talál](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
  
-1. Jelölje ki a gazdagítani kívánt adatforrás melletti függőleges ellipszis elemet, és válassza a Gazdagodás **lehetőséget**.
+1. Jelölje ki a gazdagítani kívánt adatforrás melletti függőleges ellipsziseket, és válassza a Gazdagodás **lehetőséget**.
 
-   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Adatforrás-gazdagító lap.":::
+   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Adatforrások gazdagodó oldal.":::
 
-   A **Felfedezés** lapon a [támogatott adatforrás gazdagodási beállítások jelennek](#supported-data-source-enrichments) meg.
+   A **Felfedezés** lapon a [támogatott adatforrás gazdagodási beállítások](#supported-data-source-enrichments) jelennek meg.
 
-1. A adatforrás gazdagodás konfigurálásához válassza a Adatok **gazdagítása lehetőséget**. A kimeneti entitás neve automatikusan ki van töltve.
+1. Az adatok **gazdagítása lehetőséget választja** a adatforrás gazdagodás konfigurálásához. A kimeneti entitás neve automatikusan ki lesz töltve.
 
-## <a name="supported-data-source-enrichments"></a>Támogatott adatforrás dúsítások
+## <a name="supported-data-source-enrichments"></a>Támogatott adatforrás gazdagodás
 
-Az adatforrások számára jelenleg a következő gazdagodások érhetők el. Tekintse át a gazdagodás részletes lépéseit, és ismerje meg, hogyan konfigurálhatja azt.
+Az adatforrások esetében jelenleg a következő bővítések állnak rendelkezésre. Tekintse át a gazdagodás részletes lépéseit, és ismerje meg, hogyan kell konfigurálni.
 
 - [Továbbfejlesztett címek](enrichment-enhanced-addresses.md)
-- [Identitásadatok a LiveRamp-ból](enrichment-liveramp.md)
+- [Továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
 
-## <a name="manage-existing-data-source-enrichments"></a>Meglévő adatforrás gazdagodások kezelése
+## <a name="manage-existing-data-source-enrichments"></a>Meglévő adatforrás-dúsítások kezelése
 
 Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez.
 
 Az elérhető lehetőségekért válassza ki a bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
 
-Megtekinthet, szerkeszthet, futtathat vagy törölhet egy adatforrás gazdagodást. További információt a Meglévő gazdagodások [kezelése című témakörben talál](enrichment-hub.md).
+A gazdagodás adatforrás megtekintheti, szerkesztheti, futtathatja vagy törölheti. További információt a Meglévő dúsítások [kezelése című témakörben talál](enrichment-hub.md).

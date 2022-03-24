@@ -1,6 +1,6 @@
 ---
-title: Naplózás Dynamics 365 Customer Insights az Azure Monitorral
-description: További információ a naplók Figyelőnek való Microsoft Azure elküldéséhez.
+title: Naplózás Dynamics 365 Customer Insights az Azure Monitor segítségével
+description: További információ arról, hogyan küldhet naplókat a Monitornak Microsoft Azure.
 ms.date: 12/14/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -11,71 +11,71 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354411"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376419"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)
+# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés továbbítás az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)
 
-Dynamics 365 Customer Insights közvetlen integrációt biztosít az Azure Monitorral. Az Azure Monitor erőforrásnaplói lehetővé teszik a naplók figyelése és elküldése az [Azure Storageba](https://azure.microsoft.com/services/storage/), [az Azure Log Analytics-be](/azure/azure-monitor/logs/log-analytics-overview), vagy streamelheti őket az [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
+Dynamics 365 Customer Insights közvetlen integrációt biztosít az Azure Monitorral. Az Azure Monitor erőforrásnaplói lehetővé teszik a naplók figyelését és küldését az [Azure Storage-ba](https://azure.microsoft.com/services/storage/), [az Azure Log Analytics-be](/azure/azure-monitor/logs/log-analytics-overview), vagy streamelheti azokat [az Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
 
-A Customer Insights a következő eseménynaplókat küldi:
+A Customer Insights a következő eseménynaplókat küldi el:
 
 - **Események naplózása**
-  - **APIEvent** - lehetővé teszi a változáskövetést a Dynamics 365 Customer Insights felhasználói felületen keresztül.
-- **Működési események**
-  - **WorkflowEvent** – A munkafolyamat lehetővé teszi az adatforrások [beállítását](data-sources.md), az adatok egyesítését [és](data-unification.md) gazdagítását [,](enrichment-hub.md) valamint végül [más rendszerekbe történő exportálását](export-destinations.md). Mindezeket a lépéseket egyedileg (pl. egyszeri exportálás kiváltása) vagy vezényelhetővé lehet tenni (pl. az adatforrásokból származó adatfrissítés, amely elindítja az egyesítési folyamatot, amely további gazdagodásokat von maga után, és miután befejezte az adatok exportálását egy másik rendszerbe). További részletek: [WorkflowEvent Schema](#workflow-event-schema).
-  - **APIEvent** - az összes API-hívás az ügyfélpéldányhoz a Dynamics 365 Customer Insights. További részletek: [APIEvent Schema](#api-event-schema).
+  - **APIEvent** - lehetővé teszi a Dynamics 365 Customer Insights felhasználói felületen keresztül végzett változáskövetést.
+- **Operatív események**
+  - **WorkflowEvent** – A munkafolyamat lehetővé teszi az adatforrások [beállítását](data-sources.md), egyesítését [és](data-unification.md) gazdagítását [,](enrichment-hub.md) és végül [az adatok exportálását](export-destinations.md) más rendszerekbe. Mindezeket a lépéseket egyedileg (pl. egyetlen exportálás kiváltása) vagy vezényelhető (pl. olyan adatforrásokból származó adatfrissítés, amely elindítja az egyesítési folyamatot, amely további gazdagodásokat hajt végre, és miután elvégezte az adatok exportálását egy másik rendszerbe). További részletekért tekintse meg a [WorkflowEvent schema című témakört](#workflow-event-schema).
+  - **APIEvent** - az összes API-hívás az ügyfelek példányához.Dynamics 365 Customer Insights További részletekért lásd az [APIEvent schema című témakört](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>A diagnosztikai beállítások beállítása
 
 ### <a name="prerequisites"></a>Előfeltételek
 
-A diagnosztika Customer Insights szolgáltatásban való konfigurálásához a következő előfeltételeknek kell teljesülniük:
+A diagnosztika Customer Insightsban való konfigurálásához a következő előfeltételeknek kell teljesülniük:
 
 - Aktív [Azure-előfizetéssel](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/) rendelkezik.
-- Rendszergazdai [engedélyekkel rendelkezik](permissions.md#administrator) a Customer Insightsban.
-- Az Azure célerőforrásában közreműködő **és** **Felhasználóhozzáférés-rendszergazda** szerepkört kap. Az erőforrás lehet Azure Storage-fiók, Azure Event Hub vagy Azure Log Analytics-munkaterület. További információ: [Azure-szerepkör-hozzárendelések hozzáadása vagy eltávolítása az Azure Portal](/azure/role-based-access-control/role-assignments-portal) használatával.
+- Rendszergazdai [engedélyekkel rendelkezik](permissions.md#admin) a Customer Insights alkalmazásban.
+- Az Azure célerőforrásán a közreműködő **és** a Felhasználói hozzáférés rendszergazdája **szerepkörrel rendelkezik**. Az erőforrás lehet Azure Storage-fiók, Azure Event Hub vagy Azure Log Analytics-munkaterület. További információt az Azure-szerepkör-hozzárendelések hozzáadása és eltávolítása az Azure Portal [használatával című témakörben talál](/azure/role-based-access-control/role-assignments-portal).
 - [Az Azure Storage, az Azure Event Hub vagy az Azure Log Analytics célkövetelményei](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) teljesültek.
-- Legalább olvasó **szerepköre** van azon az erőforráscsoporton, amelyhez az erőforrás tartozik.
+- Legalább abban az **erőforráscsoportban rendelkezik olvasó** szerepkörrel, amelyhez az erőforrás tartozik.
 
-### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnosztika beállítása az Azure Monitor segítségével
+### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnosztikák beállítása az Azure Monitorral
 
-1. A Customer Insights programban válassza a **SystemDiagnostics** > **lehetőséget** a példány által konfigurált diagnosztikai célok megtekintéséhez.
+1. A Customer Insights programban válassza a **SystemDiagnostics** > **lehetőséget** a példányban konfigurált diagnosztikai célok megtekintéséhez.
 
 1. Válassza a Cél hozzáadása **lehetőséget**.
 
    > [!div class="mx-imgBorder"]
    > ![Diagnosztikai kapcsolat](media/diagnostics-pane.png "Diagnosztikai kapcsolat")
 
-1. Adjon meg egy nevet a **diagnosztikai cél** neve mezőben.
+1. Adjon meg egy nevet a **Diagnosztikai cél** neve mezőben.
 
-1. Válassza ki az **Azure-előfizetés bérlőjét** a célerőforrással, és válassza a **bejelentkezést**.
+1. Válassza ki az **Azure-előfizetés bérlőjét** a célerőforrással, és válassza a Bejelentkezés **lehetőséget**.
 
-1. Válassza ki az **Erőforrástípust** (Tárfiók, Eseményközpont vagy naplóelemzés).
+1. Válassza ki az **erőforrás típusát** (Tárfiók, Eseményközpont vagy naplóelemzés).
 
 1. Válassza ki a **célerőforrás előfizetését**.
 
-1. Válassza ki a **célerőforrás Erőforrás csoportját**.
+1. Válassza ki a **célerőforrás erőforráscsoportját**.
 
 1. Válassza ki az **erőforrást**.
 
 1. Erősítse meg az **adatvédelmi és megfelelőségi** nyilatkozatot.
 
-1. A célerőforráshoz való csatlakozáshoz válassza **a Csatlakozás a rendszerhez** lehetőséget. A naplók 15 perc elteltével jelennek meg a célhelyen, ha az API használatban van, és eseményeket hoz létre.
+1. Válassza **a Csatlakozás a rendszerhez** lehetőséget a célerőforráshoz való csatlakozáshoz. A naplók 15 perc elteltével jelennek meg a célban, ha az API használatban van, és eseményeket generál.
 
 ### <a name="remove-a-destination"></a>Cél eltávolítása
 
-1. Lépjen a SystemDiagnostics-hez **·** > **·**.
+1. Menj a **SystemDiagnostics** > **oldalra**.
 
-1. Válassza ki a diagnosztikai célhelyet a listában.
+1. Válassza ki a diagnosztikai célt a listában.
 
-1. **A Műveletek** oszlopban jelölje ki a **Törlés** ikont.
+1. **A Műveletek** oszlopban jelölje ki a **Törlés ikont**.
 
-1. A naplótovábbítás leállításához erősítse meg a törlést. Az Azure-előfizetés erőforrása nem törlődik. A Műveletek **oszlopban kiválaszthatja a hivatkozást a** kijelölt erőforrás Azure Portal megnyitásához és törléséhez.
+1. Erősítse meg a törlést a naplótovábbítás leállításához. Az Azure-előfizetés erőforrása nem törlődik. A Műveletek **oszlopban kiválaszthatja a hivatkozást a** kijelölt erőforrás Azure Portaljának megnyitásához és ott történő törléséhez.
 
 ## <a name="log-categories-and-event-schemas"></a>Kategóriák és eseménysémák naplózása
 
@@ -84,60 +84,60 @@ A naplóséma az [Azure Monitor közös sémáját követi](/azure/azure-monitor
 
 ### <a name="categories"></a>Kategóriák
 
-A Customer Insights két kategóriát tartalmaz:
+A Customer Insights két kategóriát kínál:
 
-- **Naplózási események**: [API-események](#api-event-schema) a szolgáltatás konfigurációs változásainak nyomon követéséhez. `POST|PUT|DELETE|PATCH` A műveletek ebbe a kategóriába tartoznak.
-- **Működési események**: [A szolgáltatás használata közben létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema).  Például `GET` kérések vagy munkafolyamat végrehajtási eseményei.
+- **Események** naplózása: [API-események](#api-event-schema) a szolgáltatás konfigurációs változásainak nyomon követéséhez. `POST|PUT|DELETE|PATCH` műveletek ebbe a kategóriába tartoznak.
+- **Működési események**: [A szolgáltatás használata során létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema).  `GET` Például egy munkafolyamat kérései vagy végrehajtási eseményei.
 
 ## <a name="configuration-on-the-destination-resource"></a>Konfiguráció a célerőforráson
 
-Az erőforrástípusra vonatkozó választás alapján a következő lépések lépnek fel automatikusan:
+Az erőforrástípuson megadott beállítások alapján a következő lépések automatikusan érvénybe lépnek:
 
 ### <a name="storage-account"></a>Storage account
 
-A Customer Insights szolgáltatás főkötelezettje megkapja a **Tárfiók közreműködő** engedélyt a kijelölt erőforrásra, és két tárolót hoz létre a kijelölt névtér alatt:
+A Customer Insights szolgáltatásnév megkapja a **Tárfiók közreműködő** engedélyt a kijelölt erőforrásra, és két tárolót hoz létre a kijelölt névtér alatt:
 
-- `insight-logs-audit`**ellenőrzési események**
-- `insight-logs-operational`**működési események**
+- `insight-logs-audit`**ellenőrzési eseményeket tartalmaz**
+- `insight-logs-operational`**működési eseményeket tartalmaz**
 
 ### <a name="event-hub"></a>Esemény központja
 
-A Customer Insights szolgáltatásnév megkapja az **Azure Event Hubs-adattulajdonos** engedélyét az erőforráshoz, és két Event Hubs hoz létre a kijelölt névtér alatt:
+A Customer Insights szolgáltatásnév megkapja az **Azure Event Hubs Data Owner** engedélyt az erőforráshoz, és két Event Hubs hoz létre a kiválasztott névtér alatt:
 
-- `insight-logs-audit`**ellenőrzési események**
-- `insight-logs-operational`**működési események**
+- `insight-logs-audit`**ellenőrzési eseményeket tartalmaz**
+- `insight-logs-operational`**működési eseményeket tartalmaz**
 
 ### <a name="log-analytics"></a>Log Analytics
 
-A Customer Insights szolgáltatás főkiszolgálója megkapja a **Log Analytics közreműködő** engedélyét az erőforráshoz. A naplók a **LogsTablesLog** > **Management** > **alatt** lesznek elérhetők a kijelölt Log Analytics-munkaterületen. Bontsa ki a **Naplókezelés** megoldást, és keresse meg a `CIEventsAudit` és `CIEventsOperational` táblákat.
+A Customer Insights szolgáltatás főkiszolgálója megkapja a **Log Analytics közreműködő** engedélyt az erőforrásra. A naplók a Kijelölt Log Analytics-munkaterületen a LogsTablesLog Management alatt **lesznek elérhetők** > **.** > **·** Bontsa ki a **Naplókezelés** megoldást, és keresse meg a és `CIEventsAudit` a `CIEventsOperational` táblákat.
 
-- `CIEventsAudit`**ellenőrzési események**
-- `CIEventsOperational`**működési események**
+- `CIEventsAudit`**ellenőrzési eseményeket tartalmaz**
+- `CIEventsOperational`**működési eseményeket tartalmaz**
 
-**A Lekérdezések ablakban bontsa** ki a **Naplózási** megoldást, és keresse meg a kereséssel `CIEvents` biztosított példalekérdezéseket.
+**A Lekérdezések ablakban bontsa** ki a **Naplózási** megoldást, és keresse meg a kereséssel `CIEvents` megadott példalekérdezéseket.
 
 ## <a name="event-schemas"></a>Eseménysémák
 
-Az API-események és munkafolyamat-események közös struktúrával és részletekkel rendelkeznek, ahol különböznek egymástól, lásd [az API-eseménysémát](#api-event-schema) vagy [a munkafolyamat-eseménysémát](#workflow-event-schema).
+Az API-események és munkafolyamat-események közös struktúrával és részletekkel rendelkeznek, ahol különböznek egymástól, lásd: [API-eseménysémát](#api-event-schema) vagy [munkafolyamat-eseménysémát](#workflow-event-schema).
 
-### <a name="api-event-schema"></a>API-eseménysémák
+### <a name="api-event-schema"></a>API-eseményséma
 
 | Mező             | Adattípus  | Kötelező/nem kötelező | Description       | Példa        |
 | ----------------- | --------- | ----------------- | --------------------- | ------------------------ |
-| `time`            | Időbélyegző | Szükséges          | Az esemény időbélyege (UTC)       | `2020-09-08T09:48:14.8050869Z`         |
-| `resourceId`      | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId-ja         | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX`  |
+| `time`            | Időbélyegző | Szükséges          | Az esemény időbélyegzője (UTC)       | `2020-09-08T09:48:14.8050869Z`         |
+| `resourceId`      | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId azonosítója         | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX`  |
 | `operationName`   | Sztring    | Szükséges          | Az esemény által képviselt művelet neve.                                                                                                                | `Workflows.GetWorkFlowStatusAsync`                                                                                                                                       |
-| `category`        | Sztring    | Szükséges          | Az esemény naplózási kategóriája. Vagy `Operational`, vagy `Audit`. Minden POST/PUT/PATCH/DELETE HTTP kérés a következővel van ellátva `Audit`: `Operational` | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
+| `category`        | Sztring    | Szükséges          | Az esemény naplókategóriája. Vagy `Operational`, vagy `Audit`. Minden POST/PUT/PATCH/DELETE HTTP kérés címkével van ellátva `Audit`, minden más`Operational` | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resultType`      | Sztring    | Szükséges          | Az esemény állapota. `Success`, `ClientError`, `Failure`                                                                                                        |                                                                                                                                                                          |
-| `resultSignature` | Sztring    | Lehetséges          | Az esemény eredményállapota. Ha a művelet egy REST API hívásnak felel meg, akkor az a HTTP állapotkódja.        | `200`             |
+| `resultSignature` | Sztring    | Lehetséges          | Az esemény eredményállapota. Ha a művelet REST API hívásnak felel meg, akkor az a HTTP-állapotkód.        | `200`             |
 | `durationMs`      | Long      | Lehetséges          | A művelet időtartama ezredmásodpercben.     | `133`     |
 | `callerIpAddress` | Sztring    | Lehetséges          | Hívó IP-címe, ha a művelet egy nyilvánosan elérhető IP-címről származó API-hívásnak felel meg.                                                 | `144.318.99.233`         |
-| `identity`        | Sztring    | Lehetséges          | A műveletet 1000000.000.000.000.000.000.000.000.000.       | Lásd: [Identitás](#identity-schema) szakasz.     |  |
-| `properties`      | Sztring    | Lehetséges          | Az adott eseménykategóriához több tulajdonsággal rendelkező JSON-objektum.      | Lásd: [Tulajdonságok](#api-properties-schema) szakasz.    |
-| `level`           | Sztring    | Szükséges          | Az esemény súlyossági szintje.    | `Informational`, `Warning`, `Error` vagy `Critical`.           |
-| `uri`             | Sztring    | Lehetséges          | Abszolút kérés URI.    |               |
+| `identity`        | Sztring    | Lehetséges          | JSON-objektum, amely a műveletet végző felhasználó vagy alkalmazás identitását írja le.       | Lásd: [Identitás](#identity-schema) szakasz.     |  
+| `properties`      | Sztring    | Lehetséges          | JSON-objektum, amely több tulajdonsággal rendelkezik az adott eseménykategóriához.      | Lásd: [Tulajdonságok](#api-properties-schema) szakasz.    |
+| `level`           | Sztring    | Szükséges          | Az esemény súlyossági szintje.    | `Informational`, `Warning`, `Error`, vagy `Critical`.           |
+| `uri`             | Sztring    | Lehetséges          | Abszolút kérés URI-ja.    |               |
 
-#### <a name="identity-schema"></a>Identitássémát
+#### <a name="identity-schema"></a>Identitásséma
 
 A `identity` JSON objektum szerkezete a következő
 
@@ -159,30 +159,30 @@ A `identity` JSON objektum szerkezete a következő
 
 | Mező                         | Description                                                                                                                          |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `Authorization.UserRole`      | Hozzárendelt szerepkör a felhasználóhoz vagy alkalmazáshoz. További információt a felhasználói engedélyek [című témakörben talál](permissions.md).                                     |
-| `Authorization.RequiredRoles` | A művelethez szükséges szerepkörök. `Admin` A szerepkör minden műveletet elvégezhet.                                                    |
-| `Claims`                      | A felhasználó vagy alkalmazás JSON webes jogkivonatának (JWT) állításai. A jogcímtulajdonságok szervezetenként és Azure Active Directory konfigurációnként eltérőek. |
+| `Authorization.UserRole`      | Hozzárendelt szerepkör a felhasználóhoz vagy az alkalmazáshoz. További információt a felhasználói engedélyek [című témakörben talál](permissions.md).                                     |
+| `Authorization.RequiredRoles` | A művelet végrehajtásához szükséges szerepkörök. `Admin` szerepkör minden műveletet elvégezhet.                                                    |
+| `Claims`                      | A felhasználó vagy alkalmazás JSON web token (JWT) jogcímei. A jogcímtulajdonságok szervezetenként és Azure Active Directory konfigurációnként eltérőek. |
 
 #### <a name="api-properties-schema"></a>API-tulajdonságok sémája
 
-[Az API-események](apis.md) következő tulajdonságokkal rendelkeznek.
+[Az API-események](apis.md) a következő tulajdonságokkal rendelkeznek.
 
 | Mező                        | Description                                                                                                            |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `properties.eventType`       | Always `ApiEvent`, a naplóesemény API-eseményként való megjelölése.                                                                 |
-| `properties.userAgent`       | A kérést küldő böngészőügynök vagy `unknown`.                                                                        |
+| `properties.eventType`       | Mindig `ApiEvent`, a naplóeseményt API-eseményként jelölve meg.                                                                 |
+| `properties.userAgent`       | A kérést vagy `unknown` a programot küldő böngészőügynök vagy.                                                                        |
 | `properties.method`          | HTTP-módszer:`GET/POST/PUT/PATCH/HEAD`.                                                                                |
-| `properties.path`            | A kérelem relatív elérési útja.                                                                                          |
-| `properties.origin`          | URI annak jelzése, hogy honnan származik a fetch vagy `unknown` a.                                                                  |
-| `properties.operationStatus` | `Success` a 400-as < HTTP-állapotkódhoz <br> `ClientError` 500-as < HTTP-állapotkód esetén <br> `Error` HTTP állapot >= 500 esetén |
+| `properties.path`            | A kérés relatív elérési útja.                                                                                          |
+| `properties.origin`          | URI jelzi, hogy honnan származik a lekérés vagy `unknown`.                                                                  |
+| `properties.operationStatus` | `Success` a < 400-as HTTP-állapotkódhoz <br> `ClientError` az 500-as < HTTP-állapotkódhoz <br> `Error` HTTP-állapothoz > = 500 |
 | `properties.tenantId`        | Szervezet azonosítója                                                                                                        |
 | `properties.tenantName`      | A szervezet neve.                                                                                              |
-| `properties.callerObjectId`  | Azure Active Directory A hívó objectId azonosítója.                                                                         |
+| `properties.callerObjectId`  | Azure Active Directory A hívó objektumazonosítója.                                                                         |
 | `properties.instanceId`      | Ügyfélelemzések`instanceId`                                                                                         |
 
-### <a name="workflow-event-schema"></a>Munkafolyamat-eseménysémák
+### <a name="workflow-event-schema"></a>Munkafolyamat-eseményséma
 
-A munkafolyamat több lépést tartalmaz. [Adatforrások beolvasása,](data-sources.md) adatok egyesítése, [gazdagítása](data-unification.md)[és](enrichment-hub.md) exportálása [.](export-destinations.md) Mindezek a lépések egyénileg vagy a következő folyamatokkal vezényelhetők. 
+A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Mindezek a lépések egyénileg vagy a következő folyamatokkal vezényelhetők. 
 
 #### <a name="operation-types"></a>Művelettípusok
 
@@ -193,11 +193,11 @@ A munkafolyamat több lépést tartalmaz. [Adatforrások beolvasása,](data-sour
 | Megfeleltetés               | [Adategyesítés](data-unification.md)   |
 | Match             | [Adategyesítés](data-unification.md)   |
 | Összefűzés             | [Adategyesítés](data-unification.md)   |
-| Profiltár      | [Ügyfélprofilok](customer-profiles.md) |
+| ProfileStore      | [Ügyfélprofilok](customer-profiles.md) |
 | Keresés            | [Ügyfélprofilok](customer-profiles.md) |
 | Tevékenys.          | [Tevékenységek](activities.md)                  |
-| Attribútumintézkedések | [Szegmensek és intézkedések](segments.md)      |
-| Entitásintézkedések    | [Szegmensek és intézkedések](segments.md)      |
+| AttributeMeasures | [Szegmensek és intézkedések](segments.md)      |
+| EntityMeasures    | [Szegmensek és intézkedések](segments.md)      |
 | Mértékek          | [Szegmensek és intézkedések](segments.md)      |
 | Szegmentálás      | [Szegmensek és intézkedések](segments.md)      |
 | Dúsítás        | [Dúsítás](enrichment-hub.md)                                          |
@@ -212,38 +212,38 @@ A munkafolyamat több lépést tartalmaz. [Adatforrások beolvasása,](data-sour
 
 | Mező           | Adattípus  | Kötelező/nem kötelező | Description                                                                                                                                                   | Példa                                                                                                                                                                  |
 | --------------- | --------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time`          | Időbélyegző | Szükséges          | Az esemény időbélyege (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
-| `resourceId`    | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId-ja.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
-| `operationName` | Sztring    | Szükséges          | Az esemény által képviselt művelet neve. `{OperationType}.[WorkFlow|Task][Started|Completed]`. A művelettípusok [hivatkozást lásd](#operation-types). | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | Sztring    | Szükséges          | Az esemény naplózási kategóriája. Mindig `Operational` munkafolyamat-eseményekhez                                                                                           | `Operational`                                                                                                                                                            | 
+| `time`          | Időbélyegző | Szükséges          | Az esemény időbélyegzője (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
+| `resourceId`    | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId azonosítója.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
+| `operationName` | Sztring    | Szükséges          | Az esemény által képviselt művelet neve. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Hivatkozásért lásd: [Művelettípusok](#operation-types). | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
+| `category`      | Sztring    | Szükséges          | Az esemény naplókategóriája. Mindig `Operational` munkafolyamat-eseményekhez                                                                                           | `Operational`                                                                                                                                                            | 
 | `resultType`    | Sztring    | Szükséges          | Az esemény állapota. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Lehetséges          | A művelet időtartama ezredmásodpercben.                                                                                                                    | `133`                                                                                                                                                                    |
-| `properties`    | Sztring    | Lehetséges          | Az adott eseménykategóriához több tulajdonsággal rendelkező JSON-objektum.                                                                                        | Lásd a Munkafolyamat tulajdonságai [alszakaszt](#workflow-properties-schema)                                                                                                       |
+| `properties`    | Sztring    | Lehetséges          | JSON-objektum, amely több tulajdonsággal rendelkezik az adott eseménykategóriához.                                                                                        | Lásd: Munkafolyamat tulajdonságai [alfejezet](#workflow-properties-schema)                                                                                                       |
 | `level`         | Sztring    | Szükséges          | Az esemény súlyossági szintje.                                                                                                                                  | `Informational`, `Warning` vagy `Error`                                                                                                                                   |
 |                 |
 
-#### <a name="workflow-properties-schema"></a>Munkafolyamat tulajdonságainak sémája
+#### <a name="workflow-properties-schema"></a>Munkafolyamat-tulajdonságok séma
 
-A munkafolyamat-események következő tulajdonságokkal rendelkeznek.
+A munkafolyamat-események a következő tulajdonságokkal rendelkeznek.
 
 | Mező              | Workflow | Feladatok | Description            |
 | ------------------------------- | -------- | ---- | ----------- |
-| `properties.eventType`                       | Igen      | Igen  | Mindig `WorkflowEvent`, az esemény megjelölése munkafolyamat-eseményként.                                                                                                                                                                                                |
-| `properties.workflowJobId`                   | Igen      | Igen  | A munkafolyamat-futtatás azonosítója A munkafolyamat-végrehajtáson belüli összes munkafolyamat- és feladatesemény azonos `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Igen      | Igen  | A művelet azonosítója: [Művelettípusok]. (#operation típusú)                                                                                                                                                                                       |
-| `properties.tasksCount`                      | Igen      | No   | Csak munkafolyamat. A munkafolyamat által indított feladatok száma.                                                                                                                                                                                                       |
-| `properties.submittedBy`                     | Igen      | No   | Opcionális. Csak munkafolyamat-események. A Azure Active Directory [munkafolyamatot aktiváló felhasználó](/azure/marketplace/find-tenant-object-id#find-user-object-id) objectId azonosítóját lásd még `properties.workflowSubmissionKind`.                                   |
-| `properties.workflowType`                    | Igen      | No   | `full` vagy `incremental` frissítsen.                                                                                                                                                                                                                            |
+| `properties.eventType`                       | Igen      | Igen  | Mindig `WorkflowEvent`, az eseményt munkafolyamat-eseményként jelölve meg.                                                                                                                                                                                                |
+| `properties.workflowJobId`                   | Igen      | Igen  | A munkafolyamat-futtatás azonosítója. A munkafolyamat-végrehajtáson belül minden munkafolyamat- és feladatesemény azonos `workflowJobId`.                                                                                                                                   |
+| `properties.operationType`                   | Igen      | Igen  | A művelet azonosítója, lásd: [Művelettípusok].(#operation-types)                                                                                                                                                                                       |
+| `properties.tasksCount`                      | Igen      | No   | Csak munkafolyamat. A munkafolyamat által kiváltott feladatok száma.                                                                                                                                                                                                       |
+| `properties.submittedBy`                     | Igen      | No   | Opcionális. Csak munkafolyamat-események. A Azure Active Directory [munkafolyamatot aktiváló felhasználó](/azure/marketplace/find-tenant-object-id#find-user-object-id) objectId azonosítója lásd még:`properties.workflowSubmissionKind`.                                   |
+| `properties.workflowType`                    | Igen      | No   | `full` vagy `incremental` frissíteni.                                                                                                                                                                                                                            |
 | `properties.workflowSubmissionKind`          | Igen      | No   | `OnDemand` vagy `Scheduled`.                                                                                                                                                                                                                                  |
 | `properties.workflowStatus`                  | Igen      | No   | `Running` vagy `Successful`.                                                                                                                                                                                                                                 |
 | `properties.startTimestamp`                  | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Igen      | Igen  | Ügyfélelemzések`instanceId`                                                                                                                                                                                                                              |  |
-| `properties.identifier`                      | No       | Igen  | - OperationType = `Export` esetén az azonosító az exportálási konfiguráció GUID azonosítója. <br> - OperationType = `Enrichment` esetén ez a gazdagodás GUID azonosítója <br> - OperationType `Measures` és esetén `Segmentation` az azonosító az entitás neve. |
+| `properties.instanceId`                      | Igen      | Igen  | Ügyfélelemzések`instanceId`                                                                                                                                                                                                                              |  
+| `properties.identifier`                      | No       | Igen  | - OperationType = `Export` esetén az azonosító az exportálási konfiguráció GUID azonosítója. <br> - OperationType = `Enrichment` esetén ez a gazdagodás GUID azonosítója <br> - OperationType `Measures` és `Segmentation`, esetén az azonosító az entitás neve. |
 | `properties.friendlyName`                    | No       | Igen  | Az exportálás vagy a feldolgozott entitás felhasználóbarát neve.                                                                                                                                                                                           |
 | `properties.error`                           | No       | Igen  | Opcionális. Hibaüzenet további részletekkel.                                                                                                                                                                                                                  |
-| `properties.additionalInfo.Kind`             | No       | Igen  | Opcionális. Csak OperationType esetén `Export`. Azonosítja az exportálás típusát. További információt az exportcélok [áttekintése című témakörben talál](export-destinations.md).                                                                                          |
+| `properties.additionalInfo.Kind`             | No       | Igen  | Opcionális. Csak OperationType esetén `Export`. Azonosítja az exportálás típusát. További információt az exportálási célhelyek [áttekintésében talál](export-destinations.md).                                                                                          |
 | `properties.additionalInfo.AffectedEntities` | No       | Igen  | Opcionális. Csak OperationType esetén `Export`. Az exportálásban konfigurált entitások listáját tartalmazza.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | No       | Igen  | Opcionális. Csak OperationType esetén `Export`. Részletes üzenet az exportáláshoz.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | No       | Igen  | Opcionális. Csak OperationType esetén `Segmentation`. A szegmens tagjainak teljes számát jelzi.                                                                                                                                                    |

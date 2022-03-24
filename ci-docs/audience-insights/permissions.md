@@ -1,7 +1,7 @@
 ---
 title: Felhasználói engedélyek kezelése
 description: További információk az engedélyekről és a felhasználói szerepkörökről.
-ms.date: 03/25/2021
+ms.date: 02/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: 85e1f4f93ac0e99ce6634dfc8fceab0c9a14885e
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355940"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376741"
 ---
 # <a name="user-permissions"></a>Felhasználói engedélyek
 
@@ -48,7 +48,7 @@ Háromféle típusú szerepkör van:
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (csak a belső bővítések esetében).
 - Az exportálások kezelése és létrehozása a közreműködőkkel megosztott kapcsolatok alapján. [További információk arról, hogyan engedélyezik a rendszergazdák a közreműködőknek az exportálásokhoz használható kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-## <a name="administrator"></a>Adminisztrátor
+## <a name="admin"></a>Felügyelet
 
 - A Közreműködő számára az összes engedély rendelkezésre áll.
 - A beállításokat a **Rendszer** oldalon módosíthatja, beleértve a munkanyelvet és a rendszerfolyamatok frissítési ütemezését.
@@ -60,6 +60,12 @@ Háromféle típusú szerepkör van:
 - Telepítheti és használhatja az **Ügyfélkártya bővítményt**.
 - Adja hozzá és használja a **Power Apps összekötőt**.
 - [Customer Insights API-k](apis.md) használatának engedélyezése.
+- [Környezet tulajdonjogának](manage-environments.md#change-the-owner-of-an-environment) hozzárendelése másik rendszergazdához.
+
+## <a name="admin-owner"></a>Rendszergazda (tulajdonos)
+
+- A rendszergazda számára elérhető összes engedély.
+- [Állítsa alaphelyzetbe és törölje](manage-environments.md#reset-an-existing-environment) a környezetet.
 
 ## <a name="assign-roles-and-permissions"></a>Szerepkörök és engedélyek hozzárendelése
 

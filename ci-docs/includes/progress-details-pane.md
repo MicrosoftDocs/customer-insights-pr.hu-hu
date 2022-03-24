@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4e7271356319bf3653801085477ac98876644bbf
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
+ms.openlocfilehash: f41298417842d664006ba2018ecb75b2d426ad89
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7733067"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376984"
 ---
 > [!TIP] 
-> Vannak [állapotok](../audience-insights/system.md#status-definitions) a feladatokhoz és folyamatokhoz. A legtöbb folyamat más upstream folyamatoktól függ, például adatforrások és [adatprofil-frissítések](../audience-insights/system.md#refresh-processes). Válassza ki az állapotot a **Folyamat részletei** ablaktábla megnyitásához, és tekintse meg a tevékenység vagy folyamat előrehaladását. Ezután válassza a **Részletek megtekintése** hivatkozást további előrehaladási információkért, például a feldolgozási időért, az utolsó feldolgozási dátumért, valamint a tevékenységhez vagy folyamathoz kapcsolódó esetleges hibákért és figyelmeztetésekért.
+> A feladatoknak és folyamatoknak vannak [állapotai](../audience-insights/system.md#status-definitions). A legtöbb folyamat más upstream folyamatoktól függ, például adatforrásoktól és adatprofil-frissítésektől [...](../audience-insights/system.md#refresh-processes). Válassza ki az állapotot a **Folyamat részletei** ablaktábla megnyitásához és a tevékenységek előrehaladásának megtekintéséhez. Az egyes feladatokban kiválaszthatja a Részletek **megtekintése lehetőséget** további előrehaladási információkért, például a feldolgozási időhöz, az utolsó feldolgozási dátumhoz, valamint a feladathoz vagy folyamathoz kapcsolódó esetleges hibákhoz és figyelmeztetésekhez. A panel alján található Teljes munkafolyamat **kapcsolóval** megtekintheti a rendszer más folyamatait.

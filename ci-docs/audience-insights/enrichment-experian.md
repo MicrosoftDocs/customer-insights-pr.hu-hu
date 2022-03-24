@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
+ms.openlocfilehash: efa26fa82a950063e074a4ab930ed95383c55334
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229967"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376695"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfélprofilok bővítése demográfiai adatokkal az Experian -ból (előzetes verzió)
 
@@ -25,7 +25,7 @@ Az Experian konfigurálásához teljesülnie kell az alábbi előfeltételeknek:
 
 - Aktív Experian előfizetéssel kell rendelkeznie. Az előfizetéshez közvetlenül [forduljon Experian](https://www.experian.com/marketing-services/contact) . [További információk Experian adatbővítésről](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
 
-- Az Experian kapcsolatot már konfigurálta egy rendszergazda *vagy* Ön rendelkezik [rendszergazda](permissions.md#administrator) engedélyekkel. Szüksége van a felhasználói azonosítóra, partnerazonosítóra, és modellszámra is az SSH-kompatibilis Secure Transport (ST) fiókjához, amelyet az Experian hozott létre az Ön számára.
+- Az Experian kapcsolatot már konfigurálta egy rendszergazda *vagy* Ön rendelkezik [rendszergazda](permissions.md#admin) engedélyekkel. Szüksége van a felhasználói azonosítóra, partnerazonosítóra, és modellszámra is az SSH-kompatibilis Secure Transport (ST) fiókjához, amelyet az Experian hozott létre az Ön számára.
 
 ## <a name="supported-countriesregions"></a>Támogatott országok/régiók
 

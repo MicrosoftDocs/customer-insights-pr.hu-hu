@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: 4c1b5eaa3568b5c73013024d2da7e65276142f72
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355020"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455857"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Szegmensek használata a Dynamics 365 Sales alkalmazásban (előzetes verzió)
 
@@ -26,12 +26,12 @@ A Dynamics 365 Sales modullal az ügyféladatokból marketinglistákat hozhat l�
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A Dynamics 365 Sales-be irányuló export szegmensenként 100 000 tagra korlátozódik.
-- A Dynamics 365 Sales szegmensexportja akár 3 órát is igénybe vehet. 
+- A Dynamics 365 értékesítésbe történő exportálás szegmensenként legfeljebb 100 000 tagra korlátozódik.
+- A Dynamics 365 értékesítésbe történő szegmensexport akár 3 órát is igénybe vehet. 
 
 ## <a name="prerequisite-for-connection"></a>A kapcsolat előfeltétele
 
-1. A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Sales alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Sales alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Sales alkalmazásba a Microsoft Dataverse használatával](connect-power-query.md).
+1. A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Sales alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Sales alkalmazásba. További információ arról, hogyan töltheti be a névjegyeket a Dynamics 365 Sales alkalmazásból [a használatával Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
    > [!NOTE]
    > Ha szegmenseket exportál a célközönséggel kapcsolatos információkból a Sales nem hoz létre új kapcsolattartói rekordokat a Sales példányban. A Sales kapcsolattartói bejegyzéseket be kell tölteni a célközönség kapcsolatos információkba és adatforrásként használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.

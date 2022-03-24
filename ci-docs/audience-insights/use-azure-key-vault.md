@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: 418575f724090628da8bd01e2569a4cb9e646337
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355894"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376511"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hozza magával saját Azure kulcstartóját (előzetes verzió)
 
@@ -31,7 +31,7 @@ A kulcstartó konfigurálásához a célközönséggel kapcsolatos információk
 
 - Azure előfizetéssel kell rendelkeznie.
 
-- [Rendszergazda](permissions.md#administrator) szerepkörrel kell rendelkezni a célközönség betekintési információihoz. További információk a [célközönséggel kapcsolatos információk felhasználói jogosultságairól](permissions.md#assign-roles-and-permissions).
+- [Rendszergazda](permissions.md#admin) szerepkörrel kell rendelkezni a célközönség betekintési információihoz. További információk a [célközönséggel kapcsolatos információk felhasználói jogosultságairól](permissions.md#assign-roles-and-permissions).
 
 - Rendelkezik a [Közreműködő](/azure/role-based-access-control/built-in-roles#contributor) és [Felhasználói hozzáférési rendszergazdai](/azure/role-based-access-control/built-in-roles#user-access-administrator) szerepkörökkel a kulcstartó vagy a kulcstartóhoz tartozó erőforráscsoportban. További tájékoztatásért menjen az [Azure-szerepkör-hozzárendelések hozzáadása vagy eltávolítása az Azure portálon](/azure/role-based-access-control/role-assignments-portal) részre. Ha nem rendelkezik Felhasználói hozzáférési rendszergazda szerepkörrel a kulcstartó szolgáltatásban, akkor külön kell beállítania a szerepköralapú hozzáférés-vezérlési engedélyeket a Dynamics 365 Customer Insights Azure szolgáltatásnévvel. Kövesse az [Azure szolgáltatásnév használatát használata](connect-service-principal.md) a csatolni szükséges kulcstartóhoz.
 

@@ -1,5 +1,5 @@
 ---
-title: Címbővítés gazdagítása (videót tartalmaz)
+title: Címjavítás gazdagítása (videót tartalmaz)
 description: A Microsoft modelljeivel rendelkező ügyfélprofilok címinformációinak bővítése és normalizálása.
 ms.date: 01/19/2022
 ms.reviewer: mhart
@@ -14,16 +14,18 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 067757019078d3a46b224ba259d2d097dfbbe381
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: 2ab550e83a4969c1f547e66bcbf6ddb96d7789df
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353639"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376300"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Ügyfélprofilok bővítése továbbfejlesztett címekkel
 
 Az adatokban szereplő címek strukturálatlanok, hiányosak vagy helytelenek lehetnek. A Microsoft modelljeivel normalizálhatja és bővítheti [Common Data Model formátumba](/common-data-model/schema/core/applicationcommon/address) a címeket, amelyek így pontosabbak lehetnek.
+
+Az adategyesítési folyamat egyezési pontosságának javítása érdekében az adatforrások [címeit is](data-sources-enrichment.md) gazdagíthatja. 
 
 ## <a name="how-we-enhance-addresses"></a>Hogyan történik a címek továbbfejlesztése?
 
@@ -105,17 +107,17 @@ A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a par
 
 A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
 
-A bővített adatok **mintáját a Gazdagított vevők előnézeti** csempéjén tekintheti meg. Válassza a Továbbiak megtekintése lehetőséget **, és válassza az Adatok** lapot az **egyes bővített profil részletes nézetének eléréséhez.**
+A gazdagított adatok mintáját a Gazdagított ügyfelek előnézeti **csempéjén** tekintheti meg. Válassza **a Továbbiak** megtekintése lehetőséget, és válassza az Adatok **lapot az** egyes bővített profilok részletes nézetének eléréséhez.
 
 ### <a name="overview-card"></a>Áttekintő kártya
 
 Az áttekintő kártya a gazdagodás lefedettségének részleteit mutatja. 
 
-* **Feldolgozott és módosított** címek: A sikeresen gazdagított címmel rendelkező ügyfélprofilok száma.
+* **Feldolgozott és módosított** címek: A sikeresen bővített címekkel rendelkező ügyfélprofilok száma.
 
 * **Feldolgozott és nem módosított** címek: A felismert, de nem módosított címmel rendelkező ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagodás nem javítható.
 
-* **A nem feldolgozott és nem módosított** címek: A nem felismert címmel rendelkező profilok száma. Általában olyan bemeneti adatokhoz, amelyek érvénytelenek vagy nem támogatják a gazdagodást.
+* **A nem feldolgozott és nem módosított** címek: A nem felismert címmel rendelkező profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy amelyeket a gazdagodás nem támogat.
 
 ## <a name="next-steps"></a>További lépések
 

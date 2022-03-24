@@ -1,7 +1,7 @@
 ---
 title: A környezetek létrehozása és kezelése
 description: Megismerheti, hogyan lehet regisztrálni a szolgáltatásra, és hogyan kezelhetők a környezetek.
-ms.date: 12/06/2021
+ms.date: 02/09/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,16 +11,14 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4f4e5a8415f6c2128b0480edf67f317124eeeba9
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354282"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376879"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
-
-
 
 ## <a name="switch-environments"></a>Váltás a környezetek között
 
@@ -49,7 +47,7 @@ A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a 
 A [használható előrejelzési modellek](predictions-overview.md#out-of-box-models) használatra konfigurálja az adatok megosztását a Dataverse használatával. Vagy engedélyezheti az adatfeldolgozást a helyszíni adatforrásokból, megadva a szervezet által felügyelt Microsoft Dataverse környezet URL-címét.
 
 > [!IMPORTANT]
-> A Customer Insights-nak Dataverse ugyanabban a régióban kell lennie az adatmegosztás engedélyezéséhez.
+> Ügyfélelemzések, és Dataverse az adatmegosztás engedélyezéséhez ugyanabban a régióban kell lennie.
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="Konfigurálási lehetőségek az adatmegosztás engedélyezéséhez a Microsoft Dataverse szolgáltatással.":::
 
@@ -98,9 +96,29 @@ Az adatforrások frissítését követően nyissa meg az **Adatok** > **Egyesít
 
 Amikor az adatok egyesítése befejeződött, nyissa meg a **Mértékek** és a **Szegmensek** lehetőséget, hogy azokat is frissítse.
 
+## <a name="change-the-owner-of-an-environment"></a>Környezet tulajdonosának megváltoztatása
+
+Bár a Customer Insights szolgáltatásban több felhasználó is rendelkezhet rendszergazdai engedélyekkel, a környezetnek csak egy felhasználó a tulajdonosa. Alapértelmezés szerint kezdetben a rendszergazda hoz létre egy környezetet. A környezet rendszergazdájaként a tulajdonjogot rendszergazdai engedélyekkel rendelkező másik felhasználóhoz is hozzárendelheti.
+
+1. Válassza ki az alkalmazás fejlécében a **Környezet** választót.
+
+1. Kattintson a **Szerkesztés** ikonra.
+
+1. **A Környezet** szerkesztése mezőben nyissa meg az **Alapvető információk** lépést.
+
+1. **A Környezet** tulajdonosának módosítása mezőben válassza ki a környezet új tulajdonosát.  
+
+1. A módosítások alkalmazásához válassza a Véleményezés és befejezés **, majd** a Frissítés **lehetőséget**. 
+
+## <a name="claim-ownership-of-an-environment"></a>Környezet tulajdonjogának követelése
+
+Ha egy környezet tulajdonosa elhagyja a szervezetet, vagy a felhasználói fiókját törlik, a környezetnek nem lesz tulajdonosa. A rendszergazdai engedélyekkel rendelkező felhasználó igényelheti a tulajdonjogot, és új tulajdonossá válhat. Továbbra is birtokolhatják a környezetet, vagy [megváltoztathatják a tulajdonjogot egy másik rendszergazdára](#change-the-owner-of-an-environment). 
+
+A tulajdonjog megszerzéséhez válassza a **Tulajdonjog** átvétele gombot, amely az Ügyfélelemzések minden oldalának tetején jelenik meg, amikor az eredeti tulajdonos elhagyta a szervezetet.
+
 ## <a name="reset-an-existing-environment"></a>Meglévő környezet visszaállítása
 
-Rendszergazdaként a környezetet visszaállíthatja üres állapotba, ha szeretné törölni az összes konfigurációt, és eltávolítani a betöltött adatokat.
+A környezet tulajdonosaként visszaállíthat egy környezetet üres állapotba, ha törölni szeretné az összes konfigurációt, és el szeretné távolítani a betöltött adatokat.
 
 1.  Válassza ki az alkalmazás fejlécében a **Környezet** választót. 
 
@@ -112,7 +130,7 @@ Rendszergazdaként a környezetet visszaállíthatja üres állapotba, ha szeret
 
 ## <a name="delete-an-existing-environment"></a>Meglévő környezet törlése
 
-Rendszergazdaként törölheti az Ön által felügyelt környezetet.
+A környezet tulajdonosaként törölheti az Ön által felügyelt környezetet.
 
 1.  Válassza ki az alkalmazás fejlécében a **Környezet** választót.
 
