@@ -1,23 +1,23 @@
 ---
 title: A Customer Insights alkalmazásban létrehozott környezetek
 description: A Dynamics 365 Customer Insights licencelt előfizetéssel rendelkező környezetek létrehozására vonatkozó lépések.
-ms.date: 02/24/2022
+ms.date: 03/28/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: MichelleDevaney
-ms.author: midevane
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a538237322615f69f0a5cb43d394275bf79af00b
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354098"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491916"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Hozzon létre egy környezetet a közönséggel kapcsolats információkban
 
@@ -30,7 +30,7 @@ A szervezetek minden Customer Insights licenchez *két* környezetet hozhatnak l
 
 ## <a name="create-a-new-environment"></a>Új környezet létrehozása
 
-A Customer Insights előfizetési licencének megvásárlása után a Microsoft 365 bérlő globális rendszergazdája e-mailt kap, amely meghívja őket a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. 
+Miután előfizetési licencet vásárolt a Customer Insights számára, a Microsoft 365 bérlő globális rendszergazdája e-mailt kap, amely meghívja őket a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. 
 
 Az interaktív élmény végigvezeti az új környezettel kapcsolatos összes szükséges információgyűjtés lépéseit. A környezetek létrehozásához célközönség környezetek kezeléséhez [rendszergazdai engedélyekre](permissions.md) van szüksége.
 
@@ -66,7 +66,7 @@ A rendszer az adatok Azure Data Lake Storage szolgáltatásba való mentésével
 > A Customer Insights jelenleg a következőket támogatja:
 > - A Microsoft Dataverse által felügyelt Data Lake-ben tárolt Power BI adatfolyamokból származó feldolgozott entitások.  
 > - Azure Data Lake Storage partnereknek ugyanabban az Azure-régióban, mint amit a környezet létrehozásakor kiválasztott.
-> - Azure Data Lake Storage gen2 fiókok, amelyek *hierarchikus névterét* engedélyezve. Az Azure Data Lake Gen1 tárfiókok nem támogatottak.
+> - Azure Data Lake Storage gen2-es fiókokat, amelyeken engedélyezve van *hierarchikus névtér*. Az Azure Data Lake Gen1 tárfiókjai nem támogatottak.
 
 A Azure Data Lake Storage beállításhoz választhat az erőforrás-alapú és az előfizetés-alapú hitelesítési lehetőség között. További információ a [Kapcsolódás Azure Data Lake Storage-fiókhoz Azure-szolgáltatásnévvel](connect-service-principal.md) című cikkben található. A **Tároló** neve `customerinsights` értékre változik, és nem módosítható.
 
@@ -78,19 +78,21 @@ Ha a Customer Insights több környezetét hozza létre, és úgy dönt, hogy az
    
 A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével.
 
-Biztosítsa saját Microsoft Dataverse környezetét az adatok (profilok és elemzések) megosztásához a, például a Dynamics 365 Marketing vagy a modellvezérelt alkalmazások alapján Dataverse Power Apps. Hagyja üresen ezt a mezőt, ha nincs saját Dataverse környezete, és mi kiépítünk önnek egyet.
+Adjon meg saját Microsoft Dataverse környezetet az adatok (profilok és elemzések) megosztásához olyan üzleti alkalmazásokkal, amelyek a Dynamics 365 Marketing vagy a modellvezérelt alkalmazásokon alapulnak Dataverse Power Apps. Hagyja üresen ezt a mezőt, ha nincs saját Dataverse környezete, és biztosítunk egyet az Ön számára.
 
-A környezethez Dataverse való csatlakozás lehetővé teszi [az adatforrások helyszíni adatainak beolvasását is adatfolyamok és átjárók Power Platform használatával](data-sources.md#add-data-from-on-premises-data-sources). A környezethez [való csatlakozással beépített előrejelzés modelleket](predictions-overview.md?tabs=b2c#out-of-box-models) is használhat Dataverse.
+A környezethez Dataverse való csatlakozás lehetővé [teszi az adatok helyszíni adatforrásokból származó adatok adatáramlások és átjárók használatával történő Power Platform bevitelét](data-sources.md#add-data-from-on-premises-data-sources) is. A környezethez [való csatlakozással beépített előrejelzés modelleket](predictions-overview.md?tabs=b2c#out-of-box-models) is használhat Dataverse.
 
 > [!IMPORTANT]
-> A Customer Insights-nak Dataverse ugyanabban a régióban kell lennie az adatmegosztás engedélyezéséhez.
+> 1. Ügyfélelemzések, és Dataverse az adatmegosztás engedélyezéséhez ugyanabban a régióban kell lennie.
+> 1. Globális rendszergazdai szerepkörrel kell rendelkeznie a Dataverse környezetben. Ellenőrizze, hogy ez [Dataverse a környezet bizonyos biztonsági csoportokhoz van-e társítva](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment), és győződjön meg arról, hogy hozzá van adva ezekhez a biztonsági csoportokhoz.
+> 1. Ehhez a környezethez még nincs társítva Dataverse meglévő Customer Insights-környezet. További információ a [környezettel Dataverse való meglévő kapcsolat eltávolításáról](manage-environments.md#remove-an-existing-connection-to-a-dataverse-environment).
 
-:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus engedélyezve Microsoft Dataverse a net új példányok esetén.":::
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus engedélyezve van Microsoft Dataverse a net új példányok számára.":::
 
-> [!NOTE]
-> A Customer Insights nem támogatja a következő adatmegosztási forgatókönyveket:
-> - Ha az összes adatot a saját Azure Data Lake Storage szolgáltatásához menti, akkor nem tudja engedélyezni az adatmegosztást a kezelt Dataverse-adattóval.
-> - Ha engedélyezi az adatmegosztást a Dataverse szolgáltatással, akkor nem fogja tudni [létrehozni az előrejelzett vagy hiányzó értékeket egy entitásban](predictions.md).
+Az adatmegosztás saját kezűleg történő Microsoft Dataverse engedélyezéséről további információt a Csatlakozás a következőhöz című Azure Data Lake Storage témakörben talál: [.Microsoft Dataverse](manage-environments.md#connect-to-microsoft-dataverse)
+
+A Customer Insights nem támogatja a következő adatmegosztási forgatókönyveket:
+- Ha engedélyezi az adatmegosztást a Dataverse szolgáltatással, akkor nem fogja tudni [létrehozni az előrejelzett vagy hiányzó értékeket egy entitásban](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>4. lépés: A beállítások véglegesítése
 

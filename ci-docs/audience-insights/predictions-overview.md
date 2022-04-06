@@ -1,19 +1,19 @@
 ---
 title: Áttekintés a támogatott előrejelzési forgatókönyvekről
 description: A Dynamics 365 Customer Insights alkalmazás által lefedett előrejelzési forgatókönyvek és lehetőségek.
-ms.date: 12/21/2021
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228247"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487502"
 ---
 # <a name="predictions-overview"></a>Előrejelzések áttekintése
 
@@ -36,6 +36,11 @@ Az adatok előrejelzésével való elindulás legegyszerűbb módja az előre de
 - [Tranzakciós lemorzsolódás](predict-transactional-churn.md) : Megjósolja, hogy egy ügyfél egy bizonyos időkeret után már nem vásárolja meg termékeit vagy szolgáltatásait.
 
 ---
+
+> [!TIP]
+> Javasoljuk, hogy rendszeresen frissítse a dobozon kívüli modelleket frissített adatokkal, hogy azok pontosan tájékoztassák az üzleti használati esetet. Az adatok ad-hoc módon frissülnek, amikor a rendszer új vagy frissített adatforrásokat tölt be. A modellek azonban ebben az esetben csak újramagozzák, és továbbra is a meglévő betanítási adatokat használják.
+> 
+> A frissítési ütemezést **úgy** állíthatja be, hogy beállítja a modell átképzési ütemezését a konfigurációs élményben. A modell átképezi és újra kiemeli ezt az ütemtervet, amelyet bármikor megváltoztathat.
 
 
 ## <a name="azure-machine-learning-integration"></a>Azure Machine Learning integrációja

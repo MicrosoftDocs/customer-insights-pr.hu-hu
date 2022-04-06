@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376419"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523672"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés továbbítás az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)
 
@@ -230,7 +230,7 @@ A munkafolyamat-események a következő tulajdonságokkal rendelkeznek.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Igen      | Igen  | Mindig `WorkflowEvent`, az eseményt munkafolyamat-eseményként jelölve meg.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Igen      | Igen  | A munkafolyamat-futtatás azonosítója. A munkafolyamat-végrehajtáson belül minden munkafolyamat- és feladatesemény azonos `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Igen      | Igen  | A művelet azonosítója, lásd: [Művelettípusok].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Igen      | Igen  | A művelet azonosítója, lásd: [Művelettípusok](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Igen      | No   | Csak munkafolyamat. A munkafolyamat által kiváltott feladatok száma.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Igen      | No   | Opcionális. Csak munkafolyamat-események. A Azure Active Directory [munkafolyamatot aktiváló felhasználó](/azure/marketplace/find-tenant-object-id#find-user-object-id) objectId azonosítója lásd még:`properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Igen      | No   | `full` vagy `incremental` frissíteni.                                                                                                                                                                                                                            |

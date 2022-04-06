@@ -1,7 +1,7 @@
 ---
 title: Célközönség betekintési információinak szegmensei
 description: A szegmensek áttekintése, valamint információk a létrehozásukról és kezelésükről.
-ms.date: 11/01/2021
+ms.date: 03/30/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
+ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355986"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "8508569"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -68,7 +68,9 @@ Szegmens kiválasztása esetén a következő művelet használható:
 
 ## <a name="refresh-segments"></a>Szegmensek frissítése
 
-Az összes szegmenst egyszerre frissítheti a **Szegmensek** oldal **Az összes frissítése** elemével. Ha nem szeretné frissíteni az összes szegmenst, jelölje ki a frissítendőket, és válassza a **Frissítés** lehetőséget a beállítások között. Másik lehetőségként beállíthat egy ismétlődő frissítést is a **Felügyelet** > **Rendszer** > **Ütemezés** pontban.
+Az összes szegmenst egyszerre frissítheti a **Szegmensek** oldal **Az összes frissítése** elemével. Ha nem szeretné frissíteni az összes szegmenst, jelölje ki a frissítendőket, és válassza a **Frissítés** lehetőséget a beállítások között. Másik lehetőségként beállíthat egy ismétlődő frissítést is a **Felügyelet** > **Rendszer** > **Ütemezés** pontban. Ismétlődő frissítés konfigurálásakor a következő szabályok érvényesek:
+- A Dinamikus **vagy** Bővítés **típusú** szegmensek automatikusan frissülnek a beállított ütemben. Ha a frissítés befejeződött, az **állapot** azt jelzi, hogy problémák merültek-e fel a szegmens frissítésében. Az **Utolsó frissítés** az utolsó sikeres frissítés időbélyegét mutatja. Ha hiba történik, válassza ki a hibát a történtek részleteinek megtekintéséhez.
+- A Statikus **típusú** *szegmensek nem* frissülnek automatikusan. Az **Utolsó frissítés** a statikus szegmensek manuális futtatásakor vagy frissítésének utolsó időbélyegét mutatja.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 

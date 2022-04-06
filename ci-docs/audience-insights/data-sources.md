@@ -1,7 +1,7 @@
 ---
 title: Adatforrások kiválasztása adatok betöltéséhez
 description: Megismerkedhet vele, hogyan importálhat különböző forrásokból származó adatokat.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: adkuppa
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 9cf97c3e30d7501ba1f188a0e25a1a103299aa7f
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354052"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464077"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -27,9 +27,9 @@ A célközönség-információk funkció a Dynamics 365 Customer Insights szolg�
 
 ## <a name="add-a-data-source"></a>Adatforrás felvétele
 
-A választott beállítástól függően tekintse meg a részletes cikkeket a adatforrás hozzáadásáról.
+A választott beállítástól függően tekintse meg a adatforrás hozzáadásának részletes cikkeit.
 
-A következő adatforrásokat adjuk hozzá:
+A következő adatforrásokat adhatja hozzá:
 
 - [Több tucat Power Query csatlakozón keresztül](connect-power-query.md)
 - [Common Data Model-mappából](connect-common-data-model.md)
@@ -37,17 +37,28 @@ A következő adatforrásokat adjuk hozzá:
 - [Azure Synapse Analytics Adatbázisból](connect-synapse.md)
 
 > [!NOTE]
-> Ha a próbaverziót használja, az importálási módszerek szakasz tartalmaz egy **Customer Insights adattár-beállítást**. Ezzel a beállítással választhat ki egy különböző iparágak számára elérhető adathalmazt. További információ: [Dynamics 365 Customer Insights próbaverzió](../trial-signup.md).
+> Ha a próbaverziót használja, az importálási módszerek szakasz tartalmaz egy **Customer Insights adattár-beállítást**. Ezzel a beállítással választhatja ki a különböző iparágak számára elérhető mintaadatkészletet. További információ: [Dynamics 365 Customer Insights próba](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Adatok hozzáadása helyszíni adatforrásokból
 
-A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. Az adatfolyamokat a Customer Insightsban úgy engedélyezheti, hogy [a környezet beállításakor megadja a Microsoft Dataverse környezet URL-címét](create-environment.md).
+A célközönségi elemzésekben az adatok betöltése a helyi adatforrásokból a Microsoft Power Platform adatfolyamok alapján támogatott. Az adatfolyamokat a Customer Insights szolgáltatásban úgy engedélyezheti, hogy [a környezet beállításakor megadja a Microsoft Dataverse környezet URL-címét](create-environment.md).
 
-Azok az adatforrások, amelyek a Dataverse környezet Customer Insights szolgáltatással való társítása után jönnek létre, alapértelmezés szerint adatfolyamokat [Power Platform használnak](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. Eltávolíthatja és újra létrehozhatja azokat az adatforrásokat, amelyek a környezet társítás Dataverse előtt [léteztek helyszíni adatátjárók](/data-integration/gateway/service-gateway-app) használatával.
+A környezetnek a Dataverse Customer Insights szolgáltatással való társítása után létrehozott adatforrások alapértelmezés szerint adatfolyamokat [Power Platform használnak](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása Dataverse előtt [létező adatforrásokat helyszíni adatátjárók segítségével eltávolíthatja és újra létrehozhatja](/data-integration/gateway/service-gateway-app).
 
 A meglévő Power BI vagy Power Apps környezet adatátjárói láthatók lesznek, és újra felhasználhatók a Customer Insightsban. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
 
+> [!IMPORTANT]
+> Győződjön meg arról, hogy az átjárók a legújabb verzióra vannak frissítve. Telepíthet egy frissítést, és újrakonfigurálhatja az átjárót az átjáró képernyőjén megjelenő parancssorból, vagy [letöltheti a legújabb verziót](https://powerapps.microsoft.com/downloads/). Ha nem a legújabb átjáróverziót használja, az adatfolyam frissítése olyan hibaüzenetekkel meghiúsul, mint a **Kulcsszó nem támogatott: konfigurációs tulajdonságok. Paraméter neve: kulcsszó**.
+
 ## <a name="review-ingested-data"></a>A betöltött adatok áttekintése
+Ha a környezet adatfolyamokat tartalmaz Power Platform, az **Adatforrások** lap három szakaszt sorol fel: 
+- **Megosztott**: Olyan adatforrások, amelyeket az összes Customer Insights-rendszergazda kezelhet. Power BI az adatfolyamok, a saját tárfiók és a Dataverse kezelt adattavahoz való csatolás példák a megosztott adatforrásokra.
+- **Általam** kezelt adatáramlások: Power Platform az adatfolyamokat csak Ön hozhatja létre és kezelheti. Más Customer Insights-rendszergazdák csak ezeket az adatfolyamokat tekinthetik meg, de szerkeszthetik, frissíthetik vagy törölhetik őket.
+- **Mások** által kezelt adatok: Power Platform más rendszergazdák által létrehozott adatfolyamok. Csak megtekintheti őket. Felsorolja az adatfolyam tulajdonosát, akivel bármilyen segítségért kapcsolatba léphet.
+> [!NOTE]
+> Minden entitás megtekinthető és használható más felhasználók számára. A felhasználói kontextualitás csak az adatforrásokra vonatkozik, az ezekből az adatfolyamokból származó entitásokra nem.
+
+Ha nem Power Platform használ adatfolyamokat, nem fog látni csoportokat vagy szakaszokat. Az **Adatforrások** lap csak az összes adatforrás listáját tartalmazza.
 
 Látni fogja az egyes betöltött adatforrások nevét, állapotát, valamint az adatoknak az adott forrásra vonatkozó utolsó frissítését. Az adatforrások listáját minden oszlop szerint rendezheti.
 

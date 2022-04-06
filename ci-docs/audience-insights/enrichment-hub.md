@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
+ms.openlocfilehash: 510a20306e793a5ba522a6ac0d9c7194f03472d2
+ms.sourcegitcommit: ae02ac950810242e2505d7d371b80210dc8a0777
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372718"
+ms.lasthandoff: 03/29/2022
+ms.locfileid: "8491961"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -82,9 +82,9 @@ A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md)
 
 A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
 
-## <a name="enrich-data-sources-before-unification"></a>Adatforrások gazdagítása az egyesítés előtt
+## <a name="enrich-data-sources-before-unification"></a>Adatforrások bővítése az egyesítés előtt
 
-Az adategyesítés előtt gazdagíthatja az ügyféladatokat, hogy növelje az adategyezés minőségét. További információ: [adatforrás gazdagodás](data-sources-enrichment.md).
+Az adategyesítés előtt gazdagíthatja az ügyféladatokat, hogy javítsa az adategyeztetés minőségét. További információ: [adatforrás gazdagodás](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 
@@ -97,5 +97,19 @@ A gyarapítás állapotának megtekintése
 1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt. 
 1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget. 
 1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat. 
+
+## <a name="enrichment-results"></a>Bővítési eredmények
+
+A befejezett gazdagodási futtatás után áttekintheti a gazdagodás eredményeit.
+
+1. Lépjen az **Adatok** > **Bővítés** pontra. 
+1. Válassza ki azt a gazdagodást, amelyről információt szeretne kapni.
+
+Minden gazdagodás olyan alapvető információkat mutat, mint a gazdagított profilok száma, a létrehozott gazdagodási entitás előnézete és a gazdagított profilok száma az idő múlásával. Ha rendelkezésre áll, a **mezővel** gazdagodott ügyfelek száma részletezi az egyes gazdagított mezők lefedettségét.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="A Gazdagodás eredményoldala.":::
+
+Egyes dúsítások a dúsítás típusára jellemző információkat is mutatnak. További információért tekintse meg a vonatkozó gazdagodás dokumentációját.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

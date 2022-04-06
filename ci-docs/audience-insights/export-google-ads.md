@@ -1,42 +1,37 @@
 ---
 title: Customer Insights adatok exportálása a Google Adsbe
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Google Adsbe.
-ms.date: 09/27/2021
+ms.date: 03/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 7a85237f7aff564d6b540b2c11553a52f875fac4
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227013"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523803"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 
 Exportálja az egységes ügyfélprofilok szegmenseit a Google Ads célközönség listára, és használja őket a Google Keresés, a Gmail, YouTube és Google Display Network-ön történő hirdetésnél. 
 
-> [!IMPORTANT]
-> Jelenleg csak akkor hozható létre új kapcsolat, és csak akkor exportálhatók az adatok a Google Ads szolgáltatásba, ha már rendelkezik jóváhagyott Google Ads-fejlesztői jogkivonattal. A irányelvváltozások miatt hamarosan frissítjük a Google Ads exportálását, és olyan exportálási lehetőséget kínálunk, amelyhez nem szükséges fejlesztői jogkivonat az élmény folyamatossága és a Google Ads szolgáltatásba való exportálás egyszerűsítése érdekében. Javasoljuk, hogy ne állítson be további kapcsolatokat a Google Ads szolgáltatáshoz annak érdekében, hogy könnyebb legyen áttérni az új exportálási lehetőségre.
 
 ## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
 
 -   Rendelkezik [Google Ads-fiókkal](https://ads.google.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
--   Rendelkezik egy [jóváhagyott Google Ads fejlesztői kóddal](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
 -   Ön megfelel az [Ügyfél megfeleltetési szabályzat](https://support.google.com/adspolicy/answer/6299717) követelményeinek.
 -   Ön teljesíti a [remarketing listaméretekre](https://support.google.com/google-ads/answer/7558048) vonatkozó követelményeket.
--   A Google Adsban és a megfelelő azonosítókban meglévő célközönségek találhatók. További információért lásd: [Google Ads-célközönségek](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
 -   Rendelkezik [konfigurált szegmensekkel](segments.md).
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőket, amelyek e-mail-címet, utónevet és vezetéknevet tartalmaznak.
+-   Az exportált szegmensek egységes ügyfélprofiljai e-mail címet, telefont, mobil hirdetői azonosítót, harmadik fél felhasználói azonosítóját vagy címét képviselő mezőket tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Google Ads fájlba.
 - A Google Adsbe való exportálás csak szegmensekre korlátozódik.
-- Az összesen 1 millió ügyfélprofilt biztosító szegmensek exportálása a szolgáltatói oldalon korlátozások miatt akár 5 percet is igénybehet. 
+- Az összesen 1 millió ügyfélprofilt biztosító szegmensek exportálása a szolgáltatói oldalon korlátozások miatt akár 30 percet is igénybehet. 
 - A Google Ads egyeztetése akár 48 óráig is eltarthat.
 
 ## <a name="set-up-connection-to-google-ads"></a>Kapcsolat beállítása a Google Adshez
@@ -50,8 +45,6 @@ Exportálja az egységes ügyfélprofilok szegmenseit a Google Ads célközöns�
 1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Adja meg **[Google Ads ügyfél-azonosítóját](https://support.google.com/google-ads/answer/1704344)**.
-
-1. Adja meg **[a jóváhagyott Google Ads-fejlesztői jogkivonatát](https://developers.google.com/google-ads/api/docs/first-call/dev-token)**.
 
 1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
 
@@ -71,11 +64,11 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Google Ads szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
-1. Adja meg a **[Google Ads célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, és válassza a **Csatlakozás** lehetőséget a Google Ads-kapcsolat kezdeményezéséhez.
+1. Ha új célközönség szeretne létrehozni, hagyja üresen a Google célközönség azonosító mezőt. Automatikusan létrehozunk egy új célközönség a Google Ads-fiókjában, és az exportált szegmens nevét használjuk. Ha frissíteni szeretne egy meglévő Google Ads-célközönség, adja meg [Google Ads-célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
 
-1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt.
+1. **Az Adategyeztetés** szakaszban jelöljön ki egy vagy több exportálni kívánt adatmezőt, és válassza ki azt a mezőt, amely a Megfelelő adatmezőket jelöli a Customer Insights alkalmazásban.
 
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Google Adsbe.
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. 
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 

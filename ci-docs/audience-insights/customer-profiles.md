@@ -14,18 +14,20 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 074d84eff65d52b083fff6c161282d4fafa1af85
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354884"
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523729"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
 Az **Ügyfelek** oldal a egyesített ügyfélprofilok összesített nézetét jeleníti meg. Az ügyfélprofilok az [egységesített ügyfélentitás létrehozása után](data-unification.md) érhetők el. A lapon ügyfeleket kereshet, és meghatározhatja az adott keresés indexét.
 
-Az ügyfelek egyének vagy szervezetek is lehetnek. Minden ügyfélprofilt egy csempe képvisel. A több bejegyzéshez használja az oldalszámvezérlőket. A kártya megjeleníti az *Ügyfél* entitás mezőit a **Keresés és szűrő** indexében meghatározottak szerint. Válassza ki a mozaikot, ha látni fogja a kijelölt ügyfél adatait egy [Ügyfél adatai lap](customer-profiles.md#customer-details-page) nevű dedikált oldalon.
+Az ügyfelek egyének vagy szervezetek is lehetnek. Minden ügyfélprofilt egy csempe képvisel. A több bejegyzéshez használja az oldalszámvezérlőket. A kártya megjeleníti az *Ügyfél* entitás mezőit a **Keresés és szűrő** indexében meghatározottak szerint. Az egyes kartonokon belüli mezők sorrendjét a rendszer választja ki.
+
+Válassza ki a mozaikot, ha látni fogja a kijelölt ügyfél adatait egy [Ügyfél adatai lap](customer-profiles.md#customer-details-page) nevű dedikált oldalon.
 
 > [!div class="mx-imgBorder"] 
 > ![Az Ügyfelek oldal mutatja az eredmény csempéket](media/customers-page-result-tiles-B2C.png "Az Ügyfelek oldal mutatja az eredmény csempéket")
