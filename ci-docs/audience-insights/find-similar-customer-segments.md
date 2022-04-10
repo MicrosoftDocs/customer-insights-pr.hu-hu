@@ -14,7 +14,7 @@ searchScope:
 - customerInsights
 ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
 ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/25/2022
 ms.locfileid: "8355248"

@@ -10,7 +10,7 @@ ms.author: digranad
 manager: shellyha
 ms.openlocfilehash: 8c5d8b0395452c8da1631f09cffeddfc811e6d29
 ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/16/2022
 ms.locfileid: "8230795"

@@ -9,7 +9,7 @@ ms.topic: article
 ms.manager: shellyha
 ms.openlocfilehash: 08435e651c3706257b8c0548e6e9bbf98f39dce9
 ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 02/16/2022
 ms.locfileid: "8228109"

@@ -10,7 +10,7 @@ ms.reviewer: midevane
 manager: shellyha
 ms.openlocfilehash: 9195770255bd798636b9532d6e1ca928345b3708
 ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: hu-HU
 ms.lasthandoff: 03/03/2022
 ms.locfileid: "8376465"
