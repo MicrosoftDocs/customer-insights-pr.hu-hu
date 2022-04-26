@@ -5,15 +5,15 @@ ms.date: 11/19/2020
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: d3465b7eaa17a24e2926b8ea432b33e705931b88
+ms.sourcegitcommit: 696ad9ab6e10046c00f1ac86a7e8fc37386e6fe7
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354604"
+ms.lasthandoff: 04/08/2022
+ms.locfileid: "8555362"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési példamutató
 
@@ -30,7 +30,7 @@ A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet ár
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások összekötők [használatával Power Query történő importálásáról szóló cikkeket](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
+Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speciális összekötőkkel [történő Power Query importálásáról szóló cikkeket](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
@@ -148,7 +148,7 @@ Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesíté
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>3. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.
 
-Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépéseket az [Előfizetés lemorzsolódás előrejelzés](predict-subscription-churn.md) cikkben találja. 
+Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépéseket az [Előfizetés lemorzsolódása előrejelzés](predict-subscription-churn.md) cikkben találja. 
 
 1. Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.
 

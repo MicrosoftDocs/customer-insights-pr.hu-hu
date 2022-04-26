@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: dccc069a355725bae09c1fece9292b9aee374e6d
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
+ms.openlocfilehash: 06c5bed74b82f9ae2a764a2eb363348e0edab531
+ms.sourcegitcommit: 4b2ad63aa7a4d4f31b573870bccbc40befe5f8fd
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8225518"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "8552059"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI összekötő (előzetes verzió)
 
@@ -72,6 +72,6 @@ A duplikált kapcsolatok eltávolítását, próbálja meg újra konfigurálni a
 
 Az olyan entitások betöltésekor, amelyek olyan mezőket tartalmaznak, amelyek dátumformátuma HH/NN/ÉÉÉÉ, a nem egyező területiformátumok miatt hibákba ütközhet. Ez az eltérés akkor fordul elő, ha a Power BI Desktop-fájl az angol (Egyesült Államok) nyelvtől más területi beállításra van beállítva, mert a célközönség információk dátummezőit amerikai formátumban menti a program.
 
-A Power BI Desktop fájlnak egyetlen területi beállítása van, amelyet az adatok beolvasásakor alkalmaz a program. A dátummezők helyes értelmezése érdekében, állítsa be a .BPI-fájl területi beállítását angol (Egyesült Államok) formátumra. [Ismerje meg, hogyan módosíthatja egy Power BI Desktop fájl területi beállítását](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
+A Power BI Desktop fájlnak egyetlen területi beállítása van, amelyet az adatok beolvasásakor alkalmaz a program. A dátummezők helyes értelmezése érdekében, állítsa be a .BPI-fájl területi beállítását angol (Egyesült Államok) formátumra. [Ismerje meg, hogyan módosíthatja egy Power BI Desktop fájl területi beállítását](/power-bi/fundamentals/supported-languages-countries-regions#choose-the-language-or-locale-of-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

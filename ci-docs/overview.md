@@ -6,12 +6,12 @@ ms.author: mhart
 ms.date: 07/30/2021
 ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: 82b335388002158885fa55b61562db6c8370dc9d
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: ff3d23d00a565bf9e5693e7cd5db644ddfe4887e
+ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350180"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "8560436"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Termék áttekintése a Dynamics 365 Customer Insights szolgáltatásról
 
@@ -19,7 +19,7 @@ A [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-in
 
 A [Célközönséggel kapcsolatos információk](audience-insights/overview.md) segítik a vállalkozása ügyfélcentrikus szervezetté történő átalakítását. A marketing-, értékesítési és szolgáltatási szakemberek olyan információkhoz juthatnak, amelyekre szükségük van az élmény személyre szabása érdekében. A tranzakciós, viselkedési és megfigyelési forrásokból származó adatok kapcsolása 360 fokos ügyfélnézet létrehozásához. Gyorsabban láthat eredményeket a gyakorlati összefüggéseket biztosító CDP-vel. 
 
-[Az Engagement insights](engagement-insights/overview.md) a Customer Insights előzetes verziója volt, amely a webes és mobil események összegyűjtésére összpontosít további elemzések céljából Az előnézet 2022. február 15-én véget ért.
+[Az elkötelezettségi elemzések](engagement-insights/overview.md) a Customer Insights előzetes szolgáltatása volt, amely a webes és mobil események összegyűjtésére összpontosított további betekintések érdekében. Az előzetes 2022. február 15-én ért véget.
  
 ## <a name="choose-a-capability"></a>Képesség kiválasztása
 

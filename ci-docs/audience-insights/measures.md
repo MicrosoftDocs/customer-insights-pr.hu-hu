@@ -1,12 +1,12 @@
 ---
 title: Az intézkedések megértése és kezelése
-description: Ismerje meg, hogy az intézkedések hogyan segítik a vállalkozás teljesítményének elemzését és tükrözését.
-ms.date: 02/28/2022
+description: Ismerje meg, hogy az intézkedések hogyan segítenek elemezni és tükrözni vállalkozása teljesítményét.
+ms.date: 03/24/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.author: wameng
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-measures
@@ -14,20 +14,20 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: c46fcc3baba1d6c92c2c0fe459a62277343cc0e4
-ms.sourcegitcommit: cf6a0ed44915908a44c70889a2dd199a9d0d4798
-ms.translationtype: HT
+ms.openlocfilehash: ef10f480086ccac4fa5c6c58818e35ecae67532c
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/28/2022
-ms.locfileid: "8359781"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529680"
 ---
-# <a name="measures-overview"></a>Intézkedések – áttekintés
+# <a name="measures-overview"></a>Intézkedések áttekintése
 
 A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Például egy vállalkozás látni szeretné az *ügyfélre jutó teljes költést* , hogy megértse az egyes ügyfelek vásárlási előzményeit, vagy mérje a *vállalat teljes értékesítését*, hogy megértse az egész üzlet összesített szintű bevételét.  
 
-A mértékszerkesztővel [, egy adatlekérdezési platformmal, különböző operátorokkal és egyszerű leképezési lehetőségekkel hozhatók létre](measure-builder.md). Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére. Előre definiált sablonokkal [hatékonyan konfigurálhatja](measure-templates.md) az általánosan használt mértékeket.
+A mértékeket a mértékszerkesztővel [, egy adatlekérdező platformmal, különböző operátorokkal és egyszerű leképezési lehetőségekkel hozzák létre](measure-builder.md). Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére. Az általánosan használt mértékek hatékony konfigurálásához előre definiált sablonokat [használhat](measure-templates.md).
 
-A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az ügyféladatok lekérdezésével és a betekintések kinyerésével. Ha például egy *ügyfélre jutó teljes költség* és az *egy ügyfélre jutó teljes megtérülés* mértékeket hozza létre, akkor könnyebben azonosítható a nagy költéssel, mégis nagy megtérüléssel jellemezhető ügyfelek csoportja. [Ezek alapján létrehozhat egy szegmenst](segments.md) a következő legjobb műveletek hajtásához. 
+A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az ügyféladatok lekérdezésével és a betekintések kinyerésével. Ha például egy *ügyfélre jutó teljes költség* és az *egy ügyfélre jutó teljes megtérülés* mértékeket hozza létre, akkor könnyebben azonosítható a nagy költéssel, mégis nagy megtérüléssel jellemezhető ügyfelek csoportja. Ezen intézkedések alapján létrehozhat [egy szegmenst](segments.md) a következő legjobb műveletek végrehajtásához.
 
 ## <a name="manage-your-measures"></a>Intézkedések kezelése
 
@@ -35,18 +35,17 @@ A **Mértékek** lapon láthatja a mértékek listáját.
 
 Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, megtekintheti a kimenetet, és letölthet egy CSV fájlt.
 
-Ha egyszerre szeretné frissíteni az összes intézkedést, akkor jelölje be az **összes frissítése** lehetőséget egy adott intézkedés kiválasztása nélkül.
+:::image type="content" source="media/measures-actions.png" alt-text="Az egyes intézkedések kezelésére szolgáló műveletek."lightbox="media/measures-actions.png":::
 
-:::image type="content" source="media/measure-actions.png" alt-text="Az egyes intézkedések kezelésére szolgáló műveletek.":::
+A mértékegység kiválasztásakor a következő műveletek érhetők el:
 
-Válasszon ki egy mértéket a listából a következő lehetőségekhez:
-
-- Adja meg a mérőszám nevét a részletek megtekintéséhez.
 - **Szerkessze** a mérőszám konfigurációját.
-- **Frissítse** a mértéket a legújabb adatok alapján.
+- **Mérték megkettőzése**. Megadhatja, hogy azonnal módosítja-e a tulajdonságait, vagy egyszerűen csak menti a duplikált példányt.
+- **Frissítse** a mértéket a legújabb adatok alapján. Ha egyszerre szeretné frissíteni az összes mértéket, jelölje ki az összes mértéket, majd a **Frissítés parancsot**.
 - **Nevezze át** az intézkedést.
-- **Törölje** az intézkedést.
 - **Aktiválás** vagy **Inaktiválás**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során.
+- **Címke** a szegmens címkéinek [kezeléséhez](work-with-tags-columns.md#manage-tags).
+- **Törölje** az intézkedést.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 

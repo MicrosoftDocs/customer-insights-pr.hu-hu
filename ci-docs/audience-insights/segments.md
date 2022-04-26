@@ -6,7 +6,7 @@ ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-customers-page
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
-ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
-ms.translationtype: HT
+ms.openlocfilehash: 68e71df3853470af47228c7365f25db3a71d15b0
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "8508569"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529542"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -47,24 +47,30 @@ A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagj
 
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
-A mentett szegmensek a **Szegmensek** oldalon tekinthetők és kezelhetők.
+Lépjen a **Szegmensek** lapra az összes mentett szegmens megtekintéséhez és kezeléséhez.
 
 Minden szegmenshez egy sor tartozik; ez a sor további információkat tartalmaz a szegmensről.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Kijelölt szegmens az opciók legördülő listájával és a rendelkezésre álló lehetőségekkel.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Kijelölt szegmens az opciók legördülő listájával és a rendelkezésre álló lehetőségekkel." lightbox="media/segments-selected-segment.png":::
 
-Szegmens kiválasztása esetén a következő művelet használható:
+Szegmens kiválasztásakor a következő műveletek érhetők el:
 
 - **Megtekintés** a szegmens részleteinek, köztük a tagszám trendjének megtekintése és a szegmens tagjainak előnézete.
+- A tagok listájának **letöltése** .CSV fájlként.
 - **Szerkesztés** a szegmens szerkesztése a tulajdonságainak módosításához.
 - **Duplikált elem létrehozása** a szegmensről. Megadhatja, hogy azonnal módosítja-e a tulajdonságait, vagy egyszerűen csak menti a duplikált példányt.
 - **Frissítés** a szegmens frissítése a legfrissebb adatok felvételéhez.
-- Szegmens **Aktiválása** vagy **inaktiválása**. A szegmensek két lehetséges állapottal rendelkeznek – aktívak vagy inaktívak. A szegmensek szerkesztésekor hasznosnak bizonyulnak ezek az állapotok. Inaktív szegmensek esetén a szegmens definíciója létezik, de még nem tartalmaz ügyfeleket. A szegmens aktiválásakor az állapota az "inaktív" értékről "aktív" állapotra változik, és a szegmens meghatározásnak megfelelő ügyfeleket keresi meg. Ha egy [ütemezett frissítés](system.md#schedule-tab) be van állítva, az inaktív szegmensek **állapota** **kihagyva** állapotú , jelezve, hogy a frissítést nem is kísérelte meg. Inaktív szegmens aktiválásakor a rendszer frissíti, és bekerül az ütemezett frissítésekbe.
+- Szegmens **Aktiválása** vagy **inaktiválása**. Inaktív szegmensek esetén a szegmens definíciója létezik, de még nem tartalmaz ügyfeleket. Az aktív szegmens olyan ügyfeleket keres, akik megfelelnek a szegmensdefiníciónak. Ha egy [ütemezett frissítés](system.md#schedule-tab) be van állítva, az inaktív szegmensek **állapota** **kihagyva** állapotú , jelezve, hogy a frissítést nem is kísérelte meg. Inaktív szegmens aktiválásakor a rendszer frissíti, és bekerül az ütemezett frissítésekbe.
   Másik lehetőségként használhatja **Ütemezés később** funkcióit az **Aktiválás/inaktiválás**, ahol megadhat egy adott szegmens aktiválására és inaktiválására vonatkozó jövőbeli dátumot és időpontot.
+- **[Keressen hasonló ügyfeleket](find-similar-customer-segments.md)** a szegmensből.
 - Szegmens **átnevezése**.
+- **Címke** a szegmens címkéinek [kezeléséhez](work-with-tags-columns.md#manage-tags).
 - A tagok listájának **letöltése** .CSV fájlként.
 - Az **Exportálások kezelése** az exporttal kapcsolatos szegmensek megtekintéséhez és kezeléséhez. [További információ az exportálásokról.](export-destinations.md)
 - Szegmens **törlése**.
+- **Oszlopok** a megjelenített oszlopok [testreszabásához](work-with-tags-columns.md#customize-columns).
+- **Szűrjön** a címkék [szűréséhez](work-with-tags-columns.md#filter-on-tags).
+- **A szegmensnév szerinti kereséshez keresett név** keresése.
 
 ## <a name="refresh-segments"></a>Szegmensek frissítése
 

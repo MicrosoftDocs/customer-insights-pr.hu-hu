@@ -1,23 +1,23 @@
 ---
-title: Hasonló ügyfelek keresése AI-val (videót tartalmaz)
+title: Keressen hasonló ügyfeleket az AI-val (videót tartalmaz)
 description: Hasonló ügyfél-szegmensek keresése mesterséges intelligenciával.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355248"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561573"
 ---
 # <a name="similar-customers-preview"></a>Hasonló ügyfelek (előzetes verzió)
 
@@ -36,6 +36,8 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 
 1. Tekintse át az új szegmens javasolt nevét, és szükség szerint módosítsa azt.
 
+1. Szükség esetén címkéket [is hozzáadhat](work-with-tags-columns.md#manage-tags) az új szegmenshez.
+
 1. Tekintse át az új szegmenst definiáló mezőket. Ezek a mezők határozzák meg, hogy a rendszer milyen alapon próbálja megkeresni a hasonló ügyfeleket a forrásszegmensében. A rendszer alapértelmezés szerint az ajánlott mezőket választja ki.
   A modell teljesítményét jelentősen csökkentő mezők automatikusan ki vannak zárva:
   
@@ -44,9 +46,9 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 
 1. Válassza ki, hogy az **Összes ügyfelet** vagy csak az új szegmens egy **Adott meglévő szegmensében** szereplő ügyfeleket kívánja-e felvenni.
 
-1. Kizárhatja a szegmensben lévő ügyfeleket, ha bejelöli a **Mindenki kizárása a forrásszegmensben** jelölőnégyzetet.
-
 1. A rendszer alapértelmezés szerint azt javasolja, hogy a kimenetében a célközönség legfeljebb 20%-át adja meg. Szükség szerint szerkessze ezt a küszöböt. A küszöb növelése csökkenti a pontosságot.
+
+1. Az ügyfelek felvétele a forrásszegmensbe a hasonló attribútumokkal rendelkező ügyfelek mellett a **forrásszegmensből** származó tagok felvétele jelölőnégyzet bejelölésével.
 
 1. Válassza az oldal alján található **Futtatás** lehetőséget, hogy egy bináris osztályozási feladatot (a gépi tanulás egy módszere) indítson el, amely elemzi az adatkészletet.
 
@@ -67,7 +69,7 @@ A többi szegmenshez hasonlóan [egy hasonló szegmens kimenetével is dolgozhat
 
 Hasonló szegmens frissítéséhez jelölje ki azt a **Szegmensek** oldalon, majd a műveleti sávban válassza a **Frissítés** lehetőséget.
 
-A hasonló szegmensek szerkesztése újra feldolgozza az adatait. A korábban létrehozott szegmens frissülni a frissített adatokkal.    
+A hasonló szegmensek szerkesztése újra feldolgozza az adatait. A korábban létrehozott szegmens frissülni a frissített adatokkal.
 Hasonló szegmens szerkesztéséhez jelölje ki azt a **Szegmensek** oldalon, majd a műveleti sávban válassza a **Szerkesztés** lehetőséget. Alkalmazza a módosításokat, és a feldolgozás megkezdéséhez válassza a **Futtatás** lehetőséget.
 
 ## <a name="delete-a-similar-segment"></a>Hasonló szegmens törlése
@@ -84,6 +86,5 @@ A bináris besorolású gépi tanulási modell egy pontszámot rendel hozzá a h
 - A 0,85 – 1 között hasonlósági pontszámok az olyan ügyfelek, amelyeket a rendszer *nagyon hasonlónak* minősített
 
 A 0,4 alatti hasonlósági pontszámú ügyfelek nem szerepelnek a modell kimenetében. A rendszer ezeket nem tartja eléggé hasonlónak a forrásszegmenshez.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
