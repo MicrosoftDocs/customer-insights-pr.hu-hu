@@ -7,12 +7,12 @@ ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: fa6ea6e96de3d382c1426b383a057c8ce4f67ccf
-ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
+ms.openlocfilehash: 8fcc1c97be87afe942aa3b5e23d1eb68008aa873
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/17/2022
-ms.locfileid: "8456001"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641857"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Első lépések a Customer Insights beszerzését követően
 
@@ -34,9 +34,8 @@ Az első futtatás során kiválaszthatja a fókuszt a Customer Insights segíts
 
 1. Menjen a [Customer Insights alkalmazás URL-címére](https://home.ci.ai.dynamics.com).
 1. Bejelentkezés iskolai vagy munkahelyi fiókkal. 
-1. Elfogadja a szolgáltatási feltételeket, és beállítja a Customer Insights-példányra vonatkozó tartalombeállításokat.
-1. Adja meg, hogy a kiválasztott lehetőséghez megadott kezdőlapig erre a lehetőségre összpontosítson.
+1. Fogadja el a szolgáltatási feltételeket, és állítsa be a Customer Insights környezet tartalmi beállításait.
 
 ## <a name="create-your-own-environment"></a>Saját környezet létrehozása
 
-Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Az ilyen adatok segítségével megismerkedhet az alkalmazás funkcióival és megismerkedhet vele. A saját adatok használatához létre kell hoznia [egy környezetet](/dynamics365/customer-insights/audience-insights/create-environment).
+Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Az ilyen adatok segítségével megismerkedhet az alkalmazás funkcióival és megismerkedhet vele. A saját adatok használatához létre kell hoznia [egy környezetet](create-environment.md).

@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 9badd8370358b9f5745ba6347e8db42e89c5f3d3
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 4a269a223efa08f71db09eef2ec9a8f8a077f7a7
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229498"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641811"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Dynamics 365 Customer Insights próbaverzió GYIK
 
@@ -23,7 +23,7 @@ ms.locfileid: "8229498"
 
 Ez az alkalmazás egy felhőalapú szolgáltatás, amelyhez egy naprakész webböngészőn kívül nincs szükség speciális szoftverre, azonban érvényesek bizonyos korlátozások. A legjobb próbaidőszak érdekében ne használja inkgnito módban a próbawebhelyet, és válassza ki a önhöz legközelebbi próbahelyet. [További információ a webes alkalmazással kapcsolatos követelményekről.](/power-platform/admin/web-application-requirements)
 
-### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Hogyan iratkozhatok fel a tárgyalásra bérlő nélkül Microsoft 365?
+### <a name="how-do-i-sign-up-for-the-trial-without-a-microsoft-365-tenant"></a>Hogyan regisztrálhatok a tárgyalásra bérlő nélkül Microsoft 365?
 
 Megadhat egy nem munkahelyi e-mail címet, és létrehozunk önnek egy fiókot és bérlőt.
 
@@ -42,7 +42,7 @@ Amikor feliratkozik a próbaverzióra, egy e-mailt kap a próbaverzió adataival
 
 ### <a name="how-do-i-add-more-users-to-a-trial"></a>Hogyan lehetséges további felhasználók hozzáadása a próbaverzióhoz?
 
-Felhasználók hozzáadásához lépjen a [Microsoft 365 Felügyeleti központba](https://admin.microsoft.com) a próbaverziós rendszergazdai fiókkal. Kövesse a [felügyeleti központ útmutatását](/microsoft-365/admin/add-users/add-users), hogy további felhasználókat adjon hozzá a próbaverzió licenckorlátjáig. Ha a hozzáadni kívánt felhasználó már rendelkezik Microsoft 365 fiókkal, rendeljen hozzá megfelelő biztonsági szerepkör a próbaverziós org-ban. További információt a biztonsági szerepkör hozzárendelése felhasználóhoz című témakörben [talál](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
+Felhasználók hozzáadásához lépjen a [Microsoft 365 Felügyeleti központba](https://admin.microsoft.com) a próbaverziós rendszergazdai fiókkal. Kövesse a [felügyeleti központ útmutatását](/microsoft-365/admin/add-users/add-users), hogy további felhasználókat adjon hozzá a próbaverzió licenckorlátjáig. Ha a hozzáadni kívánt felhasználó már rendelkezik Microsoft 365 fiókkal, rendeljen hozzá egy megfelelő biztonsági szerepkör a próbaüzemben. További információt a biztonsági szerepkör hozzárendelése felhasználóhoz című témakörben [talál](/power-platform/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user).
 
 ### <a name="how-many-users-can-i-add-to-my-trial-environment"></a>Hány felhasználót lehet hozzáadni a próbakörnyezethez?
 
@@ -62,13 +62,13 @@ A próbaverziót közvetlenül az alkalmazásban is kibővítheti. A próbaverzi
 
 Általában javasoljuk, hogy a Customer Insights fizetett verziójára való frissítéskor elölről kezdje a saját adataival. 
 
-Ha csak a célközönség használja, akkor a Customer Insights megvásárlásakor másolhatja az adatokat a próbakörnyezetből. A beállítások próbaverzióból fizetett környezetbe való áttelepítéséhez a Customer Insights próbaverzió rendszergazdájának és a bérlő globális rendszergazdájának Microsoft 365, illetve a szervezet Dynamics 365 rendszergazdájának kell lennie. 
+Ha csak a Customer Insights szolgáltatást használja, akkor a Customer Insights megvásárlásakor próbakörnyezetből is másolhatja az adatait. A beállítások próbaverzióból fizetős környezetbe való áttelepítéséhez a Customer Insights-próbaverzió rendszergazdájának és a bérlő globális rendszergazdájának Microsoft 365, vagy a szervezet Dynamics 365 rendszergazdájának kell lennie. 
 
-Miután először bejelentkezett a Customer Insights fizetett példányába, a rendszer kéri, hogy hozzon létre egy új környezetet. Ebben a folyamatban megadhatja, hogy a konfigurációt egy meglévő környezetből másolja át, és a beállítások nagy részét áttelepíti. Ha rendelkezik a fenti jogosultságokkal, akkor a próbakörnyezet megjelenik ebben a listában. További információ: [Környezetkonfiguráció másolása](audience-insights/manage-environments.md#copy-the-environment-configuration).
+Miután először bejelentkezett a Customer Insights fizetett példányába, a rendszer kéri, hogy hozzon létre egy új környezetet. Ebben a folyamatban megadhatja, hogy a konfigurációt egy meglévő környezetből másolja át, és a beállítások nagy részét áttelepíti. Ha rendelkezik a fenti jogosultságokkal, akkor a próbakörnyezet megjelenik ebben a listában. További információ: [Környezetkonfiguráció másolása](manage-environments.md#copy-the-environment-configuration).
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Mik a próbaverzió korlátozásai kvótái?
 
-- A saját Azure Data Lake Storage-fiókkal nem tárolhatja a kimeneti adatokat a célközönséggel kapcsolatos információk próbaverziója során. Azonban betölthet adatokat a Data Lake tárfiókból.
+- Nem használhatja saját Azure Data Lake-tárfiókját a kimeneti adatok tárolására a Customer Insights próbaverziójában. Azonban betölthet adatokat a Data Lake tárfiókból.
 - A Customer Insights próbaverziójával maximum 3 GB- adat tárolható a Dataverse környezetben, amely automatikusan ki van építve, amikor elindítja a Customer Insights próbaverzióját.
 
 ## <a name="customer-insights-specific-questions"></a>A Customer Insights-ra vonatkozó kérdések
@@ -81,9 +81,9 @@ Miután feliratkozott a próbaverzióra, megérkezik az alkalmazás főképerny�
 
 A Customer Insights szolgáltatásainak legtöbb szolgáltatása elérhető a próbaverzióban.
 
-A következő funkciók nem érhetők **el**: 
+A következő szolgáltatások nem érhetők **el**: 
 - Nem hozhat létre olyan új környezeteket, amelyek saját Azure Data Lake Storage-fiókját használják.
-- A próbaverziós környezet nem törölhető. 
+- A próbaverzió nem törölhető. 
 
 ### <a name="how-long-does-the-trial-last"></a>Meddig tart a próbaverzió?
 
