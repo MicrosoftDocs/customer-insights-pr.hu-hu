@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: ecc8bb3dbec1d4583c4bf2a58058145343945299
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
-ms.translationtype: MT
+ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642611"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755453"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
@@ -25,7 +25,7 @@ Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások elkészít
 > [!IMPORTANT]
 > Az API-k részletes ismertetése a [Customer Insights API-k segédeletében](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) található. További információkat tartalmaznak a műveletekről, a paraméterekről és a válaszokról.
 
-Ez a cikk leírja, hogyan érheti el az Customer Insights API-kat, hozhat létre Azure-alkalmazásregisztrációt, és hogyan indíthatja el a rendelkezésre álló ügyfélkódtárakat.
+Ez a cikk bemutatja, hogyan férhet hozzá a Customer Insights API-khoz, hogyan hozhat létre Azure-alkalmazásregisztrációt, és hogyan kezdheti el az ügyféltárakat.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Ismerkedés a Customer Insights API-k kipróbálásával
 
@@ -83,13 +83,13 @@ Használhatja az alkalmazás/ügyfélazonosítót az alkalmazásregisztrációho
 
 Az MSAL-lel kapcsolatos további információkért tekintse át a [Microsoft hitelesítési függvénytár (MSAL) áttekintése](/azure/active-directory/develop/msal-overview).
 
-Az Azure-ban történő alkalmazásregisztrációval kapcsolatos további információkért lásd [Alkalmazás regisztrálása](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+Az Azure-ban történő alkalmazásregisztrációval kapcsolatos további információkért lásd [Alkalmazás regisztrálása](/graph/auth-register-app-v2).
 
 Az API-k ügyfélkódtárainkban való használatával kapcsolatos információkért lásd: [Customer Insights ügyfélkódtárak](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Kiszolgálók közötti alkalmazásengedélyek
 
-Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-the-azure-portal) ismerteti, hogyan lehet olyan alkalmazást regisztrálni, amelyhez a felhasználónak be kell jelentkeznie a hitelesítéshez. Megismerheti, hogyan hozhat létre olyan alkalmazásregisztrációt, amelyhez nincs szükség felhasználói beavatkozásra, és futtatható kiszolgálón is.
+Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-the-azure-portal) ismerteti, hogyan lehet olyan alkalmazást regisztrálni, amelyhez a felhasználónak be kell jelentkeznie a hitelesítéshez. További információ arról, hogyan hozhat létre olyan alkalmazásregisztrációt, amely nem igényel felhasználói beavatkozást, és amely kiszolgálón futtatható.
 
 1. Az Azure portál alkalmazásregisztrációja után nyissa meg az **API-engedélyeket**.
 
@@ -112,6 +112,10 @@ Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-
    Nyissa meg a Customer Insights szolgáltatást **Rendszergazda** > **Engedélyek** pontra, és válassza a **Felhasználó hozzáadása**.
 
 1. Keresse meg az alkalmazásregisztrációjának nevét, jelölje ki a keresési eredmények között, és válassza a **Mentés** lehetőséget.
+
+## <a name="sample-queries"></a>Mintalekérdezések
+
+Összeállítottunk egy rövid listát az OData mintalekérdezésekről, hogy együtt dolgozhassunk az API-kkal: [OData lekérdezési példák](odata-examples.md).
 
 ## <a name="customer-insights-client-libraries"></a>Customer Insights ügyféloldali tárak
 
@@ -137,7 +141,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
 
 1. Használja a [Microsoft hitelesítési függvénytárat (MSAL)](/azure/active-directory/develop/msal-overview), és használja a `AccessToken` meglévő [Azure alkalmazásregisztrációt](#create-a-new-app-registration-in-the-azure-portal).
 
-1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt`HttpClient`, amelynek további **DefaultRequestHeaders "Engedélyezés"** értéke Bearer "hozzáférési token"**és** Ocp-Apim-Subscription-Key **értékre van állítva** az előfizetési kulcsra [**állítva a** Customer Insights környezetből](#get-started-trying-the-customer-insights-apis).   
+1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt, amelynek `HttpClient` defaultRequestHeaders "Engedélyezés"**értéke Bearer "hozzáférési token"** és **Ocp-Apim-Subscription-Key** értékre van állítva **az előfizetési kulcsra** állítva a [**Customer Insights környezetből**.](#get-started-trying-the-customer-insights-apis)   
  
    Szükség esetén állítsa vissza az **Engedélyezés** fejlécet. Ha például a token lejárt.
 
@@ -147,7 +151,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
 
 1. Indítson hívást a klienssel a „bővítmény módszerekhez”, például `GetAllInstancesAsync`. Ha az alapul szolgáló `Microsoft.Rest.HttpOperationResponse` elem elérését részesíti előnyben, használja a "http-üzenetek módszereit", például `GetAllInstancesWithHttpMessagesAsync`.
 
-1. A válasz valószínűleg `object` típusú lesz, mert a módszer többféle típust képes visszaadni (például `IList<InstanceInfo>` és `ApiErrorResult`). A visszatérési típus ellenőrzéséhez biztonságosan konvertálhatja az objektumokat az adott művelet [API-részletek lapján](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) megadott választípusokká.    
+1. A válasz valószínűleg `object` típusú lesz, mert a módszer többféle típust képes visszaadni (például `IList<InstanceInfo>` és `ApiErrorResult`). A visszatérés típusának ellenőrzéséhez az adott művelet API-részletek lapján [megadott](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) választípusok objektumait kell használnia.    
    
    Ha a kérésre vonatkozóan további információra van szükség, akkor a **http-üzenetek módszereit** használhatja a nyers válasz objektum eléréséhez.
 

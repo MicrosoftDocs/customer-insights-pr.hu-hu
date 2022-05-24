@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6a1c3791076a7dda4531664ca88632f7f1b914e3
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642471"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755357"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Ügyfélprofilok bővítése az Azure Maps segítségével (előzetes verzió)
 
@@ -51,7 +51,7 @@ Az Azure Maps adatbővítésének konfigurálása érdekében teljesülnie kell 
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
-1. Döntse el, hogy módosítani szeretné-e a **Speciális beállításokat**. Ezek maximális rugalmasságot biztosítanak a speciális esetek kezeléshez, de a legtöbb esetben az alapértelmezett értékek megfelelőek lesznek:
+1. Döntse el, hogy módosítani szeretné-e a **Speciális beállításokat**. Ezek a beállítások maximális rugalmasságot biztosítanak a speciális használati esetek kezeléséhez, de az alapértelmezett értékek a legtöbb esetben megfelelőek lesznek:
    - **Címek típusa**: Az alapértelmezett viselkedés az, hogy a gyarapítás akkor is a legjobb címet adja vissza, ha nem teljes. Ha például csak a teljes címeket szeretne kapni &mdash; tehát házszámot is tartalma címeket &mdash; törölje az összes jelölőnégyzet jelölését a **Pontcímek** kivételével. 
    - **Nyelv**: A rendszer alapértelmezés szerint annak a régiónak a nyelvén ad eredményül címeket, amelyhez a cím hozzá van tartozik. Ha egységesített címnyelvet kell használnia, válassza ki a nyelvet a legördülő menüből. Ha például az **angolt** választja, a **Copenhagen, Denmark** érték lesz visszaküldve a **København, Danmark** helyett.
 
@@ -89,7 +89,7 @@ Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekin
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
-Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az adatokat Azure Maps-be, engedélyezed az adatátvitelt a megfelelőséghatáron kívülre a Dynamics 365 Customer Insights -nak, beleértve az esetlegesen bizalmas adatokat, például személyes adatokat. A Microsoft az Ön utasítására továbbítja az ilyen adatokat, de Ön felelős annak biztosításáért, hogy az Azure Maps megfeleljen az esetleges adatvédelmi és biztonsági kötelezettségeknek. További tájékoztatásért menjen a [Microsoft adatvédelmi nyilatkozatára](https://go.microsoft.com/fwlink/?linkid=396732).
+Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az adatokat Azure Maps-be, engedélyezed az adatátvitelt a megfelelőséghatáron kívülre a Dynamics 365 Customer Insights -nak, beleértve az esetlegesen bizalmas adatokat, például személyes adatokat. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy az Azure Maps megfeleljen az Esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További tájékoztatásért menjen a [Microsoft adatvédelmi nyilatkozatára](https://go.microsoft.com/fwlink/?linkid=396732).
 A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

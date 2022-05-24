@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: fcdb7f073ff73322ff69d0a8684391819a809d00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
-ms.translationtype: MT
+ms.openlocfilehash: 599cbaf4e19c3a7331e92bfc54c701fefe6c69b3
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642787"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741044"
 ---
 # <a name="manage-environments"></a>Környezetek kezelése
 
@@ -113,7 +113,7 @@ Környezethez Dataverse való csatlakozáskor a hibaüzenet **: Ez a CDS-szervez
 VAGY 
 
 1. Nyissa meg a Dataverse környezetet.
-1. Nyissa meg a **Speciális beállítások-szolgáltatásokat** > **·**.
+1. Nyissa meg a **Speciális beállítások** > **megoldásait**.
 1. Távolítsa el a **CustomerInsightsCustomerCard** megoldást.
 
 ## <a name="copy-the-environment-configuration"></a>Másolja a környezet konfigurációját
@@ -127,7 +127,7 @@ A szervezetében összes elérhető környezet listáját látja, amelyekből ad
 A következő konfigurációbeállítások vannak másolva:
 
 - Betöltött/importált adatforrások
-- Adategységesítési (Megfeleltetés/Egyeztetés/Egyesítés) konfiguráció
+- Adategyesítési konfiguráció
 - Szegmensek
 - Mértékek
 - Kapcsolatok
@@ -158,7 +158,7 @@ Az adatforrások frissítését követően nyissa meg az **Adatok** > **Egyesít
 
 Amikor az adatok egyesítése befejeződött, nyissa meg a **Mértékek** és a **Szegmensek** lehetőséget, hogy azokat is frissítse.
 
-Az exportálások és a gazdagítások újraaktiválása előtt nyissa meg az **AdminConnections** > **webhelyet** az új környezetben lévő kapcsolatok újbóli hitelesítéséhez.
+Az exportálások és a gazdagítások újraaktiválása előtt nyissa meg a **Felügyeleti** > **kapcsolatok lehetőséget** az új környezetben lévő kapcsolatok újbóli hitelesítéséhez.
 
 ## <a name="change-the-owner-of-an-environment"></a>Környezet tulajdonosának megváltoztatása
 

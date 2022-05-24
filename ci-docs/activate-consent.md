@@ -1,23 +1,22 @@
 ---
 title: Szegmensek hozzájárulási szabályainak aktiválása
 description: Kövesse az alábbi lépéseket a hozzájárulási adatok összekapcsolásához és a hozzájárulási ellenőrzések aktiválásához a alkalmazásban Dynamics 365 Customer Insights. A rendszergazda letilthatja a beleegyezési ellenőrzéseket is.
-ms.date: 11/12/2021
-ms.subservice: audience-insights
+ms.date: 04/27/2022
 ms.topic: how-to
-author: smithy7
-ms.author: smithc
+author: anubhav-t
+ms.author: antando
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: bfa03f4b7b56b300a74ebd04721cd64b893879f1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f82e3a4031fee8bcaa88575cbd68b37385a7fffb
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642528"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755173"
 ---
 # <a name="activate-consent-rules"></a>Hozzájárulási szabályok aktiválása
 
-A [Hozzájárulási Központ (előzetes verzió)](consent-management/overview.md) segít a különböző forrásokból származó hozzájárulási adatok összehangolásában. Az egyesített *hozzájárulás entitással* alapértelmezett hozzájárulás-ellenőrzéseket alkalmazhat. Miután a hozzájárulási adatokat importálta a Hozzájárulási Központba, és konfigurálta az adatokra vonatkozó szabályokat, a Hozzájárulás *entitás automatikusan szinkronizálódik a* következővel:Dynamics 365 Customer Insights.
+A [Hozzájárulási Központ (előzetes verzió)](consent-management/overview.md) segít a különböző forrásokból származó hozzájárulási adatok összehangolásában. Az egyesített *hozzájárulás entitással* alapértelmezett hozzájárulás-ellenőrzéseket alkalmazhat. A hozzájárulási adatok importálása és a térképszabályok konfigurálása után a Rendszer automatikusan szinkronizálja a *Hozzájárulás* entitást a programmal Dynamics 365 Customer Insights.
 
 ## <a name="enable-consent-checks"></a>Hozzájárulás-ellenőrzések engedélyezése
 

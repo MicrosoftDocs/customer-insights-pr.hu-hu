@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 42095f369c47553e5ddf5fada54e559202c943a9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3d573a6c83b7f0b0c33e656eb383e20a96856b0b
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642701"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757389"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Exportálja a szegmenslistát és az egyéb adatokat az Azure Blob Storage-ba (előzetes verzió)
 
@@ -44,7 +44,7 @@ A Customer Insights-adatokat a Blob Storage-ban tárolhatja, vagy segítségéve
 Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
 
 > [!IMPORTANT]
-> Ha bekapcsolta az Azure Blob Storage-fiók ideiglenes törlési beállítását, az exportálás sikertelen lesz. Kikapcsolhatja az ideiglenes törlést, ha adatokat szeretne a blobokba exportálni. További információ: [Blob ideiglenes törlésének engedélyezése](/azure/storage/blobs/soft-delete-blob-enable.md)
+> Ha bekapcsolta az Azure Blob Storage-fiók ideiglenes törlési beállítását, az exportálás sikertelen lesz. Kikapcsolhatja az ideiglenes törlést, ha adatokat szeretne a blobokba exportálni. További információ: [Blob ideiglenes törlésének engedélyezése](/azure/storage/blobs/soft-delete-blob-enable)
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 

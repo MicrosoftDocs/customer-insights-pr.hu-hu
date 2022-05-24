@@ -1,110 +1,83 @@
 ---
-title: Entitások és attribútumok leképezése az adategyesítéshez
-description: Válassza ki azokat az entitásokat, attribútumokat, elsődleges kulcsokat és szemantikus típusokat, amelyek az adatokat az egységes ügyfélprofilhoz leképezik.
-ms.date: 10/18/2020
+title: Forrásmezők kiválasztása adategyesítéshez
+description: Az egyesítési folyamat első lépése az entitások, attribútumok, elsődleges kulcsok és szemantikai típusok kiválasztása az adatok egységes ügyfélprofilhoz való hozzárendeléséhez.
+recommendations: false
+ms.date: 04/22/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: v-wendysmith
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: bebc600e91db471c3cd50eccb5e42be309ff09c9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a962f1353b6e25b40c60b39a81ac936873f34d92
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642558"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740998"
 ---
-# <a name="map-entities-and-attributes"></a>Entitások és attribútumok leképezése
+# <a name="select-source-fields-for-data-unification"></a>Forrásmezők kiválasztása adategyesítéshez
 
-**A térkép** az adategyesítési folyamat első szakasza. A leképezés három fázisból áll:
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-- *Entitás kiválasztása*: Azonosítsa azokat az kombinálható-entitásokat, amelyek egy adatkészlethez vezetnek, amely az ügyfelekkel kapcsolatos bővebb információkat tartalmaznak.
-- *Attribútumok kijelölése*: Az egyes entitások esetében azonosítsa az összekapcsolni és összeegyeztetni kívánt oszlopokat a *egyeztetési* és *egyesítési* fázisokban. Ezeket az oszlopokat *Attribútumoknak* nevezik.
-- *Elsődleges kulcs és szemantikai típus kijelölése*: Minden egyes entitásnál azonosítson egy attribútumot, amelyet az adott entitás elsődleges kulcsaként szeretne definiálni, és minden attribútumnál azonosítson egy olyan szemantikai típust, amely a legjobban leírja az adott attribútumot.
+Az egyesítés első lépése az egyesítendő adatkészletek azon entitásainak és mezőinek kijelölése, amelyeket egyesíteni szeretne. Válasszon olyan entitásokat, amelyek ügyféllel kapcsolatos adatokat tartalmaznak, például nevet, címet, telefonszámot és e-maileket. Kiválaszthat egy vagy több entitást.
 
-Az Adategyesítés általános folyamatáról az [Egységesítés](data-unification.md) című rész tartalmaz további tudnivalókat.
+## <a name="select-entities-and-fields"></a>Entitások és mezők kiválasztása
 
-## <a name="select-the-first-entities"></a>Jelölje ki az első entitásokat
+1. Nyissa meg az **Adatok** > **egyesítését**.
 
-1. Nyissa meg az **Adatok** > **Egységesítés** > **Megfeleltetés**-t.
+   :::image type="content" source="media/m3_unify_land.png" alt-text="Képernyőkép a céloldal egyesítéséről az első futtatási élményhez az Első lépések kiemelve funkcióval.":::
 
-2. Az **Entitások kiválasztása** lehetőség választásával indítsa el a leképezési fázist.
+1. Válassza az **Első lépések** lehetőséget.
 
-3. Válassza ki a használni kívánt entitásokat és attribútumokat az *egyeztetés* és *egyesítés* fázisokban. A kötelező attribútumokat egyenként is kijelölheti egy entitásból, illetve az összes attribútumot szerepeltetheti egy entitásban, ha bejelöli az **Összes mező belefoglalása** jelölőnégyzetet az entitás szintjén. Javasoljuk, hogy legalább két entitást válasszon az adategyesítési folyamat előnyeinek kiaknázásához.
+1. A Forrás mezők **lapon válassza az** Entitások és mezők kijelölése **lehetőséget**. Megjelenik az **Entitások és mezők** kijelölése ablaktábla.
 
-   > [!div class="mx-imgBorder"]
-   > ![Példa entitások hozzáadására.](media/data-manager-configure-map-add-entities-example.png "Példa entitások hozzáadására")
+1. Jelöljön ki legalább egy entitást.
 
-   Ebben a példában az **eCommerceContacts** és az **loyCustomers** entitásokat adjuk hozzá. Ezen entitások kiválasztásával betekintést nyerhet, hogy mely online üzleti ügyfelek tagjai a törzsvásárlói programnak.
-   
-   A kulcsszavakkal az összes attribútum és entitás közül keresheti ki a leképezni kívánt szükséges attribútumokat.
-   
-     > [!div class="mx-imgBorder"]
-   > ![Példa keresési mezőkre.](media/data-manager-configure-map-search-fields-example.png "Példa keresési mezőkre")
+1. Minden kijelölt entitásnál azonosítsa azokat a mezőket, amelyeket az egyesített profilba felvenni kívánt vevői bejegyzések és mezők egyeztetésére kíván használni. Ezeket a mezőket attribútumoknak *nevezzük*. A szükséges attribútumokat külön-külön is kiválaszthatja egy entitásból, vagy felveheti az entitás összes attribútumát, ha bejelöli az entitásszinten jelölőnégyzetet. A kulcsszavakkal az összes attribútum és entitás közül keresheti ki a leképezni kívánt szükséges attribútumokat.
 
-4. Válassza az **Alkalmaz** lehetőséget a kijelölések jóváhagyásához.
+   :::image type="content" source="media/m3_select_entities.png" alt-text="Képernyőkép a kijelölt entitásokról és attribútumokról.":::
+
+   Ebben a példában a Névjegyalbum **és** a **CustomerLoyalty** entitásokat adjuk hozzá. Ezen entitások kiválasztásával betekintést nyerhet, hogy mely online üzleti ügyfelek tagjai a törzsvásárlói programnak.
+
+1. Válassza az **Alkalmaz** lehetőséget a kijelölések jóváhagyásához. A kijelölt entitások és attribútumok megjelennek.
 
 ## <a name="select-primary-key-and-semantic-type-for-attributes"></a>Az elsődleges kulcs és a szemantikai típus kiválasztása az attribútumokhoz
 
-Az entitások kijelölése után a **Leképezés** lap megjeleníti a kijelölt entitásokat az ellenőrzéshez. Határozza meg egy entitás elsődleges kulcsát, és azonosítsa az entitáshoz tartozó attribútumok szemantikai típusát.
+   :::image type="content" source="media/m3_select_primary.png" alt-text="Képernyőkép a kijelölt entitásokról, amelyek elsődleges kulcsa nincs kijelölve." lightbox="media/m3_select_primary.png":::
 
-- **Elsődleges kulcs**:Az egyes entitások esetében jelöljön ki egy attribútumot elsődleges kulcsként. Ahhoz, hogy egy attribútum érvényes elsődleges kulcs legyen, az ne tartalmazzon ismétlődő értékeket, a hiányzó értékeket vagy a null értékeket. A karakterlánc, egész szám és a GUID-adattípus attribútumait elsődleges kulcsként támogatja a rendszer, és megjelenik abban a mezőben, amelyből választhat.
+Minden entitás esetében hajtsa végre a következő lépéseket.
 
-- **Attribútum szemantikai típusa**: Az attribútumai kategóriái, például e-mail cím vagy név. Ha AI modelleket szeretne használni a szemantika intelligens előrejelzéséhoz, időt takaríthat meg, és javíthatja a pontosságot, beállíthatja az **intelligens leképezés** értékét **BE** értékre. Az intelligens leképezés kiemeli az AI-alapú szemantikai ajánlást a **típus** mezőben. Ha a beállítás értéke **KI**, akkor rendszeres leképezési javaslatokat lát majd. A választható lehetőségek listájából tetszőleges szemantikai típust választhat, és felülbírálhatja a javasolt kijelölést.
+1. Válassza ki az **Elsődleges kulcsot**. Az elsődleges kulcs az entitásra jellemző attribútum. Ahhoz, hogy egy attribútum érvényes elsődleges kulcs legyen, az ne tartalmazzon ismétlődő értékeket, a hiányzó értékeket vagy a null értékeket. A karakterlánc-, egész- és GUID adattípus-attribútumok elsődleges kulcsként támogatottak.
 
-> [!div class="mx-imgBorder"]
-> ![az attribútum típusa és a szemantikai előrejelzés.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Az attribútum típusa és a szemantikai előrejelzés")
+1. Ha mesterségesintelligencia-modelleket szeretne használni a szemantika intelligens előrejelzés, időt takaríthat meg és javíthatja a pontosságot, győződjön meg arról, hogy **az intelligens térképezés** be van kapcsolva. Az intelligens leképezés kiemeli az AI-alapú szemantikai ajánlást a **típus** mezőben. A javasolt kijelölést úgy bírálhatja felül, hogy a rendelkezésre álló beállítások listájából bármilyen szemantikai típust kiválaszt.
 
-Az egyéni szemantikus típus hozzáadása is lehetséges. Válassza ki egy attribútum típus mezőjét, majd írja be a szemantikus attribútum-típus nevét. Így a rendszer által automatikusan azonosított attribútum-típusokat is módosíthatja.
+1. Minden attribútumhoz válasszon egy szemantikai **típust**, amely a legjobban leírja az adott attribútumot, például nevet, várost vagy e-mail címet.
 
-Minden attribútum, amelyhez a rendszer automatikusan azonosít egy szemantikai típust a **Leképezett mezők áttekintése** szakaszban van csoportosítva. Tekintse át ezeket az attribútumokat és a szemantikai típusokat, mivel ezek lesznek az adategyesítési lépésben az entitások egyesítésére használva.
+   > [!NOTE]
+   > Az egyik mezőnek a Person.FullName *szemantikai típusra* kell leképeznie a vevő nevét a vevő kartonon való feltöltéséhez. Ellenkező esetben az ügyfélkártyák neve nem lesz látható.
 
-A szemantikai típusokhoz automatikusan nem leképezett attribútumok az **Adatok definiálása a nem leképezett mezőkben** szakaszban vannak összegyűjtve. Jelölje ki a nem leképezett attribútumok szemantikai típus mezőjét, vagy írja be az egyéni attribútumtípus nevét.
+   1. A rendszer által azonosított attribútumtípus módosításához válasszon másik típust. Ha a típus nem létezik, hozzon létre egyéni szemantikai típust az **attribútum Típus** mezőjének kiválasztásával és az egyéni szemantikai típus nevének megadásával.
 
-> [!div class="mx-imgBorder"]
-> ![Elsődleges kulcs és attribútum típusa.](media/data-manager-configure-map-add-attributes.png "Elsődleges kulcs és attribútum típusa")
+   1. Ha URL-címet tartalmazó attribútumot szeretne hozzáadni a nyilvánosan elérhető profilképekhez vagy emblémákhoz, jelölje ki az URL-címet tartalmazó entitást és mezőt. **A Típus** mezőbe írja be a következőket:
+      - Személy számára: Person.ProfileImage
+      - Szervezet esetén: Organization.LogoImage
 
-> [!NOTE]
-> Egy mezőnek a szemantika Person.FullName típushoz kell lennie leképezve, hogy fel legyen töltve az ügyfél neve az ügyfélkártyában. Ellenkező esetben az ügyfélkártyák neve nem lesz látható. 
+   1. Fióknév-attribútum esetén írja be a "Organization.Name" szót a **Típus** mezőbe.
 
-## <a name="add-and-remove-attributes-and-entities"></a>Attribútumok és entitások hozzáadása és eltávolítása
+1. Tekintse át azokat az attribútumokat, amelyekben a szemantikai típust automatikusan azonosítják. Ezek az attribútumok a Leképezett mezők **áttekintése csoportban** találhatók. Az Egységes vevőmezők **lépésben** csak azonos típusú attribútumok kombinálhatók. A szemantikai típusok automatikusan elemzéseket javasolnak. Győződjön meg arról, hogy a kiválasztott típusok konzisztensek az összes kijelölt entitás között.
 
-1. Az **Egyesítés** > **Leképezés** alatt válassza a **Mezők szerkesztése** lehetőséget.
+1. Olyan attribútumok esetén, amelyek nincsenek automatikusan szemantikai típushoz rendelve, jelöljön ki egy szemantikai típusmezőt, írja be az egyéni attribútumtípus nevét, vagy hagyja őket leképezetlenül. Ezek az attribútumok a Leképezetlen mezők **adatainak definiálása csoportban** találhatók.
 
-2. Adja hozzá vagy távolítsa el az attribútumokat és entitásokat a **Mezők szerkesztése** ablaktáblában. A keresés vagy a görgetés segítségével keresse meg és jelölje ki az érintett attribútumokat és entitásokat. Az attribútumok és entitások nem távolíthatók el, ha már egyeztetve lettek.
+1. Az egyes entitások lépéseinek végrehajtása után válassza a Forrásmezők **mentése lehetőséget**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Entitások hozzáadása vagy eltávolítása.](media/configure-data-map-edit.png "Entitások hozzáadása vagy eltávolítása")
+1. Válassza a **Következő** lehetőséget.
 
-3. Válassza az **Alkalmaz** lehetőséget.
-
-## <a name="add-images-to-profiles"></a>Képek hozzáadása profilokhoz
-
-Ha egy entitás a nyilvánosan elérhető profilhoz tartozó képekhez vagy emblémához URL-címeket tartalmaz, azokat felveheti az egyesített felhasználói profilba.
-
-Jelölje ki az entitást, és keresse meg azt a mezőt, amely a profilkép URL-címét tartalmazza. A **Típus** beviteli mezőben adja meg manuálisan a következő értéket: 
-- Személy számára: Person.ProfileImage
-- Szervezet esetén: Organization.LogoImage
-
-Folytassa az egyesítési lépéseket, és gondoskodjon róla, hogy a kép URL-címét tartalmazó attribútumot is hozzáadja az [Egyesítés](merge-entities.md) lépéshez.
-
-## <a name="set-attributes-for-organizations"></a>Attribútumok beállítása szervezetekhez
-
-A szervezetek (előnézet) esetében az attribútum típusát le kell képezni az "Organization.Name" értékhez
-> [!div class="mx-imgBorder"]
-> ![Elsődleges kulcs és B-to-B típusú attribútum.](media/configure-data-map-edit-b2b.png "Elsődleges kulcs és üzleti számlák (B-to-B) típusú attribútum")
-
-## <a name="next-step"></a>Következő lépés
-
-Az adategyesítési folyamat részeként nyissa meg az **Egyeztetés** oldalt. Tekintse meg az [**Egyeztetés**](match-entities.md) szakaszt, ha többet szeretne megtudni erről a fázisról.
-
-> [!TIP]
-> Tekintse meg a következő videótL [Első lépések: Egyesített ügyfél profillétrehozása](https://youtu.be/oBfGEhucAxs).
-
+> [!div class="nextstepaction"]
+> [Következő lépés: Duplikátumok eltávolítása](remove-duplicates.md)
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

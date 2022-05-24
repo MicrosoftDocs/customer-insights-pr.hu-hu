@@ -1,19 +1,19 @@
 ---
 title: Új és jövőbeni funkciók
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 04/05/2022
+ms.date: 05/03/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 25c6e2897d836854408871b2c74afa16ecba7435
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
-ms.translationtype: HT
+ms.openlocfilehash: 386198c838929a20e136288fffb1015707654d8d
+ms.sourcegitcommit: 9f256af5c4f7e99305bf09087f7ec05eebeae6a0
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642828"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "8700940"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -24,6 +24,28 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+
+## <a name="april-2022-updates"></a>2022. áprilisi frissítések
+
+A 2022. áprilisi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="dun--bradstreet-enrichment-preview"></a>Dun & Bradstreet gazdagodás (Előzetes verzió)
+
+A Dun & Bradstreet kereskedelmi adatokat, elemzéseket és betekintést nyújt a vállalkozások számára. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A gazdagodás olyan attribútumokat tartalmaz, mint a DUNS-szám, a vállalat mérete, a hely, az ipar és így tovább.
+
+További információt a Vállalati profilok gazdagítása a Dun & Bradstreettel (Preview) című témakörben [talál](enrichment-dnb.md).
+
+### <a name="define-the-measure-type-when-creating-a-new-measure"></a>A mértéktípus meghatározása új mérték létrehozásakor
+
+Mostantól különbséget tehet az egyes profilokra és az egész vállalkozásra vonatkozó intézkedések között. Míg az üzleti intézkedések az Ügyfélelemzések kezdőlapján jelennek meg, az ügyfélintézkedések a részletes ügyfélnézeteken jelennek meg.
+
+További információt a Mértékszerkesztő használata mértékszerkesztő használata a nulláról történő létrehozáshoz című témakörben [talál](measure-builder.md).
+
+### <a name="consolidation-of-customer-insights-documentation"></a>A Customer Insights dokumentációjának összesítése
+
+Újra megvizsgáltuk dokumentációs cikkeinket, és eltávolítottuk az elkötelezettségi betekintések és a célközönség elemzési képességek említését. A továbbiakban következetesen hivatkozunk a Customer Insights terméknévre, amikor az alkalmazás alapvető jellemzőiről írunk. Ez a változás a tartalomjegyzék, az URL-struktúra és a fájl elérési útjainak jelentős átszervezéséhez is vezet az alapul szolgáló dokumentációs adattárban. Az összes könyvjelző vagy meglévő hivatkozás továbbra is működik, és átirányítja a frissített URL-címekre.
+
+Ha tudatni szeretné velünk, hogyan érzékeli ezt a változást, vagy észrevesz valamit, ami nem a várt módon működik, mondja el nekünk [visszajelzést küldve erre az oldalra](https://github.com/MicrosoftDocs/customer-insights/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Version%20Independent%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Content%3A%20%5BNew%20and%20upcoming%20features%20-%20Dynamics%20365%20Customer%20Insights%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdynamics365%2Fcustomer-insights%2Fwhats-new-customer-insights)%0A*%20Content%20Source%3A%20%5Bci-docs%2Fwhats-new-customer-insights.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fcustomer-insights%2Fblob%2Fmain%2Fci-docs%2Fwhats-new-customer-insights.md)%0A*%20Service%3A%20**customer-insights**%0A*%20Sub-service%3A%20**audience-insights**%0A*%20GitHub%20Login%3A%20%40m-hartmann%0A*%20Microsoft%20Alias%3A%20**mhart**).
 
 ## <a name="march-2022-updates"></a>2022 márciusi frissítések
 
@@ -38,7 +60,7 @@ További információt az Ügyfélprofilok bővítése a LiveRamp (Preview) azon
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Szegmensek és mértékek rendszerezése címkékkel és szűrőkkel
 Ha a szervezet sok szegmenst vagy intézkedést tart fenn, a megfelelő megtalálása néha kihívást jelenthet. Ez az új funkció lehetővé teszi listák szervezését címkék és oszlopok használatával. Segít gyorsan és egyszerűen megtalálni az adatokat, és testreszabhatja a nézeteket.
 
-További információt a Címkék és oszlopok használata című témakörben [talál](work-with-tags-columns.md).
+További információt a Címkék és oszlopok [használata című témakörben talál](work-with-tags-columns.md).
 
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Adatmegosztás Dataverse engedélyezése saját tárfiók használatakor
 
@@ -101,7 +123,7 @@ További információt a Környezet [tulajdonosának módosítása című témak
 
 Az adatelőkészítés most megmutatja a sérült adatokat tartalmazó összes mező sérülésének okát. Az információkat az egyes nyilvántartási szinten adják meg a könnyű azonosítás érdekében. 
 
-További információt a Sérült adatforrások [című témakörben talál](entities.md#corrupted-data-sources).
+További információt a Sérült adatforrások című témakörben [talál](entities.md#corrupted-data-sources).
 
 ### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Előzetes verzió vége az elkötelezettségelemzési képesség jelentési funkcióinak jelentéséhez
 
@@ -127,7 +149,7 @@ A 2022. januári frissítések új funkciókat, teljesítményfrissítéseket é
 
 A Customer Insights egy új, AI-alapú funkciót kínál az ügyfelek hangulatának szintetizálásához és a konkrét üzleti szempontok azonosításához, mint a célzott fejlesztések lehetőségeihez. Az ügyfelek írásbeli visszajelzéseinek elemzésével pontos betekintést kaphat alacsony költséggel. A natural language processing (NLP) modellek által működtetett hangulatelemzés, amely minden ügyfélazonosítóhoz két származtatott betekintést hoz létre. Hangulati pontszám (-5-től 5-ig) és az alkalmazandó üzleti szempontok listája. 
 
-További információt az Érzelmek elemzése az ügyfél visszajelzéseiben (Előnézet) című [témakörben talál](sentiment-analysis.md).
+További információt az Érzelmek elemzése az ügyfelek visszajelzéseiben (Előnézet) című témakörben [talál](sentiment-analysis.md).
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

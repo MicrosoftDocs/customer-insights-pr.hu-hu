@@ -1,7 +1,7 @@
 ---
 title: Termékjavaslat-előrejelzés mintaútmutató
 description: Használja ezt a mintamutatót, hogy kipróbálja a termékjavaslat előrejelzési modellt.
-ms.date: 02/10/2021
+ms.date: 05/16/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 1115bab13bdca4a308a8d9eb5a1dc270801d16be
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642772"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762689"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Termékjavaslat-előrejelzés mintaútmutató
 
@@ -40,7 +40,7 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 1. Hozzon létre egy adatforrást, elnevezve **eCommerce**-nek, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
 
-1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscontacts.
+1. Adja meg az e-kereskedelmi partnerek URL-címét: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
 
 1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
 
@@ -50,15 +50,15 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="A születési dátum átalakítása dátummá.":::
 
-5. A jobb oldali panelben a "Név" mezőben nevezze át az adatforrását a **Lekérdezés**-ről **eCommerceContacts**-ra.
+1. A jobb oldali panelben a "Név" mezőben nevezze át az adatforrását a **Lekérdezés**-ről **eCommerceContacts**-ra.
 
-6. **Mentse** az adatforrást.
+1. **Mentse** az adatforrást.
 
 ### <a name="ingest-online-purchase-data"></a>Online vásárlási adatok betáplálása.
 
 1. Adjon hozzá egy újabb adatforrást a megegyező **eCommerce** adatforráshoz. Válassza a **Text/CSV** csatlakozót újra.
 
-1. Adja meg az URL-címét az **Online vásárlas** adataihoz https://aka.ms/ciadclassonline.
+1. Adja meg az online vásárlások **adatainak URL-címét**[https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
 
 1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
 
@@ -70,12 +70,11 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 1. **Mentse** az adatforrást.
 
-
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Ügyféladatok bevitele a hűségsémából
 
 1. Hozzon létre egy adatforrást, melynek neve **LoyaltyScheme**, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
 
-1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscustomerloyalty.
+1. Adja meg az e-kereskedelmi partnerek URL-címét [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
 
 1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
 
@@ -90,64 +89,11 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
-Az adatok betöltése után most elkezdjük az adategyesítési folyamatot, hogy egységes ügyfélprofilt hozzunk létre. További információkért lásd: [Adatok egységesítése](data-unification.md).
-
-### <a name="map"></a>Map
-
-1. Az adatok betáplálása után képezze le a kapcsolattartókat az eCommerce-ből és a Loyalty data-ból a közös adattípusokba. Nyissa meg az **Adatok** > **Egységesítés** > **Megfeleltetés**-t.
-
-2. Válassza ki az entitást, amely jelképezi az ügyfélprofilt – **eCommerceContacts** és **loyCustomers**.
-
-   ![az ecommerce és a loyality adatforrások egységesítése.](media/unify-ecommerce-loyalty.png)
-
-3. Jelölje ki a **ContactId**-t elsődleges kulcsaként az **eCommerceContacts**-hoz és a **LoyaltyID** a **loyCustomers** elsődleges kulcsaként.
-
-   ![A LoyaltyId egyesítheti elsődleges kulcsként.](media/unify-loyaltyid.png)
-
-### <a name="match"></a>Egyeztetés
-
-1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
-
-2. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
-
-3. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
-
-   ![Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.](media/unify-match-order.png)
-
-4. Válassza az **Új szabály létrehozása** menüpontot
-
-5. Adja hozzá az első feltételt a FullName segítségével.
-
-   - Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   - A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   - Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
-   - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-6. Adja meg a nevét **FullName, Email**, az új szabályhoz.
-
-   - Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   - Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
-   - Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben.
-   - Hagyja üresen a Normalizálást.
-   - Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-   ![Egységesítése az egyezési szabályt a névhez és az e-mailhez.](media/unify-match-rule.png)
-
-7. Válassza a **Mentés** és **Futtatás** lehetőséget.
-
-### <a name="merge"></a>Összefűzés
-
-1. Nyissa meg az **Egyesítés** lapot.
-
-1. A **ContactId** **loyCustomers** entitáshoz változtassa meg a megjelenítendő nevet **ContactIdLOYALTY**-ra, hogy megkülönböztethesse azt a többi betáplált azonosítóval.
-
-   ![nevezze át a loyalty azonosítót contactid-re.](media/unify-merge-contactid.png)
-
-1. Válassza a **Mentés** és **Futtatás** lehetőséget, hogy elindítsa a Egyesítés Folyamatot.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-product-recommendation-prediction"></a>3. feladat – Termékjavaslat előrejelzés létrehozása
 
-Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk.
+Az egységes ügyfélprofilok megléte mellett most már futtathatjuk a termékajánlási előrejelzés.
 
 1. Válassza az **Információk** > **Előrejelzés** helyre, és válassza a **Termékjavaslat** lehetőséget.
 
@@ -162,27 +108,36 @@ Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsol
    - **Ismétlődő vásárlások várhatóak** : Válassza az **Igen** lehetőséget annak jelzésére, hogy olyan termékeket szeretne belefoglalni az ajánlásba, amelyeket az ügyfelek korábban megvásároltak.
 
    - **Visszatekintő ablak**: Jelöljön ki legalább **365 napot**. Ez a beállítás határozza meg, hogy mennyi időre visszamenőleg vizsgálja meg a modell az ügyféltevékenységét, amelyet felhasznál a javaslataihoz.
-   
+
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modellbeállítások a termékjavaslati modellhez.":::
 
-1. Válassza ki a **Szükséges adatok** menüt, és ott válassza az **Adatok hozzáadása** lehetőséget a vásárlási előzményekhez.
+1. **A Szükséges adatok** hozzáadása lépésben válassza az Adatok **hozzáadása lehetőséget**.
 
-1. Adja hozzá a **eCommercePurchases: eCommerce** entitást és képezze le a mezőket az eCommerce-ről a megfelelő mezőkre, melyek modell által megköveteltek.
+1. **Az Adatok** hozzáadása ablaktáblán válassza a **SalesOrderLine elemet** beszerzési előzmény entitásként. Ezen a ponton valószínűleg még nincs konfigurálva. Nyissa meg a hivatkozást az ablaktáblán, és hozza létre a tevékenységet a következő lépésekkel:
+   1. Adjon meg egy tevékenységnevet, és válassza az **eCommercePurchases:eCommerce** mint Tevékenység entitás *lehetőséget*.**·** Az **elsődleges kulcs** a *PurchaseId*.
+   1. Határozza meg és nevezze el a kapcsolatot az *eCommerceContacts:eCommerce entitással,* és válassza a ContactId **lehetőséget** idegen kulcsként.
+   1. A tevékenységegyesítéshez állítsa **az Eseménytevékenységet** TotalPrice *és Időbélyeg értékben* PurchasedOn *értékre*. A Vevői tevékenységekben [leírtak](activities.md) szerint további mezőket is megadhat.
+   1. A Tevékenységtípus csoportban **válassza a SalesOrderLine lehetőséget** *.* A következő tevékenységmezők leképezése:
+      - Rendelési sor azonosítója: Beszerzési azonosító
+      - Rendelés azonosítója: PurchaseId
+      - Rendelési adatok: PurchasedOn
+      - Termékazonosító: ProductId
+      - Összeg: TotalPrice
+   1. A modellkonfigurációhoz való visszatérés előtt tekintse át és fejezze be a tevékenységet.
 
-1. Csatlakozzon az **eCommercePurchases: eCommerce** entitáshoz az **eCommerceContacts: eCommerce**-szel.
+1. A Tevékenységek kiválasztása lépésben **válassza ki az újonnan létrehozott tevékenységet a** Tevékenységek **szakaszban.** Válassza a Tovább **lehetőséget**, és az attribútumleképezés már ki van töltve. Válassza a Mentés **lehetőséget**.
 
-   ![Csatlakoztassa az eCommerce entitásokhoz.](media/model-purchase-join.png)
+1. Ebben a minta útmutatóban kihagyjuk a **Termékinformációk** és **termékszűrők** hozzáadása beállítást, mert nem rendelkezünk termékinformációs adatokkal.
 
-1. Válassza a **Következő** lehetőséget a modell ütemezésének beállításához.
+1. **Az Adatfrissítések** lépésben állítsa be a modellütemezést.
 
    A modell rendszeres betanítást igényel ahhoz, hogy új mintákat tanulhasson, amikor új adatok kerülnek a rendszerbe. Ennél a példánál válassza a **Havonta** beállítást.
 
-1. A részletek áttekintése után válassza a **Mentés és Futtatás** lehetőséget.
-
+1. A részletek áttekintése után válassza a **Mentés és Futtatás** lehetőséget. A modell első futtatása néhány percet vesz igénybe.
 
 ## <a name="task-4---review-model-results-and-explanations"></a>4. feladat – Modell eredmények és a magyarázatok áttekintése
 
-Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most már megtekintheti a termékjavaslat modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-subscription-churn.md#review-a-prediction-status-and-results) című témakört.
+Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most már megtekintheti a termékjavaslat modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-transactional-churn.md#review-a-prediction-status-and-results) című témakört.
 
 ## <a name="task-5---create-a-segment-of-high-purchased-products"></a>5. feladat – A gyakran megvásárolt termékek szegmensének létrehozása
 
@@ -190,21 +145,19 @@ Futtatva a termékjavaslati modellt, létrehozhat egy új entitást, amelyet lá
 
 Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 
-1. Kattintson a **Szegmensek** lehetőségre. Válassza az **Új** lehetőséget, és válassza a **Létrehozás a következőkből** > **Intelligencia**.
+1. Kattintson a **Szegmensek** lehetőségre. Válassza az Új lehetőséget **, és válassza a Létrehozás az intelligenciából lehetőséget** **.**
 
    ![Szegmens létrehozása a modell kimenetével.](media/segment-intelligence.png)
 
 1. Válassza ki a **OOBProductRecommendationModelPrediction** végpontot és definiálja a szegmenst:
 
    - Mező: ProductID
-   - Operátor: Érték
    - Érték: Válassza ki a három legnépszerűbb termékazonosítót
 
    :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Hozzon létre egy szegmenst a modell eredményeiből.":::
 
-Most van egy dinamikusan frissített szegmense, amely azonosítja azokat az ügyfeleket, akik valószínűbb, hogy megvásárolják három leginkább javasolt terméket 
+Most már van egy dinamikusan frissített szegmense, amely azonosítja azokat az ügyfeleket, akiket érdekelhet a három leginkább ajánlott termék megvásárlása.
 
 További információ: [Szegmensek létrehozása és kezelése](segments.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

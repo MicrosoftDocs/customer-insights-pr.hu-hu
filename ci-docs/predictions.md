@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: cca91f2bbe2fc64554199082a79c1b388a01ab52
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642780"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740722"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki részleges adatait előrejelzésekkel (elavult)
 
@@ -37,13 +37,13 @@ Ahhoz, hogy a szervezet használni tudja az Előrejelzések funkciót, gondoskod
 
 1. A szervezete rendelkezik egy példánnyal [beállítva a Microsoft Dataverse-ben](/ai-builder/build-model#prerequisites), amely ugyanabban a szervezetben található, mint a Customer Insights.
 
-2. A Célközönséggel kapcsolatos információk környezet csatolva van a Dataverse példányhoz.
+2. Customer Insights-környezete össze van kapcsolva a Dataverse-példánnyal.
 
 További információ: [Új környezet létrehozása](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Előrejelzés létrehozása az ügyfél entitásban
 
-1. Nyissa meg a **DataEntities** > **oldalt**.
+1. Nyissa meg az **adat entitásokat** > **·**.
 
 2. Válassza az **Ügyfél** entitást.
 
@@ -91,7 +91,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 ## <a name="view-a-prediction"></a>Előrejelzés megtekintése
 
-1. Ugrás az **IntelligencePredictionsMy** > **·** > **előrejelzéseire**.
+1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
 
 2. Jelölje ki az áttekinteni kívánt előrejelzést.
 
@@ -108,7 +108,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 ## <a name="update-a-prediction"></a>Előrejelzés frissítése
 
-1. Ugrás az **IntelligencePredictionsMy** > **·** > **előrejelzéseire**.
+1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
 
 2. Válassza ki a frissíteni kívánt előrejelzést, és válassza a **Frissítés** ikont.
 
@@ -118,7 +118,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 Miután létrehozott egy előrejelzés, testreszabhatja a modellt a AI Builder modell hatékonyságának növelése érdekében.  
 
-1. Ugrás az **IntelligencePredictionsMy** > **·** > **előrejelzéseire**.
+1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
 
 2. Válassza ki a szerkeszteni kívánt előrejelzést.
 
@@ -135,7 +135,7 @@ Az előrejelzés következő futtatása a létrehozott frissített modellt fogja
 
 ## <a name="remove-a-prediction"></a>Előrejelzés eltávolítása
 
-1. Ugrás az **IntelligencePredictionsMy** > **·** > **előrejelzéseire**.
+1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
 
 2. Jelölje ki a törlendő előrejelzést.
 

@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 0efda9d2997bcfd069b6d2445b69d159d7d3e59b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
-ms.translationtype: MT
+ms.openlocfilehash: c64ac94a7e0e743d3c13e32e394cc5d409420622
+ms.sourcegitcommit: c00441bc60b978e25f930b06c9d97b46fe462538
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642518"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "8712905"
 ---
 # <a name="create-an-environment-in-customer-insights"></a>Környezet létrehozása a Customer Insights alkalmazásban
 
@@ -63,8 +63,7 @@ Két lehetőség közül választhat: **Customer Insights-tár** (a Customer Ins
 A rendszer az adatok Azure Data Lake Storage szolgáltatásba való mentésével hozzájárul, hogy a rendszer az adott Azure-tárfiók megfelelő földrajzi helyére továbbítja az adatokat, és abban tárolja el őket. Ez a hely eltérhet attól, hogy az adatokat hol tárolja Dynamics 365 Customer Insights szolgáltatásban. További információ a [Microsoft adatvédelmi központró](https://www.microsoft.com/trust-center).
 
 > [!NOTE]
-> A Customer Insights jelenleg a következőket támogatja:
-> - A Microsoft Dataverse által felügyelt Data Lake-ben tárolt Power BI adatfolyamokból származó feldolgozott entitások.  
+> A Customer Insights jelenleg a következőket támogatja:  
 > - Azure Data Lake Storage partnereknek ugyanabban az Azure-régióban, mint amit a környezet létrehozásakor kiválasztott.
 > - Azure Data Lake Storage gen2-es fiókokat, amelyeken engedélyezve van *hierarchikus névtér*. Az Azure Data Lake Gen1 tárfiókjai nem támogatottak.
 
@@ -80,7 +79,7 @@ A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a 
 
 Adjon meg saját Microsoft Dataverse környezetet az adatok (profilok és elemzések) megosztásához olyan üzleti alkalmazásokkal, amelyek a Dynamics 365 Marketing vagy a modellvezérelt alkalmazásokon alapulnak Dataverse Power Apps. Hagyja üresen ezt a mezőt, ha nincs saját Dataverse környezete, és biztosítunk egyet az Ön számára.
 
-A környezethez Dataverse való csatlakozás lehetővé [teszi az adatok helyszíni adatforrásokból származó adatok adatáramlások és átjárók használatával történő Power Platform bevitelét](data-sources.md#add-data-from-on-premises-data-sources) is. A környezethez [való csatlakozással beépített előrejelzés modelleket](predictions-overview.md?tabs=b2c#out-of-box-models) is használhat Dataverse.
+A környezethez Dataverse való csatlakozás lehetővé [teszi az adatok helyszíni adatforrásokból származó adatok adatáramlások és átjárók használatával történő Power Platform bevitelét](data-sources.md#add-data-from-on-premises-data-sources) is.
 
 > [!IMPORTANT]
 > 1. Ügyfélelemzések, és Dataverse az adatmegosztás engedélyezéséhez ugyanabban a régióban kell lennie.

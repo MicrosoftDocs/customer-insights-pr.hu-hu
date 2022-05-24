@@ -1,25 +1,25 @@
 ---
 title: Termékjavaslat-előrejelzések
 description: Olyan termékek előre jelzése, amelyekbe az ügyfél valószínűleg mag fog vásárolni vagy interakcióba lép velük.
-ms.date: 01/13/2022
+ms.date: 05/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: fe6c0e8ba8236243682a4105535a0026c4343c3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9b3e60c49d294d031f43ef0594cb69707bb64019
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642885"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762735"
 ---
 # <a name="product-recommendation-prediction"></a>Termékjavaslat-előrejelzések
 
 A termékjavaslati modell prediktív termékjavaslatokat hoz létre. Az ajánlások a korábbi vásárlási viselkedésen és a hasonló vásárlási mintával rendelkező ügyfeleken alapulnak. Új termékjavaslat-előrejelzéseket az **Információk** > **Előrejelzések** lapon hozhat létre. Az Ön által létrehozott többi előrejelzés megtekintéséhez válassza a **Saját előrejelzések** lehetőséget.
 
-A termékre vonatkozó javaslatokra a helyi jogszabályok és előírások, illetve az ügyfelek elvárásai vonatkozhatnak, amelyeket a modell tervezésekor nem vettek külön figyelembe.  Ennek a prediktív lehetőségnek a felhasználójaként a **javaslatokat még az előtt át kell vizsgálnia, mielőtt azokat átadná az ügyfeleknek**, továbbá meg kell győződnie arról, hogy megfelel-e a vonatkozó jogszabályoknak és szabályozásoknak, illetve az ügyfél elvárásainak azzal szemben, amiről Ön már ajánlatot tett. 
+A termékre vonatkozó javaslatokra a helyi jogszabályok és előírások, illetve az ügyfelek elvárásai vonatkozhatnak, amelyeket a modell tervezésekor nem vettek külön figyelembe.  Ennek a prediktív lehetőségnek a felhasználójaként a **javaslatokat még az előtt át kell vizsgálnia, mielőtt azokat átadná az ügyfeleknek**, továbbá meg kell győződnie arról, hogy megfelel-e a vonatkozó jogszabályoknak és szabályozásoknak, illetve az ügyfél elvárásainak azzal szemben, amiről Ön már ajánlatot tett.
 
 Ezenkívül a modell kimenete a termékazonosítón alapuló javaslatokat is tartalmaz. A szállítási mechanizmusnak megfeleltethető termékazonosítókat kell leképezni a megfelelő tartalomra ahhoz, hogy az ügyfelek el tudjanak számolni a honosítással, a képi tartalommal és egyéb, az üzleti tevékenységre jellemző tartalommal vagy viselkedéssel.
 
@@ -33,29 +33,31 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
 - Az üzleti ismeretek, hogy tisztában legyen azzal, milyen típusú termékeket kínál a vállalkozása, és hogyan lépnek interakcióba ezekkel az ügyfelek. Támogatjuk, hogy az ügyfelek által korábban megvásárolt termékekre vagy új termékekre vonatkozó javaslatokat.
 
+- A környezetet az **egyes fogyasztók** elsődleges célcéljaihoz kell konfigurálni célközönség.
+
 - A tranzakciókkal, vásárlásokkal kapcsolatos adatok és a velük kapcsolatos előzmények:
-    - A Tranzakcióazonosítók, hogy meghatározhassa a vásárlásokat vagy tranzakciókat.
-    - Ügyfélazonosítók, a tranzakciókat hozzárendeléséhez az ügyfeleihez.
-    - Tranzakciós események dátumai, amelyek meghatározzák a dátumot, amikor a tranzakció történt.
-    - A tranzakció termékazonosító-információi.
-    - (Nem kötelező) Termékkatalógus adatentitás a termékszűrő használatához.
-    - (Nem kötelező) Hogy a tranzakció visszatérítés-e vagy sem.
-    - A szemantikus adatréteg sémához a következő információk szükségesek:
-        - **Tranzakcióazonosító:** Egy egyedi azonosító a vásárláshoz vagy tranzakcióhoz.
-        - **Tranzakció dátuma:** A vásárlás vagy tranzakció dátuma.
-        - **A tranzakció értéke:** A pénznembeli/számértékbeli értéke a vásárlásnak vagy tranzakciónak.
-        - **Egyedi termékazonosító:** A megvásárolt termék vagy szolgáltatás azonosítója, ha az adat a sortétel szintjén szerepel.
-        - (Nem kötelező) **Vásárlás vagy visszatérés:** Egy logikai mező, ahol az *igaz* érték azonosítja, hogy a tranzakció visszatérési érték volt. Ha nem adja meg a Vásárlási vagy Visszatérési adatokat a modellhez, és a **Tranzakció értéke** negatív, akkor ezt az információt a visszatérés levonásához is használjuk.
+  - A Tranzakcióazonosítók, hogy meghatározhassa a vásárlásokat vagy tranzakciókat.
+  - Ügyfélazonosítók, a tranzakciókat hozzárendeléséhez az ügyfeleihez.
+  - Tranzakciós események dátumai, amelyek meghatározzák a dátumot, amikor a tranzakció történt.
+  - A tranzakció termékazonosító-információi.
+  - (Nem kötelező) Termékkatalógus adatentitás a termékszűrő használatához.
+  - (Nem kötelező) Hogy a tranzakció visszatérítés-e vagy sem.
+  - A szemantikus adatréteg sémához a következő információk szükségesek:
+    - **Tranzakcióazonosító:** Egy egyedi azonosító a vásárláshoz vagy tranzakcióhoz.
+    - **Tranzakció dátuma:** A vásárlás vagy tranzakció dátuma.
+    - **A tranzakció értéke:** A pénznembeli/számértékbeli értéke a vásárlásnak vagy tranzakciónak.
+    - **Egyedi termékazonosító:** A megvásárolt termék vagy szolgáltatás azonosítója, ha az adat a sortétel szintjén szerepel.
+    - (Nem kötelező) **Vásárlás vagy visszatérés:** Egy logikai mező, ahol az *igaz* érték azonosítja, hogy a tranzakció visszatérési érték volt. Ha nem adja meg a Vásárlási vagy Visszatérési adatokat a modellhez, és a **Tranzakció értéke** negatív, akkor ezt az információt a visszatérés levonásához is használjuk.
 - Javasolt adatjellemzők:
-    - Elegendő korábbi adatok: Legalább egy évre, lehetőség szerint 2-3 évre visszamenő tranzakciós adatok, hogy valamilyen szezonalitást ki lehessen mutatni.
-    - Ügyfelenkénti több vásárlás: Ügyfélazonosítónkénti három vagy több tranzakció
-    - Ügyfelek száma: Legalább 100 ügyfél, lehetőség szerint 10 000-nél több ügyfél. A modell 100-nál kevesebb ügyfél esetén nem működik.
+  - Elegendő korábbi adatok: Legalább egy évre, lehetőség szerint 2-3 évre visszamenő tranzakciós adatok, hogy valamilyen szezonalitást ki lehessen mutatni.
+  - Ügyfelenkénti több vásárlás: Ügyfélazonosítónkénti három vagy több tranzakció
+  - Ügyfelek száma: Legalább 100 ügyfél, lehetőség szerint 10 000-nél több ügyfél. A modell 100-nál kevesebb ügyfél esetén nem működik.
 
 > [!NOTE]
+>
 > - A modellhez az ügyfelek tranzakciós előzményeire van szükség. A tranzakció meghatározása nagyon rugalmas. A felhasználó és termék közötti interakciót leíró adatok bemeneti adatként is működhetnek. Például termékvásárlás, tanfolyamon vagy eseményen való részvétel.
 > - Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési entitás van, az adatbetöltés előtt egyesítse őket Power Query.
 > - Ha a megrendelés és a megrendelés részletei eltérő entitások, akkor a modell használata előtt kapcsolja össze őket. A modell nem működik csak egy entitás megrendelésazonosítójával vagy bizonylatazonosítójával.
-
 
 ## <a name="create-a-product-recommendation-prediction"></a>Termékjavaslat-előrejelzés létrehozása
 
@@ -76,7 +78,7 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 ### <a name="define-product-recommendation-configuration"></a>Termékjavaslat konfigurációjának meghatározása
 
 1. Állítsa be az ügyfélnek javasolni kívánt **Termékek számát**. Ez az érték attól függ, hogy a szállítási módja hogyan tölti ki az adatokat. Ha három terméket javasolhat, ennek megfelelően állítsa be ezt az értéket.
-   
+
    >[!TIP]
    > A Piszkozat **mentése bármikor lehetőséget választva** mentheti a előrejelzés piszkozatként. A vázlat-előrejelzés a **Saját előrejelzések** lapon található.
 
@@ -98,14 +100,13 @@ Ha ki szeretné próbálni ezt a szolgáltatást, de nem rendelkezik az alábbi 
 
    :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Oldalbeállítás tevékenységtípus.":::
 
-1. Miután leképezi a tevékenységet a megfelelő szemantikai típusra, válassza a **Tovább** gombot a folytatáshoz 
- 
+1. Miután hozzárendelte a tevékenységet a megfelelő szemantikai típushoz, válassza a Tovább **gombra** a folytatáshoz.
+
 1. A szemantikus attribútumokat a modell futtatásához szükséges mezőkre kell leképezni.
 
 1. Válassza a **Mentés** parancsot.
 
 1. Válassza a **Következő** lehetőséget.
-
 
 ### <a name="configure-product-filters"></a>Termékszűrők konfigurálása
 
@@ -113,11 +114,11 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
 
 1. A **Termékinformáció hozzáadása** lépésben vegye fel az egyes termékekre vonatkozó információkat tartalmazó termékkatalógust. A **Következő** lehetőség kiválasztásával leképezheti a szükséges adatokat.
 
-3. A **Termékszűrők** lépésben válasszon a következő lehetőségek közül.
+1. A **Termékszűrők** lépésben válasszon a következő lehetőségek közül.
 
-   * **Nincsenek szűrők**: Használja a termékjavaslat előrejelzésében lévő összes terméket.
+   - **Nincsenek szűrők**: Használja a termékjavaslat előrejelzésében lévő összes terméket.
 
-   * **Adott termékszűrők meghatározása**: Használjon a termékjavaslat előrejelzésében lévő specifikus termékeket.
+   - **Adott termékszűrők meghatározása**: Használjon a termékjavaslat előrejelzésében lévő specifikus termékeket.
 
 1. Válassza a **Következő** lehetőséget.
 
@@ -126,7 +127,7 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
    :::image type="content" source="media/product-filters-sidepane.png" alt-text="Az oldalsó ablaktábla a termékkatalógus entitásban hozzárendelve látszódik a termékszűrők kiválasztásához.":::
 
 1. Válassza ki, hogy szeretné-e, ha a termékszűrő **és** vagy **vagy** összekötőket használjon, hogy logikailag egyesítse a termékkatalógusból kiválasztott attribútumokat.
-   
+
    :::image type="content" source="media/product-filters-sample.png" alt-text="Termékszűrők mintakonfigurációja logikai ÉS összekötőkkel kombinálva.":::
 
 1. Válassza a **Következő** lehetőséget.
@@ -150,7 +151,7 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
 1. Jelölje ki az áttekinteni kívánt előrejelzést.
    - **Előrejelzés neve:** Az előrejelzés létrehozáskor megadott neve.
    - **Előrejelzés típusa:** Az előrejelzéshez használt modell típusa.
-   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.    
+   - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.
       A kimeneti entitásban a *pontozás* az ajánlásnak egy fontos mérőszáma. A modell magasabb pontszámú termékeket ajánl az alacsonyabb pontszámú termékek helyett.
    - **Várható mező:** Ez a mező csak bizonyos típusú előrejelzések számára van megadva, és nincs használva a Termékjavaslati előrejelzésben.
    - **Állapot:** Az előrejelzés aktuális futási állapota.
@@ -171,28 +172,27 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
             - **A** A modell figyelembe vett minősége **A** lesz, ha a „Success @ K” mérték legalább 10%-kal több, mint a kiindulási érték. 
             - **B** A modell figyelembe vett minősége **B** lesz, ha a „Success @ K” mérték legalább 0–10%-kal több, mint a kiindulási érték.
             - **C** A modell figyelembe vett minősége **C** lesz, ha a „Success @ K” mérték kevesebb, mint a kiindulási érték.
-               
+
                > [!div class="mx-imgBorder"]
                > ![A modell teljesítményének megtekintése.](media/product-recommendation-modelperformance.PNG "A modell teljesítményének megtekintése")
             - **Alapérték**: A modell a legjobb ajánlott termékeket veszi figyelembe a vásárlások száma szerint az összes ügyfél esetében, és a modell által azonosított szabályok segítségével hozza létre az ügyfeleknek tett javaslatok egy sorát. Ezután a rendszer összeveti az előrejelzéseket a legjobb termékekkel, amit a terméket megvásárolt ügyfelek száma alapján számít. Ha egy ügyfélnek legalább egy olyan terméke van az ajánlott termékeiben, amelyek a legjobb megvásárolt termékeknél is láthatók, akkor ezek az alapérték részét jelentik. Ha ezen ügyfelek közül 10 olyan lenne, akik az ajánlott terméket a 100 teljes ügyfél közül megvásárolták, az alapérték 10%.
             - **Sikeres @ K**: A tranzakciók beállított időszakának ellenőrzésekor javaslatokat tesz a rendszer az összes ügyfél számára, és összehasonlítja a tranzakciók ellenőrzési készletével. Egy 12 hónapos időszakban például a 12. hónapot félre lehet tenni ellenőrzési adathalmazként. Ha a modell legalább egy dolgot előre jelez, amit a 12. hónapban vásárolna az előző 11 hónap során tanultak alapján, az ügyfél megnövelné a "Siker @ K" mérőszámot.
-    
+
     1. **A leggyakrabban javasolt termékek (egyezéssel):** Az öt legjobb termék, amit előre jeleztek az ügyfeleknek.
        > [!div class="mx-imgBorder"]
        > ![A legjobb 5 ajánlott terméket bemutató grafikon.](media/product-recommendation-topproducts.PNG "A legjobb 5 ajánlott terméket bemutató grafikon")
-    
+
     1. **A legfontosabb javaslati tényezők:** A modell az ügyfelek tranzakciós előzményei alapján tesz termékjavaslatokat. A mintákat a korábbi vásárlások alapján tanulja meg, és hasonlóságot keres az ügyfelek és a termékek között. Ezt követően a hasonlóságokat a termékre vonatkozó javaslatok létrehozásához használjuk.
-    A következő tényezők befolyásolhatják a modell által létrehozott termékjavaslatot. 
-        - **Múltbeli tranzakciók**: A modell korábban a termékjavaslatok előállításához felhasználta a vásárlási mintákat. A modell javasolhatja például a _Surface Arc Mouse_ használatát, ha valaki nemrég megvásárolt egy _Surface Book 3_, és egy _Surface Pent_. A modell korábban már megtanulta, hogy számos ügyfél megvásárolt egy _Surface Arc Mouse-t_, miután megvásárolt egy _Surface Book 3-at_ és egy _Surface Pent_.
-        - **Ügyfélhasonlóság**: Az ajánlott terméket korábban más, hasonló vásárlási mintákat mutató ügyfelek vásárolták meg. Például Johnnak ajánlották a _Surface Headphones 2-t_, mert Jennifer és Brad nemrég vásárolt egy _Surface Headphones 2-t_. A modell szerint John hasonló Jenniferhez és Bradhez, mert korábban hasonló vásárlási mintáik voltak.
-        - **Termékhasonlóság**: Az ajánlott termék hasonló az ügyfél által korábban megvásárolt termékekhez. A modell két terméket akkor tekint hasonlónak, ha azokat egyben vagy hasonló ügyfelek vásárolják meg. Például valakinek ajánlanak egy _Pendrive-ot_, mert korábban vásárolt egy _USB-C–USB Adaptert_, és a modell szerint a korábbi vásárlási minták alapján a _Pendrive_ hasonlít a _USB-C–USB Adapterhez_.
+    A következő tényezők befolyásolhatják a modell által létrehozott termékjavaslatot.
+        - **Múltbeli tranzakciók**: A modell korábban a termékjavaslatok előállításához felhasználta a vásárlási mintákat. A modell javasolhatja például a *Surface Arc Mouse* használatát, ha valaki nemrég megvásárolt egy *Surface Book 3*, és egy *Surface Pent*. A modell korábban már megtanulta, hogy számos ügyfél megvásárolt egy *Surface Arc Mouse-t*, miután megvásárolt egy *Surface Book 3-at* és egy *Surface Pent*.
+        - **Ügyfélhasonlóság**: Az ajánlott terméket korábban más, hasonló vásárlási mintákat mutató ügyfelek vásárolták meg. Például Johnnak ajánlották a *Surface Headphones 2-t*, mert Jennifer és Brad nemrég vásárolt egy *Surface Headphones 2-t*. A modell szerint John hasonló Jenniferhez és Bradhez, mert korábban hasonló vásárlási mintáik voltak.
+        - **Termékhasonlóság**: Az ajánlott termék hasonló az ügyfél által korábban megvásárolt termékekhez. A modell két terméket akkor tekint hasonlónak, ha azokat egyben vagy hasonló ügyfelek vásárolják meg. Például valakinek ajánlanak egy *Pendrive-ot*, mert korábban vásárolt egy *USB-C–USB Adaptert*, és a modell szerint a korábbi vásárlási minták alapján a *Pendrive* hasonlít a *USB-C–USB Adapterhez*.
 
         Minden termékjavaslatot egy vagy több tényező befolyásol. A diagram ábrázolja azoknak a javaslatoknak a százalékos arányát, amelyeknél mindegyik tényező szerepet játszott. A következő példában az ajánlások 100%-át korábbi tranzakciók befolyásolták, 60%-át az ügyfélhasonlóság, 22%-át a termékhasonlóság. Menjen az egérrel a diagram sávjaira, és tekintse meg, hogy pontosan milyen százalékban játszottak szerepet a befolyásoló tényezők.
 
         > [!div class="mx-imgBorder"]
         > ![A legfontosabb javaslati tényezők.](media/product-recommendation-keyrecommendationfactors.png "A modell által a termékjavaslatok érdekében megtanult fő javaslati tényezők")
-       
-     
+
    1. **Adatstatisztika**: Áttekintést ad a modell által figyelembe vett tranzakciók, ügyfelek és termékek számáról. A minták megtanulásához és a termékre vonatkozó javaslatok létrehozása során használt bemeneti adatokon alapul.
 
       > [!div class="mx-imgBorder"]
@@ -208,6 +208,5 @@ Időnként csak bizonyos termékek hasznosak vagy megfelelőek a megtervezett el
 ## <a name="manage-predictions"></a>Előrejelzések kezelése
 
 Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

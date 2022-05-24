@@ -66,12 +66,18 @@
   items:
     - name: Az Adategyesítés áttekintése
       href: data-unification.md
-    - name: Entitások és attribútumok leképezése
+    - name: Forrásmezők kijelölése
       href: map-entities.md
-    - name: Entitások egyeztetése
+    - name: Ismétlődő rekordok eltávolítása
+      href: remove-duplicates.md
+    - name: Feltételek egyeztetése
       href: match-entities.md
-    - name: Entitások összefésülése
+    - name: Vevőmezők egyesítése
       href: merge-entities.md
+    - name: Adatok egységesítésének áttekintése
+      href: review-unification.md
+    - name: Az egyesítési beállítások frissítése
+      href: data-unification-update.md
 - name: Adatbővítés
   items:
     - name: Ügyfélprofilok bővítése
@@ -282,6 +288,8 @@
       href: apis.md
     - name: API-hivatkozások
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+    - name: OData mintalekérdezések
+      href: odata-examples.md
 - name: Hozzájárulás kezelése (előzetes verzió)
   items:
     - name: Súgó hub

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e77227e1e353c02cfb13e26a8ecbe0768ba6c0fa
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642551"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741506"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Adatok exportálása Azure Synapse Analytics (előzetes verzió)
 
@@ -34,7 +34,7 @@ Az Azure-ban:
 
 - Aktív Azure-előfizetés.
 
-- Ha új Azure Data Lake Storage Gen2-fiókot használ, a *Customer Insights* szolgáltatáselemzőjének tárolási blobadatokra közreműködő **engedélyekre van szüksége**. További információ az [Azure Data Lake Storage Gen2-fiók és az  account with Azure szolgáltatás célközönség betekintési információihoz használatos rendszerbiztonsági tagjának összekapcsolásáról](connect-service-principal.md). A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
+- Ha új Azure Data Lake Storage Gen2-fiókot használ, a *Customer Insights* szolgáltatáselemzőjének tárolási blobadatokra közreműködő **engedélyekre van szüksége**. További információ a Gen2-fiókhoz való csatlakozásról az [Azure Data Lake Storage Azure-szolgáltatás főkiszolgálójával az Ügyfélelemzéshez szolgáltatásnévvel](connect-service-principal.md). A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Azon az erőforráscsoporton, ahol a Azure Synapse munkaterület található, a *szolgáltatásnévnek* és a *Azure AD Customer Insights* rendszergazdai engedélyekkel rendelkező felhasználójának legalább **olvasó** engedélyt kell hozzárendelnie. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
 

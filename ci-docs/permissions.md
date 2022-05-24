@@ -12,18 +12,18 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b80f07dfa734f4dd762bd711151a7045f24bed7d
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653571"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740906"
 ---
 # <a name="user-permissions"></a>Felhasználói engedélyek
 
 Az **Engedélyek** lapon szerepköröket és engedélyeket állíthat be a Customer Insights használatához.
 
-A lap megtekintéséhez rendszergazdai jogosultsággal kell rendelkeznie. Az engedélyek lap eléréséhez nyissa meg az **AdminSecurityUsers** > **·** > **oldalt**.
+A lap megtekintéséhez rendszergazdai jogosultsággal kell rendelkeznie. Az engedélyek lap eléréséhez nyissa meg a **Felügyeleti** > **biztonsági** > **felhasználók lehetőséget**.
 
 Háromféle típusú szerepkör van:
 
@@ -41,7 +41,7 @@ Háromféle típusú szerepkör van:
 
 - A Néző számára az összes engedély rendelkezésre áll.
 - Adatok betöltése és átalakítása az **Adatforrások** oldal használatával történhet.
-- Végezze el az *Adategységesítés* szakaszait (**Megfeleltetés**, **Egyeztetés** és **Egyesítés**), amelyekkel egységesített ügyfélprofil-entitást hozhat létre.
+- Végezze el ***Az adatok egyesítését**, amely az egységes ügyfélprofil-entitást eredményezi.
 - Adja meg a **Kapcsolatokat** és **Tevékenységeket**.
 - Hozzon létre szegmenseket a **Szegmensek** oldalán.
 - Hozzon létre mérőszámokat a **Mérőszámok** oldalon.
@@ -69,7 +69,7 @@ Háromféle típusú szerepkör van:
 
 ## <a name="assign-roles-and-permissions"></a>Szerepkörök és engedélyek hozzárendelése
 
-1. Nyissa meg az **AdminSecurity** > **·** > a **Users*** webhelyet.
+1. Nyissa meg a **Felügyeleti** > **biztonsági** > **Users*** webhelyet.
 
 1. Válassza a **Felhasználók hozzáadása** lehetőséget az **Engedélyek hozzáadása/szerkesztése** ablaktábla megnyitásához.
 
@@ -79,7 +79,7 @@ Háromféle típusú szerepkör van:
 
 ## <a name="view-current-permissions"></a>Aktuális engedélyek megtekintése
 
-Nyissa meg az **AdminSecurityUsers** > **·** > **webhelyet**, és nézze meg, hogy jelenleg mely szerepkör-hozzárendelések aktívak.
+Nyissa meg a **Felügyeleti** > **biztonsági** > **felhasználók lehetőséget**, és nézze meg, hogy jelenleg mely szerepkör-hozzárendelések aktívak.
 
 - A **típus** oszlop egyetlen felhasználót, csoportot vagy alkalmazást ad meg. A rendszer támogatja az egyéni felhasználókat és csoportokat.
 - A szerepköröket a **szerepkör** oszlopban kell megadni.

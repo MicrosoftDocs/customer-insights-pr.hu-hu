@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e155f75ffbc2c1bb228bece1b3e34846df794543
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642668"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757435"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
@@ -23,7 +23,7 @@ A [Common Data Model](/common-data-model/) leíró specifikáció, és olyan sza
 
 Ez egy megosztott adatmodell, amely lehetővé teszi, hogy az alkalmazások és az adatintegrátorok könnyebben együttműködjenek az egységesen definiált adatokkal. A Common Data Model gazdag metaadatrendszert tartalmaz, amely szabványos entitásokkal, kapcsolatokokkal, hierarchiákkal, közös jellemzőkkel és egyéb tulajdonságokkal rendelkezik. A Dynamics 365 alkalmazásokból származik, és a nyílt forráskódú GitHubon, több mint 260 szabványos entitással. A belső és külső partnerek nagy rendszere hozzájárul az ágazatra jellemző fogalmakhoz a Common Data Modelhez.
 
-A Common Data Modelt ma több rendszeren és platformon is alkalmazva van, beleértve a Power BI adatfolyamokat és az Azure Data Servicest is. Már támogatott a Microsoft Dataverse, Dynamics 365, Power Apps, Power BI és a hamarosan megjelenő Azure adatszolgáltatásokban is, az értékeket közvetlenül az [Open Data Initiative](https://www.microsoft.com/open-data-initiative) felé közelítve.
+A Common Data Modelt ma több rendszeren és platformon is alkalmazva van, beleértve a Power BI adatfolyamokat és az Azure Data Servicest is. Már támogatott a Microsoft Dataverse, Dynamics 365, Power Apps, Power BI és a hamarosan megjelenő Azure adatszolgáltatásokban is, az értékeket közvetlenül az [Open Data Initiative](https://dynamics.microsoft.com/en-us/open-data-initiative/) felé közelítve.
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insights entitássémák
 

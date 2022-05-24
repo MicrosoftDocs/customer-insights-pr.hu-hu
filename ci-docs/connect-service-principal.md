@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 1dd99edc327bd41b0442b390f2e4f8664269f553
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 776eee79c25edbd40ed119510a314f5126933c3e
+ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642658"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8739165"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Csatlakozás egy Azure Data Lake Storage-fiókhoz egy Azure szolgáltatásnév segítségével
 
@@ -40,7 +40,7 @@ Mielőtt új szolgáltatáselemet hozna létre a Customer Insights számára, el
 
 3. Válassza a **Kezelés** területen a **Vállalati alkalmazások** lehetőséget.
 
-4. Keresse meg a Microsoft alkalmazásazonosítót `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` a névvel `Dynamics 365 AI for Customer Insights`.
+4. Az alkalmazásazonosítóhoz adjon **hozzá szűrőt, vagy keressen**`0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` rá a névre `Dynamics 365 AI for Customer Insights`.
 
 5. Ha talál egyező rekordot, az azt jelenti, hogy a szolgáltatásnév már létezik. 
    

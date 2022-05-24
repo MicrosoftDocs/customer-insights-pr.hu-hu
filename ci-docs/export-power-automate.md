@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 409792bc3f12fca451ef038e3300758bdf9ecf3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d22c4c785695b23a257a89f1ffa519fdc18b443e
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642819"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741182"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate összekötő (előzetes verzió)
 
@@ -25,14 +25,14 @@ Az adatok módosításakor automatikusan elindíthat meghatározott eseményeket
 
 ## <a name="power-automate-triggers"></a>Power Automate-eseményindítók
 
-Az eseményindítók segítségével felhőfolyamatokat hozhat létre, és automatizálhatja az ismétlődő feladatokat, például értesítéseket és speciális műveleteket. 
+Az eseményindítók segítségével felhőfolyamatokat hozhat létre, és automatizálhatja az ismétlődő feladatokat, például értesítéseket és speciális műveleteket.
 
-- Az adatforrás frissítésének sikertelensége esetén aktiválódó eseményindító. 
+- Az adatforrás frissítésének sikertelensége esetén aktiválódó eseményindító.
 - Az adatforrás sikeres frissítése esetén aktiválódó eseményindító.
 - Egy szegmens küszöbértékének túllépésekor aktiválódó eseményindító. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Egy üzleti mérőszám küszöbértékének túllépésekor aktiválódó eseményindító. Csak a dimenzió nélküli üzleti mérőszámok támogatottak. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Aktivál, amikor az (adatforrások, szegmensek, intézkedések,...) teljes frissítése befejeződött.
-- Eseményindító az egyesítési folyamat (Térkép, egyeztetés, összefésülés) frissítésének befejezése után.
+- Eseményindító, amikor az egyesítési folyamat frissítése befejeződött.
 
 [Konfiguráld a triggereket Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 

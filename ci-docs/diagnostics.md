@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642481"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755265"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés továbbítás az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)
 
@@ -27,8 +27,8 @@ A Customer Insights a következő eseménynaplókat küldi el:
 - **Események naplózása**
   - **APIEvent** - lehetővé teszi a Dynamics 365 Customer Insights felhasználói felületen keresztül végzett változáskövetést.
 - **Operatív események**
-  - **WorkflowEvent** – A munkafolyamat lehetővé teszi az adatforrások [beállítását](data-sources.md), egyesítését [és](data-unification.md) gazdagítását [,](enrichment-hub.md) és végül [az adatok exportálását](export-destinations.md) más rendszerekbe. Mindezeket a lépéseket egyedileg (pl. egyetlen exportálás kiváltása) vagy vezényelhető (pl. olyan adatforrásokból származó adatfrissítés, amely elindítja az egyesítési folyamatot, amely további gazdagodásokat hajt végre, és miután elvégezte az adatok exportálását egy másik rendszerbe). További részletekért tekintse meg a [WorkflowEvent schema című témakört](#workflow-event-schema).
-  - **APIEvent** - az összes API-hívás az ügyfelek példányához.Dynamics 365 Customer Insights További részletekért lásd az [APIEvent schema című témakört](#api-event-schema).
+  - **WorkflowEvent** – A munkafolyamat lehetővé teszi adatforrások [beállítását](data-sources.md), egyesítését [,](data-unification.md)[gazdagítását](enrichment-hub.md) és végül [más rendszerekbe történő exportálását](export-destinations.md). Mindezeket a lépéseket egyedileg is meg lehet tenni (például egyetlen exportálást kezdeményezhet). A program vezényelhető is futtatható (például olyan adatforrásokból származó adatfrissítés, amely elindítja az egyesítési folyamatot, amely behúzza a dúsításokat, és egyszer befejezte az adatok exportálását egy másik rendszerbe). További információt a [WorkflowEvent schema című](#workflow-event-schema) témakörben talál.
+  - **APIEvent** - az összes API-hívás az ügyfelek példányához.Dynamics 365 Customer Insights További információt az [APIEvent schema című témakörben talál](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>A diagnosztikai beállítások beállítása
 
@@ -44,7 +44,7 @@ A diagnosztika Customer Insightsban való konfigurálásához a következő elő
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnosztikák beállítása az Azure Monitorral
 
-1. A Customer Insights programban válassza a **SystemDiagnostics** > **lehetőséget** a példányban konfigurált diagnosztikai célok megtekintéséhez.
+1. A Customer Insights programban válassza a **Rendszerdiagnosztika** > **lehetőséget** a példányhoz konfigurált diagnosztikai célok megtekintéséhez.
 
 1. Válassza a Cél hozzáadása **lehetőséget**.
 
@@ -55,7 +55,7 @@ A diagnosztika Customer Insightsban való konfigurálásához a következő elő
 
 1. Válassza ki az **Azure-előfizetés bérlőjét** a célerőforrással, és válassza a Bejelentkezés **lehetőséget**.
 
-1. Válassza ki az **erőforrás típusát** (Tárfiók, Eseményközpont vagy naplóelemzés).
+1. Válassza ki az **Erőforrástípust** (Tárfiók, eseményközpont vagy naplóelemzés).
 
 1. Válassza ki a **célerőforrás előfizetését**.
 
@@ -69,7 +69,7 @@ A diagnosztika Customer Insightsban való konfigurálásához a következő elő
 
 ### <a name="remove-a-destination"></a>Cél eltávolítása
 
-1. Menj a **SystemDiagnostics** > **oldalra**.
+1. Nyissa meg a **Rendszerdiagnosztika** > **lehetőséget**.
 
 1. Válassza ki a diagnosztikai célt a listában.
 
@@ -109,7 +109,7 @@ A Customer Insights szolgáltatásnév megkapja az **Azure Event Hubs Data Owner
 
 ### <a name="log-analytics"></a>Log Analytics
 
-A Customer Insights szolgáltatás főkiszolgálója megkapja a **Log Analytics közreműködő** engedélyt az erőforrásra. A naplók a Kijelölt Log Analytics-munkaterületen a LogsTablesLog Management alatt **lesznek elérhetők** > **.** > **·** Bontsa ki a **Naplókezelés** megoldást, és keresse meg a és `CIEventsAudit` a `CIEventsOperational` táblákat.
+A Customer Insights szolgáltatás főkiszolgálója megkapja a **Log Analytics közreműködő** engedélyt az erőforrásra. A naplók a kijelölt Log Analytics-munkaterületen a **Naplótáblák** > **naplózási kezelése** > **című témakörben** lesznek elérhetők. Bontsa ki a **Naplókezelés** megoldást, és keresse meg a és `CIEventsAudit` a `CIEventsOperational` táblákat.
 
 - `CIEventsAudit`**ellenőrzési eseményeket tartalmaz**
 - `CIEventsOperational`**működési eseményeket tartalmaz**
@@ -182,7 +182,7 @@ A `identity` JSON objektum szerkezete a következő
 
 ### <a name="workflow-event-schema"></a>Munkafolyamat-eseményséma
 
-A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Mindezek a lépések egyénileg vagy a következő folyamatokkal vezényelhetők. 
+A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Mindezek a lépések egyénileg vagy a következő folyamatokkal vezényelhetők.
 
 #### <a name="operation-types"></a>Művelettípusok
 
@@ -215,7 +215,7 @@ A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betö
 | `time`          | Időbélyegző | Szükséges          | Az esemény időbélyegzője (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId azonosítója.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
 | `operationName` | Sztring    | Szükséges          | Az esemény által képviselt művelet neve. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Hivatkozásért lásd: [Művelettípusok](#operation-types). | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | Sztring    | Szükséges          | Az esemény naplókategóriája. Mindig `Operational` munkafolyamat-eseményekhez                                                                                           | `Operational`                                                                                                                                                            | 
+| `category`      | Sztring    | Szükséges          | Az esemény naplókategóriája. Mindig `Operational` munkafolyamat-eseményekhez                                                                                           | `Operational`                                                                                                                                                            |
 | `resultType`    | Sztring    | Szükséges          | Az esemény állapota. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Lehetséges          | A művelet időtartama ezredmásodpercben.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | Sztring    | Lehetséges          | JSON-objektum, amely több tulajdonsággal rendelkezik az adott eseménykategóriához.                                                                                        | Lásd: Munkafolyamat tulajdonságai [alfejezet](#workflow-properties-schema)                                                                                                       |

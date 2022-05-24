@@ -1,8 +1,8 @@
 ---
 title: Az Előfizetés-lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálhassa a mezőn kívüli előfizetés lemorzsolódási modellt.
-ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 2aea6c62421b308705899e4f8af64f64bfcb2d3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642771"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741414"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Az Előfizetés-lemorzsolódási előrejelzési példamutató
 
@@ -112,61 +112,7 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
-Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesítés** folyamatot, hogy hogy létrehozzunk egy egyesített ügyfélprofilt. További információkért lásd: [Adatok egységesítése](data-unification.md).
-
-### <a name="map"></a>Map
-
-1. Az adatok betáplálása után képezze le a kapcsolattartókat az eCommerce-ből és a Loyalty data-ból a közös adattípusokba. Nyissa meg az **Adatok** > **Egységesítés** > **Megfeleltetés**-t.
-
-1. Válassza ki az entitást, amely jelképezi az ügyfélprofilt – **eCommerceContacts** és **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="az ecommerce és a loyality adatforrások egységesítése.":::
-
-1. Jelölje ki a **ContactId**-t elsődleges kulcsaként az **eCommerceContacts**-hoz és a **LoyaltyID** a **loyCustomers** elsődleges kulcsaként.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="A LoyaltyId egyesítheti elsődleges kulcsként.":::
-
-### <a name="match"></a>Egyeztetés
-
-1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
-
-1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
-
-1. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.":::
-
-1. Válassza az **Új szabály létrehozása** menüpontot
-
-1. Adja hozzá az első feltételt a FullName segítségével.
-
-   * Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   * A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   * Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
-   * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-1. Adja meg a nevét **FullName, Email**, az új szabályhoz.
-
-   * Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   * Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
-   * Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben. 
-   * Hagyja üresen a Normalizálást. 
-   * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Egységesítése az egyezési szabályt a névhez és az e-mailhez.":::
-
-7. Válassza a **Mentés** és **Futtatás** lehetőséget.
-
-### <a name="merge"></a>Összefűzés
-
-1. Nyissa meg az **Egyesítés** lapot.
-
-1. A **ContactId** **loyCustomers** entitáshoz változtassa meg a megjelenítendő nevet **ContactIdLOYALTY**-ra, hogy megkülönböztethesse azt a többi betáplált azonosítóval.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="nevezze át a loyalty azonosítót contactid-re.":::
-
-1. Válassza a **Mentés** és **Futtatás** lehetőséget, hogy elindítsa a Egyesítés Folyamatot.
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>3. feladat – Konfigurálja az előfizetés lemorzsolódási előrejelzést
 

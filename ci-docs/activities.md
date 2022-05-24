@@ -17,16 +17,16 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsight
-ms.openlocfilehash: 29b5d3f5848d36abd8e941136a6330dbb7730016
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6c0a1bc5d9a42806b458142804199c733ff530ec
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642618"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755501"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
-A [különböző adatforrásokból](data-sources.md) származó ügyféltevékenységek Dynamics 365 Customer Insightsban való egyesítésével időrendi sorrendben teheti a tevékenységeket. Vegye fel az idősort a Dynamics 365 alkalmazásokba az [Ügyfélkártya bővítmény](customer-card-add-in.md) megoldással, vagy egy Power BI irányítópultban.
+A [különböző adatforrásokból](data-sources.md) származó ügyféltevékenységek egyesítése a Dynamics 365 Customer Insights alkalmazásban. Hozzon létre egy ütemtervet, amely időrendben sorolja fel a tevékenységeket. Az Ügyfélkártya bővítmény megoldással vegye fel az ütemtervet a [Dynamics 365-alkalmazásokba](customer-card-add-in.md).
 
 ## <a name="define-an-activity"></a>Egy tevékenység definiálása
 
@@ -34,7 +34,7 @@ Az adatforrások több adatforrásból származó, tranzakciós és tevékenysé
 
 Egy entitásben legalább egy **Dátum** típusú attribútumnak szerepelnie kell, hogy az bekerüljön az ügyfél idővonalába, és nem lehet entitásokat felvenni **Dátum** mezők nélkül. A **Tevékenység hozzáadása** vezérlő le van tiltva, ha nem talál ilyen entitást.
 
-1. Nyissa meg a **DataActivities** > **oldalt**.
+1. Ugrás az **adattevékenységekre** > **·**.
 
 1. Válassza a **Tevékenység hozzáadása** lehetőséget az interaktív élmény elkezdéséhez a tevékenység beállítási folyamathoz.
 
@@ -78,7 +78,7 @@ Egy entitásben legalább egy **Dátum** típusú attribútumnak szerepelnie kel
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. A **Befejezés és áttekintés** lehetőséget választva most már az **Egyéb** tevékenységtípussal mentheti a tevékenységet. 
 
-1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg a *Visszajelzés*, *Hűségprogram*, *SalesOrder*, *SalesOrderLine*, és *Előfizetés* tevékenységtípusok szemantikailag leképezhetők, miután megállapodtak a mezők feltérképezéséről. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
+1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg a Visszajelzés *,* *a Hűség*, *a SalesOrder*, *a SalesOrderLine* és *az Előfizetés* tevékenységtípusok támogatják a szemantikát, miután beleegyeztek a mezők leképezésébe. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
 
 1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. 
 
@@ -110,7 +110,7 @@ Az ügyféltevékenységek konfigurálása után válassza a **Tevékenység meg
 
 Az ügyfél idővonalának megnyitásához nyissa meg az **Ügyfelek** lehetőséget, és válassza ki a megtekinteni kívánt ügyfélprofilt.
 
-Ha egy ügyfél részt vett egy Ön által beállított tevékenységben, akkor az a **Tevékenység idősora** szakaszban található.
+Ha egy ügyfél részt vett egy konfigurált tevékenységben, azt a **Tevékenység ütemterve** szakaszban találja meg.
 
 :::image type="content" source="media/Activity_Timeline1.PNG" alt-text="A konfigurált tevékenységek megtekintése az Ügyfélprofilban.":::
 

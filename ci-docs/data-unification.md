@@ -1,38 +1,46 @@
 ---
 title: Ügyfelek egységes nézetének létrehozása
-description: Az adategyesítési folyamatban az adatokkal egyetlen főadatkészletet hozhat létre az ügyfélprofilok alapján.
-ms.date: 10/18/2021
-ms.reviewer: mhart
+description: Az adatok egyesítésének folyamatán keresztül az adatokkal egyetlen adathalmazt hozhat létre az egységes ügyfélprofilokból.
+ms.date: 05/10/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: overview
-author: adkuppa
-ms.author: adkuppa
+author: v-wendysmith
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-map
 - customerInsights
-ms.openlocfilehash: eb5bbc538f93bc7097581db233d684870ade84a2
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: bb8da6f4b9f92f2b265ff9807e04638edae4f814
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642488"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755737"
 ---
 # <a name="data-unification-overview"></a>Az Adategyesítés áttekintése
 
-[Az adatforrások beállítása után](data-sources.md) egyesítheti az adatot. Az Adategyesítés három lépésből áll: **Leképezés**, **Egyeztetés** és **Egyesítés**.
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-Az adategyesítési folyamat lehetővé teszi, hogy egy-egy különálló adatforrást egyetlen fő adatkészletbe egyesítson, amely egységes képet ad az ügyfelekről. Az egyesítési fázisok kötelezőek, és a következő sorrendben végezhetők el:
+[Az adatforrások beállítása után](data-sources.md) egyesítheti az adatot. Az adategyesítés lehetővé teszi az egyszer eltérő adatforrások egyetlen fő adatkészletbe történő egyesítését, amely egységes nézetet biztosít az adott adatokról. Az egyes fogyasztók (B-to-C) esetében, ahol az adatok egyének köré összpontosulnak, az egyesítés egységes képet nyújt az ügyfelekről. Azoknál az üzleti fiókoknál (B-től B-ig), ahol az adatok a fiókok köré összpontosulnak, az egyesítés egységes nézetet biztosít a fiókokról.
 
-1. [Leképezés](map-entities.md)
-2. [Egyezés](match-entities.md)
-3. [Összefésülés](merge-entities.md)
+Az adatok egyetlen entitáson vagy több entitáson egyesíthetők. Az egyesítés a következő sorrendben történik:
 
-Az adatok egyesítésének befejezése után tetszés szerint
+1. [Forrásmezők](map-entities.md) (korábban Leképezésnek nevezték): A forrásmezők lépésében válassza ki az egyesítési folyamatba bevonandó entitásokat és mezőket. Mezők leképezése a mező célját leíró közös szemantikai típusra.
 
-- [beállíthat az entitások közötti kapcsolatokat](relationships.md) kifinomult szegmensek létrehozásához
-- [bővítheti adatait](enrichment-hub.md), hogy szélesebb körű betekintést tudjon kapni az ügyfelekről
-- [tevékenységeket definiálhat](activities.md) néhány betöltött attribútumból
+1. [Ismétlődő rekordok](remove-duplicates.md) (korábban a Match része): Az ismétlődő rekordok lépésben tetszés szerint definiáljon szabályokat az ismétlődő ügyfélrekordok eltávolítására az egyes entitásokból.
 
+1. [Feltételek egyeztetése](match-entities.md) (korábban Egyezés): Az egyeztetési feltételek lépésben definiáljon olyan szabályokat, amelyek megfelelnek az entitások közötti ügyfélrekordoknak. Ha egy vevő két vagy több entitásban található, egyetlen konszolidált rekord jön létre az egyes entitások összes oszlopával és adatával.
+
+1. [Egyesített vevőmezők](merge-entities.md) (korábbi nevén Egyesítés): Az egyesített vevőmezők lépésben határozza meg, hogy mely forrásmezőket kell belefoglalni, kizárni vagy egyesítette egy egységes vevőprofilba.  
+
+1. [Tekintse át](review-unification.md) és hozza létre az egységes profilt.
+
+Az adategyesítés befejezése után opcionálisan:
+
+- [Állítsa be kapcsolatok entitások](relationships.md) között kifinomult szegmensek létrehozásához.
+- [Gazdagítsa adatait](enrichment-hub.md), hogy szélesebb körű betekintést kapjon ügyfeleiről.
+- [A betöltött attribútumok némelyikének tevékenységeinek](activities.md) meghatározása.
+- [Hozzon létre intézkedéseket](measures.md) az ügyfelek viselkedésének és üzleti teljesítményének jobb megértése érdekében.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

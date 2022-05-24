@@ -1,19 +1,19 @@
 ---
 title: Tranzakcionális lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálja a mezőn kívüli lemorzsolódás-előrejelzési modellt.
-ms.date: 11/19/2020
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05c221c634b8e0f582a6c6d3f4d90e971aa9707e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642838"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741322"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési példamutató
 
@@ -86,69 +86,13 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 1. Az adatforrások mentése.
 
-
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
-Az adatok bevitele után elkezdhetjük a **Megfeleltetés/Egyeztetés/Egyesítés** folyamatot, hogy hogy létrehozzunk egy egyesített ügyfélprofilt. További információkért lásd: [Adatok egységesítése](data-unification.md).
-
-### <a name="map"></a>Map
-
-1. Az adatok betáplálása után képezze le a kapcsolattartókat az eCommerce-ből és a Loyalty data-ból a közös adattípusokba. Nyissa meg az **Adatok** > **Egységesítés** > **Megfeleltetés**-t.
-
-1. Válassza ki az entitást, amely jelképezi az ügyfélprofilt – **eCommerceContacts** és **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="az ecommerce és a loyality adatforrások egységesítése.":::
-
-1. Jelölje ki a **ContactId**-t elsődleges kulcsaként az **eCommerceContacts**-hoz és a **LoyaltyID** a **loyCustomers** elsődleges kulcsaként.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="A LoyaltyId egyesítheti elsődleges kulcsként.":::
-
-### <a name="match"></a>Egyeztetés
-
-1. Ugorjon az **Egyeztetés** lapra és válassza a **Sorrend beállítását**.
-
-1. Az **Elsődleges** legördülő listában válassza az **eCommerceContacts : eCommerce** mint elsődleges forrást, és tartalmazza az összes rekordot.
-
-1. Az **Entitás 2** legördülő listában válassza a **loyCustomers: LoyaltyScheme** lehetőséget, és adja meg az összes rekordot.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Az egységesítéshez egyeztesse az eCommerce-t és a Loyality-t.":::
-
-1. Válassza az **Új szabály létrehozása** menüpontot
-
-1. Adja hozzá az első feltételt a FullName segítségével.
-
-   * Az eCommerceContacts esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   * A loyCustomers esetében válassza a **FullName** lehetőséget a legördülő menüben.
-   * Jelölje ki a **Normalizálás** legördülő parancsot, és válassza a **Típus (Telefon, Név, Cím,...)** lehetőséget.
-   * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-1. Adja meg a nevét **FullName, Email**, az új szabályhoz.
-
-   * Másik feltétel hozzáadása az e-mail címhez a **Feltétel hozzáadása** lehetőség választásával.
-   * Az entitás eCommerceContacts esetében válassza az **EMail** lehetőséget a legördülő menüben.
-   * Az entitás loyCustomers esetében válassza az **EMail** lehetőséget a legördülő menüben. 
-   * Hagyja üresen a Normalizálást. 
-   * Állítsa be a **Pontossági szintet**: **Alap** és **Érték**: **Magas**-ra.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Egységesítése az egyezési szabályt a névhez és az e-mailhez.":::
-
-7. Válassza a **Mentés** és **Futtatás** lehetőséget.
-
-### <a name="merge"></a>Összefűzés
-
-1. Nyissa meg az **Egyesítés** lapot.
-
-1. A **ContactId** **loyCustomers** entitáshoz változtassa meg a megjelenítendő nevet **ContactIdLOYALTY**-ra, hogy megkülönböztethesse azt a többi betáplált azonosítóval.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="nevezze át a loyalty azonosítót contactid-re.":::
-
-1. Válassza a **Mentés** és **Futtatás** lehetőséget, hogy elindítsa a Egyesítés Folyamatot.
-
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>3. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.
 
-Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépéseket az [Előfizetés lemorzsolódása előrejelzés](predict-subscription-churn.md) cikkben találja. 
+Az egységes ügyfélprofilok meglétével most már előrejelzés futtathatjuk a tranzakciós lemorzsolódást. A részletes lépéseket a [Tranzakció lemorzsolódása előrejelzés](predict-transactional-churn.md) cikkben találja. 
 
 1. Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.
 
@@ -180,7 +124,7 @@ Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsol
 
 ## <a name="task-4---review-model-results-and-explanations"></a>4. feladat – Modell eredmények és a magyarázatok áttekintése
 
-Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most már megtekintheti az előfizetési lemorzsolódás modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-subscription-churn.md#review-a-prediction-status-and-results) című témakört.
+Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most áttekintheti a lemorzsolódási modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-transactional-churn.md#review-a-prediction-status-and-results) című témakört.
 
 ## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>5. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről
 
@@ -192,14 +136,12 @@ Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 
    :::image type="content" source="media/segment-intelligence.PNG" alt-text="Szegmens létrehozása a modell kimenetével.":::
 
-1. Válassza ki a **OOBSubscriptionChurnPrediction** végpontot és definiálja a szegmenst: 
+1. Válassza ki az **OOBeCommerceChurnPrediction** végpont, és határozza meg a szegmenst: 
    - Mező: ChurnScore
    - Operátor: nagyobb, mint
    - Érték: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Állítsa be az előfizetési lemorzsolódási szegmenset.":::
 
-Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén.
+Most már van egy dinamikusan frissített szegmense, amely azonosítja a magas lemorzsolódási kockázatú ügyfeleket.
 
 További információ: [Szegmensek létrehozása és kezelése](segments.md).
 
