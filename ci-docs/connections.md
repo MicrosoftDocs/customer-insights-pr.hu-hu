@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 2a3175737ac95e10d75fad4a69db303b0564c6cc
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755312"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800375"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -69,7 +69,7 @@ Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hog
 
 1. Menjen a **Kapcsolatok** fülre.
 
-1. Jelölje ki a szerkeszteni kívánt kapcsolat függőleges három pontját.
+1. Jelölje ki a szerkeszteni kívánt kapcsolat függőleges ellipszisét (&vellip;).
 
 1. Válassza a **Szerkesztés** lehetőséget.
 
@@ -85,7 +85,7 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 
 1. Menjen a **Kapcsolatok** fülre.
 
-1. Jelölje ki az eltávolítani kívánt kapcsolat függőleges három pontját.
+1. Válassza ki az eltávolítani kívánt kapcsolat függőleges ellipszisét (&vellip;)
 
 1. Válassza a legördülő menü **Eltávolítás** elemét. Megjelenik a jóváhagyást kérő párbeszéd.
 

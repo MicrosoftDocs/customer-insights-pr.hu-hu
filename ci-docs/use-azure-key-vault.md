@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 9eb06a1190fe4e8012ecd3d6742b8b3f5f4d6349
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: d4f2d5ebc828053c40e22065f4915c4d0f84153f
+ms.sourcegitcommit: 6ec4626a185892dfb781d3c7af4384f9c13f3723
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653480"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "8763582"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Hozza magával saját Azure kulcstartóját (előzetes verzió)
 
@@ -37,11 +37,11 @@ A Customer Insights kulcstartójának konfigurálásához a következő előfelt
 
 - A kulcstartónak le kell tiltani a **Key Vault-tűzfalat**.
 
-- A kulcstartó ugyanabban [az Azure-helyen](https://azure.microsoft.com/global-infrastructure/geographies/#overview) található, mint a Customer Insights környezet. A Customer Insights környezetének régiója az **AdminSystemAboutRegion** > **·** > **·** > **csoportban** található.
+- A kulcstartó ugyanabban [az Azure-helyen](https://azure.microsoft.com/global-infrastructure/geographies/#overview) található, mint a Customer Insights környezet. A Customer Insights környezetének régiója a Felügyeleti **rendszer a régióról** > **·** > **területen** > **található**.
 
 ### <a name="link-a-key-vault-to-the-environment"></a>A kulcstartó csatolása a környezethez
 
-1. Nyissa meg az **AdminSecurity** > **elemet**, majd válassza a **Key Vault** lapot.
+1. Nyissa meg a **Felügyeleti** > **biztonság** ablakot, majd válassza a **Kulcstartó** lapot.
 1. Válassza a **Key Vault** csempén a **Telepítőt**.
 1. **Előfizetés** kiválasztása.
 1. Válasszon egy kulcstartót a **Key Vault** legördülő listából. Ha túl sok kulcstartó jelenik meg, a keresés eredményének korlátozására jelöljön ki egy erőforráscsoportot.
@@ -89,9 +89,9 @@ Ha a Key Vault hozzáférési szabályzata [vagy](/azure/key-vault/general/assig
 
 | Típus szerint        | Jogosultságok          |
 | ----------- | -------------------- |
-| Billentyű         | [Kulcsok beszerzése](/rest/api/keyvault/get-keys), [Kulcs beszerzése](/rest/api/keyvault/get-key)                                 |
-| Titkos      | [Titkos kódok beszerzése](/rest/api/keyvault/get-secrets), [Titkos kód beszerzése](/rest/api/keyvault/get-secret)                     |
-| Tanúsítvány | [Tanúsítványok beszerzése](/rest/api/keyvault/get-certificates), [Tanúsítvány beszerzése](/rest/api/keyvault/get-certificate) |
+| Billentyű         | [Kulcsok beszerzése](/rest/api/keyvault/keys/get-keys/get-keys), [Kulcs beszerzése](/rest/api/keyvault/keys/get-key/get-key)                                 |
+| Titkos      | [Titkos kódok beszerzése](/rest/api/keyvault/secrets/get-secrets/get-secrets), [Titkos kód beszerzése](/rest/api/keyvault/secrets/get-secret/get-secret)                     |
+| Tanúsítvány | [Tanúsítványok beszerzése](/rest/api/keyvault/certificates/get-certificates/get-certificates), [Tanúsítvány beszerzése](/rest/api/keyvault/certificates/get-certificate/get-certificate) |
 
 Az előző értékek a minimumok, amelyeket fel kell sorolni és ki kell olvasni a végrehajtás során.
 

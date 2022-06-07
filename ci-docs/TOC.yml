@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Képzési katalógus
   items:
-    - name: Első lépések
+    - name: Tanúsítvány a Microsoft ügyféladat-platform specialistájaként
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Ismerkedés a Customer Insights szolgáltatással
       href: /learn/modules/get-started-customer-data-platform/
     - name: Adatok betáplálása
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Kezdés fizetett licenccel
       href: paid-license.md
-    - name: Új környezet létrehozása
-      href: create-environment.md
     - name: Fedezze fel az Ügyfélelemzéseket
       href: home.md
     - name: Címkék és oszlopok használata
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: A Common Data Model-entitássémák áttekintése
       href: entity-schemas.md
-    - name: A Customer Insights-adatok a Dataverse-ben
-      href: customer-insights-dataverse.md
     - name: Kapcsolatok és a csatlakoztatott entitások kiépítése
       href: relationships.md
     - name: Szemantikai leképezések meghatározása
       href: semantic-mappings.md
+- name: környezetek
+  items:
+    - name: Új környezet létrehozása
+      href: create-environment.md
+    - name: Csatlakozás a Microsoft Dataverse-hoz
+      href: customer-insights-dataverse.md
+    - name: Használd a sajátodat Azure Data Lake Storage
+      href: own-data-lake-storage.md
+    - name: A környezetbeállítások kezelése
+      href: manage-environments.md
+    - name: Csatlakozás tárfiókhoz az Egyszerű szolgáltatással
+      href: connect-service-principal.md
 - name: Felügyelet
   items:
     - name: Rendszerkonfiguráció beállítása
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Felhasználói engedélyek hozzárendelése
       href: permissions.md
-    - name: Kapcsolatok áttekintése
-      href: connections.md
-    - name: Több környezetet kezelése
-      href: manage-environments.md
     - name: Saját Kay Vault használata
       href: use-azure-key-vault.md
-    - name: Csatlakozás tárfiókhoz az Egyszerű szolgáltatással
-      href: connect-service-principal.md
     - name: Diagnosztikai naplók exportálása
       href: diagnostics.md
-    - name: A szolgáltatás korlátozásai
-      href: service-limits.md
-    - name: DSR-jogok és kérelmek
-      href: dsr-rights-requests.md
+    - name: Kapcsolatok áttekintése
+      href: connections.md
 - name: API-k
   items:
     - name: Az API-k használata
@@ -324,5 +328,9 @@
       items:
         - name: Előrejelzések készítése hozzájárulási adatokkal
           href: consent-management/predictions-consent-data.md
+- name: A szolgáltatás korlátozásai
+  href: service-limits.md
+- name: DSR-jogok és kérelmek
+  href: dsr-rights-requests.md
 - name: Támogatás igénybevétele
   href: /power-platform/admin/get-help-support

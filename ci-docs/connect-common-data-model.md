@@ -1,7 +1,7 @@
 ---
 title: Common Data Model-adatok összekapcsolása egy Azure Data Lake-fiókkal
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
-ms.date: 01/25/2022
+ms.date: 05/24/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -13,12 +13,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: eeb6b9d97be5f9c0b9f6cbd6dbc6985559a1cd9d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 2e8564950a3269180a85f80fb736d2dcbd1b03b6
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642641"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833361"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 
@@ -34,7 +34,7 @@ Ez a cikk arról nyújt tájékoztatást, hogyan tölthet be adatokat egy Által
 
 - Az Azure-egyszerű szolgáltatásnév használatával történő hitelesítéshez ügyeljen arra, hogy az a bérlőn legyen konfigurálva. További információt a Csatlakozás Gen2-fiókhoz [egy Azure-szolgáltatásnévvel című témakörben talál Azure Data Lake Storage](connect-service-principal.md).
 
-- Az Azure Data Lake, amelyhez kapcsolódni szeretne, és be szeretné tölteni az adatokat, ugyanabban az Azure régióban kell lennie, mint a Dynamics 365 Customer Insights-környezet. A Common Data Model-mappába egy másik Azure-régióban található adattóból való kapcsolódás nem támogatott. A környezet Azure-régiójának megismeréséhez keresse fel **az AdminSystemAbout** > **·** > **webhelyet** az Ügyfélelemzésben.
+- Az Azure Data Lake, amelyhez kapcsolódni szeretne, és be szeretné tölteni az adatokat, ugyanabban az Azure régióban kell lennie, mint a Dynamics 365 Customer Insights-környezet. A Common Data Model-mappába egy másik Azure-régióban található adattóból való kapcsolódás nem támogatott. A környezet Azure-régiójának megismeréséhez nyissa meg **az Ügyfélelemzés felügyeleti** > **rendszer** > **névjegye** című témakörét.
 
 - Az online szolgáltatásokban tárolt adatok tárolhatók más helyen, mint ahol az adatokat feldolgozzák vagy tárolják Dynamics 365 Customer Insights.Az online szolgáltatásokban tárolt adatok importálásával vagy az azokhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a rendszerben Dynamics 365 Customer Insights. [További információ a Microsoft Adatvédelmi központban](https://www.microsoft.com/trust-center).
 
@@ -46,16 +46,16 @@ Ez a cikk arról nyújt tájékoztatást, hogyan tölthet be adatokat egy Által
 
 1. Válassza az **Azure data lake storage lehetőséget**, adja meg **a adatforrás nevét**, majd válassza a Tovább **lehetőséget**.
 
-   - Ha a rendszer kéri, válassza ki az iparágra vonatkozó mintaadatkészletek egyikét, majd válassza a Tovább **lehetőséget**. 
+   - Ha a rendszer kéri, válassza ki az iparágra vonatkozó mintaadatkészletek egyikét, majd válassza a Tovább **lehetőséget**.
 
 1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információt a Csatlakozás Gen2-fiókhoz [egy Azure-szolgáltatásnévvel című témakörben talál Azure Data Lake Storage](connect-service-principal.md). Írja be a **kiszolgáló címét**, válassza a Bejelentkezés **lehetőséget**, majd válassza a Tovább **lehetőséget**.
    > [!div class="mx-imgBorder"]
    > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez.](media/enter-new-storage-details.png)
    > [!NOTE]
-   > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:
-   >  - Storage Blob adatolvasó
-   >  - Storage Blob adattulajdonos
-   >  - Storage Blob adatközreműködő
+   > A tárfiók tárolójához az alábbi szerepkörök egyikére van szükség a adatforrás létrehozásához és létrehozásához:
+   >
+   >  - A Storage Blob Data olvasó elegendő ahhoz, hogy beolvassa a tárfiókból, és bevegye az adatokat az Ügyfélelemzésbe. 
+   >  - Tárolási Blob Data közreműködő vagy Tulajdonos szükséges, ha a jegyzékfájlokat közvetlenül a Customer Insights szolgáltatásban szeretné szerkeszteni.
 
 1. A **Common Data Model-mappa kiválasztása** párbeszédpanelen válassza azt a manifest.json fájlt, amelyből adatokat szeretne importálni, majd válassza a **Következő** lehetőséget.
    > [!NOTE]
@@ -65,11 +65,11 @@ Ez a cikk arról nyújt tájékoztatást, hogyan tölthet be adatokat egy Által
    > [!div class="mx-imgBorder"]
    > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból.](media/review-entities.png)
 
-8. Adja meg, hogy mely adatáttelektitásokat kívánja engedélyezni, majd válassza a Mentés **lehetőséget**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
+1. Adja meg, hogy mely adatáttelektitásokat kívánja engedélyezni, majd válassza a Mentés **lehetőséget**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
    > [!div class="mx-imgBorder"]
    > ![Adatprofil-készítést megjelenítő párbeszédpanel.](media/dataprofiling-entities.png)
 
-9. A kiválasztott adatok mentése után megnyílik az **Adatforrások** lap. Ekkor a Common Data Model mappa kapcsolatot adatforrásként látja.
+1. A kiválasztott adatok mentése után megnyílik az **Adatforrások** lap. Ekkor a Common Data Model mappa kapcsolatot adatforrásként látja.
 
 > [!NOTE]
 > A model.json vagy manifest-json fájl csak egy-egy adatforráshoz társítható ugyanabban a környezetben. Ugyanakkor ugyanez a model.json vagy manifest.json fájl több környezetben is használható adatforrásokhoz.
@@ -80,7 +80,7 @@ A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot 
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-2. A frissíteni kívánt adatforrás mellett jelölje ki a három pontot.
+2. A frissíteni kívánt adatforrás mellett válassza ki a függőleges ellipszis (&vellip;) elemet.
 
 3. Válassza a lista **Szerkesztés** elemét.
 
@@ -93,13 +93,6 @@ A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot 
 
    > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához egy meglévő tárhelyfiókhoz.](media/enter-existing-storage-details.png)
 
-   > [!NOTE]
-   > Ahhoz, hogy a tárolóhoz vagy a fenti tárolókhoz kapcsolódhasson, és létre tudja hozni adatforrást a következő szerepkörök egyike szükséges:
-   >  - Storage Blob adatolvasó
-   >  - Storage Blob adattulajdonos
-   >  - Storage Blob adatközreműködő
-
-
 6. Másik model.json vagy manifest.json fájl is választható, a tárolóból származó más entitáskészletekkel.
 
 7. Tetszés szerint kiválaszthat további entitásokat is, amelyeket betölthet. Ha nincsenek függőségek, akkor a már kijelölt entitásokat is eltávolíthatja.
@@ -107,7 +100,6 @@ A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot 
    > [!IMPORTANT]
    > Ha függőségek vannak a meglévő model.json vagy manifest.json fájlhoz és az entitások készletéhez. egy hibaüzenet jelenik meg, és nem választhat másik model.json vagy manifest.json fájlt. A model.json vagy a manifest.json fájl módosítása előtt távolítsa el ezeket a függőségeket, vagy hozzon létre egy új adatforrást a használni kívánt model.json vagy a manifest.json fájllal a függőségek elkerüléséhez szükséges.
 
-8. Tetszés szerint kiválaszthat további attribútumokat vagy entitásokat, amelyek lehetővé teszik az adatok profilkészítésének engedélyezését vagy letiltását a már kijelöltek esetén.   
-
+8. Tetszés szerint kiválaszthat további attribútumokat vagy entitásokat, amelyek lehetővé teszik az adatok profilkészítésének engedélyezését vagy letiltását a már kijelöltek esetén.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -11,12 +11,12 @@ ms.reviewer: mhart
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: e8a294a4bad1581539b5905160cddcd625699d90
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642521"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800176"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
 
@@ -28,7 +28,7 @@ Ez a cikk arról nyújt tájékoztatást, hogy a felhasználók hogyan Dataverse
 ## <a name="important-considerations"></a>Fontos tényezők
 
 1. Az online szolgáltatásokban, például az Azure Data Lake Storage esetében tárolt adatok az adatok feldolgozásának vagy tárolásának helyétől eltérő helyen tárolhatók, vagy a Dynamics 365 Customer Insights megoldásban is tárolhatók.Az online szolgáltatásokban tárolt adatok importálásával vagy az azokhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a rendszerben Dynamics 365 Customer Insights. [További információ a Microsoft Adatvédelmi központban](https://www.microsoft.com/trust-center).
-2. Csak Dataverse azok az entitások láthatók, amelyeken [engedélyezve van a változáskövetés](/power-platform/admin/enable-change-tracking-control-data-synchronization). Ezek az entitások exportálhatók a Dataverse-managed data lake-be, és felhasználhatók a Customer Insights alkalmazásban. A beépített Dataverse táblákon alapértelmezés szerint engedélyezve van a változáskövetés. Egyéni táblák esetén be kell kapcsolnia a változáskövetést. Annak ellenőrzéséhez, hogy egy Dataverse tábla engedélyezve van-e a változáskövetéshez, nyissa meg a [Power Apps](https://make.powerapps.com) > **DataTables** > **webhelyet**. Keresse meg az érdeklődésre számot tartó táblázatot, és válassza ki. Nyissa meg a **SettingsAdvanced** > **beállításokat,** és tekintse át a **Változások** nyomon követése beállítást.
+2. Csak Dataverse azok az entitások láthatók, amelyeken [engedélyezve van a változáskövetés](/power-platform/admin/enable-change-tracking-control-data-synchronization). Ezek az entitások exportálhatók a Dataverse-managed data lake-be, és felhasználhatók a Customer Insights alkalmazásban. A beépített Dataverse táblákon alapértelmezés szerint engedélyezve van a változáskövetés. Egyéni táblák esetén be kell kapcsolnia a változáskövetést. Annak ellenőrzéséhez, hogy egy Dataverse tábla engedélyezve van-e a változások nyomon követésére, nyissa meg az [Power Apps](https://make.powerapps.com) > **Adattáblák** > **lehetőséget**. Keresse meg az érdeklődésre számot tartó táblázatot, és válassza ki. Nyissa meg a **Beállítások** > **speciális beállításait,** és tekintse át a **Változások** nyomon követése beállítást.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Csatlakozás egy Dataverse felügyelt tóhoz
 
@@ -62,7 +62,7 @@ Ha másik Dataverse-adattóhoz szeretne kapcsolódni, [hozzon létre egy új ada
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-2. A frissíteni kívánt adatforrás mellett jelölje ki a három pontot.
+2. A frissíteni kívánt adatforrás mellett válassza ki a függőleges ellipszis (&vellip;) elemet.
 
 3. Válassza a lista **Szerkesztés** elemét.
 

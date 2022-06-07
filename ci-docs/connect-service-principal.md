@@ -1,7 +1,7 @@
 ---
 title: Csatlakozás egy Azure Data Lake Storage-fiókhoz egy szolgáltatásnév segítségével
 description: Azure szolgáltatásnév használata a saját adattó csatlakoztatására.
-ms.date: 04/26/2022
+ms.date: 05/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,22 +11,23 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 776eee79c25edbd40ed119510a314f5126933c3e
-ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
+ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8739165"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833388"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Csatlakozás egy Azure Data Lake Storage-fiókhoz egy Azure szolgáltatásnév segítségével
 
-Ez a cikk azt ismerteti, hogyan lehet csatlakozni Dynamics 365 Customer Insights egy fiókhoz a Azure Data Lake Storage tárfiókkulcsok helyett egy Azure-szolgáltatásnév használatával. 
+Ez a cikk azt ismerteti, hogyan lehet csatlakozni Dynamics 365 Customer Insights egy fiókhoz a Azure Data Lake Storage tárfiókkulcsok helyett egy Azure-szolgáltatásnév használatával.
 
 Az Azure-szolgáltatásokat használó automatizált eszközöknek mindig korlátozott engedélyekkel kell rendelkezniük. Ahelyett, hogy az alkalmazások teljes jogosultsággal rendelkező felhasználóként jelentkezzenek be, az Azure egyszerű szolgáltatásneveket biztosít. A szolgáltatásnévvel biztonságosan [hozzáadhat vagy szerkeszthet egy Common Data Model mappát adatforrás](connect-common-data-model.md), illetve [létrehozhat vagy frissíthet egy környezetet](create-environment.md).
 
 > [!IMPORTANT]
+>
 > - Az egyszerű szolgáltatást használó Data Lake Storage fióknak Gen2-nek kell lennie, és engedélyeznie kell [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace). Az Azure Data Lake Gen1 tárfiókjai nem támogatottak.
-> - Az egyszerű szolgáltatás létrehozásához rendszergazdai engedélyekre van szükség az Azure-előfizetéshez.
+> - A szolgáltatásnév létrehozásához rendszergazdai engedélyekre van szükség a Azure-bérlő.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Azure szolgáltatásnév létrehozása a Customer Insightshoz
 
@@ -38,29 +39,15 @@ Mielőtt új szolgáltatáselemet hozna létre a Customer Insights számára, el
 
 2. Az **Azure-szolgáltatások** csoportban válassza az **Azure Active Directory** lehetőséget.
 
-3. Válassza a **Kezelés** területen a **Vállalati alkalmazások** lehetőséget.
+3. A Kezelés csoportban **válassza** a Microsoft-alkalmazás **lehetőséget**.
 
 4. Az alkalmazásazonosítóhoz adjon **hozzá szűrőt, vagy keressen**`0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` rá a névre `Dynamics 365 AI for Customer Insights`.
 
-5. Ha talál egyező rekordot, az azt jelenti, hogy a szolgáltatásnév már létezik. 
-   
+5. Ha talál egyező rekordot, az azt jelenti, hogy a szolgáltatásnév már létezik.
+
    :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Képernyőkép egy meglévő szolgáltatásnévről.":::
-   
-6. Ha a rendszer nem ad vissza eredményt, hozzon létre egy új egyszerű szolgáltatásnevet.
 
-### <a name="create-a-new-service-principal"></a>Új egyszerű szolgáltatásnév létrehozása
-
-1. Telepítse az Azure Active Directory PowerShell vagy Graph legújabb verzióját. További tájékoztatásért menjen az [Azure Active Directory PowerShell telepítése a Graph szolgáltatáshoz](/powershell/azure/active-directory/install-adv2) részbe.
-
-   1. A számítógépen nyomja le a Windows gombot a billentyűzeten, és keressen a **Windows PowerShell** kifejezésre, és válassza a **Futtatás rendszergazdaként** lehetőséget.
-   
-   1. A megnyíló PowerShell ablakában adja meg az `Install-Module AzureAD` értéket.
-
-2. Hozza létre a Customer Insights szolgáltatásnevét az Azure AD PowerShell modullal.
-
-   1. A PowerShell ablakában adja meg az `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure` értéket. Cserélje le *[a címtárazonosítóját]* az Azure-előfizetés tényleges címtárazonosítójára, ahol létre szeretné hozni az egyszerű szolgáltatásnevet. Az `AzureEnvironmentName` környezetinév-paraméter nem kötelező.
-  
-   1. Adja meg a `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Ez a parancs létrehozza a Customer Insights szolgáltatáselemzőjét a kiválasztott Azure-előfizetésen. 
+6. Ha nem ad vissza eredményt, [létrehozhat egy új szolgáltatáselemet](#create-a-new-service-principal). A legtöbb esetben már létezik, és csak engedélyt kell adnia a szolgáltatásnévnek a tárfiók eléréséhez.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Engedélyek biztosítása az egyszerű szolgáltatásnév számára a tárfiók eléréséhez
 
@@ -77,9 +64,9 @@ Nyissa meg az Azure Portal webhelyet, és adjon engedélyeket a Szolgáltatásn�
 1. Állítsa be a **Szerepkör hozzárendelés hozzáadása** ablaktáblán állítsa be a következő tulajdonságokat:
    - szerepkör: **Storage Blob adat-közreműködő**
    - Rendeljen hozzáférést ehhez: **Felhasználó, csoport vagy egyszerű szolgáltatásnév**
-   - Tagok kiválasztása: **Dynamics 365 AI for Customer Insights** (az [eljárás korábbi szakaszában létrehozott szolgáltatásnév](#create-a-new-service-principal))
+   - Tagok kiválasztása: **Dynamics 365 AI for Customer Insights** (az eljárás [korábbi szakaszában keresett szolgáltatásnév](#create-a-new-service-principal))
 
-1.  Válassza a Véleményezés + hozzárendelés **lehetőséget**.
+1. Válassza a Véleményezés + hozzárendelés **lehetőséget**.
 
 A módosítások feltöltése 15 percet is igénybe vehet.
 
@@ -91,7 +78,7 @@ A Customer Insights szolgáltatásban adat lake storage-fiókot csatolhat a kime
 
 1. Keresse fel az [Azure rendszergazdai portált](https://portal.azure.com), jelentkezzen be az előfizetésbe, és nyissa meg a tárfiókot.
 
-1. A bal oldali ablaktáblában válassza a **Beállítások** > **Tulajdonságok** lehetőséget.
+1. A bal oldali ablaktáblában nyissa meg a **Beállítások** > **végpontok elemet**.
 
 1. Másolja a tárfiók erőforrás-azonosítójának értékét.
 
@@ -115,5 +102,18 @@ A Customer Insights szolgáltatásban adat lake storage-fiókot csatolhat a kime
 
 1. Folytassa a Customer Insights további lépéseivel a tárfiók csatolásához.
 
+### <a name="create-a-new-service-principal"></a>Új egyszerű szolgáltatásnév létrehozása
+
+1. Telepítse az Azure Active Directory PowerShell vagy Graph legújabb verzióját. További tájékoztatásért menjen az [Azure Active Directory PowerShell telepítése a Graph szolgáltatáshoz](/powershell/azure/active-directory/install-adv2) részbe.
+
+   1. A számítógépen nyomja le a billentyűzeten található Windows billentyűt, keresse meg a Windows **PowerShellt**, és válassza a Futtatás rendszergazdaként **lehetőséget**.
+
+   1. A megnyíló PowerShell ablakában adja meg az `Install-Module AzureAD` értéket.
+
+2. Hozza létre a Customer Insights szolgáltatásnevét az Azure AD PowerShell modullal.
+
+   1. A PowerShell ablakában adja meg az `Connect-AzureAD -TenantId "[your Directory ID]" -AzureEnvironmentName Azure` értéket. Cserélje le *[a címtárazonosítóját]* az Azure-előfizetés tényleges címtárazonosítójára, ahol létre szeretné hozni az egyszerű szolgáltatásnevet. Az `AzureEnvironmentName` környezetinév-paraméter nem kötelező.
+  
+   1. Adja meg a `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Ez a parancs létrehozza a Customer Insights szolgáltatáselemzőjét a kiválasztott Azure-előfizetésen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

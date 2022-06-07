@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755265"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807584"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés továbbítás az Dynamics 365 Customer Insights Azure Monitorral (előzetes verzió)
 
@@ -38,7 +38,7 @@ A diagnosztika Customer Insightsban való konfigurálásához a következő elő
 
 - Aktív [Azure-előfizetéssel](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/) rendelkezik.
 - Rendszergazdai [engedélyekkel rendelkezik](permissions.md#admin) a Customer Insights alkalmazásban.
-- Az Azure célerőforrásán a közreműködő **és** a Felhasználói hozzáférés rendszergazdája **szerepkörrel rendelkezik**. Az erőforrás lehet Azure Storage-fiók, Azure Event Hub vagy Azure Log Analytics-munkaterület. További információt az Azure-szerepkör-hozzárendelések hozzáadása és eltávolítása az Azure Portal [használatával című témakörben talál](/azure/role-based-access-control/role-assignments-portal).
+- Az Azure célerőforrásán a közreműködő **és** a Felhasználói hozzáférés rendszergazdája **szerepkörrel rendelkezik**. Az erőforrás lehet Azure Data Lake Storage fiók, Azure Event Hub vagy Azure Log Analytics-munkaterület. További információt az Azure-szerepkör-hozzárendelések hozzáadása és eltávolítása az Azure Portal [használatával című témakörben talál](/azure/role-based-access-control/role-assignments-portal). Ez az engedély szükséges a Customer Insights diagnosztikai beállításainak konfigurálásakor, a sikeres beállítás után módosítható.
 - [Az Azure Storage, az Azure Event Hub vagy az Azure Log Analytics célkövetelményei](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) teljesültek.
 - Legalább abban az **erőforráscsoportban rendelkezik olvasó** szerepkörrel, amelyhez az erőforrás tartozik.
 

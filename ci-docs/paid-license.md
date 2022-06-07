@@ -1,41 +1,33 @@
 ---
-title: Első lépések a Dynamics 365 Customer Insights fizetett licenccel
+title: Vásároljon licencet a Dynamics 365 Customer Insights
 author: m-hartmann
-description: Ismerkedjen meg a Dynamics 365 Customer Insights szolgáltatásban első alkalommal futtatott élményekkel, és fedezze fel a hozzájuk tartozó funkciókat.
+description: Vásároljon licencet a Dynamics 365 Customer Insights, jelentkezzen be, és ismerkedjen meg az alkalmazással.
 ms.author: mhart
 ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 8fcc1c97be87afe942aa3b5e23d1eb68008aa873
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9c83dc6716abd5f81eb7851d462d7d61791f542b
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641857"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768425"
 ---
-# <a name="get-started-after-purchasing-customer-insights"></a>Első lépések a Customer Insights beszerzését követően
+# <a name="purchase-customer-insights"></a>Vásárlói betekintések beszerzése
 
-Ez a cikk azt mutatja be, hogyan kell első lépéseket tenni azt követően, hogy a szervezet megvásárolta a Dynamics 365 Customer Insights előfizetést. Ha meg szeretné vásárolni a Customer Insights alkalmazást, akkor használja a [Dynamics 365 Customer Insights weboldalon](https://dynamics.microsoft.com/ai/customer-insights/) felsorolt kapcsolatfelvételi lehetőségeket. 
-
-Miután előfizetési licencet vásárolt a Customer Insights számára, a Microsoft 365 bérlő globális rendszergazdája e-mailt kap, amely meghívja őket a környezet létrehozására. 
-
-A Customer Insights bérlőnként van licencelve, és többféle képességet is tartalmaz. Az alapértelmezett kvóta növeléséhez több kapacitást és licencet is vásárolhat. 
-- [Árazás áttekintése](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
-- Kapacitás és jogosultságok: [Dynamics 365 licencelési útmutató](https://go.microsoft.com/fwlink/?LinkId=866544)
+A vásárláshoz Dynamics 365 Customer Insights tekintse meg kapcsolatfelvételi lehetőségeinket a [Dynamics 365 Customer Insights weboldalon](https://dynamics.microsoft.com/ai/customer-insights/).
 
 Ha a szolgáltatást és a funkciókat szeretné kipróbálni, akkor tekintse meg a [Próbakörnyezet beállítása](trial-signup.md) részt.
 
-## <a name="start-with-customer-insights"></a>Első lépések a Customer Insights szolgáltatással
+A Customer Insights bérlőnként van licencelve, és többféle képességet is tartalmaz. Az alapértelmezett kvóta növeléséhez több kapacitást és licencet is vásárolhat.
+- [Árazás áttekintése](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
+- Kapacitás és jogosultságok: [Dynamics 365 licencelési útmutató](https://go.microsoft.com/fwlink/?LinkId=866544)
 
-Az első futtatás során kiválaszthatja a fókuszt a Customer Insights segítségével, és mintaadatok segítségével fedezheti fel a lehetőségeket. Következő lépésként saját környezetet hozhat létre, és saját adatokat dolgozhat.
-
-**Bejelentkezés első alkalommal**:
+## <a name="sign-in-for-the-first-time"></a>Első alkalommal jelentkezzen be
 
 1. Menjen a [Customer Insights alkalmazás URL-címére](https://home.ci.ai.dynamics.com).
-1. Bejelentkezés iskolai vagy munkahelyi fiókkal. 
+1. Bejelentkezés iskolai vagy munkahelyi fiókkal.
 1. Fogadja el a szolgáltatási feltételeket, és állítsa be a Customer Insights környezet tartalmi beállításait.
 
-## <a name="create-your-own-environment"></a>Saját környezet létrehozása
-
-Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Az ilyen adatok segítségével megismerkedhet az alkalmazás funkcióival és megismerkedhet vele. A saját adatok használatához létre kell hoznia [egy környezetet](create-environment.md).
+Az első bejelentkezést követően mintaadatokat tartalmazó környezet látható. Ezekkel az adatokkal felfedezheti a funkciókat és megismerkedhet az alkalmazással. Saját adatok [használatához hozzon létre egy környezetet](create-environment.md).

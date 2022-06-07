@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c14e6c96d2f907ba161331b6f92277191cbdbef
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653526"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800608"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -27,7 +27,7 @@ Adatok felhasználása olyan forrásokból, mint például a Microsoft és más 
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala.":::
 
-A gazdagodási lehetőségekkel való munkához látogasson el a **DataEnrichment** > **oldalra**.  
+A gazdagodási lehetőségekkel való munkához nyissa meg az **Adatgazdagítás** > **lehetőséget**.  
 
 A bővítések létrehozásához vagy módosításához Közreműködő vagy Rendszergazdai engedélyekkel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).
 
@@ -63,7 +63,7 @@ A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beáll
 
 Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
 
-Az elérhető lehetőségekért válassza ki a bővítést. A listaelemen a három pont (...) kijelölésével megtekintheti a lehetőségeket. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
+Az elérhető lehetőségekért válassza ki a bővítést. A beállítások megtekintéséhez a listaelem függőleges ellipszisét (&vellip;) is kiválaszthatja. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek.":::
 

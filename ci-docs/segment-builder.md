@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c8e9e4976ade36c1c3c4f688a667b329bfde6e3e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642763"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800099"
 ---
 # <a name="create-segments"></a>Szegmensek létrehozása
 
@@ -134,8 +134,9 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
 > - A szegmensépítő nem javasol érvényes értékeket az entitásokból a feltételek operátorainak beállításakor. Az **Adatok** > **Entitások** helyen letöltheti az entitásadatokat, és láthatja, hogy mely értékek érhetők el.
 > - A dátumon alapuló feltételek válthatnak a fix dátumok és egy lebegőpontos tartomány között.
 > - Ha a szegmensre több szabály is vonatkozik, akkor a szerkesztett szabály mellett egy függőleges kék vonal van.
-> - A szabályokat és feltételeket a szegmensdefinícióban más helyre is áthelyezheti. Válassza ki a [...] elemet egy szabály vagy feltétel mellet, és adja meg, hogy hová és hogyan helyezi át.
+> - A szabályokat és feltételeket a szegmensdefinícióban más helyre is áthelyezheti. Jelölje ki a függőleges ellipszis (&vellip;) egy szabály vagy feltétel mellett, és válassza ki, hogyan és hol helyezze át.
 > - A **Visszavonás** és a **Visszaállítás** vezérlőelemek a parancssávban visszagördülnek a változásokhoz.
+> - A szegmens létrehozása után egyes szegmensek lehetővé teszik a szegmens [használatának](segments.md#track-usage-of-a-segment) nyomon követését.
 
 ## <a name="quick-segments"></a>Gyors szegmens
 

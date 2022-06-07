@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 386198c838929a20e136288fffb1015707654d8d
-ms.sourcegitcommit: 9f256af5c4f7e99305bf09087f7ec05eebeae6a0
-ms.translationtype: MT
+ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "8700940"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833633"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -58,6 +58,7 @@ A LiveRamp identitásfeloldást és az ügyféladatok összevonását biztosítj
 További információt az Ügyfélprofilok bővítése a LiveRamp (Preview) azonosító adataival című témakörben [talál](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Szegmensek és mértékek rendszerezése címkékkel és szűrőkkel
+
 Ha a szervezet sok szegmenst vagy intézkedést tart fenn, a megfelelő megtalálása néha kihívást jelenthet. Ez az új funkció lehetővé teszi listák szervezését címkék és oszlopok használatával. Segít gyorsan és egyszerűen megtalálni az adatokat, és testreszabhatja a nézeteket.
 
 További információt a Címkék és oszlopok [használata című témakörben talál](work-with-tags-columns.md).
@@ -65,9 +66,9 @@ További információt a Címkék és oszlopok [használata című témakörben 
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Adatmegosztás Dataverse engedélyezése saját tárfiók használatakor
 
 Ha a környezet a Customer Insights-adatok tárolására szolgál Azure Data Lake Storage, az adatmegosztáshoz Microsoft Dataverse további konfigurációra van szükség.
-Korábban csak akkor engedélyezhette az adatmegosztást Dataverse, ha adatait a kezelt adattavankban tároltuk. 
+Korábban csak akkor engedélyezhette az adatmegosztást Dataverse, ha adatait a kezelt adattavankban tároltuk.
 
-További információt az Adatmegosztás engedélyezése saját [(előzetes verzió)Dataverse című Azure Data Lake Storage témakörben talál](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
+További információt az Adatmegosztás engedélyezése saját [(előzetes verzió)Dataverse című Azure Data Lake Storage témakörben talál](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
 
 ### <a name="new-export-destinations-iterable-and-braze"></a>Új exportcélpontok: Iterable és Braze
 
@@ -81,7 +82,6 @@ A csatlakoztatott szolgáltatások API-jának módosítása az összekötők meg
 
 - Google Ads: A Google Ads exportálási összekötőjének új verziója leegyszerűsíti a hitelesítési élményt, és most lehetővé teszi új Google Ads-célközönségek automatikus létrehozását. 
 - Marketo: A Marketo exportcsatlakozó új verziója támogatja a Marketo ID azonosítót, lehetővé téve az adatok megkettőzésének elkerülését, a meglévő rekordok frissítését és új rekordok létrehozását a Marketo-ban. 
-
 
 ## <a name="february-2022-updates"></a>2022. februári frissítések
 
@@ -109,7 +109,7 @@ További információt az Ügyfélprofilok bővítése a LiveRamp (Preview) azon
 
 ### <a name="enrichment-for-data-sources-preview"></a>Adatforrások gazdagítása (előzetes verzió)
 
-Az adatok egyesítése előtt olyan forrásokból származó adatokat használhat, mint a Microsoft és más partnerek. Adatforrás dúsítások segítenek nagyobb adattömörséget és minőséget eredményezni, ami segíthet jobb eredmények elérésében az adatok egyesítése után.
+Az adatok egyesítése előtt olyan forrásokból származó adatokat használhat, mint a Microsoft és más partnerek. Adatforrás gazdagodás segít a nagyobb adattömörség és minőség elérésében, ami segíthet jobb eredmények elérésében az adatok egységesítése után.
 
 További információt az adatforrások gazdagítása (Előnézet) című [témakörben talál](data-sources-enrichment.md).
 
@@ -117,7 +117,7 @@ További információt az adatforrások gazdagítása (Előnézet) című [téma
 
 Bár a Customer Insights szolgáltatásban több felhasználó is rendelkezhet rendszergazdai engedélyekkel, a környezetnek csak egy felhasználó a tulajdonosa. A továbbfejlesztett élmény lehetővé teszi a környezet tulajdonosainak megváltoztatását és a tulajdonjog megszerzését, ha egy korábbi tulajdonos elhagyta a szervezetet. 
 
-További információt a Környezet [tulajdonosának módosítása című témakörben talál](manage-environments.md#change-the-owner-of-an-environment).
+További információt a Környezet tulajdonosának módosítása című témakörben [talál](manage-environments.md#change-the-owner-of-an-environment).
 
 ### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Az adatelőkészítési folyamat felsorolja a sérült rekordok sérülési okát
 

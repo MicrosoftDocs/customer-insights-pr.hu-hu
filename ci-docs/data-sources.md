@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 1fe8d6e8098831ecc8ff28e571340c56a654de6d
-ms.sourcegitcommit: a50c5e70d2baf4db41a349162fd1b1f84c3e03b6
+ms.openlocfilehash: 355d52eabde90e0764817cf479821264ebb2e5eb
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8739211"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800469"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -76,7 +76,7 @@ Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lép
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-2. Jelölje be a frissíteni kívánt adatforrás melletti függőleges ellipszist, és válassza a legördülő menüből a **Frissítés** lehetőséget.
+2. Jelölje ki a frissíteni kívánt adatforrás melletti függőleges ellipsziseket (&vellip;), és válassza **a Legördülő listából a Frissítés** lehetőséget.
 
 3. Az adatforrás most már a manuális frissítésre váltja ki. Egy adatforrás frissítése frissíteni fogja az entitássémát és az adatokat a frissítésben megadott összes adatforrás számára.
 
@@ -86,7 +86,7 @@ Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lép
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-2. Jelölje be a törölni kívánt adatforrás melletti függőleges ellipszist, és válassza a legördülő menüből a **Törlés** lehetőséget.
+2. Jelölje ki az eltávolítani kívánt adatforrás melletti függőleges ellipsziseket (&vellip;), és válassza a Törlés **parancsot** a legördülő menüből.
 
 3. Hagyja jóvá a törlést.
 

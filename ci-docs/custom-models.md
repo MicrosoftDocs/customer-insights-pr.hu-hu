@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642571"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800423"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
 
@@ -92,7 +92,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="edit-a-workflow"></a>Egy munkafolyamat szerkesztése
 
-1. Az **egyéni modellek** lapon jelölje ki a függőleges három pontot a **Műveletek** oszlopban a korábban létrehozott munkafolyamat mellett, és válassza a **Szerkesztés** lehetőséget.
+1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) oszlopot a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett, és válassza a Szerkesztés **lehetőséget**.
 
 1. A munkafolyamat felismerhető nevét a **megjelenítendő név** mezőben frissítheti, de a konfigurált webszolgáltatás vagy folyamat nem módosítható. Válassza a **Következő** lehetőséget.
 
@@ -108,7 +108,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="run-a-workflow"></a>Munkafolyamat futtatása
 
-1. Az **Egyéni modellek** lapon jelölje ki a függőleges három pontot a **Műveletek** oszlopban a korábban létrehozott munkafolyamat mellett.
+1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) értéket a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
 
 1. Válassza a **Futtatás** lehetőséget.
 
@@ -116,7 +116,7 @@ A munkafolyamat minden ütemezett frissítéssel együtt automatikusan lefut. To
 
 ## <a name="delete-a-workflow"></a>Egy munkafolyamat törlése
 
-1. Az **Egyéni modellek** lapon jelölje ki a függőleges három pontot a **Műveletek** oszlopban a korábban létrehozott munkafolyamat mellett.
+1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) értéket a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
 
 1. Válassza a **Törlés** lehetőséget, és hagyja jóvá a törlést.
 

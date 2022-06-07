@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 4a269a223efa08f71db09eef2ec9a8f8a077f7a7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c0db75afdde91bbd60fbece77eb2660a38b84860
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641811"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833771"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Dynamics 365 Customer Insights próbaverzió GYIK
 
@@ -62,9 +62,9 @@ A próbaverziót közvetlenül az alkalmazásban is kibővítheti. A próbaverzi
 
 Általában javasoljuk, hogy a Customer Insights fizetett verziójára való frissítéskor elölről kezdje a saját adataival. 
 
-Ha csak a Customer Insights szolgáltatást használja, akkor a Customer Insights megvásárlásakor próbakörnyezetből is másolhatja az adatait. A beállítások próbaverzióból fizetős környezetbe való áttelepítéséhez a Customer Insights-próbaverzió rendszergazdájának és a bérlő globális rendszergazdájának Microsoft 365, vagy a szervezet Dynamics 365 rendszergazdájának kell lennie. 
+Ha csak a Customer Insights szolgáltatást használja, akkor a Customer Insights megvásárlásakor próbakörnyezetből is másolhatja az adatait. A beállítások próbaverzióból fizetős környezetbe való áttelepítéséhez a Customer Insights-próbaverzió rendszergazdájának és a bérlő globális rendszergazdájának Microsoft 365, vagy a szervezet Dynamics 365 rendszergazdájának kell lennie.
 
-Miután először bejelentkezett a Customer Insights fizetett példányába, a rendszer kéri, hogy hozzon létre egy új környezetet. Ebben a folyamatban megadhatja, hogy a konfigurációt egy meglévő környezetből másolja át, és a beállítások nagy részét áttelepíti. Ha rendelkezik a fenti jogosultságokkal, akkor a próbakörnyezet megjelenik ebben a listában. További információ: [Környezetkonfiguráció másolása](manage-environments.md#copy-the-environment-configuration).
+Miután először bejelentkezett a Customer Insights fizetett példányába, a rendszer kéri, hogy hozzon létre egy új környezetet. Ebben a folyamatban megadhatja, hogy a konfigurációt egy meglévő környezetből másolja át, és a beállítások nagy részét áttelepíti. Ha rendelkezik a fenti jogosultságokkal, akkor a próbakörnyezet megjelenik ebben a listában. További információ: [Környezetkonfiguráció másolása](create-environment.md#copy-the-environment-configuration).
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Mik a próbaverzió korlátozásai kvótái?
 
@@ -81,9 +81,10 @@ Miután feliratkozott a próbaverzióra, megérkezik az alkalmazás főképerny�
 
 A Customer Insights szolgáltatásainak legtöbb szolgáltatása elérhető a próbaverzióban.
 
-A következő szolgáltatások nem érhetők **el**: 
+A következő szolgáltatások nem érhetők **el**:
+
 - Nem hozhat létre olyan új környezeteket, amelyek saját Azure Data Lake Storage-fiókját használják.
-- A próbaverzió nem törölhető. 
+- A próbaverzió nem törölhető.
 
 ### <a name="how-long-does-the-trial-last"></a>Meddig tart a próbaverzió?
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
-ms.translationtype: HT
+ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755453"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808509"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
@@ -31,11 +31,11 @@ Ez a cikk bemutatja, hogyan férhet hozzá a Customer Insights API-khoz, hogyan 
 
 1. [Jelentkezzen be](https://home.ci.ai.dynamics.com) a Customer Insights szolgáltatásba. Ha még nincs előfizetése, [iratkozzon fel a Customer Insights próbaverziójára](https://aka.ms/tryci).
 
-1. Az API-k engedélyezéséhez a Customer Insights környezetében látogasson el a **Rendszergazda** > **Engedélyek** pontra. Ehhez rendszergazdai engedélyekre van szükség.
+1. Ha engedélyezni szeretné az API-kat a Customer Insights-környezetben, nyissa meg a **Rendszergazdai** > **biztonság lehetőséget**. Ehhez rendszergazdai engedélyekre van szükség.
 
 1. Nyissa meg az **API-k** lapot, és jelölje be az **Engedélyezés** gombot.    
  
-   Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsok újbóli generálásához válassza az **Elsődleges újbóli létrehozása** vagy a **Másodlagos újbóli létrehozása** beállítást a **Rendszergazda** > **Engedélyek** > **API-k** között.
+   Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsokat úgy hozhatja létre, hogy bejelöli az elsődleges újragenerálását vagy **a** másodlagos **újragenerálást a rendszergazdai** biztonsági **API-kban** > **·** > **.**
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -62,14 +62,12 @@ Ezek a lépések segítenek a Customer Insights API-k használatának megkezdés
 1. A bal oldalon válassza az **Alkalmazásregisztrációk** lehetőséget.
 
 1. Válassza az **Új regisztráció** lehetőséget, adja meg az alkalmazás nevét és a fiók típusát.
- 
+
    Ha szeretne, megadhat egy átirányítási URL-címet. http://localhost elegendő az alkalmazások helyi számítógépen történő fejlesztéséhez.
 
 1. Az új alkalmazás regisztrálásával nyissa meg az **API-engedélyeket**.
 
-<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
-
-1. Válassza az **Engedély hozzáadása** lehetőséget, és az oldalsó panelben válassza a **Customer Insights** lehetőséget.
+1. Válassza **az Engedély** hozzáadása lehetőséget, és válassza **a Dynamics 365 AI for Customer Insights** lehetőséget az oldalsó ablaktáblában.
 
 1. Az **Engedély típusa** parancshoz válassza a **Delegált engedélyek** lehetőséget, majd válassza ki a **Felhasználó megszemélyesítés** engedélyt.
 
@@ -109,7 +107,7 @@ Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-
 
 1. Következtetésképp hozzá kell adnunk az alkalmazásregisztráció nevét felhasználóként a Customer Insightsban.  
    
-   Nyissa meg a Customer Insights szolgáltatást **Rendszergazda** > **Engedélyek** pontra, és válassza a **Felhasználó hozzáadása**.
+   Nyissa meg az Ügyfélelemzéseket, nyissa meg a Rendszergazdai biztonság lehetőséget, **és válassza a Felhasználó hozzáadása lehetőséget** > **·**.**·**
 
 1. Keresse meg az alkalmazásregisztrációjának nevét, jelölje ki a keresési eredmények között, és válassza a **Mentés** lehetőséget.
 

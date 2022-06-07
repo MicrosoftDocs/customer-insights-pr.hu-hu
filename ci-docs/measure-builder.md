@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642848"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800329"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Mértékszerkesztő használata mértékszerkesztővel a semmiből történő létrehozáshoz
 
@@ -88,7 +88,7 @@ Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti s
 
 1. Ha további számításokat szeretne hozzáadni az mértékhez, válassza az **Új számítás** lehetőséget. Az új számításokhoz csak ugyanazon az entitás elérési úton használhatók entitások. A további számítások új oszlopként fognak megjelenni a mérték kimeneti entitásában.
 
-1. Válassza a **...** lehetőséget a mértékből szármató számítás **Duplikálásához**, **Átnevezéséhez** vagy **Eltávolításához**.
+1. Válassza ki a számítás függőleges ellipszisét (&vellip;) a számítás **másolata**, **átnevezése** vagy **eltávolítása** mértékegységből.
 
 1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
 
@@ -158,7 +158,7 @@ Az egyes számlák (vevői intézkedés) vagy az összes számla szintjén (üzl
    1. Válassza ki a **Kapcsolat elérési útját**, és válassza ki az entitás elérési útját, amely a mérőszám azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
    1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz.
 
-1. Válassza a **...** lehetőséget a mértékből szármató számítás **Duplikálásához**, **Átnevezéséhez** vagy **Eltávolításához**.
+1. Válassza ki a számítás függőleges ellipszisét (&vellip;) a számítás **másolata**, **átnevezése** vagy **eltávolítása** mértékegységből.
 
 1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
 

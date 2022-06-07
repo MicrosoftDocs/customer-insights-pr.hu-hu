@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740722"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800653"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki részleges adatait előrejelzésekkel (elavult)
 
@@ -95,7 +95,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 2. Jelölje ki az áttekinteni kívánt előrejelzést.
 
-3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Megtekintés** lehetőséget.
+3. Jelölje ki a függőleges ellipszis (&vellip;) pontot a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
 
 4. Az előrejelzés nézetében számos adatpont jelenik meg.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ Miután létrehozott egy előrejelzés, testreszabhatja a modellt a AI Builder m
 
 2. Válassza ki a szerkeszteni kívánt előrejelzést.
 
-3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Megtekintés** lehetőséget.
+3. Jelölje ki a függőleges ellipszis (&vellip;) pontot a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
 
 4. Válassza **a Testreszabás lehetőséget a alkalmazásban AI Builder**.
 
@@ -139,7 +139,7 @@ Az előrejelzés következő futtatása a létrehozott frissített modellt fogja
 
 2. Jelölje ki a törlendő előrejelzést.
 
-3. Válassza a három pontot a **Műveletek** oszlopban, majd a **Törlés** lehetőséget.
+3. Jelölje ki a függőleges ellipszis (&vellip;) elemet a Műveletek **oszlopban, és válassza a** Törlés **lehetőséget**.
 
 4. Törlés jóváhagyása.
 
@@ -153,7 +153,7 @@ Ha hiba miatt nem tudja elvégezni a csatolási Dataverse folyamatot, megpróbá
 - Az alkalmazásengedélyek nincsenek megadva.
     1. Menjen a [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com) felületre.
     1. **Környezetek** kiválasztása.
-    1. Válassza azon környezet mellett látható három pontot, amelyhez engedélyt szeretne hozzáadni, majd válassza a **Beállítások** lehetőséget.
+    1. Jelölje ki a függőleges ellipszis (&vellip;) mellett a környezet mellett, amelyhez hozzá szeretné adni az engedélyt, és válassza a Beállítások **lehetőséget**.
     1. Bontsa ki a **Felhasználók + engedélyek** elemet, és válassza a **Felhasználók** elemet.
     1. Válassza az **+ Új** lehetőséget , és válassza a **Felhasználó** lehetőséget.
     1. Válassza az **Alkalmazásfelhasználó** elemt, ha még nincs kijelölve, és adja meg a következő adatokat:

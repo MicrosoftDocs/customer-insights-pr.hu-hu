@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 04ae4ffd303a47add15044f313c96a23e5efcd76
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c0d23a74b5ca68162ee21307705b1f781a7eb97e
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642827"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800562"
 ---
 # <a name="work-with-tags-and-columns"></a>Címkék és oszlopok használata
 
@@ -37,7 +37,7 @@ Megtekintheti, hozzáadhatja és eltávolíthatja a címkéket egy elemből. Ele
 
 1. Jelölje ki azt az elemet, amelynek címkéit kezelni szeretné.
 
-1. Válassza a Továbbiak megjelenítése (...) lehetőséget, és válassza a Címke **lehetőséget**.**·**
+1. Jelölje ki a függőleges ellipszis () elemet,&vellip; és válassza a Címke **lehetőséget**.
 
    :::image type="content" source="media/segments_list_tag.png" alt-text="Kijelölt szegmens az opciók legördülő listájával és a rendelkezésre álló lehetőségekkel."lightbox="media/segments_list_tag.png":::
 
