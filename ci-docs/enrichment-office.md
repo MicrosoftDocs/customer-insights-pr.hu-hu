@@ -1,119 +1,116 @@
 ---
-title: Bővítse az ügyfélprofilokat a Microsoft Office 365
-description: Használjon saját adatokat Microsoft Office, hogy ügyfélprofiljait elkötelezettségi adatokkal gazdagítsa.
-ms.date: 12/03/2021
+title: 'Bővítse az ügyfélprofilokat a következő adatokkal: Microsoft Office 365'
+description: Használjon védett adatokat, Microsoft Office hogy ügyfélprofiljait elkötelezettségi adatokkal gazdagítsa.
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 782042ff643bd0cc70ac53e5680bfd0c68944d84
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642718"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954136"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Ügyfélprofilok gazdagítása elkötelezettségi adatokkal (előzetes verzió)
+# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Ügyfélprofilok gazdagítása elköteleződési adatokkal (előzetes verzió)
 
-Ahonnan Microsoft Office 365 származó adatokkal gazdagíthatja ügyfélfiók-profiljait az alkalmazásokon keresztüli Office 365 elkötelezettségekkel kapcsolatos betekintésekkel. Az elkötelezettségi adatok e-mailből és értekezlet-tevékenységből állnak, amelyeket a fiók szintjén összesítenek. Például az üzleti fiókból származó e-mailek száma vagy a fiókkal folytatott értekezletek száma. Az egyes felhasználókra vonatkozó adatok nem állnak rendelkezésre. 
+Használja a innen származó Microsoft Office 365 adatokat, hogy bővítse ügyfélfiók-profiljait az alkalmazásokon keresztüli Office 365 elköteleződésekkel kapcsolatos elemzésekkel. Az elköteleződési adatok e-mailből és értekezleti tevékenységből állnak, amelyeket a fiók szintjén összesítünk. Például az üzleti fiókból érkező e-mailek száma vagy a fiókkal való értekezletek száma. Az egyes felhasználókra vonatkozó adatok nem állnak rendelkezésre.
 
-Ez a gazdagodás a következő régiókban érhető el: Egyesült Királyság, Európa, Észak-Amerika.
+## <a name="supported-countries-or-regions"></a>Támogatott országok és régiók
+
+Jelenleg a következő régiókat támogatjuk: Egyesült Királyság, Európa, Észak-Amerika.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A gazdagodás konfigurálásához a következő előfeltételeknek kell teljesülniük:
-
-- Aktív Office 365 felhőlicenccel rendelkezik.
-- Az üzleti fiókok alapján [egyesített ügyfélprofilokkal](customer-profiles.md) rendelkezik [...](work-with-business-accounts.md).
-- A Customer Insights környezethez csatolni [Microsoft Dataverse kell egy](create-environment.md#step-3-connect-to-microsoft-dataverse) szervezetet.
-- Rendszergazdai [engedélyekkel rendelkezik](permissions.md#admin).
-- A bérlői rendszergazda beleegyezésével Office 365 rendelkezik, vagy megszerezheti, hogy az adatokat felhasználva Office 365 elemzési elemzéseket biztosítson **a szervezet** számára a Dynamics 365-alkalmazásokban.
+- Aktív Office 365 felhőlicenc.
+- [Egyesített ügyfélprofilok](customer-profiles.md) üzleti fiókok [alapján](work-with-business-accounts.md).
+- A [Microsoft Dataverse Customer Insights-környezetben csatolt](create-environment.md#step-3-connect-to-microsoft-dataverse) szervezet.
+- [Rendszergazdai](permissions.md#admin) engedélyek.
+- Office 365 A bérlői rendszergazda hozzájárulása ahhoz, hogy az adatok felhasználásával Office 365 elemzéseket biztosítson **a szervezet** számára a Dynamics 365 alkalmazásokban.
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
-1. Lépjen az **Adatok** > **Bővítés** pontra.
+1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
-1. Lépjen a **Felfedezés** fülre, és válassza az Adatok **gazdagítása lehetőséget** a **Fiókmegjegyzés** csempén.
+1. Válassza az Adatok **gazdagítása lehetőséget** az **Account Engagement** csempén.
 
-   :::image type="content" source="media/enrichment-office-tile.png" alt-text="Fiók elkötelezettség csempe.":::
-   
-1. Válassza **a Tovább** lehetőséget az **Áttekintés** lépésben, és adja meg a szervezet e-mail címét, amelyhez az Office-adatokat összesíteni fogja. Csak a felsorolt e-mail címekről származó adatok kerülnek feldolgozásra a megfelelő kommunikációhoz. A legjobb gyakorlat az e-mail csoportok használata, például *az egyesült államokbeli értékesítési csapat*, amelyek könnyen kezelhetők a alkalmazásban Office 365. A csoportokban lévő e-mail címek száma megoldódik és megjelenik. Az e-mail címek teljes számának legalább 2-nek kell lennie, és nem haladhatja meg a 2500-at.
+   :::image type="content" source="media/enrichment-office-tile.png" alt-text="Fiók elköteleződési csempe.":::
+
+1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
+
+1. Adja meg a szervezettől származó e-mail-címeket, amelyek Office-adatait összesíteni fogja. Csak a felsorolt e-mail-címekről származó adatokat dolgozzuk fel a releváns kommunikáció érdekében. Az ajánlott eljárás az e-mail csoportok, például *az egyesült államokbeli értékesítési csapat* használata, amelyet a Office 365. A csoportokban lévő e-mail címek száma megoldódik és megjelenik. Az e-mail címek teljes számának legalább 2-nek kell lennie, és nem haladhatja meg a 2,500-at.
 
    :::image type="content" source="media/enrichment-office-email-addresses.png" alt-text="Fiókkapcsolati e-mail címek.":::
 
-1. Tekintse át a beleegyezési nyilatkozatot, jelölje be a **Egyetértek** jelölőnégyzetet, és válassza a Tovább **lehetőséget**.
+1. Tekintse át és adja meg a bérlői rendszergazdai jóváhagyáshoz való [Office 365 hozzájárulását az Elfogadom](#office-365-tenant-administrator-consent) lehetőség kiválasztásával **.**
 
-1. Válassza ki a vevő adatkészlet, és válassza a Tovább **lehetőséget**.
+1. Válassza a **Következő** lehetőséget.
 
-1. Rendelje hozzá az ügyfél e-mail cím mezőjét, és válassza a Tovább **lehetőséget**.
+1. Válassza ki a **Kapcsolattartó adatkészlet**, és válassza ki a gazdagítani kívánt profilt. Válassza a **Következő** lehetőséget.
 
-1. Tekintse át a gazdagodás konfigurációját, adjon nevet a gazdagodásnak, és válassza a Gazdagodás **mentése lehetőséget** a gazdagodás mentéséhez.
+1. Térképezze fel a kapcsolattartói e-mail-cím mezőt, és válassza a Tovább **lehetőséget**.
 
-## <a name="office-365-tenant-administrator-consent"></a>Office 365 bérlői rendszergazda hozzájárulása
+1. **Adja meg a gazdagítás nevét** és a **Kimenet entitást**.
 
-Office 365 A gazdagodás aktiválásához a bérlő rendszergazdájának hozzájárulása szükséges. A gazdagodás mentésekor a rendszer e-mailt küld a Office 365 bérlői rendszergazdáknak, amely arra kéri őket, hogy vizsgálják felül és járuljanak hozzá ahhoz, hogy a Dynamics 365-alkalmazások felhasználhassák a vállalatok Office 365 adatait a szervezet **számára történő elemzések biztosításához**. A Office 365 bérlő rendszergazdája közvetlenül a felügyeleti konzolon Office 365 is jóváhagyhatja a beleegyezést **, ha a Szervezet** elemzési adatait választja.
+1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
-## <a name="running-the-enrichment-for-the-first-time"></a>A gazdagodás első futtatása
+1. Válassza a Bezárás **lehetőséget** a **Bővítések** lapra való visszatéréshez.
 
-Amikor a gazdagodás először kezdődik, miután a Office 365 bérlő adminisztrátora hozzájárult, megkezdődik az adatok letöltése Office 365. Ez a folyamat időbe telik. Az első dúsítási folyamat a tervek szerint hat órás késéssel fog megtörténni. Az adatok által lefedett napok számát a fiókkapcsolati áttekintő oldalon tekintheti meg a gazdagodás befejezése után. Nagy adatmennyiség esetén néhány nap múlva futtassa újra a gazdagodást. Biztosítja, hogy az adatok teljesek legyenek a teljes időablakban, ami egy év.
+### <a name="office-365-tenant-administrator-consent"></a>Office 365 bérlői rendszergazdai hozzájárulás
 
-A folyamat elindításához válassza a Futtatás **lehetőséget** a Fiókkapcsolat konfigurációs lapján. Ezenkívül engedélyezheti, hogy a rendszer automatikusan futtassa a gazdagodást egy [ütemezett frissítés](system.md#schedule-tab) részeként. Alapértelmezés szerint a gazdagodás hetente egyszer fut.
+A bővítés aktiválásához bérlői Office 365 rendszergazda hozzájárulása szükséges. A rendszer a gazdagítás mentésekor e-mailt küld a Office 365 bérlői rendszergazdáknak, amely arra kéri őket, hogy tekintsék át és járuljanak hozzá ahhoz, hogy a Dynamics 365-alkalmazások a vállalatok adatait felhasználhassák a szervezet Office 365 **számára betekintést nyújtva**. A Office 365 bérlői rendszergazda közvetlenül a felügyeleti konzolján Office 365 is hozzájárulhat a **szervezet** elemzések.
 
-Az Office-adatok méretétől függően több órát is igénybe vehet a gazdagodási futtatás befejezése.
+## <a name="running-the-enrichment-for-the-first-time"></a>A dúsítás első futtatása
 
-A gazdagodás futtatásakor a Microsoft feldolgozza az adatokat a Office 365 megfelelőségi határokon belül, hogy összesített elemzéseket hozzon létre, amelyeket ezután hozzáad a Customer Insights környezethez. Az Ügyfélelemzés felhasználói számára nem válnak elérhetővé egyedi szintű adatok (például az e-mail vagy naptármeghívás törzse). 
+Amikor a gazdagítás első alkalommal elindul, miután a Office 365 bérlői rendszergazda hozzájárulását adta, megkezdődik az adatok letöltése Office 365. Ez a folyamat eltart egy ideig. Az első dúsítási futtatásra hat órás késéssel kerül sor. Az adatok által lefedett napok számát a fiókjegyzet áttekintő oldalán láthatja a gazdagodás befejezése után. Nagy adatmennyiség esetén néhány nap múlva futtassa újra a gazdagítást. Ez biztosítja, hogy az adatok a teljes időablakban, azaz egy évig teljesek legyenek.
+
+Az Office-adatok méretétől függően a gazdagítási futtatás befejezése több órát is igénybe vehet.
+
+Ha gazdagítást futtat, a Microsoft a megfelelőségi határon belül feldolgozza az Office 365 adatokat, hogy összesített elemzéseket hozzon létre, amelyeket aztán hozzáad a Customer Insights-környezethez. Az egyes szinteken (például az e-mailek vagy naptármeghívók törzse) semmilyen adat nem válik elérhetővé a Customer Insights felhasználói számára.
+
+Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához.
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
-A gazdagodási folyamat futtatása után menj a **Gazdagodásaimba**, hogy áttekintsd a gazdagodás eredményeit. Megtalálja a gazdagodott ügyfelek teljes számát és a gazdagodás eredményeinek áttekintését. Ez magában foglalja a feldolgozott e-mailek és értekezletek számát, az adatok összesítésének napjainak számát és így tovább.
-
-Talál egy diagramot is, amely tartalmazza a gazdagodott ügyfelek számát az idő múlásával, valamint a gazdagodási adatok előnézetét.  
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)] Ez az *Office entitás*. A *Office_UserEntity* tartalmazza a gazdagítási konfiguráció során kiválasztott e-mail-címek Active Directory-azonosítóit.
 
 :::image type="content" source="media/enrichment-office-results-overview.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után.":::
 
-A rendszer minden adatot a számla szintjéig összesít. A rendszer minden számlára kiszámítja az elkötelezettségi pontszámot, amely 0 és 100 között mozog. Az elkötelezettségi pontszám összetetten méri a fiók elkötelezettségét az e-mailek és értekezletek között a többi fiókhoz képest. Az alábbi lista a fiókkapcsolat gazdagodása által szolgáltatott összesített adatokat tartalmazza:
-
-
+Az összes adat a fiók szintjéig összesítve van. A rendszer minden fiókhoz kiszámít egy elkötelezettségi pontszámot, amely 0 és 100 között mozog. Az elköteleződési pontszám összetett mérőszámt biztosít az e-mailek és értekezletek fiókkapcsolatáról a többi fiókhoz képest. Az alábbi lista a fiókjegyzetség gazdagítása által biztosított összesített adatokat tartalmazza:
 
 | Adat                                                                              | Oszlopnév                              |
 | :-------------------------------------------------------------------------------- |:---------------------------------------- |
-| Aktivitási pontszám                                                                  |  EngagementScore                         |
-| A fiókba küldendő e-mailek száma                                                       |  NoOfEmails_ToAccount                    |
-| Fiókból származó e-mailek száma                                                     |  NoOfEmails_FromAccount                  | 
-| A fiók által kezdeményezett értekezletek száma                                           |  NoOfMeetings_FromAccount                | 
-| A szervezet által kezdeményezett értekezletek száma                                 |  NoOfMeetings_ToAccount                  | 
-| A szervezetből származó személyek száma a fiókkal rendelkező értekezleteken                  |  NoOfContactsInvolved_Meetings           | 
-| A szervezetből származó személyek száma a fiókkal folytatott e-mailes beszélgetésekben       |  NoOfContactsInvolved_Emails             | 
-| A szervezettel folytatott értekezleteken a fiókból származó személyek száma                  |  NoOfAccountContactsInvolved_Meetings    | 
-| A szervezettel folytatott e-mailes beszélgetésekben a fiókból származó személyek száma       |  NoOfAccountContactsInvolved_Emails      | 
-| Elkötelezettség kezdő dátuma (első e-mail vagy értekezlet az adatokban)                        |  EngagementStartDate                     | 
-| Napok az utolsó e-mail óta                                                             |  DaysSinceLastEmail                      | 
-| Napok az utolsó találkozó óta                                                           |  DaysSinceLastMeeting                    | 
-| Az ülések átlagos időtartama                                                      |  AverageDuration_Of_Meetings             | 
-| A fiókból származó e-mail válaszok átlagos időtartama                                    |  AverageDuration_Of_AccountEmailReplies  | 
-| Összesítés kezdő dátuma                                                            |  AggregationStartDate                    | 
-| Összesítési szint (év, hónap vagy hét)                                          |  Összesítési szint                        | 
-
-
-Tekintse át a gazdagított adatokat az előnézeti szakaszban a Továbbiak **megtekintése jelölőnégyzet bejelölésével**. Megnyitja az *Office entitást*. A DataEntities Enrichment **csoportban** **felsorolt entitást is megtalálhatja** > **.** A gazdagodás konfigurálása során kiválasztott e-mail címek Active Directory-azonosítóit tartalmazó Office_UserEntity *is megtalálja*. 
+| Aktivitási pontszám                                                                  |  EngagementScore (Elkötelezettségpont)                         |
+| A fiókba kerülő e-mailek száma                                                       |  NoOfEmails_ToAccount                    |
+| A fiókból érkező e-mailek száma                                                     |  NoOfEmails_FromAccount                  |
+| A számla által kezdeményezett ülések száma                                           |  NoOfMeetings_FromAccount                |
+| A szervezet által kezdeményezett értekezletek száma                                 |  NoOfMeetings_ToAccount                  |
+| A szervezetből származó személyek száma a fiókkal folytatott értekezleteken                  |  NoOfContactsInvolved_Meetings           |
+| A szervezetből származó személyek száma a fiókkal folytatott e-mailes beszélgetésekben       |  NoOfContactsInvolved_Emails             |
+| A fiókból származó személyek száma a szervezettel folytatott értekezleteken                  |  NoOfAccountContactsInvolved_Meetings    |
+| A szervezettel folytatott e-mailes beszélgetések során a fiókból származó személyek száma       |  NoOfAccountContactsInvolved_Emails      |
+| Elköteleződés kezdő dátuma (első e-mail vagy értekezlet az adatokban)                        |  EngagementStartDate                     |
+| Az utolsó e-mail óta eltelt napok                                                             |  DaysSinceLastEmail                      |
+| Napok az utolsó ülés óta                                                           |  DaysSinceLastMeeting                    |
+| Az ülések átlagos időtartama                                                      |  AverageDuration_Of_Meetings             |
+| A fiókból érkező e-mailes válaszok átlagos időtartama                                    |  AverageDuration_Of_AccountEmailReplies  |
+| Összesítés kezdő dátuma                                                            |  AggregationStartDate                    |
+| Összesítési szint (év, hónap vagy hét)                                          |  Aggregációs szint                        |
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>A bővítési adatok megtekintése az ügyfélkártyán
 
-A számlamegjegyzés az egyes ügyfélkártyákon is megtekinthető. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán megtalálja a fiók elkötelezettségi pontszámát, az e-mailek teljes számát és az elmúlt évben összesített értekezletek teljes számát. Olyan diagramokat is talál, amelyek az e-mail és az értekezlet előzményeit mutatják.
+A fiókkapcsolat az egyes ügyfélkártyákon is megtekinthető. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán megtalálja a fiók elköteleződési pontszámát, az e-mailek teljes számát és az értekezletek összesített teljes számát az elmúlt évben. Olyan diagramokat is talál, amelyek az e-maileket és az értekezlet-előzményeket mutatják.
 
 :::image type="content" source="media/enrichment-office-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya.":::
-
-## <a name="create-segments-and-measures-based-on-the-enriched-data"></a>Szegmensek és intézkedések létrehozása a gazdagított adatok alapján
-
-A gazdagított adatok felhasználhatók szegmensek és intézkedések létrehozására az alábbiakban részletezettek szerint. Például egy szegmens, amely tartalmazza az összes olyan ügyfelet, amelynek értéke meghaladja a 60-at az utolsó e-mail *óta eltelt napokban* és *az utolsó találkozó* óta eltelt napokban. Ez a szegmens elavult számlákat tartalmaz, amelyeket megpróbálhat újraaktiválni. 
 
 ## <a name="next-steps"></a>További lépések
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
+Például egy olyan szegmens, amely tartalmazza az összes olyan ügyfelet, amelynek értéke meghaladja a 60-at az utolsó e-mail óta eltelt napokban *és* az utolsó értekezlet *óta eltelt napokban*. Ez a szegmens elavult fiókokat tartalmaz, amelyeket megpróbálhat újraaktiválni.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

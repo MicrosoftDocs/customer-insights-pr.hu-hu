@@ -1,19 +1,19 @@
 ---
-title: Customer Insights-adatok exportálása SFTP-állomásokra (videót tartalmaz)
+title: Customer Insights-adatok exportálása SFTP-gazdagépekbe (videót tartalmaz)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az SFTP helyre.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642591"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947187"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Szegmensek és egyéb adatok exportálása az SFTP-be (előzetes verzió)
 
@@ -28,8 +28,8 @@ Az ügyféladatokat külső alkalmazásokban használhatja, ha exportálja őket
 ## <a name="known-limitations"></a>Ismert korlátozások
 
 - A tűzfalak mögötti SFTP-célhelyek jelenleg nem támogatottak. 
-- Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória. 
-- Az legfeljebb 100 millió ügyfélprofillal rendelkező entitások exportálása 90 percet is igénybe fog venni, ha két processzormag és 1 Gb memória ajánlott minimális konfigurációját használja. 
+- Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória.
+- Az legfeljebb 100 millió ügyfélprofillal rendelkező entitások exportálása 90 percet is igénybe fog venni, ha két processzormag és 1 Gb memória ajánlott minimális konfigurációját használja.
 
 ## <a name="set-up-connection-to-sftp"></a>Kapcsolatok beállítása SFTP-hez
 
@@ -64,13 +64,17 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 1. Jelölje ki az exportálni kívánt entitásokat, például szegmenseket.
 
    > [!NOTE]
-   > Az egyes kijelölt entitások exportáláskor legfeljebb öt kimeneti fájlra lesznek felosztva. 
+   > Az egyes kijelölt entitások exportáláskor legfeljebb öt kimeneti fájlra lesznek felosztva.
 
 1. Válassza a **Mentés** parancsot.
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut.
+Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> A nagy mennyiségű adatot tartalmazó entitások exportálása több CSV-fájlhoz vezethet ugyanabban a mappában minden exportáláshoz. Az exportálások felosztása teljesítménybeli okokból történik, hogy minimalizálja az exportálás befejezéséhez szükséges időt.
 
 ## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 

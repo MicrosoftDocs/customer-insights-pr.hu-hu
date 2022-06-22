@@ -1,105 +1,186 @@
 ---
 title: Common Data Model-adatok összekapcsolása egy Azure Data Lake-fiókkal
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
-ms.date: 05/24/2022
-ms.subservice: audience-insights
+ms.date: 05/30/2022
 ms.topic: how-to
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: mukeshpo
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: 2e8564950a3269180a85f80fb736d2dcbd1b03b6
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 2ab7ec77252be33f1203959c2a596ddec20425f2
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833361"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011563"
 ---
-# <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
+# <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
-Ez a cikk arról nyújt tájékoztatást, hogyan tölthet be adatokat egy Általános adatmodell mappából Dynamics 365 Customer Insights Gen2-fiókjával Azure Data Lake Storage.
+Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Azure Data Lake Storage. Az adatbetöltés lehet teljes vagy növekményes.
 
-## <a name="important-considerations"></a>Fontos tényezők
+## <a name="prerequisites"></a>Előfeltételek
 
-- Az Azure Data Lake-ben szereplő adatoknak követniük kell a Common Data Model standardot. A többi formátum jelenleg nem támogatott.
+- Az adatbetöltés kizárólag a Gen2-fiókokat Azure Data Lake Storage támogatja *·*. A Data Lake Storage Gen1-fiókok nem használhatók adatok betöltésére.
 
-- Az adatbetöltés kizárólag csak az Azure Data Lake *Gen2* tárfiókokat támogatja. Az Azure Data Lake Gen1 tárfiókok nem használhatók adatok betöltésére.
+- A Azure Data Lake Storage fiókban engedélyezni kell [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace). Az adatokat hierarchikus mappa formátumban kell tárolni, amely meghatározza a gyökérmappát, és almappákkal rendelkezik az egyes entitásokhoz. Az almappák teljes adattal vagy növekményes adatmappákkal rendelkezhetnek.
 
-- Az Azure Data Lake tárfiókban engedélyezni kell [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
+- Az Azure-egyszerű szolgáltatásnév használatával történő hitelesítéshez ügyeljen arra, hogy az a bérlőn legyen konfigurálva. További információ: [Csatlakozás Azure Data Lake Storage Gen2-fiókhoz Azure-szolgáltatásnévvel](connect-service-principal.md).
 
-- Az Azure-egyszerű szolgáltatásnév használatával történő hitelesítéshez ügyeljen arra, hogy az a bérlőn legyen konfigurálva. További információt a Csatlakozás Gen2-fiókhoz [egy Azure-szolgáltatásnévvel című témakörben talál Azure Data Lake Storage](connect-service-principal.md).
+- A Azure Data Lake Storage csatlakoztatni és adatokat be szeretné tölteni, ugyanabban az Azure-régióban kell lennie, mint a Dynamics 365 Customer Insights környezetnek. A Common Data Model-mappába egy másik Azure-régióban található adattóból való kapcsolódás nem támogatott. A környezet Azure-régiójának megismeréséhez tekintse meg **a Felügyeleti** > **rendszer** > **névjegye** a Customer Insights-bancímű témakört.
 
-- Az Azure Data Lake, amelyhez kapcsolódni szeretne, és be szeretné tölteni az adatokat, ugyanabban az Azure régióban kell lennie, mint a Dynamics 365 Customer Insights-környezet. A Common Data Model-mappába egy másik Azure-régióban található adattóból való kapcsolódás nem támogatott. A környezet Azure-régiójának megismeréséhez nyissa meg **az Ügyfélelemzés felügyeleti** > **rendszer** > **névjegye** című témakörét.
+- Az online szolgáltatásokban tárolt adatok más helyen is tárolhatók, mint ahol az adatokat feldolgozzák vagy tárolják Dynamics 365 Customer Insights.Az online szolgáltatásokban tárolt adatok importálásával vagy az azokhoz való csatlakozással Ön elfogadja, hogy az adatok átvihetők és tárolhatók a következőkkel: Dynamics 365 Customer Insights. [További információt a Microsoft Adatvédelmi központban talál](https://www.microsoft.com/trust-center).
 
-- Az online szolgáltatásokban tárolt adatok tárolhatók más helyen, mint ahol az adatokat feldolgozzák vagy tárolják Dynamics 365 Customer Insights.Az online szolgáltatásokban tárolt adatok importálásával vagy az azokhoz való csatlakozással Ön elfogadja, hogy az adatok továbbíthatók és tárolhatók a rendszerben Dynamics 365 Customer Insights. [További információ a Microsoft Adatvédelmi központban](https://www.microsoft.com/trust-center).
+- A Customer Insights szolgáltatásnévnek az alábbi szerepkörök egyikében kell lennie a tárfiók eléréséhez. További információ: [Engedélyek megadása a szolgáltatásnévnek a tárfiók](connect-service-principal.md#grant-permissions-to-the-service-principal-to-access-the-storage-account) eléréséhez.
+  - Storage Blob adatolvasó
+  - Storage Blob adattulajdonos
+  - Storage Blob adatközreműködő
 
-## <a name="connect-to-a-common-data-model-folder"></a>Csatlakozás egy Common Data Model-mappához
+- A Data Lake Storage-ban lévő adatoknak az adatok tárolására vonatkozó Common Data Model szabványt kell követniük, és rendelkezniük kell az adatfájlok sémáját ábrázoló közös adatmodell-jegyzékfájllal (*.csv vagy *.parquet). A jegyzékfájlnak meg kell adnia az entitások részleteit, például az entitásoszlopokat és adattípusokat, valamint az adatfájl helyét és típusát. További információ: [A Common Data Model jegyzékfájl](/common-data-model/sdk/manifest). Ha a jegyzékfájl nincs jelen, a Storage Blob Data Owner vagy Storage Blob Data közreműködő hozzáféréssel rendelkező rendszergazda felhasználók meghatározhatják a sémát az adatok betöltésekor.
+
+## <a name="connect-to-azure-data-lake-storage"></a>Csatlakozás a Azure Data Lake Storage alkalmazáshoz
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
 1. Válassza az **Adatforrás hozzáadása** lehetőséget.
 
-1. Válassza az **Azure data lake storage lehetőséget**, adja meg **a adatforrás nevét**, majd válassza a Tovább **lehetőséget**.
+1. Válassza az Azure Data Lake Storage **lehetőséget**.
 
-   - Ha a rendszer kéri, válassza ki az iparágra vonatkozó mintaadatkészletek egyikét, majd válassza a Tovább **lehetőséget**.
+   :::image type="content" source="media/data_sources_ADLS.png" alt-text="Párbeszédpanel az Azure Data Lake kapcsolati részleteinek megadásához." lightbox="media/data_sources_ADLS.png":::
 
-1. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítés használata között. További információt a Csatlakozás Gen2-fiókhoz [egy Azure-szolgáltatásnévvel című témakörben talál Azure Data Lake Storage](connect-service-principal.md). Írja be a **kiszolgáló címét**, válassza a Bejelentkezés **lehetőséget**, majd válassza a Tovább **lehetőséget**.
-   > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanelen adja meg az új kapcsolat adatait az Azure Data Lake-hez.](media/enter-new-storage-details.png)
+1. **Adja meg a adatforrás nevét** és egy opcionális **leírást**. A név egyedileg azonosítja a adatforrás, és az alsóbb rétegbeli folyamatokban hivatkoznak rá, és nem módosítható.
+
+1. Válasszon az alábbi lehetőségek közül a Csatlakozás a tárhely használatával **beállításhoz**. További információ: [Csatlakozás Customer Insights egy Azure Data Lake Storage Gen2-fiókhoz egy Azure-szolgáltatásnévvel](connect-service-principal.md).
+
+   - **Azure-erőforrás**: Adja meg az **erőforrás-azonosítót**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
+   - **Azure-előfizetés**: Válassza ki az **előfizetést**, majd az erőforráscsoportot **és** a **Storage-fiókot**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
+  
    > [!NOTE]
-   > A tárfiók tárolójához az alábbi szerepkörök egyikére van szükség a adatforrás létrehozásához és létrehozásához:
+   > A adatforrás létrehozásához az alábbi szerepkörök egyikére van szükség a tárolóhoz vagy a tárfiókhoz:
    >
-   >  - A Storage Blob Data olvasó elegendő ahhoz, hogy beolvassa a tárfiókból, és bevegye az adatokat az Ügyfélelemzésbe. 
-   >  - Tárolási Blob Data közreműködő vagy Tulajdonos szükséges, ha a jegyzékfájlokat közvetlenül a Customer Insights szolgáltatásban szeretné szerkeszteni.
-
-1. A **Common Data Model-mappa kiválasztása** párbeszédpanelen válassza azt a manifest.json fájlt, amelyből adatokat szeretne importálni, majd válassza a **Következő** lehetőséget.
+   >  - Storage Blob Data olvasó elegendő ahhoz, hogy beolvassa a tárfiókból, és betöltse az adatokat a Customer Insightsba. 
+   >  - Storage Blob Data közreműködő vagy tulajdonosra van szükség, ha a jegyzékfájlokat közvetlenül a Customer Insightsban szeretné szerkeszteni.  
+  
+1. Válassza ki annak a tárolónak **a** nevét, amely tartalmazza az adatokat és a sémát (model.json vagy manifest.json fájl), amelyből adatokat szeretne importálni, majd kattintson a Tovább **gombra**.
    > [!NOTE]
-   > A környezetben más adatforrással társított egyéb model.json vagy manifest.json fájlok nem jelennek meg a listában.
+   > A környezetben más adatforrással társított egyéb model.json vagy manifest.json fájlok nem jelennek meg a listában. Ugyanakkor ugyanez a model.json vagy manifest.json fájl több környezetben is használható adatforrásokhoz.
 
-1. A kijelölt model.json vagy manifest.json fájlban megjelenik az elérhető entitások listája. Tekintse át és válasszon az elérhető entitások listájából, majd válassza a Mentés **lehetőséget**. A rendszer az összes kiválasztott entitást betölti az új adatforrásból.
-   > [!div class="mx-imgBorder"]
-   > ![Párbeszédpanel, amely az entitások listáját jeleníti meg egy model.json fájlból.](media/review-entities.png)
+1. Új séma létrehozásához lépjen [az Új sémafájl](#create-a-new-schema-file) létrehozásaelemre.
 
-1. Adja meg, hogy mely adatáttelektitásokat kívánja engedélyezni, majd válassza a Mentés **lehetőséget**. Az adatprofil-készítés lehetővé teszi az elemzések és egyéb lehetőségek használatát. Kijelölheti a teljes entitást, amely az entitás összes attribútumát kijelöli, vagy kijelölhet bizonyos attribútumokat, amelyeket kiválasztott. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
-   > [!div class="mx-imgBorder"]
-   > ![Adatprofil-készítést megjelenítő párbeszédpanel.](media/dataprofiling-entities.png)
+1. Meglévő séma használatához keresse meg a model.json vagy manifest.cdm.json fájlt tartalmazó mappát. A könyvtáron belül keresheti meg a fájlt.
 
-1. A kiválasztott adatok mentése után megnyílik az **Adatforrások** lap. Ekkor a Common Data Model mappa kapcsolatot adatforrásként látja.
+1. Válassza ki a JSON-fájlt, majd kattintson a Tovább **gombra**. Megjelenik az elérhető entitások listája.
 
-> [!NOTE]
-> A model.json vagy manifest-json fájl csak egy-egy adatforráshoz társítható ugyanabban a környezetben. Ugyanakkor ugyanez a model.json vagy manifest.json fájl több környezetben is használható adatforrásokhoz.
+   :::image type="content" source="media/review-entities.png" alt-text="A kiválasztandó entitások listájának párbeszédpanelje":::
 
-## <a name="edit-a-common-data-model-folder-data-source"></a>Common Data Model-mappa adatforrás szerkesztése
+1. Válassza ki a felvenni kívánt entitásokat.
 
-A Common Data Model-mappát tartalmazó tárfiókhoz tartozó elérési kulcsot frissítheti. A model.json vagy a manifest.json fájlt is módosíthatja. Ha a tárfiókból egy másik tárolóhoz szeretne kapcsolódni, vagy módosítani szeretné a fiók nevét, akkor [hozzon létre egy új adatforrás-kapcsolatot](#connect-to-a-common-data-model-folder).
+   :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
+
+   > [!TIP]
+   > A JSON-szerkesztési felületen lévő entitások szerkesztéséhez válassza a További **sémafájl szerkesztése lehetőséget** > **·**. Végezze el a módosításokat, és válassza a Mentés **lehetőséget**.
+
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+
+1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
+   1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.
+   1. Válassza ki az **Elsődleges kulcsot**. Az elsődleges kulcs az entitás egyedi attribútuma. Ahhoz, hogy egy attribútum érvényes elsődleges kulcs legyen, az ne tartalmazzon ismétlődő értékeket, a hiányzó értékeket vagy a null értékeket. A karakterlánc, az egész szám és a GUID adattípus attribútumai elsődleges kulcsként támogatottak.
+   1. Ha szükséges, módosítsa a partíciós mintát.
+   1. Válassza a Bezárás **gombot** a panel mentéséhez és bezárásához.
+
+1. Válassza ki az attribútumok számát **az egyes belefoglalt entitásokhoz**. Megjelenik az **Attribútumok** kezelése lap.
+
+   :::image type="content" source="media/dataprofiling-entities.png" alt-text="Párbeszédpanel az adatprofil-készítés kiválasztásához.":::
+
+   1. Hozzon létre új attribútumokat, szerkessze vagy törölje a meglévő attribútumokat. Módosíthatja a nevet, az adatformátumot, vagy hozzáadhat egy szemantikai típust.
+   1. Az elemzések és egyéb képességek engedélyezéséhez válassza az Adatprofil-készítés **lehetőséget** a teljes entitáshoz vagy adott attribútumokhoz. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
+   1. Válassza a **Kész** lehetőséget.
+
+1. Válassza a **Mentés** parancsot. **Megnyílik az Adatforrások** lap, amelyen az új adatforrás a Frissítés **állapot.**
+
+### <a name="create-a-new-schema-file"></a>Új sémafájl létrehozása
+
+1. Válassza az Új sémafájl **lehetőséget**.
+
+1. Adja meg a fájl nevét, majd válassza a Mentés **lehetőséget**.
+
+1. Válassza az Új entitás **lehetőséget**. **Megjelenik az Új entitás** panel.
+
+1. Adja meg az entitás nevét, és válassza ki az **adatfájlok helyét**.
+   - **Több .csv- vagy .parquet-fájl**: Tallózással keresse meg a gyökérmappát, válassza ki a minta típusát, és írja be a kifejezést.
+   - **Egyetlen .csv- vagy .parquet-fájl**: Keresse meg a .csv- vagy .parquet-fájlt, és jelölje ki.
+
+   :::image type="content" source="media/ADLS_new_entity_location.png" alt-text="Párbeszédpanel új entitás létrehozásához, amelyen ki van emelve az adatfájlok helye.":::
+
+1. Válassza a **Mentés** parancsot.
+
+   :::image type="content" source="media/ADLS_new_entity_define_attributes.png" alt-text="Párbeszédpanel attribútumok definiálásához vagy automatikus létrehozásához.":::
+
+1. Válassza **az attribútumok** definiálása lehetőséget az attribútumok manuális hozzáadásához, vagy válassza az automatikus létrehozásuk **lehetőséget**. Az attribútumok meghatározásához adjon meg egy nevet, válassza ki az adatformátumot és a választható szemantikai típust. Automatikusan generált attribútumok esetén:
+
+   1. Az attribútumok automatikus létrehozása után válassza az Attribútumok **áttekintése lehetőséget**. Megjelenik az **Attribútumok** kezelése lap.
+
+   1. Győződjön meg arról, hogy az adatformátum minden attribútumhoz megfelelő.
+
+   1. Az elemzések és egyéb képességek engedélyezéséhez válassza az Adatprofil-készítés **lehetőséget** a teljes entitáshoz vagy adott attribútumokhoz. Alapértelmezés szerint egyetlen entitás sincs engedélyezve az adatok profilkészítéséhez.
+
+      :::image type="content" source="media/dataprofiling-entities.png" alt-text="Párbeszédpanel az adatprofil-készítés kiválasztásához.":::
+
+   1. Válassza a **Kész** lehetőséget. Megjelenik az **Entitások** kiválasztása lap.
+
+1. Adott esetben folytassa az entitások és attribútumok hozzáadását.
+
+1. Az összes entitás hozzáadása után válassza a Belefoglalás **lehetőséget** az entitások adatforrás való szerepeltetéshez.
+
+   :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
+
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+
+1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
+   1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.
+   1. Válassza ki az **Elsődleges kulcsot**. Az elsődleges kulcs az entitás egyedi attribútuma. Ahhoz, hogy egy attribútum érvényes elsődleges kulcs legyen, az ne tartalmazzon ismétlődő értékeket, a hiányzó értékeket vagy a null értékeket. A karakterlánc, az egész szám és a GUID adattípus attribútumai elsődleges kulcsként támogatottak.
+   1. Ha szükséges, módosítsa a partíciós mintát.
+   1. Válassza a Bezárás **gombot** a panel mentéséhez és bezárásához.
+
+1. Válassza a **Mentés** parancsot. **Megnyílik az Adatforrások** lap, amelyen az új adatforrás a Frissítés **állapot.**
+
+
+## <a name="edit-an-azure-data-lake-storage-data-source"></a>Azure Data Lake Storage adatforrás szerkesztése
+
+A Csatlakozás tárfiókhoz lehetőséget *frissítheti*. További információ: [Csatlakozás Customer Insights egy Azure Data Lake Storage Gen2-fiókhoz egy Azure-szolgáltatásnévvel](connect-service-principal.md). Ha a tárfiókból egy másik tárolóhoz szeretne kapcsolódni, vagy módosítani szeretné a fiók nevét, akkor [hozzon létre egy új adatforrás-kapcsolatot](#connect-to-azure-data-lake-storage).
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-2. A frissíteni kívánt adatforrás mellett válassza ki a függőleges ellipszis (&vellip;) elemet.
+1. A frissíteni kívánt adatforrás mellett válassza a Szerkesztés **lehetőséget**.
 
-3. Válassza a lista **Szerkesztés** elemét.
+   :::image type="content" source="media/data_sources_edit_ADLS.png" alt-text="Párbeszédpanel az Azure Data Lake adatforrás szerkesztéséhez.":::
 
-4. Opcionálisan frissítse a **Hozzáférési kulcsot**, és válassza a **Tovább** lehetőséget.
+1. Módosítsa a következő információk bármelyikét:
 
-   ![Párbeszéd a meglévő adatforráshoz tartozó hozzáférési kulcs szerkesztéséhez és frissítéséhez.](media/edit-access-key.png)
+   - **Ismertetés**
+   - **Csatlakoztassa a tárhelyet a kapcsolat adataival** és a kapcsolati adatokkal. A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
+      > [!NOTE]
+      > A következő szerepkörök egyikét hozzá kell rendelni a tárfiókhoz vagy a tárolóhoz:
+        > - Storage Blob adatolvasó
+        > - Storage Blob adattulajdonos
+        > - Storage Blob adatközreműködő
 
-5. Lehetőség van arra, hogy a fiókkulcs-kapcsolatot az erőforrás- vagy előfizetés-alapú kapcsolatra is frissítheti. További információt a Csatlakozás Gen2-fiókhoz [egy Azure-szolgáltatásnévvel című témakörben talál Azure Data Lake Storage](connect-service-principal.md). A kapcsolat frissítésekor a **Tárolóra** vonatkozó információk nem módosíthatók.
-   > [!div class="mx-imgBorder"]
+   - **Engedélyezze Private Link**, ha adatokat szeretne betölteni egy tárfiókból egy Azure Private Link. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
 
-   > ![Párbeszédpanel az Azure Data Lake kapcsolati adatainak megadásához egy meglévő tárhelyfiókhoz.](media/enter-existing-storage-details.png)
+1. Válassza a **Következő** lehetőséget.
+1. Módosítsa a következők bármelyikét:
+   - Lépjen egy másik model.json vagy manifest.json fájlhoz a tárolótól eltérő entitáskészlettel.
+   - Ha további entitásokat szeretne hozzáadni a betöltéshez, válassza az Új entitás **lehetőséget**.
+   - Ha el szeretné távolítani a már kiválasztott entitásokat, ha nincsenek függőségek, válassza ki az entitást és **a Törlés lehetőséget**.
+      > [!IMPORTANT]
+      > Ha függőségek vannak a meglévő model.json vagy manifest.json fájlhoz és az entitások készletéhez. egy hibaüzenet jelenik meg, és nem választhat másik model.json vagy manifest.json fájlt. A model.json vagy a manifest.json fájl módosítása előtt távolítsa el ezeket a függőségeket, vagy hozzon létre egy új adatforrást a használni kívánt model.json vagy a manifest.json fájllal a függőségek elkerüléséhez szükséges.
+   - Az adatfájl helyének vagy az elsődleges kulcsnak a módosításához válassza a Szerkesztés **lehetőséget**.
+   - A növekményes betöltési adatok módosításához lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md)
 
-6. Másik model.json vagy manifest.json fájl is választható, a tárolóból származó más entitáskészletekkel.
+1. Válassza az Attribútumok **lehetőséget** attribútumok hozzáadásához vagy módosításához, illetve az adatprofil-készítés engedélyezéséhez. Majd válassza a **Kész** lehetőséget.
 
-7. Tetszés szerint kiválaszthat további entitásokat is, amelyeket betölthet. Ha nincsenek függőségek, akkor a már kijelölt entitásokat is eltávolíthatja.
-
-   > [!IMPORTANT]
-   > Ha függőségek vannak a meglévő model.json vagy manifest.json fájlhoz és az entitások készletéhez. egy hibaüzenet jelenik meg, és nem választhat másik model.json vagy manifest.json fájlt. A model.json vagy a manifest.json fájl módosítása előtt távolítsa el ezeket a függőségeket, vagy hozzon létre egy új adatforrást a használni kívánt model.json vagy a manifest.json fájllal a függőségek elkerüléséhez szükséges.
-
-8. Tetszés szerint kiválaszthat további attribútumokat vagy entitásokat, amelyek lehetővé teszik az adatok profilkészítésének engedélyezését vagy letiltását a már kijelöltek esetén.
-
-[!INCLUDE [footer-include](includes/footer-banner.md)]
+1. Kattintson a Mentés **gombra** a módosítások alkalmazásához és az **Adatforrások** lapra való visszatéréshez.

@@ -1,6 +1,6 @@
 ---
-title: Hogyan hozzunk létre egy új környezetet
-description: Környezetek létrehozásának lépései a következővel:Dynamics 365 Customer Insights.
+title: Hogyan – Hozzon létre egy új környezetet
+description: A környezetek létrehozásának lépései a következővel:Dynamics 365 Customer Insights.
 ms.date: 05/31/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -12,33 +12,33 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 795eaa3598257f5188070f6ea02d04e4423b66eb
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 6dfaa09cd80498e9a4e4dea6a07ce6e9d29105e2
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833561"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011614"
 ---
-# <a name="how-to-create-a-new-environment"></a>Hogyan készítsünk új környezetet
+# <a name="how-to-create-a-new-environment"></a>Útmutató: Új környezet létrehozása
 
-Miután [előfizetési licencet vásárolt, Dynamics 365 Customer Insights](paid-license.md) a bérlő globális rendszergazdája Microsoft 365 e-mailt kap, amely meghívja őket a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. Ebben a forgatókönyvben közvetlenül az 1. lépésre [léphet: Alapvető információk megadása](#step-1-provide-basic-information).
+Miután [megvásárolta az Dynamics 365 Customer Insights](paid-license.md) előfizetési licencet, a bérlő globális rendszergazdája Microsoft 365 kap egy e-mailt, amely meghívja őket a környezet létrehozására. A kezdéshez ugorjon a [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) weboldalra. Ebben a forgatókönyvben közvetlenül az 1. lépés: Alapvető információk megadása című szakaszra [léphet](#step-1-provide-basic-information).
 
-Az első környezet létrehozása után a bérlő globális rendszergazdája rendszergazdaként hozzáadhat Microsoft 365 felhasználókat a [szervezetükhez](permissions.md). A jövőben ezek a rendszergazdák kezelhetik a felhasználókat és a környezeteket. Ha szervezete egynél több licencet vásárol a Customer Insights számára, [vegye fel a kapcsolatot ügyfélszolgálatunkkal](https://go.microsoft.com/fwlink/?linkid=2079641) az elérhető környezetek számának növelése érdekében. A kapacitással és a kiegészítő kapacitással kapcsolatos további információkért tekintse meg a [Dynamics 365 licencelési útmutatóját](https://go.microsoft.com/fwlink/?LinkId=866544).
+Az első környezet létrehozása után a bérlő globális rendszergazdája rendszergazdaként adhat Microsoft 365 hozzá felhasználókat a [szervezetükből](permissions.md). A továbbiakban ezek a rendszergazdák kezelhetik a felhasználókat és a környezeteket. Ha szervezete egynél több licencet vásárol a Customer Insights szolgáltatáshoz, [vegye fel a kapcsolatot ügyfélszolgálatunkkal](https://go.microsoft.com/fwlink/?linkid=2079641) az elérhető környezetek számának növelése érdekében. A kapacitással és a kiegészítő kapacitással kapcsolatos további információkért tekintse át a [Dynamics 365 licencelési útmutatóját](https://go.microsoft.com/fwlink/?LinkId=866544).
 
 > [!TIP]
 > Ha a szolgáltatást próbálja ki, akkor tekintse meg a [Próbakörnyezet beállítása](trial-signup.md) részt.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A környezetek létrehozásához és kezeléséhez rendszergazdai [engedélyekre van szükség](permissions.md) a Customer Insights alkalmazásban.
+A környezetek létrehozásához és kezeléséhez rendszergazdai engedélyekre [van szükség](permissions.md) a Customer Insights szolgáltatásban.
 
-## <a name="start-the-environment-creation-process"></a>A környezetteremtési folyamat elindítása
+## <a name="start-the-environment-creation-process"></a>A környezet létrehozásának folyamata
 
-1. Nyissa meg a környezetválasztót, és válassza a + Új **lehetőséget**.
+1. Nyissa meg a környezetválasztót, és válassza az + Új **lehetőséget**.
   
    :::image type="content" source="media/environment-picker.png" alt-text="Környezetválasztó kiválasztása.":::
 
-1. Kövesse a következő szakaszokban ismertetett interaktív tapasztalatokat, hogy minden szükséges információt megadjon egy új környezethez. Ha korábban konfigurált egy környezetet, átmásolhatja a konfigurációt [is](#copy-the-environment-configuration).
+1. Kövesse a következő szakaszokban ismertetett irányított élményt, hogy minden szükséges információt megadjon egy új környezethez. Ha korábban konfigurált egy környezetet, a konfigurációt [is](#copy-the-environment-configuration) átmásolhatja.
 
 ## <a name="step-1-provide-basic-information"></a>1. lépés: Alapvető információk megadása
 
@@ -49,34 +49,35 @@ Az **Alapinformáció** lépésben válassza ki, hogy nulláról hoz-e létre k�
 Adja meg a következő részleteket:
 
 - **Név**: A környezet neve. Ha meglévő környezetből másolt, akkor ez a mező már ki van töltve, de ez módosítható.
-- **Válassza ki a vállalkozását**: Válassza ki az elsődleges közönséget az új környezethez. Dolgozhat egyéni ügyfelekkel (B-to-C) vagy [üzleti fiókokkal](work-with-business-accounts.md) (B-to-B). Ha szervezete elsősorban magánszemélyekkel, például kiskereskedővel vagy kávézóval foglalkozik, válasszon egyéni fogyasztókat. Abban az esetben, ha a fő célközönség más vállalatok, például egy autógyártó vagy egy papírgyártó, válasszon üzleti számlákat.
+- **Válassza ki a vállalkozását**: Válassza ki az elsődleges közönséget az új környezethez. Dolgozhat egyéni ügyfelekkel (B-to-C) vagy [üzleti fiókokkal](work-with-business-accounts.md) (B-to-B). Ha a szervezet elsősorban magánszemélyekkel, például kiskereskedővel vagy kávézóval köt üzletet, válasszon egyéni fogyasztókat. Abban az esetben, ha a fő célközönség más vállalatok, például autógyártó vagy papírgyártó cég, válasszon üzleti számlákat.
 - **Típus**: Adja meg, hogy szeretne-e termelési vagy tesztkörnyezetet létrehozni. A tesztkörnyezetek nem engedélyezik az ütemezett adatfrissítést, és előzetes megvalósításhoz és teszteléshez kínáljuk ezeket. A tesztkörnyezet környezetek ugyanazt az célközönség elsődleges környezetként használják, mint az éppen kijelölt éles környezet.
-- **Régió**: Az a régió, ahová a szolgáltatást telepítették és üzemeltetik. Saját [fiók Azure Data Lake Storage használatához vagy](own-data-lake-storage.md) meglévő [szervezethez Microsoft Dataverse való csatlakozáshoz](customer-insights-dataverse.md) a Customer Insights környezetnek ugyanabban a régióban kell lennie.
+- **Régió**: Az a régió, ahová a szolgáltatást telepítették és üzemeltetik. A [saját Azure Data Lake Storage fiók](own-data-lake-storage.md) használatához vagy [egy meglévő Microsoft Dataverse szervezethez](customer-insights-dataverse.md) való csatlakozáshoz a Customer Insights-környezetnek ugyanabban a régióban kell lennie.
 
 ## <a name="step-2-configure-data-storage"></a>2. lépés: Az adattárolás konfigurálása
 
-**Az Adattárolási** lépésben válassza ki, hogy hol tárolja az Ügyfélelemzési adatokat.
+**Az Adattárolás** lépésben válassza ki, hogy hol szeretné tárolni a Customer Insights-adatokat.
 
 Két lehetőség közül választhat:
 
-- **Customer Insights storage**: Az adattárolást a Customer Insights csapata kezeli. Ez az alapértelmezett beállítás, és hacsak nincsenek speciális követelmények az adatok tárolására a saját tárfiókjában, javasoljuk, hogy használja ezt a lehetőséget.
-- **Azure Data Lake Storage**: Adja meg saját Azure Data Lake Storage fiókját az adatok tárolására, így teljes mértékben szabályozhatja, hogy hol tárolják az adatokat. További információt a Saját [fiók Azure Data Lake Storage használata című témakörben talál](own-data-lake-storage.md).
+- **Customer Insights-tárolás**: Az adattárolást a Customer Insights csapata kezeli. Ez az alapértelmezett beállítás, és hacsak nincsenek konkrét követelmények az adatok saját tárfiókban való tárolására, javasoljuk, hogy használja ezt a lehetőséget.
+- **Azure Data Lake Storage**: Adja meg saját Azure Data Lake Storage fiókját az adatok tárolásához, hogy teljes mértékben ön szabályozhassa az adatok tárolásának helyét. További információ: [Saját Azure Data Lake Storage fiók](own-data-lake-storage.md) használata.
 
-:::image type="content" source="media/data-storage-environment.png" alt-text="Válassza ki az adatok tárolására előnyben részesített lehetőséget.":::
+:::image type="content" source="media/data-storage-environment.png" alt-text="Válassza ki az adatok tárolásához előnyben részesített lehetőséget.":::
 
 ## <a name="step-3-connect-to-microsoft-dataverse"></a>3. lépés: Csatlakozás a Microsoft Dataverse-hez
 
-A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével. Ossza meg az adatokat a Dataverse használatával az üzleti alkalmazásokkal Dataverse, például a Dynamics 365 Marketing vagy a modellvezérelt alkalmazásokkal a alkalmazásban Power Apps.
+A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével. Adatok megosztása az Dataverse üzleti alkalmazásokkal való használathoz, például a Dynamics 365 Marketing vagy a modellvezérelt alkalmazások Dataverse alapján Power Apps.
 
-Hagyja üresen ezt a mezőt, ha nincs saját Dataverse környezete, és létrehozunk egyet az Ön számára.
 
-További információt a Customer Insights-adatok használata a alkalmazásban [című témakörben talál Microsoft Dataverse](customer-insights-dataverse.md).
+Hagyja üresen ezt a mezőt, ha nem rendelkezik saját Dataverse környezettel, és mi létrehozunk egyet az Ön számára.
 
-:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus engedélyezve van Microsoft Dataverse az új, netes környezetekhez.":::
+További információ: Customer Insights-adatok használata a következőben: [Microsoft Dataverse](customer-insights-dataverse.md).
+
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus automatikus engedélyezésével Microsoft Dataverse a net új környezetekben.":::
 
 ### <a name="step-4-finalize-the-settings"></a>4. lépés: A beállítások véglegesítése
 
-**A Felülvizsgálat** lépésben tekintse át az összes megadott beállítást. Ha minden befejeződött, válassza a **Létrehozás** lehetőséget a környezet beállításáhez.
+**Az Áttekintés** lépésben menjen végig az összes megadott beállításon. Ha minden befejeződött, válassza a **Létrehozás** lehetőséget a környezet beállításáhez.
 
 Néhány beállítást később módosíthat. További tudnivalókért lásd: [Környezetek kezelése](manage-environments.md).
 
@@ -92,7 +93,7 @@ A következő cikkekből segítséget kaphat a Customer Insights konfigurálás�
 
 ## <a name="copy-the-environment-configuration"></a>Másolja a környezet konfigurációját
 
-Rendszergazdaként dönthet úgy, hogy a konfigurációt egy meglévő környezetből másolja, amikor újat hoz létre.
+Rendszergazdaként dönthet úgy, hogy átmásolja a konfigurációt egy meglévő környezetből, amikor újat hoz létre.
 
 :::image type="content" source="media/environment-settings-dialog.png" alt-text="Képernyőkép a beállítási lehetőségekről a környezet beállításaiban.":::
 
@@ -100,7 +101,7 @@ A szervezetében összes elérhető környezet listáját látja, amelyekből ad
 
 A következő konfigurációbeállítások vannak másolva:
 
-- A következőn keresztül importált adatforrások Power Query
+- Importált adatforrások Power Query
 - Adategyesítési konfiguráció
 - Szegmensek
 - Mértékek
@@ -115,14 +116,14 @@ A következő konfigurációbeállítások vannak másolva:
 
 ## <a name="set-up-a-copied-environment"></a>Másolt környezet beállítása
 
-A környezetkonfiguráció másolásakor néhány további lépést kell végrehajtania a hitelesítő adatok megerősítéséhez:
+A környezeti konfiguráció másolásakor néhány további lépésen kell keresztülmennie a hitelesítő adatok megerősítéséhez:
 
-- Ügyfélprofilok. Először hitelesítse és töltse be az adatforrásokat, és futtassa az adategyesítést az ügyfélprofilok újbóli létrehozásához.
-- Adatforrás hitelesítő adatai. Az adatforrások manuális hitelesítéséhez és frissítéséhez minden adatforrás meg kell adnia a hitelesítő adatokat.
-- Adatforrások a Common Data Model mappából és Dataverse a rendszerből. Ezeket az adatforrásokat manuálisan kell létrehoznia ugyanazzal a névvel, mint a forráskörnyezetben.
-- Az exportáláshoz és a gazdagodáshoz használt kapcsolati titkok. Újra kell engedélyeznie a kapcsolatokat, majd újra aktiválnia kell a gazdagodásokat és az exportálást.
+- Ügyfélprofilok. Először hitelesítse és töltse be az adatforrásokat, és futtassa az adatok egyesítését az ügyfélprofilok újbóli létrehozásához.
+- Adatforrás hitelesítő adatai. Minden adatforrás hitelesítő adatait meg kell adnia az adatforrások manuális hitelesítéséhez és frissítéséhez.
+- Adatforrások a Common Data Model mappából és Dataverse. Ezeket az adatforrásokat manuálisan kell létrehoznia ugyanazzal a névvel, mint a forráskörnyezetben.
+- Az exportáláshoz és a gazdagításhoz használt kapcsolati titkok. Újra kell hitelesítenie a kapcsolatokat, majd újra kell aktiválnia a gazdagításokat és exportálásokat.
 
-A másolt környezet létrehozásakor egy megerősítő üzenet jelenik meg. Válassza az **Ugrás az adatforrásokhoz** lehetőséget az adatforrások listájának megjelenítéséhez.
+A másolt környezet létrehozásakor megerősítő üzenet jelenik meg. Válassza az **Ugrás az adatforrásokhoz** lehetőséget az adatforrások listájának megjelenítéséhez.
 
 Minden adatforrásnál megjelenik egy **Hitelesítő adatok szükségesek** állapot. Szerkessze az adatforrásokat, és adja meg a hitelesítő adatokat a frissítésükhöz.
 
@@ -132,6 +133,6 @@ Az adatforrások frissítését követően nyissa meg az **Adatok** > **Egyesít
 
 Amikor az adatok egyesítése befejeződött, nyissa meg a **Mértékek** és a **Szegmensek** lehetőséget, hogy azokat is frissítse.
 
-Az exportálások és a gazdagítások újraaktiválása előtt nyissa meg a **Felügyeleti** > **kapcsolatok lehetőséget** az új környezetben lévő kapcsolatok újbóli hitelesítéséhez.
+Az exportálások és bővítések újraaktiválása előtt a **Rendszergazdai** > **kapcsolatok** lapon újrahitelesítheti a kapcsolatokat az új környezetben.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

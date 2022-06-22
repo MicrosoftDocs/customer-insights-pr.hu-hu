@@ -1,6 +1,6 @@
 ---
-title: Ügyfélprofilok bővítése a Microsoftból származó adatokkal
-description: Használja a Microsoft saját adatait, hogy az ügyféladatokat affinitással és elérés megoszlása gazdagítsa.
+title: Ügyfélprofilok gazdagítása a Microsoft márkáinak és érdeklődési körére vonatkozó adatokkal
+description: A Microsoft saját tulajdonú adataival affinitásokkal és elérés megoszlása gazdagíthatja ügyféladatait.
 ms.date: 03/02/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -12,40 +12,30 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c016a394fdf485057a190d03bfed9ce5481f435
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642621"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953768"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Ügyfélprofilok bővítése affinitással és elérés megoszlása (előzetes verzió)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Ügyfélprofilok gazdagítása affinitásokkal és elérés megoszlása (előzetes verzió)
 
-A Microsoft saját adataival márkaaffinitással, érdeklődési affinitással és elérés megoszlása (SoV) gazdagíthatja ügyféladatait. Ezek az affinitások és a SoV az ügyfelekhez hasonló demográfiai adatokon alapulnak. Ez az információ segít abban, hogy jobban megértse és szegmentálja ügyfeleit az adott márkákhoz és érdeklődési körhöz való affinitásuk vagy SoV-juk alapján.
+A Microsoft saját tulajdonú adataival márkaaffinomságokkal, érdeklődési körökkel és elérés megoszlása (SoV) gazdagíthatja ügyféladatait. Ezek az affinitások és soV-k az ügyfelekhez hasonló demográfiai jellemzőkkel rendelkező emberek adatain alapulnak. Ezek az információk segítenek abban, hogy jobban megértse és szegmentálja ügyfeleit az affinitásaik vagy az adott márkákhoz és érdeklődési körökhöz való SoV-juk alapján.
 
-A gazdagodás konfigurálásához és megtekintéséhez nyissa meg **a** > **DataEnrichment** webhelyet [...](enrichment-hub.md).
+## <a name="how-we-determine-affinities-and-sov"></a>Hogyan határozzuk meg az affinitásokat és a SoV-t?
 
-A márkaaffiózók és a SoV-gazdagodás konfigurálásához lépjen a Felfedezés **fülre, és válassza** az **Adatok** bővítése a **Márkák** csempén lehetőséget.
+A Microsoft online keresési adatait arra használjuk, hogy különböző demográfiai szegmensekben (életkor, nem vagy hely szerint meghatározva) különböző demográfiai szegmensekben (életkor, nem vagy hely alapján meghatározva) márkákhoz és érdeklődési körökhöz tartozó affinitásokat és soV-t találjunk. A márka vagy érdeklődési kör online keresési volumene képezi az affinitás vagy az SoV meghatározásának alapját. Mindazonáltal mindegyik más perspektívát biztosít az ügyfelek megértéséhez.
 
-A kamataffinitások és a SoV-gazdagodás konfigurálásához lépjen a Felfedezés **fülre, és válassza** az **Adatok** bővítése lehetőséget a **Érdeklődési körök** csempén.
+- Az affinitás a demográfiai szegmensek közötti összehasonlítás. Ezekkel az információkkal azonosíthatja azokat a demográfiai szegmenseket, amelyek más szegmensekhez képest a legnagyobb affinitással rendelkeznek egy adott márkához vagy érdeklődési körhöz.
 
-   > [!div class="mx-imgBorder"]
-   > ![Márkák és érdeklődési mozaikok.](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
-
-## <a name="how-we-determine-affinities-and-sov"></a>Hogyan határozzuk meg az affinitást és a SoV-t
-
-A Microsoft online keresési adatait arra használjuk, hogy affinitásokat és SoV-t találjunk a márkákhoz és érdeklődési körökhöz a különböző demográfiai szegmensekben (életkor, nem vagy hely szerint meghatározva). Egy márka vagy érdeklődés online keresési volumene képezi az affinitás vagy a SoV meghatározásának alapját. Azonban mindegyik más perspektívát biztosít az ügyfelek megértéséhez.
-
-- Az affinitás a demográfiai szegmensek közötti összehasonlító. Ezekkel az információkkal azonosíthatja azokat a demográfiai szegmenseket, amelyek a többi szegmenshez képest a legnagyobb affinitással rendelkeznek egy adott márkához vagy érdeklődéshez.
-
-- Elérés megoszlása egy összehasonlító a kiválasztott márkák vagy érdekek között. Ezekkel az információkkal azonosíthatja, hogy melyik márka vagy érdeklődés rendelkezik a legmagasabb hangmegosztással egy adott demográfiai szegmensben, összehasonlítva más kiválasztott márkákkal vagy érdeklődési körrel.
+- Elérés megoszlása a kiválasztott márkák vagy érdeklődési körök összehasonlító eleme. Ezeket az információkat arra használhatja, hogy azonosítsa, melyik márka vagy érdeklődési kör rendelkezik a legnagyobb hangaránnyal egy adott demográfiai szegmensben, összehasonlítva az Ön által kiválasztott más márkákkal vagy érdeklődési körökkel.
 
 ## <a name="affinity-level-and-score"></a>Affinitás szintje és pontszám
 
 Minden bővített ügyfélprofilon két kapcsolódó értéket biztosítunk: affinitás szintje és affinitás értéke. Ezek az értékek segítenek annak meghatározásában, hogy milyen erős az affinitás profil demográfiai szegmensében a márkához vagy érdeklődési körhöz az egyéb demográfiai szegmensekkel összehasonlítva.
 
 Az *Affinitás szintje* négy szintből áll, és egy 100 pontos skálán számítja ki a rendszer az *affinitási pontszámot*, amely hozzárendeli az affintiási szinteket.
-
 
 |Affinitás szintje |Affinitási pontszám  |
 |---------|---------|
@@ -58,88 +48,75 @@ Az affinitás méréséhez használt részletességtől függően használhatja 
 
 ## <a name="share-of-voice-sov"></a>Elérés megoszlása (SoV)
 
-A SoV-t egy 100 pontos skálán számítjuk ki. A soV az összes márkában vagy érdeklődési körben minden gazdagított ügyfélprofilhoz 100-at tesz ki. Az affinitásokkal ellentétben a SoV az Ön által választott márkákhoz és érdeklődési körökhöz viszonyítva van. Például a "Microsoft" SoV-értékei eltérőek lehetnek, ha a kiválasztott márkák ("Microsoft", "GitHub") és ("Microsoft", "LinkedIn") eltérőek lehetnek.
+A SoV-t 100 pontos skálán számítjuk ki. Az összes márkára vagy érdeklődési körre kiterjedő teljes SoV minden gazdag ügyfélprofilhoz 100-at tesz ki. Az affinitásokkal ellentétben a SoV az Ön által kiválasztott márkákhoz és érdeklődési körökhöz viszonyítva van. Például a "Microsoft" SoV-értékei eltérőek lehetnek, ha a kiválasztott márkák ("Microsoft", "GitHub") és ("Microsoft", "LinkedIn") helyett.
 
 ## <a name="supported-countriesregions"></a>Támogatott országok/régiók
 
 Jelenleg a következő ország-/régió lehetőségeket támogatjuk: Ausztrália, Kanada (angol), Franciaország, Németország, Egyesült Királyság vagy Egyesült Államok (angol).
 
-Ország vagy régió kiválasztásához nyissa meg a **Márkák bővítése** vagy **Érdeklődés bővítése** és válassza a **Változtat** lehetőséget az **Ország/Régió** mellett. Az **Ország/régió beállításai** ablaktáblában válasszon egy beállítást, és válassza az **Alkalmaz** lehetőséget.
+## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
-### <a name="implications-related-to-country-selection"></a>Az országválasztással kapcsolatos következmények
+1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
-- Saját [márkájának kiválasztásakor](#define-your-brands-or-interests) a rendszer a kiválasztott ország vagy régió alapján tesz javaslatokat.
+   - A márkaaffinitások és az SoV-gazdagítás konfigurálásához válassza az Adatok **gazdagítása lehetőséget** a **Márkák** csempén.
 
-- Egy [iparág kiválasztása](#define-your-brands-or-interests) esetén a kiválasztott ország vagy régió alapján megkapja a leginkább releváns márkákat és érdeklődési köröket.
+   - A kamataffinitások és az SoV-gazdagítás konfigurálásához válassza az Adatok **gazdagítása lehetőséget** az **Érdeklődési körök** csempén.
 
-- A [profilok bővítésénél](#refresh-enrichment) minden olyan ügyfélprofilt bővítünk, amelynél adatokat kapunk a kiválasztott márkákhoz és érdeklődésekhez, tartalmazva a profilokat, amelyek nincsenek benne a kiválasztott országban vagy régióban. Ha például Németországot választotta, akkor bővítjük az Egyesült Államokban található profilokat, ha rendelkezésre állnak adatok az Egyesült Államokban a kiválasztott márkákra és érdeklődésre.
+   > [!div class="mx-imgBorder"]
+   > ![Márkák és érdeklődési mozaikok.](media/BrandsInterest-tile-Hub.png "Márkák és érdeklődési mozaikok")
 
-## <a name="configure-enrichment"></a>A bővítés konfigurálása
+1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-Az interaktív élmény végig segít Önnek a bővítések konfigurálásában. 
+1. Az ország vagy régió módosításához válassza a Módosítás **lehetőséget** az Ország/régió **mellett**. **Az Ország/régió beállításai** panelen válasszon ki egy támogatott országot/régiót [...](#supported-countriesregions), majd válassza az Alkalmaz **lehetőséget**.
 
-### <a name="define-your-brands-or-interests"></a>Márkák vagy érdeklődési körök megadása
+   > [!NOTE]
+   > Saját márkájának kiválasztásakor a rendszer a kiválasztott ország vagy régió alapján tesz javaslatokat. Egy iparág kiválasztása esetén a kiválasztott ország vagy régió alapján megkapja a leginkább releváns márkákat és érdeklődési köröket.
 
-Válasszon legfeljebb öt márkát vagy érdeklődési kört az alábbi lehetőségek egyikének vagy mindkettőnek a használatával:
+1. Válasszon legfeljebb öt márkát vagy érdeklődési kört az alábbi lehetőségek egyikének vagy mindkettőnek a használatával:
 
-- **Iparág**: válassza ki saját iparágát a legördülő listából, majd válasszon a csúcsmárkákból vagy érdeklődési körökből ezt az iparágat illetően.
-- **Válassza ki a sajátját**: Adjon meg egy, a szervezet számára releváns márkát vagy érdeklődési kört, majd válasszon a megfelelő javaslatok közül. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
+   - **Iparág**: válassza ki saját iparágát a legördülő listából, majd válasszon a csúcsmárkákból vagy érdeklődési körökből ezt az iparágat illetően.
+   - **Válassza ki a sajátját**: Adjon meg egy, a szervezet számára releváns márkát vagy érdeklődési kört, majd válasszon a megfelelő javaslatok közül. Ha a keresett márkát vagy érdeklődési kört nem sorolja fel a rendszer, küldjön visszajelzést a **Javaslat** hivatkozás segítségével.
 
-### <a name="review-enrichment-preferences"></a>Bővítési beállítások áttekintése
+1. Válassza a Tovább **lehetőséget**, tekintse át az alapértelmezett gazdagítási beállításokat, és szükség szerint frissítse őket.
 
-Tekintse át az alapértelmezett bővítési beállításokat, és szükség szerint frissítse azokat.
+   :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Képernyőkép a bővítési beállítások ablakáról.":::
 
-:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Képernyőkép a bővítési beállítások ablakáról.":::
+1. Válassza a **Következő** lehetőséget.
 
-### <a name="select-entity-to-enrich"></a>Entitás kiválasztása bővítéshez
+1. Válassza ki az **Ügyfél adatkészlet**, és válassza ki azt a profilt vagy szegmenst, amelyet a Microsofttól származó adatokkal szeretne gazdagítani. Az *Ügyfél* entitás gazdagítja az összes ügyfélprofilt, míg egy szegmens csak az adott szegmensben található ügyfélprofilokat gazdagítja.
 
-Válassza **a Gazdagított entitás** lehetőséget, és válassza ki a Microsoft adataival gazdagítani kívánt adatkészlet. Kiválaszthatja a Vevő entitást az összes ügyfélprofil gazdagítására, vagy kiválaszthat egy szegmens entitást, amely csak az adott szegmensben található vevőprofilokat gazdagítja.
+1. Válassza a **Következő** lehetőséget.
 
-### <a name="map-your-fields"></a>Mezők megfeleltetése
+1. Leképezheti a mezőket az egységes ügyfélentitásból a Microsoft adataira.
 
-A egyesített ügyfélentitás mezőinek leképezésével meghatározhatja, hogy a rendszer az ügyféladatok gyarapítására melyik demográfiai szegmenst használja. Ország/régió leképezése, és legalább a születési dátum vagy nem attribútumát. Ezenkívül le kell képeznie legalább egy várost (és államot/tartományt) vagy irányítószámot. Válassza a **Szerkesztés** lehetőséget a mezők leképezésének definiálásához, és válassza az **Alkalmazás** lehetőséget, amikor elkészült. Válassza a **Mentés** lehetőséget a mezők leképezésének végrehajtásához.
+   > [!NOTE]
+   > Legalább a születési dátum vagy a nem attribútumok szükségesek. Ország/régió és legalább város (és állam/tartomány) vagy irányítószám szükséges. Javasoljuk, hogy a születési dátum az adatbetöltés során legyen DateTime típusúra konvertálva. Másik lehetőségként sztring lehet [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-ddd" vagy "yyyy-MM-ddTHH:mm:ss" formátumban.
 
-A következő formátumok és értékek támogatottak (az értékek nem különböztetik meg a kis- és nagybetűket):
+1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
-- **Születési dátum**: Azt ajánljuk, hogy az adatok betöltése során a születési dátumot a rendszer datetime típusúra alakítsa. Másik lehetőségként sztring lehet [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-ddd" vagy "yyyy-MM-ddTHH:mm:ss" formátumban.
-- **Nem**: férfi, nő, ismeretlen.
-- **Irányítószám**: Ötjegyű irányítószámok az Egyesült Államok számára, standard irányítószám mindenhol máshol.
-- **Város**: A város neve angolul.
-- **Állam/megye**: Két betűs rövidítés az Egyesült Államok és Kanada esetében. Két- vagy három betűs rövidítés Ausztrália esetében. Franciaország, Németország és az Egyesült Királyság esetében nem alkalmazható.
-- **Ország/régió**:
+1. Adjon nevet a bővítésnek. A **Kimeneti entitás neve** automatikusan ki lesz választva.
 
-  - USA: Amerikai Egyesült Államok, Egyesült Államok, USA, US, Amerika
-  - CA: Kanada, CA
-  - GB: Egyesült Királyság, UK, Nagy-Britannia, GB, Nagy-Britannia és Észak-Írország Egyesült Királysága, Nagy-Britannia Egyesült Királysága
-  - AU: Ausztrália, AU, Ausztrália, Ausztrál Nemzetközösség
-  - FR: Franciaország, Francia Köztársaság
-  - DE: Németország, német, Deutschland, Allemagne, DE, Német Szövetségi Köztársaság, Német Köztársaság
+   :::image type="content" source="media/enrichment-interests-summary.png" alt-text="Az érdeklődési kör áttekintése és elnevezési oldal.":::
 
-## <a name="review-and-name-the-enrichment"></a>A bővítés áttekintése és elnevezése
+1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
-Végül áttekintheti az információkat, és nevet adhat a bővítésnek.
+1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-:::image type="content" source="media/enrichment-interests-summary.png" alt-text="Az érdeklődési kör áttekintése és elnevezési oldal.":::
-
-## <a name="refresh-enrichment"></a>A bővítés frissítése
-
-Futtassa a bővítést a márkák, érdeklődési körök konfigurálása és a mezők demográfiai adatokra vonatkozó leképezése után. A folyamat megkezdéséhez válassza a márka vagy az érdeklődési kör konfigurációja lapon a **Futtatás** lehetőséget. Emellett a rendszer automatikusan is futtathatja a dúsítást egy ütemezett frissítés részeként.
-
-Az ügyféladatok méretétől függően előfordulhat, hogy a bővítés futtatása néhány percig is eltarthat.
-
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+   A profilok bővítésénél minden olyan ügyfélprofilt bővítünk, amelynél adatokat kapunk a kiválasztott márkákhoz és érdeklődésekhez, tartalmazva a profilokat, amelyek nincsenek benne a kiválasztott országban vagy régióban. Ha például Németországot választotta, akkor bővítjük az Egyesült Államokban található profilokat, ha rendelkezésre állnak adatok az Egyesült Államokban a kiválasztott márkákra és érdeklődésre.
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
-A bővítési folyamat futtatása után lépjen a **Saját bővítések** pontra, és nézze át a bővített ügyfelek teljes számát és a márkák vagy érdeklődési körök lebontását a bővített ügyfelek profiljaiban.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Az eredmények előnézete a bővítési folyamat futtatása után.":::
 
-Talál egy diagramot, amely tartalmazza a gazdagított ügyfélprofilok számát az idő múlásával és a gazdagított entitások előnézetét. Tekintse át a gazdagított adatokat a Lásd még **az Affinitási szint** vagy **elérés megoszlása** **diagramok megtekintésének jelölőnégyzet bejelölésével**. A márkák gazdagított adatai a BrandAffinityFromMicrosoft **és** a **BrandShareOfVoiceFromMicrosoft** entitásokhoz kerülnek. Az érdeklődési körökre vonatkozó adatok a **InterestAffinityFromMicrosoft** és **a InterestShareOfVoiceFromMicrosoft entitásokban találhatók**. Ezeket az entitásokat a **Bővítés** csoportban is megtekintheti az **Adatok** > **Entitások** helyen.
+Az eredmények közé tartozik **az Affinitás szintje** vagy **a elérés megoszlása** diagramok.
+
+A gazdagításokból létrehozott entitások az **Adatentitások** Gazdagítási **csoportjában** > **vannak felsorolva**. A márkákkal kapcsolatos bővített adatok a BrandAffinityFromMicrosoft **és** a **BrandShareOfVoiceFromMicrosoft** entitásokhoz kerülnek. Az érdekeltségekre vonatkozó adatok a **InterestAffinityFromMicrosoft** és **a InterestShareOfVoiceFromMicrosoft** entitásokban találhatók.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>A bővítési adatok megtekintése az ügyfélkártyán
 
-Márka és érdeklődés SoV is megtekinthető az egyes ügyfélkártyákon. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán diagramokat talál a SoV márkáról vagy érdeklődésről az ügyfél demográfiai profiljában szereplő személyek alapján.
+Márka és érdeklődés SoV az egyes ügyfélkártyákon is megtekinthető. Nyissa meg az **Ügyfelek** lehetőséget, és válassza ki az ügyfél profilját. Az ügyfélkártyán diagramokat talál a márkához vagy érdeklődési körhöz tartozó SoV-hez az adott ügyfél demográfiai profiljában szereplő személyek alapján.
 
 :::image type="content" source="media/enrichment-customer-card.png" alt-text="Bővített adatokkal rendelkező ügyfél-kártya.":::
 

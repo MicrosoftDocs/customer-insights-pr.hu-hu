@@ -1,7 +1,7 @@
 ---
 title: Az egyesített ügyfélprofilok bővítése
 description: A funkciók segítségével bővítheti az ügyféladatokat.
-ms.date: 03/29/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800608"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954044"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Az ügyfelek profiljainak bővítése (előzetes verzió)
 
@@ -27,7 +27,7 @@ Adatok felhasználása olyan forrásokból, mint például a Microsoft és más 
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="A bővítési központ oldala.":::
 
-A gazdagodási lehetőségekkel való munkához nyissa meg az **Adatgazdagítás** > **lehetőséget**.  
+Lépjen az **Adatgazdagítás** > **elemre** a gazdagítási lehetőségek kezeléséhez.  
 
 A bővítések létrehozásához vagy módosításához Közreműködő vagy Rendszergazdai engedélyekkel kell rendelkeznie. További tudnivalók: [Engedélyek](permissions.md).
 
@@ -35,35 +35,35 @@ A **Felfedezés** lapon található az összes támogatott gyarapítási lehető
 
 # <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
+- [Az AbiliTec identitását](enrichment-liveramp.md) a LiveRamp AbiliTec biztosítja
 - A Microsoft által biztosított [márkák](enrichment-microsoft.md)
-- A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
-- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
 - [Demográfiai adatok](enrichment-experian.md) az Experian által megadva
-- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
-- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
-- [Forrás](enrichment-liveramp.md) : LiveRamp AbiliTec
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
+- A Microsoft által biztosított [érdeklődési körök](enrichment-microsoft.md)
+- [helyadatok](enrichment-azure-maps.md) Maps biztosítja Microsoft Azure
+- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította
+- [Egyéni SFTP-adatok](enrichment-SFTP-custom-import.md) a Secure File Transfer Protocol (SFTP) protokollon keresztül
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
+- [A Microsoft által biztosított fiókkapcsolati adatok](enrichment-office.md)
+- [A cég adatait](enrichment-dnb.md) a Dun & Bradstreet bocsátotta rendelkezésre
 - A Leadspace által biztosított [vállalati adatok](enrichment-leadspace.md)
-- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md) 
-- [A Microsoft által szolgáltatott továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
-- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította 
-- [Egyéni adatok](enrichment-SFTP-custom-import.md) SFTP-importálás biztonságos fájlátviteli protokollján keresztül 
-- [Azure Maps](enrichment-azure-maps.md) a Microsoft jóvoltából
-- [A cég adatait](enrichment-dnb.md) a Dun & Bradstreet szolgáltatta
-- [A Microsoft által megadott fiókkapcsolati adatok](enrichment-office.md)
+- A Microsoft által biztosított [továbbfejlesztett címek](enrichment-enhanced-addresses.md)
+- [A Microsoft által biztosított továbbfejlesztett vállalati adatok](enrichment-enhanced-company-data.md)
+- [helyadatok](enrichment-azure-maps.md) Maps biztosítja Microsoft Azure
+- A [Helyadatokat](enrichment-here.md) a HERE Technologies biztosította
+- [Egyéni SFTP-adatok](enrichment-SFTP-custom-import.md) a Secure File Transfer Protocol (SFTP) protokollon keresztül
 
 ---
 
-A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beállítva, illetve hogy szerkesztheti-e a tulajdonságait.
+A **saját bővítések** lapon megtekintheti, hogy milyen bővítés van beállítva, illetve hogy szerkesztheti-e a tulajdonságait. A gazdagításokból szegmenseket [vagy](segments.md) mértékeket [is létrehozhat](measures.md).
 
 ## <a name="manage-existing-enrichments"></a>Meglévő bővítések kezelése
 
 Menjen a **Saját bővítéseim** fülre az összes konfigurált bővítés megtekintéséhez. Minden bővítés egy sor formájában jelenik meg, amely további információkat tartalmaz a bővítésről.
 
-Az elérhető lehetőségekért válassza ki a bővítést. A beállítások megtekintéséhez a listaelem függőleges ellipszisét (&vellip;) is kiválaszthatja. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
+Az elérhető lehetőségekért válassza ki a bővítést. A beállítások megtekintéséhez kiválaszthatja a függőleges három pontot (&vellip;) egy listaelemen. Ha több bővítést is konfigurált, a keresőmező segítségével gyorsan megkeresheti.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="A bővítések listájában a bővítés kezelésére szolgáló lehetőségek.":::
 
@@ -81,36 +81,45 @@ A külső gyártótól származó bővítéseket a [kapcsolatok](connections.md)
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Azonos típusú többszörös bővítések
 
-A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a **Bővítés** oldalon látható.
+A bővíteni kívánt entitást a bővítési konfiguráció során adja meg, ezzel lehetővé teszi, hogy csak a profilok egy részében bővítsen. Például csak egy adott szegmens adatait bővítse. Konfigurálhat több ugyanolyan típusú bővítést, és újra felhasználhatja ugyanazt a kapcsolatot. Egyes bővítések az azonos típusú, létrehozható bővítések számára vonatkoznak korlátozások. A korlátok és az aktuális használat a Gazdagítás **oldal Felfedezés** lapján **található egyes csempéken** láthatók.
 
-## <a name="enrich-data-sources-before-unification"></a>Adatforrások bővítése az egyesítés előtt
+## <a name="enrich-data-sources-before-unification"></a>Adatforrások gazdagítása az egyesítés előtt
 
-Az adategyesítés előtt gazdagíthatja az ügyféladatokat, hogy javítsa az adategyeztetés minőségét. További információ: [adatforrás gazdagodás](data-sources-enrichment.md).
+Az adatok egyesítése előtt gazdagíthatja az ügyféladatokat, hogy javítsa az adategyezés minőségét. További információ: [adatforrás gazdagítás](data-sources-enrichment.md).
 
-## <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
+## <a name="run-or-refresh-enrichments"></a>Bővítések futtatása vagy frissítése
+
+1. A gazdagítási folyamat elindításához válassza a Futtatás **lehetőséget**. Vagy hagyja, hogy a rendszer automatikusan futtassa a gazdagítást egy [ütemezett frissítés](system.md#schedule-tab) részeként. A feldolgozási idő az ügyféladatok mennyiségétől függ.
+
+1. Ha szükséges, [tekintse meg a gazdagítási folyamat](#see-the-progress-of-the-enrichment-process) előrehaladását.
+
+1. A gazdagítási folyamat befejezése után a Saját bővítések **lapon** tekintse át az újonnan bővített ügyfélprofilok adatait, az utolsó frissítés időpontját és a bővített profilok számát.
+
+1. Válassza ki a gazdagítást a gazdagítási eredmények [megtekintéséhez](#enrichment-results).
+
+### <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 
 A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
 
-A gyarapítás állapotának megtekintése
-
-1. Lépjen az **Adatok** > **Bővítés** pontra. 
-1. Az oldalpanel megnyitásához válassza ki a **Saját bővítések** lapot a Gyarapítás állapotának megtekintéséhez. 
-1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt. 
-1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget. 
-1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat. 
+1. Lépjen az **Adatok** > **Bővítés** pontra.
+1. **A Saját bővítések** lapon válassza ki a gazdagítás állapotát egy oldalsó panel megnyitásához.
+1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt.
+1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget.
+1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat.
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
-A befejezett gazdagodási futtatás után áttekintheti a gazdagodás eredményeit.
+A befejezett gazdagítási futtatás után tekintse át a gazdagítási eredményeket.
 
-1. Lépjen az **Adatok** > **Bővítés** pontra. 
-1. Válassza ki azt a gazdagodást, amelyről információt szeretne kapni.
+1. Lépjen az **Adatok** > **Bővítés** pontra.
+1. **A Saját bővítések** lapon válassza ki azt a gazdagítást, amelyről információt szeretne kapni.
 
-Minden gazdagodás olyan alapvető információkat mutat, mint a gazdagított profilok száma, a létrehozott gazdagodási entitás előnézete és a gazdagított profilok száma az idő múlásával. Ha rendelkezésre áll, a **mezővel** gazdagodott ügyfelek száma részletezi az egyes gazdagított mezők lefedettségét.
+Minden gazdagítás olyan alapvető információkat jelenít meg, mint a bővített profilok száma és a bővített profilok száma az idő múlásával. A **Bővített ügyfelek előzetes verzió** csempe a létrehozott gazdagítási entitás egy mintáját jeleníti meg. A részletes nézet megtekintéséhez válassza a Továbbiak **,** majd az **Adatok** lapot.
 
-:::image type="content" source="media/enrichments-results.png" alt-text="A Gazdagodás eredményoldala.":::
+:::image type="content" source="media/enrichments-results.png" alt-text="A bővítések eredményoldala.":::
 
-Egyes dúsítások a dúsítás típusára jellemző információkat is mutatnak. További információért tekintse meg a vonatkozó gazdagodás dokumentációját.
+Ha rendelkezésre áll, a **mezőnként** gazdagított ügyfelek száma részletezést biztosít az egyes bővített mezők lefedettségében.
 
+Egyes dúsítások a gazdagítás típusára jellemző információkat is megmutatják. További információt a kapcsolódó dokumentációban talál.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

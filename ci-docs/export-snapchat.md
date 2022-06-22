@@ -1,19 +1,19 @@
 ---
 title: Customer Insights-adatok exportálása a Snapchatre
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Snapchatbe.
-ms.date: 10/08/2021
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 171b8bf0f4a034c78e872b671602ae7653271da7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d64b482c322af8632e29ec41d6e34c390c5e646c
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642788"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947279"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Szegmensek exportálása a Snapchatbe (előzetes verzió)
 
@@ -21,8 +21,9 @@ Exportálja az egyesített ügyfélprofilok szegmensét a Snapchatbe, és haszn�
 
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
--   Van egy [Snapchat Business fiókja](https://business.snapchat.com/), egy [Snapchat Ads fiókja](https://ads.snapchat.com/), és megfelelő rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   Van egy [Snapchat Business fiókja](https://business.snapchat.com/), egy [Snapchat Ads fiókja](https://ads.snapchat.com/), és megfelelő rendszergazdai hitelesítő adatai. Legalább egy szervezeti fiók tagjának és egy adott Hirdetési fiók Adatkezelőjének kell lennie. 
+-   Legalább egy célközönség van a Snapchatben célközönség SAM (Snap célközönség Match) típusú kezelőben. 
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
@@ -60,7 +61,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Snapchat szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
 
-1. Adja meg a [**Snapchat célközönségazonosítót**](https://businesshelp.snapchat.com/s/article/custom-audiences).
+1. Adja meg a [**Snapchat szegmens / célközönség azonosítót**](https://businesshelp.snapchat.com/s/article/custom-audiences). A célközönség azonosítója megtalálható az URL-ben, miután kiválasztotta a célközönség a Snapchat célközönség Manager alkalmazásban. 
 
 1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket exportálni kell a Snapchat alkalmazásba.
 

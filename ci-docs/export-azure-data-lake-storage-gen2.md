@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 8b14992f8312d333d8a12501e8a28496c8434779
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642601"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947233"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Szegmenslista és egyéb adatok exportálása az Azure Data Lake Storage Gen 2-es verzióba (előzetes verzió)
 
@@ -21,11 +21,9 @@ A Customer Insights adatokat a Data Lake Storage Gen2 fiókban tárolhatja, vagy
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-1. A Azure Data Lake Storage Gen2-es verzió esetében a [Normál teljesítmény és a Premium teljesítményszint](/azure/storage/blobs/create-data-lake-storage-account) közül választhat, amikor adattárolási fiókot hoz létre az adatokhoz. Ha a Felsőkategóriás teljesítményszintet választja, akkor válassza a megfelelő fióktípusként a premium blockblobok lehetőséget. 
+1. A Azure Data Lake Storage Gen2-es verzió esetében a [Normál teljesítmény és a Premium teljesítményszint](/azure/storage/blobs/create-data-lake-storage-account) közül választhat, amikor adattárolási fiókot hoz létre az adatokhoz. Ha a Felsőkategóriás teljesítményszintet választja, akkor válassza a megfelelő fióktípusként a premium blockblobok lehetőséget.
 
-
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Állítsa be az Azure Data Lake Storage Gen2 alkalmazásokkal való kapcsolatot 
-
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Állítsa be az Azure Data Lake Storage Gen2 alkalmazásokkal való kapcsolatot
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
@@ -39,7 +37,7 @@ A Customer Insights adatokat a Data Lake Storage Gen2 fiókban tárolhatja, vagy
     - Ha meg szeretne ismerkedni vele, hogyan hozhat létre tárhelyfiókot az Azure Data Lake Storage Gen2 tárhellyel való használatra, olvassa el a [Tárhelyfiók létrehozása](/azure/storage/blobs/create-data-lake-storage-account) részt. 
     - Ha szeretne többet megtudni az Azure Data Lake Gen2 tárfiók nevét és fiókkulcsát, olvassa el a [Tárhelyfiók beállításainak kezelése az Azure-portálon](/azure/storage/common/storage-account-manage) részt.
 
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
 ## <a name="configure-an-export"></a>Exportálás konfigurálása
 
@@ -57,8 +55,12 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
+Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut.
+Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand).
 
-Az exportált adatok az Ön által konfigurált az Azure Data Lake Gen 2 tárolóban lesznek tárolva. 
+Az exportált adatok az Ön által konfigurált az Azure Data Lake Gen 2 tárolóban lesznek tárolva.
+
+> [!TIP]
+> A nagy mennyiségű adatot tartalmazó entitások exportálása több CSV-fájlhoz vezethet ugyanabban a mappában minden exportáláshoz. Az exportálások felosztása teljesítménybeli okokból történik, hogy minimalizálja az exportálás befejezéséhez szükséges időt.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

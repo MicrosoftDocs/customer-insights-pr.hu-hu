@@ -1,7 +1,7 @@
 ---
-title: A vállalati profilok gazdagítása a Dun & Bradstreet segítségével
-description: Általános információk a Dun & Bradstreet harmadik fél gazdagodásáról.
-ms.date: 04/26/2022
+title: Vállalati profilok gazdagítása a Dun &Bradstreet-tel
+description: Általános információk a Dun &Bradstreet harmadik féltől származó gazdagításáról.
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,104 +9,105 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c738c2657d4cda213342629156ddc8104366bd8a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755403"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953894"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása a Dun & Bradstreet segítségével (Előzetes verzió)
+# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása a Dun & Bradstreettel (előzetes verzió)
 
-A Dun & Bradstreet kereskedelmi adatokat, elemzéseket és betekintést nyújt a vállalkozások számára. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A gazdagodás olyan attribútumokat tartalmaz, mint a DUNS-szám, a vállalat mérete, a hely, az ipar és így tovább.
+A Dun & Bradstreet kereskedelmi adatokat, elemzéseket és betekintést nyújt a vállalkozások számára. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések olyan attribútumokat tartalmaznak, mint a DUNS-szám, a vállalat mérete, a hely, az ipar és egyebek.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-A Dun & Bradstreet gazdagodás konfigurálásához a következő előfeltételeknek kell teljesülniük:
+- Aktív [Dun & Bradstreet](https://www.dnb.com/marketing/media/give-your-data-a-boost.html?source=microsoft_audience_insights) licenc.
+- [Egységes ügyfélprofilok](customer-profiles.md) vállalatok számára.
+- Létrejön egy Dun & Bradstreet [projekt](#set-up-your-dun--bradstreet-project).
+- A Dun & Bradstreet [kapcsolatot](connections.md) egy [rendszergazda konfigurálja](#configure-a-connection-for-dun--bradstreet).
 
-- Aktív [Dun & Bradstreet](https://www.dnb.com/marketing/media/give-your-data-a-boost.html?source=microsoft_audience_insights) engedéllyel rendelkezik.
-- A vállalatokhoz [egyesített ügyfélprofilok](customer-profiles.md) tartoznak.
-- A Dun & Bradstreet [kapcsolatot](connections.md) egy rendszergazda konfigurálja. Akkor hozhatja létre, ha rendszergazdai [engedélyekkel és a Dun & Bradstreet Connect hitelesítő adataival rendelkezik](permissions.md#admin).
+## <a name="set-up-your-dun--bradstreet-project"></a>A Dun &Bradstreet projekt beállítása
 
-## <a name="setting-up-your-dun--bradstreet-project"></a>A Dun & Bradstreet projekt beállítása
+A Dun & Bradstreet licencelt felhasználójaként létrehozhat egy projektet a Dun & Bradstreet [Connectben](https://connect.dnb.com?lead_source=microsoft_audienceinsights).
 
-A Dun & Bradstreet licencelt felhasználójaként a Dun & Bradstreet Connect programban [állíthat be egy projektet](https://connect.dnb.com?lead_source=microsoft_audienceinsights).
+1. Jelentkezzen be a Dun & Bradstreet Connect [szolgáltatásba](https://connect.dnb.com?lead_source=microsoft_audienceinsights). A hitelesítő [adatok lekéréséhez állítsa vissza a jelszavát](https://sso.dnb.com/signin/forgot-password?lead_source=microsoft_audienceinsights).
 
+1. Töltse le [csv-sablonfájlunkat](https://c360devenrichment.blob.core.windows.net/mapping/DnBCIdatamapping.csv), amely a Customer Insights mezőknek a megfelelő Dun &Bradstreet mezőkre való leképezéséhez lesz használva.
 
-1. Jelentkezzen be a [Dun & Bradstreet Connect szolgáltatásba](https://connect.dnb.com?lead_source=microsoft_audienceinsights). A hitelesítő [adatok lekéréséhez állítsa vissza a jelszót](https://sso.dnb.com/signin/forgot-password?lead_source=microsoft_audienceinsights).
+1. Töltse fel a fájlt a **Dun & Bradstreet projekt létrehozási élményének Adatok** feltöltése lépésében.
 
-1. Töltse le [csv sablonfájlunkat](https://c360devenrichment.blob.core.windows.net/mapping/DnBCIdatamapping.csv), amellyel leképezheti a Customer Insights mezőket a megfelelő Dun & Bradstreet mezőkre.
+1. Válassza ki a vízszintes pontokat a megfelelő **forrás** alatt az újonnan létrehozott Dun & Bradstreet projektben az elérhető lehetőségek megtekintéséhez.
 
-1. Töltse fel a fájlt a **Dun & Bradstreet projektkészítési élmény feltöltési lépésébe**.
+   :::image type="content" source="media/enrichment-dnb-dots.png" alt-text="Képernyőkép egy Dun &Bradstreet projekt pontjairól.":::
 
-1. Válassza ki a vízszintes pontokat a megfelelő **forrás** alatt az újonnan létrehozott Dun & Bradstreet projektben a rendelkezésre álló lehetőségek megtekintéséhez.
-
-   :::image type="content" source="media/enrichment-dnb-dots.png" alt-text="Képernyőkép a Dun & Bradstreet projekt pontjairól.":::
-
-1. Válassza az S3 részleteinek lekérése **lehetőséget**. Tárolja ezeket az információkat biztonságos helyen. Szüksége lesz rá a kapcsolat beállításához [a gazdagodáshoz](#configure-a-connection-for-dun--bradstreet) a Customer Insights alkalmazásban.
+1. Válassza az S3-adatok **lekérése lehetőséget**. Tárolja ezeket az információkat biztonságos helyen. Szüksége lesz rá a kapcsolat beállításához [a Customer Insights gazdagításához](#configure-a-connection-for-dun--bradstreet).
 
    :::image type="content" source="media/enrichment-dnb-s3info.png" alt-text="Képernyőkép az s3 információk kiválasztásáról egy Dun & Bradstreet projektben.":::
 
+## <a name="configure-a-connection-for-dun--bradstreet"></a>Kapcsolat konfigurálása Dun &Bradstreethez
+
+Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolgáltatásban, és rendelkeznie kell a Dun &Bradstreet Connect hitelesítő adataival.
+
+1. Válassza a Kapcsolat **hozzáadása lehetőséget** a gazdagítás konfigurálásakor, vagy lépjen a Rendszergazdai **kapcsolatok** > **elemre**, és válassza a Beállítás **lehetőséget** a Dun & Bradstreet csempén.
+
+1. Adja meg a kapcsolat nevét.
+
+1. Adja meg a Dun & Bradstreet érvényes hitelesítő adatait és a Dun & Bradstreet projekt részleteit *Régió, a Mappa eldobása elérési útja és a Mappa eldobása név*. Ezt [az információt](#set-up-your-dun--bradstreet-project) a Dun & Bradstreet projektből kapja.
+
+1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
+
+1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
+
+   :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Dun &Bradstreet kapcsolat konfigurációs oldala.":::
+
+### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
+
+Ha engedélyezi Dynamics 365 Customer Insights az adatok Dun &Bradstreet részére történő továbbítását, engedélyezi az adatok továbbítását a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a Dun &Bradstreet teljesítse az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeit. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
+A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
+
+## <a name="supported-countries-or-regions"></a>Támogatott országok és régiók
+
+Jelenleg a következő ország-/régióbeállításokat támogatjuk: Kanada (angol) vagy Egyesült Államok (angol).
+
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
-1. Lépjen az **Adatok** > **Bővítés** pontra.
+1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
-1. Válassza **az Adatok** gazdagítása lehetőséget a Dun & Bradstreet csempén, és válassza az Első lépések **lehetőséget**.
+1. Válassza az Adatok **gazdagítása lehetőséget** a **Dun &Bradstreet vállalati adatai** csempén.
 
-   :::image type="content" source="media/enrichment-dnb-tile.png" alt-text="Képernyőkép a Dun & Bradstreet csempéről.":::
+   :::image type="content" source="media/enrichment-dnb-tile.png" alt-text="Képernyőkép a Dun &Bradstreet csempéről.":::
 
-1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, létrehozhat egy kapcsolatot. Válassza **a Kapcsolat** hozzáadása lehetőséget, és válassza a Dun & Bradstreet **lehetőséget**.
+1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-1. A kapcsolat megerősítéséhez válassza **a Csatlakozás Dunhoz & Bradstreet** lehetőséget.
+1. Válassza ki a kapcsolatot, és erősítse meg. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
 
-1. Válassza a Tovább **lehetőséget**, és válassza ki az **Ügyfél adatkészlet**, amelyet a Dun & Bradstreet vállalati adataival szeretne gazdagítani. Kiválaszthatja a Vevő **entitást az összes ügyfélprofil gazdagításához, vagy kiválaszthat egy szegmensegységet, hogy csak az** adott szegmensben található egységes ügyfélprofilokat gazdagítsa.
+1. Válassza a **Következő** lehetőséget.
 
-1. Válassza a Tovább lehetőséget **,** és határozza meg, hogy az egyesített profilok mely mezőivel keresse meg a Dun & Bradstreet megfelelő vállalati adatait. A **DUNS-szám** vagy **a Vállalat** neve és **az Ország** mező megadása kötelező. Az ország mező támogatja [a két- vagy hárombetűs országkódokat](https://www.iso.org/iso-3166-country-codes.html), az angol nyelvű országnevet, az anyanyelvi országnevet és a telefonelőtagot. Néhány gyakori országváltozat a következők:
+1. Válassza ki az **Ügyfél adatkészlet**, és válassza ki azt a profilt vagy szegmenst, amelyet a Dun &Bradstreet vállalati adataival szeretne gazdagítani. Az *Ügyfél* entitás gazdagítja az összes ügyfélprofilt, míg egy szegmens csak az adott szegmensben található ügyfélprofilokat gazdagítja.
 
-- Usa: Amerikai Egyesült Államok, Egyesült Államok, USA, Amerika.
-- CA: Kanada.
-- GB: Egyesült Királyság, Egyesült Királyság, Nagy-Britannia, GB, Nagy-Britannia és Észak-Írország Egyesült Királysága, Nagy-Britannia Egyesült Királysága.
-- AU: Ausztrália, Ausztrál Nemzetközösség.
-- FR: Franciaország, Francia Köztársaság.
-- DE: Németország, Német, Deutschland, Allemagne, Németországi Szövetségi Köztársaság, Németországi Köztársaság.
+1. Határozza meg, hogy az egyesített profilokból mely típusú mezőket használja a Dun & Bradstreet vállalati adatainak egyeztetéséhez. Legalább egy mezőben meg kell adni a **Név és cím**, a **Telefon** vagy az **E-mail-cím** adatokat.
 
-   :::image type="content" source="media/enrichment-dnb-mapping.png" alt-text="Dun & Bradstreet mezőleképezési ablaktábla.":::
+1. Válassza a **Tovább** lehetőséget
+
+1. Térképezze fel a mezőket a Dun &Bradstreet vállalati adataira. A **DUNS-szám** vagy **a Vállalat** neve és **az Ország** mezők kitöltése kötelező.
+
+      :::image type="content" source="media/enrichment-dnb-mapping.png" alt-text="Dun & Bradstreet mezőleképezési panel.":::
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
-1. Adja meg a bővítés nevét, és válassza a **Bővítés memtése** lehetőséget a lehetőségek áttekintése után.
+1. **Adja meg a gazdagítás nevét** és a **Kimeneti entitás nevét**.
 
-## <a name="configure-a-connection-for-dun--bradstreet"></a>Kapcsolat konfigurálása a következőhöz: Dun & Bradstreet
+1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
-A kapcsolatok konfiguráljához rendszergazdának kell lennie. Válassza **a Kapcsolat hozzáadása a** gazdagodás konfigurálásakor lehetőséget, *vagy* lépjen a Felügyeleti kapcsolatok **elemre,** > **és** válassza **a Beállítás** a Dun & Bradstreet csempén lehetőséget.
-
-1. Válassza az **Első lépések** lehetőséget.
-
-1. Adja meg a kapcsolat nevét a **Megjelenítendő név** mezőben.
-
-1. Adjon meg érvényes Dun & Bradstreet hitelesítő adatokat és Dun & Bradstreet projektrészleteket *Régió, Drop mappa elérési útja és Drop mappa neve*. Ezt az információt [a Dun & Bradstreet projektből szerzi](#setting-up-your-dun--bradstreet-project).
-
-1. Tekintse át és adja meg hozzájárulását az **adatvédelem és a megfelelőséghez** az **Elfogadom** által.
-
-1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget.
-
-1. Az ellenőrzés befejezése után válassza a **Mentés** lehetőséget.
-
-   :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Dun & Bradstreet kapcsolatkonfigurációs oldal.":::
+1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
-A bővítés frissítése után áttekintheti az újonnan bővített vállalati adatokat a [Saját bővítések](enrichment-hub.md) alatt. Megkeresheti az utolsó frissítés időpontját és a bővített profilok számát.
-
-Az egyes bővített profilok részletes nézetét a **Bővített adatok megtekintése** lehetőségre kattintva érheti el.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 ## <a name="next-steps"></a>További lépések
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását a Dun & Bradstreet részére, engedélyezi az adatok továbbítását a megfelelőségi határokon kívülre Dynamics 365 Customer Insights, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a Dun & Bradstreet eleget tegyen az Esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

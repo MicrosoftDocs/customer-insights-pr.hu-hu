@@ -1,95 +1,93 @@
 ---
-title: LiveRamp identitásadatok gazdagítása
+title: LiveRamp-identitásadatok gazdagítása
 description: Bővítse az ügyfélprofilokat LiveRamp-adatokkal.
-ms.date: 03/02/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 0727818f6df565d9a031966a68d521ae7167e484
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642568"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953998"
 ---
-# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Ügyfélprofilok gazdagítása a LiveRamp (Preview) identitásadataival 
+# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Bővítse az ügyfélprofilokat a LiveRamp identitásadataival (előzetes verzió)
 
-A LiveRamp determinisztikus offline identitásfeloldást és az ügyféladatok összevonását biztosítja. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásdiagramra, és AbiliTec azonosítókat kaphat. Ezután ezeket az azonosítókat használhatja az ügyféladatok jobb egyesítéséhez. 
+A LiveRamp determinisztikus offline identitásfeloldást és az ügyféladatok összevonását biztosítja. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásgráfra, és AbiliTec-azonosítókat kaphat. Ezután ezekkel az azonosítókkal jobban egyesítheti az ügyféladatokat.
 
-## <a name="prerequisites"></a>Előfeltételek 
+## <a name="supported-countriesregions"></a>Támogatott országok/régiók
 
-A gazdagodás konfigurálásához a következő előfeltételeknek kell teljesülniük: 
+Jelenleg csak az Egyesült Államokban támogatjuk az ügyfélprofilok LiveRamp-adatokkal való gazdagítását.
 
-- Aktív LiveRamp-előfizetéssel rendelkezik. Előfizetés megszerzéséhez lépjen kapcsolatba LiveRamp-fiókcsapatával, vagy [dynamics@liveramp.com](mailto:dynamics@liveramp.com) további információért.   
+## <a name="prerequisites"></a>Előfeltételek
 
-- Aktív AbiliTec-előfizetés ügyfélazonosítóval és titkossággal az API eléréséhez. További információ: [AbiliTec API Developer Hub](https://developers.liveramp.com/abilitec-api/). 
+- Aktív LiveRamp-előfizetés. Előfizetés megszerzéséhez vegye fel a kapcsolatot a LiveRamp-fiók csapatával, vagy [dynamics@liveramp.com](mailto:dynamics@liveramp.com) további információkért.
 
-## <a name="supported-countriesregions"></a>Támogatott országok/régiók 
+- Aktív AbiliTec-előfizetés ügyfél-azonosítóval és titkos kóddal az API eléréséhez. További információ: [AbiliTec API Fejlesztői központ](https://developers.liveramp.com/abilitec-api/).
 
-Jelenleg csak az Egyesült Államokban támogatjuk az ügyfélprofilok LiveRamp-adatokkal való gazdagítását. 
+- A LiveRamp-kapcsolatot [...](connections.md)[egy rendszergazda konfigurálja](#configure-the-connection-for-liveramp).
 
-## <a name="configure-the-enrichment"></a>Bővítés konfigurálása 
+## <a name="configure-the-connection-for-liveramp"></a>A liveRamp-kapcsolat konfigurálása
 
-1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot. 
+Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolgáltatásban, és rendelkeznie kell aktív LiveRamp-ügyfél-azonosítóval és titkos kóddal.
 
-1. Válassza **az Adatok** gazdagítása lehetőséget az **Identitás** csempén. 
+1. Válassza a Kapcsolat **hozzáadása lehetőséget** a gazdagítás konfigurálásakor, vagy lépjen a **Rendszergazdai** > **kapcsolatok elemre**, és válassza a Beállítás **lehetőséget** a LiveRamp csempén.
 
-   :::image type="content" source="media/liveramp-tile.png" alt-text="Identitáscsempét a gazdagodás áttekintése lapon.":::
+   :::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurációs panel a LiveRamp AbiliTec szolgáltatással való kapcsolat beállításához.":::
 
-1. Válasszon egy [kapcsolatot](connections.md) a legördülő listából. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához. Ha Ön rendszergazda, kapcsolatot hozhat létre a Kapcsolat hozzáadása **választógombbal**. Válassza a **LiveRamp** elemet a legördülő listából. 
+1. Adja meg a kapcsolat nevét, valamint egy érvényes LiveRamp-ügyfél-azonosítót és egy titkos kulcsot.
 
-1. Válassza a Tovább **lehetőséget**, és válassza ki az **Ügyfél adatkészlet**, amelyet a LiveRamp identitásadataival szeretne gazdagítani. Kiválaszthatja a Vevő *entitást az összes ügyfélprofil gazdagításához, vagy kiválaszthat egy szegmens* entitást *, hogy csak az* adott szegmensben található ügyfélprofilokat gazdagítsa. 
+1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
 
-1. Válassza **a Tovább lehetőséget**, és határozza meg, hogy az egyesített profilok mely mezőit használja a LiveRamp megfelelő identitásadatainak kereséséhez. Legalább az egyik mező **neve és címe**, **telefon** vagy **e-mail** szükséges. 
+1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
 
-   > [!TIP]
-   > Minél több kulcsazonosítót és mezőt térképez fel, annál nagyobb a valószínűsége a magasabb egyezési aránynak 
+### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
-1. Rendelje hozzá az egyesített *Ügyfél* entitás mezőit, amelyek a LiveRamp AbiliTec ID grafikonjával való egyeztetéshez lesznek használva. 
+Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását a LiveRamp-nek, akkor engedélyezi az adatok továbbítását a megfelelőségi határon kívülre Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasításainak megfelelően továbbítja ezeket az adatokat, de Ön felelős azért, hogy a LiveRamp megfeleljen az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információért tekintse át a [Microsoft adatvédelmi nyilatkozatát](https://go.microsoft.com/fwlink/?linkid=396732). A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
-   :::image type="content" source="media/liveramp-data-mapping.png" alt-text="A LiveRamp-gazdagodás adatleképezési beállításai.":::
+## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
-1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget. 
+1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
-1. **Adjon nevet** a gazdagodásnak és a **Kimeneti entitásnak**. 
+1. Válassza az Adatok gazdagítása lehetőséget **az Identitás** a **LiveRamp csempéről csempén.**
 
-1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit. 
+   :::image type="content" source="media/liveramp-tile.png" alt-text="Identitás csempe a gazdagítás áttekintési oldalán.":::
 
-## <a name="configure-the-connection-for-liveramp"></a>A LiveRamp kapcsolatának konfigurálása 
+1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-A kapcsolatok [konfigurálásához rendszergazdának](connections.md) kell lennie. Válassza **a Kapcsolat** hozzáadása lehetőséget a gazdagodás konfigurálásakor, vagy lépjen **az AdminConnections** > **elemre,** és válassza **a Beállítás** lehetőséget a **LiveRamp** csempén. 
+1. Válassza ki a kapcsolatot. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
 
-:::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurációs ablaktábla a LiveRamp AbiliTec szolgáltatással való kapcsolat beállításához.":::
+1. Válassza a **Következő** lehetőséget.
 
-1. A **megjelenítendő név** adja meg a kapcsolat nevét. 
+1. Válassza ki az **Ügyfél adatkészlet**, és válassza ki azt a profilt vagy szegmenst, amelyet identitásadatokkal szeretne gazdagítani a LiveRampből. Az *Ügyfél* entitás gazdagítja az összes ügyfélprofilt, míg egy szegmens csak az adott szegmensben található ügyfélprofilokat gazdagítja.
 
-1. Adjon meg egy érvényes LiveRamp ügyfélazonosítót és egy titkot. 
+1. Határozza meg, hogy az egyesített profilokból mely típusú mezőket használja a LiveRamp identitásadatainak egyeztetéséhez. A Név és cím **,** E-mail **vagy** Telefon **mezők** közül legalább egy kötelező. A nagyobb egyezési pontosság érdekében adjon hozzá más mezőket. Válassza a **Következő** lehetőséget.
 
-1. Ellenőrizze és adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével. 
+1. Leképezheti a mezőket a LiveRamp azonosító adataira.
 
-1. A konfiguráció megerősítéséhez válassza az **Ellenőrzés** lehetőséget. 
+   :::image type="content" source="media/liveramp-data-mapping.png" alt-text="Adatleképezési lehetőségek a LiveRamp gazdagításához.":::
 
-1. A kapcsolat befejezéséhez válassza a Mentés **lehetőséget**. 
+1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
-## <a name="enrichment-results"></a>Bővítési eredmények 
+1. **Adja meg a gazdagítás nevét** és a **Kimeneti entitás nevét**.
 
-A gazdagodási folyamat elindításához válassza a Futtatás parancssávról lehetőséget. Azt is engedélyezheti, hogy a rendszer automatikusan futtassa a gazdagodást a [tervezett frissítés](system.md#schedule-tab) részeként. A feldolgozási idő az ügyféladatok mennyiségétől függ. 
+1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
-A gazdagodási folyamat befejezése után áttekintheti az újonnan gazdagított ügyfélprofilok adatait a Saját gazdagodások **alatt**. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is. 
+1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-Az egyes bővített profilok részletes nézetét a Gazdagított **adatok megtekintése lehetőséget választva** érheti el. 
+## <a name="enrichment-results"></a>Bővítési eredmények
+
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
+
+A **mező** által gazdagított ügyfelek száma részletezést biztosít az egyes bővített mezők lefedettségében.
 
 ## <a name="next-steps"></a>További lépések
 
-Építsen a bővített ügyféladatokra. Az AbiliTec azonosítók segítségével konszolidálhatja az ügyfélprofilokat egy személyalapú nézetben. 
+Építsen a bővített ügyféladatokra. Az AbiliTec azonosítók segítségével egyesítheti az ügyfélprofilokat egy személyalapú nézetbe.
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség 
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását a LiveRamp-nak, engedélyezi az adatok átvitelét a megfelelőségi határokon kívülre Dynamics 365 Customer Insights, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a LiveRamp megfeleljen az Esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információt a [Microsoft adatvédelmi nyilatkozatában talál](https://go.microsoft.com/fwlink/?linkid=396732). A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést. 
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

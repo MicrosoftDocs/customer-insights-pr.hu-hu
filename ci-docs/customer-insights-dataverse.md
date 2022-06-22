@@ -1,6 +1,6 @@
 ---
 title: A Customer Insights-adatok használata a Microsoft Dataverse-ben
-description: További információ a Customer Insights összekapcsolásáról és Microsoft Dataverse a programba exportált kimeneti entitások megértéséről Dataverse.
+description: Ismerje meg, hogyan csatlakoztathatja a Customer Insights szolgáltatást, és Microsoft Dataverse hogyan értelmezheti a kimeneti entitásokat, amelyek a következőre vannak exportálva:Dataverse.
 ms.date: 05/30/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -11,107 +11,107 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 3848e143bc7cb2f345bc698a274b92148ef00669
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833679"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011523"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>A Customer Insights-adatok használata a Microsoft Dataverse-ben
 
-A Customer Insights lehetőséget biztosít arra, hogy a kimeneti entitásokat a következőként tegye elérhetővé: [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Ez az integráció egyszerű adatmegosztást és egyéni fejlesztést tesz lehetővé alacsony kód/kód nélküli megközelítéssel. A [kimeneti entitások](#output-entities) táblákként érhetők el egy Dataverse környezetben. Az adatokat bármely más, táblákon Dataverse alapuló alkalmazáshoz használhatja. Ezek a táblák olyan forgatókönyveket tesznek lehetővé, mint az automatizált munkafolyamatok a segítségével Power Automate, vagy alkalmazásokat készítenek a segítségével Power Apps.
+A Customer Insights lehetőséget biztosít arra, hogy a kimeneti entitásokat [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Ez az integráció egyszerű adatmegosztást és egyéni fejlesztést tesz lehetővé a kevés kódolást igénylő/kód nélküli megközelítéssel. A [kimeneti entitások](#output-entities) táblákként érhetők el egy Dataverse környezetben. Az adatokat táblák alapján Dataverse bármely más alkalmazáshoz használhatja. Ezek a táblák olyan forgatókönyveket tesznek lehetővé, mint az automatizált munkafolyamatok vagy Power Automate az alkalmazások létrehozása Power Apps.
 
-A környezethez Dataverse való csatlakozás lehetővé [teszi az adatok helyszíni adatforrásokból származó adatok adatáramlások és átjárók használatával történő Power Platform bevitelét](data-sources.md#add-data-from-on-premises-data-sources) is.
+A környezethez való Dataverse csatlakozás azt is lehetővé teszi, hogy [adatfolyamok és átjárók használatával Power Platform adatokat töltsön be helyszíni adatforrásokból](connect-power-query.md#add-data-from-on-premises-data-sources).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Az ügyfélelemzéseket és Dataverse a környezeteket ugyanabban a régióban kell üzemeltetni.
-- Globális rendszergazdai szerepkörrel kell rendelkeznie a Dataverse környezetben. Ellenőrizze, hogy ez [Dataverse a környezet bizonyos biztonsági csoportokhoz van-e társítva](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment), és győződjön meg arról, hogy hozzá van-e adva ezekhez a biztonsági csoportokhoz.
-- Nincs még társítva más Customer Insights-környezet a Dataverse csatlakozni kívánt környezethez. További információ a [környezettel Dataverse való meglévő kapcsolat eltávolításáról](#remove-an-existing-connection-to-a-dataverse-environment).
-- A Microsoft Dataverse környezet csak egyetlen tárfiókhoz csatlakozhat. Csak akkor érvényes, ha a környezetet [a rendszer Azure Data Lake Storage](own-data-lake-storage.md) használatára állítja be.
+- A Customer Insights-nak és Dataverse a környezeteknek ugyanabban a régióban kell üzemeltetniük.
+- Globális rendszergazdai szerepkörrel kell rendelkeznie a Dataverse környezetben. Ellenőrizze, hogy ez a környezet hozzá van-e [Dataverse társítva](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment) bizonyos biztonsági csoportokhoz, és győződjön meg arról, hogy hozzá van adva ezekhez a biztonsági csoportokhoz.
+- Egyetlen más Customer Insights-környezet sincs már társítva a Dataverse csatlakoztatni kívánt környezethez. Ismerje meg, [hogyan távolíthat el egy meglévő kapcsolatot egy Dataverse környezettel](#remove-an-existing-connection-to-a-dataverse-environment).
+- A Microsoft Dataverse környezetek csak egyetlen tárfiókhoz csatlakozhatnak. Csak akkor érvényes, ha a környezetet [a .Azure Data Lake Storage](own-data-lake-storage.md)
 
-## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Környezet csatlakoztatása Dataverse az Ügyfélelemzéshez
+## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Dataverse Környezet csatlakoztatása a Customer Insights szolgáltatáshoz
 
-A **Microsoft Dataverse** lépés lehetővé teszi, hogy összekapcsolja az Ügyfélelemzéseket a környezetével, Dataverse miközben [Ügyfélelemzési környezetet](create-environment.md) hoz létre.
+A **Microsoft Dataverse** lépés lehetővé teszi, hogy összekapcsolja a Customer Insights-t a Dataverse környezetével, miközben [létrehoz egy Customer Insights-környezetet](create-environment.md).
 
-:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus engedélyezve van Microsoft Dataverse az új, netes környezetekhez.":::
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus automatikus engedélyezésével Microsoft Dataverse a net új környezetekben.":::
 
-A rendszergazdák konfigurálhatják a Customer Insights alkalmazást egy meglévő Dataverse környezet összekapcsolására. Azáltal, hogy megadja az URL-címet a Dataverse környezetnek, az új Customer Insights környezethez kapcsolódik.
+A rendszergazdák konfigurálhatják a Customer Insights szolgáltatást egy meglévő Dataverse környezet csatlakoztatására. Azáltal, hogy megadja az URL-címet a Dataverse környezetnek, az az új Customer Insights-környezethez lesz csatolva.
 
-Ha nem szeretne meglévő Dataverse környezetet használni, a rendszer új környezetet hoz létre a bérlő Ügyfélelemzési adataihoz. [Power Platform a rendszergazdák szabályozhatják, hogy ki hozhat létre környezeteket](/power-platform/admin/control-environment-creation). Ha új Customer Insights-környezetet állít be, és a rendszergazda letiltotta a környezetek létrehozását Dataverse mindenki számára, kivéve a rendszergazdákat, előfordulhat, hogy nem tud új környezetet létrehozni.
+Ha nem szeretne meglévő Dataverse környezetet használni, a rendszer új környezetet hoz létre a bérlő Customer Insights-adataihoz. [Power Platform a rendszergazdák szabályozhatják, hogy ki hozhat létre környezeteket](/power-platform/admin/control-environment-creation). Ha új Customer Insights-környezetet állít be, és a rendszergazda letiltotta a környezetek létrehozását Dataverse a rendszergazdák kivételével mindenki számára, előfordulhat, hogy nem tud új környezetet létrehozni.
 
 **Engedélyezze az adatmegosztást** Dataverse az adatmegosztás jelölőnégyzet bejelölésével.
 
-Ha saját Data Lake Storage-fiókot használ, szüksége van az **Engedélyek azonosítóra** is. Az engedélyazonosító lekéréséről a következő szakaszban olvashat bővebben.
+Ha saját Data Lake Storage-fiókját használja, szüksége lesz az **engedélyek azonosítójára** is. Az engedélyazonosító beszerzésével kapcsolatos további információkért tekintse át a következő szakaszt.
 
-## <a name="enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview"></a>Adatmegosztás engedélyezése saját Dataverse maga által Azure Data Lake Storage (Előzetes verzió)
+## <a name="enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview"></a>A sajáttól Dataverse származó adatmegosztás Azure Data Lake Storage engedélyezése (előzetes verzió)
 
-Az adatmegosztás engedélyezéséhez, Microsoft Dataverse amikor a környezet [a saját Azure Data Lake Storage fiókját](own-data-lake-storage.md) használja, további konfigurációra van szükség. A Customer Insights környezetet állító felhasználónak legalább **tárolási blobadatokkal olvasó** engedélyekkel kell rendelkeznie a *fiók* CustomerInsights Azure Data Lake Storage tárolóján.
+Az adatmegosztás engedélyezéséhez Microsoft Dataverse, amikor a környezet [a saját Azure Data Lake Storage fiókját](own-data-lake-storage.md) használja, további konfigurációra van szükség. A Customer Insights környezetet beállító felhasználónak legalább **Storage Blob Data olvasó** engedélyekkel kell rendelkeznie a *fiók* CustomerInsights Azure Data Lake Storage tárolójában.
 
-1. Hozzon létre két biztonsági csoportot az Azure-előfizetésen – egyet **olvasó** biztonsági csoportban és egy **közreműködő** biztonsági csoportban, és állítsa be a Microsoft Dataverse szolgáltatást mindkét biztonsági csoport tulajdonosaként.
-2. Kezelje a hozzáférés-szabályozási listát (ACL) a tárfiók CustomerInsights tárolóján ezeken a biztonsági csoportokon keresztül. Adja hozzá a Microsoft Dataverse szolgáltatást és az olyan Dataverse alapú üzleti alkalmazásokat, mint a Dynamics 365 Marketing, hogy a **olvasó** biztonsági csoporthoz írásvédett **engedélyekkel**. Csak *a Customers Insights alkalmazást adja hozzá* a **közreműködő** biztonsági csoporthoz, hogy olvasási és írási **engedélyeket adjon** profilok és elemzések írásához.
+1. Hozzon létre két biztonsági csoportot az Azure-előfizetésében – egyet **olvasó** biztonsági csoportot és egy **közreműködő** biztonsági csoportot, és állítsa be a Microsoft Dataverse szolgáltatást mindkét biztonsági csoport tulajdonosaként.
+2. A tárfiókban található CustomerInsights tárolón található Hozzáférés-vezérlési lista (ACL) kezelése ezeken a biztonsági csoportokon keresztül. Adja hozzá a Microsoft Dataverse szolgáltatást és minden olyan Dataverse alapú üzleti alkalmazást, mint a Dynamics 365 Marketing, a **olvasó** biztonsági csoporthoz, csak **olvasási engedélyekkel**. Csak *a Customers Insights alkalmazást adja hozzá* a **közreműködő** biztonsági csoporthoz, hogy olvasási és írási **engedélyeket is** adjon a profilok és elemzések írásához.
 
 ### <a name="limitations"></a>Korlátozások
 
-A saját Dataverse fiókkal való használatkor Azure Data Lake Storage két korlátozás van:
+A saját Dataverse fiókjával való használatnak Azure Data Lake Storage két korlátozása van:
 
-- Egy-az-egyhez leképezés van egy szervezet és egy Dataverse Azure Data Lake Storage fiók között. Ha egy Dataverse szervezet csatlakozik egy tárfiókhoz, nem tud csatlakozni egy másik tárfiókhoz. Ez a korlátozás megakadályozza, hogy a Dataverse ne töltsön fel több tárfiókot.
-- Az adatmegosztás nem fog működni, ha az Azure Data Lake tárfiók eléréséhez azure-privát kapcsolat beállításra van szükség, mert az tűzfal mögött van. Dataverse jelenleg nem támogatja a privát végpontokkal való kapcsolatot a Private Linken keresztül.
+- Van egy-az-egyhez leképezés a Dataverse szervezet és a Azure Data Lake Storage fiók között. Miután egy Dataverse szervezet csatlakozott egy tárfiókhoz, nem tud csatlakozni egy másik tárfiókhoz. Ez a korlátozás megakadályozza, hogy a Dataverse ne töltsön fel több tárfiókot.
+- Az adatmegosztás nem fog működni, ha Azure Private Link beállításra van szükség a fiók eléréséhez Azure Data Lake Storage, mert az tűzfal mögött van. Dataverse jelenleg nem támogatja a privát végpontokhoz való csatlakozást a Private Link.
 
 ### <a name="set-up-powershell"></a>A PowerShell beállítása
 
-A PowerShell-parancsfájlok végrehajtásához először be kell állítania a PowerShellt.
+A PowerShell-szkriptek végrehajtásához először ennek megfelelően kell beállítania a PowerShellt.
 
-1. Telepítse a PowerShell for Graph [Azure Active Directory legújabb verzióját](/powershell/azure/active-directory/install-adv2).
+1. Telepítse a PowerShell legújabb verzióját [Azure Active Directory a Graph](/powershell/azure/active-directory/install-adv2).
    1. A számítógépen nyomja le a Windows gombot a billentyűzeten, és keressen a **Windows PowerShell** kifejezésre, és válassza a **Futtatás rendszergazdaként** lehetőséget.
    1. A megnyíló PowerShell ablakában adja meg az `Install-Module AzureAD` értéket.
 2. Három modul importálása.
-    1. A PowerShell ablakban írja be `Install-Module -Name Az.Accounts` és kövesse a lépéseket.
-    1. Ismételje meg a `Install-Module -Name Az.Resources` és `Install-Module -Name Az.Storage`.
+    1. A PowerShell ablakban adja meg `Install-Module -Name Az.Accounts` és kövesse a lépéseket.
+    1. Ismételje meg a és `Install-Module -Name Az.Resources``Install-Module -Name Az.Storage`.
 
 ### <a name="configuration-steps"></a>Konfigurációs lépések
 
-1. Töltse le a két PowerShell-szkriptet, amelyeket futtatnia kell mérnökünk [GitHub-adattárából](https://github.com/trin-msft/byol).
+1. Töltse le a futtatásához szükséges két PowerShell-szkriptet a mérnökünk [GitHub-adattárából](https://github.com/trin-msft/byol).
     1. `CreateSecurityGroups.ps1`
-       - A PowerShell-parancsfájl futtatásához bérlői rendszergazdai *engedélyekre van szükség*.
-       - Ez a PowerShell-parancsfájl két biztonsági csoportot hoz létre az Azure-előfizetésen. Az egyik a olvasó csoportnak, a másik pedig a közreműködő csoportnak, és mindkét biztonsági csoport tulajdonosaként szolgáltatást nyújt Microsoft Dataverse.
-       - Hajtsa végre ezt a PowerShell-parancsfájlt a Windows PowerShellben a következőket Azure Data Lake Storage tartalmazó Azure-előfizetési azonosító megadásával. Nyissa meg a PowerShell-parancsfájlt egy szerkesztőben a további információk és a megvalósított logika áttekintéséhez.
-       - Mentse a parancsfájl által létrehozott mindkét biztonsági csoportazonosító értéket, mert a `ByolSetup.ps1` parancsfájlban fogjuk használni őket.
+       - A PowerShell-szkript futtatásához bérlői rendszergazdai *engedélyekre van szükség*.
+       - Ez a PowerShell-szkript két biztonsági csoportot hoz létre az Azure-előfizetésében. Az egyik a olvasó csoportnak, a másik pedig a közreműködő csoportnak, és mindkét biztonsági csoport tulajdonosaként fog Microsoft Dataverse szolgálni.
+       - Hajtsa végre ezt a PowerShell-szkriptet a Windows PowerShellben a .Azure Data Lake Storage Nyissa meg a PowerShell-szkriptet egy szerkesztőben a további információk és az implementált logika áttekintéséhez.
+       - Mentse a szkript által generált mindkét biztonságicsoport-azonosító értékét, mert a `ByolSetup.ps1` szkriptben fogjuk használni őket.
 
         > [!NOTE]
-        > A biztonsági csoport létrehozása letiltható a bérlőn. Ebben az esetben manuális beállításra lenne szükség, és a rendszergazdának engedélyeznie kell Azure AD a [biztonsági csoport létrehozását](/azure/active-directory/enterprise-users/groups-self-service-management).
+        > A biztonsági csoport létrehozása letiltható a bérlőn. Ebben az esetben manuális beállításra van szükség, és a rendszergazdának engedélyeznie kell a Azure AD [biztonsági csoport létrehozását](/azure/active-directory/enterprise-users/groups-self-service-management).
 
     2. `ByolSetup.ps1`
-        - A parancsfájl futtatásához tárolófiók/tároló szintű Storage Blob Data Owner *engedélyekre van szükség*, különben ez a parancsfájl létrehoz egyet az Ön számára. A szerepkör-hozzárendelés manuálisan eltávolítható a parancsfájl sikeres futtatása után.
-        - Ez a PowerShell-parancsfájl hozzáadja a szolgáltatáshoz és az Microsoft Dataverse összes Dataverse üzleti alkalmazáshoz szükséges tole-alapú hozzáférés-vezérlést (RBAC). Frissíti továbbá a CustomerInsights tároló hozzáférés-szabályozási listáját (ACL) a `CreateSecurityGroups.ps1` parancsfájllal létrehozott biztonsági csoportok számára. A közreműködő csoport rwx engedéllyel, *az Olvasók csoport pedig csak r-x* engedéllyel rendelkezik *.*
-        - Hajtsa végre ezt a PowerShell-parancsfájlt a Windows PowerShellben úgy, hogy megadja az Azure-előfizetés azonosítóját, amely tartalmazza a Azure Data Lake Storage, a tárfiók nevét, az erőforráscsoport nevét, valamint a olvasó és közreműködő biztonsági csoportazonosító értékeit. Nyissa meg a PowerShell-parancsfájlt egy szerkesztőben a további információk és a megvalósított logika áttekintéséhez.
-        - Másolja a kimeneti karakterláncot a parancsfájl sikeres futtatása után. A kimeneti karakterlánc így néz ki: `https://DVBYODLDemo/customerinsights?rg=285f5727-a2ae-4afd-9549-64343a0gbabc&cg=720d2dae-4ac8-59f8-9e96-2fa675dbdabc`
+        - A szkript futtatásához Storage Blob Data Owner *engedélyekre van szüksége* a tárfiók/tároló szintjén, különben ez a szkript létrehoz egyet az Ön számára. A szerepkör-hozzárendelés manuálisan is eltávolítható a szkript sikeres futtatása után.
+        - Ez a PowerShell-szkript hozzáadja a szükséges tole-alapú hozzáférés-vezérlést (RBAC) a szolgáltatáshoz és bármely Microsoft Dataverse Dataverse-alapú üzleti alkalmazáshoz. Emellett frissíti a CustomerInsights tárolón található hozzáférés-vezérlési listát (ACL) a `CreateSecurityGroups.ps1` szkripttel létrehozott biztonsági csoportok számára. A közreműködő csoport rwx *engedéllyel rendelkezik*, az Olvasók csoport *pedig csak r-x* engedéllyel rendelkezik.
+        - Hajtsa végre ezt a PowerShell-szkriptet a Windows PowerShellben úgy, hogy megadja az Azure-előfizetés azonosítóját, amely tartalmazza a Azure Data Lake Storage tárfiók nevét, az erőforráscsoport nevét, valamint a olvasó és közreműködő biztonságicsoport-azonosító értékeit. Nyissa meg a PowerShell-szkriptet egy szerkesztőben a további információk és az implementált logika áttekintéséhez.
+        - Másolja ki a kimeneti sztringet a szkript sikeres futtatása után. A kimeneti sztring így néz ki: `https://DVBYODLDemo/customerinsights?rg=285f5727-a2ae-4afd-9549-64343a0gbabc&cg=720d2dae-4ac8-59f8-9e96-2fa675dbdabc`
 
-2. Írja be a felülről másolt kimeneti karakterláncot a **környezetkonfigurációs lépés Engedélyazonosító** mezőjébe Microsoft Dataverse.
+2. Adja meg a fentről másolt kimeneti sztringet a **környezetkonfigurációs lépés Engedélyazonosító** mezőjébe Microsoft Dataverse.
 
-:::image type="content" source="media/dataverse-enable-datasharing-BYODL.png" alt-text="Konfigurációs beállítások az adatok sajátból Azure Data Lake Storage történő megosztásának engedélyezéséhez a programmal Microsoft Dataverse.":::
+:::image type="content" source="media/dataverse-enable-datasharing-BYODL.png" alt-text="Konfigurációs beállítások a saját Azure Data Lake Storage Microsoft Dataverse adatmegosztásának engedélyezéséhez a .":::
 
-### <a name="remove-an-existing-connection-to-a-dataverse-environment"></a>Meglévő kapcsolat eltávolítása környezettel Dataverse
+### <a name="remove-an-existing-connection-to-a-dataverse-environment"></a>Meglévő kapcsolat eltávolítása egy Dataverse környezettel
 
-Környezethez Dataverse való csatlakozáskor a hibaüzenet **: Ez a CDS-szervezet már egy másik Customer Insights-példányhoz** van csatolva, azt jelenti, hogy a Dataverse környezet már használatban van egy Customer Insights környezetben. A meglévő kapcsolatot globális rendszergazdaként eltávolíthatja a Dataverse környezetben. Eltarthat néhány óráig, amíg feltölti a változásokat.
+Környezethez Dataverse való csatlakozáskor a Ez a **CDS-szervezet már csatolva van egy másik Customer Insights-példányhoz**, hibaüzenet azt jelenti, hogy a Dataverse környezet már használatban van egy Customer Insights környezetben. A meglévő kapcsolatot globális rendszergazdaként is eltávolíthatja a Dataverse környezetből. A módosítások feltöltése eltarthat néhány óráig.
 
 1. Menjen a [Power Apps](https://make.powerapps.com) felületre.
 1. Válassza ki a környezetet a környezetválasztóból.
-1. Ugrás a **megoldásokra**
-1. Távolítsa el vagy törölje az Ügyfélkártya bővítmény (Előnézet) **Dynamics 365 Customer Insights nevű** megoldást.
+1. Tovább a **Megoldásokhoz**
+1. Távolítsa el vagy törölje az Ügyfélkártya-bővítmény (előzetes verzió) **Dynamics 365 Customer Insights nevű** megoldást.
 
 VAGY
 
 1. Nyissa meg a Dataverse környezetet.
-1. Nyissa meg a **Speciális beállítások** > **megoldásait**.
+1. Lépjen a **Speciális beállítási** > **megoldások oldalra**.
 1. Távolítsa el a **CustomerInsightsCustomerCard** megoldást.
 
-Ha függőségek miatt nem sikerül eltávolítani a kapcsolatot, el kell távolítania a függőségeket is. További információt a Függőségek [eltávolítása című témakörben talál](/power-platform/alm/removing-dependencies).
+Ha a kapcsolat eltávolítása függőségek miatt meghiúsul, a függőségeket is el kell távolítania. További információ: [Függőségek](/power-platform/alm/removing-dependencies) eltávolítása.
 
 ## <a name="output-entities"></a>Kimeneti entitások
 
-A Customer Insights egyes kimeneti entitásai táblaként érhetők el a alkalmazásban Dataverse. Az alábbi szakaszok e táblázatok várt sémáját írják le.
+A Customer Insights egyes kimeneti entitásai táblákként érhetők el a következő helyen:Dataverse. Az alábbi szakaszok e táblázatok várt sémáját írják le.
 
 - [CustomerProfile](#customerprofile)
 - [AlternateKey](#alternatekey)
@@ -119,11 +119,11 @@ A Customer Insights egyes kimeneti entitásai táblaként érhetők el a alkalma
 - [CustomerMeasure](#customermeasure)
 - [Dúsítás](#enrichment)
 - [Előrejelzés](#prediction)
-- [Szegmenstagság](#segment-membership)
+- [Szegmens tagság](#segment-membership)
 
 ### <a name="customerprofile"></a>CustomerProfile
 
-Ez a tábla a Customer Insights egységes ügyfélprofilját tartalmazza. Az egységes ügyfélprofil sémája az adategyesítési folyamatban használt entitásoktól és attribútumoktól függ. Az ügyfélprofilséma általában a [CustomerProfile Common Data Model-definíciója](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) attribútumainak egy részhalmazát tartalmazza.
+Ez a tábla a Customer Insights egységes ügyfélprofilját tartalmazza. Az egyesített ügyfélprofil sémája az adategyesítési folyamatban használt entitásoktól és attribútumoktól függ. Az ügyfélprofilséma általában a [CustomerProfile Common Data Model-definíciója](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) attribútumainak egy részhalmazát tartalmazza.
 
 ### <a name="alternatekey"></a>AlternateKey
 
@@ -132,7 +132,7 @@ Az AlternateKey-tábla az egyesítési folyamatban részt vett entitások kulcsa
 |Column  |Típus szerint  |Ismertetés  |
 |---------|---------|---------|
 |DataSourceName    |Sztring         | Az adatforrás neve. Például: `datasource5`        |
-|EntityName        | Sztring        | Az entitás neve a Customer Insights alkalmazásban. Például: `contact1`        |
+|EntityName        | Sztring        | Az entitás neve a Customer Insights szolgáltatásban. Például: `contact1`        |
 |AlternateValue    |Sztring         |Az ügyfélazonosítóhoz leképezett alternatív azonosító. Példa: `cntid_1078`         |
 |KeyRing           | Többsoros szöveg        | JSON-érték  </br> Minta: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
 |Vevőkód         | Sztring        | Az egységes ügyfélprofil azonosítója.         |
@@ -196,18 +196,18 @@ Ez a tábla a modell-előrejelzések kimenetét tartalmazza.
 | msdynci_predictionid | GUID        | A msdynci_identifier elemhez generált determinisztikus GUID | 
 | msdynci_identifier   | Sztring      |  `Model|ModelProvider|CustomerId`                      |
 
-### <a name="segment-membership"></a>Szegmenstagság
+### <a name="segment-membership"></a>Szegmens tagság
 
-Ez a tábla a vevőprofilok szegmenstagsági adatait tartalmazza.
+Ez a táblázat az ügyfélprofilok szegmenstagsági adatait tartalmazza.
 
 | Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
 | Vevőkód        | Sztring       | Ügyfélprofil-azonosító        |
-| SegmentProvider      | Sztring       | A szegmenseket közzétevő alkalmazás.      |
-| SegmentMembershipType | Sztring       | A szegmenstagsági bejegyzéshez tartozó vevő típusa. Többféle típust támogat, például vevőt, kapcsolattartót vagy partnert. Alapértelmezett: Vevő  |
+| SzegmensProvider      | Sztring       | A szegmenseket közzétevő alkalmazás.      |
+| Szegmenstagság Típusa | Sztring       | Az ügyfél típusa ez a szegmens tagsági rekord. Többféle típust támogat, például ügyfél, kapcsolattartó vagy partner. Alapértelmezett érték: Ügyfél  |
 | Szegmensek       | JSON-sztring  | Azon egyedi szegmensek listája, amelyeknek az ügyfélprofil tagja      |
-| msdynci_identifier  | Sztring   | A szegmenstagsági rekord egyedi azonosítója `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID-azonosító      | A determinisztikus GUID a következőből lett létrehozva: `msdynci_identifier`          |
+| msdynci_identifier  | Sztring   | A szegmenstagsági rekord egyedi azonosítója. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| msdynci_segmentmembershipid | GUID-azonosító      | Determinisztikus GUID azonosító, amelyet a`msdynci_identifier`          |
 
 <!--
 ## FAQ: Update existing environments to use Microsoft Dataverse

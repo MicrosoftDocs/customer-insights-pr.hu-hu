@@ -1,7 +1,7 @@
 ---
 title: Címjavítás gazdagítása (videót tartalmaz)
 description: A Microsoft modelljeivel rendelkező ügyfélprofilok címinformációinak bővítése és normalizálása.
-ms.date: 01/19/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -14,18 +14,18 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b4fef3b5e30e1cac4e5cb4401498f2f0981a409e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642468"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953814"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Ügyfélprofilok bővítése továbbfejlesztett címekkel
 
 Az adatokban szereplő címek strukturálatlanok, hiányosak vagy helytelenek lehetnek. A Microsoft modelljeivel normalizálhatja és bővítheti [Common Data Model formátumba](/common-data-model/schema/core/applicationcommon/address) a címeket, amelyek így pontosabbak lehetnek.
 
-Az adategyesítési folyamat egyezési pontosságának javítása érdekében az adatforrások [címeit is](data-sources-enrichment.md) gazdagíthatja. 
+Az adatforrások [címeit is](data-sources-enrichment.md) bővítheti, hogy javítsa az egyezési pontosságot az adategyesítési folyamatban. 
 
 ## <a name="how-we-enhance-addresses"></a>Hogyan történik a címek továbbfejlesztése?
 
@@ -53,17 +53,17 @@ Előfordulhat, hogy a címadatok nem szabványos formátumúak, és helyesírás
 
 ### <a name="limitations"></a>Korlátozások
 
-A továbbfejlesztett címek csak a betöltött címadatokban már megtalálható értékekkel működnek. A modell nem: 
+A továbbfejlesztett címek csak a betöltött címadatokban már meglévő értékekkel működnek. A modell nem:
 
 1. ellenőrzi, hogy a cím érvényes-e;
 2. ellenőrzi, hogy az értékek (például az irányítószám vagy az utcanév) érvényesek-e;
 3. módosítja a fel nem ismert értékeket.
 
-A modell gépi tanuláson alapuló technikákat alkalmaz a címek továbbfejlesztéséhez. Bár magas megbízhatósági küszöböt alkalmazunk arra az időre, amikor a modell megváltoztatja a bemeneti értéket, mint minden gépi tanuláson alapuló modell esetében, a 100 százalékos pontosság nem garantált.
+A modell gépi tanuláson alapuló technikákat alkalmaz a címek továbbfejlesztéséhez. Mint minden gépi tanuláson alapuló modell esetében, a 100%-os pontosság nem garantált.
 
 ## <a name="supported-countries-or-regions"></a>Támogatott országok és régiók
 
-Jelenleg a következő országokban és régiókban támogatjuk a címek bővítését: 
+Jelenleg a következő országokban és régiókban támogatjuk a címek bővítését:
 
 - Ausztrália
 - Kanada
@@ -74,50 +74,46 @@ Jelenleg a következő országokban és régiókban támogatjuk a címek bővít
 - Egyesült Királyság
 - Egyesült Államok
 
-A címek egy ország/régió értéket tartalmazhatnak. Nem dolgozunk fel nem támogatott országokban és régiókban lévő címeket, illetve olyan címeket, ahol nincs megadva ország vagy régió.
-
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 
-1. Lépjen az **Adatok** > **Bővítés** pontra.
+1. Menjen a z **Adatok** > **Bővítés** menübe, és válassza a **Felfedezés** lapot.
 
 1. A **Továbbfejlesztett címek** csempén válassza **Az adataim bővítése** lehetőséget.
 
    :::image type="content" source="media/enhanced-addresses-tile.png" alt-text="A Továbbfejlesztett címek csempe képernyőképe.":::
 
-1. Válassza ki az **Ügyféladatok beállítva** lehetőséget, majd a bővíteni kívánt címeket tartalmazó entitást. Az *Ügyfél* entitás kiválasztásával az összes ügyfélprofilban lévő címeket bővítheti, de kijelölhet olyan szegmensentitást is, amely csak az adott szegmensben található ügyfélprofilok címeit bővíti.
+1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
+
+1. Válassza ki az **Ügyfél adatkészlet**, és válassza ki a gazdagítani kívánt profilt vagy szegmenst. Az *Ügyfél* entitás gazdagítja az összes ügyfélprofilt, míg egy szegmens csak az adott szegmensben található ügyfélprofilokat gazdagítja.
 
 1. Adja meg, hogyan történjen az adatkészletben lévő címek formázása. Ha az adatokban lévő címek egy mezőt használnak, válassza az **Egyattribútumos cím** lehetőséget. Ha az adatokban lévő címek több adatmezőt használnak, válassza a **Többattribútumos cím** lehetőséget.
+
+1. Válassza a Tovább **lehetőséget**, és leképezi a címmezőket az egyesített vevői entitásból.
+
+    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Továbbfejlesztett címmező-leképezési oldal.":::
 
    > [!NOTE]
    > Az ország/régió kötelező mind az egy-attribútumos, mind a több attribútumos címekben. Az érvényes vagy támogatott ország/régió értékeket nem tartalmazó címek nem kerülnek bővítésre.
 
-1.  Képezze le az egyesített ügyfélentitásból származó címmezőket.
-
-    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Továbbfejlesztett címmező-leképezési oldal.":::
-
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
-1. Adja meg a bővítés és a kimeneti entitás nevét.
+1. **Adja meg a gazdagítás nevét** és a **Kimenet entitást**.
 
 1. Válassza a **Bővítés mentése** lehetőséget, miután áttekintette a lehetőségeit.
 
 ## <a name="enrichment-results"></a>Bővítési eredmények
 
-A bővítési folyamat megkezdéséhez válassza a **Futtatás** parancsot a parancssorból. Azt is engedélyezheti, hogy a rendszer a bővítést automatikusan egy [ütemezett frissítés](system.md#schedule-tab) részeként futtassa. A feldolgozási idő az ügyféladatok mennyiségétől függ.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-A bővítési folyamat befejeződése után áttekintheti az újonnan bővített ügyfelek profiljainak adatait a **Saját bővítések** alatt. Emellett megtalálhatja az utolsó frissítés időpontját és a bővített profilok számát is.
-
-A gazdagított adatok mintáját a Gazdagított ügyfelek előnézeti **csempéjén** tekintheti meg. Válassza **a Továbbiak** megtekintése lehetőséget, és válassza az Adatok **lapot az** egyes bővített profilok részletes nézetének eléréséhez.
+A **mező** által gazdagított ügyfelek száma részletezést biztosít az egyes bővített mezők lefedettségében.
 
 ### <a name="overview-card"></a>Áttekintő kártya
 
-Az áttekintő kártya a gazdagodás lefedettségének részleteit mutatja. 
+Az **Ügyfelek változásai áttekintő** kártya a gazdagítás lefedettségének részleteit jeleníti meg:
 
-* **Feldolgozott és módosított** címek: A sikeresen bővített címekkel rendelkező ügyfélprofilok száma.
-
-* **Feldolgozott és nem módosított** címek: A felismert, de nem módosított címmel rendelkező ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagodás nem javítható.
-
-* **A nem feldolgozott és nem módosított** címek: A nem felismert címmel rendelkező profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy amelyeket a gazdagodás nem támogat.
+- **Feldolgozott és módosított** címek: A sikeresen bővített címeket tartalmazó ügyfélprofilok száma.
+- **Feldolgozott és nem módosított** címek: A felismert, de nem módosított címekkel rendelkező ügyfélprofilok száma. Ez általában akkor fordul elő, ha a bemeneti adatok érvényesek, és a gazdagítással nem javíthatók.
+- **Nem feldolgozott és nem módosított** címek: A rendszer által nem felismert címekkel rendelkező profilok száma. Általában olyan bemeneti adatok esetében, amelyek érvénytelenek vagy a gazdagítás nem támogatja őket.
 
 ## <a name="next-steps"></a>További lépések
 

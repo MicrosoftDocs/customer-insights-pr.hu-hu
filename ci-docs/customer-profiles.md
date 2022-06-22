@@ -1,7 +1,7 @@
 ---
 title: Ügyfélprofilok megtekintése
 description: Az egyesített ügyféladatok kombinált nézetének lekérése.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,18 +14,18 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755785"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947049"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 
 Az **Ügyfelek** oldal a egyesített ügyfélprofilok összesített nézetét jeleníti meg. Az ügyfélprofilok az [egységesített ügyfélentitás létrehozása után](data-unification.md) érhetők el. A lapon ügyfeleket kereshet, és meghatározhatja az adott keresés indexét.
 
-Az ügyfelek egyének vagy szervezetek is lehetnek. Minden ügyfélprofilt egy csempe képvisel. A több bejegyzéshez használja az oldalszámvezérlőket. A kártya megjeleníti az *Ügyfél* entitás mezőit a **Keresés és szűrő** indexében meghatározottak szerint. Az egyes kartonokon belüli mezők sorrendjét a rendszer választja ki.
+Az ügyfelek egyének vagy szervezetek is lehetnek. Minden ügyfélprofilt egy csempe képvisel. A több bejegyzéshez használja az oldalszámvezérlőket. A kártya megjeleníti az *Ügyfél* entitás mezőit a **Keresés és szűrő** indexében meghatározottak szerint. Az egyes kártyákon belüli mezők sorrendjét a rendszer választja ki.
 
 Válassza ki a mozaikot, ha látni fogja a kijelölt ügyfél adatait egy [Ügyfél adatai lap](customer-profiles.md#customer-details-page) nevű dedikált oldalon.
 
@@ -55,9 +55,9 @@ Az ügyfeleket az *Ügyfél* entitása mezői szerint szűrheti. A kereséshez h
 
 Az **Ügyféladatok oldal** megnyitásához válassza ki bármelyik ügyfélcsempét. Ez a nézet a kijelölt ügyfélre vonatkozóan egységesített információkat tartalmaz. Az ügyfelek adatai a következő tartalmakat tartalmazzák:
 
-**Ügyfélprofil mozaikja**: Ez a mozaik mutatja a egyesített *Ügyfél* entitás különböző értékeit. Ha egy mezőnek nincs értéke a kijelölt ügyfélprofilhoz, akkor nem fog megjelenni. A mozaik szakaszokra van felosztva:
+**Ügyfélprofil mozaikja**: Ez a mozaik mutatja a egyesített *Ügyfél* entitás különböző értékeit. Ha egy mezőnek nincs értéke a kiválasztott vevői profilhoz, akkor a címmező kivételével nem jelenik meg. A mozaik szakaszokra van felosztva:
 
-- Az első szakasz a mezők előre megadott halmazát, majd a keresés és szűrőindex részét képezi. Ha a profil ilyen mezőket tartalmaz, akkor a címhez kapcsolódó mezők egyetlen sorban vannak kombinálva.
+- Az első szakasz a mezők előre megadott halmazát, majd a keresés és szűrőindex részét képezi. Az összes címhez kapcsolódó mező egyetlen sorba van egyesítve, amely akkor is megjelenik, ha a profil nem tartalmaz címadatokat.
 - **Kapcsolattartók ehhez az ügyfélhez**: Üzleti partnerek környezetében az ügyfélhez kapcsolódó összes kapcsolattartó második szakaszként látható. Minden kapcsolattartó megjelenik a saját mezőivel. Az üres mezők rejtettek.
 - **További mezők**: A kijelölt ügyfél fennmaradó mezőit jeleníti meg az adatok kivételével.
 - **IDs**: Felsorolja az összeset a megfelelő entitásnév alatt. A mezőket a szemantikájaik azonosítják, és ezek minősítik őket.

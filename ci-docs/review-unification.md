@@ -1,7 +1,7 @@
 ---
 title: Adatok egységesítésének áttekintése
-description: Tekintse át az adategyesítés lépéseit, hozzon létre egységes ügyfélprofilokat, és tekintse át az eredményeket
-ms.date: 05/04/2022
+description: Tekintse át az adategyesítési lépéseket, hozzon létre egységes ügyfélprofilokat, és tekintse át az eredményeket
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,46 +13,48 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4c709dfb55bf079dd2fe99e41adb4c77c2bece4b
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 0f7b2e9af65796c4d304dbd9893a21617e847620
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8742970"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844089"
 ---
 # <a name="review-data-unification"></a>Adatok egységesítésének áttekintése
 
 [!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-Az egyesítési folyamat utolsó lépése a folyamat lépéseinek összegzését mutatja be, és lehetőséget ad a módosítások elvégzésére az egységes profil létrehozása előtt.
+Az egyesítési folyamat ezen utolsó lépése a folyamat lépéseinek összegzését mutatja be, és lehetőséget nyújt a módosítások elvégzésére az egységes profil létrehozása előtt.
 
 :::image type="content" source="media/m3_review.png" alt-text="Képernyőkép: Ügyfélprofilok áttekintése és létrehozása.":::
 
-## <a name="review-the-data-unification-steps"></a>Az adategyesítés lépéseinek áttekintése
+## <a name="review-the-data-unification-steps"></a>Az adategyesítési lépések áttekintése
 
-1. Az adategyesítési lépések bármelyikén válassza a Szerkesztés **lehetőséget** a módosítások áttekintéséhez és végrehajtásához.
+1. Válassza a Szerkesztés **lehetőséget** az adategyesítési lépések bármelyikénél az áttekintéshez és a módosítások elvégzéséhez.
 
-1. Ha elégedett a választásokkal, válassza az Ügyfélprofilok létrehozása **lehetőséget**. Az **Egyesítés** lap az egységes ügyfélprofil létrehozása közben jelenik meg. Az egyesítő algoritmus végrehajtása időbe telik, és nem módosíthatja a konfigurációt, amíg be nem fejeződik.
+1. Ha elégedett a választásokkal, válassza az Ügyfélprofilok létrehozása **lehetőséget**. Az **Egységesítés** oldal az egyesített ügyfélprofil létrehozásakor jelenik meg. A Forrás mezők kivételével **minden csempe Várólistán** vagy **Frissítésen** alapuló állapotot mutat **.**
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   :::image type="content" source="media/m3_unify_refreshing.png" alt-text="Képernyőkép az Egyesítés lapról, amelyen a Sorok sorba sorba állítva vagy a Frissítő csempék láthatók.":::
 
-Amikor az egyesítési folyamat befejeződik, az Egyesített ügyfélprofil-entitás, az Ügyfél *a* Profilok **szakasz Entitások** lapján **jelenik meg**. Az első sikeres egyesítési futtatás létrehozza az egységes Vevő *entitást*. Minden további futtatás kibontja az entitást.
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Az egyesítési algoritmus befejezése eltart egy ideig, és addig nem módosíthatja a konfigurációt, amíg be nem fejeződik. Amikor az egyesítési folyamat befejeződik, az egyesített ügyfélprofil entitás, az úgynevezett *Ügyfél*, megjelenik a **Profilok** szakasz Entitások **lapján**. Az első sikeres egyesítési futtatás létrehozza az egyesített Ügyfél *entitást*. Az összes későbbi futtatás kibontja ezt az entitást.
 
 ## <a name="review-the-results-of-data-unification"></a>Az adategyesítés eredményeinek áttekintése
 
-Az egyesítés után az **Adategyesítés** > **lapon** az egységes ügyfélprofilok száma látható. Az egyesítési folyamat egyes lépéseinek eredményei minden csempén megjelennek. A Forrás mezők **például a leképezett attribútumok (mezők)** számát, **az Ismétlődő rekordok pedig** a talált ismétlődő rekordok számát mutatják.
+Az egyesítés után az **Adatok** > **egyesítése** oldal az egyesített ügyfélprofilok számát jeleníti meg. Az egyesítési folyamat egyes lépéseinek eredményei megjelennek az egyes csempéken. A Forrás mezők **például** a leképezett attribútumok (mezők) számát, az Ismétlődő rekordok **pedig** a talált duplikált rekordok számát jelenítik meg.
 
 :::image type="content" source="media/m3_unified.png" alt-text="Képernyőkép az Adatok egyesítése lapról az adatok egyesítése után.":::
 
 > [!TIP]
-> Az **Egyező feltételek** csempe csak akkor jelenik meg, ha több entitás van kijelölve.
+> Az **Egyezési feltételek** csempe csak akkor jelenik meg, ha több entitás lett kiválasztva.
 
-Javasoljuk, hogy tekintse át az eredményeket, különösen a mérkőzésszabályok [minőségét](data-unification-update.md#manage-match-rules), és szükség esetén finomítsa azokat.
+Javasoljuk, hogy tekintse át az eredményeket, különösen az egyezési szabályok [minőségét](data-unification-update.md#manage-match-rules), és szükség esetén finomítsa azokat.
 
-Szükség esetén módosítsa az egyesítési beállításokat [,](data-unification-update.md) és futtassa újra az egységes profilt.
+Ha szükséges, módosítsa az egyesítési beállításokat [,](data-unification-update.md) és futtassa újra az egyesített profilt.
 
 ## <a name="next-step"></a>Következő lépés
 
-Konfiguráljon [tevékenységeket](activities.md), [gazdagodást](enrichment-hub.md), [kapcsolatok](relationships.md) vagy [intézkedéseket](measures.md), hogy több betekintést nyerjen az ügyfelekbe.
+Konfigurálja a tevékenységeket, a gazdagítást [,](activities.md) a kapcsolatok [vagy](enrichment-hub.md) a mértékeket [, hogy további betekintést nyerjen ügyfeleibe.](relationships.md)[...](measures.md)
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]
