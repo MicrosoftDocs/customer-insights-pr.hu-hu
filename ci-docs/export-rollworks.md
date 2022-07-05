@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása a RollWorksra
+title: Szegmensek exportálása a RollWorksba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a RollWorksba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ba63f9146b17ebf6daf5b0a9f39c0d6bc32a1bfa
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 83c3f2437b9822d29d1d2f99ead96815b1b0881a
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642820"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055171"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Szegmensek exportálása a RollWorksba (előzetes verzió)
 
@@ -22,7 +22,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét a RollWorksba, és haszn
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
 -   Van egy [RollWorks fiókja](https://www.rollworks.com/) és ahhoz tartozó rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

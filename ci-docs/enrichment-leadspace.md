@@ -1,5 +1,5 @@
 ---
-title: A vállalati profilok bővítése a harmadik féltől származó bővítési Leadspace-szel
+title: Vállalati profilok gazdagítása a Leadspace-szel (előzetes verzió)
 description: Általános információk a Leadspace harmadik fél bővítésről.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: ca53f15bd7c71b3b4acb396c4daf52d7c7aff9eb
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954182"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082365"
 ---
-# <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>A vállalati profilok bővítése Leadspace-szel (előzetes verzió)
+# <a name="enrich-company-profiles-with-leadspace-preview"></a>Vállalati profilok gazdagítása a Leadspace-szel (előzetes verzió)
 
 A Leadspace egy adattudományokkal foglalkozó vállalat, amely üzleti számlákkal (B-to-B) kapcsolatos ügyféladatplatformot biztosít. Lehetővé teszi olyan környezetek számára, amelyek partnereken alapuló egységes ügyfélprofilokat tartalmaznak adataik gyarapítása érdekében. Az *ügyfélprofilok* gyarapítása attribútumokkal, például a vállalat méretével, helyével vagy iparágával. A *Kapcsolattartók* profiljainak bővítése attribútumokkal, például cím, személy vagy e-mail-ellenőrzés.
 
@@ -82,7 +82,7 @@ A funkció használatának leállítása érdekében a Dynamics 365 Customer Ins
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Keressen hasonló ügyfeleket az AI-val (videót tartalmaz)
+title: Hasonló ügyfelek keresése mesterséges intelligenciával (előzetes verzió) (videót tartalmaz)
 description: Hasonló ügyfél-szegmensek keresése mesterséges intelligenciával.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
@@ -12,14 +12,14 @@ searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 7877349817829f7486a63a1355a81361e1cb2c13
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d58b2e424fd81ad691db4b2576bdf5655038ed89
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642678"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054804"
 ---
-# <a name="similar-customers-preview"></a>Hasonló ügyfelek (előzetes verzió)
+# <a name="find-similar-customers-with-ai-preview"></a>Hasonló ügyfelek keresése mesterséges intelligenciával (előzetes verzió)
 
 Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügyfélkörön belül mesterséges intelligencia segítségével. A szolgáltatás használatához legalább egy szegmensnek létre kell lennie hozva. A meglévő szegmens feltételeinek kibővítésével a szegmenshez hasonló ügyfelek kereshetők meg.
 
@@ -30,13 +30,13 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 
 ## <a name="finding-similar-customers"></a>Hasonló ügyfelek keresése
 
-1. Nyissa meg a **Szegmensek lehetőséget,** és válassza ki azt a szegmenst, amelyre az új szegmenst alapozni szeretné. Ez a *Forrásszegmense*.
+1. Lépjen a Szegmensek **elemre**, és válassza ki azt a szegmenst, amelyre az új szegmenst alapozni szeretné. Ez a *Forrásszegmense*.
 
 1. A műveleti sávban válassza a **Hasonló ügyfelek keresése** lehetőséget.
 
 1. Tekintse át az új szegmens javasolt nevét, és szükség szerint módosítsa azt.
 
-1. Szükség esetén címkéket [is hozzáadhat](work-with-tags-columns.md#manage-tags) az új szegmenshez.
+1. Ha szükséges, adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags) az új szegmenshez.
 
 1. Tekintse át az új szegmenst definiáló mezőket. Ezek a mezők határozzák meg, hogy a rendszer milyen alapon próbálja megkeresni a hasonló ügyfeleket a forrásszegmensében. A rendszer alapértelmezés szerint az ajánlott mezőket választja ki.
   A modell teljesítményét jelentősen csökkentő mezők automatikusan ki vannak zárva:
@@ -48,7 +48,7 @@ Ez a funkció lehetővé teszi, hogy a hasonló ügyfeleket keressen meg az ügy
 
 1. A rendszer alapértelmezés szerint azt javasolja, hogy a kimenetében a célközönség legfeljebb 20%-át adja meg. Szükség szerint szerkessze ezt a küszöböt. A küszöb növelése csökkenti a pontosságot.
 
-1. Az ügyfelek felvétele a forrásszegmensbe a hasonló attribútumokkal rendelkező ügyfelek mellett a **forrásszegmensből** származó tagok felvétele jelölőnégyzet bejelölésével.
+1. Vegye fel az ügyfeleket a forrásszegmensbe a Tagok felvétele a **forrásszegmensből** a hasonló attribútumokkal rendelkező ügyfelek mellett jelölőnégyzet bejelölésével.
 
 1. Válassza az oldal alján található **Futtatás** lehetőséget, hogy egy bináris osztályozási feladatot (a gépi tanulás egy módszere) indítson el, amely elemzi az adatkészletet.
 

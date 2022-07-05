@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása Azure Data Lake Storage Gen 2 tárhelyre
+title: Adatok exportálása a Gen2-be Azure Data Lake Storage (előzetes verzió)
 description: Megismerheti, hogyan konfigurálható a kapcsolat az Azure Data Lake Storage Gen2 tárhellyel.
 ms.date: 10/06/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: c2446fba425203d2910b82134b73543a73c7ecf8
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947233"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082659"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Szegmenslista és egyéb adatok exportálása az Azure Data Lake Storage Gen 2-es verzióba (előzetes verzió)
+# <a name="export-data-to-azure-data-lake-storage-gen2-preview"></a>Adatok exportálása a Gen2-be Azure Data Lake Storage (előzetes verzió)
 
 A Customer Insights adatokat a Data Lake Storage Gen2 fiókban tárolhatja, vagy segítségével adatait más alkalmazásokba továbbíthatja.
 

@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása SFTP-gazdagépekbe (videót tartalmaz)
+title: Adatok exportálása SFTP-gazdagépekre (előzetes verzió) (videót tartalmaz)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az SFTP helyre.
 ms.date: 06/09/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 67789a87cf0ff1b0d9933f2c0adde37762c83476
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947187"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082764"
 ---
-# <a name="export-segments-and-other-data-to-sftp-preview"></a>Szegmensek és egyéb adatok exportálása az SFTP-be (előzetes verzió)
+# <a name="export-data-to-sftp-preview"></a>Adatok exportálása SFTP-be (előzetes verzió)
 
 Az ügyféladatokat külső alkalmazásokban használhatja, ha exportálja őket egy Biztonságos fájlátviteli protokoll (SFTP) helyre.
 

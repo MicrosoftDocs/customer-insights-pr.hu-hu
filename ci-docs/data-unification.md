@@ -1,6 +1,6 @@
 ---
-title: Ügyfelek egységes nézetének létrehozása
-description: Az adatok egyesítésének folyamatán keresztül az adatokkal egyetlen adathalmazt hozhat létre az egységes ügyfélprofilokból.
+title: Az Adategyesítés áttekintése
+description: Az adatok egyesítésének folyamatán keresztül az adatokkal egyetlen, egységes ügyfélprofilokból álló adatkészletet hozhat létre.
 ms.date: 05/10/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
@@ -11,36 +11,36 @@ manager: shellyha
 searchScope:
 - ci-map
 - customerInsights
-ms.openlocfilehash: bb8da6f4b9f92f2b265ff9807e04638edae4f814
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 0dbc3b2c75365e94758a1b6330e8cb557e6bd768
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755737"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082218"
 ---
 # <a name="data-unification-overview"></a>Az Adategyesítés áttekintése
 
 [!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-[Az adatforrások beállítása után](data-sources.md) egyesítheti az adatot. Az adategyesítés lehetővé teszi az egyszer eltérő adatforrások egyetlen fő adatkészletbe történő egyesítését, amely egységes nézetet biztosít az adott adatokról. Az egyes fogyasztók (B-to-C) esetében, ahol az adatok egyének köré összpontosulnak, az egyesítés egységes képet nyújt az ügyfelekről. Azoknál az üzleti fiókoknál (B-től B-ig), ahol az adatok a fiókok köré összpontosulnak, az egyesítés egységes nézetet biztosít a fiókokról.
+[Az adatforrások beállítása után](data-sources.md) egyesítheti az adatot. Az adatok egyesítése lehetővé teszi az egykor eltérő adatforrások egyesítését egyetlen fő adatkészletben, amely egységes nézetet biztosít az adatokról. Az egyéni fogyasztók (B-től C-ig), ahol az adatok egyének köré összpontosulnak, az egyesítés egységes képet nyújt az ügyfelekről. Az üzleti fiókok (B-től B-ig) esetében, ahol az adatok a fiókok köré összpontosulnak, az egyesítés egységes nézetet biztosít a fiókokról.
 
-Az adatok egyetlen entitáson vagy több entitáson egyesíthetők. Az egyesítés a következő sorrendben történik:
+Az adatok egyesíthetők egyetlen entitáson vagy több entitáson. Az egyesítés a következő sorrendben történik:
 
-1. [Forrásmezők](map-entities.md) (korábban Leképezésnek nevezték): A forrásmezők lépésében válassza ki az egyesítési folyamatba bevonandó entitásokat és mezőket. Mezők leképezése a mező célját leíró közös szemantikai típusra.
+1. [Forrásmezők](map-entities.md) (korábbi nevén Térkép): A forrásmezők lépésében válassza ki az egyesítési folyamatba felvenni kívánt entitásokat és mezőket. Mezőket képezzen le egy gyakori szemantikai típusra, amely leírja a mező célját.
 
-1. [Ismétlődő rekordok](remove-duplicates.md) (korábban a Match része): Az ismétlődő rekordok lépésben tetszés szerint definiáljon szabályokat az ismétlődő ügyfélrekordok eltávolítására az egyes entitásokból.
+1. [Ismétlődő rekordok](remove-duplicates.md) (korábban a Match része): Az ismétlődő rekordok lépésben opcionálisan definiálhat szabályokat az ismétlődő ügyfélrekordok eltávolításához az egyes entitásokon belül.
 
-1. [Feltételek egyeztetése](match-entities.md) (korábban Egyezés): Az egyeztetési feltételek lépésben definiáljon olyan szabályokat, amelyek megfelelnek az entitások közötti ügyfélrekordoknak. Ha egy vevő két vagy több entitásban található, egyetlen konszolidált rekord jön létre az egyes entitások összes oszlopával és adatával.
+1. [Egyező feltételek](match-entities.md) (korábbi nevén Egyeztetés): Az egyező feltételek lépésben határozzon meg olyan szabályokat, amelyek megfelelnek az entitások ügyfélrekordjainak. Ha egy vevő két vagy több entitásban található, egyetlen konszolidált rekord jön létre az egyes entitások összes oszlopával és adatával.
 
-1. [Egyesített vevőmezők](merge-entities.md) (korábbi nevén Egyesítés): Az egyesített vevőmezők lépésben határozza meg, hogy mely forrásmezőket kell belefoglalni, kizárni vagy egyesítette egy egységes vevőprofilba.  
+1. [Egyesített vevőmezők](merge-entities.md) (korábbi nevén Egyesítés): Az egyesített vevőmezők lépésben határozza meg, hogy mely forrásmezőket kell belefoglalni, kizárni vagy egyesíteni egy egységes ügyfélprofilba.  
 
-1. [Tekintse át](review-unification.md) és hozza létre az egységes profilt.
+1. [Tekintse át](review-unification.md) és hozza létre az egyesített profilt.
 
-Az adategyesítés befejezése után opcionálisan:
+Az adategyesítés befejezése után igény szerint a következőket teheti:
 
-- [Állítsa be kapcsolatok entitások](relationships.md) között kifinomult szegmensek létrehozásához.
-- [Gazdagítsa adatait](enrichment-hub.md), hogy szélesebb körű betekintést kapjon ügyfeleiről.
-- [A betöltött attribútumok némelyikének tevékenységeinek](activities.md) meghatározása.
-- [Hozzon létre intézkedéseket](measures.md) az ügyfelek viselkedésének és üzleti teljesítményének jobb megértése érdekében.
+- [Állítson be kapcsolatok az entitások](relationships.md) között kifinomult szegmensek létrehozásához.
+- [Gazdagítsa adatait](enrichment-hub.md), hogy szélesebb körű betekintést nyerjen ügyfeleiről.
+- [Határozza meg a tevékenységeket](activities.md) néhány betöltött attribútumból.
+- [Hozzon létre intézkedéseket](measures.md) az ügyfelek viselkedésének és üzleti teljesítményének jobb megértéséhez.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

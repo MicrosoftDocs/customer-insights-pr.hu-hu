@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása az Autopilotba
+title: Szegmensek exportálása az Autopilotba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Autopilotba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01fb04cd1f0acfee1fcc9243269f967942580891
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e3af3d03e70c4ce9d229c84c582ec4f302be8c9f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642708"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082533"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Szegmensek exportálása az Autopilotba (előzetes verzió)
 
@@ -22,7 +22,7 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Autopilotba, és hasz
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
 -   Rendelkezik [Autopilot-fiókkal](https://www.autopilothq.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

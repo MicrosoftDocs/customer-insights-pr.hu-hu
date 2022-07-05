@@ -1,5 +1,5 @@
 ---
-title: Megosztott feladatok előrejelzés forgatókönyvekhez
+title: Előrejelzések kezelése
 description: Ismerje meg az előrejelzések kezelését, hibaelhárítását és finomítását.
 ms.date: 11/01/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: c4d269e1b542e84ade8c6e63c1dadace51ddde32
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a180f6462452d9830d0daa150a35a9d0acad925a
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642898"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082848"
 ---
 # <a name="manage-predictions"></a>Előrejelzések kezelése
 
@@ -49,12 +49,12 @@ A jelentés következő oszlopai hasznos információkat tartalmaznak a modell a
 
 :::image type="content" source="media/input-data-usability-report.png" alt-text="Példa egy bemeneti adatok használhatósági jelentésére, amely egy hibákat, figyelmeztetéseket és ajánlásokat megjelenítő táblázatot mutat be.":::
 
-- **Név:** A hiba, figyelmeztetés vagy ajánlás leíró neve.
-- **Lépés:** Modellfázis, vonat vagy pontszám, az információ hivatkozik.
+- **Név:** A hiba, figyelmeztetés vagy javaslat leíró neve.
+- **Lépés:** Modellfázis, betanítás vagy pontszám, az információ utal.
 - **Állapot:** Az információ súlyossága (hiba, figyelmeztetés, ajánlás).
-- **Oszlopnév:** Egy entitás oszlopa, amelyet módosítani kell a modell teljesítményének javítása érdekében.
+- **Oszlop neve:** Egy entitás oszlopa, amelyet módosítani kell a modell teljesítményének javítása érdekében.
 - **Entitás neve:** Annak az entitásnak a neve, amelyet módosítani kell a modell teljesítményének javítása érdekében.
-- **Részletek:** Részletek a hibáról, figyelmeztetésről vagy ajánlásról.
+- **Részletek:** A hiba, figyelmeztetés vagy javaslat részletei.
 
 ## <a name="refresh-a-prediction"></a>Előrejelzés frissítése
 

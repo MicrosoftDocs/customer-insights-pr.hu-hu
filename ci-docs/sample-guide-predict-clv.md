@@ -1,5 +1,5 @@
 ---
-title: Ügyfélélettartam-érték előrejelzése mintaútmutató
+title: Ügyfélélettartam-érték (CLV) előrejelzés mintaútmutató
 description: Ezzel a mintaútmutatóval próbálhatja ki az ügyfélélettartam-érték előrejelzése modellt.
 ms.date: 03/31/2022
 ms.reviewer: v-wendysmith
@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 351946c734f5a1054eb3769b2d9cced3bed48e15
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 2013533ed225a396d21e51e63297d7608ce58ac6
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740814"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051640"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Ügyfélélettartam-érték (CLV) előrejelzés mintaútmutató
 
@@ -21,7 +21,7 @@ Ez az útmutató a mintaadatok felhasználásával átfogóan ismerteti az Ügyf
 
 ## <a name="scenario"></a>Forgatókönyv
 
-Contoso egy olyan vállalat, amely kiváló minőségű kávé- és kávéfőzőket gyárt. A termékeket a Contoso Coffee weboldalon keresztül értékesítik. A vállalat meg akarja érteni azt az értéket (bevételt), amelyet ügyfeleik a következő 12 hónapban generálhatnak. Ismerve az ügyfeleik várható értékét a következő 12 hónapra vonatkozóan segít nekik a marketingerőfeszítéseiket a nagy értékű ügyfelek felé irányítani.
+Contoso egy olyan cég, amely kiváló minőségű kávé- és kávéfőzőket gyárt. A termékeket a Contoso Coffee weboldalán keresztül értékesítik. A vállalat meg akarja érteni azt az értéket (bevételt), amelyet ügyfeleik a következő 12 hónapban generálhatnak. Ismerve az ügyfeleik várható értékét a következő 12 hónapra vonatkozóan segít nekik a marketingerőfeszítéseiket a nagy értékű ügyfelek felé irányítani.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -30,7 +30,7 @@ Contoso egy olyan vállalat, amely kiváló minőségű kávé- és kávéfőző
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások összekötőkkel történő [importálásáról szóló cikkeket Power Query](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban.
+Tekintse át az adatforrások összekötők használatával [történő adatbetöltéséről](data-sources.md) és [importálásáról szóló cikkeket Power Query](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
@@ -106,7 +106,7 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások össz
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>3. feladat – Ügyfél élettartamra vetített értékének előrejelzése
 
-Az egységes ügyfélprofilok segítségével immár futtathatja az ügyfél élettartamra vetített értékének előrejelzését. A részletes lépéseket az Ügyfél élettartamának értéke előrejelzés című témakörben [találja](predict-customer-lifetime-value.md).
+Az egységes ügyfélprofilok segítségével immár futtathatja az ügyfél élettartamra vetített értékének előrejelzését. Részletes lépésekért lásd: [Ügyfél élettartamra vetített érték előrejelzés](predict-customer-lifetime-value.md).
 
 1. Lépjen az **Információk**  > **Előrejelzések** lapra, és válassza ki az **Ügyfél élettartamának értékmodellje** lehetőséget.
 

@@ -1,5 +1,5 @@
 ---
-title: Vállalati profilok gazdagítása a Dun &Bradstreet-tel
+title: Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)
 description: Általános információk a Dun &Bradstreet harmadik féltől származó gazdagításáról.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953894"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082554"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása a Dun & Bradstreettel (előzetes verzió)
+# <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)
 
 A Dun & Bradstreet kereskedelmi adatokat, elemzéseket és betekintést nyújt a vállalkozások számára. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések olyan attribútumokat tartalmaznak, mint a DUNS-szám, a vállalat mérete, a hely, az ipar és egyebek.
 
@@ -102,7 +102,7 @@ Jelenleg a következő ország-/régióbeállításokat támogatjuk: Kanada (ang
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

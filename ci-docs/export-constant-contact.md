@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása az Constant Contactra
+title: Szegmensek exportálása az Állandó kapcsolattartóba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Constant Contactba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 310de0355f71829346f0e35508487e5962d6e912
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: fe9706a7cd0755412ee18c4b974684bb9aa3f8d3
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642865"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082302"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Szegmensek exportálása az Állandó kapcsolattartóba (előzetes verzió)
 
@@ -22,7 +22,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
 -   Van egy [Constant Contact fiókja](https://www.constantcontact.com/account-home) és ahhoz tartozó rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

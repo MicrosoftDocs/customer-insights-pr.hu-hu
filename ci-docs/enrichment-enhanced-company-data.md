@@ -1,5 +1,5 @@
 ---
-title: A vállalati adatok fejlesztése
+title: Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
 description: Gazdagítsa és normalizálja a vállalati adatokat a Microsoft modelljeivel.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4247d59806468907d93fc7848231ec5a2985580e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 131ef3d1e123628779609ddec368cfef8f4d607e
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953952"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054251"
 ---
-# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
+# <a name="enrich-company-profiles-with-enhanced-company-data"></a>Vállalati profilok gazdagítása továbbfejlesztett vállalati adatokkal
 
 A Microsoft modelljeivel és lefordított vállalati adataival javíthatja, kiegészítheti és szabványosíthatja vállalati profiljait. A jobb pontosság és betekintés érdekében a [Common Data Model formátumot](/common-data-model/schema/core/applicationcommon/account) fogjuk használni.
 
@@ -84,7 +84,7 @@ A modell nem:
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

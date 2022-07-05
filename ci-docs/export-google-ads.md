@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása a Google Adsbe
+title: Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Google Adsbe.
 ms.date: 03/31/2022
 ms.subservice: audience-insights
@@ -8,12 +8,12 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3e0eb91be97d69a999e90708d29c572f0055527e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b7f08936d7d90322cb4e62396a2961fe06273b76
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642681"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082995"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Szegmensek exportálása a Google Ads szolgáltatásba (előzetes verzió)
 
@@ -26,7 +26,7 @@ Exportálja az egységes ügyfélprofilok szegmenseit a Google Ads célközöns�
 -   Ön megfelel az [Ügyfél megfeleltetési szabályzat](https://support.google.com/adspolicy/answer/6299717) követelményeinek.
 -   Ön teljesíti a [remarketing listaméretekre](https://support.google.com/google-ads/answer/7558048) vonatkozó követelményeket.
 -   Rendelkezik [konfigurált szegmensekkel](segments.md).
--   Az exportált szegmensek egységes ügyfélprofiljai e-mail címet, telefont, mobil hirdetői azonosítót, harmadik fél felhasználói azonosítóját vagy címét képviselő mezőket tartalmaznak.
+-   Az exportált szegmensek egyesített ügyfélprofiljai e-mail-címet, telefont, mobilhirdető-azonosítót, harmadik fél felhasználói azonosítóját vagy címét ábrázoló mezőket tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
@@ -64,9 +64,9 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Google Ads szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
 
-1. Ha új célközönség szeretne létrehozni, hagyja üresen a Google célközönség azonosító mezőt. Automatikusan létrehozunk egy új célközönség a Google Ads-fiókjában, és az exportált szegmens nevét használjuk. Ha frissíteni szeretne egy meglévő Google Ads-célközönség, adja meg [Google Ads-célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
+1. Ha új célközönség szeretne létrehozni, hagyja üresen a Google célközönség AZONOSÍTÓ mezőjét. Automatikusan létrehozunk egy új célközönség a Google Ads-fiókban, és az exportált szegmens nevét használjuk. Ha frissíteni szeretne egy meglévő Google Ads-célközönség, adja meg a [Google Ads célközönség azonosítóját](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
 
-1. **Az Adategyeztetés** szakaszban jelöljön ki egy vagy több exportálni kívánt adatmezőt, és válassza ki azt a mezőt, amely a Megfelelő adatmezőket jelöli a Customer Insights alkalmazásban.
+1. **Az Adategyeztetés** szakaszban válasszon ki egy vagy több exportálni kívánt adatmezőt, és válassza ki azt a mezőt, amely a Customer Insights megfelelő adatmezőit jelöli.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. 
 

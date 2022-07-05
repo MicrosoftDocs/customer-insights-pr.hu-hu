@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása a Marketóba
+title: Szegmensek exportálása a Marketoba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Marketoba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7354b0aeafbe95e60d172b16c26d83c5dc25fb96
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 8cd24cf436bd5fdfd4ec3834d35baa1495e37ca4
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642945"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053208"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Szegmensek exportálása a Marketoba (előzetes verzió)
 
@@ -63,7 +63,7 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Adja meg a **[Marketo-listaazonosítót](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. A listaazonosító tisztán numerikus érték. Ha például a Marketo-listaazonosító ST12345A7, akkor távolítsa el a számok előtt és után lévő karaktereket, és csak az `12345` értéket adja meg. 
 
-1. **Az Adategyeztetés** szakaszban jelöljön ki legalább egy mezőt, amely az ügyfél e-mail címét vagy az ügyfél Marketo azonosítóját jelöli. 
+1. **Az Adategyeztetés** szakaszban válasszon ki legalább egy mezőt, amely az ügyfél e-mail-címét vagy az ügyfél Marketo-azonosítóját jelöli. 
 
 1. Tetszés szerint exportálhatja az **Utónév**, **Vezetéknév**, **Város**, **Megye** és **Ország/Régió** lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 

@@ -1,6 +1,6 @@
 ---
-title: Hogyan – Hozzon létre egy új környezetet
-description: A környezetek létrehozásának lépései a következővel:Dynamics 365 Customer Insights.
+title: 'Útmutató: Új környezet létrehozása'
+description: A környezetek létrehozásának lépései Dynamics 365 Customer Insights.
 ms.date: 05/31/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 6dfaa09cd80498e9a4e4dea6a07ce6e9d29105e2
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 62969527ceed906ff06fb9be90b972496323ce0a
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011614"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052748"
 ---
 # <a name="how-to-create-a-new-environment"></a>Útmutató: Új környezet létrehozása
 

@@ -1,5 +1,5 @@
 ---
-title: A Customer Insights adatok exportálása a Microsoft Advertising-szolgáltatásba
+title: Szegmensek exportálása a Microsoft Advertising-szolgáltatásba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Microsoft Advertising-szolgáltatásba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 14479e915dd6ae76e018b59bee5980a600bb222d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ca37159ec6473ad5c331a0ce1aa8424d277529ff
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642925"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082806"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Szegmensek exportálása a Microsoft Advertising-szolgáltatásba (előzetes verzió)
 
@@ -23,7 +23,7 @@ Customer Insights szegmensek exportálása a Microsoft Advertising-szolgáltatá
 
 -   Egy [Microsoft Advertising-fiók](https://ads.microsoft.com/) és ahhoz tartozó rendszergazdai hitelesítő adatok.
 -   Elfogadta az Ügyfélegyeztetés felhasználási feltételeit. 
--   [Konfigurált szegmensek](segments.md) a Customer Insights alkalmazásban.
+-   [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
 -   Az exportált szegmensek egységes ügyfélprofiljai egy e-mail-címmel rendelkező mezőt tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

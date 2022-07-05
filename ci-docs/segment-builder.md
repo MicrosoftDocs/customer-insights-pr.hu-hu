@@ -1,6 +1,6 @@
 ---
-title: Szegmensek létrehozása a szegmensépítőben
-description: Hozzon létre ügyfelekből álló szegmenseket, és csoportosítsa őket különböző attribútumok alapján.
+title: Szegmensek létrehozása
+description: Hozzon létre szegmenseket az ügyfelekről, hogy különböző attribútumok alapján csoportosítsa őket szegmenskészítő vagy gyorsszegmensek használatával.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: b99d9575d3b6af91758d80eb04170773b08cc9ab
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800099"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053975"
 ---
 # <a name="create-segments"></a>Szegmensek létrehozása
 
@@ -64,7 +64,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
 
 1. A szegmensszerkesztő lapon szabályokat definiál, illetve alkot. A szabály egy vagy több ügyfélkört definiáló feltételből áll.
 
-1. A Szabály1 **szakaszban válassza ki annak az** entitásnak az attribútumát, amely szerint szűrni szeretné a vevőket. Kétféleképpen választhat ki attribútumokat.
+1. Az 1 **. szabály szakaszban válassza ki annak az** entitásnak az attribútumát, amely alapján szűrni szeretné az ügyfeleket. Kétféleképpen választhat ki attribútumokat.
    - Nézze át a **Hozzáadás szabályhoz** ablaktáblában a rendelkezésre álló entitások és attribútumok listáját, és válassza ki a hozzáadni kívánt attribútum melletti **+** ikont. Válassza ki, hogy az attribútumot hozzá szeretné-e adni egy meglévő szabályhoz, vagy új szabály létrehozására szeretné használni.
    - Az egyező javaslatokért írja be az attribútum nevét a szabály szakaszba.
 
@@ -120,7 +120,7 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
    > - Ha a projektben használni kívánt attribútum csak egy ugrást tartalmaz az *Ügyfél* entitástól, ennek az attribútumnak nem kell szerepelnie az épülő szegmenslekérdezés minden szabályában.
    > - A **Vetített attribútumokat** figyelembe veszi a rendszer a beállított operátorok használatakor.
 
-1. Válassza **a Részletek** szerkesztése lehetőséget a Cím nélküli szegmens mellett. Adja meg a szegmens nevét, és frissítse a szegmens javasolt **Kimeneti entitás neve** értéket. Adjon hozzá leírást és [címkéket](work-with-tags-columns.md#manage-tags) a szegmenshez.
+1. Válassza a Részletek **szerkesztése lehetőséget** a Névtelen szegmens mellett. Adja meg a szegmens nevét, és frissítse a szegmens javasolt **Kimeneti entitás neve** értéket. Ha szükséges, adjon hozzá egy leírást és [címkéket](work-with-tags-columns.md#manage-tags) a szegmenshez.
 
    :::image type="content" source="media/segments_edit_details.png" alt-text="Részletek szerkesztése párbeszédpanel.":::
 
@@ -134,9 +134,9 @@ A szegmensek létrehozásakor mentheti a tervezetet. A vázlat fázisban a rends
 > - A szegmensépítő nem javasol érvényes értékeket az entitásokból a feltételek operátorainak beállításakor. Az **Adatok** > **Entitások** helyen letöltheti az entitásadatokat, és láthatja, hogy mely értékek érhetők el.
 > - A dátumon alapuló feltételek válthatnak a fix dátumok és egy lebegőpontos tartomány között.
 > - Ha a szegmensre több szabály is vonatkozik, akkor a szerkesztett szabály mellett egy függőleges kék vonal van.
-> - A szabályokat és feltételeket a szegmensdefinícióban más helyre is áthelyezheti. Jelölje ki a függőleges ellipszis (&vellip;) egy szabály vagy feltétel mellett, és válassza ki, hogyan és hol helyezze át.
+> - A szabályokat és feltételeket a szegmensdefinícióban más helyre is áthelyezheti. Jelölje ki a függőleges három pontot (&vellip;) egy szabály vagy feltétel mellett, és válassza ki, hogyan és hol szeretné áthelyezni.
 > - A **Visszavonás** és a **Visszaállítás** vezérlőelemek a parancssávban visszagördülnek a változásokhoz.
-> - A szegmens létrehozása után egyes szegmensek lehetővé teszik a szegmens [használatának](segments.md#track-usage-of-a-segment) nyomon követését.
+> - A szegmens létrehozása után egyes szegmensek lehetővé [teszik a szegmens](segments.md#track-usage-of-a-segment) használatának nyomon követését.
 
 ## <a name="quick-segments"></a>Gyors szegmens
 
@@ -157,7 +157,7 @@ A gyorsszegmensek segítségével gyorsan készíthet egyszerű, egy operátorra
 
    :::image type="content" source="media/quick-segment-name.png" alt-text="Gyorsszegmens neve és becslése.":::
 
-5. **Adjon nevet** és **kimenet entitásnevet** a szegmensnek. Opcionálisan adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags).
+5. Adja meg a **szegmens név** - és **kimeneti entitásnevét**. Ha szükséges, adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags).
 
 6. Válassza a **Mentés** lehetőséget a szegmens létrehozásához.
 

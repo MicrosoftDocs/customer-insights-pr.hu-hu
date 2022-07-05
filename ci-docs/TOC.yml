@@ -80,7 +80,7 @@
       href: data-unification-update.md
 - name: Adatbővítés
   items:
-    - name: Ügyfélprofilok bővítése
+    - name: Az adatgazdagítás áttekintése
       href: enrichment-hub.md
     - name: Fiókok az adatokból Office 365
       href: enrichment-office.md
@@ -112,7 +112,7 @@
       href: search-filter-index.md
     - name: Ügyféltevékenységek meghatározása
       href: activities.md
-    - name: Hozzájárulás-kezelés a Customer Insights szolgáltatáshoz
+    - name: Hozzájárulás-kezelés használata
       href: consent-management.md
 - name: Szegmensek
   items:
@@ -212,6 +212,8 @@
           href: export-facebook.md
         - name: Google Ads
           href: export-google-ads.md
+        - name: InMobi
+          href: export-inmobi.md
         - name: Iterálható
           href: export-iterable.md
         - name: Klaviyo

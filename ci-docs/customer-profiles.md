@@ -1,6 +1,6 @@
 ---
-title: Ügyfélprofilok megtekintése
-description: Az egyesített ügyféladatok kombinált nézetének lekérése.
+title: Ügyfélprofilok
+description: Tekintse meg az egyesített ügyféladatokat, beleértve a keresés és a szűrés használatát
 ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 279c8e1291c6449005d593244f1979e871610a77
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947049"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052192"
 ---
 # <a name="customer-profiles"></a>Ügyfélprofilok
 

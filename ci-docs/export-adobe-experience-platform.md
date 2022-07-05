@@ -1,6 +1,6 @@
 ---
-title: Customer Insights adatok exportálása az Adobe Experience Platform szolgáltatásba
-description: További információ a Customer Insights-szegmensek használatáról a alkalmazásban Adobe Experience Platform.
+title: Szegmensek Adobe Experience Platform exportálása (előzetes verzió)
+description: További információ a Customer Insights-szegmensek használatáról Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,16 +8,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 42a4e0c6bce67a63b449a541299620ef2f4a3259
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c29b8264019669ffd954a298ce3a633c852477fa
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642835"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052514"
 ---
-# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insights szegmensek használata az Adobe Experience Platform szolgáltatásban (előzetes verzió)
+# <a name="export-segments-to-adobe-experience-platform-preview"></a>Szegmensek Adobe Experience Platform exportálása (előzetes verzió)
 
-A ( felhasználóként Dynamics 365 Customer Insights) létrehozhatott szegmenseket, hogy hatékonyabbá tegye marketingkampányait az érintett közönségek megcélzásával. Ha a Customer Insights Adobe Experience Platform szegmensét és a Campaign Standardhoz hasonló Adobe alkalmazásokat szeretne használni, kövesse a cikkben ismertetett néhány lépést.
+Dynamics 365 Customer Insights Lehet, hogy Ön szegmenseket hozott létre, hogy a releváns közönségek megcélzásával hatékonyabbá tegye marketingkampányait. Ha a Customer Insights Adobe Experience Platform egy szegmensét és olyan alkalmazásokat szeretne használni, mint a Adobe Campaign Standard, kövesse a cikkben ismertetett néhány lépést.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="A jelen cikkben ismertetett lépések folyamatábrája.":::
 
@@ -30,7 +30,7 @@ A ( felhasználóként Dynamics 365 Customer Insights) létrehozhatott szegmense
 
 ## <a name="campaign-overview"></a>Kampány áttekintése
 
-Ha jobban meg szeretnénk érteni, hogyan használhatod a Customer Insights szegmenseit a alkalmazásban Adobe Experience Platform, nézzünk meg egy fiktív mintakampányt.
+Ha jobban meg szeretné érteni, hogyan használhatja a Adobe Experience Platform Customer Insights szegmenseit, nézzünk meg egy fiktív mintakampányt.
 
 Tegyük fel, hogy a vállalata havi előfizetéses szolgáltatást kínál egyesült államokbeli ügyfeleinek. Meg szeretné határozni azokat az ügyfeleket, akiknek az előfizetései a következő nyolc napban megújításra esedékesek, de még nem újították meg előfizetésüket. Ezeknek az ügyfeleknek a megtartása érdekében e-mailben szeretne promóciós ajánlatot küldeni nekik az Adobe Experience Platform segítségével.
 
@@ -38,9 +38,9 @@ Ebben a példában egy promóciós e-mail-kampányt egyszer szeretnénk futtatni
 
 ## <a name="identify-your-target-audience"></a>Azonosítsa a célközönséget
 
-Forgatókönyvünkben feltételezzük, hogy az ügyfelek e-mail címei elérhetők a Customer Insights-ban, és promóciós preferenciáikat elemeztük a szegmens tagjainak azonosítása érdekében.
+Forgatókönyvünkben feltételezzük, hogy az ügyfelek e-mail-címei elérhetők a Customer Insights szolgáltatásban, és promóciós preferenciáikat elemeztük a szegmens tagjainak azonosítása érdekében.
 
-A [Customer Insights-ban](segments.md) definiált szegmens neve **ChurnProneCustomers**, és azt tervezi, hogy elküldi ezeknek az ügyfeleknek az e-mail promóciót.
+A [Customer Insightsban](segments.md) meghatározott szegmens neve **ChurnProneCustomers**, és azt tervezi, hogy elküldi ezeknek az ügyfeleknek az e-mailes promóciót.
 
 :::image type="content" source="media/churn-prone-customers-segment.png" alt-text="Képernyőfelvétel a Szegmensek oldalról, amelyen a létrehozott ChurnProneCustomers szegmens látható.":::
 
@@ -48,7 +48,7 @@ Az elküldeni kívánt ajánlati e-mail tartalmazza az ügyfél utónevét, veze
 
 ## <a name="export-your-target-audience"></a>Exportálja a célközönséget
 
-A célértékünk azonosításával célközönség konfigurálhatjuk az Exportálást a Customer Insightsból egy Azure Blob Storage-fiókba.
+Ha a cél célközönség azonosítjuk, konfigurálhatjuk az exportálást a Customer Insightsból egy Azure Blob Storage-fiókba.
 
 ### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
 
@@ -106,17 +106,17 @@ Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f
 
 ## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Az élmény adatmodell (XDM) definiálás az Adobe Experience Platform szolgáltatásban
 
-Mielőtt a Customer Insightsból exportált adatok felhasználhatók lennének a rendszeren belül Adobe Experience Platform, meg kell határoznunk az Élményadatmodell sémát, és [konfigurálnunk kell az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Mielőtt a Customer Insightsból exportált adatok felhasználhatók Adobe Experience Platform lennének, meg kell határoznunk az élményadatmodell sémáját, és [konfigurálnunk kell az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Ismerje meg, [mi az az XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html), és ismerje meg a [sémaösszetétel alapjait](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
 ## <a name="import-data-into-adobe-experience-platform"></a>Adatok importálása a Adobe Experience Platform rendszerbe
 
-Most, hogy minden a helyén van, importálnunk kell az előkészített célközönség adatokat a Customer Insights-ból a rendszerbe Adobe Experience Platform.
+Most, hogy minden a helyén van, importálnunk kell az előkészített célközönség adatokat a Customer Insights-ból Adobe Experience Platform a.
 
 Először [hozzon létre egy Azure Blob Storage-forráskapcsolatot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-A forráskapcsolat [definiálása után konfiguráljon egy adatfolyamot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) egy felhőalapú tároló kötegkapcsolathoz, hogy importálja a szegmens kimenetét a Customer Insights programból a programba Adobe Experience Platform.
+A forráskapcsolat meghatározása után konfiguráljon egy adatfolyamot [egy felhőalapú tárolási kötegelt kapcsolathoz,](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) hogy importálja a szegmens kimenetét a Customer Insightsból a következőbe Adobe Experience Platform: .
 
 ## <a name="create-an-audience-in-adobe-campaign-standard"></a>Az célközönség létrehozása az Adobe Campaign Standardben
 

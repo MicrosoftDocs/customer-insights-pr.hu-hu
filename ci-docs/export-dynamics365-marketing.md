@@ -1,5 +1,5 @@
 ---
-title: A Customer Insights adatok a Dynamics 365 Marketingbe való exportálása
+title: Szegmensek exportálása a Dynamics 365 Marketing rendszerbe (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Dynamics 365 Marketingbe.
 ms.date: 08/24/2021
 ms.reviewer: mhart
@@ -11,27 +11,25 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: 7227f3f9e7699a9b5ad546789de5e568b56da579
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: fed4ae1b017cca2b6060c4dda155859cd77e0daf
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642448"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054619"
 ---
-# <a name="use-segments-in-dynamics-365-marketing-preview"></a>Szegmensek használata a Dynamics 365 Marketing alkalmazásban (előzetes verzió)
-
-
+# <a name="export-segments-to-dynamics-365-marketing-preview"></a>Szegmensek exportálása a Dynamics 365 Marketing rendszerbe (előzetes verzió)
 
 A [szegmensek](segments.md) segítségével kampányok és az ügyfelek adott csoportjaihoz fordulhat a Dynamics 365 Marketing alkalmazással. További tudnivalók: [szegmensek használata a Dynamics 365 Customer Insights szolgáltatásból a Dynamics 365 Marketing alkalmazással](/dynamics365/marketing/customer-insights-segments).
 
-Ha a Dynamics 365 Marketing új lehetőségeit használja valós idejű ügyfélút-vezényleléshez egy Dataverse-szervezetben, nem kell szabványos exportálást létrehoznia a Dynamics 365 Marketing alkalmazásba. A Customer Insights névjegyei és szegmensei közvetlenül a Dynamics 365 Marketingben érhetők el a Marketing és az Ügyfélelemzések összekapcsolása után. A meglévő exportálások törlése előtt tekintse át a Customer Insights és a Dynamics 365 Marketing ügyfélút vezénylés összekapcsolására vonatkozó [dokumentációt](/dynamics365/marketing/real-time-marketing-ci-profile).
+Ha a Dynamics 365 Marketing új lehetőségeit használja valós idejű ügyfélút-vezényleléshez egy Dataverse-szervezetben, nem kell szabványos exportálást létrehoznia a Dynamics 365 Marketing alkalmazásba. A Customer Insights kapcsolattartói és szegmensei közvetlenül a Dynamics 365 Marketing rendszerben érhetők el a Marketing és a Customer Insights összekapcsolása után. A meglévő exportálások törlése előtt tekintse át a Customer Insights és a Dynamics 365 Marketing ügyfélút vezénylés összekapcsolásának [dokumentációját](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Egy kapcsolat előfeltétele
 
 - A kapcsolattartók bejegyzésének jelen kell lennie a Dynamics 365 Marketing alkalmazásban, mielőtt egy szegmenst exportálhatna a Customer Insights alkalmazásból a Marketing alkalmazásba. További információ a kapcsolattartók betöltéséről [a Dynamics 365 Marketing alkalmazásba a Microsoft Dataverse használatával](connect-dataverse-managed-lake.md).
 
   > [!NOTE]
-  > A szegmensek Ügyfélelemzésből marketingbe exportálása nem hoz létre új partnerbejegyzéseket a marketingpéldányokban. A marketingből származó kapcsolatfelvételi rekordokat be kell tölteni a Customer Insights-ban, és adatforrás kell használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.
+  > A szegmensek Customer Insights szolgáltatásból Marketing formátumba történő exportálása nem hoz létre új kapcsolattartói rekordokat a Marketing-példányokban. A Marketing kapcsolattartói rekordjait be kell tölteni a Customer Insights szolgáltatásba, és adatforrás kell használni. Emellett szerepelniük kell az egyesített Ügyfél entitásban ahhoz, hogy a szegmensek exportálása előtt le tudják képezni az ügyfélazonosítókat.
 
 ## <a name="set-up-connection-to-marketing"></a>Állítsa be a Marketinggel való kapcsolatot
 
@@ -47,7 +45,7 @@ Ha a Dynamics 365 Marketing új lehetőségeit használja valós idejű ügyfél
 
 1. A **Kiszolgáló rendszergazdai fiókja** területen válassza a **Bejelentkezés** lehetőséget, és válasszon egy Dynamics 365 Marketing fiókot.
 
-1. A Vevő entitás Ügyfélazonosító mezőjének leképezése a Dynamics 365 ügyfélazonosítóra.
+1. Rendelje hozzá a Kapcsolattartó azonosítója mezőt a Vevő entitásban a Dynamics 365 kapcsolattartói azonosítóhoz.
 
 1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
 

@@ -1,6 +1,6 @@
 ---
-title: Első lépések az üzleti partnerek beállítása elsődleges célközönségként szolgáltatással
-description: További információ az üzleti partnerek beállítása elsődleges célközönségként Dynamics 365 Customer Insights szolgáltatásról.
+title: Üzleti partnerek használata
+description: További információ az üzleti fiókokról, mint elsődleges célként célközönség a Dynamics 365 Customer Insights.
 ms.date: 10/19/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -13,20 +13,20 @@ searchScope:
 - ci-semantic-mapping
 - ci-connections
 - customerInsights
-ms.openlocfilehash: f16c8ad50ed290562fa9f223a3e8c86228e5331e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9bf91671b744198b2f37391edc7abf58eca3c820
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642728"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053116"
 ---
 # <a name="work-with-business-accounts"></a>Üzleti partnerek használata
 
-A Dynamics 365 Customer Insights segítségével konfigurálhatja környezetét a különböző elsődleges célközönségekhez: egyéni fogyasztókhoz (B-to-C) és üzleti fiókokhoz (B-to-B). A B-to-C helyzetekben az adatok egyének köré központosulnak. A B-to-B esetekben az elsődleges célközönség a partnerek – szervezetek vagy cégek – és a kapcsolattartók. Ez a cikk segít a kötrnyezettel rendelkező üzleti partnereknek az első lépésekben. Felsorolja a Customer Insights funkcióterületeinek különbségeit a környezetfókusztól függően. Ha többet szeretne megtudni a különbségekről, tekintse át a funkcióterületek dokumentációját. 
+Lehetővé Dynamics 365 Customer Insights teszi a környezet konfigurálását különböző elsődleges célközönségekhez: egyéni fogyasztókhoz (B-től C-ig) és üzleti fiókokhoz (B-től B-ig). A B-to-C helyzetekben az adatok egyének köré központosulnak. A B-to-B esetekben az elsődleges célközönség a partnerek – szervezetek vagy cégek – és a kapcsolattartók. Ez a cikk segít a kötrnyezettel rendelkező üzleti partnereknek az első lépésekben. Felsorolja a Customer Insights funkcióterületeinek különbségeit, a környezetre összpontosítva. Ha többet szeretne megtudni a különbségekről, tekintse át a funkcióterületek dokumentációját. 
 
 ## <a name="create-an-environment-for-business-accounts"></a>Hozzon létre környezetet az üzleti fiókokhoz
 
-A rendszergazdák [létrehozhatnak egy környezetet egy meglévő szervezetben](create-environment.md). Az új környezet létrehozásának folyamatának egyik lépése a rendszergazdákat kéri a környezet elsődleges célközönségétől. Abban az esetben, ha ez a licenc megvásárlása utáni kezdeti beállítás, az irányított élmény segít az első környezet létrehozásában.
+A rendszergazdák [létrehozhatnak egy környezetet egy meglévő szervezetben](create-environment.md). Az új környezet létrehozásának folyamatának egyik lépése a rendszergazdákat kéri a környezet elsődleges célközönségétől. Abban az esetben, ha ez a kezdeti beállítás a licenc megvásárlása után, az irányított élmény segít az első környezet létrehozásában.
 
 Ezután az összes támogatott forrás adatforrásaként [adatokat tölthet be](data-sources.md) az üzleti fiókokhoz és a kapcsolódó névjegyekhez.
 

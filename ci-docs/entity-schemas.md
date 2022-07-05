@@ -1,5 +1,5 @@
 ---
-title: Customer Insights entitások sémája a Common Data Modellben
+title: Entitássémák a Common Data Modelben
 description: Entitások használata a Common Data Model rendszerben.
 ms.date: 08/13/2021
 ms.reviewer: mhart
@@ -8,16 +8,14 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
-ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
+ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/15/2022
-ms.locfileid: "8757435"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054757"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
-
-
 
 A [Common Data Model](/common-data-model/) leíró specifikáció, és olyan szabványos entitások nyílt forrású gyűjteménye, amelyek az üzleti és termelékenységi alkalmazás általánosan használt fogalmait és tevékenységeit jelképezik. Ez a modell kiterjed a megfigyelési és analitikai adatokra is. A Common Data Model olyan jól meghatározott, moduláris és bővíthető üzleti entitásokat kínál, mint például Fiók, Üzleti Egység, Eset, Névjegy, Érdeklődő, Lehetőség, és Termék, továbbá a szállítók, a dolgozók és a vásárlók közötti kommunikáció és kapcsolathoz tevékenységeket és szolgáltatói szerződéseket. Bárki létrehozhat és bővíthet Common Data Model meghatározásokat, hogy további üzleti-specifikus ötleteket lehessen rögzíteni.
 

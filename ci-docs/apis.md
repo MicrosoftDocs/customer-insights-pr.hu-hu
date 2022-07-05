@@ -1,5 +1,5 @@
 ---
-title: Az API-k használata
+title: Customer Insights API-k használata
 description: Az API-k használata és a korlátozások megismerése.
 ms.date: 05/10/2021
 ms.reviewer: wimohabb
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: 8e8bd590d3bba9dc7b1644b6ff42b9fc53237ca9
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808509"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054067"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights API-k használata
 
@@ -25,17 +25,17 @@ Dynamics 365 Customer Insights API-kat biztosít saját alkalmazások elkészít
 > [!IMPORTANT]
 > Az API-k részletes ismertetése a [Customer Insights API-k segédeletében](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) található. További információkat tartalmaznak a műveletekről, a paraméterekről és a válaszokról.
 
-Ez a cikk bemutatja, hogyan férhet hozzá a Customer Insights API-khoz, hogyan hozhat létre Azure-alkalmazásregisztrációt, és hogyan kezdheti el az ügyféltárakat.
+Ez a cikk azt ismerteti, hogyan férhet hozzá a Customer Insights API-khoz, hogyan hozhat létre Azure-alkalmazásregisztrációt, és hogyan kezdheti el használni az ügyfélkódtárakat.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Ismerkedés a Customer Insights API-k kipróbálásával
 
 1. [Jelentkezzen be](https://home.ci.ai.dynamics.com) a Customer Insights szolgáltatásba. Ha még nincs előfizetése, [iratkozzon fel a Customer Insights próbaverziójára](https://aka.ms/tryci).
 
-1. Ha engedélyezni szeretné az API-kat a Customer Insights-környezetben, nyissa meg a **Rendszergazdai** > **biztonság lehetőséget**. Ehhez rendszergazdai engedélyekre van szükség.
+1. Ha engedélyezni szeretné az API-kat a Customer Insights-környezetben, lépjen a Rendszergazdai **biztonság oldalra** > **·**. Ehhez rendszergazdai engedélyekre van szükség.
 
 1. Nyissa meg az **API-k** lapot, és jelölje be az **Engedélyezés** gombot.    
  
-   Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsokat úgy hozhatja létre, hogy bejelöli az elsődleges újragenerálását vagy **a** másodlagos **újragenerálást a rendszergazdai** biztonsági **API-kban** > **·** > **.**
+   Az API-k engedélyezésekor a rendszer elsődleges és másodlagos előfizetési kulcsot hoz létre az API-kérésekben használt példányhoz. A kulcsokat az Elsődleges **újragenerálás vagy** a **Másodlagos** újragenerálása a Rendszergazdai **biztonsági** > **API-kban** > **lehetőség** kiválasztásával hozhatja létre újra.
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -67,7 +67,7 @@ Ezek a lépések segítenek a Customer Insights API-k használatának megkezdés
 
 1. Az új alkalmazás regisztrálásával nyissa meg az **API-engedélyeket**.
 
-1. Válassza **az Engedély** hozzáadása lehetőséget, és válassza **a Dynamics 365 AI for Customer Insights** lehetőséget az oldalsó ablaktáblában.
+1. Válassza az Engedély hozzáadása lehetőséget **, majd válassza a Dynamics 365 AI for Customer Insights** lehetőséget **az oldalsó ablaktáblán.**
 
 1. Az **Engedély típusa** parancshoz válassza a **Delegált engedélyek** lehetőséget, majd válassza ki a **Felhasználó megszemélyesítés** engedélyt.
 
@@ -87,7 +87,7 @@ Az API-k ügyfélkódtárainkban való használatával kapcsolatos információk
 
 ### <a name="server-to-server-application-permissions"></a>Kiszolgálók közötti alkalmazásengedélyek
 
-Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-the-azure-portal) ismerteti, hogyan lehet olyan alkalmazást regisztrálni, amelyhez a felhasználónak be kell jelentkeznie a hitelesítéshez. További információ arról, hogyan hozhat létre olyan alkalmazásregisztrációt, amely nem igényel felhasználói beavatkozást, és amely kiszolgálón futtatható.
+Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-the-azure-portal) ismerteti, hogyan lehet olyan alkalmazást regisztrálni, amelyhez a felhasználónak be kell jelentkeznie a hitelesítéshez. Megtudhatja, hogyan hozhat létre olyan alkalmazásregisztrációt, amely nem igényel felhasználói beavatkozást, és futtatható egy kiszolgálón.
 
 1. Az Azure portál alkalmazásregisztrációja után nyissa meg az **API-engedélyeket**.
 
@@ -107,13 +107,13 @@ Az [alkalmazásregisztráció című szakasz](#create-a-new-app-registration-in-
 
 1. Következtetésképp hozzá kell adnunk az alkalmazásregisztráció nevét felhasználóként a Customer Insightsban.  
    
-   Nyissa meg az Ügyfélelemzéseket, nyissa meg a Rendszergazdai biztonság lehetőséget, **és válassza a Felhasználó hozzáadása lehetőséget** > **·**.**·**
+   Nyissa meg a Customer Insightst, lépjen a Rendszergazdai biztonság elemre **, és válassza a Felhasználó** > **hozzáadása lehetőséget**.**·**
 
 1. Keresse meg az alkalmazásregisztrációjának nevét, jelölje ki a keresési eredmények között, és válassza a **Mentés** lehetőséget.
 
 ## <a name="sample-queries"></a>Mintalekérdezések
 
-Összeállítottunk egy rövid listát az OData mintalekérdezésekről, hogy együtt dolgozhassunk az API-kkal: [OData lekérdezési példák](odata-examples.md).
+Összeállítottuk az OData-mintalekérdezések rövid listáját az API-kkal való együttműködéshez: [OData-lekérdezési példák](odata-examples.md).
 
 ## <a name="customer-insights-client-libraries"></a>Customer Insights ügyféloldali tárak
 
@@ -139,7 +139,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
 
 1. Használja a [Microsoft hitelesítési függvénytárat (MSAL)](/azure/active-directory/develop/msal-overview), és használja a `AccessToken` meglévő [Azure alkalmazásregisztrációt](#create-a-new-app-registration-in-the-azure-portal).
 
-1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt, amelynek `HttpClient` defaultRequestHeaders "Engedélyezés"**értéke Bearer "hozzáférési token"** és **Ocp-Apim-Subscription-Key** értékre van állítva **az előfizetési kulcsra** állítva a [**Customer Insights környezetből**.](#get-started-trying-the-customer-insights-apis)   
+1. A jogkivonat sikeres hitelesítése és megszerzése után hozzon létre egy újat, vagy használjon egy meglévőt`HttpClient`, ha a **DefaultRequestHeaders "Authorization"** beállítása **Bearer "hozzáférési token"** és **Ocp-Apim-Subscription-Key** az előfizetési kulcsra [**van állítva a** Customer Insights-környezetből](#get-started-trying-the-customer-insights-apis).   
  
    Szükség esetén állítsa vissza az **Engedélyezés** fejlécet. Ha például a token lejárt.
 
@@ -149,7 +149,7 @@ Ismerje meg a C# ügyféloldali függvénytárak használatának első lépései
 
 1. Indítson hívást a klienssel a „bővítmény módszerekhez”, például `GetAllInstancesAsync`. Ha az alapul szolgáló `Microsoft.Rest.HttpOperationResponse` elem elérését részesíti előnyben, használja a "http-üzenetek módszereit", például `GetAllInstancesWithHttpMessagesAsync`.
 
-1. A válasz valószínűleg `object` típusú lesz, mert a módszer többféle típust képes visszaadni (például `IList<InstanceInfo>` és `ApiErrorResult`). A visszatérés típusának ellenőrzéséhez az adott művelet API-részletek lapján [megadott](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) választípusok objektumait kell használnia.    
+1. A válasz valószínűleg `object` típusú lesz, mert a módszer többféle típust képes visszaadni (például `IList<InstanceInfo>` és `ApiErrorResult`). A visszatérési típus ellenőrzéséhez használja az adott művelet API-részletek oldalán [megadott](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) választípusokban található objektumokat.    
    
    Ha a kérésre vonatkozóan további információra van szükség, akkor a **http-üzenetek módszereit** használhatja a nyers válasz objektum eléréséhez.
 

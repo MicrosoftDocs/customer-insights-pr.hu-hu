@@ -1,5 +1,5 @@
 ---
-title: Azure Machine Learning-kísérletek
+title: Használjon Azure Machine Learning alapú modelleket
 description: Használjon Azure Machine Learning alapú modelleket a Dynamics 365 Customer Insights alkalmazásban.
 ms.date: 12/02/2021
 ms.subservice: audience-insights
@@ -8,12 +8,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: cefd037a021b669e827f0593d63b938d452963f7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a1efad2887a02a92ee2960b07b066edc331f3665
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642608"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082281"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Használjon Azure Machine Learning alapú modelleket
 
@@ -34,7 +34,7 @@ A Dynamics 365 Customer Insights egyesített adatok a forrása a gépi tanulás 
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Az Azure Machine Learning tervező használata
 
-Az Azure gépi tanulás designer vizuális vásznat biztosít, ahol az adatkészleteket és modulokat húzhatja és helyezheti el. A tervező által létrehozott kötegelt csővezetékek a Customer Insights szolgáltatásba integrálhatók, ha ennek megfelelően vannak konfigurálva. 
+Azure gépi tanulás tervező vizuális vásznat biztosít, ahol áthúzhatja az adatkészleteket és modulokat. A tervező által létrehozott kötegelt csővezetékek a Customer Insights szolgáltatásba integrálhatók, ha ennek megfelelően vannak konfigurálva. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Az Azure Machine Learning SDK használata
 

@@ -1,5 +1,5 @@
 ---
-title: Adatforrás dúsítás
+title: Adatforrások gazdagítása (előzetes verzió)
 description: Bővítse az adatforrásokat, mielőtt végigmegy az adategyesítési folyamaton.
 ms.date: 05/20/2022
 ms.subservice: audience-insights
@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: b34b83d7a73dbdf21984f626174524188f0f1dc1
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011476"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082113"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Adatforrások gazdagítása (előzetes verzió)
 
@@ -31,7 +31,7 @@ A bővítések létrehozásához és szerkesztéséhez közreműködő vagy rend
 
    :::image type="content" source="media/data_sources_enrich.png" alt-text="Adatforrások lapja kiemelt Enrich funkcióval":::
 
-   A **Felderítés** lapon megjelenik a [támogatott adatforrás gazdagítási lehetőségek](#supported-data-source-enrichments).
+   A **Felfedezés** lapon megjelenik a [támogatott adatforrás gazdagítási lehetőségek](#supported-data-source-enrichments).
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Adatforrások gazdagítási oldala.":::
 

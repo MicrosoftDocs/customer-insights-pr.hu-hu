@@ -1,5 +1,5 @@
 ---
-title: Power Apps-csatlakozó
+title: Power Apps összekötő (előzetes verzió)
 description: A Power Apps csatlakoztatása a Power Automate szolgáltatáshoz.
 ms.date: 10/01/2021
 ms.reviewer: mhart
@@ -8,16 +8,16 @@ ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: e99d7d4f231eb2ade67f27c9e52c61af3a21b99d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 0b71f723d1e491d422d24b1be6616d2f33c95d40
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642938"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055263"
 ---
-# <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps összekötő (előzetes verzió)
+# <a name="power-apps-connector-preview"></a>Power Apps összekötő (előzetes verzió)
 
-Az egyesített ügyfélprofilokat beviheti a személyre szabott alkalmazásokba a Power Apps segítségével.
+Az egyesített ügyfélprofilokat beviheti a személyre szabott alkalmazásokba a Microsoft Power Apps segítségével.
 
 ## <a name="connect-power-apps-and-dynamics-365-customer-insights"></a>A Power Apps és a Dynamics 365 Customer Insights összekapcsolása
 
@@ -31,15 +31,15 @@ A Customer Insights adatkapcsolatként való hozzáadása után kiválaszthatja 
 
 - **Ügyfél**: az [egyesített ügyfélprofil](customer-profiles.md) adatainak használatához.
 - **UnifiedActivity**: a [tevékenység ütemezésének](activities.md) megjelenítése az alkalmazásban.
-- **ContactProfile**: az ügyfél kapcsolattartóinak megjelenítéséhez. Ez az entitás csak az üzleti fiókok Ügyfélelemzési környezetében érhető el.
+- **ContactProfile**: az ügyfél kapcsolattartóinak megjelenítéséhez. Ez az entitás csak az üzleti fiókok Customer Insights-környezetében érhető el.
 
 ## <a name="limitations"></a>Korlátozások
 
 ### <a name="retrievable-entities"></a>Lekérhető entitások
 
-Az **Ügyfél**, **UnifiedActivity**, **Szegmensek** és a **ContactProfile** entitások csak a Power Apps sszekötőn keresztül olvashatók be. A ContactProfile csak az üzleti fiókok Customer Insights-példányában érhető el. Más entitások láthatók, mert az alapul szolgáló összekötő támogatja azokat eseményindítókkal a Power Automate-szolgáltatásban.
+Az **Ügyfél**, **UnifiedActivity**, **Szegmensek** és a **ContactProfile** entitások csak a Power Apps sszekötőn keresztül olvashatók be. A ContactProfile csak a Customer Insights-példányban érhető el üzleti fiókokhoz. Más entitások láthatók, mert az alapul szolgáló összekötő támogatja azokat eseményindítókkal a Power Automate-szolgáltatásban.
 
-60 másodpercenként legfeljebb 100 hívást hajthat végre. Az API-végpont többször is meghívhatja a $skip paraméterrel. [További információ a $skip paraméterről](/connectors/customerinsights/#get-items-from-an-entity).
+60 másodpercenként legfeljebb 100 hívást hajthat végre. Az API-t végpont többször is meghívhatja a $skip paraméter használatával. [További információ a $skip paraméterről](/connectors/customerinsights/#get-items-from-an-entity).
 
 ### <a name="delegation"></a>Meghatalmazás
 
@@ -47,7 +47,7 @@ A delegálás az **Ügyfél** entitáshoz és a **UnifiedActivity** entitáshoz 
 
 - Az **Ügyfél** entitásának delegálása: Az entitás delegálásának használatához a mezőket indexelni kell a [keresési & szűrő indexében](search-filter-index.md).  
 - A **UnifiedActivity** delegálása: A delegálás ehhez az entitáshoz csak az **ActivityId** és a **CusomerId** mező esetében működik.  
-- Delegálás a **ContactProfile** fájlhoz: Az entitásra vonatkozó delegálás csak a **ContactId** és a **CustomerId** mezőknél működik. A ContactProfile csak az üzleti fiókok Ügyfélelemzési környezeteiben érhető el.
+- Delegálás a **ContactProfile** fájlhoz: Az entitásra vonatkozó delegálás csak a **ContactId** és a **CustomerId** mezőknél működik. A ContactProfile csak az üzleti fiókok Customer Insights-környezetében érhető el.
 
 A delegálásról a delegálásra vonatkozó további információkért menjen a [Power Apps delegálható funkciókhoz és műveletekhez](/powerapps/maker/canvas-apps/delegation-overview). 
 

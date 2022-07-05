@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása az AdRollba
+title: Szegmensek exportálása az AdRollba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az AdRollba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec7d2d4d137f2f0e3e1ff2ec0d09bff8ac4f28ea
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 13c7dd3b8556ad807fba6c537525b463480e860b
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642561"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082827"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Szegmensek exportálása az AdRollba (előzetes verzió)
 
@@ -21,9 +21,9 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és haszná
 
 ## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
 
--   Rendelkezik [AdRoll-fiókkal](https://www.adroll.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
+- Rendelkezik [AdRoll-fiókkal](https://www.adroll.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
+- [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
+- Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 

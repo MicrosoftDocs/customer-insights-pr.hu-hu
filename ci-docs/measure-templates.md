@@ -1,6 +1,6 @@
 ---
-title: Mérték létrehozása sablonokból
-description: Mérték definiálása sablonokkal a gyakori használati esetekhez.
+title: Mértékek létrehozása sablonokból
+description: Mértékeket definiálhat sablonok használatával a gyakori használati esetekhez.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: eeabd889f7b694f8d809894169a3cdc068acc340
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642538"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051686"
 ---
-# <a name="use-a-template-to-build-a-measure"></a>Sablon használata mértékek építéséhez
+# <a name="create-measures-from-templates"></a>Mértékek létrehozása sablonokból
 
-Létrehozásukhoz általánosan használt [mértékeket](measures.md) tartalmazó előre definiált sablonokat használhat. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
+A létrehozásukhoz használhatja az általánosan használt [mértékek](measures.md) előre definiált sablonjait. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
 
-Egyéni mértékek létrehozásához olvassa el [A Mértékszerkesztő használata mértékszerkesztő használata mértékeket a semmiből](measure-builder.md).
+Egyéni mértékek létrehozásához lásd: [Mértékkészítő használata mértékek létrehozásához a semmiből](measure-builder.md).
 
 # <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
@@ -39,9 +39,9 @@ Elérhető mértéksablonok:
 - Hűség tagságának időtartama
 - Az utolsó vásárlás óta eltelt idő
 
-## <a name="build-a-new-measure-using-a-template"></a>Új mérték létrehozása sablonnal
+## <a name="build-a-new-measure-using-a-template"></a>Új mérték létrehozása sablon használatával
 
-1. Ugrás az **intézkedésekre**.
+1. Lépjen a Measures (Intézkedések) elemre **·**.
 
 1. Válassza az **Új**, és a **Sablon kiválasztása** lehetőséget.
 
@@ -51,7 +51,7 @@ Elérhető mértéksablonok:
 
 1. Tekintse át a kötelező adatokat, és válassza az **Első lépések** lehetőséget, ha minden adat a megfelelő helyen van.
 
-1. Válassza **a Részletek** szerkesztése lehetőséget a Mérték neve mellett. Adja meg a mérték nevét. A mértékhez is hozzáadhat [címkéket](work-with-tags-columns.md#manage-tags).
+1. Válassza a Részletek **szerkesztése lehetőséget** a Mérték neve mellett. Adja meg a mérték nevét. Ha szükséges, adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags) a mértékhez.
 
    :::image type="content" source="media/measures_edit_details.png" alt-text="Részletek szerkesztése párbeszédpanel.":::
 

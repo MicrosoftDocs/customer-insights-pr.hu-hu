@@ -1,5 +1,5 @@
 ---
-title: Független gyártótól származó bővítéssel történő Experian bővítés
+title: Ügyfélprofilok bővítése demográfiai adatokkal az Experian -ból (előzetes verzió)
 description: A független gyártótól származó Experian bővítésre vonatkozó általános információk.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 735da18e584b0d9db76b557f4d16dbdf1757f33c
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: a30e98b06ed07590ab95cae1d8db8023e49ff7f9
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954090"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053024"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfélprofilok bővítése demográfiai adatokkal az Experian -ból (előzetes verzió)
 
@@ -69,7 +69,7 @@ Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az
 
 1. Határozza meg, hogy az egyesített profilokból mely típusú mezőket használja a demográfiai adatok Experian egyeztetéséhez. Legalább egy mezőben meg kell adni a **Név és cím**, a **Telefon** vagy az **E-mail-cím** adatokat. A nagyobb egyezési pontosság érdekében adjon hozzá más mezőket. Válassza a **Következő** lehetőséget.
 
-1. A mezők hozzárendelése a demográfiai adatokhoz a következőből: Experian.
+1. A mezők hozzárendelése a demográfiai adatokhoz a következőből:Experian.
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 
@@ -79,7 +79,7 @@ Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

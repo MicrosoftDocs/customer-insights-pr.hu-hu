@@ -12,18 +12,18 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 8022563f8994400b88389c20d7d661d9ea82bab1
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 30b37645cad4e795ef20579e20e3f2bbdb2afbf6
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833725"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054871"
 ---
-# <a name="user-permissions"></a>Felhasználói engedélyek
+# <a name="manage-user-permissions"></a>Felhasználói engedélyek kezelése
 
-Az **Engedélyek** lapon szerepköröket és engedélyeket állíthat be a Customer Insights használatához.
+Az **Engedélyek** lapon állíthatja be a szerepköröket és az engedélyeket a Customer Insights használatához.
 
-A lap megtekintéséhez rendszergazdai jogosultsággal kell rendelkeznie. Az engedélyek lap eléréséhez nyissa meg a **Felügyeleti** > **biztonsági** > **felhasználók lehetőséget**.
+A lap megtekintéséhez rendszergazdai jogosultsággal kell rendelkeznie. Az engedélyek lap eléréséhez lépjen a **Rendszergazdai** > **biztonsági** > **felhasználók elemre**.
 
 Háromféle típusú szerepkör van:
 
@@ -41,7 +41,7 @@ Háromféle típusú szerepkör van:
 
 - A Néző számára az összes engedély rendelkezésre áll.
 - Adatok betöltése és átalakítása az **Adatforrások** oldal használatával történhet.
-- Végezze el ***Az adatok egyesítését**, amely az egységes ügyfélprofil-entitást eredményezi.
+- Teljes ***Adategyesítés**, amely egységes ügyfélprofil-entitást eredményez.
 - Adja meg a **Kapcsolatokat** és **Tevékenységeket**.
 - Hozzon létre szegmenseket a **Szegmensek** oldalán.
 - Hozzon létre mérőszámokat a **Mérőszámok** oldalon.
@@ -60,16 +60,16 @@ Háromféle típusú szerepkör van:
 - Telepítheti és használhatja az **Ügyfélkártya bővítményt**.
 - Adja hozzá és használja a **Power Apps összekötőt**.
 - [Customer Insights API-k](apis.md) használatának engedélyezése.
-- [Környezet tulajdonjogának](manage-environments.md#change-the-owner-of-an-environment) hozzárendelése másik rendszergazdához.
+- [Rendelje hozzá a környezet tulajdonjogát](manage-environments.md#change-the-owner-of-an-environment) egy másik rendszergazdához.
 
 ## <a name="admin-owner"></a>Rendszergazda (tulajdonos)
 
-- A rendszergazda számára elérhető összes engedély.
-- [Állítsa alaphelyzetbe és törölje](manage-environments.md#reset-an-existing-environment-preview) a környezetet.
+- Az adminisztrátor számára elérhető összes engedély.
+- [Állítsa vissza és törölje](manage-environments.md#reset-an-existing-environment-preview) a környezetet.
 
 ## <a name="assign-roles-and-permissions"></a>Szerepkörök és engedélyek hozzárendelése
 
-1. Nyissa meg a **Felügyeleti** > **biztonsági** > **Users*** webhelyet.
+1. Lépjen a **Rendszergazdai** > **biztonság** > **Felhasználók*** oldalra.
 
 1. Válassza a **Felhasználók hozzáadása** lehetőséget az **Engedélyek hozzáadása/szerkesztése** ablaktábla megnyitásához.
 
@@ -79,7 +79,7 @@ Háromféle típusú szerepkör van:
 
 ## <a name="view-current-permissions"></a>Aktuális engedélyek megtekintése
 
-Nyissa meg a **Felügyeleti** > **biztonsági** > **felhasználók lehetőséget**, és nézze meg, hogy jelenleg mely szerepkör-hozzárendelések aktívak.
+**A Rendszergazdai** > **biztonsági** > **felhasználók lapon** megtekintheti, hogy jelenleg milyen szerepkör-hozzárendelések vannak aktívak.
 
 - A **típus** oszlop egyetlen felhasználót, csoportot vagy alkalmazást ad meg. A rendszer támogatja az egyéni felhasználókat és csoportokat.
 - A szerepköröket a **szerepkör** oszlopban kell megadni.

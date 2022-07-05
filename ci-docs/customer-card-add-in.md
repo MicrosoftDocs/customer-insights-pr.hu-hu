@@ -1,6 +1,6 @@
 ---
-title: Ügyfélkártya-bővítmény Dynamics 365-alkalmazásokhoz (videót tartalmaz)
-description: Ezzel a bővítménysel a Customer Insights ügyfélprofil-adatainak megjelenítése a Dynamics 365-alkalmazásokban.
+title: Ügyfélkártya-bővítmény a Dynamics 365 alkalmazásokhoz (előzetes verzió) (videót tartalmaz)
+description: Ügyfélprofil-adatok megjelenítése a Customer Insights rendszerből a Dynamics 365 alkalmazásokban ezzel a bővítménysel.
 ms.date: 02/02/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -13,14 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755639"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082134"
 ---
-# <a name="customer-card-add-in-preview"></a>Ügyfélkártya bővítmény (előzetes verzió)
+# <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Ügyfélkártya-bővítmény a Dynamics 365 alkalmazásokhoz (előzetes verzió)
 
 360 fokos képet kaphat az ügyfeleiről közvetlenül a Dynamics 365 alkalmazásokban. A támogatott Dynamics 365 alkalmazásban telepített Ügyfélkártya-bővítmény segítségével megjeleníthet ügyfélprofil-mezőket, információkat és tevékenységi idővonalat. A bővítmény úgy olvassa be az adatokat a Customer Insightsból, hogy a művelet nincs hatással a csatlakoztatott Dynamics 365-alkalmazásban található adatokra.
 
@@ -29,14 +29,14 @@ ms.locfileid: "8755639"
 ## <a name="prerequisites"></a>Előfeltételek
 
 - A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ahhoz, hogy Dynamics 365-ös adatai a Customer Insights ügyfélprofiljaihoz kapcsolódjanak, javasoljuk, hogy [az összekötő használatával töltse be a Microsoft Dataverse Dynamics 365 alkalmazásból](connect-power-query.md). Ha más módszert használ a Dynamics 365-ügyfelek (vagy partnerek) betöltésére, meg kell győződnie arról, hogy az adategyesítési folyamat térképlépésében az `contactid` adott adatforrás elsődleges kulcsaként `accountid` a (vagy [) mező van beállítva az adott adatforrás](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
-- Az ügyfélkártya-bővítmény összes Dynamics 365-felhasználóját hozzá kell adni [felhasználóként](permissions.md) a Customer Insights szolgáltatáshoz az adatok megtekintéséhez.
-- [Az adatok kereséséhez a Customer Insightsban konfigurált keresési és szűrési képességekre](search-filter-index.md) van szükség.
-- Minden bővítményvezérlő a Customer Insights konkrét adataira támaszkodik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja tájékoztatja, ha a kiválasztott környezettípus miatt nem érhető el vezérlőelem. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
+- Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a Customer Insights ügyfélprofiljaira, javasoljuk, hogy azokat [a Dynamics 365 alkalmazásból töltse be az Microsoft Dataverse összekötő használatával](connect-power-query.md). Ha más módszert használ a Dynamics 365 kapcsolattartók (vagy partnerek) betöltésére, akkor meg kell győződnie arról, hogy a `contactid` (vagy`accountid`) mező az adott adatforrás elsődleges kulcsaként [van beállítva az adategyesítési folyamat térképi lépésében](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját felhasználóként [kell](permissions.md) hozzáadni a Customer Insights szolgáltatáshoz.
+- [A Customer Insights szolgáltatásban konfigurált keresési és szűrési képességek](search-filter-index.md) szükségesek az adatok keresésének működéséhez.
+- Minden bővítményvezérlő a Customer Insights adott adataira támaszkodik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja tájékoztatja, ha egy vezérlő nem érhető el a kiválasztott környezettípus miatt. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
   - **Mértékegység-vezérlő**: [Ügyfélattribútumok](measures.md) típusú, konfigurált intézkedéseket igényel.
-  - **Intelligencia-vezérlés**: Előrejelzések vagy egyéni modellek [segítségével](predictions-overview.md) generált adatokra van szükség.
+  - **Intelligencia-vezérlés**: Előrejelzések vagy egyéni modellek [használatával](predictions-overview.md) létrehozott adatokra van szükség.
   - **Ügyféladatok vezérlő**: A profilból minden mező elérhető az egységes ügyfélprofilban.
-  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártyabővítmény támogatja ezeket a gazdagodásokat: [a Microsoft által biztosított márkákat](enrichment-microsoft.md), [a Microsoft által biztosított érdeklődési köröket](enrichment-microsoft.md) és [a Microsoft által biztosított Office-megbízási adatokat](enrichment-office.md).
+  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártyabővítmény a következő bővítéseket támogatja: [a Microsoft által biztosított márkák](enrichment-microsoft.md), [a Microsoft által biztosított érdeklődési körök](enrichment-microsoft.md) és [a Microsoft által biztosított Office engagement adatok](enrichment-office.md).
   - **Kapcsolattartók vezérlő**: A kapcsolattartók típusú szemantikus entitás definícióját igényli.
   - **Idősor-vezérlő**: [Konfigurált tevékenységeket](activities.md) igényel.
 
@@ -122,24 +122,24 @@ Az Ügyfélkártya bővítmény nem frissül automatikusan. A legújabb verziór
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
 
-### <a name="controls-from-customer-card-add-in-dont-find-data"></a>A Vevőkártya-bővítmény vezérlői nem találnak adatokat
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Az ügyfélkártya-bővítmény vezérlői nem találnak adatokat
 
 **Probléma:**
 
-Még a helyesen konfigurált azonosítómezők esetén sem találnak adatokat a vezérlők egyetlen ügyfél számára sem.  
+A vezérlők még a megfelelően konfigurált azonosítómezők esetén sem találják az ügyfelek adatait.  
 
 **Megoldás:**
 
-1. Győződjön meg arról, hogy a kártyabővítményt az utasításoknak megfelelően konfigurálta: [A Vevőkártya bővítmény konfigurálása](#configure-the-customer-card-add-in)
+1. Győződjön meg arról, hogy a Kártyabővítményt a következő utasításoknak megfelelően konfigurálta: [Az ügyfélkártya-bővítmény konfigurálása](#configure-the-customer-card-add-in)
 
-1. Tekintse át az adatbetöltés konfigurációját. Szerkessze a partnerazonosító GUID azonosítóját tartalmazó Dynamics 365 rendszer adatforrás. Ha a kapcsolattartó-azonosító GUID-azonosítója nagybetűkkel jelenik meg a Power Query szerkesztőben, próbálkozzon az alábbi lépésekkel:
-    1. A adatforrás szerkesztésével nyissa meg a adatforrás a Szerkesztőben Power Query.
-    1. Jelölje ki az ügyfélazonosító oszlopot.
-    1. A rendelkezésre álló műveletek megtekintéséhez válassza az Átalakítás **lehetőséget** a fejlécsávon.
-    1. Válassza a **kisbetűs lehetőséget**. Ellenőrizze, hogy a táblázatban szereplő GUID-ok kisbetűsek-e.
+1. Tekintse át az adatbetöltési konfigurációt. Szerkessze a adatforrás a Kapcsolatazonosító GUID azonosítót tartalmazó Dynamics 365 rendszerhez. Ha a névjegyazonosító GUID azonosítója nagybetűkkel jelenik meg a Power Query szerkesztőben, próbálkozzon az alábbi lépésekkel:
+    1. Szerkessze a adatforrás a adatforrás megnyitásához a Szerkesztőben Power Query.
+    1. Válassza ki a kapcsolattartó azonosítója oszlopot.
+    1. Válassza az Átalakítás **lehetőséget** a fejlécsávon az elérhető műveletek megtekintéséhez.
+    1. Válassza a kisbetűk **lehetőséget**. Ellenőrizze, hogy a táblázatban szereplő GUID azonosítók most kisbetűek-e.
     1. Az adatforrások mentése.
-    1. Futtassa az adatbetöltési, egyesítési és lefelé irányuló folyamatokat a GUID módosításainak propagálásához.
+    1. Adatbetöltési, -egyesítési és -letöltési folyamatok futtatásával terjesztheti a GUID azonosító módosításait.
 
-Miután a rendszer befejezte a teljes frissítést, az Ügyfélkártya bővítmény vezérlőinek meg kell mutatniuk a várt adatokat.
+Miután a rendszer befejezte a teljes frissítést, az Ügyfélkártya bővítmény vezérlőinek meg kell jeleníteniük a várt adatokat.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

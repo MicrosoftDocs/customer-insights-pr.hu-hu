@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása a LinkedIn Ads szolgáltatásba
+title: Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a LinkedIn Adsbe.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bf1d12ffbd7a4cfd7d268fea8a1f90cc37589e00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e6ad3901f7b8dc1ae8edc54c0b09a99b01be34cd
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642928"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9050859"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 
@@ -22,7 +22,7 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   Van egy [LinkedIn Campaign Manager-fiókja](https://business.linkedin.com/marketing-solutions/ads) és ahhoz tartozó rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensek ügyfélprofiljai egy e-mail-címmel rendelkező mezőt tartalmaznak.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

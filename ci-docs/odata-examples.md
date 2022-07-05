@@ -1,6 +1,6 @@
 ---
-title: OData példák az Dynamics 365 Customer Insights API-khoz
-description: Gyakran használt példák az Open Data Protocol (OData) protokollra, hogy lekérdezzék a Customer Insights API-kat az adatok áttekintéséhez.
+title: OData-lekérdezési példák Customer Insights API-khoz
+description: Gyakran használt példák az Open Data Protocol (OData) számára a Customer Insights API-k lekérdezésére az adatok áttekintéséhez.
 ms.date: 05/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -8,53 +8,53 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: cdadd72bfe4272d8d83d923baaa6fd40d008473b
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808464"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9083163"
 ---
-# <a name="odata-query-examples"></a>Példák OData lekérdezésre
+# <a name="odata-query-examples-for-customer-insights-apis"></a>OData-lekérdezési példák Customer Insights API-khoz
 
-Az Open Data Protocol (OData) egy adatelérési protokoll, amely olyan alapvető protokollokra épül, mint a HTTP. Olyan általánosan elfogadott módszereket használ, mint a REST az interneten. Az OData-szolgáltatások felhasználására különféle könyvtárak és eszközök használhatók.
+Az Open Data Protocol (OData) egy olyan adatelérési protokoll, amely olyan alapvető protokollokra épül, mint a HTTP. Általánosan elfogadott módszertanokat használ, mint például a REST for the web. Az OData-szolgáltatások felhasználására különféle könyvtárak és eszközök használhatók.
 
-Ez a cikk felsorol néhány gyakran kért példalekérdezést, amelyek segítenek a saját implementációk létrehozásában az [Ügyfélelemzés API-k alapján](apis.md).
+Ez a cikk néhány gyakran kért példalekérdezést sorol fel, amelyek segítenek a customer insights API-kon alapuló [saját implementációk létrehozásában](apis.md).
 
-Módosítania kell a lekérdezésmintákat, hogy azok a célkörnyezetekben működjenek: 
+Módosítania kell a lekérdezésmintákat, hogy működjenek a célkörnyezetekben: 
 
-- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` hol {instanceId} van a lekérdezni kívánt Customer Insights-környezet GUID azonosítója. A [ListAllInstances művelet](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetővé teszi, hogy megtalálja azt, amelyhez {InstanceId} hozzáféréssel rendelkezik.
-- {CID}: Egységes ügyfélbejegyzés GUID azonosítója. Példa: `ce759201f786d590bf2134bff576c369`.
-- {AlternateKey}: Egy ügyfélbejegyzés elsődleges kulcsának azonosítója egy adatforrás. Példa: `CNTID_1002`
-- {DSname}: Karakterlánc egy adatforrás entitásnevével, amely a Customer Insights szolgáltatásba kerül. Példa: `Website_contacts`.
-- {SegmentName}: Karakterlánc egy szegmens kimeneti entitásnevével a Customer Insights alkalmazásban. Példa: `Male_under_40`.
+- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` hol {instanceId} van a lekérdezni kívánt Customer Insights-környezet GUID azonosítója. A [ListAllInstances művelet](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetővé teszi, hogy megtalálja azt {InstanceId}, amelyhez hozzáféréssel rendelkezik.
+- {CID}: Egységes ügyfélrekord GUID azonosítója. Példa: `ce759201f786d590bf2134bff576c369`.
+- {AlternateKey}: Egy ügyfélrekord elsődleges kulcsának azonosítója egy adatforrás. Példa: `CNTID_1002`
+- {DSname}: Sztring egy olyan adatforrás entitásnevével, amely a Customer Insights szolgáltatásba kerül. Példa: `Website_contacts`.
+- {SegmentName}: Sztring egy szegmens kimeneti entitásnevével a Customer Insights szolgáltatásban. Példa: `Male_under_40`.
 
 ## <a name="customer"></a>Ügyfelünk
 
-Az alábbi táblázat a *Vevő* entitás mintalekérdezéseit tartalmazza.
+Az alábbi táblázat mintalekérdezéseket tartalmaz a *Vevő* entitáshoz.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|
-|Egyetlen vevő azonosítója     | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'`          |  |
-|Másodlagos kulcs    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  A helyettesítő kulcsok megmaradnak az egyesített vevő entitásban       |
+|Egyetlen ügyfél-azonosító     | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'`          |  |
+|Másodlagos kulcs    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  Az alternatív kulcsok megmaradnak az egyesített vevői entitásban       |
 |Select   | `{serviceRoot}/Customer?$select=CustomerId,FullName&$filter=customerid eq '1'`        |         |
 |Ennyi idő múlva:    | `{serviceRoot}/Customer?$filter=CustomerId in ('{CID1}',’{CID2}’)`        |         |
-|Másodlagos kulcs + hüvelyk   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
-|Keresés  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   A keresési karakterlánc top 10 találatát adja vissza      |
-|Szegmenstagság  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | A szegmentálási entitásból származó sorok előre beállított számát adja eredményül.      |
+|Másodlagos kulcs + Be   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
+|Keresés  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   Keresési karakterlánc esetén a 10 legjobb eredményt adja eredményül.      |
+|Szegmens tagság  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | A szegmentálási entitás sorainak előre beállított számát adja eredményül.      |
 
-## <a name="unified-activity"></a>Egységes tevékenység
+## <a name="unified-activity"></a>Egyesített tevékenység
 
-Az alábbi táblázat a *UnifiedActivity* entitás mintalekérdezéseit tartalmazza.
+Az alábbi táblázat a UnifiedActivity *entitás mintalekérdezéseit* tartalmazza.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|
-|A CID tevékenysége     | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq '{CID}'`          | Egy adott ügyfélprofil tevékenységeinek felsorolása |
-|Tevékenység időkeret    | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq '{CID}' and ActivityTime gt 2017-01-01T00:00:00.000Z and ActivityTime lt 2020-01-01T00:00:00.000Z`     |  Ügyfélprofil tevékenységei időkeret       |
+|A CID tevékenysége     | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq '{CID}'`          | Egy adott ügyfélprofil tevékenységeit listázza |
+|Tevékenységi időkeret    | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq '{CID}' and ActivityTime gt 2017-01-01T00:00:00.000Z and ActivityTime lt 2020-01-01T00:00:00.000Z`     |  Ügyfélprofil tevékenységei egy időkeret       |
 |Tevékenység típusa    |   `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq '{CID}' and ActivityType eq '{ActivityName}'`        |         |
-|A megjelenítendő név tevékenysége     | `{serviceRoot}/UnifiedActivity$filter=CustomerId eq ‘{CID}’ and ActivityTypeDisplay eq ‘{ActivityDisplayName}’`        | |
-|Tevékenységrendezés    | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq ‘{CID}’ & $orderby=ActivityTime asc`     |  Növekvő vagy csökkenő tevékenységek rendezése       |
-|Szegmenstagságból kibővült tevékenység  |   `{serviceRoot}/Customer?$expand=UnifiedActivity,Customer_Measure&$filter=CustomerId eq '{CID}'`     |         |
+|Megjelenítendő név tevékenysége     | `{serviceRoot}/UnifiedActivity$filter=CustomerId eq ‘{CID}’ and ActivityTypeDisplay eq ‘{ActivityDisplayName}’`        | |
+|Tevékenységek rendezése    | `{serviceRoot}/UnifiedActivity?$filter=CustomerId eq ‘{CID}’ & $orderby=ActivityTime asc`     |  Növekvő vagy csökkenő tevékenységek rendezése       |
+|A szegmenstagságból bővült tevékenység  |   `{serviceRoot}/Customer?$expand=UnifiedActivity,Customer_Measure&$filter=CustomerId eq '{CID}'`     |         |
 
 ## <a name="other-examples"></a>Más példák
 
@@ -62,17 +62,17 @@ Az alábbi táblázat más entitások mintalekérdezéseit tartalmazza.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|
-|A CID mérései    | `{serviceRoot}/Customer_Measure?$filter=CustomerId eq '{CID}'`          |  |
+|A CID intézkedései    | `{serviceRoot}/Customer_Measure?$filter=CustomerId eq '{CID}'`          |  |
 |A CID dúsított márkái    | `{serviceRoot}/BrandShareOfVoiceFromMicrosoft?$filter=CustomerId eq '{CID}'`  |       |
-|A CID gazdagodott érdekei    |   `{serviceRoot}/InterestShareOfVoiceFromMicrosoft?$filter=CustomerId eq '{CID}'`       |         |
-|Záradékon belül + kibontás     | `{serviceRoot}/Customer?$expand=UnifiedActivity,Customer_Measure&$filter=CustomerId in ('{CID}', '{CID}')`         | |
+|A CID gazdagabb érdekei    |   `{serviceRoot}/InterestShareOfVoiceFromMicrosoft?$filter=CustomerId eq '{CID}'`       |         |
+|In-Clause + Kibontás     | `{serviceRoot}/Customer?$expand=UnifiedActivity,Customer_Measure&$filter=CustomerId in ('{CID}', '{CID}')`         | |
 
 ## <a name="not-supported-odata-queries"></a>Nem támogatott OData-lekérdezések
 
-A Customer Insights nem támogatja a következő lekérdezéseket:
+A következő lekérdezéseket a Customer Insights nem támogatja:
 
-- `$filter` a beolvasott forrás entitásokon. A $filter lekérdezéseket csak a Customer Insights által létrehozott rendszertentitásokon futtathatja.
-- `$expand` lekérdezésből`$search`. Példa: `Customer?$expand=UnifiedActivity$top=10&$skip=0&$search="corey"`
-- `$expand` ha `$select` csak az attribútumok egy részhalmaza van kijelölve. Példa: `Customer?$select=CustomerId,FullName&$expand=UnifiedActivity&$filter=CustomerId eq '{CID}'`
-- `$expand` gazdagított márka- vagy érdeklődési affinitás egy adott ügyfél számára. Példa: `Customer?$expand=BrandShareOfVoiceFromMicrosoft&$filter=CustomerId eq '518291faaa12f6d853c417835d40eb10'`
-- Modell kimeneti entitásainak lekérdezése előrejelzés másodlagos kulcs keresztül. Példa: `OOBModelOutputEntity?$filter=HotelCustomerID eq '{AK}'`
+- `$filter` a betöltött forrás entitásokon. Csak $filter lekérdezéseket futtathat a Customer Insights által létrehozott rendszerentitásokon.
+- `$expand` egy `$search` lekérdezésből. Példa: `Customer?$expand=UnifiedActivity$top=10&$skip=0&$search="corey"`
+- `$expand` akkor, `$select` ha az attribútumoknak csak egy részhalmaza van kiválasztva. Példa: `Customer?$select=CustomerId,FullName&$expand=UnifiedActivity&$filter=CustomerId eq '{CID}'`
+- `$expand` gazdagított márka- vagy érdeklődési affinitások egy adott ügyfél számára. Példa: `Customer?$expand=BrandShareOfVoiceFromMicrosoft&$filter=CustomerId eq '518291faaa12f6d853c417835d40eb10'`
+- A modell kimeneti entitásainak lekérdezése előrejelzés másodlagos kulcs keresztül. Példa: `OOBModelOutputEntity?$filter=HotelCustomerID eq '{AK}'`

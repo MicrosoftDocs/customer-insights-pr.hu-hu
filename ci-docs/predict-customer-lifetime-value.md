@@ -13,16 +13,16 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3e1b1ce00eeda1cead9ba05beae65b6903d0b9cf
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642878"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055217"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Ügyfélélettartam érték (CLV) előrejelzése
 
-Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a funkció segíthet különböző célok elérésében: 
+Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a funkció segíthet különböző célok elérésében:
 - Értékes ügyfelek azonosítása és ezen információ feldolgozása
 - Stratégiai ügyfélszegmenseket hozhat létre azok potenciális értéke alapján, hogy célzott értékesítési, marketing- és támogatási erőfeszítésekkel személyre szabott kampányokat futtathasson
 - A termékfejlesztés irányítása az ügyfelek értékét fokozó funkciókra összpontosítva
@@ -74,11 +74,11 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Ügyfélélettartam-érték előrejelzésének létrehozása
 
-1. Nyissa meg az **IntelligencePredictions** > **oldalt**.
+1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
 
 1. Válassza az **Ügyfélélettartam értéke** csempét, és válassza a **Modell használata** lehetőséget. 
 
-1. A Vevő élettartama érték **ablaktáblán válassza az** Első lépések **lehetőséget**.
+1. Az Ügyfél élettartamának értéke **panelen válassza az** Első lépések **lehetőséget**.
 
 1. **Nevezze el ezt a modellt** és a **Kimeneti entitás nevét**, hogy megkülönböztesse őket az egyéb modellektől vagy entitásoktól.
 
@@ -149,7 +149,7 @@ A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat é
 
 ### <a name="set-update-schedule"></a>Frissítési ütemezés beállítása
 
-1. Az **Adatfrissítés ütemezése** lépésben adja meg, hogy milyen gyakran tanítja újra a modellt a legújabb adatok alapján. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel az új adatok a Customer Insights alkalmazásban kerülnek felhasználásra. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
+1. Az **Adatfrissítés ütemezése** lépésben adja meg, hogy milyen gyakran tanítja újra a modellt a legújabb adatok alapján. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel a rendszer új adatokat tölt be a Customer Insights szolgáltatásba. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
 
 1. Válassza a **Következő** lehetőséget.
 

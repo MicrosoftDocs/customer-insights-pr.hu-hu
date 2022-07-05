@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása a DotDigitalbe
+title: Szegmensek exportálása a DotDigitalba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a DotDigitalba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f63a0f5f5f93e96681a88fd758381c012a404f43
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: af0cce4edb9d47247c79ae08491366349da98b1c
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642451"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082932"
 ---
 # <a name="export-segments-to-dotdigital-preview"></a>Szegmensek exportálása a DotDigitalba (előzetes verzió)
 
@@ -23,7 +23,7 @@ Az egyesített ügyfélprofilok szegmenseit exportálhatja a DotDigital címjegy
 
 -   [DotDigital fiókja](https://dotdigital.com/) van, és [API-felhasználót](https://support.dotdigital.com/hc/articles/115001718730-How-do-I-create-an-API-user) hozott létre. Kapcsolat létrehozásához az API-felhasználó hitelesítő adatait kell használnia
 -   A DotDigitalban és a megfelelő azonosítókban meglévő címjegyzékek találhatók. Az azonosító megtalálhatók az URL-címben, amikor kijelöli és megnyitja a címjegyzéket. További információért lásd: [DotDigital címjegyzékek](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

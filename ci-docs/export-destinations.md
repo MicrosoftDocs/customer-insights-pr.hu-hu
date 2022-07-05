@@ -1,5 +1,5 @@
 ---
-title: Adatok exportálása a Customer Insightsból
+title: Exportálások (előzetes verzió) áttekintése
 description: Exportálások kezelése az adatok megosztásához.
 ms.date: 11/01/2021
 ms.reviewer: mhart
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9c3b35f1514adcc697672f09cabf593f936e4a82
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d983e84e713003610eb27dc9b3f911b62b01d522
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642688"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082911"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
@@ -29,8 +29,8 @@ Az exportálási lap megtekintéséhez menjen az **Adatok** > **Exportpálások*
 
 Az exportálásnak két fő típusa van:  
 
-- **Az adatkimeneti exportálások** lehetővé teszik a Customer Insightsban elérhető bármely típusú entitás exportálását. Az exportáláshoz kiválasztott entitásokat a rendszer az összes adatmezővel, metaadatmal, sémával és leképezési részlettel exportálja. 
-- **A szegmensexport** lehetővé teszi szegmens entitások exportálását a Customer Insightsból. A szegmensek az ügyfélprofilok listáját reprezentálják. Az exportálás konfigurálásakor a célrendszertől függően válassza ki a szerepelt adatmezőket, amelyekbe az adatokat exportálja. 
+- **Az adatkivételes exportálások** lehetővé teszik a Customer Insights szolgáltatásban elérhető bármilyen típusú entitás exportálását. Az exportáláshoz kiválasztott entitásokat a rendszer az összes adatmezővel, metaadatmal, sémával és leképezési részlettel exportálja. 
+- **A szegmensexportálás** lehetővé teszi szegmensentitások exportálását a Customer Insights szolgáltatásból. A szegmensek az ügyfélprofilok listáját reprezentálják. Az exportálás konfigurálásakor a célrendszertől függően válassza ki a szerepelt adatmezőket, amelyekbe az adatokat exportálja. 
 
 ### <a name="export-segments"></a>Szegmensek exportálása
 

@@ -1,6 +1,6 @@
 ---
-title: Új intézkedések létrehozása az intézkedéskészítővel
-description: A semmiből hozhat létre intézkedéseket a vállalkozásával kapcsolatos kulcsfontosságú mutatók elemzéséhez.
+title: Új mértékek létrehozása a mértékkészítővel
+description: A semmiből hozhat létre mértékeket a vállalkozásával kapcsolatos legfontosabb mutatók elemzéséhez.
 ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,40 +11,40 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800329"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9083016"
 ---
-# <a name="use-measure-builder-to-create-measures-from-scratch"></a>Mértékszerkesztő használata mértékszerkesztővel a semmiből történő létrehozáshoz
+# <a name="create-new-measures-with-the-measure-builder"></a>Új mértékek létrehozása a mértékkészítővel
 
-Ez a cikk bemutatja, hogyan hozhat létre új [mértéket](measures.md) a semmiből. A mértékszerkesztő lehetővé teszi a számítások matematikai operátorok, összesítési függvények és szűrők használatával történő meghatározását. Az egyesített *Vevő* entitáshoz kapcsolódó entitások attribútumaival létrehozhat mértékegységet.
+Ez a cikk azt ismerteti, hogyan hozhat létre új [mértéket](measures.md) a semmiből. A mértékkészítő lehetővé teszi a számítások definiálását matematikai operátorok, összesítő függvények és szűrők használatával. Létrehozhat egy mértéket az egyesített *Ügyfél* entitáshoz kapcsolódó entitások attribútumaival.
 
-Az intézkedések létrehozása B-to-C és B-to-B környezetben ugyanúgy működik. Ha azonban B-to-B környezet [hierarchiájú](relationships.md#set-up-account-hierarchies) fiókokat használ, dönthet úgy, hogy összesíti az intézkedést a kapcsolódó alszámlák között.
+A mértékek létrehozása B-től C-ig és B-től B-ig környezetekben ugyanúgy működik. Ha azonban b-b környezete [hierarchiával](relationships.md#set-up-account-hierarchies) rendelkező fiókokat használ, dönthet úgy, hogy összesíti a mértéket a kapcsolódó alfiókok között.
 
-Gyorsan létrehozhat egy mértéket is, ha általánosan használt és előre definiált mértékkészletből választ. További információt a Mérték létrehozásához sablon használata című témakörben [talál](measure-templates.md).
+Gyorsan létrehozhat mértékeket is, ha általánosan használt és előre definiált mértékek közül választ. További információ: [Sablon használata mérték létrehozásához](measure-templates.md).
 
 # <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
-Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti szinten (üzleti mérték) hozhat létre mértékeket. A vevői attribútum és a vevői mérték két típus, amelyek lehetővé teszik a teljesítmény ügyfélenkénti nyomon követését. Például az egyes ügyfelek teljes költése. Az üzleti intézkedések lehetővé teszik a vállalkozásonkénti teljesítmény nyomon követését. Például a vállalat teljes bevétele.
+Mértékeket hozhat létre az egyes ügyfelek szintjén (vevőattribútum, vevői mérték) vagy a vállalkozás/szervezet szintjén (üzleti mérték). Az ügyfélattribútum és az ügyfélmérés két típus, amelyek lehetővé teszik az ügyfélenkénti teljesítmény nyomon követését. Például az egyes ügyfelek teljes költése. Az üzleti mérések lehetővé teszik a vállalkozásonkénti teljesítmény nyomon követését. Például a vállalat teljes bevétele.
 
-- Ügyfélattribútum: Kimenetet hoz létre új attribútumként, amely a rendszer által létrehozott entitás új oszlopaként kerül mentésre Customer_Measure nevű, rendszer *által létrehozott entitásba*. Ügyfélattribútum frissítésekor a Customer_Measure *entitás összes többi vevőattribútuma* egyszerre frissül. Ezenkívül a vevői attribútumok megjelennek a vevőprofil kartonján. A futtatás vagy mentés után az ügyfélattribútum nem módosíthatja vevői mértékké.
+- Ügyfélattribútum: A kimenetet új attribútumként hozza létre, amely új oszlopként kerül mentésre a rendszer által létrehozott, Customer_Measure *nevű* entitásban. Egy ügyfélattribútum frissítésekor a Customer_Measure *entitás összes többi vevőattribútuma* egyszerre frissül. Ezenkívül az ügyfél-attribútumok is megjelennek az ügyfélprofil-kártyán. A futtatás vagy mentés után az ügyfélattribútum nem módosíthatja azt ügyfélmérésre.
 
-- Vevői mérték: Saját entitásként hozza létre a kimenetet, és nem módosíthatja azt ügyfélattribútummá a futtatás vagy mentés után. Az ügyfél-intézkedések nem jelennek meg az ügyfélprofil-kartonon.
+- Vevői mérték: A kimenetet saját entitásként hozza létre, és a futtatás vagy mentés után nem módosíthatja azt ügyfélattribútumra. Az ügyfélmérések nem jelennek meg az ügyfélprofil-kártyán.
 
-- Üzleti intézkedés: Saját entitásként generál kimenetet, és megjelenik a Customer Insights környezet kezdőlapján.
+- Üzleti mérték: A kimenetet saját entitásként hozza létre, és megjeleníti a Customer Insights-környezet kezdőlapján.
 
-1. Ugrás az **intézkedésekre**.
+1. Lépjen a Measures (Intézkedések) elemre **·**.
 
 1. Válassza az **Új** lehetőséget, és válassza a **Saját elkészítése** lehetőséget.
 
-   :::image type="content" source="media/measure-b2c.png" alt-text="B-C mértékegység üres konfigurációs képernyője." lightbox="media/measure-b2c.png":::
+   :::image type="content" source="media/measure-b2c.png" alt-text="Üres konfigurációs képernyő egy B-től C-ig terjedő mértékhez." lightbox="media/measure-b2c.png":::
 
-1. Az üzleti szintű teljesítmény nyomon követéséhez váltson a **Mérték típus és** **az Üzleti szint között**. **A vevői szint** alapértelmezés szerint van kiválasztva. **A vevői szint** automatikusan hozzáadja a CustomerId *attribútumot a* Dimenziókhoz, míg **az Üzleti szint** automatikusan eltávolítja azt.
+1. Az üzleti szintű teljesítmény nyomon követéséhez állítsa **a Mérték típusa** **beállítást Üzleti szintre**. **Az ügyfélszint** alapértelmezés szerint ki van választva. **Az ügyfélszintű** automatikusan hozzáadja a CustomerId *attribútumot a* Dimenziókhoz, míg **az Üzleti szint** automatikusan eltávolítja azt.
 
-1. A konfigurációs területen válassza ki az összesítés funkciót a **Funkció kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők:
+1. A konfigurációs területen válassza ki az összesítési függvényt a **Select function** legördülő menüből. Az összesítési függvények többek között a következők:
    - **Sum**
    - **Átlag**
    - **Számlálás**
@@ -54,7 +54,7 @@ Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti s
    - **Első:** az adatrekord első értékét veszi fel
    - **Utolsó**: az adatrekordhoz hozzáadott utolsó értéket veszi fel
    - **ArgMax**: megkeresi a célfüggvény maximális értékét adó adatrekordot
-   - **ArgMin**: megkeresi a célfüggvény minimális értékét adó adatrekordot
+   - **ArgMin**: megkeresi a célfüggvény minimális értékét megadó adatrekordot
 
 1. Válassza az **Attribútum hozzáadása** lehetőséget a mérték létrehozásához szükséges adatok kiválasztásához.
 
@@ -72,11 +72,11 @@ Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti s
    1. Állítsa be a szűrőoperátorokat, hogy minden kijelölt attribútumhoz definiálja a szűrőt.
    1. Válassza az **Alkalmaz** lehetőséget, ha a szűrőket hozzá szeretne adni a mértékhez.
 
-1. Válassza a Dimenzió **lehetőséget**, ha további mezőket szeretne választani, amelyek oszlopként kerülnek a mértékkimeneti entitásba.
+1. Válassza a Dimenzió **lehetőséget**, ha további mezőket szeretne kiválasztani, amelyek oszlopként vannak hozzáadva a mérték kimeneti entitásához.
 
    1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem.
    > [!TIP]
-   > Ha a Mérték típusként **a** Vevőszint lehetőséget **választotta**, a *CustomerId* attribútum már hozzá lett adva. Ha eltávolítja az attribútumot, **a Mérték típus** üzleti szintre **vált**.
+   > Ha a **Customer level (Ügyfélszint**) lehetőséget választotta **Measure típusként**, a *CustomerId* attribútum már hozzá lesz adva. Ha eltávolítja az attribútumot, **a Mérték típusa** üzleti szintre **vált**.
    1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
 1. Ha az adatokban olyan értékek vannak, amelyekre egész értéket kell lecserélni, válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként. A *null* értéket cserélje ki például *0* értékkel.
@@ -88,11 +88,11 @@ Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti s
 
 1. Ha további számításokat szeretne hozzáadni az mértékhez, válassza az **Új számítás** lehetőséget. Az új számításokhoz csak ugyanazon az entitás elérési úton használhatók entitások. A további számítások új oszlopként fognak megjelenni a mérték kimeneti entitásában.
 
-1. Válassza ki a számítás függőleges ellipszisét (&vellip;) a számítás **másolata**, **átnevezése** vagy **eltávolítása** mértékegységből.
+1. Válassza ki a számítás függőleges három pontját (&vellip;) a következőre: **Duplikált**, **Átnevezés** vagy **Számítás eltávolítása** egy mértékből.
 
 1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
 
-1. Válassza **a Részletek** szerkesztése lehetőséget a Cím nélküli mérték mellett. Adja meg a mérték nevét. A mértékhez is hozzáadhat [címkéket](work-with-tags-columns.md#manage-tags).
+1. Válassza a Részletek **szerkesztése lehetőséget** a Névtelen mérték mellett. Adja meg a mérték nevét. Ha szükséges, adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags) a mértékhez.
 
    :::image type="content" source="media/measures_edit_details.png" alt-text="Részletek szerkesztése párbeszédpanel.":::
 
@@ -102,19 +102,19 @@ Az egyes vevők (vevőattribútum, vevői mérték) vagy az üzleti/szervezeti s
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
-Az egyes számlák (vevői intézkedés) vagy az összes számla szintjén (üzleti intézkedés) hozhat létre mértékeket.
+Mértékeket hozhat létre az egyes számlák szintjén (vevői mérték) vagy az összes számla szintjén (üzleti mérték).
 
-- Vevői mérték: Saját entitásként hozza létre a kimenetet. Az ügyfél-intézkedések nem jelennek meg az ügyfélprofil-kartonon.
+- Vevői mérték: A kimenetet saját entitásként hozza létre. Az ügyfélmérések nem jelennek meg az ügyfélprofil-kártyán.
 
-- Üzleti intézkedés: Saját entitásként generál kimenetet, és megjelenik a Customer Insights környezet kezdőlapján.
+- Üzleti mérték: A kimenetet saját entitásként hozza létre, és megjeleníti a Customer Insights-környezet kezdőlapján.
 
-1. Ugrás az **intézkedésekre**.
+1. Lépjen a Measures (Intézkedések) elemre **·**.
 
 1. Válassza az **Új** lehetőséget.
 
-   :::image type="content" source="media/measure-b2b.png" alt-text="B-B mértékegység üres konfigurációs képernyője.":::
+   :::image type="content" source="media/measure-b2b.png" alt-text="Üres konfigurációs képernyő egy B-től B-ig terjedő mértékhez.":::
 
-1. A konfigurációs területen válassza ki az összesítés funkciót a **Funkció kiválasztása** legördülő menüből. Az összesítési függvények többek között a következők:
+1. A konfigurációs területen válassza ki az összesítési függvényt a **Select function** legördülő menüből. Az összesítési függvények többek között a következők:
    - **Sum**
    - **Átlag**
    - **Számlálás**
@@ -140,11 +140,11 @@ Az egyes számlák (vevői intézkedés) vagy az összes számla szintjén (üzl
    1. Állítsa be a szűrőoperátorokat, hogy minden kijelölt attribútumhoz definiálja a szűrőt.
    1. Válassza az **Alkalmaz** lehetőséget, ha a szűrőket hozzá szeretne adni a mértékhez.
 
-1. Válassza a Dimenzió **lehetőséget**, ha további mezőket szeretne választani, amelyek oszlopként kerülnek a mértékkimeneti entitásba.
+1. Válassza a Dimenzió **lehetőséget**, ha további mezőket szeretne kiválasztani, amelyek oszlopként vannak hozzáadva a mérték kimeneti entitásához.
 
    1. Válassza a **Dimenziók szerkesztése** lehetőséget, ha olyan adatattribútumokat szeretne felvenni, amelyek szerint csoportosítja a mértékeket. Például város vagy nem.
       > [!TIP]
-      > Ha a Mérték típusként **a** Vevőszint lehetőséget **választotta**, a *CustomerId* attribútum már hozzá lett adva. Ha eltávolítja az attribútumot, **a Mérték típusa** üzleti szintre **vált**.
+      > Ha a **Customer level (Ügyfélszint**) lehetőséget választotta **Measure típusként**, a *CustomerId* attribútum már hozzá lesz adva. Ha eltávolítja az attribútumot, **a Mérték típusa** Üzleti szintre **vált**.
    1. Válassza a **Kész** lehetőséget, ha a dimenziókat hozzá szeretne adni a mértékhez.
 
 1. Ha az adatokban olyan értékek vannak, amelyekre egész értéket kell lecserélni, válassza a **Szabályok** lehetőséget. Konfigurálja a szabályt, és csak egész számokat válasszon csereként. A *null* értéket cserélje ki például *0* értékkel.
@@ -158,11 +158,11 @@ Az egyes számlák (vevői intézkedés) vagy az összes számla szintjén (üzl
    1. Válassza ki a **Kapcsolat elérési útját**, és válassza ki az entitás elérési útját, amely a mérőszám azonosítására fog használni. Ha az *Ügyfél* entitásnak csak egyetlen elérési útja van, akkor a vezérlő nem fog mutatni.
    1. Válassza a **Kész** lehetőséget a kiválasztás alkalmazáshoz.
 
-1. Válassza ki a számítás függőleges ellipszisét (&vellip;) a számítás **másolata**, **átnevezése** vagy **eltávolítása** mértékegységből.
+1. Válassza ki a számítás függőleges három pontját (&vellip;) a következőre: **Duplikált**, **Átnevezés** vagy **Számítás eltávolítása** egy mértékből.
 
 1. Az **Előnézet** területen a mérték kimeneti entitásának adatsémáját látja a szűrőkkel és a dimenziókkal. Az előnézet dinamikusan reagál a konfiguráció változásaira.
 
-1. Válassza **a Részletek** szerkesztése lehetőséget a Cím nélküli mérték mellett. Adja meg a mérték nevét. A mértékhez is hozzáadhat [címkéket](work-with-tags-columns.md#manage-tags).
+1. Válassza a Részletek **szerkesztése lehetőséget** a Névtelen mérték mellett. Adja meg a mérték nevét. Ha szükséges, adjon hozzá [címkéket](work-with-tags-columns.md#manage-tags) a mértékhez.
 
    :::image type="content" source="media/measures_edit_details.png" alt-text="Részletek szerkesztése párbeszédpanel.":::
 

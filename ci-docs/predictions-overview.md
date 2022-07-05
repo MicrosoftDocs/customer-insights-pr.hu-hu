@@ -1,5 +1,5 @@
 ---
-title: Áttekintés a támogatott előrejelzési forgatókönyvekről
+title: Előrejelzések áttekintése
 description: A Dynamics 365 Customer Insights alkalmazás által lefedett előrejelzési forgatókönyvek és lehetőségek.
 ms.date: 03/24/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a87af80fa713a1ac70493345c0c920e416692b0f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642935"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9083100"
 ---
 # <a name="predictions-overview"></a>Előrejelzések áttekintése
 
@@ -38,9 +38,9 @@ Az adatok előrejelzésével való elindulás legegyszerűbb módja az előre de
 ---
 
 > [!TIP]
-> Javasoljuk, hogy rendszeresen frissítse a dobozon kívüli modelleket frissített adatokkal, hogy azok pontosan tájékoztassák az üzleti használati esetet. Az adatok ad-hoc módon frissülnek, amikor a rendszer új vagy frissített adatforrásokat tölt be. A modellek azonban ebben az esetben csak újramagozzák, és továbbra is a meglévő betanítási adatokat használják.
+> Javasoljuk, hogy rendszeresen frissítse a beépített modelleket frissített adatokkal, hogy azok pontosan tájékoztassák az üzleti használati esetet. Az adatok ad-hoc módon frissülnek, amikor a rendszer új vagy frissített adatforrásokat tölt be. A modellek azonban ebben az esetben csak újrapontozzák a teljesítményt, és továbbra is a meglévő betanítási adatokat használják.
 > 
-> A frissítési ütemezést **úgy** állíthatja be, hogy beállítja a modell átképzési ütemezését a konfigurációs élményben. A modell átképezi és újra kiemeli ezt az ütemtervet, amelyet bármikor megváltoztathat.
+> A frissítési ütemezést **úgy konfigurálhatja,** hogy beállítja a modell újraképzési ütemezését a konfigurációs élményben. A modell újratanítja és újrapontozza ezt az ütemezést, amelyet bármikor módosíthat.
 
 
 ## <a name="azure-machine-learning-integration"></a>Azure Machine Learning integrációja

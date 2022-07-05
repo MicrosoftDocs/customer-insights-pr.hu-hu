@@ -1,5 +1,5 @@
 ---
-title: Részleges adatok kitöltése előrejelzések használatával
+title: Részleges adatok kiegészítése előrejelzésekkel
 description: Az előrejelzések segítségével töltse ki a hiányos ügyféladatokat.
 ms.date: 11/01/2021
 ms.subservice: audience-insights
@@ -12,17 +12,17 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 7e93670007db27d13b84d7516f56830988da083e
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800653"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082512"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Töltse ki részleges adatait előrejelzésekkel (elavult)
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>A részleges adatok kiegészítése előrejelzésekkel (elavult)
 
 > [!IMPORTANT]
-> Ez a **funkció 2021. november 5-től** elavult **lesz**. A jelenlegi implementációk a funkció eltávolításáig továbbra is működnek, de az alábbi utasítások segítségével nem hozhat létre új integrációkat.
+> Ez a funkció 2021. november 5-től **elavult** lesz **·**. A jelenlegi implementációk a funkció eltávolításáig továbbra is működni fognak, de az alábbi utasításokkal nem hozhat létre új integrációkat.
 
 Az előrejelzések segítségével egyszerűen hozhat létre olyan előre jelzett értékeket, amelyek segíthetik az ügyfél megértését. Az **Információk** > **Előrejelzések** lapon kiválaszthatja a **Saját előrejelzések** lehetőséget, hogy megtekintse a Customer Insights egyéb részein konfigurált előrejelzéseket, és lehetősége legyen azok további testreszabására.
 
@@ -43,7 +43,7 @@ További információ: [Új környezet létrehozása](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Előrejelzés létrehozása az ügyfél entitásban
 
-1. Nyissa meg az **adat entitásokat** > **·**.
+1. Lépjen az Adatentitások **elemre** > **·**.
 
 2. Válassza az **Ügyfél** entitást.
 
@@ -73,7 +73,7 @@ A kiválasztott attribútumok hiányzó értékeinek előrejelzése a szegmens l
 
 Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin alapulhat a szegmens, például Ügyfél-elégedettség, Vásárlás összege. A szegmens létrehozásakor a rendszer javaslatot tesz az attribútum hiányzó értékeinek előrejelzésére.
 
-1. Nyissa meg a Szegmensek lehetőséget, **és** válassza a **Profilok** csempét.
+1. Lépjen a Szegmensek **lapra,** és válassza a **Profilok** csempét.
 
 2. A **Mező** pont kiválasztásával hozzon létre egy szegmenst, és válassza ki az **Operátor** elemet, majd a **Felülvizsgálat** lehetőséget.
 
@@ -91,11 +91,11 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 ## <a name="view-a-prediction"></a>Előrejelzés megtekintése
 
-1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
+1. Ugrás az **Intelligencia-előrejelzések** > **jóslataimra** > **·**.
 
 2. Jelölje ki az áttekinteni kívánt előrejelzést.
 
-3. Jelölje ki a függőleges ellipszis (&vellip;) pontot a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
+3. Jelölje ki a függőleges három pontot (&vellip;) a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
 
 4. Az előrejelzés nézetében számos adatpont jelenik meg.
    > [!div class="mx-imgBorder"]
@@ -108,7 +108,7 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 ## <a name="update-a-prediction"></a>Előrejelzés frissítése
 
-1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
+1. Ugrás az **Intelligencia-előrejelzések** > **jóslataimra** > **·**.
 
 2. Válassza ki a frissíteni kívánt előrejelzést, és válassza a **Frissítés** ikont.
 
@@ -118,28 +118,28 @@ Az adott folyamat részeként kiválaszthat egy specifikus attribútumot, amin a
 
 Miután létrehozott egy előrejelzés, testreszabhatja a modellt a AI Builder modell hatékonyságának növelése érdekében.  
 
-1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
+1. Ugrás az **Intelligencia-előrejelzések** > **jóslataimra** > **·**.
 
 2. Válassza ki a szerkeszteni kívánt előrejelzést.
 
-3. Jelölje ki a függőleges ellipszis (&vellip;) pontot a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
+3. Jelölje ki a függőleges három pontot (&vellip;) a Műveletek **oszlopban, és válassza a** Nézet **lehetőséget**.
 
-4. Válassza **a Testreszabás lehetőséget a alkalmazásban AI Builder**.
+4. Válassza a Testreszabás lehetőséget **a AI Builder**.
 
-5. Frissítse a modellt a AI Builder alkalmazásban. [További információ az AI Builderben található modellek kezeléséről](/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Frissítse a modellt a AI Builder. [További információ az AI Builderben található modellek kezeléséről](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Az előrejelzés következő futtatása a létrehozott frissített modellt fogja használni.
 
 > [!NOTE]
-> A létrehozott AI Builder új modellek csak akkor jelennek meg a Customer Insights alkalmazásban, ha a modellt a fent felsorolt tapasztalatok alapján hozták létre.
+> A létrehozott AI Builder új modellek csak akkor jelennek meg a Customer Insightsban, ha a modellt a fent felsorolt élményekből hozták létre.
 
 ## <a name="remove-a-prediction"></a>Előrejelzés eltávolítása
 
-1. Ugrás az **Intelligencia** > **előrejelzések** > **saját jóslatok**.
+1. Ugrás az **Intelligencia-előrejelzések** > **jóslataimra** > **·**.
 
 2. Jelölje ki a törlendő előrejelzést.
 
-3. Jelölje ki a függőleges ellipszis (&vellip;) elemet a Műveletek **oszlopban, és válassza a** Törlés **lehetőséget**.
+3. Jelölje ki a függőleges három pontot (&vellip;) a Műveletek **oszlopban, és válassza a** Törlés **lehetőséget**.
 
 4. Törlés jóváhagyása.
 
@@ -153,7 +153,7 @@ Ha hiba miatt nem tudja elvégezni a csatolási Dataverse folyamatot, megpróbá
 - Az alkalmazásengedélyek nincsenek megadva.
     1. Menjen a [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com) felületre.
     1. **Környezetek** kiválasztása.
-    1. Jelölje ki a függőleges ellipszis (&vellip;) mellett a környezet mellett, amelyhez hozzá szeretné adni az engedélyt, és válassza a Beállítások **lehetőséget**.
+    1. Válassza ki a függőleges három pontot (&vellip;) annak a környezetnek a mellett, amelyhez hozzá szeretné adni az engedélyt, majd válassza a Beállítások **lehetőséget**.
     1. Bontsa ki a **Felhasználók + engedélyek** elemet, és válassza a **Felhasználók** elemet.
     1. Válassza az **+ Új** lehetőséget , és válassza a **Felhasználó** lehetőséget.
     1. Válassza az **Alkalmazásfelhasználó** elemt, ha még nincs kijelölve, és adja meg a következő adatokat:

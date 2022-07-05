@@ -21,14 +21,14 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: a7b10d985d5cba64b25595a3d7c101d6cb5c62a5
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642868"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082575"
 ---
-# <a name="relationships-between-entities"></a>Entitások közötti kapcsolatok
+# <a name="relationships-between-entities-and-entity-paths"></a>Az entitások és entitásútvonalak közti kapcsolatok.
 
 Kapcsolatok összekapcsolják az entitásokat, és meghatározza az adatok grafikonját, ha az entitások közös azonosítón és idegen kulcson osztoznak. Ez az idegen kulcs egyik entitásról a másikra hivatkozhat. Az összekapcsolt entitások több adatforráson alapuló szegmensek és mérőszámok definiálását teszik lehetővé.
 
@@ -84,7 +84,7 @@ A kapcsolat egy olyan *forrásentitásból* áll, amely tartalmazza az idegen ku
 
 Azok a környezetek, amelyek elsődleges célközönségként üzleti fiókokat használnak, konfigurálhatják a fiókhierarchiákat a kapcsolódó üzleti fiókokhoz. Ez lehet például egy olyan vállalat, amely külön üzleti egységekkel rendelkezik. 
 
-A szervezetek fiókhierarchiákat hoznak létre a partnerek és a partnerek közötti kapcsolatok kezelésére. A Customer Insights támogatja a szülő-gyermek fiókhierarchiákat, amelyek már léteznek a betöltött ügyféladatokban. Például partnerek a Dynamics 365 Sales alkalmazásból. Ezek a hierarchiák a **kapcsolatok** lapon konfigurálhatók.
+A szervezetek fiókhierarchiákat hoznak létre a partnerek és a partnerek közötti kapcsolatok kezelésére. A Customer Insights támogatja a szülő-gyermek fiók hierarchiákat, amelyek már léteznek a betöltött ügyféladatokban. Például partnerek a Dynamics 365 Sales alkalmazásból. Ezek a hierarchiák a **kapcsolatok** oldalon konfigurálhatók.
 
 1. Ugrás az **Adatok** > **Kapcsolatok** részre.
 1. A **Fiókhierarchia** lap kiválasztása.

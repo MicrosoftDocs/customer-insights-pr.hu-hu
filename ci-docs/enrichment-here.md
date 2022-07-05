@@ -1,5 +1,5 @@
 ---
-title: Bővítés a HERE Technologies független gyártótól származó bővítéssel
+title: Bővítse az ügyfélprofilokat a HERE Technologies segítségével (előzetes verzió)
 description: Általános információk a HERE Technologies harmadik fél bővítésről.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953676"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052054"
 ---
-# <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Ügyfélprofilok bővítése a HERE Technologies (előzetes verzió) segítségével
+# <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Bővítse az ügyfélprofilokat a HERE Technologies segítségével (előzetes verzió)
 
 A HERE Technologies egy helyplatformot biztosító vállalat, amely helyalapú adatokat és szolgáltatásokat nyújt. A HERE Technologies adatgazdagítási szolgáltatásai javítják az ügyfelekkel kapcsolatos helyadatok pontosságát. Ez biztosítja a cím normalizálását, a szélességi és hosszúsági kinyerést és még sok mást.
 
@@ -72,7 +72,7 @@ A funkció használatának leállítása érdekében a Dynamics 365 Customer Ins
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

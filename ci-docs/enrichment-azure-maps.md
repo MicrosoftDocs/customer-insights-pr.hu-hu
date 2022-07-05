@@ -1,5 +1,5 @@
 ---
-title: Ügyfélprofilok gyarapítása az Azure Maps szolgáltatásból származó helyadatokkal
+title: Ügyfélprofilok gazdagítása helyadatok Azure Maps (előzetes verzió)
 description: Az Azure Maps független gyártótól származó bővítésre vonatkozó általános információk.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953631"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052610"
 ---
-# <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Ügyfélprofilok bővítése az Azure Maps segítségével (előzetes verzió)
+# <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Ügyfélprofilok gazdagítása helyadatok Azure Maps (előzetes verzió)
 
 Azure Maps helyközpontú adatokat és szolgáltatásokat biztosít, hogy térinformatikai adatokon alapuló élményeket biztosítson beépített helyalapú intelligenciával. Az Azure Maps adatbővítő szolgáltatásai javítják az ügyfelekre vonatkozó helyinformációk pontosságát. Olyan lehetőségeket biztosít, mint például a címek normalizálása, a földrajzi szélesség és hosszúság kinyerése a Dynamics 365 Customer Insights alkalmazásba.
 
@@ -82,7 +82,7 @@ A funkció használatának leállítása érdekében a Dynamics 365 Customer Ins
 
 1. Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításához, vagy a közel lehetőséget a **Bővítések** lapra való visszatéréshez.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

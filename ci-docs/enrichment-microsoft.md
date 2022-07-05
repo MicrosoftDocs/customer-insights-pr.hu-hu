@@ -1,5 +1,5 @@
 ---
-title: Ügyfélprofilok gazdagítása a Microsoft márkáinak és érdeklődési körére vonatkozó adatokkal
+title: Bővítse az ügyfélprofilokat a Microsoft márkáival és érdeklődési köreivel (előzetes verzió)
 description: A Microsoft saját tulajdonú adataival affinitásokkal és elérés megoszlása gazdagíthatja ügyféladatait.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953768"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082701"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Ügyfélprofilok gazdagítása affinitásokkal és elérés megoszlása (előzetes verzió)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Bővítse az ügyfélprofilokat a Microsoft márkáival és érdeklődési köreivel (előzetes verzió)
 
 A Microsoft saját tulajdonú adataival márkaaffinomságokkal, érdeklődési körökkel és elérés megoszlása (SoV) gazdagíthatja ügyféladatait. Ezek az affinitások és soV-k az ügyfelekhez hasonló demográfiai jellemzőkkel rendelkező emberek adatain alapulnak. Ezek az információk segítenek abban, hogy jobban megértse és szegmentálja ügyfeleit az affinitásaik vagy az adott márkákhoz és érdeklődési körökhöz való SoV-juk alapján.
 
@@ -104,7 +104,7 @@ Jelenleg a következő ország-/régió lehetőségeket támogatjuk: Ausztrália
 
    A profilok bővítésénél minden olyan ügyfélprofilt bővítünk, amelynél adatokat kapunk a kiválasztott márkákhoz és érdeklődésekhez, tartalmazva a profilokat, amelyek nincsenek benne a kiválasztott országban vagy régióban. Ha például Németországot választotta, akkor bővítjük az Egyesült Államokban található profilokat, ha rendelkezésre állnak adatok az Egyesült Államokban a kiválasztott márkákra és érdeklődésre.
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

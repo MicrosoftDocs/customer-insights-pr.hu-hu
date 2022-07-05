@@ -1,5 +1,5 @@
 ---
-title: Customer Insights adatok exportálása Klaviyoba
+title: Szegmensek exportálása Klaviyo-ba (előzetes verzió)
 description: További információ a kapcsolat konfigurálásához és a Klaviyoba való exportáláshoz.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,21 +8,21 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: aa6d43884e5e57af4627b7d5a857d3043abcd026
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2b60d9818a753e81e69f2bee6b1663e1840cb10
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642855"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051318"
 ---
-# <a name="export-segment-lists-to-klaviyo-preview"></a>Szegmenslisták exportálása a Klaviyoba (előzetes verzió)
+# <a name="export-segments-to-klaviyo-preview"></a>Szegmensek exportálása Klaviyo-ba (előzetes verzió)
 
 Exportálja az egyesített ügyfélprofilok szegmenseit a Klaviyoba, és használja őket marketingtevékenységekhez.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   [Klaviyo-fiókkal](https://www.klaviyo.com/) és a megfelelő rendszergazdai hitelesítő adatokkal rendelkezik.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

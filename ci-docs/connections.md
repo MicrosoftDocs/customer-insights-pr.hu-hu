@@ -1,6 +1,6 @@
 ---
-title: Egyéb szolgáltatásokhoz való kapcsolódás a Customer Insightsból.
-description: Adatok megosztása más szolgáltatásokkal.
+title: Kapcsolatok (előzetes verzió) áttekintése
+description: Egyéb szolgáltatásokhoz való kapcsolódás a Customer Insightsból.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
 ms.subservice: audience-insights
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 2a3175737ac95e10d75fad4a69db303b0564c6cc
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800375"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082092"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -59,7 +59,7 @@ A **Beállítás** lehetőséget is választhatja egy mozaikon a **Felderítés*
 
 Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hogy mely felhasználók használhatjak ezt a konkrét kapcsolatot az [exportálások](export-destinations.md) meghatározásához. Alapértelmezés szerint a rendszergazdai szerepkörrel rendelkező felhasználók számára érhető el a kapcsolat. Ezt a beállítást a **Válassza ki, hogy ki használhatja ezt a kapcsolatot** lehetőség alatt tudja megváltoztatni, és engedélyezheti a közreműködő szerepkörrel rendelkező felhasználóknak, hogy használják ezt a kapcsolatot.
 
-- A közreműködő nem tudják majd megtekinteni vagy szerkeszteni ezt a kapcsolatot. Csak az exportálás létrehozásakor látják a megjelenítendő név és annak típusát.
+- A közreműködő nem tudják majd megtekinteni vagy szerkeszteni ezt a kapcsolatot. Csak a megjelenítendő név és annak típusát fogják látni az exportálás létrehozásakor.
 - A kapcsolat megosztásával lehetővé teszi a közreműködők számára a kapcsolat használatát. A közreműködő a megosztott kapcsolatokat láthatják az exportálások beállításakor. Ők felügyelik az adott kapcsolatot használó minden exportálást.
 - Ezt a beállítást megváltoztathatja, miközben a közreműködők által már meghatározott exportálásokat megtartja.
 
@@ -69,7 +69,7 @@ Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hog
 
 1. Menjen a **Kapcsolatok** fülre.
 
-1. Jelölje ki a szerkeszteni kívánt kapcsolat függőleges ellipszisét (&vellip;).
+1. Válassza ki a szerkeszteni kívánt kapcsolat függőleges három pontját (&vellip;).
 
 1. Válassza a **Szerkesztés** lehetőséget.
 
@@ -77,7 +77,7 @@ Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hog
 
 ## <a name="remove-a-connection"></a>Kapcsolat eltávolítása
 
-Ha az eltávolított kapcsolatot dúsítások vagy exportálások használják, először le kell választania vagy el kell távolítania őket. Az eltávolítási párbeszédpanel útmutatást nyújt a megfelelő bővítésekhez vagy exportálásokhoz.
+Ha az eltávolítandó kapcsolatot gazdagítások vagy exportálások használják, először le kell választania vagy el kell távolítania őket. Az eltávolítási párbeszédpanel útmutatást nyújt a megfelelő bővítésekhez vagy exportálásokhoz.
 
 A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiválhatja őket, ha új kapcsolatot ad hozzájuk a [Bővítések](enrichment-hub.md) és [Exportálások](export-destinations.md) oldalon.
 
@@ -85,7 +85,7 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 
 1. Menjen a **Kapcsolatok** fülre.
 
-1. Válassza ki az eltávolítani kívánt kapcsolat függőleges ellipszisét (&vellip;)
+1. Válassza ki az eltávolítani kívánt kapcsolat függőleges három pontját (&vellip;).
 
 1. Válassza a legördülő menü **Eltávolítás** elemét. Megjelenik a jóváhagyást kérő párbeszéd.
 
@@ -98,4 +98,4 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Saját Key Vault által kezelt titkokkal való kapcsolat beállítása
 
-Egyes kapcsolatoknak szüksége van titkokra, például API-kulcsokra vagy jelszavakra. Egyes kapcsolatok a saját Key Vaultban tárolt titkokat támogatják. További információ a támogatott kapcsolatokról és arról, hogyan állíthatja be [saját Key Vault for Customer Insights szolgáltatását](use-azure-key-vault.md).
+Egyes kapcsolatoknak szüksége van titkokra, például API-kulcsokra vagy jelszavakra. Egyes kapcsolatok a saját Key Vaultban tárolt titkokat támogatják. További információ a támogatott kapcsolatokról és arról, hogyan állíthatja be [saját Key Vault a Customer Insightshoz](use-azure-key-vault.md).

@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása a Campaign Monitorra
+title: Szegmensek exportálása a Campaign Monitorba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Campaign Monitorba.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b351e491ee830b6360d4efe33d32a726c2e553ba
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7431d4df5143724b5ecf2a2d747ed164fe2c29
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642541"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082890"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Szegmensek exportálása a Campaign Monitorba (előzetes verzió)
 
@@ -22,7 +22,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét a Campaign Monitorba, é
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   Van egy [Campaign Monitor fiókja](https://www.campaignmonitor.com/) és ahhoz tartozó rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások

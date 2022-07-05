@@ -1,5 +1,5 @@
 ---
-title: Common Data Model-adatok összekapcsolása egy Azure Data Lake-fiókkal
+title: Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
 ms.date: 05/30/2022
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: 2ab7ec77252be33f1203959c2a596ddec20425f2
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011563"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082260"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
@@ -82,9 +82,9 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
    :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
 
    > [!TIP]
-   > A JSON-szerkesztési felületen lévő entitások szerkesztéséhez válassza a További **sémafájl szerkesztése lehetőséget** > **·**. Végezze el a módosításokat, és válassza a Mentés **lehetőséget**.
+   > A JSON-szerkesztési felületen lévő entitások szerkesztéséhez válassza a További **sémafájl** > **szerkesztése lehetőséget**. Végezze el a módosításokat, és válassza a Mentés **lehetőséget**.
 
-1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés alatt **jelenik meg**. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
 
 1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
    1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.
@@ -138,7 +138,7 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 
    :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
 
-1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés alatt **jelenik meg**. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
 
 1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
    1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.

@@ -1,21 +1,21 @@
 ---
-title: Customer Insights adatok exportálása az Azure Synapse Analytics szolgáltatásba
-description: További információ a kapcsolat konfigurálásáról a programmal Azure Synapse Analytics
-ms.date: 04/11/2022
+title: Adatok Azure Synapse Analytics exportálása (előzetes verzió)
+description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot Azure Synapse Analytics.
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741506"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082869"
 ---
-# <a name="export-data-to-azure-synapse-analytics-preview"></a>Adatok exportálása Azure Synapse Analytics (előzetes verzió)
+# <a name="export-data-to-azure-synapse-analytics-preview"></a>Adatok Azure Synapse Analytics exportálása (előzetes verzió)
 
 Az Azure Synapse olyan elemzőszolgáltatás, amellyel gyorsabban áttekinthetők az adattárhházakban és a nagy adatrendszerekben lévő adatok. A Customer Insights-adatok betölthetők az [Azure Synapse](/azure/synapse-analytics/overview-what-is) rendszerbe, és használhatók ott.
 
@@ -28,31 +28,31 @@ A Customer Insights és az Azure Synapse közötti kapcsolat konfigurálásához
 
 ## <a name="prerequisites-in-customer-insights"></a>Előfeltételek a Customer Insights szolgáltatásban
 
-* Az Azure Active Directory (AD) felhasználói fiók rendszergazdai **szerepkörrel** rendelkezik a Customer Insights alkalmazásban. További információ a felhasználói engedélyek [beállításáról](permissions.md#assign-roles-and-permissions).
+* Az Azure Active Directory (AD) felhasználói fiók rendszergazdai **szerepkörrel** rendelkezik a Customer Insights szolgáltatásban. További információ a felhasználói engedélyek [beállításáról](permissions.md#assign-roles-and-permissions).
 
 Az Azure-ban: 
 
 - Aktív Azure-előfizetés.
 
-- Ha új Azure Data Lake Storage Gen2-fiókot használ, a *Customer Insights* szolgáltatáselemzőjének tárolási blobadatokra közreműködő **engedélyekre van szüksége**. További információ a Gen2-fiókhoz való csatlakozásról az [Azure Data Lake Storage Azure-szolgáltatás főkiszolgálójával az Ügyfélelemzéshez szolgáltatásnévvel](connect-service-principal.md). A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
+- Ha új Azure Data Lake Storage Gen2-fiókot használ, a *Customer Insights* szolgáltatásnévnek Storage Blob Data közreműködő **engedélyre van szüksége**. További információ a Gen2-fiókhoz való csatlakozásról [az Azure Data Lake Storage Azure-szolgáltatásnévvel a Customer Insights](connect-service-principal.md) számára. A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
 
-- Azon az erőforráscsoporton, ahol a Azure Synapse munkaterület található, a *szolgáltatásnévnek* és a *Azure AD Customer Insights* rendszergazdai engedélyekkel rendelkező felhasználójának legalább **olvasó** engedélyt kell hozzárendelnie. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
+- Azon az erőforráscsoporton, ahol a Azure Synapse munkaterület található, a *szolgáltatásnévhez* és a *Azure AD Customer Insightsban* rendszergazdai engedélyekkel rendelkező felhasználóhoz legalább **olvasó** engedélyt kell rendelni. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
 
-- A *Azure AD Customer Insights* rendszergazdai engedélyekkel rendelkező felhasználójának tárolási blobadatokra közreműködő **engedélyekre van szüksége** azon a Azure Data Lake Storage Gen2 fiókon, ahol az adatok találhatók és a Azure Synapse munkaterülethez vannak csatolva. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
+- A *Azure AD Customer Insightsban* rendszergazdai engedélyekkel rendelkező felhasználónak Storage Blob Data közreműködő **engedélyre van szüksége** azon a Gen2-fiókon, Azure Data Lake Storage ahol az adatok találhatók és a Azure Synapse munkaterülethez vannak kapcsolva. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - Az *[Azure Synapse-munkaterület felügyelt identitásához](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* a **Storage Blob Data közreműködői** engedélyével kell rendelkezni abban az Azure Data Lake Storage Gen2-fiókban, ahol az adatok találhatók, és amelyet összekapcsoltak az Azure Synapse-munkaterülettel. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- A munkaterületen a Azure Synapse *Customer Insights* szolgáltatáselemének Synapse Administrator **szerepkörre van** szüksége. További információ: [A hozzáférés-vezérlés beállítása a Synapse-munkaterülethez](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- A munkaterületen a Azure Synapse *Customer Insights* szolgáltatásnévhez hozzá kell **rendelni a Synapse-rendszergazdai** szerepkört. További információ: [A hozzáférés-vezérlés beállítása a Synapse-munkaterülethez](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
 ## <a name="set-up-the-connection-and-export-to-azure-synapse"></a>A kapcsolat beállítása és exportálás az Azure Synapse rendszerbe
 
 ### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
 
-Kapcsolat létrehozásához a Szolgáltatásnévnek és a Customer Insights felhasználói fiókjának olvasó engedélyeket kell **szereznie** ahhoz az erőforráscsoporthoz *,* ahol a Synapse Analytics-munkaterület található. Ezenkívül a Synapse Analytics-munkaterület szolgáltatásnévjének és felhasználójának Synapse Administrator **engedélyre van szüksége**. 
+Kapcsolat létrehozásához a Szolgáltatásnévnek és a Felhasználói fióknak a Customer Insightsban olvasó **engedélyekkel kell rendelkeznie** azon az erőforráscsoporton *,* ahol a Synapse Analytics munkaterület található. Emellett a szolgáltatásnévnek és a Synapse Analytics-munkaterületen lévő felhasználónak Synapse-rendszergazdai **engedélyekre van szüksége**. 
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a Kapcsolat **hozzáadása lehetőséget**, és válassza **Azure Synapse Analytics** vagy jelölje ki a **csempén a** csatlakozás konfigurálásához a Beállítás **Azure Synapse Analytics** lehetőséget.
+1. Válassza a Kapcsolat **hozzáadása lehetőséget**, és válassza **Azure Synapse Analytics** vagy válassza a **Beállítás** lehetőséget a csempén a **Azure Synapse Analytics** kapcsolat konfigurálásához.
 
 1. Adjon meg egy felismerhető nevet a Megjelenítendő név mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
@@ -64,27 +64,27 @@ Kapcsolat létrehozásához a Szolgáltatásnévnek és a Customer Insights felh
 
 ### <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. Az exportálás megosztott kapcsolattal való konfigurálásához legalább **közreműködő** engedélyre van szükség a Customer Insights alkalmazásban. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. Az exportálás megosztott kapcsolattal való konfigurálásához legalább **közreműködő** engedélyre van szüksége a Customer Insights szolgáltatásban. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
 1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
 
-1. A Kapcsolat exportáláshoz **mezőben** válasszon ki egy kapcsolatot a **Azure Synapse Analytics** szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nem áll rendelkezésre ilyen típusú [kapcsolat](connections.md).
+1. **A Kapcsolat exportáláshoz** mezőben válasszon ki egy kapcsolatot a **Azure Synapse Analytics** szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nem áll rendelkezésre ilyen típusú [kapcsolat](connections.md).
 
-1. Adjon meg egy felismerhető **megjelenítendő nevet** és egy **adatbázisnevet** az exportáláshoz.
+1. Adjon meg egy felismerhető **megjelenítendő nevet** és egy **adatbázisnevet** az exportáláshoz. Az exportálás egy új [Azure Synapse lake-adatbázist](/azure/synapse-analytics/database-designer/concepts-lake-database) hoz létre a kapcsolatban meghatározott munkaterületen.
 
 1. Válassza ki, hogy mely entitásokba szeretne exportálni Azure Synapse Analytics.
    > [!NOTE]
    > A [Common Data Model mappán](connect-common-data-model.md) alapuló adatforrások nem támogatottak.
 
-2. Válassza a **Mentés** parancsot.
+1. Válassza a **Mentés** parancsot.
 
 Az exportálás mentése nem futtatja azonnal az exportálást.
 
 Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand).
 
-A Synapse Analytics szolgáltatásba exportált adatok lekérdezéséhez tárolási blobadatokra van szükség **, olvasó** hozzáférést biztosítson az exportálás munkaterületén található céltárolóhoz. 
+A Synapse Analyticsbe exportált adatok lekérdezéséhez Storage blobadatokra van szüksége **, olvasó** hozzáférést biztosítson az exportálások munkaterületén található céltárolóhoz. 
 
 ### <a name="update-an-export"></a>Exportálás frissítése
 

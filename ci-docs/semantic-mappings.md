@@ -11,22 +11,22 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: a60855f6d5616ca9b958752836d1071ae3433db0
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b3a0643ab71c98ce212f4e4581a584d8382c67eb
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642755"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9083142"
 ---
 # <a name="semantic-mappings-preview"></a>Szemantikai leképezések (előzetes verzió)
 
-A szemantikus leképezések segítségével előre definiált sémákra leképezi a nem tevékenységekhez szükséges adatokat. Ezek a sémák segítenek az Ügyfélelemzésnek az adatattribútumok jobb megértésében. A szemantikai leképezés és a megadott adatok új betekintéseket és funkciókat tesznek lehetővé a Customer Insightsban. A tevékenységadatok sémákra való leképezéséhez tekintse át a [tevékenységek](activities.md) dokumentációját.
+A szemantikus leképezések segítségével előre definiált sémákra leképezi a nem tevékenységekhez szükséges adatokat. Ezek a sémák segítenek a Customer Insightsnak jobban megérteni az adatattribútumokat. A szemantikai leképezés és a megadott adatok új betekintést és funkciókat tesznek lehetővé a Customer Insights szolgáltatásban. A tevékenységadatok sémákra való leképezéséhez tekintse át a [tevékenységek](activities.md) dokumentációját.
 
-**A szemantikus leképezések jelenleg engedélyezve vannak az üzleti partnereken alapuló környezetekhez**. *A ContactProfile* az egyetlen szemantikai leképezési típus, amely jelenleg elérhető a Customer Insights alkalmazásban.
+**A szemantikus leképezések jelenleg engedélyezve vannak az üzleti partnereken alapuló környezetekhez**. *A ContactProfile* az egyetlen olyan típusú szemantikus leképezés, amely jelenleg elérhető a Customer Insights szolgáltatásban.
 
 ## <a name="define-a-contactprofile-semantic-entity-mapping"></a>A ContactProfile szemantikus entitásleképezésének definiálása
 
-1. Nyissa meg a **DataSemantic** > **mappings (előzetes verzió) lehetőséget**.
+1. Lépjen az **Adatszemantikus** > **leképezések (előzetes verzió) elemre**.
 
 1. Az irányított élmény indításhoz válassza a **Szemantikus leképezés hozzáadása** lehetőséget.
 
@@ -93,40 +93,40 @@ Az **Adat** > **Szemantikus leképezésekben (előzetes verzió)** megtekintheti
 
 - **Törlés**: Párbeszéd megnyitása a kijelölt szemantikus leképezés törlésének megerősítése érdekében. Egyszerre több szemantikus leképezést is törölhet a szemantikus leképezések és a törlés ikon kiválasztásával. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
 
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Kapcsolattartó szintű tevékenységek létrehozása ContactProfile szemantikai entitásleképezés használata
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>ContactProfile szemantikai entitásleképezés használata kapcsolattartói szintű tevékenységek létrehozásához
 
-A ContactProfile *szemantikai entitásleképezés létrehozása* után rögzítheti a kapcsolattartók tevékenységeit. Lehetővé teszi, hogy a tevékenység idővonalában megtekintse, hogy melyik partner felelős az egyes tevékenységekért. A legtöbb lépés a tipikus tevékenységleképezési konfigurációt követi.
+A ContactProfile szemantikai entitásleképezés létrehozása *után* rögzítheti a kapcsolattartók tevékenységeit. Lehetővé teszi, hogy egy fiók tevékenység-idővonalán megtekintse, hogy melyik kapcsolattartó volt felelős az egyes tevékenységekért. A legtöbb lépés a tipikus tevékenység-leképezési konfigurációt követi.
 
    > [!NOTE]
-   > Ahhoz, hogy a kapcsolattartó szintű tevékenységek működjenek, a tevékenységadatokban minden bejegyzéshez AccountID és ContactID **attribútumokkal kell rendelkeznie**.**·**
+   > Ahhoz, hogy a kapcsolattartói szintű tevékenységek működjenek, a tevékenységadatokon belüli minden rekordhoz accountID és ContactID **attribútummal is rendelkeznie** kell.**·**
 
-1. [*ContactProfile* szemantikai entitásleképezés definiálása.](#define-a-contactprofile-semantic-entity-mapping) és futtassa a szemantikai leképezést.
+1. [Definiáljon egy *ContactProfile* szemantikai entitásleképezést.](#define-a-contactprofile-semantic-entity-mapping) és futtassa a szemantikai leképezést.
 
-1. Nyissa meg a **DataActivities** > **oldalt**.
+1. Lépjen az **Adattevékenységek** > **oldalra**.
 
 1. Új tevékenység létrehozásához válassza a Tevékenység **hozzáadása lehetőséget**.
 
-1. Nevezze el a tevékenységet, válassza ki a forrástevékenység-entitást, és válassza ki a tevékenység entitásának elsődleges kulcsát.
+1. Nevezze el a tevékenységet, válassza ki a forrástevékenység-entitást, és válassza ki a tevékenységentitás elsődleges kulcsát.
 
-1. **A kapcsolatok** lépésben hozzon létre közvetett kapcsolatot a tevékenységforrás adatai és a partnerek között, a kapcsolattartási adatokat közvetítő entitásként használva. További információ: [közvetlen és közvetett kapcsolati](relationships.md#relationship-paths) útvonalak.
-   - Példa a Vásárlások *nevű* tevékenységhez:
-      - **Beszerzési forrástevékenység datakapcsolati** > **adatai** A ContactID **attribútumon**
-      - **Kapcsolatfelvételi adatokFiók** > **adatai** az AccountID **attribútumon**
+1. **A kapcsolatok** lépésben hozzon létre közvetett kapcsolatot a tevékenységforrás adatai és a fiókok között, a kapcsolattartási adatokat köztes entitásként használva. További információ: [Közvetlen és közvetett kapcsolati útvonalak](relationships.md#relationship-paths).
+   - Példa kapcsolat a Vásárlások *nevű* tevékenységre:
+      - **Megvásárolja a forrástevékenységi adatok kapcsolattartási adatait** > **a** ContactID **attribútumon**
+      - **Kapcsolattartási adatok** > **Fiókadatok** az AccountID **attribútumon**
 
    :::image type="content" source="media/Contact_Activities1.png" alt-text="Példa kapcsolatbeállításra.":::
 
-1. A kapcsolatok beállítása után válassza a Tovább **lehetőséget**, és fejezze be a tevékenységleképezési konfigurációt. A tevékenység létrehozásával kapcsolatos részletes lépéseket a Tevékenység meghatározása című [témakörben találja](activities.md).
+1. A kapcsolatok beállítása után válassza a Tovább **lehetőséget**, és fejezze be a tevékenység-leképezés konfigurációját. A tevékenység létrehozásával kapcsolatos részletes lépésekért lásd: [Tevékenység](activities.md) definiálása.
 
-1. Futtassa a tevékenység-hozzárendeléseket.
+1. Futtassa a tevékenységleképezéseket.
 
-1. A kapcsolattartási szintű tevékenységei mostantól láthatók lesznek az ügyfél idővonalán.
+1. A kapcsolattartói szintű tevékenységek mostantól láthatók lesznek az ügyfél idővonalán.
 
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Végeredmény a kapcsolatfelvételi tevékenységek konfigurálása után":::
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Végeredmény a kapcsolattartási tevékenységek konfigurálása után":::
 
-### <a name="contact-level-activity-timeline-filtering"></a>Kapcsolattartó szintű tevékenységütközvonal-szűrés
+### <a name="contact-level-activity-timeline-filtering"></a>Kapcsolattartói szintű tevékenységek idővonalának szűrése
 
-A kapcsolattartó szintű tevékenységek hozzárendelésének konfigurálása és futtatása után az ügyfelek tevékenységi ütemterve frissül. Tartalmazza az azonosítóikat vagy nevüket, a *ContactProfile* konfigurációjától függően, azokhoz a tevékenységekhez, amelyeken cselekedtek. Az idővonalon lévő névjegyek szerinti tevékenységeket szűrheti, hogy lássa az ön által érdekelt konkrét névjegyeket. Ezenkívül minden olyan tevékenységet láthat, amely nincs hozzárendelve egy adott partnerhez, ha a Tevékenységek lehetőséget választja **, amelyek nincsenek hozzárendelve egy partnerhez**.
+A kapcsolattartói szintű tevékenységleképezés konfigurálása és futtatása után az ügyfelek tevékenység-ütemterve frissül. Tartalmazza az azonosítóikat vagy nevüket, a *ContactProfile* konfigurációjától függően, azokhoz a tevékenységekhez, amelyeken cselekedtek. Az idővonalon névjegyek szerint szűrheti a tevékenységeket, hogy megtekinthesse az Önt érdeklő konkrét névjegyeket. Ezenkívül megtekintheti az összes olyan tevékenységet, amely nincs hozzárendelve egy adott kapcsolattartóhoz, ha kiválasztja **a Nem** partnerhez hozzárendelt tevékenységek lehetőséget.
 
-   :::image type="content" source="media/Contact_Activities3.png" alt-text="Az ügyfélszintű tevékenységekhez rendelkezésre álló szűrési beállítások.":::
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="A kapcsolattartói szintű tevékenységekhez rendelkezésre álló szűrési lehetőségek érhetők el.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

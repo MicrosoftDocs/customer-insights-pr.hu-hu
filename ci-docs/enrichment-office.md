@@ -1,5 +1,5 @@
 ---
-title: 'Bővítse az ügyfélprofilokat a következő adatokkal: Microsoft Office 365'
+title: 'Bővítse az ügyfélprofilokat a következő adatokkal Microsoft Office 365 : (előzetes verzió)'
 description: Használjon védett adatokat, Microsoft Office hogy ügyfélprofiljait elkötelezettségi adatokkal gazdagítsa.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 75762afb70814c8a81c1574ee7ea1553a2048737
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954136"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055677"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Ügyfélprofilok gazdagítása elköteleződési adatokkal (előzetes verzió)
+# <a name="enrich-customer-profiles-with-data-from-microsoft-office-365-preview"></a>Bővítse az ügyfélprofilokat a következő adatokkal Microsoft Office 365 : (előzetes verzió)
 
 Használja a innen származó Microsoft Office 365 adatokat, hogy bővítse ügyfélfiók-profiljait az alkalmazásokon keresztüli Office 365 elköteleződésekkel kapcsolatos elemzésekkel. Az elköteleződési adatok e-mailből és értekezleti tevékenységből állnak, amelyeket a fiók szintjén összesítünk. Például az üzleti fiókból érkező e-mailek száma vagy a fiókkal való értekezletek száma. Az egyes felhasználókra vonatkozó adatok nem állnak rendelkezésre.
 
@@ -75,7 +75,7 @@ Válassza a Futtatás **lehetőséget** a gazdagítási folyamat elindításáho
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
-## <a name="enrichment-results"></a>Bővítési eredmények
+## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)] Ez az *Office entitás*. A *Office_UserEntity* tartalmazza a gazdagítási konfiguráció során kiválasztott e-mail-címek Active Directory-azonosítóit.
 

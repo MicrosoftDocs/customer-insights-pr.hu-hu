@@ -1,5 +1,5 @@
 ---
-title: Power BI-csatlakozó
+title: Power BI összekötő (előzetes verzió)
 description: Útmutató a Dynamics 365 Customer Insights összekötő használatához a Power BI megoldásban.
 ms.date: 07/23/2021
 ms.reviewer: mhart
@@ -8,16 +8,16 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e901114703a43b4b4e751e0a93eb4876d7636c00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 72daf6d4ef3b6afb8049c622b57e7ec44762fb21
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642795"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051272"
 ---
-# <a name="connector-for-power-bi-preview"></a>Power BI összekötő (előzetes verzió)
+# <a name="power-bi-connector-preview"></a>Power BI összekötő (előzetes verzió)
 
-Az adatokhoz vizuális megjelenítést hozhat létre a Power BI Desktoppal. További betekintést hozhat létre és jelentéseket készíthet az egyesített ügyfelek adataival.
+Vizualizációkat hozhat létre az adatokhoz az Microsoft Power BI Asztallal. További betekintést hozhat létre és jelentéseket készíthet az egyesített ügyfelek adataival.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -56,11 +56,11 @@ A Customer Insights Power BI-csatlakozója az egymillió ügyfélprofilig terjed
 
 ### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>A Customer Insights környezet nem jelenik meg a Power BI alatt
 
-Azok a környezetek, amelyek egynél [több kapcsolatot](relationships.md) határoznak meg két azonos entitás között a Customer Insights alkalmazásban, nem lesznek elérhetők az Power BI összekötőben.
+Azok a környezetek, amelyek egynél [több kapcsolat](relationships.md) van definiálva két azonos entitás között a Customer Insightsban, nem lesznek elérhetők az Power BI összekötőben.
 
 A duplikált kapcsolatok azonosíthatók és eltávolíthatóak kapcsolatok.
 
-1. Nyissa meg az **Adatok** > **kapcsolatok** azt a környezetet, amelyből hiányzik Power BI.
+1. Lépjen az **Adatok** > **kapcsolatok** elemre azon a környezeten, amelyben hiányzik Power BI.
 2. Duplikált kapcsolatok azonosítása:
    - Ellenőrizze, hogy egynél több kapcsolat van-e definiálva ugyanazon két entitás között.
    - Ellenőrizze, hogy két olyan entitás között van-e kapcsolat, amelyek egyaránt szerepelnek az egyesítési folyamatban. Az egyesítési folyamatban szereplő összes entitás között implicit kapcsolat van definiálva.
@@ -70,7 +70,7 @@ A duplikált kapcsolatok eltávolítását, próbálja meg újra konfigurálni a
 
 ### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Hibák a dátummezőkben az entitások betöltésekor a Power BI Desktopban
 
-Az olyan entitások betöltésekor, amelyek olyan mezőket tartalmaznak, amelyek dátumformátuma HH/NN/ÉÉÉÉ, a nem egyező területiformátumok miatt hibákba ütközhet. Ez az eltérés akkor fordul elő, ha a Power BI Desktop fájl értéke egy másik területi beállítás, mint az angol (Egyesült Államok), mert a Customer Insights dátummezői amerikai formátumban vannak mentve.
+Az olyan entitások betöltésekor, amelyek olyan mezőket tartalmaznak, amelyek dátumformátuma HH/NN/ÉÉÉÉ, a nem egyező területiformátumok miatt hibákba ütközhet. Ez az eltérés akkor fordul elő, ha a Power BI Desktop fájl az angoltól (Egyesült Államok) eltérő területi beállításra van beállítva, mert a Customer Insights dátummezői amerikai formátumban vannak mentve.
 
 A Power BI Desktop fájlnak egyetlen területi beállítása van, amelyet az adatok beolvasásakor alkalmaz a program. A dátummezők helyes értelmezése érdekében, állítsa be a .BPI-fájl területi beállítását angol (Egyesült Államok) formátumra. [Ismerje meg, hogyan módosíthatja egy Power BI Desktop fájl területi beállítását](/power-bi/fundamentals/supported-languages-countries-regions#choose-the-language-or-locale-of-power-bi-desktop).
 

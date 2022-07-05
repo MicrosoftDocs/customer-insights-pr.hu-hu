@@ -1,5 +1,5 @@
 ---
-title: Power Automate-összekötő | Microsoft Docs
+title: Power Automate összekötő (előzetes verzió) | Microsoft Dokumentumok
 description: Folyamatok létrehozása a Microsoft Power Automate rendszerben a Dynamics 365 Customer Insights szolgáltatásból.
 ms.date: 06/24/2021
 ms.reviewer: mhart
@@ -8,20 +8,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d22c4c785695b23a257a89f1ffa519fdc18b443e
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 29a861dad926072f6f849d738d868f0f3b9306be
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741182"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9082449"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate összekötő (előzetes verzió)
 
-Az adatok módosításakor automatikusan elindíthat meghatározott eseményeket, vagy az összetettebb folyamatokat közvetlenül a [Power Automate](https://flow.microsoft.com/) szolgáltatásban is kezelheti.
+Az adatok módosításakor automatikusan elindíthat meghatározott eseményeket, vagy az összetettebb folyamatokat közvetlenül a [Microsoft Power Automate](https://flow.microsoft.com/) szolgáltatásban is kezelheti.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- 60 másodpercenként legfeljebb 100 hívást hajthat végre. Az API-végpont többször is meghívhatja a $skip paraméterrel. [További információ a $skip paraméterről](/connectors/customerinsights/#get-items-from-an-entity).
+- 60 másodpercenként legfeljebb 100 hívást hajthat végre. Az API-t végpont többször is meghívhatja a $skip paraméter használatával. [További információ a $skip paraméterről](/connectors/customerinsights/#get-items-from-an-entity).
 
 ## <a name="power-automate-triggers"></a>Power Automate-eseményindítók
 
@@ -32,7 +32,7 @@ Az eseményindítók segítségével felhőfolyamatokat hozhat létre, és autom
 - Egy szegmens küszöbértékének túllépésekor aktiválódó eseményindító. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Egy üzleti mérőszám küszöbértékének túllépésekor aktiválódó eseményindító. Csak a dimenzió nélküli üzleti mérőszámok támogatottak. Az eseményindító csak a küszöbérték túllépésére korlátozott.
 - Aktivál, amikor az (adatforrások, szegmensek, intézkedések,...) teljes frissítése befejeződött.
-- Eseményindító, amikor az egyesítési folyamat frissítése befejeződött.
+- Akkor aktiválódik, ha az egyesítési folyamat frissítése befejeződött.
 
 [Konfiguráld a triggereket Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 

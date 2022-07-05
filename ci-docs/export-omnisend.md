@@ -1,5 +1,5 @@
 ---
-title: Customer Insights-adatok exportálása az Ominsend-szolgáltatásba
+title: Szegmensek exportálása az Ominsendbe (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Ominsendbe.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 70bd94ea5e4060094c3d215e3fc263a98df51229
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 15918b2e2550869115d30ea4d84b4549c3c7d1ca
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642796"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052284"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Szegmensek exportálása az Ominsendbe (előzetes verzió)
 
@@ -22,7 +22,7 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Ominsendbe, és haszn
 ## <a name="prerequisites"></a>Előfeltételek
 
 -   Van egy [Ominsend fiókja](https://www.omnisend.com/) és ahhoz tartozó rendszergazdai hitelesítő adatai.
--   Szegmenseket [konfigurált](segments.md) a Customer Insights szolgáltatásban.
+-   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
 -   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
