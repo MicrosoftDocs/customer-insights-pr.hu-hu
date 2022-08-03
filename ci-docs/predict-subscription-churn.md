@@ -1,5 +1,5 @@
 ---
-title: Előfizetési lemorzsolódás előrejelzés (videót tartalmaz)
+title: Előfizetés-lemorzsolódás előrejelzés (videót tartalmaz)
 description: Előrejelzi, hogy az ügyfélnél fennáll-e annak veszélye, hogy a jövőben nem az Ön vállalatánál fizet elő termékekre vagy szolgáltatásokra.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 415cd5d675512b4f434998afaa8265c8e45c562b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 72aa38242df21181f142833db03c825574455986
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642875"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171052"
 ---
 # <a name="subscription-churn-prediction"></a>Előfizetési lemorzsolódás előrejelzése
 
@@ -61,8 +61,8 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 
 ## <a name="create-a-subscription-churn-prediction"></a>Előfizetési lemorzsolódás előrejelzésének létrehozása
 
-1. Nyissa meg az **IntelligencePredictions** > **oldalt**.
-1. Válassza ki az **Előfizetés lemorzsolódási modellcsempét**, és válassza **a Modell használata lehetőséget**.
+1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
+1. Válassza az Előfizetéses **adatváltozás modell csempéjét**, majd válassza a Modell használata **lehetőséget**.
    > [!div class="mx-imgBorder"]
    > ![Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal.](media/subscription-churn-usethismodel.PNG "Az Előfizetési lemorzsolódás modellje csempe az Adott modell használata gombbal")
 
@@ -76,7 +76,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 1. Adja meg **Az előfizetés óta eltelt napok** számát; ez az az érték, ami után a vállalat lemorzsolódottnak tekint egy ügyfelet. Ezt az időszakot általában olyan üzleti tevékenységekkel szokták összevetni, amelyek az ügyfél elvesztését hivatottak megakadályozni (ajánlatok vagy egyéb marketinges erőfeszítések).
 1. Adja meg a számot **A napok száma a jövőben a lemorzsolódás megjósolásához** alatt, hogy beállítsa az ablakot a lemorzsolódás előrejelzéséhez. Például megjósolhatja a lemorzsolódás kockázatát az ügyfelek számára a következő 90 nap során, hogy az megfeleljen a marketing megtartási törekvéseinek. A hosszabb vagy rövidebb időszakokra visszavethető lemorzsolódási kockázata előrejelzése az adott üzleti követelményektől függően nehezebben tudja figyelembe venni a lemorzsolódási kockázat profiljában lévő tényezőket. A folytatáshoz válassza a **Tovább** lehetőséget.
    >[!TIP]
-   > A Piszkozat **mentése bármikor lehetőséget választva** mentheti a előrejelzés piszkozatként. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
+   > A Piszkozat **mentése lehetőséget bármikor választhatja** a előrejelzés piszkozatként való mentéséhez. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
 
 ### <a name="add-required-data"></a>Szükséges adatok hozzáadása
 
@@ -107,7 +107,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
 
 ### <a name="set-schedule-and-review-configuration"></a>Ütemezési és felülvizsgálati konfiguráció beállítása
 
-1. Állítsa be a modell újratanításának gyakoriságát. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel az új adatok a Customer Insights alkalmazásban kerülnek felhasználásra. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
+1. Állítsa be a modell újratanításának gyakoriságát. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel a rendszer új adatokat tölt be a Customer Insights szolgáltatásba. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
 1. Válassza a **Következő** lehetőséget.
 1. Ellenőrizze a konfigurációt. A megjelenített érték alatt lévő **Szerkesztés** beállítással az előrejelzési konfiguráció bármelyik részéhez visszaléphet. Egy másik lehetőség, hogy kiválaszt egy konfigurációs lépést a folyamatjelzőn.
 1. Ha minden érték megfelelően van konfigurálva, akkor az előrejelzési folyamat indításához válassza a **Mentés és Futtatás** lehetőséget. A **Saját előrejelzések** lapon tekintheti meg az előrejelzései állapotát. A folyamat – az előrejelzésben használt adatok mennyiségétől függően – több óráig is tarthat.
@@ -121,7 +121,7 @@ Az előfizetési lemorzsolódást előrejelző funkcióval jelezhető, hogy az �
    - **Előrejelzés neve:** Az előrejelzés létrehozáskor megadott neve.
    - **Előrejelzés típusa:** Az előrejelzéshez használt modell típusa.
    - **Kimeneti entitás:** Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.    
-     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-new-segment) az preferált küszöbértékkel.
+     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-segment) az preferált küszöbértékkel.
    - **Várható mező:** Ez a mező csak bizonyos típusú előrejelzések esetén kap értéket; az előfizetési lemorzsolódás előrejelzése nem használja.
    - **Állapot:** Az előrejelzés aktuális futási állapota.
         - **Feldolgozási sorban:** Az előrejelzés jelenleg más folyamatok futására vár.

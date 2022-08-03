@@ -1,51 +1,54 @@
 ---
 title: Szegmensek exportálása Sendinblue-ba (előzetes verzió)
 description: További információ a kapcsolat konfigurálásához és az Sendinblue-ba való exportáláshoz.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9f6550b5c57866702631b4c294bb059279461bd6
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 816a3b242fadaa5a75db878adf0a76baf638e41c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083079"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196949"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Szegmensek exportálása Sendinblue-ba (előzetes verzió)
 
 Az egyesített ügyfélprofilok szegmenseinek exportálása kampányok létrehozásához, e-mail-marketing szolgáltatást biztosíthat és az ügyfelek meghatározott csoportját használhatja a Sendinblue szolgáltatással.
 
-## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
+## <a name="prerequisites"></a>Előfeltételek
 
--   [Sendinblue fiókkal](https://www.sendinblue.com/) és a megfelelő rendszergazdai hitelesítő adatokkal rendelkezik.
--   A Sendinblue-ban és a megfelelő azonosítókban vannak meglévő listák.
--   Rendelkezik [konfigurált szegmensekkel](segments.md).
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
+- Sendinblue-fiók [és](https://www.sendinblue.com/) a megfelelő rendszergazdai hitelesítő adatok.
+- Egy [SendinBlue API-kulcs](https://developers.sendinblue.com/docs/getting-started#:~:text=Get%20your%20API%20key&text=You%20can%20create%20one%20from,your%20settings%20This%20API%20key).
+- Meglévő listák a Sendinblue-ban és a megfelelő azonosítók.
+- [Konfigurált szegmensek](segments.md).
+- Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Sendinblue fájlba.
-- Az Sendinblue-ba történő exportálás szegmensekre korlátozódik.
-- Az összesen 1 millió ügyfélprofilt vevő szegmensek exportálása akár 90 percet is igénybe vehet. 
-- A Sendinblue alkalmazásba exportálható ügyfélprofilok száma a Sendinblue-val kötött szerződéstől függ, és csak korlátozott.
+- Sendinblue-ba exportálva akár 1 millió ügyfélprofil is lehet, ami akár 90 percet is igénybe vehet. A Sendinblue-ba exportálható ügyfélprofilok száma a Sendinblue-val kötött szerződésétől függ.
+- Csak szegmensek.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Sendinblue-val való kapcsolat beállítása
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Sendinblue** lehetőséget a kapcsolat konfigurálásához.
+1. Válassza a Kapcsolat **hozzáadása,** majd a Sendinblue **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
 1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Adja meg **[SendinBlue API-kulcsát](https://developers.sendinblue.com/docs/getting-started#:~:text=Get%20your%20API%20key&text=You%20can%20create%20one%20from,your%20settings%20This%20API%20key)**.
+1. Adja meg a **SendinBlue API-kulcsot**.
 
-1. Válassza az **Elfogadom** lehetőséget, hogy megerősítse az **Adatvédelem és megfelelőség** opciót, és válassza a **Csatlakozás** lehetőséget, hogy inicializálja a kapcsolatot Sendinblue-val.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+
+1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
@@ -53,33 +56,26 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása kampányok létrehoz
 
 ## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. Az **Exportálási kapcsolat** mezőben válasszon kapcsolatot a Sendinblue szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. Az **Exportálási kapcsolat** mezőben válasszon kapcsolatot a Sendinblue szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
-1. Adja meg **Sendinblue listaazonosítóját** 
+1. Adja meg az exportálás nevét.
 
-1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. 
+1. Adja meg Sendinblue **listaazonosítóját**.
 
-1. Opcionálisan exportálhat **utónév**, **vezetéknév**, és **telefon**-ra,hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt.
 
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. 
+1. Opcionálisan exportálja **utónév**, **vezetéknév** és **telefonját**, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
-
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Amikor engedélyezi a Dynamics 365 Customer Insights -nak, hogy továbbítsa az adatokat Sendinblue-ba, engedélyezi az adatátvitelt a megfelelőséghatáron kívülre a Dynamics 365 Customer Insights -nak, beleértve az esetlegesen bizalmas adatokat, például személyes adatokat. A Microsoft az Ön utasítására továbbítja az ilyen adatokat, de Ön felelős annak biztosításáért, hogy a Sendinblue megfeleljen az esetleges adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

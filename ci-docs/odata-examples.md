@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
+ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083163"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "9121565"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-lekérdezési példák Customer Insights API-khoz
 
@@ -23,7 +23,7 @@ Ez a cikk néhány gyakran kért példalekérdezést sorol fel, amelyek segíten
 
 Módosítania kell a lekérdezésmintákat, hogy működjenek a célkörnyezetekben: 
 
-- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` hol {instanceId} van a lekérdezni kívánt Customer Insights-környezet GUID azonosítója. A [ListAllInstances művelet](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetővé teszi, hogy megtalálja azt {InstanceId}, amelyhez hozzáféréssel rendelkezik.
+- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` hol {instanceId} van a lekérdezni kívánt Customer Insights-környezet GUID azonosítója. A [ListAllInstances művelet](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetővé teszi, hogy megtalálja azt {InstanceId}, amelyhez hozzáféréssel rendelkezik.
 - {CID}: Egységes ügyfélrekord GUID azonosítója. Példa: `ce759201f786d590bf2134bff576c369`.
 - {AlternateKey}: Egy ügyfélrekord elsődleges kulcsának azonosítója egy adatforrás. Példa: `CNTID_1002`
 - {DSname}: Sztring egy olyan adatforrás entitásnevével, amely a Customer Insights szolgáltatásba kerül. Példa: `Website_contacts`.
@@ -39,9 +39,10 @@ Az alábbi táblázat mintalekérdezéseket tartalmaz a *Vevő* entitáshoz.
 |Másodlagos kulcs    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  Az alternatív kulcsok megmaradnak az egyesített vevői entitásban       |
 |Select   | `{serviceRoot}/Customer?$select=CustomerId,FullName&$filter=customerid eq '1'`        |         |
 |Ennyi idő múlva:    | `{serviceRoot}/Customer?$filter=CustomerId in ('{CID1}',’{CID2}’)`        |         |
-|Másodlagos kulcs + Be   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
+|Másodlagos kulcs + Be   | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
 |Keresés  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   Keresési karakterlánc esetén a 10 legjobb eredményt adja eredményül.      |
 |Szegmens tagság  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | A szegmentálási entitás sorainak előre beállított számát adja eredményül.      |
+|Szegmenstagság egy ügyfél számára | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'&IsMemberOfSegment('{SegmentName}')`     | Visszaadja az ügyfélprofilt, ha az adott szegmens tagja     |
 
 ## <a name="unified-activity"></a>Egyesített tevékenység
 

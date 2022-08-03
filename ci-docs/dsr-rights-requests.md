@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 6c6ce49c18de3a09d28138316d893e6842919042
+ms.sourcegitcommit: ff0f4b5664d995870c91adb87c7d3780a582efca
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947371"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "9146698"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Az adatalanyok jogainak (DSR) megfelelő kérelmek a GDPR szerint
 
@@ -31,18 +31,22 @@ A személyes adatoknak a szervezet ügyféladatok közüli törléséhez való j
 
 A Customer Insights a következő terméken belüli élményeket kínálja egy adott ügyfél vagy felhasználó személyes adatainak törléséhez:
 
-- **Ügyféladatok törlési kérelmeinek kezelése**: A Customer Insights ügyféladatait a Customer Insights megoldáson kívüli adatforrásokból lettek betöltve. Minden GDPR szerinti törlési kérelmet az eredeti adatforráson kell végrehajtani.
+- **Ügyféladatok törlési kérelmeinek kezelése**: A Customer Insights ügyféladatait a Customer Insights megoldáson kívüli adatforrásokból lettek betöltve. Először hajtsa végre a GDPR törlési kérelmeit az eredeti adatforrás.
 - **Törlési kérelmek kezelése a Customer Insights felhasználói adatokhoz**: Customer Insights által felhasználókhoz létrehozott adatok. Minden GDPR szerinti törlési kérelmet a Customer Insights megoldásban kell elvégezni.
 
 ##### <a name="manage-requests-to-delete-customer-data"></a>Ügyféladatok törlési kérelmeinek kezelése
 
-A Customer Insights rendszergazdák az alábbi lépések végrehajtásával eltávolíthatják az adatforrásban törölt ügyféladatokat:
+A Customer Insights-rendszergazdák az alábbi lépéseket követve távolíthatják el a adatforrás törölt ügyféladatokat. Győződjön meg arról, hogy a törlési kérelem a adatforrás történt, mielőtt folytatná az alább felsorolt lépéseket. 
 
 1. Jelentkezzen be a Dynamics 365 Customer Insights rendszerbe.
-2. Ugrás az **Adatforrások** > **oldalra**
-3. A törölt ügyféladatokat tartalmazó minden egyes adatforráshoz a listából:
+1. Ugrás az **Adatforrások** > **oldalra**
+1. A törölt ügyféladatokat tartalmazó minden egyes adatforráshoz a listából:
    1. Válassza ki a függőleges három pontot (&vellip;), majd válassza a Frissítés **lehetőséget**.
-   2. Ellenőrizze az adatforrás állapotát az **Állapot** alatt. A pipa azt jelenti, hogy a frissítés sikeresen megtörtént. A figyelmeztető háromszög azt jelenti, hogy valamilyen hiba történt. Ha egy figyelmeztető háromszög jelenik meg, forduljon ide: D365CI@microsoft.com.
+   1. Ellenőrizze az adatforrás állapotát az **Állapot** alatt. A pipa azt jelenti, hogy a frissítés sikeresen megtörtént. A figyelmeztető háromszög azt jelenti, hogy valamilyen hiba történt. Ha egy figyelmeztető háromszög jelenik meg, forduljon ide: D365CI@microsoft.com.
+1. A sikeres adatforrás-frissítés után futtassa az alsóbb rétegbeli frissítéseket is. Különösen akkor, ha nincs ütemezve a Customer Insights ismétlődő teljes frissítése. 
+
+> [!IMPORTANT]
+> A statikus szegmensek nem szerepelnek a teljes frissítésben vagy a törlési kérelem utáni lefelé irányuló frissítések futtatásában. Annak érdekében, hogy az ügyféladatok is el legyen távolítva a statikus szegmensekből, hozza létre újra a statikus szegmenseket a frissített forrásadatokkal.
 
 > [!div class="mx-imgBorder"]
 > ![Ügyféladatok GDPR törlési kérelmeinek kezelése.](media/gdpr-data-sources.png "Ügyféladatok GDPR törlési kérelmeinek kezelése")
@@ -77,5 +81,10 @@ Az adatok exportálásához a bérlői rendszergazda a következő lépéseket h
 1. E-mailben elküldhet egy kérelmet a felhasználó e-mail címének meghatározásával a D365CI@microsoft.com címre. A Customer Insights csoport egy adminisztrátora e-mailt küld a regisztrált bérlői rendszergazdai e-mail címre, amelyben megerősítést kér az adatok exportálása céljából.
 2. Nyugtázza a felhasználó adatainak exportálását.
 3. Az exportált adatok a bérlői rendszergazdai e-mail címen keresztül fogadhatók.
+
+### <a name="data-deletion-handling-in-dynamics-365-customer-insights"></a>Adattörlések kezelése a Dynamics 365 Customer Insights
+
+1. Az adatok (adatpartíciók és adat-pillanatképek) törlődnek, ha az adatpartíciók és az adat-pillanatképek több mint 30 napig inaktívak, ami azt jelenti, hogy egy új adatpartíció és pillanatkép váltotta fel őket az adatforrások frissítése révén.
+2. Nem minden adat és pillanatkép törlődik. A legutóbbi adatpartíció és adat-pillanatkép definíció szerint aktív, mert a Customer Insights szolgáltatásban használják őket. A legfrissebb adatok esetében nem számít, hogy az adatforrások nem frissültek-e az elmúlt 30 napban.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

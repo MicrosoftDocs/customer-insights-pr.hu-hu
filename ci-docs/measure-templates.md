@@ -11,25 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6dc7fce78d10ba91de4b2abf54c6c6ab1c919d3a
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051686"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170776"
 ---
 # <a name="create-measures-from-templates"></a>Mértékek létrehozása sablonokból
 
-A létrehozásukhoz használhatja az általánosan használt [mértékek](measures.md) előre definiált sablonjait. A sablonok részletes leírása és az interaktív élmény segít a hatékony mérték létrehozásában. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
+A létrehozásukhoz használja az általánosan használt [mértékek](measures.md) előre definiált sablonjait. A sablonok az *Egyesített tevékenység* entitásból származó leképezett adatokra épülnek. Ezért mindenképpen konfiguráljon [ügyféltevékenységeket](activities.md), mielőtt sablonból hoz létre mértéket.
 
-Egyéni mértékek létrehozásához lásd: [Mértékkészítő használata mértékek létrehozásához a semmiből](measure-builder.md).
+A mértéksablonok csak az egyes ügyfelek számára készült **környezetekben támogatottak**. Ha egyéni mértékeket szeretne létrehozni, vagy mértékeket szeretne létrehozni a B-től B-ig, tekintse meg a Mértékkészítő használatacímű [témakört](measure-builder.md).
 
-# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
-
-Elérhető mértéksablonok: 
+Elérhető mértéksablonok:
 - Tranzakció átlagos értéke (ATV)
 - Tranzakció összértéke
 - Átlagos napi bevétel
+- Havi átlagos bevétel
 - Átlagos éves bevétel
 - Tranzakció száma
 - Szerzett hűségpontok
@@ -57,21 +56,22 @@ Elérhető mértéksablonok:
 
 1. Válassza a **Kész** lehetőséget.
 
-1. Adja meg az adat használandó időkeretét az **Időszak beállítása** szakaszban. Válassza ki, hogy az új mérés lefedi-e a teljes adathalmazt az **Összes idő** kiválasztásával, vagy ha azt szeretné, hogy a mérés egy **Adott időszakra** összpontosítson.
+1. **Az Időszak** beállítása szakaszban határozza meg az adatok időkeret. Válassza ki, hogy az új mérés lefedi-e a teljes adathalmazt az **Összes idő** kiválasztásával, vagy ha azt szeretné, hogy a mérés egy **Adott időszakra** összpontosítson.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Képernyőkép, amely egy sablonból származó mérték konfiguálásakor mutatja az időszak szakaszt.":::
 
 1. A következő szakaszban válassza az **Adatok hozzáadása** lehetőséget a tevékenységek kiválasztásához, és az *Egyesített tevékenység* entitásból képezze le a megfelelő adatokat.
 
-    1. A 1/2. lépés: A **Tevékenység típusa** alatt válassza ki a használni kívánt entitás típusát. A **Tevékenységekhez** válassza ki a leképezni kívánt entitásokat.
-    1. 2/2. lépés: Válassza ki az attribútumot az *Egyesített tevékenység* entitásból a képlet által megkövetelt összetevőhöz. Például az Átlagos tranzakció értéke a Tranzakció értéket képviselő attribútum. A **Tevékenység időbélyegző** esetén válassza ki az Egyesített tevékenység entitás attribútumát, amely a tevékenység dátumát és időpontját jelképezi.
-   
-1. Miután az adatleképezés sikeres volt, az állapot **Befejezett** értékre vált, valamint láthatja a leképezett tevékenységek és attribútumok nevét.
+    1. A 1/2. lépés: A **Tevékenység típusa** alatt válassza ki a használni kívánt entitás típusát. A Tevékenységek **mezőben** válassza ki a leképezni kívánt entitásokat, majd kattintson a Tovább **gombra**.
+    1. 2/2. lépés: Válassza ki az attribútumot az *Egyesített tevékenység* entitásból a képlet által megkövetelt összetevőhöz. Például az Átlagos tranzakció értéke a Tranzakció értéket képviselő attribútum. A Tevékenység időbélyegzője **mezőben** válassza ki az Egyesített tevékenység *entitás attribútumát*, amely a tevékenység dátumát és idejét jelöli.
+    1. Válassza a **Mentés** parancsot.
 
-1. Most már a **Futtatás** lehetőséget is választhatja a mérték eredményének kiszámításához. Későbbi finomításhoz válassza a **Tervezet mentése** lehetőséget.
+    Ha az adatleképezés sikeres, az állapot a Befejezett **állapotot mutatja**, és megjelenik a leképezett tevékenységek és attribútumok neve.
 
-# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
+1. Válassza a Futtatás **lehetőséget** a mérték eredményeinek kiszámításához. Válassza a Piszkozat **mentése lehetőséget**, ha meg szeretné tartani az aktuális konfigurációt, és később szeretné futtatni a mértéket. Megjelenik a **Mértékek** oldal.
 
-Ez a funkció csak az olyan környezetekben létrehozott mértékekhez érhetők el, ahol az egyéni ügyfelek elsődleges célként célközönség.
+## <a name="next-step"></a>Következő lépés
 
----
+Vevői szegmens létrehozásához [használja a meglévő mértékeket](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

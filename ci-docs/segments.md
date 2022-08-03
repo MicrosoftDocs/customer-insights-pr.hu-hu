@@ -14,86 +14,96 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 8b2c2f9b84bf8b7f37d1468b871946ecb3e6aa98
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050950"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170684"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
 A szegmensek segítségével csoportosíthatja ügyfeleit demográfiai-, tranzakciós- vagy viselkedési tulajdonságok alapján. A szegmensekkel népszerűsítheti az üzleti célok eléréséhez használható promóciós kampányokat, értékesítési tevékenységeket és ügyfélszolgálati tevékenységeket.
 
-A szegmensdefiníciók szűrőivel egyező ügyfélprofilokat a szegmensek *tagjainak* nevezik. Bizonyos [szolgáltatási korlátozások](/dynamics365/customer-insights/service-limits) érvényesek.
+A szegmensdefiníciók szűrőinek megfelelő ügyfélprofilokat egy szegmens tagjainak *nevezzük*. Bizonyos [szolgáltatási korlátozások](/dynamics365/customer-insights/service-limits) érvényesek.
 
-## <a name="create-a-new-segment"></a>Új szegmens létrehozása
+## <a name="create-a-segment"></a>Szegmens létrehozása
 
-Új szegmens többféleképpen is létrehozható: 
+Válassza ki, hogyan szeretne szegmenst létrehozni a cél célközönség alapján.
 
 # <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
-- Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment) 
-- Egyszerű szegmensek egyetlen operátorral: [Gyorsszegmens](segment-builder.md#quick-segments) 
-- Hasonló ügyfelek keresése AI-alapú megoldással: [Hasonló ügyfelek](find-similar-customer-segments.md) 
-- AI-alapú, mértékeken vagy attribútumokon alapuló javaslatok: [Javasolt szegmensek a mértékek javításához](suggested-segments.md) 
-- Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md) 
+- Összetett szegmensek a szegmensépítővel: [Készítse el sajátját](segment-builder.md)
+- Egyszerű szegmensek egyetlen operátorral: [Gyorsszegmens](segment-quick.md)
+- AI-alapú módszer a hasonló ügyfelek megtalálására: [Hasonló ügyfelek](find-similar-customer-segments.md)
+- AI-alapú javaslatok mértékek vagy attribútumok alapján: [Javasolt szegmensek mértékek alapján](suggested-segments.md)
+- Javaslatok tevékenységek alapján: [Ügyféltevékenységen alapuló javasolt szegmensek](suggested-segments-activity.md)
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
-- Összetett szegmens szegmensszerkesztővel: [Saját felépítés](segment-builder.md#create-a-new-segment)
+- Egyszerű vagy összetett szegmensek a szegmensépítővel: [Készítse el sajátját](segment-builder.md)
 
 ---
 
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
-Lépjen a Szegmensek **oldalra az** összes mentett szegmens megtekintéséhez és kezeléséhez.
+**A Szegmensek** lapon megtekintheti a létrehozott szegmenseket, azok állapotát és állapotát, a tagok számát és az adatok legutóbbi frissítésének időpontját. A szegmensek listáját rendezheti bármely oszlop szerint, vagy a keresőmező segítségével megkeresheti a kezelni kívánt szegmenst.
 
-Minden szegmenshez egy sor tartozik; ez a sor további információkat tartalmaz a szegmensről.
+Válasszon ki egy szegmenst az elérhető műveletek megtekintéséhez.
 
 :::image type="content" source="media/segments-selected-segment.png" alt-text="Kijelölt szegmens az opciók legördülő listájával és a rendelkezésre álló lehetőségekkel." lightbox="media/segments-selected-segment.png":::
 
-A szegmens kiválasztásakor a következő műveletek érhetők el:
-
-- **Megtekintés** a szegmens részleteinek, köztük a tagszám trendjének megtekintése és a szegmens tagjainak előnézete.
+- [**Tekintse meg**](#view-segment-details) a szegmens részleteit, beleértve a tagok számának trendjét és a szegmenstagok előnézetét.
 - A tagok listájának **letöltése** .CSV fájlként.
 - **Szerkesztés** a szegmens szerkesztése a tulajdonságainak módosításához.
 - **Duplikált elem létrehozása** a szegmensről. Dönthet úgy, hogy azonnal szerkeszti a tulajdonságait, vagy menti az ismétlődést.
-- **Frissítés** a szegmens frissítése a legfrissebb adatok felvételéhez.
-- Szegmens **Aktiválása** vagy **inaktiválása**. Inaktív szegmensek esetén a szegmens definíciója létezik, de még nem tartalmaz ügyfeleket. Az aktív szegmens olyan ügyfeleket keres, akik megfelelnek a szegmensdefiníciónak. Ha egy [ütemezett frissítés](system.md#schedule-tab) be van állítva, az inaktív szegmensek **állapota** **kihagyva** állapotú , jelezve, hogy a frissítést nem is kísérelte meg. Inaktív szegmens aktiválásakor a rendszer frissíti, és bekerül az ütemezett frissítésekbe.
-  Másik lehetőségként használhatja **Ütemezés később** funkcióit az **Aktiválás/inaktiválás**, ahol megadhat egy adott szegmens aktiválására és inaktiválására vonatkozó jövőbeli dátumot és időpontot.
-- **[Keressen hasonló ügyfeleket](find-similar-customer-segments.md)** a szegmensből.
+- [**Frissítse**](#refresh-segments) a szegmenst, hogy a legfrissebb adatokat tartalmazza.
+- Szegmens **Aktiválása** vagy **inaktiválása**. Az inaktív szegmensek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést meg sem kísérelték. Az aktív szegmensek típusuk alapján frissülnek: statikus vagy dinamikus.
+- **Statikussá** tenni vagy **dinamikussá** tenni a szegmens típusát. A statikus szegmenseket manuálisan kell frissíteni. A dinamikus szegmensek automatikusan frissülnek a rendszerfrissítések során.
+- [**Keressen hasonló ügyfeleket**](find-similar-customer-segments.md) a szegmensből.
 - Szegmens **átnevezése**.
 - **Címke** a [szegmens címkéinek](work-with-tags-columns.md#manage-tags) kezeléséhez.
-- A tagok listájának **letöltése** .CSV fájlként.
-- Az **Exportálások kezelése** az exporttal kapcsolatos szegmensek megtekintéséhez és kezeléséhez. [További információ az exportálásokról.](export-destinations.md)
+- [**Az exportálások**](#export-segments) kezelése az exportálással kapcsolatos szegmensek megtekintéséhez és kezeléséhez. [További információ az exportálásokról.](export-destinations.md)
 - Szegmens **törlése**.
 - **Oszlopok** a megjelenő oszlopok [testreszabásához](work-with-tags-columns.md#customize-columns).
 - **Szűrés** a címkék [szűréséhez](work-with-tags-columns.md#filter-on-tags).
 - **Keressen nevet** a szegmens neve szerinti kereséshez.
 
+## <a name="view-segment-details"></a>Szegmens részleteinek megtekintése
+
+**A Szegmensek** lapon válasszon ki egy szegmenst a feldolgozási előzmények és a szegmenstagok megtekintéséhez.
+
+Az oldal felső részén egy trendgráf látható, amely a tagok számának változásait ábrázolja. Vigye az egérmutatót az adatpontok fölé, és tekintse meg egy adott napon a tagok számát. Módosítsa a vizualizáció időkeret.
+
+:::image type="content" source="media/segment-time-range.png" alt-text="Szegmens időtartománya.":::
+
+Az alsó rész a szegmenstagok listáját tartalmazza.
+
+> [!NOTE]
+> Az adott listában megjelenő mezők a szegmens entitásainak attribútumain alapulnak.
+>
+>A lista az egyeztetett szegmestagok előzetes verziója, és a szegmens első 100 rekordját mutatja, így gyorsan kiértékelheti, és szükség esetén felülvizsgálhatja a meghatározásokat. Az összes egyező rekord [megtekintéséhez exportálja a szegmenst](export-destinations.md).
+
 ## <a name="refresh-segments"></a>Szegmensek frissítése
 
-Az összes szegmenst egyszerre frissítheti a **Szegmensek** oldal **Az összes frissítése** elemével. Ha nem szeretné frissíteni az összes szegmenst, jelölje ki a frissítendőket, és válassza a **Frissítés** lehetőséget a beállítások között. Másik lehetőségként beállíthat egy ismétlődő frissítést is a **Felügyelet** > **Rendszer** > **Ütemezés** pontban. Ismétlődő frissítés konfigurálásakor a következő szabályok érvényesek:
+A szegmensek automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők. Egy vagy több szegmens manuális frissítéséhez jelölje ki őket, majd válassza a Frissítés **lehetőséget**.
 
-- A Dinamikus **vagy** a Bővítés **típusú** szegmensek automatikusan frissülnek a beállított ütemben. A frissítés befejezése után az **Állapot** jelzi, hogy voltak-e problémák a szegmens frissítésével. Az **Utolsó frissítés** az utolsó sikeres frissítés időbélyegét jeleníti meg. Ha hiba történik, válassza ki a hibát a történtek részleteinek megtekintéséhez.
-- A Statikus **típusú** *szegmensek nem* frissülnek automatikusan. Az **Utolsó frissítés** a statikus szegmensek manuális futtatásának vagy frissítésének időbélyegét mutatja.
+Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](system.md#schedule-tab) rendszerütemezés **lapra** > **·** > **.** A következő szabályok érvényesek:
+
+- A Dinamikus **vagy** a Bővítés **típusú** szegmensek automatikusan frissülnek a beállított ütemben. A frissítés befejezése után az **Állapot** azt jelzi, hogy voltak-e problémák a szegmens frissítésével. Az **Utolsó frissítés** az utolsó sikeres frissítés időbélyegét jeleníti meg. Ha hiba történik, válassza ki a hibát a történtek részleteinek megtekintéséhez.
+- A Statikus **típusú** *szegmensek nem* frissülnek automatikusan. Az **Utolsó frissítés** egy időbélyeget mutat arról, hogy a statikus szegmens utoljára manuálisan futtatták vagy frissítették.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 ## <a name="export-segments"></a>Szegmensek exportálása
 
-Exportálhat egy szegmenst a szegmensek oldaláról vagy az [exportálások oldalról](export-destinations.md). 
+Exportálja a szegmenseket más alkalmazásokba az adatok további felhasználásához. Exportáljon egy szegmenst a szegmensek oldalról vagy az [exportálási oldalról](export-destinations.md).
 
-1. Lépjen a **Szegmensek** oldalra.
+1. Lépjen a Szegmensek **oldalra,** és válassza ki az exportálni kívánt szegmenst.
 
-1. Válassza ki az exportálni kívánt szegmens függőleges három pontját (&vellip;).
+1. Válassza az Exportálások **kezelése lehetőséget**. Megnyílik az **Exportálás (előzetes verzió) szegmenshez** oldal. Tekintse meg az összes konfigurált exportálást aszerint csoportosítva, hogy tartalmazzák-e az aktuális szegmenst vagy sem.
 
-1. Válassza az **Exportálás kezelése** lehetőséget a műveletek legördülő listából.
-
-1. Megnyílik az **Exportálás (előzetes verzió) szegmenshez** oldal. Az összes konfigurált exportálást csoportosítva láthatja, hogy azok tartalmazzák-e az aktuális szegmenst vagy sem.
-
-   1. Ha a kijelölt szegmenst hozzá szeretné adni egy exportáláshoz, **Módosítsa** a megfelelő exportálást, és válassza ki a megfelelő szegmenst, majd mentse. Az egyes ügyfelek számára készült környezetekben ehelyett kiválaszthatja az exportálást a listában, és kiválaszthatja a Szegmens **hozzáadása lehetőséget** ugyanazon eredmény eléréséhez.
+   1. Ha a kijelölt szegmenst hozzá szeretné adni egy exportáláshoz, **Módosítsa** a megfelelő exportálást, és válassza ki a megfelelő szegmenst, majd mentse. Az egyes ügyfelek számára készült környezetekben válassza ki az exportálást a listából, majd válassza a Szegmens **hozzáadása lehetőséget** ugyanazon eredmény eléréséhez.
 
    1. Ha új exportálást szeretne létrehozni a kijelölt szegmenssel, válassza az **Exportálás hozzáadása** lehetőséget. Az exporálások létrehozásával kapcsolatos további információkért lásd: [Új exportálás beállítása](export-destinations.md#set-up-a-new-export).
 
@@ -101,11 +111,11 @@ Exportálhat egy szegmenst a szegmensek oldaláról vagy az [exportálások olda
 
 ## <a name="track-usage-of-a-segment"></a>Szegmens használatának nyomon követése
 
-Ha olyan szegmenseket használ az alkalmazásokban, amelyek ugyanazon Microsoft Dataverse a szervezeten alapulnak, amely a Customer Insightshoz kapcsolódik, nyomon követheti egy szegmens használatát. A Dynamics 365 Marketing [ügyfélútjaiban használt Customer Insights szegmensek esetében](/dynamics365/marketing/real-time-marketing-ci-profile) a rendszer tájékoztatja Önt az adott szegmens használatáról.
+Ha olyan szegmenseket használ az alkalmazásokban, amelyek ugyanazon a szervezeten alapulnak, amely a Microsoft Dataverse Customer Insights szolgáltatáshoz kapcsolódik, nyomon követheti egy szegmens használatát. A Dynamics 365 Marketing [ügyfélútjaiban használt Customer Insights szegmensek esetében](/dynamics365/marketing/real-time-marketing-ci-profile) a rendszer tájékoztatja Önt az adott szegmens használatáról.
 
-Amikor olyan szegmenst szerkeszt, amelyet a Customer Insights környezetben vagy a Marketing ügyfélút használ, a [szegmenskészítő](segment-builder.md) egyik szalagcíme tájékoztatja a függőségekről. A függőség részleteit megvizsgálhatja közvetlenül a szalagcímből, vagy a szegmensépítő Használat **lehetőségének kiválasztásával**.
+Amikor olyan szegmenst szerkeszt, amelyet a Customer Insights környezetben vagy a Marketing ügyfélút használ, a [szegmenskészítő](segment-builder.md) egyik szalagcíme tájékoztatja a függőségekről. Vizsgálja meg a függőség részleteit közvetlenül a szalagcímből, vagy válassza a Használat **lehetőséget** a szegmensépítőben.
 
-A **Szegmenshasználat** panel a szegmens használatának részleteit jeleníti meg a Dataverse-alapú alkalmazásokban. Az ügyfélutakban használt szegmensek esetében talál egy hivatkozást, amely megvizsgálja az utazást a Marketingben, ahol ezt a szegmenst használják. Ha rendelkezik engedéllyel a Marketing alkalmazás eléréséhez, ott további részleteket érhet el.
+A **Szegmenshasználat** panel a szegmens használatának részleteit jeleníti meg a Dataverse-alapú alkalmazásokban. Az ügyfélutakban használt szegmensek esetében talál egy hivatkozást, amely megvizsgálja az utazást a Marketingben, ahol ezt a szegmenst használják. Ha rendelkezik engedélyekkel a Marketing alkalmazás eléréséhez, tekintse meg az ott található további részleteket.
 
 :::image type="content" source="media/segment-usage-pane.png" alt-text="Oldalsó panel a szegmenshasználat részleteivel a szegmenskészítőben.":::
 
@@ -118,25 +128,5 @@ A rendszer tájékoztatja Önt a nyomon követett szegmens használatáról, ami
 A használatot jelenleg a következő Dataverse-alapú alkalmazások követik nyomon:
 
 - [Ügyfélutak a Dynamics 365 Marketing rendszerben](/dynamics365/marketing/real-time-marketing-ci-profile)
-
-## <a name="view-processing-history-and-segment-members"></a>A feldolgozási előzmények és a szegmenstagok megtekintése
-
-A szegmensre vonatkozó konszolidált adatokat a részleteinek áttekintésével tekintheti meg.
-
-A **Szegmens** lapon válassza ki az áttekinteni kívánt szegments.
-
-Az oldal felső részén egy trendgráf látható, amely a tagok számának változásait ábrázolja. Vigye az egérmutatót az adatpontok fölé, és tekintse meg egy adott napon a tagok számát.
-
-Frissítheti az ábrázolás időkeretét.
-
-> [!div class="mx-imgBorder"]
-> ![Szegmens időtartománya.](media/segment-time-range.png "Szegmens időtartománya")
-
-Az alsó rész a szegmenstagok listáját tartalmazza.
-
-> [!NOTE]
-> Az adott listában megjelenő mezők a szegmens entitásainak attribútumain alapulnak.
->
->A lista az egyeztetett szegmestagok előzetes verziója, és a szegmens első 100 rekordját mutatja, így gyorsan kiértékelheti, és szükség esetén felülvizsgálhatja a meghatározásokat. Az összes egyező bejegyzés megjelenítéséhez [exportálnia kell a szegmenst](export-destinations.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

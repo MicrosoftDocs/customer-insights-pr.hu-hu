@@ -14,43 +14,56 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: 880c06bffcfa269151d96cb4c597eed4832fc61b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083121"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170823"
 ---
 # <a name="measures-overview"></a>A mértékek áttekintése
 
-A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Például egy vállalkozás látni szeretné az *ügyfélre jutó teljes költést* , hogy megértse az egyes ügyfelek vásárlási előzményeit, vagy mérje a *vállalat teljes értékesítését*, hogy megértse az egész üzlet összesített szintű bevételét.  
+A mértékek segítségével az ügyfelek viselkedése és üzleti teljesítménye jobban érthető. Az [egyesített profilokból](data-unification.md) származó releváns értékeket veszik alapul. Például egy vállalkozás látni szeretné az *ügyfélre jutó teljes költést* , hogy megértse az egyes ügyfelek vásárlási előzményeit, vagy mérje a *vállalat teljes értékesítését*, hogy megértse az egész üzlet összesített szintű bevételét.
 
-A mértékeket a mértékkészítővel [, egy különböző operátorokkal és egyszerű leképezési lehetőségekkel rendelkező adatlekérdezési platformmal hozzák létre](measure-builder.md). Lehetőséget ad az adatok szűrésére, az eredmények csoportosítására, az [entitáskapcsolatok elérési útjainak](relationships.md) észlelésére és a kimenet előnézetére. [Előre definiált sablonokkal](measure-templates.md) hatékonyan konfigurálhatja a gyakran használt mértékeket.
+Hozzon létre intézkedéseket az üzleti tevékenységek megtervezéséhez az ügyféladatok lekérdezésével és az elemzések kinyerésével. Létrehozhat például egy ügyfélenkénti teljes költés és *egy* ügyfélre *jutó teljes megtérülés mérését*, hogy segítsen azonosítani a magas kiadással, mégis magas hozammal rendelkező ügyfelek csoportját. [Ezután hozzon létre egy szegmenst](segments.md) ezen intézkedések alapján a következő legjobb műveletek végrehajtásához.
 
-A mértékszerkesztő segítségével üzleti tevékenységeket tervezhet az ügyféladatok lekérdezésével és a betekintések kinyerésével. Ha például egy *ügyfélre jutó teljes költség* és az *egy ügyfélre jutó teljes megtérülés* mértékeket hozza létre, akkor könnyebben azonosítható a nagy költéssel, mégis nagy megtérüléssel jellemezhető ügyfelek csoportja. [Ezen mértékek alapján létrehozhat egy szegmenst](segments.md) a következő legjobb műveletek végrehajtásához.
+## <a name="create-a-measure"></a>Mérőszám létrehozása
 
-## <a name="manage-your-measures"></a>Intézkedések kezelése
+Válassza ki, hogyan szeretne mértéket létrehozni a cél célközönség alapján.
 
-A **Mértékek** lapon láthatja a mértékek listáját.
+# <a name="individual-consumers-b-to-c"></a>[Egyéni fogyasztók (B-to-C)](#tab/b2c)
 
-Információkat talál a mérték típusáról, az létrehozóról, a létrehozás dátumáról, a státuszáról és az állapotáról. Ha kiválaszt egy mértéket a listából, megtekintheti a kimenetet, és letölthet egy CSV fájlt.
+- A semmiből a mérőkészítővel: [Építsd meg a sajátodat](measure-builder.md).
+- Gyakran használt mértékekből: [Használjon előre definiált sablonokat](measure-templates.md).
+
+# <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
+
+A semmiből a mérőkészítővel: [Építsd meg a sajátodat](measure-builder.md).
+
+---
+
+## <a name="manage-existing-measures"></a>Meglévő intézkedések kezelése
+
+**A Mértékek** lapon megtekintheti a létrehozott mértékeket, azok állapotát, mértéktípusát és az adatok legutóbbi frissítésének időpontját. A mértéklistákat bármely oszlop szerint rendezheti, vagy a keresőmező segítségével megkeresheti a kezelni kívánt mértéket.
+
+Válasszon egy mérték mellett az elérhető műveletek megtekintéséhez. Válassza ki a mérték nevét a kimenet előnézetének megtekintéséhez és egy CSV-fájl letöltéséhez.
 
 :::image type="content" source="media/measures-actions.png" alt-text="Az egyes intézkedések kezelésére szolgáló műveletek."lightbox="media/measures-actions.png":::
 
-A következő műveletek érhetők el egy mérték kiválasztásakor:
-
-- **Szerkessze** a mérőszám konfigurációját.
-- **Mérték megkettőzése**. Megadhatja, hogy azonnal módosítja-e a tulajdonságait, vagy egyszerűen csak menti a duplikált példányt.
-- **Frissítse** a mértéket a legújabb adatok alapján. Az összes mérték egyidejű frissítéséhez jelölje ki az összes mértéket, majd **a Frissítés lehetőséget**.
+- **Szerkessze** a mértéket a tulajdonságainak módosításához.
+- **Frissítse** a mértéket, hogy a legfrissebb adatokat tartalmazza.
 - **Nevezze át** az intézkedést.
-- **Aktiválás** vagy **Inaktiválás**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során.
-- **Címke** a [szegmens címkéinek](work-with-tags-columns.md#manage-tags) kezeléséhez.
+- **Az intézkedés aktiválása** vagy **inaktiválása**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést nem is kísérelték meg.
+- **Címke** a [mérték címkéinek](work-with-tags-columns.md#manage-tags) kezeléséhez.
 - **Törölje** az intézkedést.
+- **Oszlopok** a megjelenő oszlopok [testreszabásához](work-with-tags-columns.md#customize-columns).
+- **Szűrés** a címkék [szűréséhez](work-with-tags-columns.md#filter-on-tags).
+- **Keressen rá a névre** a mérték neve szerinti kereséshez.
+
+## <a name="refresh-measures"></a>Frissítési intézkedések
+
+A mértékek automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők. Egy vagy több mérték manuális frissítéséhez jelölje ki őket, majd válassza a Frissítés **lehetőséget**. Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](system.md#schedule-tab) rendszerütemezés **lapra** > **·** > **.**
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-## <a name="next-step"></a>Következő lépés
-
-Meglévő intézkedésekkel létrehozhat [egy ügyfélszegmenst](segments.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082260"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207002"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
@@ -42,7 +42,7 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 
 - A Data Lake Storage-ban lévő adatoknak az adatok tárolására vonatkozó Common Data Model szabványt kell követniük, és rendelkezniük kell az adatfájlok sémáját ábrázoló közös adatmodell-jegyzékfájllal (*.csv vagy *.parquet). A jegyzékfájlnak meg kell adnia az entitások részleteit, például az entitásoszlopokat és adattípusokat, valamint az adatfájl helyét és típusát. További információ: [A Common Data Model jegyzékfájl](/common-data-model/sdk/manifest). Ha a jegyzékfájl nincs jelen, a Storage Blob Data Owner vagy Storage Blob Data közreműködő hozzáféréssel rendelkező rendszergazda felhasználók meghatározhatják a sémát az adatok betöltésekor.
 
-## <a name="connect-to-azure-data-lake-storage"></a>Csatlakozás a Azure Data Lake Storage alkalmazáshoz
+## <a name="connect-to-azure-data-lake-storage"></a>Csatlakozás a Azure Data Lake Storage szolgáltatáshoz
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
@@ -82,9 +82,9 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
    :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
 
    > [!TIP]
-   > A JSON-szerkesztési felületen lévő entitások szerkesztéséhez válassza a További **sémafájl** > **szerkesztése lehetőséget**. Végezze el a módosításokat, és válassza a Mentés **lehetőséget**.
+   > Ha json-szerkesztői felületen szeretne szerkeszteni egy entitást, válassza ki az entitást, majd **a Sémafájl szerkesztése lehetőséget**. Végezze el a módosításokat, és válassza a Mentés **lehetőséget**.
 
-1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés alatt **jelenik meg**. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
 
 1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
    1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.
@@ -101,6 +101,10 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
    1. Válassza a **Kész** lehetőséget.
 
 1. Válassza a **Mentés** parancsot. **Megnyílik az Adatforrások** lap, amelyen az új adatforrás a Frissítés **állapot.**
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok az [**Entitások oldalon ellenőrizhetők**](entities.md).
 
 ### <a name="create-a-new-schema-file"></a>Új sémafájl létrehozása
 
@@ -138,7 +142,7 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 
    :::image type="content" source="media/ADLS_required.png" alt-text="Az elsődleges kulcshoz szükséges párbeszédpanel":::
 
-1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés alatt **jelenik meg**. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+1. A növekményes betöltést igénylő kiválasztott entitások esetében a **Kötelező** a Növekményes frissítés **alatt** jelenik meg. Ezen entitások mindegyikéhez lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
 
 1. A kiválasztott entitások esetében, ahol az elsődleges kulcs nincs definiálva, **a Kötelező** érték az Elsődleges kulcs **alatt** jelenik meg. Ezen entitások mindegyikére vonatkozóan:
    1. Válassza a Kötelező **lehetőséget**. Megjelenik a **Szerkesztés entitás** panel.
@@ -148,6 +152,9 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 
 1. Válassza a **Mentés** parancsot. **Megnyílik az Adatforrások** lap, amelyen az új adatforrás a Frissítés **állapot.**
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok az [**Entitások oldalon ellenőrizhetők**](entities.md).
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Azure Data Lake Storage adatforrás szerkesztése
 
@@ -179,8 +186,16 @@ A Csatlakozás tárfiókhoz lehetőséget *frissítheti*. További információ:
       > [!IMPORTANT]
       > Ha függőségek vannak a meglévő model.json vagy manifest.json fájlhoz és az entitások készletéhez. egy hibaüzenet jelenik meg, és nem választhat másik model.json vagy manifest.json fájlt. A model.json vagy a manifest.json fájl módosítása előtt távolítsa el ezeket a függőségeket, vagy hozzon létre egy új adatforrást a használni kívánt model.json vagy a manifest.json fájllal a függőségek elkerüléséhez szükséges.
    - Az adatfájl helyének vagy az elsődleges kulcsnak a módosításához válassza a Szerkesztés **lehetőséget**.
-   - A növekményes betöltési adatok módosításához lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md)
+   - A növekményes betöltési adatok módosításához lásd: [Növekményes frissítés konfigurálása Azure Data Lake adatforrásokhoz](incremental-refresh-data-sources.md).
+   - Csak úgy módosítsa az entitás nevét, hogy megfeleljen a .json fájlban található entitás nevének.
+
+     > [!NOTE]
+     > A Customer Insightsban az entitás neve mindig ugyanaz maradjon, mint a model.json vagy manifest.json fájlban található entitásnév a betöltés után. A Customer Insights minden rendszerfrissítés során ellenőrzi az összes entitásnevet a model.json vagy a manifest.json fájllal. Ha egy entitás neve megváltozik a Customer Insights alkalmazáson belül vagy azon kívül, hiba történik, mert a Customer Insights nem találja az új entitásnevet a .json fájlban. Ha egy betöltött entitás nevét véletlenül módosították, szerkessze az entitás nevét a Customer Insightsban, hogy az megegyezzen a .json fájlban szereplő névvel.
 
 1. Válassza az Attribútumok **lehetőséget** attribútumok hozzáadásához vagy módosításához, illetve az adatprofil-készítés engedélyezéséhez. Majd válassza a **Kész** lehetőséget.
 
 1. Kattintson a Mentés **gombra** a módosítások alkalmazásához és az **Adatforrások** lapra való visszatéréshez.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

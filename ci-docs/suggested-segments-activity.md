@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: e98aea3b3f3a2c4788346deab1b7ad7d1167110d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: df4f5f4b5c9a3ad66d57a6b349e18a0d714aff62
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054343"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170592"
 ---
-# <a name="suggested-segments-based-on-activity-data-preview"></a>Tevékenységadatok alapján javasolt szegmensek (előzetes verzió)
+# <a name="suggested-segments-based-on-activity-preview"></a>Javasolt szegmensek tevékenység alapján (előzetes verzió)
 
 Az ügyfelek Customer Insightsba feltöltött tevékenységadatai alapján az ügyfelek érdekes szegmenseit fedezheti fel. Tevékenységadatok például a tranzakciók, az ügyfélszolgálati hívás időtartama, a vásárlások vagy a visszatérítések. A szegmensek javaslásához elemezni kell a tevékenységadatokat, a közelmúltbeli tevékenység, a gyakoriság és a pénzben megadott érték (vagy időtartam) alapján. Másik megoldásként létrehozhat [javasolt szegmenseket a mértékek tökéletesítéséhez vagy az attribútumokat befolyásoló részletek pontosabb megállapításához](suggested-segments.md).
 
@@ -35,33 +35,31 @@ A Customer Insights [tevékenységadatai](activities.md) alapján az ügyfélcso
 - ügyfelek, akik gyakran lépnek kapcsolatba a vállalkozással  
 
 Ha kiskereskedelmi vállalkozása van, akkor meg tudja állapítani, hogy melyik ügyfelek generálják a legnagyobb bevételt, és kuponokkal jutalmazhatja őket. Esetleg megtalálhatja az eseti ügyfeleket, és felajánlhatja nekik, hogy vegyenek részt egy jutalmazási programban, így gyakrabban kereshetik meg az Ön vállalkozását.
-Ha nyilvános egészségügyi szolgáltatást nyújt, és minimálisra szeretné csökkenteni az egyes betegek költségeit. Ennek egyik módja lehet az ismétlődő látogatások számának csökkentése azzal, hogy a lehető legkevesebb látogatás során a lehető legjobb ellátást biztosítja. Ebben az esetben az a célja, hogy a látogatások gyakorisága alacsony legyen, és hogy minimálisra csökkentse az ismétlődő költségeket. Esetleg megkeresheti a páciensek azon szegmenseit, amelyek esetében gyakoriak a találkozók és magasak az ismétlődő költségek, majd elemezheti az ilyen eseteket, hogy javítani tudja az egyes személyeknek kínált kezeléseket. 
+Ha közegészségügyi ellátást nyújt, és célja az egyes betegek költségeinek minimalizálása, megpróbálhatja csökkenteni az ismétlődő látogatásokat azáltal, hogy a lehető legkevesebb látogatás során a lehető legjobb ellátást nyújtja. Ebben az esetben az a célja, hogy a látogatások gyakorisága alacsony legyen, és hogy minimálisra csökkentse az ismétlődő költségeket. Esetleg megkeresheti a páciensek azon szegmenseit, amelyek esetében gyakoriak a találkozók és magasak az ismétlődő költségek, majd elemezheti az ilyen eseteket, hogy javítani tudja az egyes személyeknek kínált kezeléseket.
 
 ## <a name="required-data"></a>Szükséges adatok
 
-A javaslatokat a kiválasztott bemeneti adatok alapján hozza létre a rendszer. 
+A javaslatokat a kiválasztott bemeneti adatok alapján hozza létre a rendszer.
 
-- Ügyfélprofilok: Egy adott szegmens összes ügyfele vagy tagja. 
+- Ügyfélprofilok: Egy adott szegmens összes ügyfele vagy tagja.
 
 - Időszak: Legutóbbi hónap, legutóbbi év vagy bármilyen egyéni időszak.
 
 - Tevékenységtípus: Vásárlások, kiskereskedelmi tranzakciók, online tranzakciók, ügyféltámogatási esetek, előfizetések stb.  
 
-- A tevékenységadatokat tartalmazó Customer Insights-entitás: A UnifiedActivity entitás vagy egy adott tevékenységhez tartozó entitás. 
+- A tevékenységadatokat tartalmazó Customer Insights-entitás: A UnifiedActivity entitás vagy egy adott tevékenységhez tartozó entitás.
 
 - Használandó dimenziók: Az üzleti igényektől függően közelmúltbeli tevékenység, gyakoriság vagy pénzbeli dimenzió.
 
 ## <a name="generate-suggested-segments"></a>Javasolt szegmensek létrehozása
 
-1. Kattintson a **Szegmensek** lehetőségre.
+1. Lépjen a Szegmensek **elemre,** és válassza a **Javaslatok (előnézet)** lapot.
 
-1. Válassza a **Javaslatok (előzetes verzió)** fület.
-
-1. Válassza az **Új javaslatok keresése**, majd **Az ügyfél viselkedésének megtekintése vagy előrejelzése** lehetőséget. Az irányított élmény futtatásához válassza az **Indítás** lehetőséget.
+1. Válassza az **Új javaslatok keresése**, majd **Az ügyfél viselkedésének megtekintése vagy előrejelzése** lehetőséget. Válassza a Start **gombot**.
 
    :::image type="content" source="media/suggested-segments-activity-wizard.png" alt-text="A konfigurációs varázsló első lépése tevékenységen alapuló javasolt szegmensnél.":::
 
-1. Adja meg a szükséges bemeneti adatokat, és válassza a **Tovább** lehetőséget.
+1. Adja meg a szükséges bemeneti adatokat, és válassza a Tovább **lehetőséget**.
 
    - Ügyfelek kiválasztása: Az összes ügyfelet tartalmazza, vagy egy adott szegmenst.
    - Tevékenység kiválasztása: Adja meg a tevékenység típusát és a tevékenységet leíró entitásokat.
@@ -69,32 +67,17 @@ A javaslatokat a kiválasztott bemeneti adatok alapján hozza létre a rendszer.
 
 1. Tekintse át a bemeneti adatokat, és válassza a **Futtatás** lehetőséget a modell futtatásához és a javaslatok létrehozásához.
 
-1. Az ügyfélprofilok számától és a kijelölt tevékenységektől számától függően ez eltarthat néhány percig. 
+Az ügyfélprofilok számától és a kijelölt tevékenységektől számától függően ez eltarthat néhány percig.
 
-A javaslatok létrehozása után szűrheti őket a dimenzió vagy a legérdekesebbnek tartott érték szerint. 
+A javaslatok létrehozása után szűrheti őket a dimenzió vagy a legérdekesebbnek tartott érték szerint.
 
-## <a name="view-details-of-a-suggested-segment"></a>Javasolt szegmens részleteinek megtekintése
+## <a name="manage-suggested-segments"></a>Javasolt szegmensek kezelése
 
-A létrehozott javaslatok a **Szegmensek** > **Javaslatok (előzetes verzió)** részen, a **Tevékenységalapú javaslatok** szakaszban láthatók.
+Lépjen a Szegmensek **elemre,** és válassza a **Javaslatok (előnézet)** lapot. **A Tevékenységalapú javaslatok** szakaszban válasszon ki egy javasolt szegmenst a rendelkezésre álló műveletek megtekintéséhez.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Egy javasolt szegmens részletes adatait mutató kibontott oldalpanel.":::
-
-Az adott szegmens részleteinek megtekintéséhez válassza a **Javaslat megtekintése** lehetőséget egy javasolt szegmensnél. Az oldalpanel olyan adatokat tartalmaz, mint például az egyes dimenziók célcsoporthoz viszonyított mérete. Ezenkívül kiemeli a lehetséges tagok számát a szegmensben és a teljes ügyfelek közötti arányukat. Ha a javaslatot meg szeretné tartani szegmensként, válassza a **Szegmens létrehozása** lehetőséget.    
-
-## <a name="save-a-suggestion-as-a-segment"></a>Javaslat mentése szegmensként
-
-1. Ugorjon a **Szegmensek** > **Javaslatok (előzetes verzió)** pontra.
-
-1. Válassza ki a menteni kívánt szegmenst. 
-
-1. Az oldalpanelen válassza a **Szegmens létrehozása** lehetőséget. 
-
-1. A mentett szegmens megjelenik a **Minden szegmens** lapon lévő szegmenslistán. Most már [frissíthető és törölhetők, mint bármelyik más szegmens](segments.md). A szegmens részletei nem módosíthatók. A javaslatok bemeneti feltételei azonban megváltoztathatóak, és eltérő javaslatok is létrehozhatóak.
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Javaslatok készletének frissítése és szerkesztése
-
-1. Lépjen a **Szegmensek** > **Javaslatok (előzetes verzió)** részre, és keresse meg a szegmenst a **Tevékenységalapú javaslatok** szakaszban.
-
-1. Válassza a **Javaslatok frissítése** lehetőséget, a javaslatokat frissítéséhez, miközben a konfigurált attribútumokat megtartja. Egy másik megoldás, hogy a **Javaslatok szerkesztése** lehetőséggel módosítja a konfigurált attribútumokat. A rendszer újrafuttatja a folyamatot, a legújabb adatok alapján szegmensjavaslatokat generál, és lecseréli az aktuális javaslatokat.
+- **Lásd a javaslatot**, hogy megtekinthesse az adott szegmens részleteit, például az egyes dimenziók kiterjedését a célcsoporthoz képest. Ezenkívül kiemeli a lehetséges tagok számát a szegmensben és a teljes ügyfelek közötti arányukat.
+- **Hozzon létre szegmenst** a javasolt szegmensként való mentéséhez. Megjelenik a **Minden szegmens lapon,** és frissíthető [vagy törölhető](segments.md). A szegmens részletei nem módosíthatók. A javaslatok bemeneti feltételei azonban megváltoztathatóak, és eltérő javaslatok is létrehozhatóak.
+- **Szerkessze a javaslatokat** a konfigurált attribútumok módosításához, amelyek felváltják az aktuális javaslatokat.
+- **Frissítse a javaslatokat** a javaslatok frissítéséhez a konfigurált attribútumok megtartása mellett.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 62969527ceed906ff06fb9be90b972496323ce0a
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
+ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052748"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "9142822"
 ---
 # <a name="how-to-create-a-new-environment"></a>Útmutató: Új környezet létrehozása
 
@@ -67,7 +67,6 @@ Két lehetőség közül választhat:
 ## <a name="step-3-connect-to-microsoft-dataverse"></a>3. lépés: Csatlakozás a Microsoft Dataverse-hez
 
 A **Microsoft Dataverse** lépéssel összekapcsolhatja a Customer Insightsot a Dataverse környezetével. Adatok megosztása az Dataverse üzleti alkalmazásokkal való használathoz, például a Dynamics 365 Marketing vagy a modellvezérelt alkalmazások Dataverse alapján Power Apps.
-
 
 Hagyja üresen ezt a mezőt, ha nem rendelkezik saját Dataverse környezettel, és mi létrehozunk egyet az Ön számára.
 

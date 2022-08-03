@@ -1,7 +1,7 @@
 ---
 title: Azure Synapse adatforrás csatlakoztatása (előzetes verzió)
 description: Azure Synapse Adatbázis használata adatforrás a Dynamics 365 Customer Insights.
-ms.date: 03/25/2022
+ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,18 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 54247fbcdc27f6ed8314e0755164083eb461aa64
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052702"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206910"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Azure Synapse Analytics adatforrás csatlakoztatása (előzetes verzió)
 
 Azure Synapse Analytics egy vállalati elemzési szolgáltatás, amely felgyorsítja az adattárházak és big data-rendszerek közötti betekintéshez szükséges időt. Azure Synapse Analytics egyesíti a vállalati adattárházban használt SQL-technológiák, a big datahoz használt Spark-technológiák, a napló- és idősorozat-elemzésekhez használt Adatkezelő, az adatintegrációs és ETL-/ELT-folyamatok, valamint a más Azure-szolgáltatásokkal, például Power BI az Cosmos DB AzureML-lel való mély integrációban használt SQL-technológiákat.
 
-További információt az áttekintésben [Azure Synapse talál](/azure/synapse-analytics/overview-what-is).
+További információt az áttekintésben talál [Azure Synapse](/azure/synapse-analytics/overview-what-is).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -66,3 +66,9 @@ További információt az áttekintésben [Azure Synapse talál](/azure/synapse-
 1. Igény szerint válassza ki azokat az adatentitásokat, amelyeken engedélyezni szeretné az adatprofil-készítést.
 
 1. Válassza a Mentés **lehetőséget** a kijelölés alkalmazásához, és az újonnan létrehozott adatforrás származó adatok betöltésének megkezdéséhez, amely a Lake-adatbázistáblákhoz Azure Synapse Analytics van csatolva. **Megnyílik az Adatforrások** lap, amelyen az új adatforrás a Frissítés **állapot.**
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok az [**Entitások oldalon ellenőrizhetők**](entities.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

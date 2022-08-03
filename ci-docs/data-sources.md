@@ -1,7 +1,7 @@
 ---
 title: Adatforrások áttekintése
 description: További információ a különböző forrásokból származó adatok importálásáról és betöltéséről.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,20 +12,20 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: fbe44f655bdbc20ef7f0956022395e2dcb570adf
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051456"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207094"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
 Dynamics 365 Customer Insights kapcsolatokat biztosít az adatok széles köréből való átviteléhez. A adatforrások összeskapcsolását gyakran nevezik *adatbetöltésnek*. Az adatok betöltése után egyesítheti [, elemzéseket hozhat létre, és aktiválhatja](data-unification.md) az adatokat a személyre szabott élmények létrehozásához.
 
-## <a name="add-data-sources"></a>Adatforrások hozzáadása
+## <a name="add-or-edit-data-sources"></a>Adatforrások hozzáadása vagy szerkesztése
 
-Adatforrásokat csatolhat vagy importálhat a Customer Insights szolgáltatásba. Az alábbi hivatkozások az adatforrások hozzáadására vonatkozó utasításokat tartalmaznak.
+Adatforrásokat csatolhat vagy importálhat a Customer Insights szolgáltatásba. Az alábbi hivatkozások az adatforrások hozzáadására és szerkesztésére vonatkozó utasításokat tartalmaznak.
 
 **Adatforrás csatolása**
 
@@ -50,13 +50,18 @@ Ha a környezet úgy van konfigurálva, hogy Customer Insights-tárolót haszná
 
 Ha a környezet nem használ Power Platform adatfolyamokat, az **Adatforrások** lap csak az összes adatforrás listáját tartalmazza. Nincsenek szakaszok.
 
-Az **Adatforrások** > **lapon** megtekintheti az egyes betöltött adatforrás nevét, állapotát és azt, hogy az adatok utoljára mikor frissültek az adott forráshoz. Az adatforrások listáját minden oszlop szerint rendezheti.
+## <a name="manage-existing-data-sources"></a>Meglévő adatforrások kezelése
 
-:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Adatforrás hozzáadva.":::
+Az **Adatforrások** > **lapon** megtekintheti az egyes betöltött adatforrás nevét, állapotát és azt, hogy az adatok utoljára mikor frissültek az adott forráshoz. Az adatforrások listáját rendezheti bármely oszlop szerint, vagy a keresőmező segítségével megkeresheti a kezelni kívánt adatforrás.
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+Válasszon ki egy adatforrás az elérhető műveletek megtekintéséhez.
 
-Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok áttekinthetők az **Entitások** lapról. További információ: [Entitások](entities.md).
+:::image type="content" source="media/data_sources_showmore.png" alt-text="Adatforrás hozzáadva.":::
+
+- [**Szerkessze**](#add-or-edit-data-sources) a adatforrás a tulajdonságainak módosításához.
+- [**Frissítse**](#refresh-data-sources) a adatforrás, hogy a legfrissebb adatokat tartalmazza.
+- [**Gazdagítsa**](data-sources-enrichment.md) a adatforrás az egyesítés előtt.
+- **Törölje** a adatforrás. A adatforrás csak akkor törölhető, ha az adatokat nem használják fel semmilyen feldolgozáshoz, például egyesítéshez, elemzésekhez, aktiváláshoz vagy exportáláshoz.
 
 ## <a name="refresh-data-sources"></a>Adatforrások frissítése
 
@@ -64,23 +69,12 @@ Az adatforrások igény szerint automatikus frissítéssel vagy kézzel frissít
 
 **A Rendszergazdai** > **rendszerütemezés** > [**lapon**](system.md#schedule-tab) konfigurálhatja a betöltött adatforrások rendszer által ütemezett frissítéseit.
 
-Az adatforrás igény szerinti frissítéséhez hajtsa végre a következő lépéseket:
+Adatforrás igény szerinti frissítése:
 
 1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
 
-1. Válassza ki a frissíteni kívánt adatforrás melletti függőleges három pontot (&vellip;), majd válassza a Frissítés **lehetőséget** a legördülő listából. Az adatforrás most már a manuális frissítésre váltja ki. Egy adatforrás frissítése frissíteni fogja az entitássémát és az adatokat a frissítésben megadott összes adatforrás számára.
+1. Válassza ki a frissíteni kívánt adatforrás, majd válassza a Frissítés **lehetőséget**. Az adatforrás most már a manuális frissítésre váltja ki. Egy adatforrás frissítése frissíteni fogja az entitássémát és az adatokat a frissítésben megadott összes adatforrás számára.
 
-1. Válassza a **Frissítés leállítása**, ha meg akarja szakítani a meglévő frissítést, és az adatforrás visszaáll a legutóbbi frissítési állapotba.
-
-## <a name="delete-a-data-source"></a>Adatforrás törlése
-
-A adatforrás csak akkor törölhető, ha az adatokat nem használják fel semmilyen feldolgozáshoz, például egyesítéshez, elemzésekhez, aktiváláshoz vagy exportáláshoz.
-
-1. Válassza az **Adatok** > **Adatforrások** lehetőséget.
-
-2. Válassza ki az eltávolítani kívánt adatforrás melletti függőleges három pontot (&vellip;), majd válassza a Törlés **lehetőséget** a legördülő menüből.
-
-3. Hagyja jóvá a törlést.
-
+1. Válassza ki az állapotot a **Folyamat részletei** panel megnyitásához és a folyamat megtekintéséhez. A feladat megszakításához válassza a Feladat **megszakítása lehetőséget** a panel alján.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

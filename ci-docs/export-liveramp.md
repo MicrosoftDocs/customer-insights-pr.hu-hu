@@ -1,61 +1,75 @@
 ---
 title: Szegmensek exportálása a LiveRampbe (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a LiveRampbe.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 3e30a16dcb276fa6c951ad0b42ed0a4792f87ce3
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 55eacea3af83f46583a3a43797d625479f56586b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050766"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196719"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Szegmensek exportálása a LiveRampbe&reg; (előzetes verzió)
 
 Aktiválja az adatokat a LiveRampben, hogy több mint 500 platformmal kapcsolódhasson a digitális és közösségi médiához, illetve a tévéadáshoz. A LiveRamp megoldásban az adatokkal dolgozhat a kampányok megcélzott, letiltási és személyre szabása céljából.
 
-## <a name="prerequisites-for-a-connection"></a>Egy kapcsolat előfeltételei
+## <a name="prerequisites"></a>Előfeltételek
 
-- Az összekötő használatához LiveRamp-előfizetésre van szükség.
-- Az előfizetés megkezdéséhez [forduljon a LiveRamphez](https://liveramp.com/contact/) közvetlenül. [További információ a LiveRamp előkészítésről](https://liveramp.com/our-platform/data-onboarding/).
+- Egy LiveRamp-előfizetés az összekötő használatához. Az előfizetés megkezdéséhez [forduljon a LiveRamphez](https://liveramp.com/contact/) közvetlenül. [További információ a LiveRamp előkészítésről](https://liveramp.com/our-platform/data-onboarding/).
+
+## <a name="known-limitations"></a>Ismert korlátozások
+
+- A LiveRamp-exportálás SFTP-exportálást használ. A tűzfalak mögötti SFTP-célhelyek jelenleg nem támogatottak.
+- Ha SSH-kulcsot használ a hitelesítéshez, győződjön meg arról, hogy [a titkos kulcsot](/azure/virtual-machines/linux/create-ssh-keys-detailed#basic-example) PEM vagy SSH.COM formátumban hozza létre. Ha Gittet használ, konvertálja a titkos kulcsot exportálással nyissa meg az SSH-t. A következő titkos kulcsformátumok támogatottak:
+  - RSA OpenSSL PEM és ssh.com formátumban
+  - DSA OpenSSL PEM és ssh.com formátumban
+  - ECDSA 256/384/521 OpenSSL PEM formátumban
+  - ED25519 és RSA OpenSSH kulcsformátumban
+- Az exportálás futtatása a rendszer teljesítményétől függ. A kiszolgáló minimális konfigurációjának ajánlott két processzormag és 1 Gb memória.
+- Az legfeljebb 100 millió ügyfélprofillal rendelkező entitások exportálása 90 percet is igénybe fog venni, ha két processzormag és 1 Gb memória ajánlott minimális konfigurációját használja.
+- A LiveRamp-be exportálható profilok (vagy adatok) tényleges száma a LiveRamp-pel való előfizetésétől függ.
 
 ## <a name="set-up-connection-to-liveramp"></a>Állítsa be a LiveRamp való kapcsolatot
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **LiveRamp** lehetőséget a kapcsolat konfigurálásához.
+1. Válassza a Kapcsolat **hozzáadása,** majd a LiveRamp **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Adja meg a **felhasználónevet** és a **jelszót** a LiveRamp Secure FTP (SFTP) fiókhoz.
-Ezek a hitelesítő adatok eltérhetnek a LiveRamp betanítási hitelesítő adatoktól.
+1. Válassza ki, hogy SSH-n vagy felhasználónévn/jelszón keresztül szeretne-e hitelesíteni a kapcsolatot, és adja meg a szükséges adatokat.
 
 1. A LiveRamp kapcsolat teszteléséhez válassza az **Ellenőrzés** lehetőséget.
 
-1. A sikeres ellenőrzés után adja meg az **adatvédelemre és a megfelelőségre** vonatkozó beleegyezését az **Elfogadom** jelölőnégyzet bejelölésével.
+1. A sikeres ellenőrzés után tekintse át az adatvédelmet és a megfelelőséget [, és válassza az](connections.md#data-privacy-and-compliance) Elfogadom **lehetőséget**.
 
 1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
 ## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a LiveRamp szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a LiveRamp szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
-1. Az **adja meg a kulcs azonosítóját** mezőben jelölje ki az **e-mailt**, a **nevet és a címet** vagy a **telefont**, hogy elküldje a LiveRamp rendszerbe a személyazonosság feloldása céljából.
-   > [!div class="mx-imgBorder"]
-   > ![LiveRamp összekötő attribútum-hozzárendeléssel.](media/export-liveramp-segments.png "LiveRamp összekötő attribútum-hozzárendeléssel")
+1. Adja meg az exportálás nevét.
+
+1. Az Adatok **csatlakoztatása mezőben válassza az** E-mail **,** a Név és cím **vagy** a Telefon **lehetőséget** a LiveRamp-nek való küldéshez identitásfeloldáshoz.
+
+   :::image type="content" source="media/export-liveramp-segments.png" alt-text="LiveRamp összekötő attribútum-hozzárendeléssel.":::
 
 1. Az *Ügyfél* entitása megfelelő attribútumainak leképezhető a kijelölt kulcsazonosítóra.
 
@@ -64,18 +78,10 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
    > [!TIP]
    > Ha további kulcsazonosító attribútumokat küld a LiveRamp számára, akkor valószínűleg magasabb szintű egyeztetést fog kapni.
 
-1. Jelölje ki azokat a szegmenseket, amelyeket exportálni szeretne a LiveRamp rendszerébe.
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
-
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Amikor engedélyezi az Dynamics 365 Customer Insights szolgáltatást az adatok Liveramphez való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy a Liveramp megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

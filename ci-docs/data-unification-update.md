@@ -13,16 +13,14 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 590a2996cf8b2b1c6def59b78583169ec1910b59
-ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
+ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "8844043"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139614"
 ---
 # <a name="update-the-unification-settings"></a>Az egyesítési beállítások frissítése
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 Ha az egységesített profil létrehozása után át szeretné tekinteni vagy módosítani szeretné az egyesítési beállításokat, hajtsa végre a következő lépéseket.
 
@@ -71,7 +69,7 @@ Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített
 
    A talált duplikált rekordok száma a Duplikátumok **alatt** jelenik meg. A **Rekordok deduplikált** oszlopban látható, hogy mely entitások rendelkeztek duplikált rekordokkal, és hogy hány százalékban voltak duplikált rekordok.
 
-1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
+1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
 
 1. A deduplikációs szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Deduplikációs szabályok](remove-duplicates.md#define-deduplication-rules) meghatározása.
@@ -89,7 +87,7 @@ Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített
 
    1. Válassza a **Kész** lehetőséget.
 
-1. Válassza a Tovább gombot az egyező feltételek módosításához, vagy válassza a Mentés és bezárás **lehetőséget**, és térjen vissza az Egyesítési beállítások frissítése **lapra**.[...](#update-the-unification-settings)
+1. Válassza a Tovább gombot **az egyező feltételek módosításához, vagy válassza a Mentés és bezárás** lehetőséget **, és térjen vissza az Egyesítési beállítások frissítése lapra**.[...](#update-the-unification-settings)
 
 ## <a name="manage-match-rules"></a>Egyezési szabályok kezelése
 
@@ -112,7 +110,7 @@ Az egyezési paraméterek nagy része konfigurálható és finomhangolható. Nem
 
    :::image type="content" source="media/m3_match_condition_preview.png" alt-text="A nem egyező és egyező rekordok grafikus ábrázolása, beleértve az adatok listáját is.":::
 
-1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
+1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
 
 1. A szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Szabályok definiálása egyező párokhoz](match-entities.md#define-rules-for-match-pairs).

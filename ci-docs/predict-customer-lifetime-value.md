@@ -1,7 +1,7 @@
 ---
 title: Ügyfélélettartam érték (CLV) előrejelzése
 description: Az aktív ügyfelek jövőbeli bevételi lehetőségeinek előrejelzése a jövőre vonatkozóan.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,21 +13,22 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055217"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186443"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Ügyfélélettartam érték (CLV) előrejelzése
 
 Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a funkció segíthet különböző célok elérésében:
+
 - Értékes ügyfelek azonosítása és ezen információ feldolgozása
 - Stratégiai ügyfélszegmenseket hozhat létre azok potenciális értéke alapján, hogy célzott értékesítési, marketing- és támogatási erőfeszítésekkel személyre szabott kampányokat futtathasson
 - A termékfejlesztés irányítása az ügyfelek értékét fokozó funkciókra összpontosítva
 - Értékesítési és marketingstratégia optimalizálása és a költségkeretek pontosabb felosztásához az ügyfelek eléréséhez
-- A nagy értékű ügyfelek felismerése és jutalmazása a hűség- és jutalmazási programokkal 
+- A nagy értékű ügyfelek felismerése és jutalmazása a hűség- és jutalmazási programokkal
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -35,7 +36,7 @@ Az indulás előtt gondolja át a CLV mit jelent a vállalkozása számára. Jel
 
 Mivel a CLV-modell konfigurálása és futtatása nem igényel időt, érdemes létrehozni több olyan modellt, amelyek eltérő bemeneti beállításokat tartalmaznak, és a modellek eredményeivel összehasonlítva láthatja, hogy melyik az üzleti igényeknek leginkább megfelelő modellforgatókönyv.
 
-###  <a name="data-requirements"></a>Adatkövetelmények
+### <a name="data-requirements"></a>Adatkövetelmények
 
 A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlott a modell teljesítményének növelése érdekében. Minél több adatot képes feldolgozni a modell, annál pontosabb lesz előrejelzés. Ezért javasoljuk, hogy amennyiben rendelkezésre állnak, több ügyfélaktivitási adatot töltsön be.
 
@@ -52,11 +53,12 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
     - Webes tevékenységek: webhelylátogatási előzmények, e-mail előzmények
     - Hűségtevékenységek: a hűségpontok egyenlege és beváltási előzmények
     - Ügyfélszolgálati napló, ügyfélszolgálati hívás panasz vagy visszaküldés előzményei
+    - Ügyfélprofil-információk
 - Adatok az ügyfél tevékenységéről (nem kötelező):
     - Az azonos típusú tevékenységek megkülönböztetésére szolgáló tevékenységazonosítók
     - A tevékenységek ügyfelekhez rendelésére szolgáló ügyfél-azonosítók
     - A tevékenység adatai a tevékenység nevét és dátumát tartalmazzák
-    - A tevékenységekhez tartozó szemantikus adatséma az alábbiakat tartalmazza: 
+    - A tevékenységekhez tartozó szemantikus adatséma az alábbiakat tartalmazza:
         - **Elsődleges kulcs**: Egy tevékenység egyedi azonosítója
         - **Időbélyegző**: Az elsődleges kulcs által azonosított esemény dátuma és időpontja
         - **Esemény (tevékenység neve)**: A használni kívánt esemény neve
@@ -66,7 +68,7 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
     - Elegendő korábbi adat: Legalább egy évnyi tranzakciós adat. A CLV egy évre való előrejelzéséhez lehetőség szerint 2-3 évnyi tranzakciós adat szükséges.
     - Több vásárlás ügyfélenként: Ideális esetben ügyfélazonosítónként legalább 2-3 tranzakció, lehetőség szerint eltérő dátummal.
     - Ügyfelek száma: Legalább 100 egyedi ügyfél; lehetőség szerint 10 000-nél több ügyfél. A modell nem működik 100-nál kevesebb ügyfél esetén, illetve ha nem áll rendelkezésre elegendő előzményadat.
-    - Adatok teljessége: A bemeneti adatok kötelező mezőiben legfeljebb az értékek 20%-a hiányzik.   
+    - Adatok teljessége: A bemeneti adatok kötelező mezőiben legfeljebb az értékek 20%-a hiányzik.
 
 > [!NOTE]
 > - A modellhez az ügyfelek tranzakciós előzményeire van szükség. Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési/tranzakciós entitás van, az adatbetöltés előtt egyesítheti őket Power Query.
@@ -122,11 +124,11 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
 
 1. Válassza a **Következő** lehetőséget.
 
-### <a name="add-optional-data"></a>Nem kötelező adatok hozzáadása
+### <a name="add-optional-activity-data"></a>Opcionális tevékenységadatok hozzáadása
 
-A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat és eseménynaplók) környezeteti adatokat ad a tranzakciós bejegyzésekhez. Az ügyféltevékenységi adatokban talált további minták javíthatják az előrejelzések pontosságát. 
+A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat és eseménynaplók) környezeteti adatokat ad a tranzakciós bejegyzésekhez. Az ügyféltevékenységi adatokban talált további minták javíthatják az előrejelzések pontosságát.
 
-1. A **További adatok (nem kötelező)** lépésben válassza az **Adatok hozzáadása** lehetőséget. Válassza az ügyfélaktivitás entitást, amely biztosítja, hogy ügyféltevékenység információja az [előfeltételekben](#prerequisites) részletezett módon kerüljön megjelenítésre.
+1. A További adatok (nem kötelező) **lépésben válassza az** Adatok **hozzáadása lehetőséget** a Modellelemzések növelése további tevékenységadatokkal **alatt**. Válassza az ügyfélaktivitás entitást, amely biztosítja, hogy ügyféltevékenység információja az [előfeltételekben](#prerequisites) részletezett módon kerüljön megjelenítésre.
 
 1. Képezze le a szemantikai mezőket olyan attribútumokra, melyek az ügyféltevékenység entitáson belül esnek és válassza a **Tovább** lehetőséget.
 
@@ -135,15 +137,34 @@ A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat é
 1. Válassza ki a hozzáadni kívánt ügyféltevékenység típusának megfelelő tevékenységtípust. Válasszon a meglévő tevékenységtípusok közül, vagy vegyen fel egy új tevékenységtípust.
 
 1. Konfigurálja az ügyféltevékenység entitásának és az *Ügyfél* entitásnak a kapcsolatát.
-    
+
     1. Válassza ki a mezőt, amely azonosítja az ügyfelet az ügyféltevékenység táblában. Ez közvetlenül kapcsolásra kerülhet *Ügyfél* entitásának Elsődleges ügyfél-azonosítójához.
     1. Válassza ki azt az *Ügyfél* entitást, amely egyezik az elsődleges *Ügyfél* entitással.
     1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Kép a konfigurációs folyamat lépéséről további adatok felvételéhez és a tevékenység konfigurálásához kitöltött példákkal.":::
 
-1. Válassza a **Mentés** parancsot.    
+1. Válassza a **Mentés** parancsot.
     Adjon hozzá további adatokat, ha más ügyféltevékenységeket is szeretne szerepeletni.
+
+1. Adjon hozzá opcionális ügyféladatokat, vagy válassza a Tovább **lehetőséget**.
+
+### <a name="add-optional-customer-data"></a>Opcionális ügyféladatok hozzáadása
+
+Válasszon 18 gyakran használt ügyfélprofil-attribútum közül, amelyeket a modell bemeneteként szeretne szerepeltetni. Ezek az attribútumok személyre szabottabb, relevánsabb és gyakorlatban hasznosíthatóbb modelleredményeket eredményezhetnek az üzleti használati esetekben.
+
+Például: Contoso Coffee előre szeretné jelezni az ügyfelek élettartamának értékét, hogy a nagy értékű ügyfeleket célozza meg az új eszpresszógépük elindításához kapcsolódó személyre szabott ajánlattal. Contoso a CLV modellt használja, és mind a 18 ügyfélprofil-attribútumot hozzáadja, hogy lássa, mely tényezők befolyásolják a legnagyobb értékű ügyfeleiket. Úgy találják, hogy az ügyfelek tartózkodási helye a legbefolyásosabb tényező ezen ügyfelek számára.
+Ezen információk birtokában helyi rendezvényt szerveznek az eszpresszógép elindításához, és a helyi eladókkal együttműködve személyre szabott ajánlatokat és különleges élményt nyújtanak az eseményen. Ezen információk nélkül előfordulhat, hogy Contoso csak általános marketing e-maileket küldtek volna, és elszalasztották volna a lehetőséget, hogy személyre szabják nagy értékű ügyfeleiknek ezt a helyi szegmensét.
+
+1. A További adatok (nem kötelező) **lépésben válassza az** Adatok **hozzáadása lehetőséget** a Modellelemzések további növelése további ügyféladatokkal **alatt**.
+
+1. Az Entitás **mezőben** válassza a Customer: CustomerInsights **lehetőséget** az egyesített ügyfélprofil-tábla kiválasztásához, amely az ügyfélattribútum-adatokra van leképezve. Az **Ügyfél-azonosító** mezőben válassza **a System.Customer.CustomerId lehetőséget**.
+
+1. Térképezzen le további mezőket, ha az adatok elérhetők az egységes ügyfélprofilokban.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Példa az ügyfélprofil-adatok leképezett mezőire.":::
+
+1. Válassza a Mentés **lehetőséget**, miután leképezte azokat az attribútumokat, amelyeket a modellnek az ügyfél élettartamra vetített értékének előrejelzéséhez használnia kell.
 
 1. Válassza a **Következő** lehetőséget.
 

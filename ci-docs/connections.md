@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082092"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195177"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
@@ -27,6 +27,12 @@ A kapcsolatok létrehozásához és megtekintéséhez menjen a **Rendszergazda**
 A **Kapcsolatok** fül megjeleníti az összes aktív kapcsolatot. A listában minden kapcsolathoz egy sor tartozik.
 
 Gyors áttekintést és leírást kaphat, és a **Felfedezés** fülön megismerheti, hogy mikre lehet képes az egyes bővíthetőségi beállításokkal.
+
+## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
+
+Ha engedélyezi Dynamics 365 Customer Insights az adatok harmadik feleknek vagy más Microsoft-termékeknek történő továbbítását, engedélyezi az adatok továbbítását a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a harmadik fél teljesítse az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeit. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
+
+A Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja a kapcsolatot, hogy abbahagyja a funkció használatát.
 
 ## <a name="exports"></a>Exportálások
 
@@ -41,8 +47,6 @@ Csak rendszergazdák konfigurálhatják az új kapcsolatokat, de a létrehozott 
 Kapcsolatok hozzáadásához [rendszergazdai engedélyekkel](permissions.md) kell rendelkeznie. Ha más Microsoft-szolgáltatásokhoz kapcsolódik, akkor azt feltételezzük, hogy mindkét szolgáltatás ugyanabban a szervezetben van.
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok (előzetes verzió)** lehetőségre.
-
-1. Menjen a **Kapcsolatok** fülre.
 
 1. Új kapcsolat létrehozásához válassza a **Kapcsolat hozzáadása** lehetőséget. Válassza ki a legördülő menüből, hogy milyen típusú kapcsolatot szeretne létrehozni.
 
@@ -99,3 +103,5 @@ A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiv�
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Saját Key Vault által kezelt titkokkal való kapcsolat beállítása
 
 Egyes kapcsolatoknak szüksége van titkokra, például API-kulcsokra vagy jelszavakra. Egyes kapcsolatok a saját Key Vaultban tárolt titkokat támogatják. További információ a támogatott kapcsolatokról és arról, hogyan állíthatja be [saját Key Vault a Customer Insightshoz](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

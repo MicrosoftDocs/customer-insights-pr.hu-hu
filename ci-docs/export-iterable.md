@@ -1,19 +1,19 @@
 ---
 title: Szegmensek exportálása Iterable formátumba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja az Iterable-be.
-ms.date: 03/29/2022
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 98d5aeab6b0e932d291213053d509ec72da82e47
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ccf10b6e3a28a75f9d1bd3d8da3bf870ebc2b1b2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052238"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195432"
 ---
 # <a name="export-segments-to-iterable-preview"></a>Szegmensek exportálása Iterable formátumba (előzetes verzió)
 
@@ -21,31 +21,33 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Iterable fájlba, és
 
 ## <a name="prerequisites"></a>Előfeltételek
 
--   Iterable-fiókkal [és a megfelelő rendszergazdai hitelesítő adatokkal rendelkezik](https://iterable.com/).
--   [A szegmenseket](segments.md) a Customer Insights szolgáltatásban konfigurálta.
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
+- Iterable [fiók](https://iterable.com/) és a megfelelő rendszergazdai hitelesítő adatok.
+- Iterálható [API-kulcs](https://support.iterable.com/hc/en-us/articles/360043464871)
+- [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
+- Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Az Iterable-be való exportálás szegmensekre korlátozódik.
-- Akár 1 millió ügyfélprofil iterable-be történő exportálása akár 30 percet is igénybe vehet. 
-- Az Iterable-be exportálható ügyfélprofilok száma az Iterable-vel kötött szerződéstől függ és korlátozott.
+- Akár 1 millió ügyfélprofil is az Iterable-hez, ami akár 30 percet is igénybe vehet. Az Iterable-be exportálható ügyfélprofilok száma az Iterable-vel kötött szerződéstől függ.
+- Csak szegmensek.
 
 ## <a name="set-up-connection-to-iterable"></a>Kapcsolat beállítása az Iterable-hez
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a Kapcsolat **hozzáadása lehetőséget**, majd válassza az Iterable **lehetőséget** a kapcsolat konfigurálásához.
+1. Válassza a Kapcsolat **hozzáadása,** majd az Iterable **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Adja meg az [Iterable API-kulcsot](https://support.iterable.com/hc/en-us/articles/360043464871) a további bejelentkezéshez. 
+1. Adja meg az Iterable API-kulcsot a további bejelentkezéshez.
 
-1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
-1. Válassza a Csatlakozás **lehetőséget** az Iterable-hez való kapcsolat inicializálásához.
+1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
@@ -53,25 +55,22 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az Iterable fájlba, és
 
 ## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. **A Kapcsolat exportáláshoz** mezőben válasszon ki egy kapcsolatot az Iterable szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. **A Kapcsolat exportáláshoz** mezőben válasszon ki egy kapcsolatot az Iterable szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
-3. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. A szegmenseket iterable-be kell exportálnia.Az Iterable-ben létrehozott lista pontosan ugyanazt a nevet kapja, mint a szegmens neve Dynamics 365 Customer Insights.
+1. Adja meg az exportálás nevét.
+
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. Az Iterable-ben létrehozott lista pontosan ugyanazt a nevet kapja, mint a szegmens neve a Dynamics 365 Customer Insights.
+
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását az Iterable-nek, engedélyezi az adatok továbbítását a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy az Iterable megfeleljen az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

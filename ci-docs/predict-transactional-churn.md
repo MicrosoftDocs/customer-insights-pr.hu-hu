@@ -1,5 +1,5 @@
 ---
-title: Tranzakciós lemorzsolódás előrejelzés (videót tartalmaz)
+title: Tranzakciós adatváltozás előrejelzés (videót tartalmaz)
 description: Megjósolja, hogy fennáll-e az ügyfélnél annak veszélye, hogy a jövőben már nem az Ön termékeit vagy szolgáltatásait vásárolja meg.
 ms.date: 01/13/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8642955"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171098"
 ---
 # <a name="transaction-churn-prediction"></a>Tranzakciólemorzsolódási előrejelzés
 
@@ -24,7 +24,7 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 Üzleti partnereken alapuló környezet esetén a partnerek esetében tranzakciós lemorzsolódást, valamint a partnerek és más szintű információk, például a termékkategóriák kombinációját is megjósolhatjuk. Egy dimenzió hozzáadása segíthet kideríteni, hogy mennyire valószínű, hogy a "Contoso" fiók leállítja az "irodaszerek" termékkategória vásárlását. Ezenkívül az üzleti partnerek esetében az AI segítségével összeállíthatjuk azoknak a lehetséges okoknak a listáját, amelyek miatt a partner valószínűleg lemorzsolódik a másodlagos szintű információk kategóriája miatt.
 
 > [!TIP]
-> Próbálja ki az oktatóanyagot egy tranzakció lemorzsolódásához előrejelzés mintaadatok használatával: [Tranzakció lemorzsolódás előrejelzés minta útmutató](sample-guide-predict-transactional-churn.md).
+> Próbálja ki a tranzakciós adatváltozás oktatóanyagát előrejelzés mintaadatokkal: [Tranzakciós adatváltozás előrejelzés mintaútmutató](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -100,7 +100,7 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. A Customer Insights szolgáltatásban lépjen az **Intelligencia** > **Előrejelzések** részre.
 
-1. Válassza ki az **Ügyfél lemorzsolódási modellcsempéjét**, és válassza **a Modell használata lehetőséget**.
+1. Válassza az **Ügyfél adatváltozás modellje** csempét, majd válassza a Modell használata **lehetőséget**.
 
 1. Válassza az **Ügyfél-lemorzsolódás modell** ablakában válassza a **Tranzakció**, majd az **Első lépések** lehetőséget.
 
@@ -118,9 +118,9 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. Állítsa be a **előrejelzés ablakot**. Például, megjósolhatja a lemorzsolódás kockázatát egy ügyfele esetében, a következő 90 napban, hogy ehhez igazíthassa marketingmegőrzési törekvéseit. A lemorzsolódási kockázat becslése egy hosszabb vagy rövidebb időintervallumra megnehezítheti a tényezők kezelését a lemorzsolódási kockázat-profiljában, de ez leginkább az Ön által meghatározott üzleti igényektől függ.
    >[!TIP]
-   > A Piszkozat **mentése bármikor lehetőséget választva** mentheti a előrejelzés piszkozatként. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
+   > A Piszkozat **mentése lehetőséget bármikor választhatja** a előrejelzés piszkozatként való mentéséhez. Ha később folytatni szeretné a munkát, az előrejelzés vázlatát a **Saját előrejelzések** lapon találja majd.
 
-1. Adja meg a lemorzsolódást definiálni kívánt napok számát a **Lemorzsolódás definíció mezőben**. Például, ha egy ügyfél nem vásárolt az elmúlt 30 napban, vállalkozása számára lemorzsolódónak tekinthető. 
+1. Adja meg a lemorzsolódás definiálásához szükséges napok számát a **Churn definíciója** mezőben. Például, ha egy ügyfél nem vásárolt az elmúlt 30 napban, vállalkozása számára lemorzsolódónak tekinthető. 
 
 1. A folytatáshoz válassza a **Tovább** lehetőséget.
 
@@ -128,7 +128,7 @@ A Tranzakciós lemorzsolódási előrejelzés segít megjósolni, ha az ügyfél
 
 1. Válassza az **Adatok hozzáadása** lehetőséget, és válassza ki azt a tevékenységtípust az oldalsó panelen, amely a tranzakcióhoz vagy a vásárlási előzményekhez szükséges adatokat tartalmazza.
 
-1. A Tevékenységek **kiválasztása csoportban** válassza ki a kiválasztott tevékenységtípusból azokat a tevékenységeket, amelyekre a számítást összpontosítani szeretné.
+1. A Tevékenységek **kiválasztása alatt** válassza ki azokat a tevékenységeket a kiválasztott tevékenységtípusból, amelyre a számítást összpontosítani szeretné.
 
    :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="A szemantikus típus alatti tevékenységek kiválasztását bemutató oldalsó panel.":::
 
@@ -240,7 +240,7 @@ Adja meg a referenciaként használni kívánt üzleti ügyfelek és partnerek l
    - **Előrejelzés neve**: Az előrejelzés neve, mely a létrehozáskor kerül megadásra.
    - **Előrejelzés típusa**: Az előrejelzéshez használt model típusa
    - **Kimeneti entitás**: Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitások az **Adatok** > **Entitások** részen találhatók.
-     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-new-segment) az preferált küszöbértékkel.
+     A kimenetentitásban a *ChurnScore* a lemorzsolódás, illetve az *IsChurn* egy, a *ChurnScore* értéken alapuló bináris címke, amely 0,5-ös küszöbértéket biztosít. Előfordulhat, hogy az alapértelmezett küszöbérték nem működik a forgatókönyvnél. [Hozzon létre egy új szegmenst](segments.md#create-a-segment) az preferált küszöbértékkel.
      Nem minden ügyfél feltétlenül aktív ügyfél. Némelyikük lehet, hogy már hosszú ideje nem végzett tevékenységet, és a már lemorzsolódottnak számít – az Ön lemorzsolódási definíciójától függően. A már lemorzsolódott ügyfeleknél a lemorzsolódási kockázat előrejelzése nem hasznos, mert nem ők az érdeklődő célközönség.
    - **Várható mező**: Ez a mező csak bizonyos típusú előrejelzésekhez megadható, és nem használható a lemorzsolódási előrejelzéshez.
    - **Állapot**: A futtatott előrejelzés állapota.

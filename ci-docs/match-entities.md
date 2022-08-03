@@ -14,16 +14,14 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 770a18f3a7471714a7e044ae034da168a2601010
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082407"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139706"
 ---
 # <a name="match-conditions-for-data-unification"></a>Az adategyesítés egyezési feltételei
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 Az egyesítés ezen lépése határozza meg az egyezési sorrendet és az entitások közötti egyeztetés szabályait. Ehhez a lépéshez legalább két entitásra van szükség.
 
@@ -122,7 +120,7 @@ A legtöbb esetben az entitásegyeztetés egyedi ügyfélprofilokhoz vezet, kons
 
 Ha például az egyezési szabály vezetéknév, a várost és a születési dátumot kombinálja, a rendszer azonosítja azokat az ikereket, akiknek ugyanaz a vezetéknév, akik ugyanabban a városban élnek, mint az azonos profil. Megadhat olyan kivételt, amely nem egyezik meg a profilokkal, ha a kombinált entitások utónév nem azonosak.
 
-1. A Szabály **szerkesztése panelen válassza a** Kivétel hozzáadása **lehetőséget** > **·**.
+1. A Szabály **szerkesztése panelen válassza a** Kivétel **hozzáadása** > **lehetőséget**.
 
 1. Adja meg a kivételfeltételeket.
 
@@ -143,7 +141,7 @@ Megadhat olyan feltételeket, amelyek felülbírálják az alapértelmezett egye
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Egyéni gomb":::
 
-1. Válassza az **Egyéni típust,** majd a Sablon **letöltése lehetőséget**. Minden egyes egyeztetési lehetőséghez külön sablonra van szükség.
+1. Válassza az **Egyéni típust,** majd a Sablon letöltése **lehetőséget**. Minden egyes egyeztetési lehetőséghez külön sablonra van szükség.
 
 1. Nyissa meg a letöltött sablonfájlt, és töltse ki a részleteket. A sablon mezőket tartalmaz, amelyek meghatározzák az entitást és az egyéni egyeztetésben használandó entitás elsődleges kulcsértékeit. Ha például azt szeretné, hogy az *Értékesítés* entitás *12345* elsődleges kulcsa mindig megegyezzen a *Kapcsolattartó* entitás *34567* elsődleges kulcsával, töltse ki a sablont:
     - Entity1: Értékesítés

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082554"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196029"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)
 
@@ -80,7 +80,7 @@ Jelenleg a következő ország-/régióbeállításokat támogatjuk: Kanada (ang
 
 1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-1. Válassza ki a kapcsolatot, és erősítse meg. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
+1. Válassza ki a kapcsolatot, és erősítse meg. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
 1. Válassza a **Következő** lehetőséget.
 

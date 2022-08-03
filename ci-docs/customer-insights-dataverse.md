@@ -1,7 +1,7 @@
 ---
 title: A Customer Insights-adatok használata a Microsoft Dataverse-ben
 description: Ismerje meg, hogyan csatlakoztathatja a Customer Insights szolgáltatást, és Microsoft Dataverse hogyan értelmezheti a kimeneti entitásokat, amelyek a következőre vannak exportálva:Dataverse.
-ms.date: 05/30/2022
+ms.date: 07/15/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 89ff629033230de3c6252b6a3a16816d9b3c1287
+ms.sourcegitcommit: 85b198de71ff2916fee5500ed7c37c823c889bbb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011523"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "9153407"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>A Customer Insights-adatok használata a Microsoft Dataverse-ben
 
@@ -31,19 +31,31 @@ A környezethez való Dataverse csatlakozás azt is lehetővé teszi, hogy [adat
 - Egyetlen más Customer Insights-környezet sincs már társítva a Dataverse csatlakoztatni kívánt környezethez. Ismerje meg, [hogyan távolíthat el egy meglévő kapcsolatot egy Dataverse környezettel](#remove-an-existing-connection-to-a-dataverse-environment).
 - A Microsoft Dataverse környezetek csak egyetlen tárfiókhoz csatlakozhatnak. Csak akkor érvényes, ha a környezetet [a .Azure Data Lake Storage](own-data-lake-storage.md)
 
+## <a name="dataverse-storage-capacity-entitlement"></a>Dataverse tárolási kapacitásra való jogosultság
+
+A Customer Insights-előfizetéssel további kapacitásra jogosult a szervezet meglévő [Dataverse tárolókapacitása](/power-platform/admin/capacity-storage) számára. A hozzáadott kapacitás az előfizetés által használt profilok számától függ.
+
+**Példa:**
+
+Feltéve, hogy 100 000 ügyfélprofilonként 15 GB-os adatbázis-tárterületet és 20 GB-os fájltárhelyet kap. Ha az előfizetése 300 000 ügyfélprofilt tartalmaz, a teljes tárolókapacitás 45 GB (3 x 15 GB) adatbázis-tárterület és 60 GB-os fájltárolás (3 x 20 GB) lesz. Hasonlóképpen, ha 30K-fiókkal rendelkező B2B-előfizetéssel rendelkezik, a teljes tárolókapacitás 45 GB (3 x 15 GB) adatbázis-tárterület és 60 GB-os fájltárolás (3 x 20 GB) lesz.
+
+A naplókapacitás nem növekményes és nem rögzített a szervezet számára.
+
+A részletes kapacitásjogosultságokkal kapcsolatos további információkért lásd: [Dynamics 365 licencelési útmutató](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 ## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Dataverse Környezet csatlakoztatása a Customer Insights szolgáltatáshoz
 
 A **Microsoft Dataverse** lépés lehetővé teszi, hogy összekapcsolja a Customer Insights-t a Dataverse környezetével, miközben [létrehoz egy Customer Insights-környezetet](create-environment.md).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="adatmegosztás automatikus automatikus engedélyezésével Microsoft Dataverse a net új környezetekben.":::
 
-A rendszergazdák konfigurálhatják a Customer Insights szolgáltatást egy meglévő Dataverse környezet csatlakoztatására. Azáltal, hogy megadja az URL-címet a Dataverse környezetnek, az az új Customer Insights-környezethez lesz csatolva.
+A rendszergazdák konfigurálhatják a Customer Insights szolgáltatást egy meglévő Dataverse környezet csatlakoztatására. Azáltal, hogy megadja az URL-címet a Dataverse környezetnek, az csatlakozik az új Customer Insights-környezethez. Miután létrehozta a kapcsolatot a Customer Insights és Dataverse a, ne módosítsa a környezet szervezetnevét Dataverse. A rendszer a szervezet nevét használja az Dataverse URL-címben, és egy módosított név megszakítja a kapcsolatot a Customer Insights szolgáltatással.
 
 Ha nem szeretne meglévő Dataverse környezetet használni, a rendszer új környezetet hoz létre a bérlő Customer Insights-adataihoz. [Power Platform a rendszergazdák szabályozhatják, hogy ki hozhat létre környezeteket](/power-platform/admin/control-environment-creation). Ha új Customer Insights-környezetet állít be, és a rendszergazda letiltotta a környezetek létrehozását Dataverse a rendszergazdák kivételével mindenki számára, előfordulhat, hogy nem tud új környezetet létrehozni.
 
 **Engedélyezze az adatmegosztást** Dataverse az adatmegosztás jelölőnégyzet bejelölésével.
 
-Ha saját Data Lake Storage-fiókját használja, szüksége lesz az **engedélyek azonosítójára** is. Az engedélyazonosító beszerzésével kapcsolatos további információkért tekintse át a következő szakaszt.
+Ha saját Data Lake Storage-fiókját használja, szüksége lesz az **engedélyek azonosítójára is**. Az engedélyazonosító beszerzésével kapcsolatos további információkért tekintse át a következő szakaszt.
 
 ## <a name="enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview"></a>A sajáttól Dataverse származó adatmegosztás Azure Data Lake Storage engedélyezése (előzetes verzió)
 
@@ -84,11 +96,11 @@ A PowerShell-szkriptek végrehajtásához először ennek megfelelően kell beá
 
     2. `ByolSetup.ps1`
         - A szkript futtatásához Storage Blob Data Owner *engedélyekre van szüksége* a tárfiók/tároló szintjén, különben ez a szkript létrehoz egyet az Ön számára. A szerepkör-hozzárendelés manuálisan is eltávolítható a szkript sikeres futtatása után.
-        - Ez a PowerShell-szkript hozzáadja a szükséges tole-alapú hozzáférés-vezérlést (RBAC) a szolgáltatáshoz és bármely Microsoft Dataverse Dataverse-alapú üzleti alkalmazáshoz. Emellett frissíti a CustomerInsights tárolón található hozzáférés-vezérlési listát (ACL) a `CreateSecurityGroups.ps1` szkripttel létrehozott biztonsági csoportok számára. A közreműködő csoport rwx *engedéllyel rendelkezik*, az Olvasók csoport *pedig csak r-x* engedéllyel rendelkezik.
+        - Ez a PowerShell-szkript hozzáadja a szolgáltatáshoz és az Microsoft Dataverse összes Dataverse-alapú üzleti alkalmazáshoz szükséges szerepköralapú hozzáférés-vezérlést. Emellett frissíti a CustomerInsights tárolón található hozzáférés-vezérlési listát (ACL) a `CreateSecurityGroups.ps1` szkripttel létrehozott biztonsági csoportok számára. A közreműködő csoport rwx *engedéllyel rendelkezik*, az Olvasók csoport *pedig csak r-x* engedéllyel rendelkezik.
         - Hajtsa végre ezt a PowerShell-szkriptet a Windows PowerShellben úgy, hogy megadja az Azure-előfizetés azonosítóját, amely tartalmazza a Azure Data Lake Storage tárfiók nevét, az erőforráscsoport nevét, valamint a olvasó és közreműködő biztonságicsoport-azonosító értékeit. Nyissa meg a PowerShell-szkriptet egy szerkesztőben a további információk és az implementált logika áttekintéséhez.
         - Másolja ki a kimeneti sztringet a szkript sikeres futtatása után. A kimeneti sztring így néz ki: `https://DVBYODLDemo/customerinsights?rg=285f5727-a2ae-4afd-9549-64343a0gbabc&cg=720d2dae-4ac8-59f8-9e96-2fa675dbdabc`
 
-2. Adja meg a fentről másolt kimeneti sztringet a **környezetkonfigurációs lépés Engedélyazonosító** mezőjébe Microsoft Dataverse.
+2. Adja meg a fentről másolt kimeneti sztringet a **környezetkonfigurációs lépés** Engedélyazonosító Microsoft Dataverse mezőjébe.
 
 :::image type="content" source="media/dataverse-enable-datasharing-BYODL.png" alt-text="Konfigurációs beállítások a saját Azure Data Lake Storage Microsoft Dataverse adatmegosztásának engedélyezéséhez a .":::
 

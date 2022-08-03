@@ -1,19 +1,19 @@
 ---
 title: Szegmensek exportálása a Hirdetéskezelőbe Facebook (előzetes verzió) (videót tartalmaz)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Facebook Hirdetéskezelő.
-ms.date: 04/15/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 782abd7d69166b9c81ac25c4d7e191bdeb03a887
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082974"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195017"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Szegmensek exportálása a Hirdetéskezelőbe Facebook (előzetes verzió)
 
@@ -21,31 +21,32 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWO1aN]
 
-## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
+## <a name="prerequisites"></a>Előfeltételek
 
-- Rendelkeznie kell egy [**Facebook hirdetési fiókkal**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) amely tartalmaz egy [**Facebook üzleti fiókot**](https://business.facebook.com/).
-- Rendszergazdának kell lennie a [**Facebook hirdetési fiókban**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Olyan [Facebook hirdetési fiók](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), amely tartalmaz egy [Facebook üzleti fiókot](https://business.facebook.com/).
+- Rendszergazdai jogosultságok a [Facebook Hirdetési fiókban](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 10 millió ügyfélprofilt lehet a Facebook hirdetéskezelőbe exportálni.
-- A Facebook hirdetéskezelőbe való exportálás csak szegmensekre korlátozódik.
-- Kizárólag *ügyféllista* típusú célközönségek létrehozása vagy frissítése a Facebookon.
-- Az összesen 10 millió ügyfélprofilt vevő szegmensek exportálásának teljesítése akár 90 percet is igénybe vehet.
+- A Hirdetéskezelőbe irányuló Facebook exportálásonként akár 10 millió ügyfélprofil is lehet, ami akár 90 percet is igénybe vehet.
+- Csak szegmensek.
+- Facebook *ügyféllista* típusa csak egyéni [célközönségekben](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+  > [!NOTE]
+  > Bizonyos esetekben különböző típusú egyéni célközönségeket láthatsz a legördülő listában. Ha a vevőlistától *eltérő* típust választ, az exportálás sikertelen lesz.
 
 ## <a name="set-up-connection-to-facebook-ads-manager"></a>Kapcsolat beállítása a Facebook Hirdetéskezelőhöz
 
-Ahhoz, hogy a felhasználók exportálást tudjanak létrehozni, a rendszergazdának konfigurálnia kell a szolgáltatás kapcsolatát, és engedélyeznie kell a közreműködőknek a kapcsolat használatát.
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Facebook Hirdetéskezelő** lehetőséget a kapcsolat konfigurálásához.
+1. Válaszd a Kapcsolat **hozzáadása,** majd a Hirdetéskezelő **Facebook lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. [Lehetővé teszi a közreműködők számára, hogy a kapcsolatot exportálásra](connections.md#allow-contributors-to-use-a-connection-for-exports) használják.
 
-1. Hitelesítés a Facebook-hirdetések használatával: 
+1. Hitelesítés a Facebook-hirdetések használatával:
 
    1. A **Folytatás Facebook** gomb kiválasztásával jelentkezzen be a Facebook hirdetési fiókjába.
 
@@ -53,27 +54,25 @@ Ahhoz, hogy a felhasználók exportálást tudjanak létrehozni, a rendszergazd�
 
    1. Válassza ki a **Facebook hirdetési fiókot**, amellyel dolgozni kíván.
 
-   1. Válasszon egy **meglévő egyéni célközönséget** a legördülő listából, vagy hozzon létre egy **új egyéni célközönséget**. További tájékoztatás [**Célközönségek a Facebook hirdetéskezelőben**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494) című témakörben olvashat.
-      > [!NOTE]
-      > Ezzel az exportálással a Facebookon csak az adott típusú *ügyféllistán* hozhatók létre vagy frissíthetők egyéni célközönségek. Bizonyos esetekben a legördülő listában különféle típusú egyéni célközönségek láthatóak. Ha az *ügyféllistától* eltérő típust választ, akkor az exportálás sikertelen lesz. 
+   1. Válasszon egy **meglévő egyéni célközönséget** a legördülő listából, vagy hozzon létre egy **új egyéni célközönséget**.
 
-1. Tekintse át az **Adatvédelem és a megfelelés** lehetőséget, és válassza az **Elfogadom** lehetőséget.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
 ## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget. 
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. A **Kapcsolat exportáláshoz** lehetőségen válasszon egy kapcsolatot a **Facebook hirdetéskezelőből**. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
+1. **A Kapcsolat exportáláshoz** mezőben válassz ki egy kapcsolatot a Facebook Hirdetéskezelő szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
-1. A **Kulcsazonosító kiválasztása** mezőben válassza az **E-mail-cím**, **Név és a cím** vagy a **Telefon** lehetőséget, amelyet elküld a Facebook hirdetéskezelőnek. 
+1. Adja meg az exportálás nevét.
 
-1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak.
+1. Az Adatok összekapcsolása mezőben válaszd ki az **E-mail-cím**, **a Név és cím** vagy **a Telefon** lehetőséget **, amelyet el szeretnél küldeni a Hirdetéskezelőnek**.Facebook
 
 1. Képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kiválasztott kulcsazonosítóhoz.
    > [!TIP]
@@ -85,16 +84,6 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
-
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. 
-
-Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Amikor engedélyezi a Dynamics 365 Customer Insights szolgáltatást az adatok Facebook Ads Managerbe való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy a Facebook Ads megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
-
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

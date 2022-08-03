@@ -1,28 +1,56 @@
 ---
 title: A Dynamics 365 Customer Insights újdonságai
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 06/02/2022
+ms.date: 06/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 4b5b95d1774d22827b3c08c2b6ccbb7858f1b04b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
+ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054021"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "9114249"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
 Örömmel jelentjük be legújabb frissítéseinket! Ez a cikk összefoglalja a nyilvános előzetes funkciókat, általános elérhetőségű javításokat és a funkciófrissítéseket. A hosszú távú funkciótervekkel megtekintéséhez tekintse meg a [Dynamics 365 és Power Platform a kiadási terveket](/dynamics365/release-plans/).
 
-A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképpen meghatározva, nem kell semmilyen műveletet végrehajtania, és az alkalmazás automatikusan, leállás nélkül frissíthető.
+A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a mások előtt láthatják a funkciókat. Hacsak nincs másképp megadva, nem kell semmilyen műveletet végrehajtania, automatikusan frissítjük az alkalmazást állásidő nélkül.
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2022-updates"></a>2022. júniusi frissítések
+
+A 2022. júniusi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="updated-user-experience-for-data-sources-and-data-ingestion"></a>Frissített felhasználói élmény az adatforrásokhoz és az adatbetöltéshez
+
+Az adatok importálása az adatforrások széles köréből az alapja annak, hogy az ügyféladatokat konszolidálja Dynamics 365 Customer Insights. Újra megvizsgáltuk az adatforrások importálásához és csatlakoztatásához szükséges felhasználói élményt. A frissítés célja, hogy megkönnyítse az adatok betöltését a Customer Insights szolgáltatásba.
+
+További információ: [Adatforrások áttekintése](data-sources.md).
+
+### <a name="export-to-inmobi"></a>Exportálás az InMobi szolgáltatásba
+
+Az InMobi segít a márkáknak megérteni, azonosítani, bevonni és megszerezni a fogyasztókat. Szegmenseket és egyéb adatokat exportálhat az InMobi szolgáltatásba Azure Blob Storage-fiókokon keresztül.
+
+További információ: [Exportálás Az InMobi szolgáltatásba (előzetes verzió)](export-inmobi.md)
+
+### <a name="lockbox-support-in-customer-insights"></a>A lockbox támogatása a Customer Insights szolgáltatásban
+
+Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához.
+
+További információ: [Ügyféladatok biztonságos elérése az ügyfélkompatibilitással (előzetes verzió)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
+
+### <a name="connect-to-your-data-using-azure-private-link"></a>Csatlakozás az adatokhoz az Azure Private Link használatával
+
+Azure Private Link lehetővé teszi, hogy a Customer Insights a virtuális hálózat privát végpont keresztül csatlakozzon a fiókjához Azure Data Lake Storage. A tárfiókban lévő adatok esetében, amelyek nincsenek kitéve a nyilvános internetnek, Private Link engedélyezi a kapcsolatot az adott korlátozott hálózattal.
+
+További információ: [Use Private Link in Customer Insights (A Private Link használata a Customer Insights szolgáltatásban](security-overview.md#private-links-tab)).
 
 ## <a name="may-2022-updates"></a>2022. májusi frissítések
 
@@ -92,7 +120,7 @@ További információ: [Ügyfélprofilok gazdagítása identitásadatokkal a Liv
 
 Ha a szervezet sok szegmenst vagy intézkedést tart fenn, a megfelelő megtalálása néha kihívást jelenthet. Ez az új funkció lehetővé teszi a listák címkék és oszlopok segítségével történő rendszerezését. Segít az adatok gyors és egyszerű megtalálásában és a nézetek testreszabásában.
 
-További információ: [Címkék és oszlopok](work-with-tags-columns.md) használata.
+További információ: [Címkék és oszlopok használata](work-with-tags-columns.md).
 
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Az adatmegosztás Dataverse engedélyezése saját tárfiók használata esetén
 

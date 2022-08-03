@@ -1,7 +1,7 @@
 ---
 title: Ügyféltevékenységek
 description: Ügyféltevékenységek meghatározása és azok megtekintése az ügyfélprofilok idővonalán.
-ms.date: 11/01/2021
+ms.date: 07/22/2022
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
@@ -17,51 +17,51 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsight
-ms.openlocfilehash: 6c0a1bc5d9a42806b458142804199c733ff530ec
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: cc21b0eeb368156437e60d851c2d144f3974c066
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755501"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188142"
 ---
 # <a name="customer-activities"></a>Ügyféltevékenységek
 
-A [különböző adatforrásokból](data-sources.md) származó ügyféltevékenységek egyesítése a Dynamics 365 Customer Insights alkalmazásban. Hozzon létre egy ütemtervet, amely időrendben sorolja fel a tevékenységeket. Az Ügyfélkártya bővítmény megoldással vegye fel az ütemtervet a [Dynamics 365-alkalmazásokba](customer-card-add-in.md).
+Az ügyféltevékenységek az ügyfelek által végrehajtott műveletek vagy események. Például tranzakciók, támogatási hívások időtartama, webhely-áttekintések, vásárlások vagy visszaküldések. Ezeket a tevékenységeket egy vagy több adatforrás tartalmazza. A Customers Insights segítségével konszolidálhatja az ezekből az [adatforrásokból](data-sources.md) származó ügyféltevékenységeket, és társíthatja őket az ügyfélprofilokhoz. Ezek a tevékenységek időrendben jelennek meg az ügyfélprofil idővonalán. Foglalja bele az idővonalat a Dynamics 365 alkalmazásokba az [Ügyfélkártya bővítménymegoldással](customer-card-add-in.md).
 
 ## <a name="define-an-activity"></a>Egy tevékenység definiálása
 
-Az adatforrások több adatforrásból származó, tranzakciós és tevékenységi adatokkal rendelkező entitásokat tartalmazhatnak. Azonosítsa ezeket az entitásokat, és jelölje ki az ügyfél idővonalán megtekinteni kívánt tevékenységeket. Válassza ki azt az entitást, amely a cél tevékenységet vagy tevékenységeket tartalmazza.
+Az entitásnak rendelkeznie kell legalább egy Dátum **típusú** attribútummal ahhoz, hogy szerepeljen az ügyfél idővonalán. A **Tevékenység hozzáadása** vezérlő le van tiltva, ha nem talál ilyen entitást.
 
-Egy entitásben legalább egy **Dátum** típusú attribútumnak szerepelnie kell, hogy az bekerüljön az ügyfél idővonalába, és nem lehet entitásokat felvenni **Dátum** mezők nélkül. A **Tevékenység hozzáadása** vezérlő le van tiltva, ha nem talál ilyen entitást.
+1. Lépjen az **Adattevékenységek** > **oldalra**.
 
-1. Ugrás az **adattevékenységekre** > **·**.
+1. Válassza a Tevékenység **hozzáadása lehetőséget** az irányított élmény elindításához.
 
-1. Válassza a **Tevékenység hozzáadása** lehetőséget az interaktív élmény elkezdéséhez a tevékenység beállítási folyamathoz.
+1. **A Tevékenységadatok** lépésben adja meg a következő adatokat:
 
-1. A **Tevékenységadat** lépésben állítsa be a következő mezők értékeit:
-
-   - **Tevékenység neve**: Válassza ki a tevékenység nevét.
-   - **Entitás**: Jelöljön ki egy entitást, amely tranzakciós vagy tevékenységi adatot tartalmaz.
-   - **Elsődleges kulcs**: Válassza ki azt a mezőt, amely egyértelműen azonosítja a rekordot. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
+   - **Tevékenység neve**: A tevékenység neve.
+   - **Tevékenységentitás**: Tranzakciós vagy tevékenységadatokat tartalmazó entitás.
+   - **Elsődleges kulcs**: A rekordot egyedileg azonosító mező. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="A tevékenységadatokat állítása be névvel, entitással és elsődleges kulcssal.":::
 
-1. A **Tovább** gombot választva menjen tovább a következő lépésre.
+1. Válassza a **Következő** lehetőséget.
 
-1. A **Kapcsolat** lépésben konfigurálja az adatokat, hogy a tevékenység adatai hozzá csatlakozzon a megfelelő ügyféladatokhoz. Ez a lépés az entitások közötti kapcsolatot ábrázolja.  
+1. A Kapcsolat **lépésben válassza a** Kapcsolat **hozzáadása lehetőséget**, hogy összekapcsolja a tevékenységadatokat a megfelelő ügyfélrekorddal. Ez a lépés az entitások közötti kapcsolatot ábrázolja.  
 
-   - **Első**: A tevékenységentitás egy másik entitással való kapcsolat létrehozására használt idegen mező.
-   - **Második**: A megfelelő forrás ügyfélentitás, amellyel a tevékenységentitás kapcsolatban lesz. Csak az adategyesítési folyamatban használt forrás ügyfélentitásokhoz tud kapcsolódni.
-   - **Harmadik**: Ha a tevékenységentitás és a kijelölt forrás ügyfélentitása között már létezik kapcsolat, a kapcsolat neve írásvédett módban lesz. Ha ilyen kapcsolat nem létezik, új kapcsolat jön létre a mezőben megadott névvel.
+   - **Idegen kulcs az entitástól**: A tevékenységentitás azon mezője, amely egy másik entitással való kapcsolat létrehozására szolgál.
+   - **Entitásnévhez**: Megfelelő forrás ügyfélentitás, amellyel a tevékenységentitás kapcsolatban lesz. Csak az adategyesítési folyamatban használt forrás ügyfélentitásokhoz tud kapcsolódni.
+   - **Kapcsolat neve**: Az entitások közötti kapcsolatot azonosító név. Ha már létezik kapcsolat a tevékenységentitás és a kiválasztott forrás ügyfélentitás között, a kapcsolat neve csak olvasható.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiálja az entitás kapcsolatát.":::
 
    > [!TIP]
    > Az üzleti számlákkal (B-to-B) kapcsolatos környezetben a fiókentitások és az egyéb entitások között lehet választani. Ha kiválaszt egy fiókentitást, a kapcsolati elérési út automatikusan be lesz állítva. Más entitások esetében a kapcsolati elérési útját egy vagy több köztes entitásra vonatkozóan kell definiálni, amíg el nem ér egy fiókentitást.
 
-1. A **Tovább** gombot választva menjen tovább a következő lépésre. 
+1. Válassza az Alkalmaz **lehetőséget** a kapcsolat létrehozásához.
 
-1. A **Tevékenységegyesítés** lépésben válassza ki a tevékenységeseményt, valamint a tevékenység kezdési idejét. 
+1. Válassza a **Következő** lehetőséget.
+
+1. A **Tevékenységegyesítés** lépésben válassza ki a tevékenységeseményt, valamint a tevékenység kezdési idejét.
    - **Kötelező mezők**
       - **Eseménytevékenység**: A tevékenység eseményének megfelelő mező.
       - **Időbélyeg**: A tevékenység kezdő idejét jelképező mező.
@@ -69,68 +69,56 @@ Egy entitásben legalább egy **Dátum** típusú attribútumnak szerepelnie kel
    - **Választható mezők**
       - **További részletek**: Mező, amely a tevékenységre vonatkozó releváns információkat tartalmazza.
       - **Ikon**: Ezt a tevékenységtípust leginkább képviselő ikon.
-      - **Webcím**: A tevékenységre vonatkozó információkat tartalmazó URL-címet tartalmazó mező. Például a tevékenység forrását jelentő tranzakciós rendszer. Ez az URL-cím lehet a adatforrás bármely mezője, vagy átalakítással Power Query új mezőként is létrehozható. Az URL-adatokat az *Egyesített tevékenység* entitás tárolja, amely az [API-k](apis.md) használatával lefelé irányulóan használható.
+      - **Webcím**: A tevékenységre vonatkozó információkat tartalmazó URL-címet tartalmazó mező. Például a tevékenység forrását jelentő tranzakciós rendszer. Ez az URL-cím lehet a adatforrás bármely mezője, vagy átalakítással Power Query új mezőként is felépíthető. Az URL-adatokat az *Egyesített tevékenység* entitás tárolja, amely az [API-k](apis.md) használatával lefelé irányulóan használható.
 
    - **Megjelenítés idősoron**
       - Válassza ki , hogy meg szeretné-e jeleníteni ezt az információt az ügyfélprofilok idővonalnézetében. Az **Igen** lehetőséget választva a tevékenységet megjelenítheti az idővonalon vagy a **Nem** lehetőséget választva elrejtheti.
 
       :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Adja meg az ügyféltevékenység adatait egy Egyesített tevékenység entitásban.":::
 
-1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. A **Befejezés és áttekintés** lehetőséget választva most már az **Egyéb** tevékenységtípussal mentheti a tevékenységet. 
+1. Válassza a Tovább gombot **a tevékenységtípus kiválasztásához, vagy válassza a Befejezés és áttekintés** lehetőséget **a tevékenység mentéséhez, ha a tevékenységtípust Más** értékre állítja **.**
 
-1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg a Visszajelzés *,* *a Hűség*, *a SalesOrder*, *a SalesOrderLine* és *az Előfizetés* tevékenységtípusok támogatják a szemantikát, miután beleegyeztek a mezők leképezésébe. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
+1. A **Tevékenységtípus** lépésben válassza ki a tevékenységtípust, és tetszés szerint kiválaszthatja, hogy le szeretné-e szemantikusan képezni a Customer Insights más területein használat tevékenységtípusokat. Jelenleg a *Visszajelzés*, *a* Hűség, *a SalesOrder*, *a SalesOrderLine* és *az Előfizetés* tevékenységtípusok támogatják a szemantikát, miután beleegyeztek a mezők leképezésébe. Ha egy tevékenységtípus nem releváns az új tevékenységhez, választhat az *Egyéb* vagy az *Új létrehozása* lehetőségek közül az egyéni tevékenységtípushoz.
 
-1. A **Következő** lehetőség kiválasztásával a következő lépésre mehet. 
+1. Válassza a **Következő** lehetőséget.
 
 1. Az **Áttekintés** lépésben ellenőrizze a beállításokat. Lépjen vissza az előző lépések bármelyikéhez, és szükség esetén frissítse az információkat.
 
-   :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Tevékenység megadott mezőinek áttekintése.":::
-   
-1. Válassza a **Tevékenység mentése** lehetőséget a módosítások alkalmazásához, majd válassza a **Kész** lehetőséget az **Adat** > **Tevékenységek** lehetőségekhez való visszatéréshez. Itt láthatja, hogy mely tevékenységek vannak beállítva az idősoron való megjelenítéshez. 
+1. Válassza a **Tevékenység mentése** lehetőséget a módosítások alkalmazásához, majd válassza a **Kész** lehetőséget az **Adat** > **Tevékenységek** lehetőségekhez való visszatéréshez. Megjelenik a létrehozott tevékenység.
 
-1. A **Tevékenységek** lapon válassza a **Futtatás** lehetőséget a tevékenység feldolgozásához. 
+1. Az összes tevékenység létrehozása után válassza a Futtatás **lehetőséget** a feldolgozásukhoz.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-activities"></a>Meglévő tevékenységek kezelése
 
-Az **Adatok** > **Tevékenységek** oldalon megtekintheti az összes mentett tevékenységet, és kezelheti azokat. Minden tevékenységet egy sor képvisel, amely a forrásra, az entitásra és a tevékenységtípusra vonatkozó adatokat is tartalmazza.
+Az **Adattevékenységek** > **lapon** megtekintheti a mentett tevékenységeket, azok forrásentitását, a tevékenység típusát, valamint azt, hogy szerepelnek-e az ügyfél idővonalán. A tevékenységek listáját bármely oszlop szerint rendezheti, vagy a keresőmező segítségével megkeresheti a kezelni kívánt tevékenységet.
 
-A következő műveletek érhetők el, amikor kiválaszt egy tevékenységet. 
+Válasszon ki egy tevékenységet az elérhető műveletek megtekintéséhez.
 
-- **Szerkesztés**: Megnyitja a tevékenység beállítását az áttekintés lépésben. Ebben a lépésben bármelyiket vagy az összes aktuális konfigurációt módosíthatja. A konfiguráció módosítása után válassza a **Tevékenység mentése** lehetőséget, majd a **Futtatás** lehetőséget a változtatások feldolgozásához.
-
-- **Átnevezés**: Megnyit egy párbeszédpanelt, ahol a kijelölt tevékenységhez más nevet adhat meg. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
-
-- **Törlés**: Párbeszéd megnyitása a kijelölt tevékenység törlésének megerősítéséhez. Egyszerre több tevékenységet is törölhet, ha kijelöli a tevékenységeket, majd kiválasztja a törlés ikont. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
+- **Szerkessze** a tevékenységet a konfigurációjának módosításához. A konfiguráció a felülvizsgálati lépésben nyílik meg. A konfiguráció módosítása után válassza a **Tevékenység mentése** lehetőséget, majd a **Futtatás** lehetőséget a változtatások feldolgozásához.
+- **Nevezze át** a tevékenységet. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
+- **Törölje** a tevékenységet. Ha egyszerre több tevékenységet szeretne törölni, jelölje ki a tevékenységeket, majd **a Törlés lehetőséget**. Törlés jóváhagyása.
 
 ## <a name="view-activity-timelines-on-customer-profiles"></a>Tevékenység ütemezésének megtekintése ügyfélprofilon
 
-Az ügyféltevékenységek konfigurálása után válassza a **Tevékenység megjelenítése az idősoron** lehetőséget a tevékenységkonfigurációban, és keresse meg az ügyfél összes tevékenységét az ügyfél profiljában.
+1. Ha a Tevékenységkonfigurációban a Megjelenítés a tevékenység idővonalában lehetőséget választotta **, lépjen az Ügyfelekelemre** **, és válasszon ki egy ügyfélprofilt az ügyfél tevékenységeinek megtekintéséhez a** Tevékenység idővonala **szakaszban**.
 
-Az ügyfél idővonalának megnyitásához nyissa meg az **Ügyfelek** lehetőséget, és válassza ki a megtekinteni kívánt ügyfélprofilt.
+   :::image type="content" source="media/Activity_Timeline1.PNG" alt-text="A konfigurált tevékenységek megtekintése az Ügyfélprofilban.":::
 
-Ha egy ügyfél részt vett egy konfigurált tevékenységben, azt a **Tevékenység ütemterve** szakaszban találja meg.
+1. Tevékenységek szűrése a tevékenység idővonalán:
 
-:::image type="content" source="media/Activity_Timeline1.PNG" alt-text="A konfigurált tevékenységek megtekintése az Ügyfélprofilban.":::
+   - Válasszon ki egy vagy több tevékenységikont az eredmények finomításához, hogy csak a kiválasztott típusokat tartalmazza.
 
-A tevékenységeket többféleképpen is szűrheti a tevékenység ütemezésében:
+     :::image type="content" source="media/Activity_Timeline2.PNG" alt-text="A tevékenységeket típus szerint szűrheti az ikonok segítségével.":::
 
-- A tevékenységikonok kiválasztásával finomíthatja az eredményeket, hogy csak a kijelölt típus(ok) szerepeljenek a kiválasztottakban.
+   - Válassza a Szűrő **lehetőséget** egy szűrőpanel megnyitásához az idővonal-szűrők konfigurálásához. Szűrés ActivityType *és/vagy* Date *szerint*. Válassza az **Alkalmaz** lehetőséget.
 
-  :::image type="content" source="media/Activity_Timeline2.PNG" alt-text="A tevékenységeket típus szerint szűrheti az ikonok segítségével.":::
+     :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="A szűrőpanelen konfigurálhatja a szűrési feltételeket.":::
 
-- A **Szűrő** kiválasztásával szűrőpanelt nyithat meg az idővonal szűrőinek konfigurálához.
-
-   1. Szűrhet *ActivityType* és *Date* értékek szerint
-   1. Válassza az **Alkalmaz** lehetőséget a tevékenység ütemezési szűrőinek használatához.
-
-   :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="A szűrőpanelen konfigurálhatja a szűrési feltételeket.":::
-
-Szűrők eltávolításához válassza ki az idővonalon alkalmazott minden szűrő mellett az **x** ikont, vagy válassza a **Szűrők törlése** lehetőséget.
-
+1. A szűrők eltávolításához válassza a Szűrők törlése lehetőséget **, vagy válassza a Szűrő** lehetőséget **, és törölje a szűrő jelölőnégyzet jelölését.**
 
 > [!NOTE]
-> A tevékenységszűrőket a rendszer eltávolítja, amikor elhagyja az ügyfélprofilt. Azokat minden alkalommal alkalmaznia kell, amikor megnyit egy ügyfélprofilt.
+> A tevékenységszűrőket a rendszer eltávolítja, amikor elhagyja az ügyfélprofilt. Minden alkalommal alkalmaznia kell őket, amikor megnyit egy ügyfélprofilt.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

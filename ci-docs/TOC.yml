@@ -50,7 +50,7 @@
       href: data-sources.md
     - name: Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
       href: connect-common-data-model.md
-    - name: Csatlakozás a Azure Synapse Analytics alkalmazáshoz
+    - name: Csatlakozás a Azure Synapse Analytics szolgáltatáshoz
       href: connect-synapse.md
     - name: Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
       href: connect-dataverse-managed-lake.md
@@ -104,22 +104,26 @@
       href: enrichment-here.md
     - name: Egyéni SFTP-importálás
       href: enrichment-SFTP-custom-import.md
-- name: Egyesített profilok
+- name: Ügyfélprofilok és -tevékenységek
   items:
-    - name: Egyesített ügyfélprofilok áttekintése
+    - name: Ügyfélprofilok megtekintése
       href: customer-profiles.md
-    - name: Egyesített ügyfélprofilok szűrése
+    - name: A keresési &szűrési index kezelése
       href: search-filter-index.md
     - name: Ügyféltevékenységek meghatározása
       href: activities.md
     - name: Hozzájárulás-kezelés használata
       href: consent-management.md
+    - name: Webes adatok használata személyre szabáshoz
+      href: unknown-to-known.md
 - name: Szegmensek
   items:
     - name: Szegmensek áttekintése
       href: segments.md
-    - name: Szegmensek létrehozása
+    - name: Létrehozás a szegmensépítővel
       href: segment-builder.md
+    - name: Létrehozás gyorsszegmensekkel
+      href: segment-quick.md
     - name: Mértékek alapján javasolt szegmensek
       href: suggested-segments.md
     - name: Tevékenység alapján javasolt szegmensek
@@ -132,9 +136,9 @@
   items:
     - name: A mértékek áttekintése
       href: measures.md
-    - name: Új mérték létrehozása
+    - name: Létrehozás a mértékkészítővel
       href: measure-builder.md
-    - name: Mértéksablon használata
+    - name: Létrehozás sablonokkal
       href: measure-templates.md
 - name: Előrejelzések
   items:
@@ -180,6 +184,10 @@
           href: export-destinations.md
         - name: Active Campaign
           href: export-active-campaign.md
+        - name: Adobe Campaign Standard
+          href: export-adobe-campaign-standard.md
+        - name: Adobe Experience Platform
+          href: export-adobe-experience-platform.md
         - name: AdRoll
           href: export-adroll.md
         - name: Autopilot
@@ -190,10 +198,6 @@
           href: export-azure-data-lake-storage-gen2.md
         - name: Azure Synapse Analytics
           href: export-azure-synapse-analytics.md
-        - name: Adobe Campaign Standard
-          href: export-adobe-campaign-standard.md
-        - name: Adobe Experience Platform
-          href: export-adobe-experience-platform.md
         - name: Káprázatos
           href: export-braze.md
         - name: Campaign Monitor
@@ -228,6 +232,8 @@
           href: export-marketo.md
         - name: Microsoft Advertising
           href: export-microsoft-advertising.md
+        - name: MoEngage
+          href: export-moengage.md
         - name: Omnisend
           href: export-omnisend.md
         - name: RollWorks

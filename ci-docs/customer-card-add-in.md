@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082134"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9194926"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Ügyfélkártya-bővítmény a Dynamics 365 alkalmazásokhoz (előzetes verzió)
 
@@ -28,21 +28,25 @@ ms.locfileid: "9082134"
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- A bővítmény csak a Dynamics 365 modellalapú alkalmazásaival működik (például az Értékesítés vagy a Customer Service 9.0-s vagy későbbi veziójával).
-- Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a Customer Insights ügyfélprofiljaira, javasoljuk, hogy azokat [a Dynamics 365 alkalmazásból töltse be az Microsoft Dataverse összekötő használatával](connect-power-query.md). Ha más módszert használ a Dynamics 365 kapcsolattartók (vagy partnerek) betöltésére, akkor meg kell győződnie arról, hogy a `contactid` (vagy`accountid`) mező az adott adatforrás elsődleges kulcsaként [van beállítva az adategyesítési folyamat térképi lépésében](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Dynamics 365 modellvezérelt alkalmazások, például Sales vagy ügyfélszolgálat, 9.0-s és újabb verzió.
+- Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a Customer Insights ügyfélprofiljaira, javasoljuk, hogy azokat [a Dynamics 365 alkalmazásból töltse be az Microsoft Dataverse összekötő használatával](connect-power-query.md). Ha más módszert használ a Dynamics 365 kapcsolattartók (vagy partnerek) betöltésére, győződjön meg arról, hogy a `contactid` (vagy `accountid`) mező az adott adatforrás elsődleges kulcsaként [van beállítva az adategyesítési folyamat során](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját felhasználóként [kell](permissions.md) hozzáadni a Customer Insights szolgáltatáshoz.
-- [A Customer Insights szolgáltatásban konfigurált keresési és szűrési képességek](search-filter-index.md) szükségesek az adatok keresésének működéséhez.
+- [Konfigurált keresési és szűrési lehetőségek](search-filter-index.md) a Customer Insights megoldásban.
 - Minden bővítményvezérlő a Customer Insights adott adataira támaszkodik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja tájékoztatja, ha egy vezérlő nem érhető el a kiválasztott környezettípus miatt. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
-  - **Mértékegység-vezérlő**: [Ügyfélattribútumok](measures.md) típusú, konfigurált intézkedéseket igényel.
-  - **Intelligencia-vezérlés**: Előrejelzések vagy egyéni modellek [használatával](predictions-overview.md) létrehozott adatokra van szükség.
-  - **Ügyféladatok vezérlő**: A profilból minden mező elérhető az egységes ügyfélprofilban.
-  - **Dúsítási vezérlő**: Az ügyfelek profiljaira alkalmazott aktív [dúsítást](enrichment-hub.md) igényel. A kártyabővítmény a következő bővítéseket támogatja: [a Microsoft által biztosított márkák](enrichment-microsoft.md), [a Microsoft által biztosított érdeklődési körök](enrichment-microsoft.md) és [a Microsoft által biztosított Office engagement adatok](enrichment-office.md).
-  - **Kapcsolattartók vezérlő**: A kapcsolattartók típusú szemantikus entitás definícióját igényli.
-  - **Idősor-vezérlő**: [Konfigurált tevékenységeket](activities.md) igényel.
+  - **A mértékvezérléshez** konfigurált ügyfélattribútum-mértékekre [van szükség](measures.md).
+  - **Az intelligenciavezérléshez** előrejelzések vagy egyéni modellek [használatával](predictions-overview.md) létrehozott adatokra van szükség.
+  - **Az Ügyféladatok vezérlő** az egyesített ügyfélprofilban elérhető profil összes mezőjét megjeleníti.
+  - **A gazdagodás szabályozásához** aktív [gazdagításokra van szükség az ügyfélprofilokra](enrichment-hub.md) alkalmazva. A kártyabővítmény a következő bővítéseket támogatja: [a Microsoft által biztosított márkák](enrichment-microsoft.md), [a Microsoft által biztosított érdeklődési körök](enrichment-microsoft.md) és [a Microsoft által biztosított Office engagement adatok](enrichment-office.md).
+  - **A kapcsolattartók vezérlőjéhez** kapcsolatszemantikai entitástípusra van szükség.
+  - **Az ütemterv-vezérléshez** konfigurált tevékenységekre [van szükség](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Az Ügyfélkártya bővítmény telepítése
 
-Az Ügyfélkártya bővítmény a Dynamics 365Customer Engagement alkalmazásihoz használható megoldás. A megoldás telepítéséhez nyissa meg az AppSource lehetőséget, és keresse meg a **Dynamics ügyfélkártyát**. Válassza ki az [ügyfélkártya bővítményt az AppSource megoldásban](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview), és válassza a **Letöltés most** lehetőséget.
+Az Ügyfélkártya bővítmény a Dynamics 365Customer Engagement alkalmazásihoz használható megoldás. A megoldás telepítése:
+
+1. Nyissa meg AppSource és keresse meg a **Dynamics-ügyfélkártyát**.
+
+1. Válassza ki az [ügyfélkártya bővítményt az AppSource megoldásban](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview), és válassza a **Letöltés most** lehetőséget.
 
 A megoldás telepítéséhez előfordulhat, hogy rendszergazdai hitelesítő adataival kell bejelentkeznie a Dynamics 365 alkalmazásba. Eltarthat egy ideig, amíg a megoldást települ a környezetébe.
 

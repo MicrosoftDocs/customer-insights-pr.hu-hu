@@ -1,85 +1,80 @@
 ---
 title: Szegmensek exportálása a Mailchimpbe (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a Mailchimpbe.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3a19c517eeca71a19649e3d07cf47e5d25df6a68
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 54aec10e24b6356e2e4317cf33e740a1a086a2dd
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082470"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196857"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Szegmensek exportálása a Mailchimpbe (előzetes verzió)
 
 Az egyesített ügyfélprofilok szegmenseinek Mailchimpbe való exportálásával hírleveleket és e-mail-kampányokat hozhat létre.
 
-## <a name="prerequisites-for-connection"></a>A kapcsolat előfeltételei
+## <a name="prerequisites"></a>Előfeltételek
 
--   Rendelkezik [Mailchimp-fiókkal](https://mailchimp.com/) és a megfelelő rendszergazdai hitelesítő adatokkal.
--   A Mailchimpben és a megfelelő azonosítókban meglévő célközönségek találhatók. További információért lásd: [Mailchimp-célközönségek](https://mailchimp.com/help/create-audience/).
--   Rendelkezik [konfigurált szegmensekkel](segments.md)
--   Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
+- Egy [Mailchimp-fiók](https://mailchimp.com/) és a megfelelő rendszergazdai hitelesítő adatok.
+- [Meglévő közönségek a Mailchimpben](https://mailchimp.com/help/create-audience/) és a megfelelő [célközönség-azonosítókban](https://mailchimp.com/help/find-audience-id/).
+- [Konfigurált szegmensek](segments.md).
+- Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Exportálásonként legfeljebb 1 millió ügyfélprofil kerül a Mailchimp fájlba.
-- A Mailchimpbe való exportálás csak szegmensekre korlátozódik.
-- Az 1 millió ügyfélprofilt vevő szegmensek exportálása akár három órát is igénybehat. 
-- Az Mailchimp alkalmazásba exportálható ügyfélprofilok száma az Mailchimppel kötött szerződéstől függ, és csak korlátozott.
+- Akár 1 millió ügyfélprofil a Mailchimpbe történő exportálásonként, ami akár három órát is igénybe vehet. A Mailchimpbe exportálható ügyfélprofilok száma a Mailchimppel kötött szerződésétől függ.
+- Csak szegmensek.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Állítsa be a Mailchimppel való kapcsolatot
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza a **Mailchimp** lehetőséget a kapcsolat konfigurálásához.
+1. Válassza a Kapcsolat **hozzáadása,** majd a Mailchimp **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Válassza az **Elfogadom** lehetőséget az **Adatvédelem és a megfelelőség** megerősítéséhez.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
-1. Válassza a **Kapcsolat** lehetőséget a Mailchimp kapcsolatának inicializálására.
+1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
 1. Válassza a **Hitelesítés a Mailchimp szolgáltatással** lehetőséget, és adja meg Mailchimp-hitelesítő adatait.
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
-## <a name="configure-the-connector"></a>Konfigurálja az összekötőt
+## <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
-1. Menjen az **Adatok**> **Exportálások** lehetőségre.
+1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza a **Célhely hozzáadása** lehetőséget.
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Mailchimp szakaszból. Ha nem látja ezt a szakasznevet, az Ön számára nincs ilyen típusú kapcsolat.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot a Mailchimp szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
-1. Adja meg a **[MailChimp célközönség-azonosítóját](https://mailchimp.com/help/find-audience-id/)**
+1. Adja meg az exportálás nevét.
 
-1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt. 
+1. **Adja meg Mailchimp célközönség azonosítóját**.
 
-1. Tetszés szerint exportálhatja az **Utónév** és **Vezetéknév** lehetőségeket, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt.
 
-1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne. Összesen legfeljebb 1 000 000 ügyfélprofilt exportálhat a Mailchimpbe.
+1. Opcionálisan exportálja **utónév** és **vezetéknév** személyre szabottabb e-mailek létrehozásához. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+
+1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálás mentése nem futtatja azonnal az exportálást.
-
-Az exportálás minden [ütemezett frissítéssel](system.md#schedule-tab) fut. Az adatok [igény szerint exportálhatók is](export-destinations.md#run-exports-on-demand). 
-
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Amikor engedélyezi a Dynamics 365 Customer Insights szolgáltatást az adatok Mailchimp szolgáltatásba való átviteléhez, lehetővé teszi az adatok átvitelét a megfelelőségi határvonalon kívülre a Dynamics 365 Customer Insights szolgáltatás számára, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat. A Microsoft ezeket az adatokat átviszi az utasítás alapján, de Ön felelős azért, hogy a Mailchimp megfeleljen az esetlegesen fennálló adatvédelmi és biztonsági kötelezettségeknek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt az exportálási célhelyet.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

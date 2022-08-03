@@ -1,19 +1,19 @@
 ---
 title: Power Apps összekötő (előzetes verzió)
 description: A Power Apps csatlakoztatása a Power Automate szolgáltatáshoz.
-ms.date: 10/01/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 0b71f723d1e491d422d24b1be6616d2f33c95d40
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 8807e82e65ea20d1a7f7dc07552229f377927eed
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055263"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196903"
 ---
 # <a name="power-apps-connector-preview"></a>Power Apps összekötő (előzetes verzió)
 
@@ -27,7 +27,7 @@ A Power Apps dokumentációban megismerheti, hogyan [vehet fel adatkapcsolatot e
 
 ## <a name="available-entities"></a>Elérhető entitások
 
-A Customer Insights adatkapcsolatként való hozzáadása után kiválaszthatja a következő entitásokat a Power Apps szolgáltatásban:
+Miután hozzáadta a Customer Insights-t adatkapcsolatként, válassza ki a következő entitásokat a következőben Power Apps:
 
 - **Ügyfél**: az [egyesített ügyfélprofil](customer-profiles.md) adatainak használatához.
 - **UnifiedActivity**: a [tevékenység ütemezésének](activities.md) megjelenítése az alkalmazásban.
@@ -37,41 +37,38 @@ A Customer Insights adatkapcsolatként való hozzáadása után kiválaszthatja 
 
 ### <a name="retrievable-entities"></a>Lekérhető entitások
 
-Az **Ügyfél**, **UnifiedActivity**, **Szegmensek** és a **ContactProfile** entitások csak a Power Apps sszekötőn keresztül olvashatók be. A ContactProfile csak a Customer Insights-példányban érhető el üzleti fiókokhoz. Más entitások láthatók, mert az alapul szolgáló összekötő támogatja azokat eseményindítókkal a Power Automate-szolgáltatásban.
+Az **Ügyfél**, **UnifiedActivity**, **Szegmensek** és a **ContactProfile** entitások csak a Power Apps sszekötőn keresztül olvashatók be. A ContactProfile csak az üzleti fiókok Customer Insights-környezetében érhető el. Más entitások láthatók, mert az alapul szolgáló összekötő támogatja azokat eseményindítókkal a Power Automate-szolgáltatásban.
 
 60 másodpercenként legfeljebb 100 hívást hajthat végre. Az API-t végpont többször is meghívhatja a $skip paraméter használatával. [További információ a $skip paraméterről](/connectors/customerinsights/#get-items-from-an-entity).
 
 ### <a name="delegation"></a>Meghatalmazás
 
-A delegálás az **Ügyfél** entitáshoz és a **UnifiedActivity** entitáshoz használható. 
+A delegálás az **Ügyfél** entitáshoz és a **UnifiedActivity** entitáshoz használható.
 
-- Az **Ügyfél** entitásának delegálása: Az entitás delegálásának használatához a mezőket indexelni kell a [keresési & szűrő indexében](search-filter-index.md).  
+- Delegálás vevői entitáshoz **: Ahhoz, hogy delegálást használjon ehhez az entitáshoz, a mezőket indexelni kell a keresési &szűrési indexben**.[...](search-filter-index.md)  
 - A **UnifiedActivity** delegálása: A delegálás ehhez az entitáshoz csak az **ActivityId** és a **CusomerId** mező esetében működik.  
 - Delegálás a **ContactProfile** fájlhoz: Az entitásra vonatkozó delegálás csak a **ContactId** és a **CustomerId** mezőknél működik. A ContactProfile csak az üzleti fiókok Customer Insights-környezetében érhető el.
 
-A delegálásról a delegálásra vonatkozó további információkért menjen a [Power Apps delegálható funkciókhoz és műveletekhez](/powerapps/maker/canvas-apps/delegation-overview). 
+A delegálásról a delegálásra vonatkozó további információkért menjen a [Power Apps delegálható funkciókhoz és műveletekhez](/powerapps/maker/canvas-apps/delegation-overview).
 
 ## <a name="example-gallery-control"></a>Példa a katalógusvezérlőre
 
-Ügyfélprofilokat adhat hozzá egy [galériavezérlőhöz](/powerapps/maker/canvas-apps/add-gallery).
+Igény szerint ügyfélprofilokat is hozzáadhat egy [katalógusvezérlőhöz](/powerapps/maker/canvas-apps/add-gallery).
 
 1. Adjon hozzá egy **katalógus** vezérlőt az épített alkalmazáshoz.
+  
+   :::image type="content" source="media/connector-powerapps9.png" alt-text="Katalóguselem hozzáadása.":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Katalóguselem hozzáadása.](media/connector-powerapps9.png "Katalóguselem hozzáadása.")
+1. Válassza az **Ügyfél** elemet az elemek adatforrásaként.
 
-2. Válassza az **Ügyfél** elemet az elemek adatforrásaként.
+   :::image type="content" source="media/choose-datasource-powerapps.png" alt-text="Adatforrás kijelölése.":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Adatforrás kijelölése.](media/choose-datasource-powerapps.png "Adatforrás kijelölése.")
+1. Módosítsa a jobb oldali adatpanelt, és válassza ki, hogy az Ügyfél entitás melyik mezőt jelenítse meg a katalógusban.
 
-3. A jobb oldali adatpanelt megváltoztatva megadhatja, hogy az Ügyfél entitásnál melyik mező jelenjen meg a katalógusban.
-
-4. Ha a kiválasutott ügyfélből a katalóguson bármely mezőt meg szeretné jeleníteni, töltse ki a címke **Szöveg** tulajdonságát a **{Name_of_the_gallery}.Selected.{property_name}** használatával  
+1. Ha a kiválasutott ügyfélből a katalóguson bármely mezőt meg szeretné jeleníteni, töltse ki a címke **Szöveg** tulajdonságát a **{Name_of_the_gallery}.Selected.{property_name}** használatával  
     - Például: _Gallery1.Selected.address1_city_
 
-5. Az ügyfélnél egységes idősor megjelenítéséhez adjon hozzá egy Katalógus elemet, és adja hozzá az **Elemek** tulajdonságot a **Filter('UnifiedActivity', CustomerId = {Customer_Id})** használatával  
+1. Az ügyfélnél egységes idősor megjelenítéséhez adjon hozzá egy Katalógus elemet, és adja hozzá az **Elemek** tulajdonságot a **Filter('UnifiedActivity', CustomerId = {Customer_Id})** használatával  
     - Például: _Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)_
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

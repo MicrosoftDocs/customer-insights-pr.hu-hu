@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: a30e98b06ed07590ab95cae1d8db8023e49ff7f9
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 876853ab42e8c08ad1abacb8d8a205c0aadabcf7
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053024"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195939"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Ügyfélprofilok bővítése demográfiai adatokkal az Experian -ból (előzetes verzió)
 
@@ -59,7 +59,7 @@ Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az
 
 1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-1. Válassza ki a kapcsolatot. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
+1. Válassza ki a kapcsolatot. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
 1. Válassza a **Következő** lehetőséget.
 
@@ -69,7 +69,7 @@ Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az
 
 1. Határozza meg, hogy az egyesített profilokból mely típusú mezőket használja a demográfiai adatok Experian egyeztetéséhez. Legalább egy mezőben meg kell adni a **Név és cím**, a **Telefon** vagy az **E-mail-cím** adatokat. A nagyobb egyezési pontosság érdekében adjon hozzá más mezőket. Válassza a **Következő** lehetőséget.
 
-1. A mezők hozzárendelése a demográfiai adatokhoz a következőből:Experian.
+1. A mezők hozzárendelése a demográfiai adatokhoz a következőből: Experian.
 
 1. A mező leképezésének befejezéséhez válassza a **Következő** lehetőséget.
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: b3a0643ab71c98ce212f4e4581a584d8382c67eb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083142"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183634"
 ---
 # <a name="semantic-mappings-preview"></a>Szemantikai leképezések (előzetes verzió)
 
@@ -32,21 +32,21 @@ A szemantikus leképezések segítségével előre definiált sémákra leképez
 
 1. Az **Entitásadatok** lépésben állítsa be a következő mezők értékeit:
 
-   - **Szemantikus entitásleképezés neve**: Adja meg a szemantikus entitásleképezés nevét.
-   - **Forrásentitás**: Válassza ki a kapcsolattartói adatokat tartalmazó entitást.
-   - **Elsődleges kulcs**: Válassza ki azt a mezőt, amely egyértelműen azonosítja a kapcsolattartói rekordot. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
+   - **Szemantikus entitásleképezési név**: A szemantikus entitásleképezés neve.
+   - **Forrásentitás**: Kapcsolattartási adatokat tartalmazó entitás.
+   - **Elsődleges kulcs**: Olyan mező, amely egyedileg azonosítja a kapcsolattartói rekordot. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard1.png" alt-text="Állítsa be a szemantikus entitásleképezést névvel, forrásentitással és elsődleges kulcssal.":::
 
-1. A folytatáshoz válassza a **Tovább** lehetőséget.
+1. Válassza a **Következő** lehetőséget.
 
 1. A **Kapcsolatok** lépésben konfigurálja az adatokat, hogy a kapcsolattartók adatai hozzá csatlakozzon a megfelelő partneradatokhoz. Ez a lépés az entitások közötti kapcsolatot ábrázolja.  
 
    Kétféle kapcsolati útvonal valósítható meg: **Közvetett kapcsolatok** és a **Közvetlen kapcsolatok**. További tájékoztatásért menjen a [közvetett és közvetlen kapcsolati elérési utakra](relationships.md#relationship-paths).
 
-   1. Válassza a **Kapcsolat hozzáadása** a kapcsolat beállításához.
+   1. Válassza a Kapcsolat **hozzáadása lehetőséget** a kapcsolat konfigurálásához.
    1. Válassza ki a forrásentitásból azt az attribútumot, amely a kapcsolattartó entitást egy másik entitáshoz kapcsolja.
-   1. Válassza ki azt az entitást, amelyhez a kapcsolattartói entitást csatlakoztatnia kell. A **Partnerentitások** vagy a **Köztes entitás** szakaszban választhat entitást. Ha köztes entitást választ ki, akkor egy második kapcsolatot is meg kell határoznia a célpartner-entitáshoz való kapcsolódáshoz.
+   1. Válassza ki azt az entitást, amelyhez a kapcsolattartói entitást csatlakoztatnia kell. Válasszon ki egy entitást a **Számlaentitások** vagy a **Köztes entitás** szakaszból. Ha köztes entitást választ, határozzon meg egy második kapcsolatot a célfiók-entitáshoz való csatlakozáshoz.
 
       :::image type="content" source="media/Semantic_Mapping_Wizard2.png" alt-text="Válasszon egy Partnerentitást vagy egy Köztes entitást.":::
 
@@ -55,43 +55,38 @@ A szemantikus leképezések segítségével előre definiált sémákra leképez
 
    > [!NOTE]
    > További kapcsolatokat konfigurálhat a kapcsolattartó entitás és a köztes entitásokkal rendelkező más partnerentitások között.
-   >  :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="A különböző kapcsolatok vizualizálása összeköti a kapcsolattartókat a partnerentitásokkal.":::
+   
+     :::image type="content" source="media/Semantic_Mapping_Wizard4.png" alt-text="A különböző kapcsolatok vizualizálása összeköti a kapcsolattartókat a partnerentitásokkal.":::
 
-1. Válassza a **Tovább** lehetőséget, amikor végzett a kapcsolatkonfigurációval.
+1. Válassza a **Következő** lehetőséget.
 
 1. A **Szemantikus típus beállítása** lépésben válasszon **Szemantika típust**. Jelenleg egyetlen **Szemantikus típus** van, a *ContactProfile* elnevezésű.
 
-1. Térképezze le adatait a *ContactProfile* **Szemantikai típusához** a megjelenített mezőkhöz.
-   - Kötelező mező: Kapcsolattartó azonosítója
-   - Nem kötelező mezők: utónév, vezetéknév, születési dátum, nem, elsődleges e-mail és elsődleges telefon
+1. Rendelje hozzá a kapcsolattartási azonosítóját a *ContactProfile* szemantikai típusú **kapcsolattartói azonosítóhoz**. Ha szükséges, képezzen le más mezőket, például utónév, vezetéknév, nemet vagy e-mailt.
 
    :::image type="content" source="media/Semantic_Mapping_Wizard5.png" alt-text="A kapcsolattartói adatok attribútumainak leképezhetőek a megadott kötelező és nem kötelező mezőkre.":::
 
-1. A folytatáshoz válassza a **Tovább** lehetőséget.
+1. Válassza a **Következő** lehetőséget.
 
-1. Az **Áttekintés** lépésben vizsgálja meg a szemantikus leképezés konfigurációját. A módosításokhoz válassza a **Szerkesztés** lehetőséget a megfelelő szakaszhoz.
+1. **Az Áttekintés** lépésben tekintse át a szemantikai leképezés konfigurációját. A módosítások elvégzéséhez válassza a Szerkesztés **lehetőséget** a megfelelő szakaszhoz.
 
-1. Az új **Szemantikus leképezés** mentéshez válassza a **Mentés** lehetőséget.
+1. Válassza a **Mentés** parancsot.
 
-1. A mentés után választhatja a szemantikus leképezés **Futtatása** lehetőséget, illetve a **Bezárás** lehetőséget is, ha feldolgozás nélkül menti a szemantikus leképezést.
-
-1. Ha később szemantikus leképezést kell futtatnia, válassza ki a szemantikus leképezést, majd válassza a **Frissítés** lehetőséget.
+1. A szemantikus leképezés feldolgozásához válassza a Futtatás **lehetőséget**. Vagy válassza a Bezárás **lehetőséget** a szemantikus leképezés feldolgozás nélküli mentéséhez. Ha később szeretné futtatni, válassza ki a szemantikai leképezést, majd válassza a Frissítés **lehetőséget**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>A meglévő szemantikus leképezések kezelése
 
-Az **Adat** > **Szemantikus leképezésekben (előzetes verzió)** megtekintheti az összes mentett szemantikus leképezést, és kezelheti azokat. Minden szemantikus leképezést külön sor képvisel. Részletes információkat talál a forrásentitásról, a szemantikus típusról, a leképezés típusáról és állapotáról.
+Az Adatszemantikai **leképezések (előzetes verzió)** > **lapon** megtekintheti a mentett szemantikai leképezéseket, azok forrásentitását, szemantikai típusát, leképezéstípusát és állapotát.
 
 :::image type="content" source="media/semantic-mapping-options.png" alt-text="A szemantikus leképezések kezelésére vonatkozó lehetőségek.":::
 
-- **Szerkesztés**: Megnyitja a szemantikus leképezés konfigurációját a vélemény lépésben. Az aktuális konfiguráció megváltoztatható. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
-
-- **Frissítés**: Frissíti a kiválasztott szemantikus leképezést a konfiguráció részét képezi az entitások legfrissebb adataival. Egy adott szemantikus leképezés frissítése frissíti az ugyanolyan típusú összes szemantikus leképezést.
-
-- **Átnevezés**: Megnyit egy párbeszédpanelt, ahol másik nevet is megadhatja a kiválasztott szemantikus leképezés számára. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
-
-- **Törlés**: Párbeszéd megnyitása a kijelölt szemantikus leképezés törlésének megerősítése érdekében. Egyszerre több szemantikus leképezést is törölhet a szemantikus leképezések és a törlés ikon kiválasztásával. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
+Válassza ki a szemantikai leképezést az elérhető műveletek megtekintéséhez.
+- **Szerkessze** az aktuális konfigurációt. A módosítások feldolgozásához válassza a **Mentés** és a **Futtatás** lehetőséget.
+- **Frissítse** a szemantikai leképezést, hogy a legfrissebb adatokat tartalmazza. Egy adott szemantikus leképezés frissítése frissíti az ugyanolyan típusú összes szemantikus leképezést.
+- **Nevezze át** a szemantikai leképezést. Válassza a **Mentés** parancsot.
+- **Törölje** a szemantikai leképezést. Ha egyszerre több szemantikai leképezést szeretne törölni, válassza a szemantikai leképezéseket és a törlés ikont. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
 
 ## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>ContactProfile szemantikai entitásleképezés használata kapcsolattartói szintű tevékenységek létrehozásához
 
@@ -100,7 +95,7 @@ A ContactProfile szemantikai entitásleképezés létrehozása *után* rögzíth
    > [!NOTE]
    > Ahhoz, hogy a kapcsolattartói szintű tevékenységek működjenek, a tevékenységadatokon belüli minden rekordhoz accountID és ContactID **attribútummal is rendelkeznie** kell.**·**
 
-1. [Definiáljon egy *ContactProfile* szemantikai entitásleképezést.](#define-a-contactprofile-semantic-entity-mapping) és futtassa a szemantikai leképezést.
+1. [Definiáljon egy *ContactProfile* szemantikai entitásleképezést,](#define-a-contactprofile-semantic-entity-mapping) és futtassa a szemantikai leképezést.
 
 1. Lépjen az **Adattevékenységek** > **oldalra**.
 
@@ -119,14 +114,14 @@ A ContactProfile szemantikai entitásleképezés létrehozása *után* rögzíth
 
 1. Futtassa a tevékenységleképezéseket.
 
-1. A kapcsolattartói szintű tevékenységek mostantól láthatók lesznek az ügyfél idővonalán.
+1. A kapcsolattartói szintű tevékenység-leképezés futtatása után válassza az Ügyfelek **lehetőséget**. A kapcsolattartói szintű tevékenységek az ügyfél idővonalán jelennek meg.
 
    :::image type="content" source="media/Contact_Activities2.png" alt-text="Végeredmény a kapcsolattartási tevékenységek konfigurálása után":::
 
 ### <a name="contact-level-activity-timeline-filtering"></a>Kapcsolattartói szintű tevékenységek idővonalának szűrése
 
-A kapcsolattartói szintű tevékenységleképezés konfigurálása és futtatása után az ügyfelek tevékenység-ütemterve frissül. Tartalmazza az azonosítóikat vagy nevüket, a *ContactProfile* konfigurációjától függően, azokhoz a tevékenységekhez, amelyeken cselekedtek. Az idővonalon névjegyek szerint szűrheti a tevékenységeket, hogy megtekinthesse az Önt érdeklő konkrét névjegyeket. Ezenkívül megtekintheti az összes olyan tevékenységet, amely nincs hozzárendelve egy adott kapcsolattartóhoz, ha kiválasztja **a Nem** partnerhez hozzárendelt tevékenységek lehetőséget.
+Az ügyfelek tevékenység-idővonala tartalmazza az azonosítóikat vagy nevüket a ContactProfile *konfigurációjától függően* azokhoz a tevékenységekhez, amelyeken cselekedtek. Szűrje a tevékenységeket névjegyek szerint az idővonalon, hogy megtekinthesse az Önt érdeklő konkrét névjegyeket. Ha meg szeretné tekinteni az összes olyan tevékenységet, amely nincs hozzárendelve egy adott kapcsolattartóhoz, válassza a Nem partnerhez hozzárendelt tevékenységek **lehetőséget**.
 
-   :::image type="content" source="media/Contact_Activities3.png" alt-text="A kapcsolattartói szintű tevékenységekhez rendelkezésre álló szűrési lehetőségek érhetők el.":::
+:::image type="content" source="media/Contact_Activities3.png" alt-text="A kapcsolattartói szintű tevékenységekhez rendelkezésre álló szűrési lehetőségek érhetők el.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

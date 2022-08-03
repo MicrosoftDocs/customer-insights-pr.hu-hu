@@ -11,18 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: de39743eb8728fac34e417724c5f73bf44309c89
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9012028"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207140"
 ---
 # <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Növekményes frissítés az Azure Data Lake-adatforrásokhoz Power Query és az Azure Data Lake-adatforrásokhoz
 
-Ez a cikk azt ismerteti, hogyan konfigurálhatja az adatforrások növekményes frissítését az Azure Data Lake alapján Power Query.
-
-Az adatforrások növekményes frissítése a következő előnyöket nyújtja:
+Az adatforrások növekményes frissítése az Power Query Azure Data Lake alapján a következő előnyöket biztosítja:
 
 - **Gyorsabb frissítések** - Csak a megváltozott adatok frissülnek. Előfordulhat például, hogy a régi adatkészletből csak az elmúlt öt napot frissíti.
 - **Fokozott megbízhatóság** – Kisebb frissítésekkel nem kell kapcsolatot olyan sokáig fenntartania a változékony forrásoldali rendszerekkel így a kapcsolati problémák veszélye csökkenthető.
@@ -73,6 +71,7 @@ A Customer Insights lehetővé teszi a növekményes frissítést a .Azure Data 
 
    1. Keresse meg azt a gyökérmappát, amely a .csv vagy .parquet fájlokat tartalmazza a teljes adatokhoz, a növekményes adateredményekhez és a növekményes adattörlésekhez.
    1. Adja meg a teljes adat és a növekményes fájlok (\. csv vagy \. parketta) kiterjesztését.
+   1. A .csv fájl esetén jelölje ki az oszlophatárolójelet, és ha a fájl első sorát oszlopfejlécként szeretné használni.
    1. Válassza a **Mentés** parancsot.
 
 1. Az **Utolsó frissítés** beállításnál válassza ki a date timestamp attribútumot.

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 39d68011df9e4341244af627bb71f4e3635256bb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083184"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195661"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Valós idejű adatbetöltés (előzetes verzió)
 
@@ -28,7 +28,7 @@ A valós idejű funkciók azonnali adatokat biztosítanak a fogyasztásról, am�
 
 A valós idejű frissítések lejárati idővel rendelkeznek, amely után már nem írják felül az értéket az adatforrásból:
 
-- A profil frissítései 4 órán keresztül megmaradnak
+- A profilfrissítéseket négy órán keresztül őrizzük meg
 - A tevékenységek 30 napig megmaradnak
 
 Ezek az értékek a módosítható API-hívási paraméterek. Céljuk annak biztosítása, hogy a forrásadatok továbbra is az igazság forrásai legyenek. Ha szeretné, hogy a valós idejű frissítések tovább elérhetők maradjanak, hozzá kell adja őket az adatforráshoz, így azok betölthetők a következő ütemezett frissítés alatt is.

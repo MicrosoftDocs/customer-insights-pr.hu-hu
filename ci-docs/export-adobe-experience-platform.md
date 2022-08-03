@@ -1,32 +1,32 @@
 ---
 title: Szegmensek Adobe Experience Platform exportálása (előzetes verzió)
 description: További információ a Customer Insights-szegmensek használatáról Adobe Experience Platform.
-ms.date: 03/29/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: c29b8264019669ffd954a298ce3a633c852477fa
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: fcb43e0956c6d1f0ef36b222dd2b718906364244
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052514"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195293"
 ---
 # <a name="export-segments-to-adobe-experience-platform-preview"></a>Szegmensek Adobe Experience Platform exportálása (előzetes verzió)
 
-Dynamics 365 Customer Insights Lehet, hogy Ön szegmenseket hozott létre, hogy a releváns közönségek megcélzásával hatékonyabbá tegye marketingkampányait. Ha a Customer Insights Adobe Experience Platform egy szegmensét és olyan alkalmazásokat szeretne használni, mint a Adobe Campaign Standard, kövesse a cikkben ismertetett néhány lépést.
+Exportálja a releváns közönségeket megcélzó szegmenseket a következőbe:Adobe Experience Platform.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="A jelen cikkben ismertetett lépések folyamatábrája.":::
 
 ## <a name="prerequisites"></a>Előfeltételek
 
--   Dynamics 365 Customer Insights licenc
--   Adobe Experience Platform licenc
--   Adobe Campaign Standard licenc
--   Azure Blob Storage-fiók
+- Egy Adobe Experience Platform licenc.
+- Kampány Adobe standard licenc.
+- Egy [Azure Blob Storage-fiók](/azure/storage/blobs/create-data-lake-storage-account) neve és fiókkulcsa. A név és a kulcs megkereséséhez lásd: [Tárfiók-beállítások kezelése a Azure Portal](/azure/storage/common/storage-account-manage).
+- Egy [Azure Blob Storage-tároló](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
 ## <a name="campaign-overview"></a>Kampány áttekintése
 
@@ -48,38 +48,39 @@ Az elküldeni kívánt ajánlati e-mail tartalmazza az ügyfél utónevét, veze
 
 ## <a name="export-your-target-audience"></a>Exportálja a célközönséget
 
-Ha a cél célközönség azonosítjuk, konfigurálhatjuk az exportálást a Customer Insightsból egy Azure Blob Storage-fiókba.
+Konfiguráljuk az exportálást a Customer Insightsból egy Azure Blob Storage-fiókba.
 
-### <a name="configure-a-connection"></a>Kapcsolat konfigurálása
+### <a name="set-up-connection-to-azure-blob-storage"></a>Kapcsolat beállítása az Azure Blob Storage-hoz
+
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a **Kapcsolat hozzáadása** lehetőséget, és válassza az **Azure Blob Storage** vagy válassza a **Beállítás** lehetőséget az **Azure Blob Storage** csempében a kapcsolat konfigurálásához.
-
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Az Azure Blob Storage konfigurációs csempéje."::: 
+1. Válassza a Kapcsolat **hozzáadása lehetőséget**, majd válassza az **Azure Blob Storage lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. A kapcsolat használóinak kiválasztása. Ha nem teszi meg a szükséges lépéseket, az alapértelmezett beállítás a Rendszergazdák lesz. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Adja meg annak a Blob Storage fióknak a **Fiók nevét**, **Fiókkulcsát** és **Tárolóját**, ahová exportálni szeretné a szegmenst.  
-      
-   :::image type="content" source="media/azure-blob-configuration.png" alt-text="Képernyőkép a tárfiók konfigurációjáról."::: 
-   
-    - Ha szeretne többet megtudni arról, hogyan találja meg a Blob Storage fiók nevét és fiókkulcsát, olvassa el a [Tárfiók beállításainak kezelése az Azure-portálon](/azure/storage/common/storage-account-manage) részt.
-    - A tároló létrehozásával kapcsolatosan lásd: [Tároló létrehozása](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget. 
+   :::image type="content" source="media/azure-blob-configuration.png" alt-text="Képernyőkép a tárfiók konfigurációjáról.":::
+
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+
+1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
 ### <a name="configure-an-export"></a>Exportálás konfigurálása
 
-Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. További tudnivalók: [Exportálás konfigurálásához szükséges engedélyek](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Menjen az **Adatok** > **Exportálások** lehetőségre.
 
-1. Új exportálás létrehozásához válassza az **Exportálás hozzáadása** lehetőséget.
+1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Azure Blob Storage szakaszból. Ha nem látja ezt a szakasznevet, akkor ilyen típusú kapcsolatok nem állnak az Ön rendelkezésére.
+1. A **Kapcsolat exportáláshoz** mezőben válasszon egy kapcsolatot az Azure Blob Storage szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
+
+1. Adja meg az exportálás nevét.
 
 1. Válassza ki az exportálni kívánt szegmenst. Ebben a példában ez a **ChurnProneCustomers**.
 
@@ -87,46 +88,49 @@ Az exportálás konfigurálható, ha hozzáfér az ilyen típusú kapcsolathoz. 
 
 1. Válassza a **Mentés** parancsot.
 
-Az exportálási cél mentése után az **Adatok** > **Exportálások** lehetőségnél található.
-
-Mostantól [igény szerint exportálhatja a szegmenst](export-destinations.md#run-exports-on-demand). Az exportálás minden [ütemezett frissítéssel](system.md) együtt is lefut.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 > [!NOTE]
 > Győződjön meg róla, hogy az exportált szegmens rekordjainak száma az Adobe Campaign Standard licenc engedélyezett korlátján belül van.
 
-Az exportált adatokat a rendszer a fent beállított Azure Blob Storage tárolóban tárolja. A következő mappa elérési útja automatikusan létrejön a tárolóban:
+Az exportált adatokat a rendszer a konfigurált Azure Blob Storage-tárolóban tárolja. A tárolóban a következő elérési utak jönnek létre automatikusan:
 
-*%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv*
+- A rendszer által létrehozott forrásoldali entitások és entitások esetén:  
 
-Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/ChurnSegmentDemo/2021/02/16/1433/ChurnProneCustomers_1.csv
+  *%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv*
 
-Az exportált entitások *model.json* fájlja az *%ExportDestinationName%* szintjén helyezkedik el
+  Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/ChurnSegmentDemo/2021/02/16/1433/ChurnProneCustomers_1.csv
 
-Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
+- Az exportált entitások *model.json* fájlja az *%ExportDestinationName%* szintjén helyezkedik el
+
+  Példa: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
 
 ## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Az élmény adatmodell (XDM) definiálás az Adobe Experience Platform szolgáltatásban
 
-Mielőtt a Customer Insightsból exportált adatok felhasználhatók Adobe Experience Platform lennének, meg kell határoznunk az élményadatmodell sémáját, és [konfigurálnunk kell az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Mielőtt a Customer Insightsból exportált adatok felhasználhatók Adobe Experience Platform lennének, definiálja a Felhasználói élmény adatmodell sémáját, és [konfigurálja az adatokat a valós idejű ügyfélprofilhoz](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Ismerje meg, [mi az az XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html), és ismerje meg a [sémaösszetétel alapjait](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
 ## <a name="import-data-into-adobe-experience-platform"></a>Adatok importálása a Adobe Experience Platform rendszerbe
 
-Most, hogy minden a helyén van, importálnunk kell az előkészített célközönség adatokat a Customer Insights-ból Adobe Experience Platform a.
+Importálja az előkészített célközönség adatokat a Customer Insights szolgáltatásból a következőbe:Adobe Experience Platform.
 
-Először [hozzon létre egy Azure Blob Storage-forráskapcsolatot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
+1. [Hozzon létre egy Azure Blob Storage-forráskapcsolatot](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).
 
-A forráskapcsolat meghatározása után konfiguráljon egy adatfolyamot [egy felhőalapú tárolási kötegelt kapcsolathoz,](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) hogy importálja a szegmens kimenetét a Customer Insightsból a következőbe Adobe Experience Platform: .
+1. [Adatfolyam](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) konfigurálása felhőalapú tárolási kötegelt kapcsolathoz a szegmens kimenetének a Customer Insightsból a következőbe való importálásához Adobe Experience Platform: .
 
 ## <a name="create-an-audience-in-adobe-campaign-standard"></a>Az célközönség létrehozása az Adobe Campaign Standardben
 
-A kampányhoz szükséges e-mail elküldéséhez az Adobe Campaign Standardot használjuk. Az adatoknak az Adobe Experience Platform szolgáltatásba történő importálása után [létre kell hozni egy célközönséget](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) az Adobe Campaign Standardbe az Adobe Experience Platform adataival.
+A kampányhoz szükséges e-mail elküldéséhez az Adobe Campaign Standardot használjuk.
 
+1. [Hozzon létre egy célközönség](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) a Campaign Standard alkalmazásban Adobe a következő értékek Adobe Experience Platform felhasználásával: .
 
-A [szegmensszerkesztő használata](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) az Adobe Campaign Standardben a célközönség-adatokon alapuló új információk meghatározására az Adobe Experience Platform-szolgáltatásban.
+1. [A szegmenskészítő](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) használatával a Kampány standardban Adobe célközönség definiálhat a Adobe Experience Platform.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Az e-mail létrehozása és elküldése a Adobe Campaign Standard segítségével
 
 Hozza létre az e-mail tartalmát, majd [tesztelje, és küldje el](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) az e-mailt.
 
 :::image type="content" source="media/contoso-sample-email.jpg" alt-text="E-mail minta az Adobe Campaign Standardben megújítási ajánlattal.":::
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

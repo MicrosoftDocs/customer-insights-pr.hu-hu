@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082197"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196351"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Bővítse az ügyfélprofilokat a LiveRamp identitásadataival (előzetes verzió)
 
@@ -59,7 +59,7 @@ Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását a Live
 
 1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-1. Válassza ki a kapcsolatot. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
+1. Válassza ki a kapcsolatot. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
 1. Válassza a **Következő** lehetőséget.
 

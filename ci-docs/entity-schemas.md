@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: cc65314f1b083694b60ac0a2625bea906be7272b
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054757"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183496"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entitássémák a Common Data Modelben
 
@@ -39,9 +39,8 @@ A további tudnivalókért lásd a [Customer Insights sémák a Common Data Mode
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Entitások megtekintése a Common Data Model entitás-navigátor használatával
 
-Az entitások a [Common Data Model entitásnavigátorban](https://microsoft.github.io/CDM/) tekinthetők meg. A Customer Insights-entitások és definícióik listájának a kiválasztásával jelöljön ki egy entitást az Információs alkalmazás szakaszból.
-> [!div class="mx-imgBorder"]
-> ![A CDM-entitásnavigator CustomerActivity entitást mutatja.](media/CDM-entity-navigator.png "A CDM-entitásnavigator CustomerActivity entitást mutatja")
+Entitások megtekintése a [Common Data Model Entity Navigatorban](https://microsoft.github.io/CDM/). A Customer Insights-entitások és definícióik listájának a kiválasztásával jelöljön ki egy entitást az Információs alkalmazás szakaszból.
 
+:::image type="content" source="media/CDM-entity-navigator.png" alt-text="A CDM-entitásnavigator CustomerActivity entitást mutatja.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

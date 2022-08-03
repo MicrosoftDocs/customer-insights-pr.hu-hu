@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 26de9fce863c9832b70adf3ce39cb2ae0ce43d0e
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052054"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196259"
 ---
 # <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Bővítse az ügyfélprofilokat a HERE Technologies segítségével (előzetes verzió)
 
@@ -54,7 +54,7 @@ A funkció használatának leállítása érdekében a Dynamics 365 Customer Ins
 
 1. Tekintse át az áttekintést, majd válassza a Tovább **lehetőséget**.
 
-1. Válassza ki a kapcsolatot. Forduljon egy rendszergazdához, ha az egyik nem érhető el.
+1. Válassza ki a kapcsolatot. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
 1. Válassza a **Következő** lehetőséget.
 

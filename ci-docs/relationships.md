@@ -21,21 +21,21 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e622e5fa0b5738e31db1c668d95312adbc4f7d36
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9082575"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183564"
 ---
 # <a name="relationships-between-entities-and-entity-paths"></a>Az entitások és entitásútvonalak közti kapcsolatok.
 
 Kapcsolatok összekapcsolják az entitásokat, és meghatározza az adatok grafikonját, ha az entitások közös azonosítón és idegen kulcson osztoznak. Ez az idegen kulcs egyik entitásról a másikra hivatkozhat. Az összekapcsolt entitások több adatforráson alapuló szegmensek és mérőszámok definiálását teszik lehetővé.
 
 A kapcsolatoknak három típusa van: 
-- Nem szerkeszthető rendszerkapcsolat, amelyet a rendszer az adategyesítési folyamat részeként hoz létre
-- Nem szerkeszthető öröklött kapcsolatok, amelyek automatikusan jönnek létre az adatforrások betöltésekor 
-- Szerkeszthető egyéni kapcsolatok, amelyet a felhasználók hoztak létre és konfiguráltak
+- Nem szerkeszthető rendszer- kapcsolatok a rendszer hoz létre az adategyesítési folyamat részeként
+- A nem szerkeszthető öröklött kapcsolatok automatikusan létrejönnek az adatforrások betöltéséből
+- A szerkeszthető egyéni kapcsolatok a felhasználók hozzák létre és konfigurálják
 
 ## <a name="non-editable-system-relationships"></a>Nem szerkeszthető rendszerkapcsolatok
 
@@ -67,69 +67,66 @@ A kapcsolat egy olyan *forrásentitásból* áll, amely tartalmazza az idegen ku
    - **Leírás**: A kapcsolat leírása.
    - **Forrásentitás**: A kapcsolat forrásaként használt entitás. Példa: SupportCase.
    - **Célentitás**: A kapcsolat céljaként használt entitás. Példa: Ügyfél.
-   - **Forrás-számossága**: Adja meg a forrásentitás számosságát. A számosság egy halmaz lehetséges elemeinek számát írja le. Mindig a cél számossághoz kapcsolódik. Választhat az **Egy** és a **Sok** közül. Csak sok-az-egyhez és egy-az-egyhez kapcsolatok támogatottak.  
+   - **Forrás-számosság**: A forrás entitás számossága. A számosság egy halmaz lehetséges elemeinek számát írja le. Mindig a cél számossághoz kapcsolódik. Választhat az **Egy** és a **Sok** közül. Csak sok-az-egyhez és egy-az-egyhez kapcsolatok támogatottak.  
      - Sok az egyhez: Több forrásrekord is kapcsolódhat egy célrekordhoz. Példa: Több támogatási eset egyetlen ügyféltől.
      - Egy az egyhez: Egyetlen forrásrekord egyetlen célrekordhoz kapcsolódik. Példa: Egyetlen ügyfél hűségazonosítója.
 
      > [!NOTE]
      > Sok-a-sok kapcsolatokat lehet létrehozni két sok-az-egyhez kapcsolattal és egy összekötő entitással, amely összeköti a forrás entitást és a cél entitást.
 
-   - **Cél számossága**: Válassza ki a Célentitás rekordjainak számosságát. 
-   - **Forráskulcs mező**: A forrásentitás idegen kulcs mezője. Példa: A SupportCase a CaseID-t idegen kulcsmezőként használhatja.
-   - **Cél kulcsmezője**: A célentitás kulcsmezője. Példa: Az ügyfél használhatja a **CustomerID** kulcsmezőt.
+   - **Cél számosság**: A cél entitásrekordok számossága.
+   - **Forráskulcs mező**: Idegen kulcs mező a forrásentitásban. Példa: A SupportCase a CaseID-t **használja** idegen kulcsmezőként.
+   - **Célkulcs mező**: A célentitás kulcsmezője. Példa: Az ügyfél a CustomerID-t **használja** kulcsmezőként.
 
 4. Az egyéni folyamat létrehozásához válassza a **Mentés** lehetőséget.
 
 ## <a name="set-up-account-hierarchies"></a>Fiókhierarchiák beállítása
 
-Azok a környezetek, amelyek elsődleges célközönségként üzleti fiókokat használnak, konfigurálhatják a fiókhierarchiákat a kapcsolódó üzleti fiókokhoz. Ez lehet például egy olyan vállalat, amely külön üzleti egységekkel rendelkezik. 
+Azok a környezetek, amelyek úgy vannak konfigurálva, hogy üzleti fiókokat használjanak elsődleges célként, célközönség fiókhierarchiákat konfigurálhatnak a kapcsolódó üzleti fiókokhoz. Ez lehet például egy olyan vállalat, amely külön üzleti egységekkel rendelkezik.
 
 A szervezetek fiókhierarchiákat hoznak létre a partnerek és a partnerek közötti kapcsolatok kezelésére. A Customer Insights támogatja a szülő-gyermek fiók hierarchiákat, amelyek már léteznek a betöltött ügyféladatokban. Például partnerek a Dynamics 365 Sales alkalmazásból. Ezek a hierarchiák a **kapcsolatok** oldalon konfigurálhatók.
 
 1. Ugrás az **Adatok** > **Kapcsolatok** részre.
 1. A **Fiókhierarchia** lap kiválasztása.
-1. Az **Új fiókhierarchia** kiválasztása. 
-1. Adja meg a hierarchia nevét a **Számlahierarchia** ablaktáblán. A rendszer létrehoz egy nevet a kimeneti entitáshoz. A kimeneti név entitásának nevét módosíthatja.
+1. Az **Új fiókhierarchia** kiválasztása.
+1. Adja meg a hierarchia nevét a **Számlahierarchia** ablaktáblán. A rendszer létrehoz egy nevet a kimeneti entitásnak, de Ön módosíthatja azt.
 1. Válassza ki a fiókhierarchiát tartalmazó entitást. Ez általában ugyanabban az entitásban található, amely a partnerekből áll.
-1. A kijelölt entitásból válassza ki a **Fiókazonosítót** és a **Fölérendelt partnerazonosítót** 
-1. Válassza a **Mentés** lehetőséget a beállítások alkalmazásához és a partnerhierarchia véglegesíthez.
+1. Válassza ki a **fiók UID-jét** és **a szülő UID-t** a kiválasztott entitásból.
+1. Válassza a Mentés **lehetőséget** a fiókhierarchia véglegesítéséhez.
 
-## <a name="view-relationships"></a>Kapcsolatok megtekintése
+## <a name="manage-existing-relationships"></a>Meglévő kapcsolatok kezelése
 
-A Kapcsolatok oldal felsorolja az összes létrehozott kapcsolatot. Minden sor egy kapcsolatot jelent, amely a forrásentitásra, a célentitásra és a számosságra vonatkozó részleteket is tartalmazza. 
+**A kapcsolatok** oldalon megtekintheti az összes létrehozott kapcsolatok, azok forrásegyentitását, a célentitást és a számosságot.
 
 :::image type="content" source="media/relationships-list.png" alt-text="A kapcsolatok és lehetőségek listája a Kapcsolatok oldal műveletsávjában.":::
 
-Ez az oldal számos lehetőséget kínál a meglévő és új kapcsolatokhoz: 
-- **Új kapcsolat:** Válassza az [Egyéni kapcsolat létrehozása](#create-a-custom-relationship) elemet.
-- **Vizualizáció**: [Fedezze fel a kapcsolatvizualizálót](#explore-the-relationship-visualizer), hogy láthassa a meglévő kapcsolatok és azok számosságának hálózati diagramját.
-- **Szűrési szempont**: Válassza ki a listában megjelenítendő kapcsolatok típusát.
-- **Kapcsolatok keresése**: Szöveges keresés használata a kapcsolatok tulajdonságai közötti kereséshez.
+Használja a **Szűrés szó szerint** vagy **a Keresés kapcsolatok** lehetőséget egy adott kapcsolat megkereséséhez. A meglévő kapcsolatok és számosságuk hálózati diagramjának megtekintéséhez válassza a Vizualizációk [**lehetőséget**](#explore-the-relationship-visualizer).
+
+Válasszon ki egy kapcsolatot az elérhető műveletek megtekintéséhez:
+- **Szerkesztés** : Az egyéni kapcsolatok tulajdonságainak frissítése a szerkesztőablakban, és módosítások mentése.
+- **Törlés**: Egyéni kapcsolatok törlése.
+- **Megtekintés**: A rendszer által létrehozott és örökölt kapcsolatok megtekintése.
 
 ### <a name="explore-the-relationship-visualizer"></a>Fedezze fel a kapcsolatvizualizálót
 
 A kapcsolatvizualizálót megjelenít egy hálózati diagramot, hogy láthassa a meglévő kapcsolatok és azok számossága közötti kapcsolatot. Emellett a kapcsolati útvonalat is ábrázolja.
 
-A nézet testreszabásához módosíthatja a dobozok helyzetét a húzásukkal a vásznon.
-
 :::image type="content" source="media/relationship-visualizer.png" alt-text="Képernyőkép a kapcsolati vizualizáló hálózati diagramról a kapcsolódó entitások közötti kapcsolatokkal.":::
 
-Választható beállítások: 
+A nézet testreszabásához módosíthatja a dobozok helyzetét a húzásukkal a vásznon. További lehetőségek: 
 - **Exportálás képként**:Az aktuális nézet mentése képfájlként.
 - **Módosítás vízszintes/függőleges elrendezésre**: Módosítja az entitások és kapcsolatok elrendezését.
 - **Szerkesztés** : Az egyéni kapcsolatok tulajdonságainak frissítése a szerkesztőablakban, és módosítások mentése.
 
 ## <a name="relationship-paths"></a>Kapcsolat elérési útjai
 
-A kapcsolati elérési út azokat az entitásokat írja le, amelyek a forrásentitás és a célentitás közötti kapcsolattal kapcsolódnak. Olyan szegmens vagy mérték létrehozásakor használatos, amely nem csak az egyesített profilentitást, hanem más entitásokat is tartalmaz, és az egyesített profil entitás többféle beállítással érhető el. 
-
-A kapcsolati elérési út tájékoztatja a rendszert, hogy mely kapcsolatokon keresztül érje el az egyesített profilentitást. A különböző kapcsolati elérési utak eltérő eredményeket adhatnak.
+A kapcsolati elérési út azokat az entitásokat írja le, amelyek a forrásentitás és a célentitás közötti kapcsolattal kapcsolódnak. Olyan szegmens vagy mérték létrehozásakor használatos, amely az egyesített profilentitástól eltérő entitásokat is tartalmaz, és több lehetőség is van az egységes profilentitás elérésére. A különböző kapcsolati elérési utak eltérő eredményeket adhatnak.
 
 Például az *eCommerce_eCommercePurchases* entitás a következő kapcsolatokkal rendelkezikaz *Ügyfél* entitáshoz:
 
 - eCommerce_eCommercePurchases > Ügyfél
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Ügyfél
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Ügyfél 
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Ügyfél
 
 A kapcsolati elérési út határozza meg, hogy mely entitásokat használhatja amikor szabályokat hoz létre a mértékekhez vagy szegmensekhez. Ha a leghosszabb kapcsolati útvonalat választja, az valószínűleg kevesebb eredményt hoz, mivel az egyező rekordoknak az összes entitás részének kell lenniük. Ebben a példában az ügyfélnek az e-commerce(eCommerce_eCommercePurchases) elemen keresztül kell az értékesítési ponton (POS_posPurchases) vásárolnia az termékeket, és részt vennie a hűségprogramban (loyaltyScheme_loyCustomers). Az első lehetőség kiválasztásakor valószínűleg több eredményt kapna, mivel az ügyfeleknek csak egy további entitásban kell létezniük.
 
@@ -155,7 +152,7 @@ A kapcsolat **közvetett kapcsolatnak** minősül, ha egy forrásentitás egy va
 
 #### <a name="multi-hop-relationship"></a>Több ugrásos kapcsolat
 
-A *több ugrásból álló kapcsolat* olyan *közvetett kapcsolat*, amely lehetővé teszi egy forrásentitásnak egy célentitáshoz való kapcsolását egy vagy több más közvetítő entitáson keresztül.
+A **több ugrásból álló kapcsolat** olyan *közvetett kapcsolat*, amely lehetővé teszi egy forrásentitásnak egy célentitáshoz való kapcsolását egy vagy több más közvetítő entitáson keresztül.
 
 Ha például egy *eCommerce_eCommercePurchasesWest* nevű tevékenységentitás egy *eCommerce_eCommercePurchasesEast* nevű köztes entitáshoz csatlakozik, majd egy *eCommerce_eCommerceContacts* nevű célentitáshoz kapcsolódik, akkor ez több ugrásból álló kapcsolat.
 
@@ -168,16 +165,6 @@ A több ugrással és több elérési úttal rendelkező kapcsolatok használhat
 Ha például egy *eCommerce_eCommercePurchasesWest* nevű tevékenységentitás egy *eCommerce_eCommercePurchasesEast* nevű köztes entitáshoz csatlakozik, majd a *eCommerce_eCommerceContacts* and *loyaltyScheme_loyCustomers* célentitásokhoz kapcsolódik, akkor ez több útvonalból álló kapcsolat.
 
 :::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="A forrásentitás közvetlenül kapcsolódik az egyik célentitáshoz, és egy köztes entitáson keresztül kapcsolódik egy másik célentitáshoz.":::
-
-## <a name="manage-existing-relationships"></a>Meglévő kapcsolatok kezelése 
-
-A Kapcsolatok oldalon minden kapcsolatot egy sor képvisel. 
-
-Válasszon ki egy kapcsolatot, és válasszon az alábbi lehetőségek közül: 
- 
-- **Szerkesztés** : Az egyéni kapcsolatok tulajdonságainak frissítése a szerkesztőablakban, és módosítások mentése.
-- **Törlés**: Egyéni kapcsolatok törlése.
-- **Megtekintés**: A rendszer által létrehozott és örökölt kapcsolatok megtekintése. 
 
 ## <a name="next-step"></a>Következő lépés
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 77b09b6eb0a916e724542d503d96d19c5581aca1
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "8947522"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188050"
 ---
 # <a name="use-customer-consent"></a>Az ügyfél hozzájárulásának használata
 
@@ -56,7 +56,7 @@ Az adatforrások egységesítésével kapcsolatos további információkért lá
 
 ## <a name="use-consent-data"></a>Hozzájárulási adatok felhasználása
 
-Miután a hozzájárulási adatok az egységes ügyfélprofilok részét képezik, felhasználhatja azokat a Customer Insights szolgáltatásban. Hozzon létre például egy szegmenst egy szabállyal, amely biztosítja, hogy tiszteletben tartsa az ügyfelek adatvédelmi és adatvédelmi beállításait. A hozzájárulási beállításokat támogató szabályok arra szolgálnak, hogy a rendszer profilattribútumok alapján kizárja a felhasználókat egy szegmensből. Szabály hozzáadása egy olyan szegmenshez, amely kizárja azokat az ügyfélprofilokat, amelyek nem adtak hozzájárulást a kapcsolatfelvételhez.
+Miután a hozzájárulási adatok az egységes ügyfélprofilok részét képezik, felhasználhatja azokat a Customer Insights szolgáltatásban. Hozzon létre például egy szegmenst egy szabállyal, amely biztosítja, hogy tiszteletben tartsa az ügyfelek adatvédelmi és adatvédelmi beállításait. A hozzájárulási beállításokat támogató szabályok arra szolgálnak, hogy a rendszer profilattribútumok alapján kizárja a felhasználókat egy szegmensből. Adjon hozzá egy szabályt egy olyan szegmenshez, amely kizárja azokat az ügyfélprofilokat, amelyek nem adtak hozzájárulást a kapcsolatfelvételhez.
 
 A fenti mintatáblázatra hivatkozva egy szegmens tartalmazhatja ezt a szabályt:`Consent option=Newsletter & Consent value=True`. Ez a konfiguráció azt eredményezi, hogy egy olyan szegmens, amely tiszteletben tartja a kapcsolattartási beállításokat, hogy hírlevelet küldjön.
 
@@ -71,3 +71,5 @@ Fontos, hogy folyamatosan frissítse az ügyfelek hozzájárulási állapotát. 
 Más szóval győződjön meg arról, hogy a Customer Insights szolgáltatásba importált forrásadatok mindig a legfrissebb információkkal rendelkeznek.
 
 További információ: [Szegmensek manuális](segments.md#refresh-segments) frissítése vagy [ütemezett frissítés](system.md#schedule-tab) konfigurálása.
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]
