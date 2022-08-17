@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
-ms.translationtype: MT
+ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170684"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246296"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
@@ -58,7 +58,7 @@ Válasszon ki egy szegmenst az elérhető műveletek megtekintéséhez.
 - **Szerkesztés** a szegmens szerkesztése a tulajdonságainak módosításához.
 - **Duplikált elem létrehozása** a szegmensről. Dönthet úgy, hogy azonnal szerkeszti a tulajdonságait, vagy menti az ismétlődést.
 - [**Frissítse**](#refresh-segments) a szegmenst, hogy a legfrissebb adatokat tartalmazza.
-- Szegmens **Aktiválása** vagy **inaktiválása**. Az inaktív szegmensek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést meg sem kísérelték. Az aktív szegmensek típusuk alapján frissülnek: statikus vagy dinamikus.
+- Szegmens **Aktiválása** vagy **inaktiválása**. Az inaktív szegmensek nem frissülnek az [ütemezett frissítés](schedule-refresh.md) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést meg sem kísérelték. Az aktív szegmensek típusuk alapján frissülnek: statikus vagy dinamikus.
 - **Statikussá** tenni vagy **dinamikussá** tenni a szegmens típusát. A statikus szegmenseket manuálisan kell frissíteni. A dinamikus szegmensek automatikusan frissülnek a rendszerfrissítések során.
 - [**Keressen hasonló ügyfeleket**](find-similar-customer-segments.md) a szegmensből.
 - Szegmens **átnevezése**.
@@ -88,7 +88,7 @@ Az alsó rész a szegmenstagok listáját tartalmazza.
 
 A szegmensek automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők. Egy vagy több szegmens manuális frissítéséhez jelölje ki őket, majd válassza a Frissítés **lehetőséget**.
 
-Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](system.md#schedule-tab) rendszerütemezés **lapra** > **·** > **.** A következő szabályok érvényesek:
+Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](schedule-refresh.md) rendszerütemezés **lapra** > **·** > **.** A következő szabályok érvényesek:
 
 - A Dinamikus **vagy** a Bővítés **típusú** szegmensek automatikusan frissülnek a beállított ütemben. A frissítés befejezése után az **Állapot** azt jelzi, hogy voltak-e problémák a szegmens frissítésével. Az **Utolsó frissítés** az utolsó sikeres frissítés időbélyegét jeleníti meg. Ha hiba történik, válassza ki a hibát a történtek részleteinek megtekintéséhez.
 - A Statikus **típusú** *szegmensek nem* frissülnek automatikusan. Az **Utolsó frissítés** egy időbélyeget mutat arról, hogy a statikus szegmens utoljára manuálisan futtatták vagy frissítették.

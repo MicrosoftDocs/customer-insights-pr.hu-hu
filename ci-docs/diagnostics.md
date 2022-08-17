@@ -1,7 +1,7 @@
 ---
-title: Bejelentkezés továbbítás a Dynamics 365 Customer Insights Azure Monitor (előzetes verzió)
+title: Diagnosztikai naplók exportálása (előzetes verzió)
 description: Megtudhatja, hogyan küldhet naplókat a Figyelőnek Microsoft Azure.
-ms.date: 12/14/2021
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: article
@@ -11,87 +11,56 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 8c72df7054a682244215bbee54968d6aef4bbf59
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052656"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245928"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Bejelentkezés továbbítás a Dynamics 365 Customer Insights Azure Monitor (előzetes verzió)
+# <a name="export-diagnostic-logs-preview"></a>Diagnosztikai naplók exportálása (előzetes verzió)
 
-Dynamics 365 Customer Insights közvetlen integrációt biztosít a Azure Monitor. Azure Monitor erőforrásnaplók segítségével figyelheti és elküldheti a naplókat az Azure Storage-ba, az Azure Log [Analyticsbe](https://azure.microsoft.com/services/storage/), vagy streamelheti őket az [Azure Event Hubs.](/azure/azure-monitor/logs/log-analytics-overview)[...](https://azure.microsoft.com/services/event-hubs/)
+Naplók továbbítása a Customer Insightsból a Azure Monitor. Azure Monitor erőforrásnaplók segítségével figyelheti és elküldheti a naplókat az Azure Storage-ba, az Azure Log [Analyticsbe](https://azure.microsoft.com/services/storage/), vagy streamelheti őket az [Azure Event Hubs.](/azure/azure-monitor/logs/log-analytics-overview)[...](https://azure.microsoft.com/services/event-hubs/)
 
 A Customer Insights a következő eseménynaplókat küldi el:
 
 - **Naplózási események**
-  - **APIEvent** – lehetővé teszi a Dynamics 365 Customer Insights felhasználói felületen keresztül végzett változáskövetést.
+  - **APIEvent** - lehetővé teszi a változáskövetést a Dynamics 365 Customer Insights felhasználói felületen keresztül.
 - **Működési események**
-  - **WorkflowEvent** – A munkafolyamat lehetővé teszi az adatforrások [beállítását](data-sources.md), [az adatok egyesítését](data-unification.md), [gazdagítását](enrichment-hub.md) és végül [exportálását](export-destinations.md) más rendszerekbe. Mindezek a lépések egyenként is elvégezhetők (például egyetlen exportálást aktiválhatnak). A vezénylést is futtathatja (például az adatforrásokból származó adatok frissítése, amely elindítja az egyesítési folyamatot, amely lekéri a gazdagításokat, és ha elkészült, exportálja az adatokat egy másik rendszerbe). További információt a [WorkflowEvent sémában talál](#workflow-event-schema).
-  - **APIEvent** – az összes API-hívás az ügyfelek példányához a következőre:Dynamics 365 Customer Insights. További információ: [APIEvent séma](#api-event-schema).
+  - **WorkflowEvent** – lehetővé teszi az adatforrások [beállítását,](data-sources.md) az adatok [egyesítését](data-unification.md), [gazdagítását](enrichment-hub.md) és [exportálását](export-destinations.md) más rendszerekbe. Ezek a lépések egyenként is elvégezhetők (például egyetlen exportálást aktiválhatnak). Vezényelten is futtathatók (például az egyesítési folyamatot elindító adatforrásokból származó adatfrissítés, amely lekéri a gazdagításokat, és exportálja az adatokat egy másik rendszerbe). További információt a [WorkflowEvent sémában talál](#workflow-event-schema).
+  - **APIEvent** – az ügyfélpéldány összes API-hívását elküldi a következőnek Dynamics 365 Customer Insights: . További információ: [APIEvent séma](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>A diagnosztikai beállítások megadása
 
 ### <a name="prerequisites"></a>Előfeltételek
 
-A diagnosztika Customer Insightsban való konfigurálásához a következő előfeltételeknek kell teljesülniük:
-
-- Aktív [Azure-előfizetéssel](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/) rendelkezik.
-- Rendszergazdai [engedélyekkel rendelkezik](permissions.md#admin) a Customer Insights szolgáltatásban.
-- A közreműködő **és** a **felhasználói hozzáférés rendszergazdája** szerepkörrel rendelkezik az Azure-beli célerőforráson. Az erőforrás lehet egy Azure Data Lake Storage fiók, egy Azure Event Hub vagy egy Azure Log Analytics-munkaterület. További információ: [Azure-beli szerepkör-hozzárendelések hozzáadása vagy eltávolítása a Azure Portal](/azure/role-based-access-control/role-assignments-portal). Erre az engedélyre a diagnosztikai beállítások Customer Insightsban való konfigurálásakor van szükség, és a sikeres beállítás után módosítható.
-- [Teljesültek az Azure Storage, az Azure Event Hub vagy az Azure Log Analytics célkövetelményei](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements).
-- Legalább **olvasó** szerepkörrel rendelkezik azon az erőforráscsoporton, amelyhez az erőforrás tartozik.
+- Aktív Azure-előfizetés [...](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- [Rendszergazdai](permissions.md#admin) engedélyek a Customer Insights szolgáltatásban.
+- [közreműködő és felhasználói hozzáférés-rendszergazdai szerepkört](/azure/role-based-access-control/role-assignments-portal) az Azure-beli célerőforráson. Az erőforrás lehet egy Azure Data Lake Storage fiók, egy Azure Event Hub vagy egy Azure Log Analytics-munkaterület. Erre az engedélyre a Diagnosztikai beállítások Customer Insights szolgáltatásban történő konfigurálásakor van szükség, de a sikeres beállítás után módosítható.
+- [Az Azure Storage, az Azure Event Hub vagy az Azure Log Analytics célkövetelményei](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) teljesülnek.
+- Legalább a **olvasó** szerepkör azon az erőforráscsoporton, amelyhez az erőforrás tartozik.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnosztika beállítása a Azure Monitor
 
-1. A Customer Insights válassza a System **Diagnostics** > **lehetőséget** a példányt konfigurált diagnosztikai célhelyek megtekintéséhez.
+1. A Customer Insightsban válassza a **Felügyeleti** > **rendszer lehetőséget**, és válassza a **Diagnosztika** lapot.
 
 1. Válassza a Cél **hozzáadása lehetőséget**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Diagnosztikai kapcsolat](media/diagnostics-pane.png "Diagnosztikai kapcsolat")
+   :::image type="content" source="media/diagnostics-pane.png" alt-text="Diagnosztikai kapcsolat.":::
 
 1. Adjon meg egy nevet a **Diagnosztikai cél neve** mezőben.
 
-1. Válassza ki az **Azure-előfizetés bérlőjét** a célerőforrással, majd válassza a bejelentkezés **lehetőséget**.
+1. Válassza ki az **erőforrás típusát** (Storage-fiók, Event Hub vagy Log Analytics).
 
-1. Válassza ki az **erőforrás típusát** (Storage-fiók, eseményközpont vagy log analytics).
+1. Válassza ki a **célerőforrás előfizetését** **, erőforráscsoportját** és **erőforrását**. Az engedélyekkel és a naplóinformációkkal kapcsolatban lásd: [Konfiguráció a célerőforráson](#configuration-on-the-destination-resource).
 
-1. Válassza ki a **célerőforrás előfizetését**.
-
-1. Válassza ki a **célerőforrás erőforráscsoportját**.
-
-1. Válassza ki az **erőforrást**.
-
-1. Erősítse meg az **adatvédelmi és megfelelőségi** nyilatkozatot.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. Válassza **Csatlakozás a rendszerhez** lehetőséget a célerőforráshoz való csatlakozáshoz. A naplók 15 perc elteltével kezdenek megjelenni a célhelyen, ha az API használatban van, és eseményeket hoz létre.
 
-### <a name="remove-a-destination"></a>Célhely eltávolítása
-
-1. Nyissa meg a **Rendszerdiagnosztikát** > **·**.
-
-1. Válassza ki a diagnosztikai célhelyet a listából.
-
-1. **A Műveletek** oszlopban válassza a **Törlés** ikont.
-
-1. Erősítse meg a törlést a napló továbbításának leállításához. Az Azure-előfizetés erőforrása nem törlődik. A Műveletek **oszlopban található hivatkozásra kattintva megnyithatja a** Azure Portal a kiválasztott erőforráshoz, és ott törölheti azt.
-
-## <a name="log-categories-and-event-schemas"></a>Naplókategóriák és eseménysémák
-
-Jelenleg [az API-események](apis.md) és a munkafolyamat-események támogatottak, és a következő kategóriák és sémák érvényesek.
-A naplóséma a [Azure Monitor közös sémát követi](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
-
-### <a name="categories"></a>Kategóriák
-
-A Customer Insights két kategóriát kínál:
-
-- **Naplózási események**: [API-események](#api-event-schema) a szolgáltatás konfigurációs változásainak nyomon követéséhez. `POST|PUT|DELETE|PATCH` a műveletek ebbe a kategóriába tartoznak.
-- **Működési események**: A [szolgáltatás használata során létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema).  Ilyenek például `GET` egy munkafolyamat kérései vagy végrehajtási eseményei.
-
 ## <a name="configuration-on-the-destination-resource"></a>Konfiguráció a célerőforráson
 
-Az erőforrástípus választása alapján a következő lépések automatikusan érvénybe lépnek:
+A választott erőforrástípus alapján a következő változások automatikusan megtörténnek:
 
 ### <a name="storage-account"></a>Storage account
 
@@ -102,23 +71,48 @@ A Customer Insights szolgáltatásnév lekéri a **Storage-fiók közreműködő
 
 ### <a name="event-hub"></a>Esemény központja
 
-A Customer Insights szolgáltatásnév megkapja az **Azure Event Hubs-adattulajdonosi** engedélyt az erőforráshoz, és két Event Hubs hoz létre a kiválasztott névtér alatt:
+A Customer Insights szolgáltatásnév megkapja az **Azure Event Hubs adattulajdonosi** engedélyét az erőforráshoz, és két Event Hubs hoz létre a kiválasztott névtér alatt:
 
 - `insight-logs-audit` ellenőrzési eseményeket **tartalmaz**
 - `insight-logs-operational` működési eseményeket **tartalmaz**
 
 ### <a name="log-analytics"></a>Log Analytics
 
-A Customer Insights szolgáltatásnév log **Analytics-közreműködő** engedélyt kap az erőforráshoz. A naplók a Log Analytics-munkaterület **Naplótáblák** > **naplókezelése** > **alatt** lesznek elérhetők. Bontsa ki a **Naplókezelés** megoldást, és keresse meg az `CIEventsAudit` és `CIEventsOperational` táblákat.
+A Customer Insights szolgáltatásnév log **Analytics-közreműködő** engedélyt kap az erőforráshoz. A naplók a Logs **Tables** > **Log Management** > **alatt** érhetők el a kiválasztott Log Analytics-munkaterületen. Bontsa ki a **Naplókezelés** megoldást, és keresse meg az `CIEventsAudit` és `CIEventsOperational` táblákat.
 
 - `CIEventsAudit` ellenőrzési eseményeket **tartalmaz**
 - `CIEventsOperational` működési eseményeket **tartalmaz**
 
 **A Lekérdezések** ablakban bontsa ki a **Naplózási** megoldást, és keresse meg a `CIEvents`.
 
+## <a name="remove-a-diagnostics-destination"></a>Diagnosztikai célhely eltávolítása
+
+1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza a **Diagnosztika** lapot.
+
+1. Válassza ki a diagnosztikai célhelyet a listából.
+
+   > [!TIP]
+   > A cél eltávolítása leállítja a napló továbbítását, de nem törli az Erőforrást az Azure-előfizetésből. Az erőforrás Azure-ban való törléséhez válassza a Műveletek **oszlopban található hivatkozást a** kiválasztott erőforrás Azure Portal megnyitásához, és törölje ott. Ezután törölje a diagnosztikai célhelyet.
+
+1. **A Műveletek** oszlopban válassza a **Törlés** ikont.
+
+1. Erősítse meg a törlést a cél eltávolításához és a napló továbbításának leállításához.
+
+## <a name="log-categories-and-event-schemas"></a>Naplókategóriák és eseménysémák
+
+Jelenleg [az API-események](apis.md) és a munkafolyamat-események támogatottak, és a következő kategóriák és sémák érvényesek.
+A naplóséma a [Azure Monitor közös sémát](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema) követi.
+
+### <a name="categories"></a>Kategóriák
+
+A Customer Insights két kategóriát kínál:
+
+- **Naplózási események**: [API-események](#api-event-schema) a szolgáltatás konfigurációs változásainak nyomon követéséhez. `POST|PUT|DELETE|PATCH` a műveletek ebbe a kategóriába tartoznak.
+- **Működési események**: A [szolgáltatás használata során létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema).  Ilyenek például `GET` egy munkafolyamat kérései vagy végrehajtási eseményei.
+
 ## <a name="event-schemas"></a>Eseménysémák
 
-Az API-események és munkafolyamat-események közös struktúrával és részletekkel rendelkeznek, ahol különböznek egymástól, lásd: [API-eseményséma](#api-event-schema) vagy [munkafolyamat-eseményséma](#workflow-event-schema).
+Az API-események és a munkafolyamat-események közös struktúrával rendelkeznek, de néhány különbséggel. További információ: [API-eseményséma](#api-event-schema) vagy [munkafolyamat-eseményséma](#workflow-event-schema).
 
 ### <a name="api-event-schema"></a>API-eseményséma
 
@@ -182,7 +176,7 @@ A `identity` JSON-objektum szerkezete a következő
 
 ### <a name="workflow-event-schema"></a>Munkafolyamat-eseményséma
 
-A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Ezek a lépések egyenként vagy a következő folyamatokkal vezényelten is futtathatók.
+A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Ezek a lépések egyenként vagy a következő folyamatokkal vezényelve is futtathatók.
 
 #### <a name="operation-types"></a>Művelettípusok
 
@@ -220,7 +214,6 @@ A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betö
 | `durationMs`    | Long      | Lehetséges          | A művelet időtartama ezredmásodpercben.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | Sztring    | Lehetséges          | JSON-objektum több tulajdonsággal az adott eseménykategóriához.                                                                                        | Lásd a Munkafolyamat tulajdonságai című [alszakaszt](#workflow-properties-schema)                                                                                                       |
 | `level`         | Sztring    | Szükséges          | Az esemény súlyossági szintje.                                                                                                                                  | `Informational`, `Warning` vagy `Error`                                                                                                                                   |
-|                 |
 
 #### <a name="workflow-properties-schema"></a>Munkafolyamat-tulajdonságok sémája
 
@@ -247,3 +240,5 @@ A munkafolyamat-események a következő tulajdonságokkal rendelkeznek.
 | `properties.additionalInfo.AffectedEntities` | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export`. Az exportálásban konfigurált entitások listáját tartalmazza.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export`. Részletes üzenet az exportáláshoz.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Segmentation`. A szegmens tagjainak teljes számát jelzi.                                                                                                                                                    |
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

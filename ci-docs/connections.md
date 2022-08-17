@@ -1,7 +1,7 @@
 ---
 title: Kapcsolatok (előzetes verzió) áttekintése
 description: Egyéb szolgáltatásokhoz való kapcsolódás a Customer Insightsból.
-ms.date: 04/09/2021
+ms.date: 08/04/2022
 ms.reviewer: nikeller
 ms.subservice: audience-insights
 ms.topic: overview
@@ -11,91 +11,89 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 8580dc7d90c75f66f73efc15f8e38f5e10fbb8a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195177"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245514"
 ---
 # <a name="connections-preview-overview"></a>Kapcsolatok (előzetes verzió) áttekintése
 
-A kapcsolatok kulcsfontosságúak az adatok Customer Insightsba és abból való megosztásának engedélyezéséhez. Minden kapcsolat adatmegosztást hoz létre egy adott szolgáltatással. A kapcsolatok a [külső gyártótól származó bővítések](enrichment-hub.md) és az [exportálások konfigurációjának](export-destinations.md) az alapja. Egy kapcsolat többször is használható. A Dynamics 365 Marketing alkalmazással például egy kapcsolat több exportálásra használható, és egy Leadspace-kapcsolat használható több adat bővítésére is.
+A kapcsolatok kulcsfontosságúak az adatok Customer Insightsba és abból való megosztásának engedélyezéséhez. Minden kapcsolat adatmegosztást hoz létre egy adott szolgáltatással. A kapcsolatok segítségével konfigurálhatja a [külső bővítéseket, és](enrichment-hub.md) konfigurálhatja az [exportálásokat](export-destinations.md). Egy kapcsolat többször is használható. A Dynamics 365 Marketing alkalmazással például egy kapcsolat több exportálásra használható, és egy Leadspace-kapcsolat használható több adat bővítésére is.
 
-A kapcsolatok létrehozásához és megtekintéséhez menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
+## <a name="export-connections"></a>Kapcsolatok exportálása
 
-A **Kapcsolatok** fül megjeleníti az összes aktív kapcsolatot. A listában minden kapcsolathoz egy sor tartozik.
+Csak a rendszergazdák konfigurálhatnak új kapcsolatokat, de hozzáférést adhatnak [a közreműködőknek](#allow-contributors-to-use-a-connection-for-exports) a meglévő kapcsolatok használatához. A rendszergazdák határozzák meg, hogy hová irányíthatják az adatokat, a munkatársak határozzák meg, hogy a hasznos adatok és a gyakoriság hogyan illeszkedjenek az igényekhez.
 
-Gyors áttekintést és leírást kaphat, és a **Felfedezés** fülön megismerheti, hogy mikre lehet képes az egyes bővíthetőségi beállításokkal.
+## <a name="enrichment-connections"></a>Gazdagító kapcsolatok
 
-## <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
+Csak a rendszergazdák konfigurálhatnak új kapcsolatokat, de a létrehozott kapcsolatok mindig elérhetők a rendszergazdák és a közreműködők számára is. A rendszergazdák kezelik az azonosító adatokat, és ők egyeznek bele az adatátvitelekbe. A kapcsolatok ezután mind a rendszergazdák, mind a munkatársak általi bővítésekre használhatók.
+
+## <a name="add-a-new-connection"></a>Egy új kapcsolat hozzáadása
+
+### <a name="prerequisites"></a>Előfeltételek
+
+- [Rendszergazdai engedélyek](permissions.md)
+- Más Microsoft-szolgáltatások, ha vannak ilyenek, ugyanabba a szervezetbe tartoznak
+
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
+
+1. Válassza a Kapcsolat **hozzáadása lehetőséget**, és válassza ki a létrehozni kívánt kapcsolat típusát. Vagy lépjen a Felfedezés **lapra, és válassza a** Beállítás **lehetőséget** egy kapcsolatcsempén.
+
+1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
+
+1. Adja meg a szükséges adatokat. A pontos mezők attól függnek, hogy melyik szolgáltatáshoz csatlakozik. Egy adott kapcsolattípus részleteiért tekintse meg a célszolgáltatásról szóló cikket.
+
+1. Ha [saját Key Vaultja segítségével](use-azure-key-vault.md) tárolja el a titkos kódokat, aktiválja a **Key Vault használatát**, és válassza ki a megfelelő kulcsot a listából.
+
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az Elfogadom **lehetőséget**.
+
+1. Válassza a Mentés **lehetőséget** a kapcsolat létrehozásához.
+
+### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
 
 Ha engedélyezi Dynamics 365 Customer Insights az adatok harmadik feleknek vagy más Microsoft-termékeknek történő továbbítását, engedélyezi az adatok továbbítását a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a harmadik fél teljesítse az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeit. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
 
 A Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja a kapcsolatot, hogy abbahagyja a funkció használatát.
 
-## <a name="exports"></a>Exportálások
+## <a name="allow-contributors-to-use-a-connection-for-exports"></a>Engedélyezze a közreműködőknek a kapcsolat exportálásokhoz való használatát
 
-Csak rendszergazdák konfigurálhatják az új kapcsolatokat, de hozzáférést adhatnak a munkatársaknak a meglévő kapcsolatok használatára. A rendszergazdák határozzák meg, hogy hová irányíthatják az adatokat, a munkatársak határozzák meg, hogy a hasznos adatok és a gyakoriság hogyan illeszkedjenek az igényekhez. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](#allow-contributors-to-use-a-connection-for-exports).
-
-## <a name="enrichments"></a>Bővítések
-
-Csak rendszergazdák konfigurálhatják az új kapcsolatokat, de a létrehozott kapcsolatok mindig elérhetők mind a rendszergazdák, mind a munkatársak számára. A rendszergazdák kezelik az azonosító adatokat, és ők egyeznek bele az adatátvitelekbe. A kapcsolatok ezután mind a rendszergazdák, mind a munkatársak általi bővítésekre használhatók.
-
-## <a name="add-a-new-connection"></a>Egy új kapcsolat hozzáadása
-
-Kapcsolatok hozzáadásához [rendszergazdai engedélyekkel](permissions.md) kell rendelkeznie. Ha más Microsoft-szolgáltatásokhoz kapcsolódik, akkor azt feltételezzük, hogy mindkét szolgáltatás ugyanabban a szervezetben van.
-
-1. Menjen a **Rendszergazda** > **Kapcsolatok (előzetes verzió)** lehetőségre.
-
-1. Új kapcsolat létrehozásához válassza a **Kapcsolat hozzáadása** lehetőséget. Válassza ki a legördülő menüből, hogy milyen típusú kapcsolatot szeretne létrehozni.
-
-1. Adja meg a szükséges adatokat a **Kapcsolat beállítása** ablaktáblán.
-   1. A **Megjelenítendő név** és a kapcsolat típusa ír le egy kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
-   1. A pontos mezők attól függnek, hogy melyik szolgáltatáshoz csatlakozik. A specifikus kapcsolattípus részleteiről a célszolgáltatásról szóló cikk nyújt részletes információt.
-   1. Ha [saját Key Vaultja segítségével](use-azure-key-vault.md) tárolja el a titkos kódokat, aktiválja a **Key Vault használatát**, és válassza ki a megfelelő kulcsot a listából.
-
-1. A kapcsolat létrehozásához válassza a **Mentés** lehetőséget.
-
-A **Beállítás** lehetőséget is választhatja egy mozaikon a **Felderítés** lapon.
-
-### <a name="allow-contributors-to-use-a-connection-for-exports"></a>Engedélyezze a közreműködőknek a kapcsolat exportálásokhoz való használatát
-
-Az exportálási kapcsolat beállításakor és módosításakor megadhatja, hogy mely felhasználók használhatjak ezt a konkrét kapcsolatot az [exportálások](export-destinations.md) meghatározásához. Alapértelmezés szerint a rendszergazdai szerepkörrel rendelkező felhasználók számára érhető el a kapcsolat. Ezt a beállítást a **Válassza ki, hogy ki használhatja ezt a kapcsolatot** lehetőség alatt tudja megváltoztatni, és engedélyezheti a közreműködő szerepkörrel rendelkező felhasználóknak, hogy használják ezt a kapcsolatot.
+Exportálási kapcsolat beállításakor vagy szerkesztésekor válassza ki, hogy mely felhasználók használhatják ezt az adott kapcsolatot az exportálások [meghatározásához](export-destinations.md). Alapértelmezés szerint a kapcsolat a rendszergazdai szerepkörrel rendelkező felhasználók számára érhető el. Módosítsa a Választható ki használhatja ezt a **kapcsolatbeállítást**, hogy közreműködő szerepkörrel rendelkező felhasználók használhassák ezt a kapcsolatot.
 
 - A közreműködő nem tudják majd megtekinteni vagy szerkeszteni ezt a kapcsolatot. Csak a megjelenítendő név és annak típusát fogják látni az exportálás létrehozásakor.
 - A kapcsolat megosztásával lehetővé teszi a közreműködők számára a kapcsolat használatát. A közreműködő a megosztott kapcsolatokat láthatják az exportálások beállításakor. Ők felügyelik az adott kapcsolatot használó minden exportálást.
 - Ezt a beállítást megváltoztathatja, miközben a közreműködők által már meghatározott exportálásokat megtartja.
 
-## <a name="edit-a-connection"></a>Kapcsolat szerkesztése
+## <a name="manage-existing-connections"></a>Meglévő kapcsolatok kezelése
 
-1. Menjen a **Rendszergazda** > **Kapcsolatok (előzetes verzió)** lehetőségre.
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Menjen a **Kapcsolatok** fülre.
+1. A Bővítés **vagy** exportálás **lapon megtekintheti a** gazdagítási vagy exportálási kapcsolatok listáját, a kapcsolat típusát, a létrehozás időpontját és azt, hogy kinek van hozzáférése. A kapcsolatok listáját bármely oszlop szerint rendezheti.
 
-1. Válassza ki a szerkeszteni kívánt kapcsolat függőleges három pontját (&vellip;).
+1. Válassza ki a kapcsolatot az elérhető műveletek megtekintéséhez.
 
-1. Válassza a **Szerkesztés** lehetőséget.
+   - **Szerkessze** a kapcsolatot.
+   - [**Kapcsolat eltávolítása**](#remove-a-connection).
 
-1. Módosítsa a frissíteni kívánt értékeket, majd válassza a **Mentés** lehetőséget.
+### <a name="remove-a-connection"></a>Kapcsolat eltávolítása
 
-## <a name="remove-a-connection"></a>Kapcsolat eltávolítása
+Ha az eltávolítandó kapcsolatot gazdagítások vagy exportálások használják, először válassza le vagy távolítsa el őket. Az eltávolítás párbeszédpanel végigvezeti a megfelelő gazdagításokhoz vagy exportálásokhoz.
 
-Ha az eltávolítandó kapcsolatot gazdagítások vagy exportálások használják, először le kell választania vagy el kell távolítania őket. Az eltávolítási párbeszédpanel útmutatást nyújt a megfelelő bővítésekhez vagy exportálásokhoz.
+> [!TIP]
+> A deaktivált gazdagodások és a leválasztott exportálások inaktívvá válnak. Újraaktiválhatja őket, ha új kapcsolatot ad hozzájuk a [Bővítések](enrichment-hub.md) és [Exportálások](export-destinations.md) oldalon.
 
-A szétkapcsolt bővítések és exportálások inaktívvá válnak. Újraaktiválhatja őket, ha új kapcsolatot ad hozzájuk a [Bővítések](enrichment-hub.md) és [Exportálások](export-destinations.md) oldalon.
+1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Menjen a **Rendszergazda** > **Kapcsolatok (előzetes verzió)** lehetőségre.
+1. Válassza a **Gazdagítás** vagy **exportálás lapot**.
 
-1. Menjen a **Kapcsolatok** fülre.
-
-1. Válassza ki az eltávolítani kívánt kapcsolat függőleges három pontját (&vellip;).
+1. Válassza ki az eltávolítani kívánt kapcsolatot.
 
 1. Válassza a legördülő menü **Eltávolítás** elemét. Megjelenik a jóváhagyást kérő párbeszéd.
 
    1. Ha ezt a kapcsolatot bővítések vagy exportálások használják, akkor a gombra kattintva láthatja, hogy pontosan mi használja a kapcsolatot.
-      - **Exportálások**: Kiválaszthatja az exportálás eltávolítását vagy bontását, hogy el tudja távolítani a kapcsolatot. Az exportálás bontása érdekében a rendszergazdák a **Szétkapcsolás** műveletet használhatják. Ez a művelet egyéni és több kijelölt exportáláshoz is elérhető. A kapcsolat szétkapcsolása megtartja az exportálási konfigurációs adatokat, de az mindaddig nem fut, amíg hozzá nem ad egy másik kapcsolatot.
-      - **Bővítések:** Kiválaszthatja a bővítések eltávolítását vagy inaktiválását, hogy el tudja távolítani a kapcsolatot.
+      - **Exportálások:** Válassza az **Exportálás eltávolítása** vagy **a Kapcsolat leválasztása lehetőséget**. A kapcsolat leválasztása megtartja az exportálási konfigurációt, de addig nem fut, amíg egy másik kapcsolatot nem adnak hozzá.
+      - **Bővítések:** Válassza a **bővítések törlését** vagy **deaktiválását**.
    1. Ha a kapcsolatnak már nincsenek függőségei, menjen vissza a **Rendszergazda** > **Kapcsolatok** lehetőséghez, és próbálja meg ismét eltávolítani a kapcsolatot.
 
 1. Jelölje be az **Eltávolít** lehetőséget a törlés megerősítéséhez.

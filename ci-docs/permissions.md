@@ -1,7 +1,7 @@
 ---
-title: Felhasználói engedélyek kezelése
+title: Felhasználói engedélyek hozzárendelése
 description: További információk az engedélyekről és a felhasználói szerepkörökről.
-ms.date: 02/09/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,20 +12,16 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 30b37645cad4e795ef20579e20e3f2bbdb2afbf6
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: a59a672b6f7e1e67c2162ea14bb9860df0d551aa
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054871"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245422"
 ---
-# <a name="manage-user-permissions"></a>Felhasználói engedélyek kezelése
+# <a name="assign-user-permissions"></a>Felhasználói engedélyek hozzárendelése
 
-Az **Engedélyek** lapon állíthatja be a szerepköröket és az engedélyeket a Customer Insights használatához.
-
-A lap megtekintéséhez rendszergazdai jogosultsággal kell rendelkeznie. Az engedélyek lap eléréséhez lépjen a **Rendszergazdai** > **biztonsági** > **felhasználók elemre**.
-
-Háromféle típusú szerepkör van:
+A Customer Insightshoz való hozzáférés a szervezet azon felhasználóira korlátozódik, akiket egy rendszergazda ad hozzá az alkalmazáshoz. A rendszergazda hozzáadhat, szerkeszthet vagy távolíthat el felhasználókat. A felhasználó lehet egyetlen felhasználó, csoport vagy alkalmazás. A felhasználónak háromféle szerepköre lehet:
 
 ## <a name="viewer"></a>Megtekintő
 
@@ -41,18 +37,18 @@ Háromféle típusú szerepkör van:
 
 - A Néző számára az összes engedély rendelkezésre áll.
 - Adatok betöltése és átalakítása az **Adatforrások** oldal használatával történhet.
-- Teljes ***Adategyesítés**, amely egységes ügyfélprofil-entitást eredményez.
+- Teljes **adategyesítés**, amely az egyesített ügyfélprofil-entitást eredményezi.
 - Adja meg a **Kapcsolatokat** és **Tevékenységeket**.
 - Hozzon létre szegmenseket a **Szegmensek** oldalán.
 - Hozzon létre mérőszámokat a **Mérőszámok** oldalon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (csak a belső bővítések esetében).
-- Az exportálások kezelése és létrehozása a közreműködőkkel megosztott kapcsolatok alapján. [További információk arról, hogyan engedélyezik a rendszergazdák a közreműködőknek az exportálásokhoz használható kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Exportálások kezelése és létrehozása a közreműködőkkel megosztott kapcsolatok [alapján](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="admin"></a>Felügyelet
 
 - A Közreműködő számára az összes engedély rendelkezésre áll.
-- A beállításokat a **Rendszer** oldalon módosíthatja, beleértve a munkanyelvet és a rendszerfolyamatok frissítési ütemezését.
-- Az engedélyeket megtekintheti és hozzáadhatja az **Engedélyek** oldalon.
+- Módosítsa a beállításokat a **Rendszer** lapon, beleértve a munkanyelvet, a rendszerfolyamatok frissítési ütemezését és a diagnosztikai naplók exportálását.
+- Módosítsa a beállításokat a Biztonság **lapon, beleértve a felhasználókat, az API-kulcsokat, a titkos hivatkozásokat és a** kulcstartót.
 - Az Ügyfelek oldalra vonatkozóan beállíthatja a Keresés és Szűrés meghatározásait a **Keresési és szűrési index** oldalon (amely az **Ügyfelek** oldalról elérhető).
 - Kezelje a kapcsolatokat, és engedélyezze őket az egyéb felhasználói szerepkörökkel rendelkezők számára a **Kapcsolatok** lapon.
 - A konfiguráció kezelése és az ügyfelek profiljainak bővítése a **Bővítés** lapról (az összes bővítés esetében).
@@ -67,24 +63,27 @@ Háromféle típusú szerepkör van:
 - Az adminisztrátor számára elérhető összes engedély.
 - [Állítsa vissza és törölje](manage-environments.md#reset-an-existing-environment-preview) a környezetet.
 
-## <a name="assign-roles-and-permissions"></a>Szerepkörök és engedélyek hozzárendelése
+## <a name="add-users"></a>Felhasználók hozzáadása
 
-1. Lépjen a **Rendszergazdai** > **biztonság** > **Felhasználók*** oldalra.
+1. Lépjen a Rendszergazdai biztonság elemre **, és válassza a** > **Felhasználók** **lapot.**
 
 1. Válassza a **Felhasználók hozzáadása** lehetőséget az **Engedélyek hozzáadása/szerkesztése** ablaktábla megnyitásához.
 
-1. A **Keresés** mező segítségével keresse meg azt az Azure Active Directory-felhasználót vagy csoportot, amelynek az engedélyeit módosítani szeretné. Válassza ki azt a **szerepkört**, amelyet hozzá szeretne rendelni az adott felhasználóhoz vagy csoporthoz.
+1. **A Keresés** mező segítségével keresse meg a Azure Active Directory hozzáadni kívánt felhasználót vagy csoportot. Válassza ki azt a **szerepkört**, amelyet hozzá szeretne rendelni az adott felhasználóhoz vagy csoporthoz.
 
-1. Válassza a **Mentés** parancsot. Az aktuális környezet automatikusan meg lesz osztva azon felhasználóval vagy csoport tagjaival, akinek az engedélyeiz módosította. A felhasználók a megadott szerepkörük szerint érhetik el a Customer Insights alkalmazást és a munkát.
+1. Válassza a **Mentés** parancsot. Az aktuális környezet automatikusan meg lesz osztva a csoport felhasználójával vagy tagjaival. A felhasználók a megadott szerepkörük szerint érhetik el a Customer Insights alkalmazást és a munkát.
 
 ## <a name="view-current-permissions"></a>Aktuális engedélyek megtekintése
 
-**A Rendszergazdai** > **biztonsági** > **felhasználók lapon** megtekintheti, hogy jelenleg milyen szerepkör-hozzárendelések vannak aktívak.
+A Rendszergazdai **biztonság** > **elemre kattintva** válassza a **Felhasználók** lapot az aktív felhasználók listájának és szerepkör-hozzárendelésük megtekintéséhez. A felhasználók listáját bármely oszlop szerint rendezheti, vagy a keresőmező segítségével megkereshet egy adott felhasználót.
 
-- A **típus** oszlop egyetlen felhasználót, csoportot vagy alkalmazást ad meg. A rendszer támogatja az egyéni felhasználókat és csoportokat.
-- A szerepköröket a **szerepkör** oszlopban kell megadni.
-- Válassza ki az oszlop címét, hogy az adott oszlop értéke alapján rendezze az eredményeket.
-- Adott felhasználók megkereséséhez használja a lap tetején található **Keresés** mezőt.
+## <a name="manage-current-users"></a>Jelenlegi felhasználók kezelése
 
+Lépjen a Rendszergazdai biztonság elemre **, és válassza a** > **Felhasználók** **lapot.** A felhasználók listáját bármely oszlop szerint rendezheti, vagy a keresőmező segítségével megkeresheti a kezelni kívánt felhasználót.
+
+Válasszon ki egy felhasználót az elérhető műveletek megtekintéséhez.
+
+- **A szerkesztéssel** szerkesztheti a felhasználó szerepkörét a Customer Insights szolgáltatásban. Válassza a Mentés **lehetőséget** a módosítás megerősítéséhez.
+- **Eltávolítással** távolítsa el, hogy eltávolítsa a felhasználót a Customer Insights szolgáltatáshoz való hozzáférésből. Válassza ki az **Eltávolítás** lehetőséget a törlés megerősítéséhez.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

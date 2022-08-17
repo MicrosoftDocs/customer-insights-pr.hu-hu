@@ -284,18 +284,20 @@
       href: connect-service-principal.md
 - name: Felügyelet
   items:
-    - name: Rendszerkonfiguráció beállítása
-      href: system.md
-    - name: Biztonsági beállítások konfigurálása
-      href: security-overview.md
     - name: Felhasználói engedélyek hozzárendelése
       href: permissions.md
     - name: Saját Kay Vault használata
       href: use-azure-key-vault.md
+    - name: Biztonsági beállítások konfigurálása
+      href: security-overview.md
     - name: Diagnosztikai naplók exportálása
       href: diagnostics.md
-    - name: Kapcsolatok áttekintése
+    - name: Kapcsolatok kezelése
       href: connections.md
+    - name: Rendszerfrissítés ütemezése
+      href: schedule-refresh.md
+    - name: Rendszerkonfiguráció megtekintése
+      href: system.md
 - name: API-k
   items:
     - name: Az API-k használata

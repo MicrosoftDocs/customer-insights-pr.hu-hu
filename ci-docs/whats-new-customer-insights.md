@@ -1,19 +1,19 @@
 ---
 title: A Dynamics 365 Customer Insights újdonságai
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 06/30/2022
+ms.date: 08/03/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
-ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
+ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "9114249"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246014"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -23,6 +23,28 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="july-2022-updates"></a>2022. júliusi frissítések
+
+A 2022. júliusi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="export-to-moengage"></a>Exportálás a MoEngage-be
+
+Exportálja az egyesített ügyfélprofilok szegmenseit a MoEngage-be, és használja őket e-mail marketinghez a MoEngage-ben.
+
+További információ: [Szegmensek exportálása a MoEngage szolgáltatásba](export-moengage.md).
+
+### <a name="ssh-support-for-sftp-based-exports"></a>SSH-támogatás SFTP-alapú exportálásokhoz
+
+Válassza ki, hogy SSH-n vagy felhasználónévn/jelszón keresztül szeretne-e hitelesíteni az SFTP-exportálási célhelyekkel való kapcsolatokhoz.
+
+További információ: [Adatok exportálása SFTP-gazdagépekre](export-sftp.md).
+
+### <a name="personalize-experiences-with-data-about-known-and-unknown-users"></a>A felhasználói élmény személyre szabása ismert és ismeretlen felhasználókra vonatkozó adatokkal
+
+Az ügyféladatok kezelése nem új kihívás, de egyre nehezebbé válik, ahogy a felhasználók eligazodnak a márkák által kínált különböző digitális csatornákon. Az egyik csatornán ismert (hitelesített) felhasználó ismeretlenné (nem hitelesítetté) válik egy másikban, ha nincs bejelentkezve. A probléma gyakran az, hogy a nem hitelesített (ismeretlen) felhasználók nem rendelkeznek közös azonosítóval. Használható értelmes profilok attribútumainak társítására és egységes ügyfélprofilok létrehozására. A Customer Insights segít megoldani ezt a problémát azáltal, hogy adatokat tölt be a forrásrendszereken lévő nyomkövetési módszerekből.
+
+További információ: [A felhasználói élmény személyre szabása ismert és ismeretlen felhasználók adataival](unknown-to-known.md).
 
 ## <a name="june-2022-updates"></a>2022. júniusi frissítések
 
@@ -44,13 +66,13 @@ További információ: [Exportálás Az InMobi szolgáltatásba (előzetes verzi
 
 Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához.
 
-További információ: [Ügyféladatok biztonságos elérése az ügyfélkompatibilitással (előzetes verzió)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
+További információ: [Ügyféladatok biztonságos elérése az ügyfélkostábbal (előzetes verzió)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
 
 ### <a name="connect-to-your-data-using-azure-private-link"></a>Csatlakozás az adatokhoz az Azure Private Link használatával
 
 Azure Private Link lehetővé teszi, hogy a Customer Insights a virtuális hálózat privát végpont keresztül csatlakozzon a fiókjához Azure Data Lake Storage. A tárfiókban lévő adatok esetében, amelyek nincsenek kitéve a nyilvános internetnek, Private Link engedélyezi a kapcsolatot az adott korlátozott hálózattal.
 
-További információ: [Use Private Link in Customer Insights (A Private Link használata a Customer Insights szolgáltatásban](security-overview.md#private-links-tab)).
+További információ: [Use Private Link in Customer Insights (A Private Link használata a Customer Insights szolgáltatásban](security-overview.md#set-up-an-azure-private-link)).
 
 ## <a name="may-2022-updates"></a>2022. májusi frissítések
 
@@ -104,7 +126,7 @@ További információ: [Mértékkészítő használata a semmiből](measure-buil
 
 Újra áttekintettük a dokumentációs cikkeinket, és eltávolítottuk az elkötelezettségi elemzésekről és a célközönség elemzési képességekről szóló említéseket. A továbbiakban következetesen a Customer Insights terméknévre fogunk hivatkozni, amikor az alkalmazás alapvető funkcióiról írunk. Ez a változás a tartalomjegyzék, az URL-struktúra és a mögöttes dokumentációs adattárban található fájlútvonalak jelentős szerkezetátalakításához is vezet. Az összes könyvjelző vagy meglévő hivatkozás továbbra is működik, és átirányít a frissített URL-címekre.
 
-Ha szeretnéd tudatni velünk, hogy hogyan érzékeled ezt a változást, vagy azt szeretnéd észrevenni, hogy valami nem a várt módon működik, mondd el nekünk az oldal [visszajelzéseinek beküldésével](https://github.com/MicrosoftDocs/customer-insights/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Version%20Independent%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Content%3A%20%5BNew%20and%20upcoming%20features%20-%20Dynamics%20365%20Customer%20Insights%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdynamics365%2Fcustomer-insights%2Fwhats-new-customer-insights)%0A*%20Content%20Source%3A%20%5Bci-docs%2Fwhats-new-customer-insights.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fcustomer-insights%2Fblob%2Fmain%2Fci-docs%2Fwhats-new-customer-insights.md)%0A*%20Service%3A%20**customer-insights**%0A*%20Sub-service%3A%20**audience-insights**%0A*%20GitHub%20Login%3A%20%40m-hartmann%0A*%20Microsoft%20Alias%3A%20**mhart**).
+Ha szeretnéd tudatni velünk, hogy hogyan érzékeled ezt a változást, vagy azt szeretnéd észrevenni, hogy valami nem a várt módon működik, mondd el nekünk az oldal visszajelzéseinek [beküldésével](https://github.com/MicrosoftDocs/customer-insights/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Version%20Independent%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Content%3A%20%5BNew%20and%20upcoming%20features%20-%20Dynamics%20365%20Customer%20Insights%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdynamics365%2Fcustomer-insights%2Fwhats-new-customer-insights)%0A*%20Content%20Source%3A%20%5Bci-docs%2Fwhats-new-customer-insights.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fcustomer-insights%2Fblob%2Fmain%2Fci-docs%2Fwhats-new-customer-insights.md)%0A*%20Service%3A%20**customer-insights**%0A*%20Sub-service%3A%20**audience-insights**%0A*%20GitHub%20Login%3A%20%40m-hartmann%0A*%20Microsoft%20Alias%3A%20**mhart**).
 
 ## <a name="march-2022-updates"></a>2022 márciusi frissítések
 
@@ -114,7 +136,7 @@ A 2022. márciusi frissítések új funkciókat, teljesítményfrissítéseket �
 
 A LiveRamp biztosítja az identitásfeloldást és az ügyféladatok összevonását. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásgráfra, és AbiliTec-azonosítókat kaphat. Ezután ezekkel az azonosítókkal jobban egyesítheti az ügyféladatokat.
 
-További információ: [Ügyfélprofilok gazdagítása identitásadatokkal a LiveRampből (előzetes verzió)](enrichment-liveramp.md).
+További információ: [Ügyfélprofilok gazdagítása a LiveRamp (előzetes verzió) identitásadataival](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Szegmensek és mértékek rendszerezése címkékkel és szűrőkkel
 
@@ -164,7 +186,7 @@ További információ: [Adatforrás csatlakoztatása Azure Synapse (előzetes ve
 
 A LiveRamp biztosítja az identitásfeloldást és az ügyféladatok összevonását. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásgráfra, és AbiliTec-azonosítókat kaphat. Ezután ezekkel az azonosítókkal jobban egyesítheti az ügyféladatokat.
 
-További információ: [Ügyfélprofilok gazdagítása identitásadatokkal a LiveRampből (előzetes verzió)](enrichment-liveramp.md).
+További információ: [Ügyfélprofilok gazdagítása a LiveRamp (előzetes verzió) identitásadataival](enrichment-liveramp.md).
 
 ### <a name="enrichment-for-data-sources-preview"></a>Adatforrások gazdagítása (előzetes verzió)
 

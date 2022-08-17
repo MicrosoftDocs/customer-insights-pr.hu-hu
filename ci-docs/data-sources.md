@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207094"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245652"
 ---
 # <a name="data-sources-overview"></a>Adatforrások áttekintése
 
@@ -67,7 +67,7 @@ Válasszon ki egy adatforrás az elérhető műveletek megtekintéséhez.
 
 Az adatforrások igény szerint automatikus frissítéssel vagy kézzel frissíthetők. [A helyszíni adatforrások](connect-power-query.md#add-data-from-on-premises-data-sources) a saját ütemezésük szerint frissülnek, amelyek az adatbetöltés során vannak beállítva. Csatolt adatforrások esetén az adatbetöltés az adott adatforrás elérhető legfrissebb adatokat használja fel.
 
-**A Rendszergazdai** > **rendszerütemezés** > [**lapon**](system.md#schedule-tab) konfigurálhatja a betöltött adatforrások rendszer által ütemezett frissítéseit.
+**A Rendszergazdai** > **rendszerütemezés** > [**lapon**](schedule-refresh.md) konfigurálhatja a betöltött adatforrások rendszer által ütemezett frissítéseit.
 
 Adatforrás igény szerinti frissítése:
 

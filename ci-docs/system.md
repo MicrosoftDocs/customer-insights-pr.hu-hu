@@ -1,7 +1,7 @@
 ---
-title: Rendszerkonfiguráció
+title: Rendszerkonfiguráció megtekintése
 description: Ismerkedjen meg a rendszerbeállításokkal a Dynamics 365 Customer Insights alkalmazásban.
-ms.date: 04/21/2022
+ms.date: 08/09/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
@@ -10,40 +10,78 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-system-status
-- ci-system-schedule
 - ci-system-about
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 0ef84d8e286d8135eb8938e72f1319925e948bed
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050674"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246250"
 ---
-# <a name="system-configuration"></a>Rendszerkonfiguráció
+# <a name="view-system-configuration"></a>Rendszerkonfiguráció megtekintése
 
-A rendszerkonfigurációk eléréséhez lépjen a **Felügyeleti** > **rendszer elemre** a rendszerfeladatok és folyamatok listájának megtekintéséhez.
+Megtekintheti a rendszerinformációkat, a rendszer állapotát és az API-használatot.
 
-A **Rendszer** lap a következő füleket tartalmazza:
-- [Állam](#status-tab)
-- [Ütemezés](#schedule-tab)
-- [API-használat](#api-usage-tab)
-- [Névjegy](#about-tab)
-- [Általános](#general-tab)
+## <a name="view-api-usage"></a>API-használat megtekintése
 
-:::image type="content" source="media/system-tabs.png" alt-text="A Beállítások lap a rendszeroldalon.":::
+Megtekintheti a valós idejű API-használat részleteit, és megtekintheti, hogy mely események történtek egy adott időkeret.
 
-## <a name="status-tab"></a>Állapot lap
+1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza az **API-használat** lapot.
 
-Az **Állapot lapon** nyomon követheti a tevékenységek előrehaladását, az adatbetöltést, az adatexportálást és számos más fontos termékfolyamatot. Tekintse át az ezen a lapon található információkat, hogy megbizonyosodjon az aktív feladatok és folyamatok teljességéről.
+1. **Válassza ki a megtekinteni kívánt időkeret**.
 
-Ez a lap a különböző folyamatok állapot- és feldolgozási adatainak tábláit tartalmazza. Minden tábla nyomon követi a feladat **Nevét**, valamint a hozzá tartozó entitást, a legutóbbi futtatás **Állapotát**, illetve azt, mikor történt a **Legutóbbi frissítés**. Az utolsó néhány futtatás részleteit a feladat vagy a folyamat nevének kiválasztásával tekintheti meg. 
+   Az **API-használat** lap három részből áll:
 
-Válassza ki a tevékenység vagy folyamat melletti állapotot az Állapot **oszlopban a** **Folyamat részletei** panel megnyitásához.
+   - **API-hívások** – olyan diagram, amely a kiválasztott időkeretben megjeleníti az API-hívásokat.
+   - **Adatátvitel** – olyan diagram, amely az API-n keresztül továbbított adatok mennyiségét mutatja a kiválasztott időkeretben.
+   - **Műveletek** – egy táblázat sorokkal minden elérhető API-művelethez, és részletek a műveletek használatáról. Válasszon ki egy műveletnevet az API-referenciához [való ugráshoz](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   A valós idejű adatbetöltést [használó](real-time-data-ingestion.md) műveletek távcsőszimbólumot tartalmaznak a valós idejű API-használat megtekintéséhez.
+
+   1. Válassza ki a távcsövet a **művelet használati adatait tartalmazó Valós idejű API-használat** panel megnyitásához.
+   1. **Válassza ki a megtekinteni kívánt időkeret**.
+   1. A Csoportosítási **szempont** mezőben kiválaszthatja, hogyan szeretné a legjobban bemutatni a valós idejű interakciókat. Csoportosítsa az adatokat API-módszer, entitás minősített neve **(betöltött entitás),** létrehozva **(az esemény forrása),** eredmény **(sikeres vagy sikertelen) vagy** hibakódok **szerint.** **·** Az adatok előzménydiagramként és táblaként érhetők el.
+
+## <a name="view-system-information"></a>Rendszerinformációk megtekintése
+
+Tekintse meg a környezeti megjelenítendő név, azonosítóját, régióját, típusát és munkamenet-azonosítóját.
+
+1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza a **Névjegy** lapot.
+
+1. A nyelv és az ország/régió megtekintéséhez válassza az **Általános** lapot.
+
+### <a name="update-preferred-language-or-countryregion"></a>Az előnyben részesített nyelv vagy ország/régió frissítése
+
+A Customer Insights [számos nyelvet](/dynamics365/get-started/availability) támogat. Az alkalmazás felhasználja nyelvpreferenciát, hogy egyes elemeket, mint például a menü, a címszövegek és a rendszerüzenetek, a preferált nyelven jelenítsen meg.
+
+A rendszer nem fordítja le a manuálisan bevitt és az importált adatokat.
+
+1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza az **Általános** lapot.
+
+1. Az előnyben részesített nyelv megváltoztatásához válasszon egy **nyelvet** a legördülő listából.
+
+1. Ha módosítani szeretné a dátumok, időpontok és számok preferált formázását, használja az **ország/régiók formátuma** a legördülő listában. Megjelenik egy formázási előnézet. A rendszer automatikusan javasolja a kiválasztást, amikor új nyelvet választ.
+
+1. Válassza a **Mentés** parancsot.
+
+## <a name="view-system-status"></a>A rendszer állapotának megtekintése
+
+Nyomon követheti a tevékenységek, az adatbetöltés, az adatexportálás és számos más fontos termékfolyamat előrehaladását. Tekintse át az információkat, hogy megbizonyosodjon az aktív feladatok és folyamatok teljességéről.
+
+1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza az **Állapot** lapot.
+
+   A különböző folyamatok állapot- és feldolgozási információi megjelennek. Tekintse meg a **feladat nevét**, a **legutóbbi futtatás állapotát** és azt, hogy mikor lett **utoljára frissítve**.
+
+1. Az utolsó néhány futtatás részleteinek megtekintéséhez válassza ki a feladat vagy folyamat nevét.
+
+1. Egy tevékenység előrehaladási részleteinek megtekintéséhez válassza ki az állapotot. Megjelenik a **Folyamat részletei** panel.
 
    :::image type="content" source="media/system-progress-details.png" alt-text="A rendszer előrehaladásának részletei panel":::
+
+1. Az összes tevékenység előrehaladási részleteinek megtekintéséhez válassza a Teljes munkafolyamat **lehetőséget**.
 
 ### <a name="status-definitions"></a>Állapotdefiníciók
 
@@ -51,19 +89,19 @@ A rendszer a következő állapotokat használja a feladatokhoz és folyamatokho
 
 |Állam  |Definíció  |
 |---------|---------|
-|Megszakított |A feldolgozást a felhasználó megszakította, mielőtt befejeződött volna.   |
-|Sikertelen   |Az adatbetöltés hibákba ütközött.         |
-|Nem sikerült  |A feldolgozás sikertelen volt.  |
-|Nem kezdődött el   |Az adatforrás még nem tartalmaz adatokat vagy még vázlat módban van.         |
+|Megszakított |A feladatot vagy folyamatot a felhasználó megszakította, mielőtt az befejeződött volna.   |
+|Sikertelen   |A feladat vagy folyamat hibákba ütközött.         |
+|Nem sikerült  |A feladat vagy folyamat sikertelen volt.  |
+|Nem kezdődött el   |Adatforrás még nincs betöltött adat, vagy a feladat még vázlat módban van.         |
 |Feldolgozás folyamatban  |A tevékenység vagy folyamat folyamatban van.  |
-|Frissítés    |Az adatbetöltés folyamatban van. A művelet a **Műveletek** oszlop **Frissítés leállítása** parancsával vonható vissza. A adatforrás frissítésének leállítása visszaállítja azt az utolsó frissítéskori állapotára.       |
+|Frissítés    |A tevékenység vagy folyamat folyamatban van. A művelet megszakításához válassza a Frissítés és **a Feladat megszakítása lehetőséget.** **·** Egy tevékenység vagy folyamat frissítésének leállítása visszaállítja azt az utolsó frissítési állapotába.       |
 |Kihagyva  |A feladat vagy folyamat kimaradt. Egy vagy több olyan alsóbb szintű folyamat kimaradt vagy hibás volt, amelytől ez a feladat függ.|
 |Sikerült  |A feladat vagy folyamat sikeresen befejeződött. Adatforrások esetén azt jelzi, hogy az adatok betöltése sikeresen megtörtént, ha a Frissített **oszlopban** szerepel egy időpont.|
 |Feldolgozási sorban | A feldolgozás várólistára kerül, és az összes felsőbb rétegbeli feladat és folyamat befejezése után indul el. További információ: [Folyamatok](#refresh-processes) frissítése.|
 
 ### <a name="refresh-processes"></a>Folyamatok frissítése
 
-A feladatok és folyamatok frissítése a [konfigurált ütemezésnek](#schedule-tab) megfelelően fut. 
+A feladatok és folyamatok frissítése a [konfigurált ütemezésnek](schedule-refresh.md) megfelelően fut.
 
 |Folyamat  |Description  |
 |---------|---------|
@@ -86,58 +124,6 @@ A feladatok és folyamatok frissítése a [konfigurált ütemezésnek](#schedule
 |User  |Manuálisan fut (egyszeri frissítés). Az entitásoktól függ.  |
 
 Válassza ki egy folyamat állapotát a teljes feladat előrehaladási részleteinek megtekintéséhez. A fenti frissítési folyamatok segíthetnek megérteni, hogy mit tehet egy **kihagyott vagy** várólistán lévő **feladat** vagy folyamat kezelése érdekében.
-
-## <a name="schedule-tab"></a>Ütemezés lap
-
-Használja az **Ütemezés** lapot, hogy ütemezze az automatikus frissítéseket minden egyes [betáplált adatforrásához](data-sources.md). Az automatikus frissítéssel biztosítható, hogy az adatforrásokból származó frissítések megjelenjenek az egyesített ügyfélprofilokban.
-
-> [!NOTE]
-> Az Ön által kezelt adatforrások a saját ütemezésük szerint frissülnek. Az Ön által kezelt adatforrások frissítésének ütemezéséhez konfigurálja a frissítési beállításokat az adott adatforrás az **Adatforrások** lapon.
-> :::image type="content" source="media/PPDF-edit-refresh.png" alt-text="Power Platform Adatfolyam-frissítési beállítások.":::
-
-1. Lépjen a Felügyeleti **rendszer elemre** > **,** és válassza az **Ütemezés** lapot.
-
-2. Az ütemezett frissítés alapértelmezett állapota **Ki**. Az ütemezett frissítések engedélyezéséhez módosítsa a képernyő felső részén látható váltógombot **Be** állásra.
-
-3. Választhat **Heti** (alapértelmezett) és **Napi** frissítések között. Ha heti frissítéseket szeretne ütemezni, jelöljön ki egy vagy több napot, amikor a frissítést futtatni szeretné.
-
-4. Állítsa be az **Időzónát**, majd az **Idő** legördülő listában állítsa be a frissítés időpontját. Ha kész, válassza a **Beállítás** lehetőséget. Ha egy nap alatt több frissítést szeretne ütemezni, válassza a **Másik időpont hozzáadása**.
-
-5. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
-
-## <a name="about-tab"></a>Névjegy lap
-
-A **Névjegy** lapon a szervezet **megjelenítendő neve**, az aktív **környezeti azonosító**, a **régió** és a **munkamenet azonosítója** szerepel. Ha egynél több munkakörnyezet van, érdemes mindegyiknek adnia egy könnyen azonosítható megjelenítendő nevet.
-
-## <a name="general-tab"></a>Általános lap
-
-Az **Általános** lapon módosíthatja a nyelvet és az országot/régiót.
-
-A Customer Insights [számos nyelvet](/dynamics365/get-started/availability) támogat. Az alkalmazás felhasználja nyelvpreferenciát, hogy egyes elemeket, mint például a menü, a címszövegek és a rendszerüzenetek, a preferált nyelven jelenítsen meg.
-
-A rendszer nem fordítja le a manuálisan bevitt és az importált adatokat.
-
-### <a name="update-the-settings"></a>Beállítások frissítése
-
-Az előnyben részesített nyelv megváltoztatásához válasszon egy **nyelvet** a legördülő listából.
-
-Ha módosítani szeretné a dátumok, időpontok és számok preferált formázását, használja az **ország/régiók formátuma** a legördülő listában. Ebben a mezőben egy formázási előnézet jelenik meg. A rendszer automatikusan ajánlani fog egy választási lehetőséget, amikor új nyelvet választ ki.
-
-A **Mentés** parancsot választva erősítse meg kiválasztásait.
-
-## <a name="api-usage-tab"></a>API-használat lap
-
-További információ a valós idejű API-használatról, és annak megtekintése, hogy mely események történtek egy adott időkeretben. Válassza ki az időkeretet a **Válasszon időkeretet** legördülő menüben. 
-
-Az **API-használat** három szakaszból áll: 
-- **API-hívások** – olyan diagram, amely a kiválasztott időkeretben megjeleníti az API-hívásokat.
-
-- **Adatátvitel** – olyan diagram, amely az API-n keresztül továbbított adatok mennyiségét mutatja a kiválasztott időkeretben.
-
--  **Műveletek** – egy táblázat sorokkal minden elérhető API-művelethez, és részletek a műveletek használatáról. Az [API-hivatkozáshoz](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) válassza ki egy művelet nevét.
-
-   A valós idejű adatbetöltést [használó](real-time-data-ingestion.md) műveletek tartalmaznak egy távcsöves szimbólummal ellátott gombot a valós idejű API-használat megtekintéséhez. A gomra kattintva megnyithat egy oldalpanelt, ami megmutatja a valós idejű API-használati adatokat a jelenlegi környezetben.   
-   A **Valós idejű API-használati** ablakban a **Csoportosítás** mező segítségével választhatja ki, hogyan tudja a legjobban bemutatni a valós idejű interakciókat. Az adatok API-metódus, az entitás minősített neve (betöltött entitás), a létrehozó (az esemény forrása), az eredmény (siker vagy hiba) vagy a hibakódok alapján csoportosíthatók. Az adatok előzménydiagramként és táblaként érhetők el.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

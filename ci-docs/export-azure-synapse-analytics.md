@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f9c9ee55f2874ae1dcaf82f2ff17ed0fbbb7804d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0e953cfff12df433d033717d58b28c2834468916
+ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196397"
+ms.lasthandoff: 08/11/2022
+ms.locfileid: "9259847"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Adatok Azure Synapse Analytics exportálása (előzetes verzió)
 
@@ -24,7 +24,7 @@ Az Azure Synapse olyan elemzőszolgáltatás, amellyel gyorsabban áttekinthető
 > [!NOTE]
 > A leírt módon állítsa be az összes **szerepkör-hozzárendelést**.
 
-- A Customer Insightsban az Azure Active Directory (AD) felhasználói fióknak rendszergazdai szerepkörrel [kell rendelkeznie](permissions.md#assign-roles-and-permissions).
+- A Customer Insightsban az Azure Active Directory (AD) felhasználói fióknak rendszergazdai szerepkörrel [kell rendelkeznie](permissions.md#add-users).
 
 Az Azure-ban:
 
@@ -39,6 +39,8 @@ Az Azure-ban:
 - A *[Azure Synapse munkaterület felügyelt identitása](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* Storage Blob-adatokkal közreműködő **engedélyekkel rendelkezik** azon a Azure Data Lake Storage Gen2-fiókon, ahol az adatok találhatók, és a Azure Synapse munkaterülethez vannak csatolva. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - A munkaterületen a Azure Synapse Customer Insights *szolgáltatásnév synapse-rendszergazdai* **szerepkörrel rendelkezik** hozzárendelve [.](/azure/synapse-analytics/security/how-to-set-up-access-control)
+
+- Ha a Customer Insights-környezet a sajátjában [Azure Data Lake Storage](own-data-lake-storage.md) tárolja az adatokat, a kapcsolatot beállító felhasználónak Azure Synapse Analytics legalább a Data Lake Storage-fiók beépített **olvasó** szerepkörére van szüksége. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="set-up-connection-to-azure-synapse"></a>Kapcsolat beállítása Azure Synapse
 

@@ -1,19 +1,19 @@
 ---
 title: Ügyfélprofilok gazdagítása egyéni SFTP-importálással (előzetes verzió)
 description: Általános információk az SFTP egyéni importálási bővítésről.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 81ef6c62240e26cb5c9475e6306e08edc7e5eb31
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 831d1d3d3045379bbc5bcdcd4b05b8a147221f31
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195799"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237769"
 ---
 # <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Ügyfélprofilok gazdagítása egyéni SFTP-importálással (előzetes verzió)
 
@@ -85,14 +85,9 @@ Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolg�
 
 1. Adja meg annak az SFTP-kiszolgálónak az érvényes felhasználónevét, jelszavát és állomás URL-címét, ahol az importálni kívánt adatok találhatók.
 
-1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
-
-### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását az egyéni importálással, akkor engedélyezi az adatok átvitelét a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy az adatok megfeleljenek az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 ## <a name="configure-the-import"></a>Importálás konfigurálása
 

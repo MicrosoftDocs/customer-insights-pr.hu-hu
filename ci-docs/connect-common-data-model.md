@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207002"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245836"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
@@ -56,8 +56,8 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 
 1. Válasszon az alábbi lehetőségek közül a Csatlakozás a tárhely használatával **beállításhoz**. További információ: [Csatlakozás Customer Insights egy Azure Data Lake Storage Gen2-fiókhoz egy Azure-szolgáltatásnévvel](connect-service-principal.md).
 
-   - **Azure-erőforrás**: Adja meg az **erőforrás-azonosítót**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
-   - **Azure-előfizetés**: Válassza ki az **előfizetést**, majd az erőforráscsoportot **és** a **Storage-fiókot**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
+   - **Azure-erőforrás**: Adja meg az **erőforrás-azonosítót**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#set-up-an-azure-private-link).
+   - **Azure-előfizetés**: Válassza ki az **előfizetést**, majd az erőforráscsoportot **és** a **Storage-fiókot**. Ha egy tárfiókból szeretne adatokat betölteni egy Azure Private Link, válassza az Enable Private Link (Enable Private Link **) lehetőséget**. További információ: [Privát hivatkozások](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > A adatforrás létrehozásához az alábbi szerepkörök egyikére van szükség a tárolóhoz vagy a tárfiókhoz:
@@ -176,7 +176,7 @@ A Csatlakozás tárfiókhoz lehetőséget *frissítheti*. További információ:
         > - Storage Blob adattulajdonos
         > - Storage Blob adatközreműködő
 
-   - **Engedélyezze Private Link**, ha adatokat szeretne betölteni egy tárfiókból egy Azure Private Link. További információ: [Privát hivatkozások](security-overview.md#private-links-tab).
+   - **Engedélyezze Private Link**, ha adatokat szeretne betölteni egy tárfiókból egy Azure Private Link. További információ: [Privát hivatkozások](security-overview.md#set-up-an-azure-private-link).
 
 1. Válassza a **Következő** lehetőséget.
 1. Módosítsa a következők bármelyikét:

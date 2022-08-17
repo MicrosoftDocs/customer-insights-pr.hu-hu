@@ -1,7 +1,7 @@
 ---
 title: Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)
 description: Általános információk a Dun &Bradstreet harmadik féltől származó gazdagításáról.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: e89b64774dcb519a071dd3d403473807a50e7f33
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196029"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237907"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)
 
@@ -55,16 +55,11 @@ Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolg�
 
 1. Adja meg a Dun & Bradstreet érvényes hitelesítő adatait és a Dun & Bradstreet projekt részleteit *Régió, a Mappa eldobása elérési útja és a Mappa eldobása név*. Ezt [az információt](#set-up-your-dun--bradstreet-project) a Dun & Bradstreet projektből kapja.
 
-1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
 
    :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Dun &Bradstreet kapcsolat konfigurációs oldala.":::
-
-### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok Dun &Bradstreet részére történő továbbítását, engedélyezi az adatok továbbítását a megfelelőségi határon túlra Dynamics 365 Customer Insights, beleértve a potenciálisan érzékeny adatokat, például a személyes adatokat is. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy a Dun &Bradstreet teljesítse az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeit. További információ: [Microsoft adatvédelmi nyilatkozat](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 ## <a name="supported-countries-or-regions"></a>Támogatott országok és régiók
 

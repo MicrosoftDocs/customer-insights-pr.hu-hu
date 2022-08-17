@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170823"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245376"
 ---
 # <a name="measures-overview"></a>A mértékek áttekintése
 
@@ -53,7 +53,7 @@ Válasszon egy mérték mellett az elérhető műveletek megtekintéséhez. Vál
 - **Szerkessze** a mértéket a tulajdonságainak módosításához.
 - **Frissítse** a mértéket, hogy a legfrissebb adatokat tartalmazza.
 - **Nevezze át** az intézkedést.
-- **Az intézkedés aktiválása** vagy **inaktiválása**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést nem is kísérelték meg.
+- **Az intézkedés aktiválása** vagy **inaktiválása**. Az inaktív mértékek nem frissülnek az [ütemezett frissítés](schedule-refresh.md) során, és az **Állapot** kihagyottként **jelenik** meg, ami azt jelzi, hogy a frissítést nem is kísérelték meg.
 - **Címke** a [mérték címkéinek](work-with-tags-columns.md#manage-tags) kezeléséhez.
 - **Törölje** az intézkedést.
 - **Oszlopok** a megjelenő oszlopok [testreszabásához](work-with-tags-columns.md#customize-columns).
@@ -62,7 +62,7 @@ Válasszon egy mérték mellett az elérhető műveletek megtekintéséhez. Vál
 
 ## <a name="refresh-measures"></a>Frissítési intézkedések
 
-A mértékek automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők. Egy vagy több mérték manuális frissítéséhez jelölje ki őket, majd válassza a Frissítés **lehetőséget**. Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](system.md#schedule-tab) rendszerütemezés **lapra** > **·** > **.**
+A mértékek automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők. Egy vagy több mérték manuális frissítéséhez jelölje ki őket, majd válassza a Frissítés **lehetőséget**. Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](schedule-refresh.md) rendszerütemezés **lapra** > **·** > **.**
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

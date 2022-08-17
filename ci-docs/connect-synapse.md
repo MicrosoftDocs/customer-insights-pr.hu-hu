@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 54247fbcdc27f6ed8314e0755164083eb461aa64
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 7bc0c3614e6dd39fbd65ae098ed679d95d09de9d
+ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9206910"
+ms.lasthandoff: 08/11/2022
+ms.locfileid: "9259801"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Azure Synapse Analytics adatforrás csatlakoztatása (előzetes verzió)
 
@@ -24,26 +24,30 @@ További információt az áttekintésben talál [Azure Synapse](/azure/synapse-
 
 ## <a name="prerequisites"></a>Előfeltételek
 
+> [!NOTE]
+> Azok a Synapse-munkaterületek, amelyeken engedélyezve van [a](/azure/synapse-analytics/security/synapse-workspace-ip-firewall) tűzfal, jelenleg nem támogatottak.
 > [!IMPORTANT]
 > A leírt módon állítsa be az összes **szerepkör-hozzárendelést**.  
 
 **A Customer Insights szolgáltatásban**:
 
-* Rendszergazdai **szerepkörrel** rendelkezik a Customer Insights szolgáltatásban. További információ a felhasználói engedélyekről [a Customer Insights szolgáltatásban](permissions.md#assign-roles-and-permissions).
+* Rendszergazdai **szerepkörrel** rendelkezik a Customer Insights szolgáltatásban. További információ a felhasználói engedélyekről [a Customer Insights szolgáltatásban](permissions.md#add-users).
 
 **Az Azure-ban**:
 
 - Aktív Azure-előfizetés.
 
-- Ha új Azure Data Lake Storage Gen2-fiókot használ, a *Customer Insights* szolgáltatásnévnek Storage Blob Data közreműködő **engedélyre van szüksége**. További információ a Customer Insights [szolgáltatásnévvel való csatlakozásáról.Azure Data Lake Storage](connect-service-principal.md) A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
+- Új Azure Data Lake Storage Gen2-fiók használata esetén a *Customer Insights* szolgáltatásnévnek, azaz "Dynamics 365 AI for Customer Insights" szolgáltatásnévnek Storage blobadatokra közreműködő **engedélyekre van szüksége**. További információ a Customer Insights [szolgáltatásnévvel való csatlakozásáról.Azure Data Lake Storage](connect-service-principal.md) A Data Lake Storage Gen2 szolgáltásnál **engedélyezni kell** a [hierarchikus névteret](/azure/storage/blobs/data-lake-storage-namespace).
 
-- Az erőforráscsoporton a Azure Synapse munkaterület található, a *Customer Insights* szolgáltatásnévhez *és* felhasználójához legalább **olvasó** engedélyeket kell rendelni. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
+- Az erőforráscsoporton található a Azure Synapse munkaterület, a *"Dynamics 365 AI for Customer Insights" szolgáltatásnévhez* és a *Customer Insights* felhasználóhoz legalább **olvasó** engedélyt kell rendelni. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
 
 - A *felhasználónak* **Storage Blob Data-közreműködő** engedéllyel kell rendelkeznie ahhoz az Azure Data Lake Storage Gen2-fiókhoz, amelyben az adatok találhatók, és amely össze lett kapcsolva az Azure Synapse-munkaterülettel. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - Az *[Azure Synapse-munkaterület felügyelt identitásához](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* a **Storage Blob Data közreműködői** engedélyével kell rendelkezni abban az Azure Data Lake Storage Gen2-fiókban, ahol az adatok találhatók, és amelyet összekapcsoltak az Azure Synapse-munkaterülettel. További információ arról, [hogyan rendelhető hozzá az Azure Portal használatával a blobhoz és a feldolgozási sor adataihoz való hozzáférésre szolgáló Azure-szerepkör](/azure/storage/common/storage-auth-aad-rbac-portal) és részletek [a Storage Blob Data közreműködői engedélyéről](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- A munkaterületen a Azure Synapse *Customer Insights* szolgáltatásnévhez hozzá kell **rendelni a Synapse-rendszergazdai** szerepkört. További információ: [A hozzáférés-vezérlés beállítása a Synapse-munkaterülethez](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- A munkaterületen a Azure Synapse *Customer Insights* szolgáltatásnévéhez, amely "Dynamics 365 AI for Customer Insights", synapse-rendszergazdai **szerepkört kell** hozzárendelni. További információ: [A hozzáférés-vezérlés beállítása a Synapse-munkaterülethez](/azure/synapse-analytics/security/how-to-set-up-access-control).
+
+- Ha a Customer Insights-környezet a sajátjában [Azure Data Lake Storage](own-data-lake-storage.md) tárolja az adatokat, a kapcsolatot beállító felhasználónak Azure Synapse Analytics legalább a Data Lake Storage-fiók beépített **olvasó** szerepkörére van szüksége. További információk: [Azure-szerepkörök hozzárendelése az Azure Portal használatával](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="connect-to-the-data-lake-database-in-azure-synapse-analytics"></a>Csatlakozás a Data Lake-adatbázishoz Azure Synapse Analytics
 
@@ -57,7 +61,7 @@ További információt az áttekintésben talál [Azure Synapse](/azure/synapse-
   
 1. **Adja meg a adatforrás nevét** és egy opcionális **leírást**.
 
-1. Válasszon ki egy [elérhető kapcsolatot](connections.md), Azure Synapse Analytics vagy hozzon létre egy újat.
+1. Válasszon ki egy [elérhető kapcsolatot](connections.md), Azure Synapse Analytics vagy [hozzon létre egy újat](export-azure-synapse-analytics.md#set-up-connection-to-azure-synapse).
 
 1. Válasszon ki egy **adatbázist a kiválasztott** kapcsolatban csatlakoztatott munkaterületről, majd válassza a Tovább Azure Synapse Analytics gombot **·**. Jelenleg csak a Lake adatbázistípust *támogatjuk*.
 

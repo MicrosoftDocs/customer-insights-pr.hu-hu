@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
-ms.translationtype: MT
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142822"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245560"
 ---
 # <a name="how-to-create-a-new-environment"></a>Útmutató: Új környezet létrehozása
 
@@ -48,7 +48,7 @@ Az **Alapinformáció** lépésben válassza ki, hogy nulláról hoz-e létre k�
 
 Adja meg a következő részleteket:
 
-- **Név**: A környezet neve. Ha meglévő környezetből másolt, akkor ez a mező már ki van töltve, de ez módosítható.
+- **Név**: A környezet neve. Ha meglévő környezetből másolt, akkor ez a mező már ki van töltve, de ez módosítható. Ha egynél több munkakörnyezettel rendelkezik, adjon mindegyiknek egy könnyen azonosítható nevet.
 - **Válassza ki a vállalkozását**: Válassza ki az elsődleges közönséget az új környezethez. Dolgozhat egyéni ügyfelekkel (B-to-C) vagy [üzleti fiókokkal](work-with-business-accounts.md) (B-to-B). Ha a szervezet elsősorban magánszemélyekkel, például kiskereskedővel vagy kávézóval köt üzletet, válasszon egyéni fogyasztókat. Abban az esetben, ha a fő célközönség más vállalatok, például autógyártó vagy papírgyártó cég, válasszon üzleti számlákat.
 - **Típus**: Adja meg, hogy szeretne-e termelési vagy tesztkörnyezetet létrehozni. A tesztkörnyezetek nem engedélyezik az ütemezett adatfrissítést, és előzetes megvalósításhoz és teszteléshez kínáljuk ezeket. A tesztkörnyezet környezetek ugyanazt az célközönség elsődleges környezetként használják, mint az éppen kijelölt éles környezet.
 - **Régió**: Az a régió, ahová a szolgáltatást telepítették és üzemeltetik. A [saját Azure Data Lake Storage fiók](own-data-lake-storage.md) használatához vagy [egy meglévő Microsoft Dataverse szervezethez](customer-insights-dataverse.md) való csatlakozáshoz a Customer Insights-környezetnek ugyanabban a régióban kell lennie.

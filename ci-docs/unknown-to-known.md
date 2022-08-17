@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173817"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224298"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>A felhasználói élmény személyre szabása ismert és ismeretlen felhasználókra vonatkozó adatokkal
 
-Az ügyféladatok kezelése nem új kihívás, de egyre nehezebbé válik, ahogy a felhasználók eligazodnak a márkák által kínált különböző digitális csatornákon. Az egyik csatornán ismert (hitelesített) felhasználó ismeretlenné (nem hitelesítetté) válik egy másikban, ha nincs bejelentkezve. A probléma gyakran az, hogy a nem hitelesített (ismeretlen) felhasználók nem rendelkeznek közös azonosítóval. Használható értelmes profilok attribútumainak társítására és egységes ügyfélprofilok létrehozására. A Customer Insights segít megoldani ezt a problémát azáltal, hogy adatokat tölt be a forrásrendszereken lévő nyomkövetési módszerekből. A konszolidált ismeretlen és ismert profilok teljes körű képet nyújtanak a szervezeteknek a naprakész profilokról, valamint azok korábbi tranzakcióiról, viselkedéséről és demográfiai adatairól. Még egy lépéssel tovább is megy azáltal, hogy identitásfeloldást biztosít, amely lehetővé teszi az ügyfelek tevékenységének egyesítését több csatornán keresztül, beleértve a webhelyet, az üzleten belüli vásárlást, a hűségprogramokat és így tovább.
+Az ügyféladatok kezelése nem új kihívás, de egyre nehezebbé válik, ahogy a felhasználók eligazodnak a márkák által kínált különböző digitális csatornákon. Az egyik csatornán ismert (hitelesített) felhasználó ismeretlenné (nem hitelesítetté) válik egy másikban, ha nincs bejelentkezve. A probléma gyakran az, hogy a nem hitelesített (ismeretlen) felhasználók nem rendelkeznek közös azonosítóval. Használható értelmes profilok attribútumainak társítására és egységes ügyfélprofilok létrehozására. A Customer Insights segít megoldani ezt a problémát azáltal, hogy adatokat tölt be a forrásrendszereken lévő nyomkövetési módszerekből. Az ismeretlen és ismert profilok konszolidálása teljes körű áttekintést nyújt a szervezeteknek a naprakész profilokról, valamint azok korábbi tranzakcióiról, viselkedéséről és demográfiai adatairól. Még egy lépéssel tovább is megy azáltal, hogy identitásfeloldást biztosít, amely lehetővé teszi az ügyfelek tevékenységének egyesítését több csatornán keresztül, beleértve a webhelyet, az üzleten belüli vásárlást, a hűségprogramokat és így tovább.
 
 ## <a name="sample-scenario"></a>Példaforgatókönyv
 

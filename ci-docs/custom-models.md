@@ -11,19 +11,19 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3fad8a6cba71da80d4cc34be4084275e0d0a3622
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800423"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245806"
 ---
 # <a name="custom-machine-learning-models"></a>Egyéni gépi tanulás modellek
 
 > [!NOTE]
-> A Machine Learning Studio (klasszikus) támogatása 2024. augusztus 31-én megszűnik. Javasoljuk, hogy ezen időpontig [váltson át az Azure-gépi tanulás](/azure/machine-learning/overview-what-is-azure-machine-learning).
+> A Machine Learning Studio (klasszikus) támogatása 2024. augusztus 31-én megszűnik. Javasoljuk, hogy az azure-gépi tanulás [térjen át](/azure/machine-learning/overview-what-is-azure-machine-learning) erre a dátumra.
 >
-> 2021. december 1-jétől nem hozhat létre új Machine Learning Studio (klasszikus) erőforrásokat. 2024. augusztus 31-ig továbbra is használhatja a meglévő Machine Learning Studio (klasszikus) erőforrásokat. További információt az Áttelepítés az Azure-ba gépi tanulás című témakörben [talál](/azure/machine-learning/migrate-overview).
+> 2021. december 1-jétől nem hozhat létre új Machine Learning Studio (klasszikus) erőforrásokat. 2024. augusztus 31-ig továbbra is használhatja a meglévő Machine Learning Studio (klasszikus) erőforrásokat. További információ: [Áttelepítés a Azure gépi tanulás](/azure/machine-learning/migrate-overview).
 
 
 Az **Információk** > **Egyéni modellek** ponttal kezelheti a munkafolyamatokat az Azure Machine Learning-modellek alapján. A munkafolyamatok segítségével kiválaszthatja azokat az adatokat, amelyekből betekintést szeretne létrehozni, és leképezi az eredményeket az egyesített ügyféladatokat. Az egyéni ML modellek készítésével kapcsolatos további információkért lásd: [Az Azure Machine Learning-alapú modellek használata](azure-machine-learning-experiments.md).
@@ -34,7 +34,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Ez a funkció támogatja az Azure gépi tanulás kötegelt folyamatain keresztül [közzétett webszolgáltatásokat](/azure/machine-learning/concept-ml-pipelines).
+- Ez a funkció támogatja az Azure gépi tanulás kötegelt folyamatokon keresztül [közzétett webszolgáltatásokat](/azure/machine-learning/concept-ml-pipelines).
 
 - A funkció használatához az Azure Studio-példányhoz társított Azure Data Lake Gen2-fiókra van szükség. További információ: [Azure Data Lake Storage Gen2 tárfiók létrehozása](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -60,7 +60,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 1. Jelölje ki a webszolgáltatáshoz társított **Munkaterületeket**. 
 
-1. Válassza ki az Azure gépi tanulás folyamatot a **modell** legördülő listáját tartalmazó webszolgáltatásban. Azután válassza a **Következő** elemet.    
+1. Válassza ki a Azure gépi tanulás folyamatot a **modellt** tartalmazó webszolgáltatás legördülő menüjében. Azután válassza a **Következő** elemet.    
    További információ a [folyamatok közzétételéről az Azure Machine Learning a tervezővel](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) vagy az [SDK-val](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). A folyamatokat a [folyamatvégpont](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run) alatt közzé kell tenni.
 
 1. Minden egyes **Webszolgáltatás-bemenetnél** válassza ki a megfelelő **Entitást** a Customer Insights megoldásból,és válassza a **Tovább** lehetőséget.
@@ -84,7 +84,7 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
    > ![Eredmények összekapcsolása az Ügyfél adatpanellel.](media/intelligence-screen4-relatetocustomer.png "Eredmények összekapcsolása az Ügyfél adatpanelhlel")
 
 1. Megjelenik a **Munkafolyamat mentve** képernyő a munkafolyamat részleteivel.    
-   Ha egy Azure-gépi tanulás-folyamat munkafolyamatát konfigurálta, a Customer Insights a folyamatot tartalmazó munkaterülethez csatlakozik. A Customer Insights közreműködő **szerepkört** kap az Azure-munkaterületen.
+   Ha munkafolyamatot konfigurált egy Azure gépi tanulás-folyamathoz, a Customer Insights a folyamatot tartalmazó munkaterülethez csatolja. A Customer Insights közreműködő **szerepkört** kap az Azure-munkaterületen.
 
 1. Válassza a **Kész** lehetőséget.
 
@@ -92,11 +92,11 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="edit-a-workflow"></a>Egy munkafolyamat szerkesztése
 
-1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) oszlopot a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett, és válassza a Szerkesztés **lehetőséget**.
+1. Az Egyéni modellek lapon válassza ki **a függőleges három pontot (**) a Műveletek&vellip; oszlopban egy korábban létrehozott munkafolyamat mellett, majd válassza a **Szerkesztés** lehetőséget **.**
 
 1. A munkafolyamat felismerhető nevét a **megjelenítendő név** mezőben frissítheti, de a konfigurált webszolgáltatás vagy folyamat nem módosítható. Válassza a **Következő** lehetőséget.
 
-1. Minden **egyes webszolgáltatás-bemenethez** frissítheti a megfelelő entitást **a** Customer Insights szolgáltatásból. Azután válassza a **Következő** elemet.
+1. Minden webszolgáltatás-bemenethez **frissítheti** az egyező **entitást** a Customer Insights szolgáltatásból. Azután válassza a **Következő** elemet.
 
 1. Állítsa be a következő tulajdonságokat a **Modell kimeneti paraméterek** lépésében:
       1. Adja meg a kimeneti **Entitás nevét**, amelyet a folyamat kimenetének eredményére szeretne beáramlani.
@@ -108,15 +108,15 @@ Az előrejelzések lehetőséget nyújtanak a jobb ügyfelekkel kapcsolatos tapa
 
 ## <a name="run-a-workflow"></a>Munkafolyamat futtatása
 
-1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) értéket a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
+1. **Az Egyéni modellek** lapon válassza ki a függőleges három pontot (&vellip;) a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
 
 1. Válassza a **Futtatás** lehetőséget.
 
-A munkafolyamat minden ütemezett frissítéssel együtt automatikusan lefut. További információk az [ütemezett frissítések beállításáról](system.md#schedule-tab).
+A munkafolyamat minden ütemezett frissítéssel együtt automatikusan lefut. További információk az [ütemezett frissítések beállításáról](schedule-refresh.md).
 
 ## <a name="delete-a-workflow"></a>Egy munkafolyamat törlése
 
-1. **Az Egyéni modellek** lapon jelölje ki a függőleges ellipszis (&vellip;) értéket a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
+1. **Az Egyéni modellek** lapon válassza ki a függőleges három pontot (&vellip;) a **Műveletek** oszlopban egy korábban létrehozott munkafolyamat mellett.
 
 1. Válassza a **Törlés** lehetőséget, és hagyja jóvá a törlést.
 

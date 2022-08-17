@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139660"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213585"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Ügyfélmezők egyesítése az adatok egyesítéséhez
 
@@ -58,6 +58,9 @@ Az egyesítési folyamat ezen lépésében válassza ki és zárja ki az egyesí
 
 1. Adja meg a mezők egyesítésének vagy összefésülésének módját a következő három lehetőség egyikével:
     - **Fontosság**: A résztvevő mezőkhöz megadott fontossági rang alapján meghatározza a győztes értékét. Ez az alapértelmezett egyesítési beállítás. A fontosság sorrendjének beállításhoz válassza a **Mozgatás felfelé vagy lefelé** lehetőséget.
+
+      > [!NOTE]
+      > A Customer Insights az első nem null értéket használja. Ha például az A, B és C entitások ebben a sorrendben vannak rangsorolva, ha A.Name és B.Name null értékűek, akkor a C.Name értékét használjuk.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Fontosság beállítás a mezők egyesítése párbeszédpanelen.":::
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 ms.reviewer: mhart
-ms.openlocfilehash: 5acb58906c1a9db54337f3b4dc2ab7891db7954e
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
-ms.translationtype: MT
+ms.openlocfilehash: d2ff49c324c5c5c28213f362ff330d441fcb6052
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011936"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246204"
 ---
 # <a name="use-your-own-azure-data-lake-storage-gen2-account"></a>Azure Data Lake Storage Saját Gen2-fiók használata
 
@@ -37,7 +37,7 @@ A Customer Insights [rendszergazdái környezeteket](create-environment.md) hozh
 1. Válassza ki, hogyan csatlakoztassa a **tárhelyet**. Választhat az erőforrás-alapú és az előfizetés-alapú hitelesítési lehetőség közül. További információ: [Csatlakozás fiókhoz Azure Data Lake Storage egy Azure-szolgáltatásnévvel](connect-service-principal.md).
    - Azure-előfizetés **esetén** válassza ki a **tárolót tartalmazó** előfizetést **,** erőforráscsoportot **és** Storage-fiókot`customerinsights`.
    - A Fiókkulcs **mezőben** adja meg a **Data Lake Storage-fiók fióknevét** és **fiókkulcsát**. Ennek a hitelesítési módszernek a használata azt jelenti, hogy értesítést kap, ha a szervezet elforgatja a kulcsokat. A környezet konfigurációját [az elforgatáskor frissítenie kell](manage-environments.md#edit-an-existing-environment) az új kulccsal.
-1. Válassza ki, hogy az Azure Private Link használatával szeretne-e csatlakozni a tárfiókhoz, és [kétlépéses folyamattal private link](security-overview.md#private-links-tab) hozza létre a kapcsolatot.
+1. Válassza ki, hogy az Azure Private Link használatával szeretne-e csatlakozni a tárfiókhoz, és [kétlépéses folyamattal private link](security-overview.md#set-up-an-azure-private-link) hozza létre a kapcsolatot.
 
 Amikor a rendszer feldolgozza az adatbetöltést, a rendszer létrehozza a megfelelő mappákat a tárfiókban. Az adatfájlok és a *model.json* fájlok a folyamat neve alapján jönnek létre, és kerülnek a mappákba.
 

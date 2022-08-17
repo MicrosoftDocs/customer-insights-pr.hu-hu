@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
-ms.translationtype: MT
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053877"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245882"
 ---
 # <a name="data-enrichment-preview-overview"></a>Az adatgazdagítás (előzetes verzió) áttekintése
 
@@ -76,7 +76,7 @@ Válassza ki a gazdagítást az elérhető műveletek megtekintéséhez.
 - **Nézet** a bővítés részleteinek megtekintése a bővített ügyfelek profiljainak számával.
 - **Szerkesztheti** bővítés konfigurációját.
 - [**Futtassa**](#run-or-refresh-enrichments) a bővítést, hogy frissítse az ügyfélprofilokat a legújabb adatokkal. Futtasson egyszerre több gazdagítást úgy, hogy kiválasztja őket a listából.
-- **Bővítés aktiválása** vagy **inaktiválása**. Az inaktív gazdagodások nem frissülnek az [ütemezett frissítés](system.md#schedule-tab) során.
+- **Bővítés aktiválása** vagy **inaktiválása**. Az inaktív gazdagodások nem frissülnek az [ütemezett frissítés](schedule-refresh.md) során.
 - A bővítés **Törlése**.
 
 A gazdagításokból szegmenseket [vagy](segments.md) mértékeket [is létrehozhat](measures.md).
@@ -85,7 +85,7 @@ A gazdagításokból szegmenseket [vagy](segments.md) mértékeket [is létrehoz
 
 A futtatás után a gazdagítások automatikus ütemezéssel frissíthetők, vagy igény szerint manuálisan frissíthetők.
 
-1. Egy vagy több bővítőegység manuális frissítéséhez jelölje ki őket, majd válassza a Futtatás **lehetőséget**. Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](system.md#schedule-tab) rendszerütemezés **lapra** > **·** > **.** A feldolgozási idő az ügyféladatok mennyiségétől függ.
+1. Egy vagy több bővítőegység manuális frissítéséhez jelölje ki őket, majd válassza a Futtatás **lehetőséget**. Az automatikus frissítés ütemezéséhez [lépjen a Rendszergazdai](schedule-refresh.md) rendszerütemezés **lapra** > **·** > **.** A feldolgozási idő az ügyféladatok mennyiségétől függ.
 
 1. Ha szükséges, [tekintse meg a gazdagítási folyamat](#see-the-progress-of-the-enrichment-process) előrehaladását.
 
@@ -102,6 +102,8 @@ A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a leh
 1. A **Folyamat részletei** ablaktáblában bontsa ki az **Bővítések** szakaszt.
 1. A bővítés során látni szeretné a haladást, válassza a **Részletek megtekintése** lehetőséget.
 1. A **Feladat részletei** ablaktáblában válassza a **Részletek megjelenítése** lehetőséget, és tekintse meg a bővítésben érintett folyamatokat és az állapotukat.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Gazdagítási eredmények megtekintése
 

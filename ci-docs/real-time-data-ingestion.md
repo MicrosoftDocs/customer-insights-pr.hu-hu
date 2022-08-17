@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195661"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246111"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Valós idejű adatbetöltés (előzetes verzió)
 
 A közel valós idejű funkció segítségével másodpercek alatt megtekintheti az ügyfelek által a termékekkel vagy szolgáltatásokkal kapcsolatban tett legújabb interakciókat.
 
-[Ütemezett frissítések](system.md#schedule-tab) magában foglal nagy számú rekordot és számos összetett műveletet. Elsőként az adat lekérésre kerül az adatforrásból. Következő lépésként az adatok egységítése megtörténik, majd a rendszer további információkkal bővíti azt. A folyamat minden futtatása percekig vagy órákig is eltarthat.
+[Ütemezett frissítések](schedule-refresh.md) magában foglal nagy számú rekordot és számos összetett műveletet. Elsőként az adat lekérésre kerül az adatforrásból. Következő lépésként az adatok egységítése megtörténik, majd a rendszer további információkkal bővíti azt. A folyamat minden futtatása percekig vagy órákig is eltarthat.
 
 A valós idejű funkciók azonnali adatokat biztosítanak a fogyasztásról, amíg a következő ütemezett frissítés le nem hívja az adatokat az adatforrásból.
 
@@ -85,7 +85,7 @@ Az API-kra vonatkozó részletek, beleértve a paramétereket és válaszokat, m
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>A valós idejű használatát felmérése telemetriával
 
-Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#api-usage-tab) elérhető. 
+Tekintse át a valós idejű API-k használatára vonatkozó kérések mennyiségét és az információkat a lehetséges problémákról, melyek a rendszerrel kapcsolatosan felmerülhetnek. A [valós idejű telemetria](system.md#view-api-usage) elérhető. 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

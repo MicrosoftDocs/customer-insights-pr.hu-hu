@@ -1,19 +1,19 @@
 ---
 title: Ügyfélprofilok gazdagítása helyadatok Azure Maps (előzetes verzió)
 description: Az Azure Maps független gyártótól származó bővítésre vonatkozó általános információk.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f14b4fc20a9a1d8842f42f9e0e656b3d8dcddcf4
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052610"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238045"
 ---
 # <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Ügyfélprofilok gazdagítása helyadatok Azure Maps (előzetes verzió)
 
@@ -35,14 +35,9 @@ Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolg�
 
 1. Adja meg a kapcsolat nevét és egy érvényes Azure Maps API-kulcsot.
 
-1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
-
-### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Amikor engedélyezed a Dynamics 365 Customer Insights -nak, hogy továbbítsa az adatokat Azure Maps-be, engedélyezed az adatátvitelt a megfelelőséghatáron kívülre a Dynamics 365 Customer Insights -nak, beleértve az esetlegesen bizalmas adatokat, például személyes adatokat. A Microsoft az Ön utasítására továbbítja ezeket az adatokat, de Ön felelős annak biztosításáért, hogy az Azure Maps megfeleljen az Ön adatvédelmi vagy biztonsági kötelezettségeinek. További tájékoztatásért menjen a [Microsoft adatvédelmi nyilatkozatára](https://go.microsoft.com/fwlink/?linkid=396732).
-A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 

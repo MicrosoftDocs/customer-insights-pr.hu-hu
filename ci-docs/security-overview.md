@@ -1,47 +1,50 @@
 ---
-title: Biztonsági beállítások a Customer Insights szolgáltatásban
+title: Biztonsági beállítások konfigurálása
 description: További információ a biztonsági beállításokról a Dynamics 365 Customer Insights.
-ms.date: 06/08/2022
+ms.date: 08/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 163deb9bed4f82d742c46cace27dd128f0aca18b
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947418"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246065"
 ---
-# <a name="security-settings-in-customer-insights"></a>Biztonsági beállítások a Customer Insights szolgáltatásban
+# <a name="configure-security-settings"></a>Biztonsági beállítások konfigurálása
 
-A **Biztonság** lap felsorolja a felhasználói engedélyek és szolgáltatások konfigurálásának lehetőségeit, amelyek segítenek a biztonságosabbá tételben Dynamics 365 Customer Insights. Csak a rendszergazdák férhetnek hozzá ehhez az oldalhoz.
+Api-kulcsokat kezelhet, hozzáférhet az ügyféladatokhoz, és beállíthat egy Azure Private Link.
 
-A Beállítások konfigurálásához lépjen a **Rendszergazdai** > **biztonság** elemre.
+## <a name="manage-api-keys"></a>API-kulcsok kezelése
 
-A **Biztonság** lap a következő lapokat tartalmazza:
+Tekintse meg és kezelje a kulcsokat, hogy a [Customer Insights API-kat](apis.md) a környezetében lévő adatokkal használhassa.
 
-- [Felhasználók](#users-tab)
-- [API-k](#apis-tab)
-- [Privát hivatkozások](#private-links-tab)
-- [ Key Vault](#key-vault-tab)
-- [Biztonságosan hozzáférhet az ügyféladatokhoz az ügyfélkostátusz-kulcs segítségével (előzetes verzió)](#securely-access-customer-data-with-customer-lockbox-preview)
+1. Lépjen a **Rendszerbiztonság** > **elemre,** és válassza az **API-k** lapot.
 
-## <a name="users-tab"></a>Felhasználók lap
+1. Ha a környezethez való API-hozzáférés nincs beállítva, válassza az Engedélyezés **lehetőséget**. Vagy a környezethez való API-hozzáférés blokkolásához válassza a Letiltás **és megerősítés lehetőséget**.
 
-A Customer Insightshoz való hozzáférés a szervezet azon felhasználóira korlátozódik, akiket egy rendszergazda adott hozzá az alkalmazáshoz. A **Felhasználók** lapon kezelheti a felhasználói hozzáférést és az engedélyeiket. További információ: [Felhasználói engedélyek](permissions.md).
+1. Az elsődleges és másodlagos API-kulcsok kezelése:
 
-## <a name="apis-tab"></a>API-k lap
+   1. Az elsődleges vagy másodlagos API-kulcs megjelenítéséhez válassza a **Megjelenítés** szimbólumot.
 
-Tekintse meg és kezelje a kulcsokat, hogy a [Customer Insights API-kat](apis.md) a környezet adataival használhassa.
+   1. Az elsődleges vagy másodlagos API-kulcs másolásához válassza a **Másolás** szimbólumot.
 
-Új elsődleges és másodlagos kulcsokat az Elsődleges **újragenerálása vagy** a Másodlagos **újragenerálása lehetőség kiválasztásával** hozhat létre. 
+   1. Új elsődleges vagy másodlagos API-kulcsok létrehozásához válassza az Elsődleges **vagy a Másodlagos újragenerálás lehetőséget** **.**
 
-A környezethez való API-hozzáférés blokkolásához válassza a Letiltás **lehetőséget**. Ha az API-k le vannak tiltva, az Engedélyezés **lehetőséget választva** újra hozzáférést adhat.
+## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Biztonságosan hozzáférhet az ügyféladatokhoz az ügyfélkostátusz-kulcs segítségével (előzetes verzió)
 
-## <a name="private-links-tab"></a>Privát hivatkozások lap
+A Customer Insights az Power Platform Ügyfélkompatibilitási lehetőséget használja. Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához. A funkció használatához a Customer Insightsnak meglévő kapcsolattal kell rendelkeznie a bérlő környezetéhez Microsoft Dataverse.
+
+Az ügyfélkompatibilitás-szal kapcsolatos további információkért tekintse meg az [Ügyfélkompatibilitási](/power-platform/admin/about-lockbox#summary) kulcs mappában található összefoglalót Power Platform. A cikk ismerteti a [munkafolyamatot](/power-platform/admin/about-lockbox#workflow) és az ügyfélkompatibilitás engedélyezéséhez szükséges [beállításokat](/power-platform/admin/about-lockbox#enable-the-lockbox-policy) is.
+
+> [!IMPORTANT]
+> A globális rendszergazdák vagy Power Platform rendszergazdák jóváhagyhatják a Power Platform Customer Insights számára kiadott ügyfélkompatinás kérelmeket.
+
+## <a name="set-up-an-azure-private-link"></a>Azure Private Link beállítása
 
 [Azure Private Link](/azure/private-link/private-link-overview) lehetővé teszi, hogy a Customer Insights a virtuális hálózat privát végpont keresztül csatlakozzon a fiókjához Azure Data Lake Storage. A tárfiókban lévő adatok esetében, amelyek nincsenek kitéve a nyilvános internetnek, Private Link engedélyezi a kapcsolatot az adott korlátozott hálózattal.
 
@@ -51,26 +54,22 @@ A környezethez való API-hozzáférés blokkolásához válassza a Letiltás **
 > - Customer Insights: Rendszergazda
 > - Beépített Azure-szerepkör: [Storage-fiók közreműködő](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
 > - Engedélyek egyéni Azure-szerepkörhöz: [Microsoft.Storage/storageAccounts/read és Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
->
 
-A Private Link beállítása a Customer Insights szolgáltatásban kétlépéses folyamat. Először kezdeményezi egy privát kapcsolat létrehozását a Customer Insights rendszergazdai **biztonsági** > **privát hivatkozásaiból** > **·**. A **Private Link** hozzáadása panel felsorolja a bérlőtől származó olyan tárfiókokat, amelyek megtekintéséhez engedélyekkel rendelkezik. Válassza ki a tárfiókot, és adja meg a jóváhagyást a Private Link létrehozásához.
+1. A Customer Insightsban válassza a Rendszergazdai biztonság lehetőséget **, és válassza a** > **Privát hivatkozások** **lapot.**
 
-Ezután jóvá kell hagynia a Private Link a Data Lake Storage fiók oldalán. Nyissa meg a képernyőn megjelenő hivatkozást az új Private Link jóváhagyásához.
+1. Válassza a Private Link **hozzáadása lehetőséget**.
 
-## <a name="key-vault-tab"></a>Key Vault lap
+   A **Private Link** hozzáadása panel felsorolja a bérlőtől származó olyan tárfiókokat, amelyek megtekintéséhez engedélyekkel rendelkezik.
 
-A **Key Vault** lapon összekapcsolhatja és kezelheti saját [Azure Key Vaultját](/azure/key-vault/general/basic-concepts) a környezettel.
-A dedikált kulcstartó a szervezet megfelelési határán belül a fázisok és a titkok használatára használható. A Customer Insights a titkos kulcsok azure key vault használatával állíthat be [kapcsolatokat](connections.md) külső rendszerekhez.
+1. Válassza ki az előfizetést, az erőforráscsoportot és a tárfiókot.
 
-További információkért lásd: [Hozza magával saját Azure-kulcstartóját](use-azure-key-vault.md).
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
-## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Biztonságosan hozzáférhet az ügyféladatokhoz az ügyfélkostátusz-kulcs segítségével (előzetes verzió)
+1. Válassza a **Mentés** parancsot.
 
-A Customer Insights az Power Platform Ügyfélkombaszéf funkciót használja. Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához. A funkció használatához a Customer Insightsnak meglévő kapcsolattal kell rendelkeznie a bérlő környezetéhez Microsoft Dataverse.
+1. Nyissa meg a Data Lake Storage-fiókját, és nyissa meg a képernyőn megjelenő hivatkozást.
 
-Az ügyfélkompatibilitás-szal kapcsolatos további információkért tekintse meg az [Ügyfélkompatibilitási](/power-platform/admin/about-lockbox#summary) kulcs mappában található összefoglalót Power Platform. A cikk ismerteti a [munkafolyamatot](/power-platform/admin/about-lockbox#workflow) és az ügyfélkompatibilitás engedélyezéséhez szükséges [beállításokat](/power-platform/admin/about-lockbox#enable-the-lockbox-policy) is.
+1. Hagyja jóvá a Private Link.
 
-> [!IMPORTANT]
-> A globális rendszergazdák vagy Power Platform rendszergazdák jóváhagyhatják a Power Platform Customer Insights számára kiadott ügyfélkompatinás kérelmeket.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

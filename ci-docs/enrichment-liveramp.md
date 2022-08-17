@@ -1,19 +1,19 @@
 ---
 title: Bővítse az ügyfélprofilokat a LiveRamp identitásadataival (előzetes verzió)
 description: Bővítse az ügyfélprofilokat LiveRamp-adatokkal.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0aa6dc144602741b87843a5373779855ee3e334c
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196351"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237815"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Bővítse az ügyfélprofilokat a LiveRamp identitásadataival (előzetes verzió)
 
@@ -41,13 +41,9 @@ Rendszergazdának [kell](permissions.md#admin) lennie a Customer Insights szolg�
 
 1. Adja meg a kapcsolat nevét, valamint egy érvényes LiveRamp-ügyfél-azonosítót és egy titkos kulcsot.
 
-1. Tekintse át és adja meg hozzájárulását az [adatvédelem és a megfelelőséghez](#data-privacy-and-compliance) az **Elfogadom** által.
+1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
 
 1. Válassza az Ellenőrzés **lehetőséget** a konfiguráció ellenőrzéséhez, majd válassza a Mentés **lehetőséget**.
-
-### <a name="data-privacy-and-compliance"></a>Adatvédelem és megfelelőség
-
-Ha engedélyezi Dynamics 365 Customer Insights az adatok továbbítását a LiveRamp-nek, akkor engedélyezi az adatok továbbítását a megfelelőségi határon kívülre Dynamics 365 Customer Insights, beleértve a potenciálisan bizalmas adatokat, például a személyes adatokat is. A Microsoft az Ön utasításainak megfelelően továbbítja ezeket az adatokat, de Ön felelős azért, hogy a LiveRamp megfeleljen az Ön esetleges adatvédelmi vagy biztonsági kötelezettségeinek. További információért tekintse át a [Microsoft adatvédelmi nyilatkozatát](https://go.microsoft.com/fwlink/?linkid=396732). A funkció használatának leállítása érdekében a Dynamics 365 Customer Insights rendszergazda bármikor eltávolíthatja ezt a bővítést.
 
 ## <a name="configure-the-enrichment"></a>Bővítés konfigurálása
 

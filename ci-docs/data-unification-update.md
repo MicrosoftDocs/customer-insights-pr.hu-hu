@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
-ms.translationtype: MT
+ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139614"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245597"
 ---
 # <a name="update-the-unification-settings"></a>Az egyesítési beállítások frissítése
 
@@ -42,7 +42,7 @@ Ha az egységesített profil létrehozása után át szeretné tekinteni vagy m�
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Képernyőkép az Adatok egyesítése lapról, amelyen ki van emelve az Egységesítés lehetőségek.":::
 
    - [Az egyező feltételek](#run-matching-conditions) futtatásával gyorsan kiértékelheti az egyező feltételek (deduplikáció és egyeztetési szabályok) minőségét az egységes profil frissítése nélkül. Az **Egyezési feltételek** csak futtatása beállítás nem jelenik meg egyetlen entitásnál.
-   - [Egyesítse az ügyfélprofilokat](#run-updates-to-the-unified-customer-profile) az egyező feltételek futtatásához, és frissítse az egyesített ügyfélprofil-entitást anélkül, hogy ez hatással lenne a függőségekre (például gazdagodásokra, szegmensekre vagy mértékekre). A függő folyamatok nem futnak, hanem a frissítési ütemezésben [meghatározottak szerint](system.md#schedule-tab) frissülnek.
+   - [Egyesítse az ügyfélprofilokat](#run-updates-to-the-unified-customer-profile) az egyező feltételek futtatásához, és frissítse az egyesített ügyfélprofil-entitást anélkül, hogy ez hatással lenne a függőségekre (például gazdagodásokra, szegmensekre vagy mértékekre). A függő folyamatok nem futnak, hanem a frissítési ütemezésben [meghatározottak szerint](schedule-refresh.md) frissülnek.
    - [Egyesítse az ügyfélprofilokat és függőségeket](#run-updates-to-the-unified-customer-profile) az egyező feltételek futtatásához, és frissítse az egyesített ügyfélprofil-entitást és az összes függőséget (például gazdagításokat, szegmenseket vagy mértékeket). Minden folyamat automatikusan újrafuttatható.
 
 ## <a name="edit-source-fields"></a>Forrásmezők szerkesztése
@@ -69,7 +69,7 @@ Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített
 
    A talált duplikált rekordok száma a Duplikátumok **alatt** jelenik meg. A **Rekordok deduplikált** oszlopban látható, hogy mely entitások rendelkeztek duplikált rekordokkal, és hogy hány százalékban voltak duplikált rekordok.
 
-1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
+1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
 
 1. A deduplikációs szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Deduplikációs szabályok](remove-duplicates.md#define-deduplication-rules) meghatározása.
@@ -110,7 +110,7 @@ Az egyezési paraméterek nagy része konfigurálható és finomhangolható. Nem
 
    :::image type="content" source="media/m3_match_condition_preview.png" alt-text="A nem egyező és egyező rekordok grafikus ábrázolása, beleértve az adatok listáját is.":::
 
-1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
+1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
 
 1. A szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Szabályok definiálása egyező párokhoz](match-entities.md#define-rules-for-match-pairs).
@@ -154,7 +154,7 @@ Az egyező feltételek futtatása csak a deduplikációt és az egyezési szabá
 
 1. Az Adatok **egyesítése** > **lapon válassza a** következőt:
 
-   - **Ügyfélprofilok** egyesítése: Egyező feltételeket futtat, és a függőségek (például bővítések, szegmensek vagy mértékek) befolyásolása nélkül frissíti az egyesített ügyfélprofil-entitást. A függő folyamatok nem futnak, hanem a frissítési ütemezésben [meghatározottak szerint](system.md#schedule-tab) frissülnek.
+   - **Ügyfélprofilok** egyesítése: Egyező feltételeket futtat, és a függőségek (például bővítések, szegmensek vagy mértékek) befolyásolása nélkül frissíti az egyesített ügyfélprofil-entitást. A függő folyamatok nem futnak, hanem a frissítési ütemezésben [meghatározottak szerint](schedule-refresh.md) frissülnek.
 
    - **Ügyfélprofilok és függőségek** egyesítése: Egyező feltételeket futtat, és frissíti az egyesített profilt és az összes függőséget. Minden folyamat automatikusan újrafuttatható. Az összes lefelé irányuló folyamat befejezése után az ügyfélprofil tükrözi a frissített adatokat.
 

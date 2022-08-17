@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+ms.openlocfilehash: 6c951219410b55adc34691f677158b574cea1e01
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188050"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245698"
 ---
 # <a name="use-customer-consent"></a>Az ügyfél hozzájárulásának használata
 
@@ -70,6 +70,6 @@ Fontos, hogy folyamatosan frissítse az ügyfelek hozzájárulási állapotát. 
 
 Más szóval győződjön meg arról, hogy a Customer Insights szolgáltatásba importált forrásadatok mindig a legfrissebb információkkal rendelkeznek.
 
-További információ: [Szegmensek manuális](segments.md#refresh-segments) frissítése vagy [ütemezett frissítés](system.md#schedule-tab) konfigurálása.
+További információ: [Szegmensek manuális](segments.md#refresh-segments) frissítése vagy [ütemezett frissítés](schedule-refresh.md) konfigurálása.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

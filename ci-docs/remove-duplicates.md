@@ -2,7 +2,7 @@
 title: Távolítsa el az ismétlődéseket az adatok egyesítése előtt
 description: Az egyesítési folyamat második lépése annak kiválasztása, hogy melyik rekordot kell megőrizni, ha duplikátumokat talál.
 recommendations: false
-ms.date: 04/22/2022
+ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,20 +13,29 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a838fbdabdb3bfffc6d3835a3f0e97306a43964a
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139432"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213630"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Távolítsa el az ismétlődéseket az adatok egyesítése előtt
 
-Az egyesítés ezen lépése opcionálisan lehetővé teszi, hogy szabályokat állítson be az entitáson belüli ismétlődő rekordok kezelésére. *A deduplikáció* azonosítja az ismétlődő rekordokat, és egyetlen rekordba egyesíti őket. A forrásrekordokat a rendszer összekapcsolja az egyesített rekordokat alternatív azonosítókkal. Ha a szabályok nincsenek konfigurálva, a rendszer által definiált szabályokat alkalmazza.
+Az egyesítés ezen választható lépése lehetővé teszi, hogy szabályokat állítson be az entitáson belüli **ismétlődő rekordok** kiküszöbölésére. A deduplikáció több rekordot azonosít egy ügyfél számára, és kiválasztja a legjobb rekordot, amelyet meg kell őrizni (az alapvető egyesítési beállítások alapján), vagy egyesíti a rekordokat egybe (a speciális egyesítési beállítások alapján). A forrásrekordokat a rendszer összekapcsolja az egyesített rekordokat alternatív azonosítókkal. Ha a szabályok nincsenek konfigurálva, a rendszer által definiált szabályokat alkalmazza.
+
+## <a name="default-deduplication"></a>Alapértelmezett deduplikáció
+
+A rendszer által definiált szabályok akkor érvényesek, ha nincsenek deduplikációs szabályok hozzáadva.
+
+- Az elsődleges kulcs deduplikált.
+  Az azonos elsődleges kulccsal rendelkező rekordok esetében a **Legtöbb kitöltött** rekord (amelyik a legkevesebb null értékkel rendelkezik) a győztes.
+- Az entitások közötti egyezési szabályok az entitásra vonatkoznak.
+  Például: Az egyezési lépésben, ha az A entitást a FullName és a DateofBirth *B entitásával egyeztetik, akkor az A entitást a FullName* és *a DateofBirth* is deduplikálja *.* *·* Mivel *a FullName* és *a DateofBirth* érvényes kulcsok az A entitásban lévő ügyfél azonosítására, ezek a kulcsok az A entitás duplikált vevőinek azonosítására is érvényesek.
 
 ## <a name="include-enriched-entities-preview"></a>Bővített entitások belefoglalása (előzetes verzió)
 
-Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények javítása érdekében, válassza ki őket. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
+Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények javítása érdekében, válassza ki őket. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
 
 1. A Rekordok megkettőzése **lapon válassza a** Bővített entitások **használata lehetőséget** az oldal tetején.
 
