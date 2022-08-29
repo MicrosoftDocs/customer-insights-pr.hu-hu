@@ -6,19 +6,19 @@ ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
-ms.author: mukeshpo
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
-ms.translationtype: HT
+ms.openlocfilehash: 3f84c1c149f0befcbe489ccdd8a666ce6d5d798a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213630"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304476"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Távolítsa el az ismétlődéseket az adatok egyesítése előtt
 
@@ -35,7 +35,7 @@ A rendszer által definiált szabályok akkor érvényesek, ha nincsenek dedupli
 
 ## <a name="include-enriched-entities-preview"></a>Bővített entitások belefoglalása (előzetes verzió)
 
-Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények javítása érdekében, válassza ki őket. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
+Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények javítása érdekében, válassza ki őket. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
 
 1. A Rekordok megkettőzése **lapon válassza a** Bővített entitások **használata lehetőséget** az oldal tetején.
 
@@ -47,7 +47,7 @@ Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények
 
 1. **A Rekordok** megkettőzése lapon válasszon ki egy entitást, és válassza a Szabály **hozzáadása lehetőséget** a deduplikációs szabályok meghatározásához.
 
-   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Képernyőkép a Rekordoldalak megkettőzéséről a Kiemeltebb megjelenítése funkcióval":::
+   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Képernyőkép a Duplikált rekordok lapról, kiemelve az entitással és a Szabály hozzáadása felirattal"  lightbox="media/m3_duplicates_showmore.png":::
 
    1. **A Szabály** hozzáadása panelen adja meg a következő adatokat:
       - **Mező** kiválasztása: Válasszon az entitás elérhető mezőinek listájából, amelyeket ellenőrizni szeretne az ismétlődések után. Válassza ki a mezőket, amelyek valószínűleg egyediek minden egyes ügyfélnél. Például egy e-mail-cím, vagy a név, a város és a telefonszám kombinációja.
@@ -80,9 +80,9 @@ Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények
       - **Legtöbbet kitöltött**: A nyertes rekordként a legtöbb kitöltött attribútummezővel rendelkező rekordot adja meg. Ez az alapértelmezett egyesítési beállítás.
       - **Legújabb**: A nyertes rekordot az időbeli frissesség alapján adja meg. Az időbeli frissesség definiálásához dátum vagy numerikus mező szükséges.
       - **Legrégebbi**: A nyertes rekord a legkevésbé friss rekord lesz. Az időbeli frissesség definiálásához dátum vagy numerikus mező szükséges.
-      
+
       Döntetlen esetén a győztes rekord az, amelyik a MAX(PK) vagy a nagyobb elsődleges kulcsértékkel rendelkezik.
-      
+
    1. Ha egy entitás egyes attribútumain meg szeretné határozni az egyesítési beállításokat, válassza a Speciális **lehetőséget** a panel alján. Dönthet például úgy, hogy a legfrissebb e-mail címet és a legteljesebb címet tartja meg a különböző nyilvántartásokból. Bontsa ki az entitást az összes attribútumának megtekintéséhez, és határozza meg, hogy melyik beállítást használja az egyes attribútumokhoz. Ha a recency-alapú beállítást választja, meg kell adnia egy dátum/idő mezőt is, amely meghatározza a recency-t.
 
       :::image type="content" source="media/m3_adv_merge.png" alt-text="Speciális egyesítési beállítások panel a legutóbbi e-mail-cím és a teljes cím megjelenítésekor":::
@@ -96,18 +96,5 @@ Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények
 
 > [!div class="nextstepaction"]
 > [Több entitás következő lépése: Egyező feltételek](match-entities.md)
-
-## <a name="deduplication-output-as-an-entity"></a>Deduplikáció kimenete entitásként
-
-A deduplikációs folyamat új deduplikált entitást hoz létre az egyes forrásentitásokhoz. Ezek az entitások az **Entitások** lap **Rendszer** szakaszában a **ConflationMatchPairs:CustomerInsights** elemmel együtt találhatók meg **Deduplication_DataSource_Entity** névvel.
-
-A deduplikált kimeneti entitás a következő információkat tartalmazza:
-
-- Azonosítók / kulcsok
-  - Elsődleges kulcs és Alternatív azonosító mezők. Az Alternatív azonosító mező a rekordhoz azonosított összes alternatív azonosítóból áll.
-  - Deduplication_GroupId mező mutatja az entitáson belül azonosított csoportot vagy fürtöt, amely a hasonló bejegyzéseket a megadott deduplikáció mezők alapján csoportosítja. Ezt a rendszerfeldolgozási célokra használják. Ha nincsenek megadva manuális deduplikációs szabályok, és a rendszer által definiált deduplikációs szabályok vonatkoznak, akkor előfordulhat, hogy ez a mező nem található meg a deduplikálás kimeneti entitásban.
-  - Deduplication_WinnerId: Ez a mező tartalmazza az azonosított csoportokból vagy fürtökből a nyertes azonosítót. Ha a Deduplication_WinnerId megegyezik egy rekord elsődleges kulcsával, ez azt jelenti, hogy az a rekord lesz a győztes rekord.
-- A deduplikációs szabályok definiáló mezői.
-- Szabály és Pontszám mezők, amelyekben a deduplikációs szabályok alkalmazva lettek és az egyeztető algoritmus által visszaadott pontszám is megegyezik.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

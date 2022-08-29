@@ -1,7 +1,7 @@
 ---
 title: Exportálások (előzetes verzió) áttekintése
 description: Exportálások kezelése az adatok megosztásához.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
-ms.translationtype: HT
+ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245330"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304062"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
@@ -27,8 +27,8 @@ ms.locfileid: "9245330"
 
 Az exportálásnak két fő típusa van:  
 
-- **Adatkivételes exportálások**: exportáljon bármilyen típusú entitást, amely elérhető a Customer Insights szolgáltatásban. Az exportáláshoz kiválasztott entitásokat a rendszer az összes adatmezővel, metaadatmal, sémával és leképezési részlettel exportálja.
-- **Szegmensexportálás**: szegmensentitások exportálása a Customer Insights szolgáltatásból. A szegmensek az ügyfélprofilok listáját reprezentálják. Az exportálás konfigurálásakor kiválaszthatja a mellékelt adatmezőket attól függően, hogy melyik célrendszerbe exportálja az adatokat.
+- **Az adatkivételes exportálások** lehetővé teszik a Customer Insights szolgáltatásban elérhető bármilyen típusú entitás exportálását. Az exportáláshoz kiválasztott entitásokat a rendszer az összes adatmezővel, metaadatmal, sémával és leképezési részlettel exportálja.
+- **A szegmensexportálás** lehetővé teszi szegmensentitások exportálását a Customer Insights szolgáltatásból. Az egyéni fogyasztók (B-től C-ig) esetében a szegmensek az ügyfélprofilok listáját jelentik. A vállalkozások (B-től B-ig) [esetében a szegmensek a partnerek vagy kapcsolattartók listáját jelenthetik](segment-builder.md#create-a-new-segment-with-segment-builder). Az exportálás konfigurálásakor kiválaszthatja a mellékelt adatmezőket attól függően, hogy melyik célrendszerbe exportálja az adatokat.
 
 ### <a name="export-segments"></a>Szegmensek exportálása
 
@@ -38,14 +38,15 @@ A legtöbb exportálási lehetőség mindkét típusú környezetet támogatja. 
 **Szegmensexportálás az egyes ügyfelek környezeteibe (B-to-C)**  
 - Az egyéni ügyfelek környezeteihez kapcsolódó szegmensek az *egységes ügyfélprofil* entitáson alapulnak. A célrendszerek (például egy e-mail-cím) követelményeinek megfelelő minden szegmens exportálható.
 
-**Üzleti számlák környezetének szegmensexportálása (B-to-B)**  
-- Az üzleti partnerek környezetében a szegmensek a *partnerek* entitásán épülnek. A megfelelő partnerszegmensek exportálásához a célrendszernek támogatnia kell a partnerszegmenseket. Ez a [LinkedIn](export-linkedin-ads.md) esetében az az eset, amikor az exportálás definiálása során kiválasztja a **vállalat** beállítását.
-- Minden más célrendszerhez a kapcsolattartói entitás mezői szükségesek. Annak biztosításához, hogy a partnerszegmensek beolvassa az adatokat a kapcsolódó kapcsolattartókból, a szegmens definíciójának a kapcsolattartó entitás projektattribútumainak kell részét vennie. További információk a [szegmensek és projektattribútumok konfigurálásról](segment-builder.md).
+**Szegmensexportálás üzleti számlák környezetében (B-től B-ig)**  
+- Az üzleti számlák környezetének kontextusában lévő szegmensek a fiókentitásra *vagy a* *kapcsolattartó* entitásra épülnek. A megfelelő partnerszegmensek exportálásához a célrendszernek támogatnia kell a partnerszegmenseket. Ez a [LinkedIn](export-linkedin-ads.md) esetében az az eset, amikor az exportálás definiálása során kiválasztja a **vállalat** beállítását.
+- Minden más célrendszerhez a kapcsolattartói entitás mezői szükségesek.
+- Két szegmenstípussal (kapcsolattartókkal és partnerekkel) a Customer Insights automatikusan azonosítja, hogy a célrendszer alapján mely szegmenstípusok jogosultak exportálásra. Például egy olyan kapcsolatközpontú célrendszer esetében, mint a Mailchimp, a Customer Insights csak az exportálni kívánt kapcsolattartói szegmensek kiválasztását teszi lehetővé.
 
 **A szegmensexportálásra vonatkozó korlátozások**  
 - A külső célrendszerek korlátozhatják az exportálható ügyfélprofilok számát. 
-- Az egyes ügyfeleknél az exportálni kívánt szegmenstagok tényleges számát láthatja. Figyelmeztetés jelenik meg, ha egy szegmens túl nagy. 
-- Az üzleti partnerek esetében egy-egy szegmensben látható a partnerek száma; az esetleg kivetített kapcsolattartók száma azonban nem fog megjelenni. Bizonyos esetekben ez ahhoz az exportált szegmenshez vezethet, amely ténylegesen több ügyfélprofilt tartalmaz, mint amit a célrendszer elfogad. Ha túllépi a célrendszer korlátait, a rendszer kihagyja az exportálást.
+- Az egyes ügyfeleknél az exportálni kívánt szegmenstagok tényleges számát láthatja. Figyelmeztetést kap, ha egy szegmens túl nagy. 
+- Üzleti fiókok esetén a szegmenstől függően láthatja a partnerek vagy kapcsolattartók számát. Figyelmeztetést kap, ha a szegmens túl nagy. A célrendszer eredményeinek túllépése kihagyja az exportálást.
 
 ## <a name="set-up-a-new-export"></a>Új exportálás beállítása
 
@@ -110,6 +111,20 @@ Több exportálás ütemezésének szerkesztésekor válasszon az Ütemezések *
 
 - Az összes exportálás futtatásához válassza az **Összes futtatása** lehetőséget. Csak az aktív ütemezéssel rendelkező exportálások futnak. Nem aktív exportálás futtatásához futtasson egyetlen exportálást.
 - Egyetlen exportálás futtatásához jelölje ki azt a listában, és válassza a **Futtatás** lehetőséget a parancssávon.
+
+## <a name="troubleshooting"></a>Hibaelhárítás
+
+### <a name="segment-not-eligible-for-export"></a>Exportálásra nem jogosult szegmens
+
+**Probléma** Az üzleti fiókok környezetén belül az exportálás a következő hibaüzenettel meghiúsul: "A következő szegmens nem jogosult erre az exportálási célhelyre: '{szegmens} neve'. Kérjük, csak a ContactProfile típusú szegmenseket válassza ki, és próbálkozzon újra."
+
+**Az üzleti fiókok Customer Insights-környezeteinek megoldása** frissítve lett, hogy a fiókszegmensek mellett a kapcsolattartói szegmenseket is támogassa. A változás miatt a kapcsolattartási adatokat igénylő exportálások csak a kapcsolattartókon alapuló szegmensekkel működnek.
+
+1. [Hozzon létre egy szegmenst a névjegyek](segment-builder.md) alapján, amely megfelel a korábban használt szegmensnek.
+
+1. A kapcsolattartói szegmens futtatása után szerkessze a megfelelő exportálást, és válassza ki az új szegmenst.
+
+1. Válassza a Mentés **lehetőséget** a konfiguráció mentéséhez, vagy **a Mentés és futtatás lehetőséget** az exportálás azonnali teszteléséhez.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

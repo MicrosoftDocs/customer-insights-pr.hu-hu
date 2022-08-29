@@ -1,7 +1,7 @@
 ---
 title: Szegmensek áttekintése
 description: A szegmensek áttekintése, valamint információk a létrehozásukról és kezelésükről.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
-ms.translationtype: HT
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246296"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304798"
 ---
 # <a name="segments-overview"></a>Szegmensek áttekintése
 
 A szegmensek segítségével csoportosíthatja ügyfeleit demográfiai-, tranzakciós- vagy viselkedési tulajdonságok alapján. A szegmensekkel népszerűsítheti az üzleti célok eléréséhez használható promóciós kampányokat, értékesítési tevékenységeket és ügyfélszolgálati tevékenységeket.
 
-A szegmensdefiníciók szűrőinek megfelelő ügyfélprofilokat egy szegmens tagjainak *nevezzük*. Bizonyos [szolgáltatási korlátozások](/dynamics365/customer-insights/service-limits) érvényesek.
+A szegmensdefiníciók szűrőinek megfelelő ügyfél- vagy kapcsolattartói profilokat egy szegmens tagjainak *nevezzük*. Bizonyos [szolgáltatási korlátozások](/dynamics365/customer-insights/service-limits) érvényesek.
 
 ## <a name="create-a-segment"></a>Szegmens létrehozása
 
@@ -41,13 +41,19 @@ Válassza ki, hogyan szeretne szegmenst létrehozni a cél célközönség alapj
 
 # <a name="business-accounts-b-to-b"></a>[Üzleti számlák (B-to-B)](#tab/b2b)
 
-- Egyszerű vagy összetett szegmensek a szegmensépítővel: [Készítse el sajátját](segment-builder.md)
+Fiókok vagy kapcsolattartók szegmense (előzetes verzió) a szegmensépítővel: [Készítse el sajátját](segment-builder.md)
+
+> [!NOTE]
+> A legtöbb exportálási célhelyhez marketing célokra kapcsolattartási adatokra van szükség. Ezért hozzon létre kapcsolattartói szegmenseket az exportálásokhoz.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Meglévő szegmensek kezelése
 
-**A Szegmensek** lapon megtekintheti a létrehozott szegmenseket, azok állapotát és állapotát, a tagok számát és az adatok legutóbbi frissítésének időpontját. A szegmensek listáját rendezheti bármely oszlop szerint, vagy a keresőmező segítségével megkeresheti a kezelni kívánt szegmenst.
+**A Szegmensek** lapon megtekintheti a létrehozott szegmenseket, azok állapotát és állapotát, valamint az adatok legutóbbi frissítésének időpontját. A szegmensek listáját rendezheti bármely oszlop szerint, vagy a keresőmező segítségével megkeresheti a kezelni kívánt szegmenst.
+
+> [!TIP]
+> B-to-B környezetekben a **célközönség Típus** oszlop azonosítja, hogy egy szegmens partnereken vagy kapcsolattartókon alapul-e.
 
 Válasszon ki egy szegmenst az elérhető műveletek megtekintéséhez.
 
@@ -82,7 +88,7 @@ Az alsó rész a szegmenstagok listáját tartalmazza.
 > [!NOTE]
 > Az adott listában megjelenő mezők a szegmens entitásainak attribútumain alapulnak.
 >
->A lista az egyeztetett szegmestagok előzetes verziója, és a szegmens első 100 rekordját mutatja, így gyorsan kiértékelheti, és szükség esetén felülvizsgálhatja a meghatározásokat. Az összes egyező rekord [megtekintéséhez exportálja a szegmenst](export-destinations.md).
+> A lista az egyeztetett szegmestagok előzetes verziója, és a szegmens első 100 rekordját mutatja, így gyorsan kiértékelheti, és szükség esetén felülvizsgálhatja a meghatározásokat. Az összes egyező rekord megtekintéséhez válassza a Továbbiak megtekintése lehetőséget **, amely megnyitja az** Entitások [**lapot, vagy**](entities.md) exportálja a szegmenst [.](export-destinations.md)
 
 ## <a name="refresh-segments"></a>Szegmensek frissítése
 

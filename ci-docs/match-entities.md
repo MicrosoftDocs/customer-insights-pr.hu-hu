@@ -2,7 +2,7 @@
 title: Az adategyesítés egyezési feltételei
 description: Entitások egyeztetése az egyesített ügyfélprofilok létrehozásához.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139706"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304660"
 ---
 # <a name="match-conditions-for-data-unification"></a>Az adategyesítés egyezési feltételei
 
@@ -27,6 +27,8 @@ Az egyesítés ezen lépése határozza meg az egyezési sorrendet és az entit�
 
 > [!NOTE]
 > Miután létrehozta az egyezési feltételeket, és a Tovább **lehetőséget választotta**, nem távolíthat el egy kiválasztott entitást vagy attribútumot. Ha szükséges, válassza a Vissza **lehetőséget** a kiválasztott entitások és attribútumok áttekintéséhez a folytatás előtt.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Bővített entitások belefoglalása (előzetes verzió)
 
@@ -43,16 +45,16 @@ Ha a adatforrás szinten bővítette az entitásokat az egyesítési eredmények
 Mindegyik egyezés két vagy több entitást egyesül egyetlen, összesített entitásban. Ugyanakkor megőrzi az egyéni ügyfélrekordokat is. Az egyezési sorrend azt a sorrendet jelzi, amelyben a rendszer megpróbálja egyeztetni a rekordokat.
 
 > [!IMPORTANT]
-> A lista első entitását elsődleges entitásnak nevezzük. Az elsődleges entitás szolgál az egyesített profilok adatkészletének alapjául. A kiválasztott további entitások hozzáadódnak ehhez az entitáshoz.
+> Az első entitást elsődleges entitásnak nevezzük, amely az egyesített profilok alapjául szolgál. A kiválasztott további entitások hozzáadódnak ehhez az entitáshoz.
 >
 > Fontos szempontok:
 >
 > - Elsődleges entitásként válassza ki azt az entitást, amely a legteljesebb és legmegbízhatóbb profiladatokat tartalmazza az ügyfelekről.
 > - Elsődleges entitásként azt az entitást válassza ki, amely több, más entitásokkal közös attribútummal (például névvel, telefonszámmal vagy e-mail-címmel) rendelkezik.
 
-1. Az Egyező feltételek **lapon a** felfelé és lefelé mutató nyilakkal mozgassa az entitásokat a kívánt sorrendben, vagy húzza át őket. Válassza például a **Contacts:eCommerce** lehetőséget elsődleges entitásként, és **a CustomerLoyalty:Loyalty-t** második entitásként.
+1. Az Egyező feltételek **lapon a** felfelé és lefelé mutató nyilakkal mozgassa az entitásokat a kívánt sorrendben, vagy húzza át őket. Válassza például az **eCommerceCustomers** lehetőséget elsődleges entitásként, **a loyCustomers** pedig a második entitást.
 
-1. Ha azt szeretné, hogy az entitás minden rekordja egyedi ügyfél legyen, függetlenül attól, hogy talál-e egyezést, válassza az Összes rekord **belefoglalása lehetőséget**. Az entitás minden olyan rekordja, amely nem egyezik meg más entitások rekordjaival, szerepel az egyesített profilban. Azokat a rekordokat, amelyeknek nincs egyezésük, singletonoknak nevezzük.
+1. Ha azt szeretné, hogy az entitás minden rekordja egyedi ügyfél legyen, függetlenül attól, hogy talál-e egyezést, válassza az Összes rekord **belefoglalása lehetőséget**. Az entitás minden olyan rekordja, amely nem egyezik meg egyetlen más entitás rekordjaival sem, szerepel az egyesített profilban. Azokat a rekordokat, amelyeknek nincs egyezésük, singletonoknak nevezzük.
   
 A Contacts:eCommerce elsődleges entitás *megegyezik a következő CustomerLoyalty:Loyalty* entitással *.* Az első egyezési lépésből származó adatkészlet a következő entitással lesz párosítva, ha kettőnél több entitással rendelkezik.
 
@@ -70,7 +72,7 @@ Az entitásnév melletti figyelmeztetés azt jelenti, hogy egyezőpárhoz nincs 
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Képernyőkép: a Szabály hozzáadása panel.":::
 
-   - **Entitás/mező (első sor)**: Válasszon ki egy kapcsolódó entitást és egy attribútumot egy olyan rekordtulajdonság megadásához, amely valószínűleg egyedi a vevő számára. Például egy telefonszám vagy egy e-mail-cím. Kerülje az tevékenységtípus-attribútumok egyeztetését. A vásárlási azonosító például valószínűleg nem talál egyezést más rekordtípusban.
+   - **Válassza az Entitás/mező (első sor)**: Válasszon ki egy entitást és egy olyan attribútumot, amely valószínűleg egyedi a vevő számára. Például egy telefonszám vagy egy e-mail-cím. Kerülje az tevékenységtípus-attribútumok egyeztetését. A vásárlási azonosító például valószínűleg nem talál egyezést más rekordtípusban.
 
    - **Entitás/mező (második sor)**: Válasszon ki egy olyan attribútumot, amely az első sorban megadott entitás attribútumához kapcsolódik.
 
@@ -116,11 +118,11 @@ Az egyezési szabályok feltételek egy csoportját jelentik. Ha az entitásokat
 
 ### <a name="add-exceptions-to-a-rule"></a>Kivételek hozzáadása egy szabályhoz
 
-A legtöbb esetben az entitásegyeztetés egyedi ügyfélprofilokhoz vezet, konszolidált adatokkal. A hamis pozitív és hamis negatívok ritka eseteinek dinamikus kezeléséhez kivételeket határozhat meg egy egyező szabályhoz. A kivételeket a rendszer az egyezési szabályok feldolgozása után alkalmazza, és elkerüli az összes olyan rekord egyeztetését, amely megfelel a kivételi feltételeknek.
+A legtöbb esetben az entitásegyeztetés egyedi ügyfélprofilokhoz vezet, konszolidált adatokkal. A hamis pozitív és hamis negatívok ritka eseteinek kezeléséhez határozzon meg kivételeket egyezési szabályhoz. A kivételeket a rendszer az egyezési szabályok feldolgozása után alkalmazza, és elkerüli az összes olyan rekord egyeztetését, amely megfelel a kivételi feltételeknek.
 
 Ha például az egyezési szabály vezetéknév, a várost és a születési dátumot kombinálja, a rendszer azonosítja azokat az ikereket, akiknek ugyanaz a vezetéknév, akik ugyanabban a városban élnek, mint az azonos profil. Megadhat olyan kivételt, amely nem egyezik meg a profilokkal, ha a kombinált entitások utónév nem azonosak.
 
-1. A Szabály **szerkesztése panelen válassza a** Kivétel **hozzáadása** > **lehetőséget**.
+1. A Szabály **szerkesztése panelen válassza a** Kivétel hozzáadása **lehetőséget** > **·**.
 
 1. Adja meg a kivételfeltételeket.
 
@@ -134,14 +136,14 @@ Megadhat olyan feltételeket, amelyek felülbírálják az alapértelmezett egye
 |---------|---------|---------|
 |Mindig egyezik     | Meghatározza a mindig egyező értékeket.         |  Mindig egyezzen Mike-tal *és* *MikeR-rel*.       |
 |Soha nem egyezik     | Olyan értékeket határoz meg, amelyek soha nem egyeznek meg.        | Soha ne egyezzen meg *Johnnal* és *Jonathannal*.        |
-|Egyéni megkerülő     | Meghatározza azokat az értékeket, amelyeket a rendszernek mindig figyelmen kívül kell hagynia az egyeztetési fázisban. |  Hagyja figyelmen kívül a 11111 *és* az Ismeretlen *értékeket* az egyeztetés során.        |
+|Megkerülés            | Meghatározza azokat az értékeket, amelyeket a rendszernek mindig figyelmen kívül kell hagynia az egyeztetési fázisban. |  Hagyja figyelmen kívül a 11111 *és* az Ismeretlen *értékeket* az egyeztetés során.        |
 |Aliasleképezés    | Olyan értékek meghatározása, amelyeket a rendszernek azonos értéknek kell tekintenie.         | Gondold úgy *, hogy Joe* egyenlő *Josephfel*.        |
 
 1. **Egyedi** kiválasztása.
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Egyéni gomb":::
 
-1. Válassza az **Egyéni típust,** majd a Sablon letöltése **lehetőséget**. Minden egyes egyeztetési lehetőséghez külön sablonra van szükség.
+1. Válassza az **Egyéni típust,** majd a Sablon **letöltése lehetőséget**. Minden egyes egyeztetési lehetőséghez külön sablonra van szükség.
 
 1. Nyissa meg a letöltött sablonfájlt, és töltse ki a részleteket. A sablon mezőket tartalmaz, amelyek meghatározzák az entitást és az egyéni egyeztetésben használandó entitás elsődleges kulcsértékeit. Ha például azt szeretné, hogy az *Értékesítés* entitás *12345* elsődleges kulcsa mindig megegyezzen a *Kapcsolattartó* entitás *34567* elsődleges kulcsával, töltse ki a sablont:
     - Entity1: Értékesítés

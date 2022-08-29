@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+ms.openlocfilehash: 0c8edfd8f45ce7770d568811df2b38be1b04e73a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188096"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303786"
 ---
 # <a name="view-customer-profiles"></a>Ügyfélprofilok megtekintése
 
@@ -78,7 +78,7 @@ Az ügyféladatok a következőket tartalmazza:
 **Az Ügyfélprofil csempe** az egyesített Ügyfél *entitás különböző értékeit jeleníti meg*. Ha egy mezőnek nincs értéke a kiválasztott vevői profilhoz, akkor a címmező kivételével nem jelenik meg. A mozaik szakaszokra van felosztva:
 
 - Az első szakasz a mezők előre megadott halmazát, majd a keresés és szűrőindex részét képezi. Az összes címhez kapcsolódó mező egyetlen sorba van egyesítve, amely akkor is megjelenik, ha a profil nem tartalmaz címadatokat.
-- **Az ügyfél** kapcsolattartói az üzleti fiókok környezetében jelennek meg. Minden kapcsolattartó megjelenik a saját mezőivel. Az üres mezők rejtettek.
+- **Az ügyfél** kapcsolattartói az üzleti fiókok környezetében (B-től B-ig) jelennek meg. Minden kapcsolattartó megjelenik a saját mezőivel. Az üres mezők rejtettek.
 - **A további mezők** a kiválasztott vevő fennmaradó mezőit jelenítik meg, az azonosítók kivételével.
 - **Az azonosítók** az összes azonosítót a megfelelő entitásnév alatt sorolják fel. A mezőket szemantikája alapján azonosítóként azonosítják.
 

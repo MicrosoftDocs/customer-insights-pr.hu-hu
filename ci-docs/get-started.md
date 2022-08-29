@@ -1,25 +1,25 @@
 ---
-title: Ismerkedés a Dynamics 365 Customer Insights rendszerrel
-description: A Customer Insights áttekintése segít az erőforrásoknak a gyors üzembe helyezésben.
-ms.reviewer: v-wendysmith
+title: Első lépések a Dynamics 365 Customer Insights alkalmazásban
+description: A Customer Insights áttekintése segít a források gyors megkezdésében.
+ms.reviewer: mhart
 ms.author: mhart
 author: m-hartmann
-ms.date: 04/12/2022
-ms.subservice: engagement-insights
+ms.date: 08/31/2021
+ms.subservice: audience-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 1c925110f40319df77940d1c32f24a99504d6ec6
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: ce0336c4bf853bc81ec01c45410169a63b69eb03
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011982"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304614"
 ---
-# <a name="get-started-with-dynamics-365-customer-insights"></a>Ismerkedés a Dynamics 365 Customer Insights rendszerrel
+# <a name="get-started-with-dynamics-365-customer-insights"></a>Első lépések a Dynamics 365 Customer Insights alkalmazásban
 
 A Customer Insights segítségével mélyebben megértheti ügyfeleit. A különböző tranzakciós, viselkedésbeli és megfigyelési forrásokból származó adatok összekapcsolhatók a 360 fokos ügyfélnézet létrehozásához. Ezekkel a betekintéssel ügyfélközpontú élményeket és folyamatokat támogathat. Az ügyféladatokat egyesítheti és megértheti, és kiaknázhatja a belőlük származó intelligens összefüggéseket és műveleteket.
 

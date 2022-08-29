@@ -2,7 +2,7 @@
 title: Ügyfélmezők egyesítése az adatok egyesítéséhez
 description: Entitások egyesítése az egyesített ügyfélprofilok létrehozásához.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
-ms.translationtype: HT
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213585"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304016"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Ügyfélmezők egyesítése az adatok egyesítéséhez
+# <a name="unify-customer-fields"></a>Ügyfélmezők egyesítése
 
-Az egyesítési folyamat ezen lépésében válassza ki és zárja ki az egyesített profil entitáson belüli egyesíteni kívánt attribútumokat. Ha például három entitás rendelkezett e-mail adatokkal, érdemes lehet megtartani mindhárom különálló e-mail mezőt, vagy egyesíteni őket egyetlen e-mail mezőbe az egyesített profilhoz. Egyes attribútumokat a rendszer automatikusan kombinál. Létrehozhat stabil és egyedi ügyfél-azonosítókat, és csoportosíthatja a kapcsolódó profilokat egy fürtbe.
+Az egyesítési folyamat ezen lépésében válassza ki és zárja ki az egyesített profil entitáson belüli egyesíteni kívánt attribútumokat. Ha például három entitás rendelkezett e-mail adatokkal, érdemes lehet megtartani mindhárom különálló e-mail mezőt, vagy egyesíteni őket egyetlen e-mail mezőbe az egyesített profilhoz. Egyes attribútumokat a rendszer automatikusan kombinál. Stabil és egyedi ügyfél-azonosítókat hozhat létre. Az egyes ügyfelek esetében a kapcsolódó profilokat fürtbe csoportosíthatja.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Oldalak egyesítése az adategyesítési folyamatban; az egységes ügyfélprofilt meghatározó egyesített mezőket tartalmazó táblázat látható.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Az ügyfélmezők egyesítése lap az adategyesítési folyamatban, amely a táblát az egyesített ügyfélprofilt meghatározó egyesített mezőkkel jeleníti meg.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Az ügyfélmezők áttekintése és frissítése
 
@@ -47,7 +47,7 @@ Az egyesítési folyamat ezen lépésében válassza ki és zárja ki az egyesí
 
 1. [Igény szerint hozza létre az ügyfél-azonosító konfigurációját](#configure-customer-id-generation).
 
-1. A profilokat nem kötelezően [háztartásokba vagy klaszterekbe csoportosíthatja](#group-profiles-into-households-or-clusters).
+1. A B-től C-ig terjedő időszak esetében nem kötelezően [csoportosíthatja a profilokat háztartásokba vagy klaszterekbe](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Következő lépés: Egységesítés áttekintése](review-unification.md)
@@ -161,7 +161,7 @@ A megbízható ügyfélazonosító konfigurálása lehetővé teszi, hogy elker�
 
 ## <a name="group-profiles-into-households-or-clusters"></a>A csoportos profilokat háztartásokba vagy fürtökbe kell csoportosítani
 
-Szabályokat határozhat meg a kapcsolódó profilok fürtbe csoportosításához. Jelenleg két fürttípus áll rendelkezésre: háztartási és egyéni fürtök. A rendszer automatikusan kiválasztja az előre definiált szabályokkal való használatot, ha az *Ügyfél* entitása a *Person.LastName* és *Location.Address* szemantikus mezőket tartalmazza. Az [egyező szabályokhoz](match-entities.md#define-rules-for-match-pairs) hasonlóan saját szabályokkal és feltételekkel is létrehozhat fürtöt.
+Az egyes ügyfelek számára szabályokat határozhat meg a kapcsolódó profilok fürtbe csoportosításához. Jelenleg két fürttípus áll rendelkezésre: háztartási és egyéni fürtök. A rendszer automatikusan kiválasztja az előre definiált szabályokkal való használatot, ha az *Ügyfél* entitása a *Person.LastName* és *Location.Address* szemantikus mezőket tartalmazza. Az [egyező szabályokhoz](match-entities.md#define-rules-for-match-pairs) hasonlóan saját szabályokkal és feltételekkel is létrehozhat fürtöt.
 
 1. Válassza a Speciális **fürt** > **létrehozása lehetőséget**.
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
-ms.translationtype: HT
+ms.openlocfilehash: fb747f7adc7d87f30f66c5d0ed20bbe238558fde
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245882"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304522"
 ---
 # <a name="data-enrichment-preview-overview"></a>Az adatgazdagítás (előzetes verzió) áttekintése
 
@@ -95,7 +95,7 @@ A futtatás után a gazdagítások automatikus ütemezéssel frissíthetők, vag
 
 ### <a name="see-the-progress-of-the-enrichment-process"></a>A gyarapítási folyamat előrehaladásának megtekintése
 
-A gyarapítás feldolgozásáról részleteket, köztük az állapotot és a lehetséges problémákat megismerheti a frissítés közben vagy egy frissítés befejezése után. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
+A gazdagítás feldolgozásával kapcsolatos részleteket, többek között az állapotát és a frissítés befejezése után felmerülő lehetséges problémákat is megtalálhatja. Megtudhatja, milyen folyamatok voltak érintettek egy bővítés frissítésében, és mennyi ideig tartott a folyamatok futtatása. A gyarapítási állapot támogatott az Experian, a Leadtér, a HERE Technologies, az SFTP Import és az Azure Maps esetében.
 
 1. Lépjen az **Adatok** > **Bővítés** pontra.
 1. **A Saját bővítések** lapon válassza ki a gazdagítás állapotát egy oldalsó panel megnyitásához.

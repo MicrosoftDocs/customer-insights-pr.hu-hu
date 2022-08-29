@@ -1,19 +1,19 @@
 ---
 title: Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 description: Ismerje meg, hogyan konfigurálhatja a kapcsolatot, és hogyan exportálhatja a LinkedIn Adsbe.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196811"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304706"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 
@@ -24,7 +24,7 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 - Egy [LinkedIn Campaign Manager fiók](https://business.linkedin.com/marketing-solutions/ads) és a megfelelő rendszergazdai hitelesítő adatok.
 - Fiókazonosító [LinkedIn Campaign Manager](https://www.linkedin.com/help/lms/answer/a424270).
 - [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
-- Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
+- Az exportált szegmenseknek legalább egy adott mezőre van szükségük attól függően, hogy a kapcsolattartók célzását [vagy](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) a vállalati célzást [választja](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) a LinkedInen. A lehetséges mezők az **Adategyeztetés** lépésben vannak felsorolva az exportálás [konfigurálásakor](#configure-an-export).
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 

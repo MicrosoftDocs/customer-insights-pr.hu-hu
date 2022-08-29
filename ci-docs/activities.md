@@ -1,9 +1,9 @@
 ---
-title: Ügyféltevékenységek
-description: Ügyféltevékenységek meghatározása és azok megtekintése az ügyfélprofilok idővonalán.
-ms.date: 07/22/2022
+title: Ügyfél- vagy üzleti kapcsolatfelvételi tevékenységek
+description: Határozza meg az ügyfelek vagy üzleti kapcsolattartói tevékenységeket, és tekintse meg őket az ügyfélprofilok idővonalán.
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -16,19 +16,19 @@ searchScope:
 - ci-activities-wizard
 - ci-measures
 - ci-segment-suggestions
-- customerInsight
-ms.openlocfilehash: cc21b0eeb368156437e60d851c2d144f3974c066
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+- customerInsights
+ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188142"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304108"
 ---
-# <a name="customer-activities"></a>Ügyféltevékenységek
+# <a name="customer-or-business-contact-activities"></a>Ügyfél- vagy üzleti kapcsolatfelvételi tevékenységek
 
-Az ügyféltevékenységek az ügyfelek által végrehajtott műveletek vagy események. Például tranzakciók, támogatási hívások időtartama, webhely-áttekintések, vásárlások vagy visszaküldések. Ezeket a tevékenységeket egy vagy több adatforrás tartalmazza. A Customers Insights segítségével konszolidálhatja az ezekből az [adatforrásokból](data-sources.md) származó ügyféltevékenységeket, és társíthatja őket az ügyfélprofilokhoz. Ezek a tevékenységek időrendben jelennek meg az ügyfélprofil idővonalán. Foglalja bele az idővonalat a Dynamics 365 alkalmazásokba az [Ügyfélkártya bővítménymegoldással](customer-card-add-in.md).
+Az ügyféltevékenységek az ügyfelek vagy az üzleti kapcsolattartók által végrehajtott műveletek vagy események. Például tranzakciók, támogatási hívások időtartama, webhely-áttekintések, vásárlások vagy visszaküldések. Ezeket a tevékenységeket egy vagy több adatforrás tartalmazza. A Customers Insights segítségével konszolidálhatja az ezekből az [adatforrásokból](data-sources.md) származó ügyféltevékenységeket, és társíthatja őket az ügyfélprofilokhoz. Ezek a tevékenységek időrendben jelennek meg az ügyfélprofil idővonalán. Foglalja bele az idővonalat a Dynamics 365 alkalmazásokba az [Ügyfélkártya bővítménymegoldással](customer-card-add-in.md).
 
-## <a name="define-an-activity"></a>Egy tevékenység definiálása
+## <a name="define-a-customer-activity"></a>Vevői tevékenység definiálása
 
 Az entitásnak rendelkeznie kell legalább egy Dátum **típusú** attribútummal ahhoz, hogy szerepeljen az ügyfél idővonalán. A **Tevékenység hozzáadása** vezérlő le van tiltva, ha nem talál ilyen entitást.
 
@@ -38,9 +38,9 @@ Az entitásnak rendelkeznie kell legalább egy Dátum **típusú** attribútumma
 
 1. **A Tevékenységadatok** lépésben adja meg a következő adatokat:
 
-   - **Tevékenység neve**: A tevékenység neve.
-   - **Tevékenységentitás**: Tranzakciós vagy tevékenységadatokat tartalmazó entitás.
-   - **Elsődleges kulcs**: A rekordot egyedileg azonosító mező. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
+   - **Tevékenység neve**: Válassza ki a tevékenység nevét.
+   - **Tevékenységentitás**: Válasszon ki egy entitást, amely tranzakciós vagy tevékenységadatokat tartalmaz.
+   - **Elsődleges kulcs**: Válassza ki azt a mezőt, amely egyértelműen azonosítja a rekordot. Nem tartalmazhat ismétlődő értékeket, üres értékeket vagy hiányzó értékeket.
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="A tevékenységadatokat állítása be névvel, entitással és elsődleges kulcssal.":::
 
@@ -48,9 +48,9 @@ Az entitásnak rendelkeznie kell legalább egy Dátum **típusú** attribútumma
 
 1. A Kapcsolat **lépésben válassza a** Kapcsolat **hozzáadása lehetőséget**, hogy összekapcsolja a tevékenységadatokat a megfelelő ügyfélrekorddal. Ez a lépés az entitások közötti kapcsolatot ábrázolja.  
 
-   - **Idegen kulcs az entitástól**: A tevékenységentitás azon mezője, amely egy másik entitással való kapcsolat létrehozására szolgál.
+   - **Idegen kulcs**: A tevékenységegység idegen mezője, amelyet egy másik entitással való kapcsolat létrehozására fog használni.
    - **Entitásnévhez**: Megfelelő forrás ügyfélentitás, amellyel a tevékenységentitás kapcsolatban lesz. Csak az adategyesítési folyamatban használt forrás ügyfélentitásokhoz tud kapcsolódni.
-   - **Kapcsolat neve**: Az entitások közötti kapcsolatot azonosító név. Ha már létezik kapcsolat a tevékenységentitás és a kiválasztott forrás ügyfélentitás között, a kapcsolat neve csak olvasható.
+   - **Kapcsolat neve**: Ha már létezik kapcsolat a tevékenységentitás és a kiválasztott forrás ügyfélentitás között, a kapcsolat neve csak olvasható módban lesz. Ha ilyen kapcsolat nem létezik, új kapcsolat jön létre a mezőben megadott névvel.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definiálja az entitás kapcsolatát.":::
 
@@ -90,7 +90,7 @@ Az entitásnak rendelkeznie kell legalább egy Dátum **típusú** attribútumma
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
-## <a name="manage-existing-activities"></a>Meglévő tevékenységek kezelése
+## <a name="manage-existing-customer-activities"></a>Meglévő ügyféltevékenységek kezelése
 
 Az **Adattevékenységek** > **lapon** megtekintheti a mentett tevékenységeket, azok forrásentitását, a tevékenység típusát, valamint azt, hogy szerepelnek-e az ügyfél idővonalán. A tevékenységek listáját bármely oszlop szerint rendezheti, vagy a keresőmező segítségével megkeresheti a kezelni kívánt tevékenységet.
 
@@ -116,9 +116,43 @@ Válasszon ki egy tevékenységet az elérhető műveletek megtekintéséhez.
 
      :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="A szűrőpanelen konfigurálhatja a szűrési feltételeket.":::
 
-1. A szűrők eltávolításához válassza a Szűrők törlése lehetőséget **, vagy válassza a Szűrő** lehetőséget **, és törölje a szűrő jelölőnégyzet jelölését.**
-
 > [!NOTE]
 > A tevékenységszűrőket a rendszer eltávolítja, amikor elhagyja az ügyfélprofilt. Minden alkalommal alkalmaznia kell őket, amikor megnyit egy ügyfélprofilt.
+
+## <a name="define-a-contact-activity"></a>Kapcsolatfelvételi tevékenység meghatározása
+
+Üzleti fiókok (B-től B-ig) esetén használjon ContactProfile *entitást* a kapcsolattartók tevékenységeinek rögzítéséhez. A fiók tevékenység-idővonalán láthatja, hogy melyik kapcsolattartó volt felelős az egyes tevékenységekért. A legtöbb lépés az ügyféltevékenység-leképezés konfigurációját követi.
+
+   > [!NOTE]
+   > Kapcsolattartói szintű tevékenység meghatározásához létre kell hozni egy *ContactProfile* entitást, akár egyesített kapcsolattartási [profilként](data-unification-contacts.md), akár szemantikai leképezésen [keresztül](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+   >
+   > A tevékenységadatokban szereplő minden rekordhoz accountid és ContactID **attribútummal is rendelkeznie** kell.**·**
+  
+1. Lépjen az **Adattevékenységek** > **oldalra**.
+
+1. Válassza a Tevékenység **hozzáadása lehetőséget**.
+
+1. Nevezze el a tevékenységet, válassza ki a forrástevékenység-entitást, és válassza ki a tevékenységentitás elsődleges kulcsát.
+
+1. **A kapcsolatok** lépésben hozzon létre közvetett kapcsolatot a tevékenységforrás adatai és a fiókok között, a kapcsolattartási adatokat köztes entitásként használva. További információ: [Közvetlen és közvetett kapcsolati útvonalak](relationships.md#relationship-paths).
+   - Példa kapcsolat a Vásárlások *nevű* tevékenységre:
+      - **Megvásárolja a forrástevékenységi adatok kapcsolattartási adatait** > **a** ContactID **attribútumon**
+      - **Kapcsolattartási adatok** > **Fiókadatok** az AccountID **attribútumon**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Példa kapcsolatbeállításra.":::
+
+1. A kapcsolatok beállítása után válassza a Tovább **lehetőséget**, és fejezze be a tevékenység-leképezés konfigurációját. A tevékenység létrehozásával kapcsolatos részletes lépésekért lásd: [Vevői tevékenység](#define-a-customer-activity) definiálása.
+
+1. Futtassa a tevékenységleképezéseket.
+
+1. A kapcsolattartói szintű tevékenységek mostantól láthatók lesznek az ügyfél idővonalán.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Végeredmény a kapcsolattartási tevékenységek konfigurálása után":::
+
+## <a name="contact-level-activity-timeline-filtering"></a>Kapcsolattartói szintű tevékenységek idővonalának szűrése
+
+A kapcsolattartói szintű tevékenységleképezés konfigurálása és futtatása után az ügyfelek tevékenység-ütemterve frissül. Tartalmazza az azonosítóikat vagy nevüket, a *ContactProfile* konfigurációjától függően, azokhoz a tevékenységekhez, amelyeken cselekedtek. Az idővonalon névjegyek szerint szűrheti a tevékenységeket, hogy megtekinthesse az Önt érdeklő konkrét névjegyeket. Ezenkívül megtekintheti az összes olyan tevékenységet, amely nincs hozzárendelve egy adott kapcsolattartóhoz, ha kiválasztja **a Nem** partnerhez hozzárendelt tevékenységek lehetőséget.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="A kapcsolattartói szintű tevékenységekhez rendelkezésre álló szűrési lehetőségek érhetők el.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

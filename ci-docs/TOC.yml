@@ -76,6 +76,8 @@
       href: merge-entities.md
     - name: Adatok egységesítésének áttekintése
       href: review-unification.md
+    - name: Egyesített kapcsolattartói profil létrehozása
+      href: data-unification-contacts.md
     - name: Az egyesítési beállítások frissítése
       href: data-unification-update.md
 - name: Adatbővítés
