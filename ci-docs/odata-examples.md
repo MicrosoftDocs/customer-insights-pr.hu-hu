@@ -1,27 +1,27 @@
 ---
 title: OData-lekérdezési példák Customer Insights API-khoz
 description: Gyakran használt példák az Open Data Protocol (OData) számára a Customer Insights API-k lekérdezésére az adatok áttekintéséhez.
-ms.date: 05/25/2022
+ms.date: 08/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
-ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
+ms.openlocfilehash: 26e56a3bab01ba55284a52e72efbcbfbaadaad6f
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "9121565"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387205"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>OData-lekérdezési példák Customer Insights API-khoz
 
 Az Open Data Protocol (OData) egy olyan adatelérési protokoll, amely olyan alapvető protokollokra épül, mint a HTTP. Általánosan elfogadott módszertanokat használ, mint például a REST for the web. Az OData-szolgáltatások felhasználására különféle könyvtárak és eszközök használhatók.
 
-Ez a cikk néhány gyakran kért példalekérdezést sorol fel, amelyek segítenek a customer insights API-kon alapuló [saját implementációk létrehozásában](apis.md).
+Ha segíteni szeretne saját implementációk felépítésében a [Customer Insights API-k](apis.md) alapján, tekintsen át néhány gyakran kért példalekérdezést.
 
-Módosítania kell a lekérdezésmintákat, hogy működjenek a célkörnyezetekben: 
+Módosítsa a lekérdezésmintákat, hogy működjenek a célkörnyezetekben:
 
 - {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` hol {instanceId} van a lekérdezni kívánt Customer Insights-környezet GUID azonosítója. A [ListAllInstances művelet](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) lehetővé teszi, hogy megtalálja azt {InstanceId}, amelyhez hozzáféréssel rendelkezik.
 - {CID}: Egységes ügyfélrekord GUID azonosítója. Példa: `ce759201f786d590bf2134bff576c369`.
@@ -31,7 +31,7 @@ Módosítania kell a lekérdezésmintákat, hogy működjenek a célkörnyezetek
 
 ## <a name="customer"></a>Ügyfelünk
 
-Az alábbi táblázat mintalekérdezéseket tartalmaz a *Vevő* entitáshoz.
+Mintalekérdezések az *Ügyfél* entitáshoz.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|
@@ -46,7 +46,7 @@ Az alábbi táblázat mintalekérdezéseket tartalmaz a *Vevő* entitáshoz.
 
 ## <a name="unified-activity"></a>Egyesített tevékenység
 
-Az alábbi táblázat a UnifiedActivity *entitás mintalekérdezéseit* tartalmazza.
+Mintalekérdezések a *UnifiedActivity* entitáshoz.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|
@@ -59,7 +59,7 @@ Az alábbi táblázat a UnifiedActivity *entitás mintalekérdezéseit* tartalma
 
 ## <a name="other-examples"></a>Más példák
 
-Az alábbi táblázat más entitások mintalekérdezéseit tartalmazza.
+Mintalekérdezések más entitásokhoz.
 
 |Lekérdezés típusa |Példa  | Feljegyzés  |
 |---------|---------|---------|

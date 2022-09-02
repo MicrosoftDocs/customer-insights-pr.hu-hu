@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d20d57e9b7724e9921f9341eeaa39141b4555ff1
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246065"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387252"
 ---
 # <a name="configure-security-settings"></a>Biztonsági beállítások konfigurálása
 
@@ -23,7 +23,7 @@ Api-kulcsokat kezelhet, hozzáférhet az ügyféladatokhoz, és beállíthat egy
 
 Tekintse meg és kezelje a kulcsokat, hogy a [Customer Insights API-kat](apis.md) a környezetében lévő adatokkal használhassa.
 
-1. Lépjen a **Rendszerbiztonság** > **elemre,** és válassza az **API-k** lapot.
+1. Lépjen a Rendszergazdai **biztonság lapra** > **·**, és válassza az **API-k** lapot.
 
 1. Ha a környezethez való API-hozzáférés nincs beállítva, válassza az Engedélyezés **lehetőséget**. Vagy a környezethez való API-hozzáférés blokkolásához válassza a Letiltás **és megerősítés lehetőséget**.
 
@@ -37,7 +37,7 @@ Tekintse meg és kezelje a kulcsokat, hogy a [Customer Insights API-kat](apis.md
 
 ## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Biztonságosan hozzáférhet az ügyféladatokhoz az ügyfélkostátusz-kulcs segítségével (előzetes verzió)
 
-A Customer Insights az Power Platform Ügyfélkompatibilitási lehetőséget használja. Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához. A funkció használatához a Customer Insightsnak meglévő kapcsolattal kell rendelkeznie a bérlő környezetéhez Microsoft Dataverse.
+A Customer Insights az Power Platform Ügyfélkompatibilitási lehetőséget használja. Az ügyfél-kulcszárlat felületet biztosít az adatelérési kérelmek áttekintéséhez és jóváhagyásához (vagy elutasításához). Ezek a kérések akkor fordulnak elő, ha az ügyféladatokhoz való adathozzáférésre van szükség egy támogatási eset megoldásához. A funkció használatához a Customer Insightsnak meglévő kapcsolattal kell rendelkeznie a bérlő környezetéhez Microsoft Dataverse .
 
 Az ügyfélkompatibilitás-szal kapcsolatos további információkért tekintse meg az [Ügyfélkompatibilitási](/power-platform/admin/about-lockbox#summary) kulcs mappában található összefoglalót Power Platform. A cikk ismerteti a [munkafolyamatot](/power-platform/admin/about-lockbox#workflow) és az ügyfélkompatibilitás engedélyezéséhez szükséges [beállításokat](/power-platform/admin/about-lockbox#enable-the-lockbox-policy) is.
 

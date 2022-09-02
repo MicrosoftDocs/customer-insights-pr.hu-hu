@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245928"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352804"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Diagnosztikai naplók exportálása (előzetes verzió)
 
@@ -36,8 +36,8 @@ A Customer Insights a következő eseménynaplókat küldi el:
 
 - Aktív Azure-előfizetés [...](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - [Rendszergazdai](permissions.md#admin) engedélyek a Customer Insights szolgáltatásban.
+- Egy érvényes erőforrás az Azure-ban, amely követi az Azure Storage, az Azure Event Hub vagy az [Azure Log Analytics célkövetelményeit](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements).
 - [közreműködő és felhasználói hozzáférés-rendszergazdai szerepkört](/azure/role-based-access-control/role-assignments-portal) az Azure-beli célerőforráson. Az erőforrás lehet egy Azure Data Lake Storage fiók, egy Azure Event Hub vagy egy Azure Log Analytics-munkaterület. Erre az engedélyre a Diagnosztikai beállítások Customer Insights szolgáltatásban történő konfigurálásakor van szükség, de a sikeres beállítás után módosítható.
-- [Az Azure Storage, az Azure Event Hub vagy az Azure Log Analytics célkövetelményei](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) teljesülnek.
 - Legalább a **olvasó** szerepkör azon az erőforráscsoporton, amelyhez az erőforrás tartozik.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnosztika beállítása a Azure Monitor
@@ -108,7 +108,7 @@ A naplóséma a [Azure Monitor közös sémát](/azure/azure-monitor/platform/re
 A Customer Insights két kategóriát kínál:
 
 - **Naplózási események**: [API-események](#api-event-schema) a szolgáltatás konfigurációs változásainak nyomon követéséhez. `POST|PUT|DELETE|PATCH` a műveletek ebbe a kategóriába tartoznak.
-- **Működési események**: A [szolgáltatás használata során létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema).  Ilyenek például `GET` egy munkafolyamat kérései vagy végrehajtási eseményei.
+- **Működési események**: A [szolgáltatás használata során létrehozott API-események](#api-event-schema) vagy [munkafolyamat-események](#workflow-event-schema) .  Ilyenek például `GET` egy munkafolyamat kérései vagy végrehajtási eseményei.
 
 ## <a name="event-schemas"></a>Eseménysémák
 
@@ -121,12 +121,12 @@ Az API-események és a munkafolyamat-események közös struktúrával rendelke
 | `time`            | Időbélyegző | Szükséges          | Az esemény időbélyegzője (UTC)       | `2020-09-08T09:48:14.8050869Z`         |
 | `resourceId`      | Sztring    | Szükséges          | Az eseményt kibocsátó példány ResourceId azonosítója         | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX`  |
 | `operationName`   | Sztring    | Szükséges          | Az esemény által képviselt művelet neve.                                                                                                                | `Workflows.GetWorkFlowStatusAsync`                                                                                                                                       |
-| `category`        | Sztring    | Szükséges          | Az esemény naplókategóriája. Vagy `Operational`, vagy `Audit`. Minden POST/PUT/PATCH/DELETE HTTP-kérés meg van címkézve `Audit`, minden más a`Operational` | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
+| `category`        | Sztring    | Szükséges          | Az esemény naplókategóriája. Vagy `Operational`, vagy `Audit`. Minden POST/PUT/PATCH/DELETE HTTP-kérés meg van címkézve `Audit`, minden más a `Operational` | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resultType`      | Sztring    | Szükséges          | Az esemény állapota. `Success`, `ClientError`, `Failure`                                                                                                        |                                                                                                                                                                          |
 | `resultSignature` | Sztring    | Lehetséges          | Az esemény eredményállapota. Ha a művelet egy REST API hívásnak felel meg, akkor ez a HTTP-állapotkód.        | `200`             |
 | `durationMs`      | Long      | Lehetséges          | A művelet időtartama ezredmásodpercben.     | `133`     |
 | `callerIpAddress` | Sztring    | Lehetséges          | Hívó IP-címe, ha a művelet egy nyilvánosan elérhető IP-címről származó API-hívásnak felel meg.                                                 | `144.318.99.233`         |
-| `identity`        | Sztring    | Lehetséges          | A műveletet végző felhasználó vagy alkalmazás identitását leíró JSON-objektum.       | Lásd az [Identitás](#identity-schema) szakaszt.     |  
+| `identity`        | Sztring    | Lehetséges          | A műveletet végző felhasználó vagy alkalmazás identitását leíró JSON-objektum.       | Lásd az [Identitás](#identity-schema)  szakaszt.     |  
 | `properties`      | Sztring    | Lehetséges          | JSON-objektum több tulajdonsággal az adott eseménykategóriához.      | Lásd a [Tulajdonságok](#api-properties-schema) szakaszt.    |
 | `level`           | Sztring    | Szükséges          | Az esemény súlyossági szintje.    | `Informational`, `Warning`, `Error` vagy `Critical`.           |
 | `uri`             | Sztring    | Lehetséges          | Abszolút kérés URI-ja.    |               |
@@ -165,18 +165,18 @@ A `identity` JSON-objektum szerkezete a következő
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `properties.eventType`       | Mindig `ApiEvent`, a naplóeseményt API-eseményként jelölve meg.                                                                 |
 | `properties.userAgent`       | A kérést vagy `unknown`.                                                                        |
-| `properties.method`          | HTTP-módszer:`GET/POST/PUT/PATCH/HEAD`.                                                                                |
+| `properties.method`          | HTTP-módszer: `GET/POST/PUT/PATCH/HEAD`.                                                                                |
 | `properties.path`            | A kérés relatív elérési útja.                                                                                          |
 | `properties.origin`          | URI, amely jelzi, hogy a lekérés honnan származik, vagy `unknown`.                                                                  |
 | `properties.operationStatus` | `Success` a 400-as < HTTP-állapotkódhoz <br> `ClientError` http-állapotkódhoz < 500 <br> `Error` HTTP-állapot esetén >= 500 |
 | `properties.tenantId`        | Szervezet azonosítója                                                                                                        |
 | `properties.tenantName`      | A szervezet neve.                                                                                              |
 | `properties.callerObjectId`  | Azure Active Directory A hívó ObjectId azonosítója.                                                                         |
-| `properties.instanceId`      | Vásárlói betekintések`instanceId`                                                                                         |
+| `properties.instanceId`      | Vásárlói betekintések `instanceId`                                                                                         |
 
 ### <a name="workflow-event-schema"></a>Munkafolyamat-eseményséma
 
-A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md). Ezek a lépések egyenként vagy a következő folyamatokkal vezényelve is futtathatók.
+A munkafolyamat több lépést tartalmaz. [Adatforrások](data-sources.md) betöltése, [adatok egyesítése](data-unification.md), [gazdagítása](enrichment-hub.md) és [exportálása](export-destinations.md) . Ezek a lépések egyenként vagy a következő folyamatokkal vezényelve is futtathatók.
 
 #### <a name="operation-types"></a>Művelettípusok
 
@@ -228,17 +228,17 @@ A munkafolyamat-események a következő tulajdonságokkal rendelkeznek.
 | `properties.submittedBy`                     | Igen      | No   | Opcionális. Csak munkafolyamat-események. A Azure Active Directory [munkafolyamatot elindító felhasználó](/azure/marketplace/find-tenant-object-id#find-user-object-id) objectId azonosítója, lásd még `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Igen      | No   | `full` vagy `incremental` frissítsen.                                                                                                                                                                                                                            |
 | `properties.workflowSubmissionKind`          | Igen      | No   | `OnDemand` vagy `Scheduled`.                                                                                                                                                                                                                                  |
-| `properties.workflowStatus`                  | Igen      | No   | `Running` vagy `Successful`.                                                                                                                                                                                                                                 |
+| `properties.workflowStatus`                  | Igen      | No   | `Running` vagy  `Successful`.                                                                                                                                                                                                                                 |
 | `properties.startTimestamp`                  | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Igen      | Igen  | UTC-időbélyegző`yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Igen      | Igen  | Vásárlói betekintések`instanceId`                                                                                                                                                                                                                              |  
-| `properties.identifier`                      | No       | Igen  | - Az OperationType = esetében `Export` az azonosító az exportálási konfiguráció guid azonosítója. <br> - Az OperationType =, `Enrichment` ez a gazdagítás guidja <br> - Az OperationType `Measures` és `Segmentation` az, az azonosító az entitás neve. |
+| `properties.instanceId`                      | Igen      | Igen  | Vásárlói betekintések `instanceId`                                                                                                                                                                                                                              |  
+| `properties.identifier`                      | No       | Igen  | - Az OperationType = esetében `Export` az azonosító az exportálási konfiguráció guid azonosítója. <br> - Az OperationType = , `Enrichment` ez a gazdagítás guidja <br> - Az OperationType `Measures` és `Segmentation` az , az azonosító az entitás neve. |
 | `properties.friendlyName`                    | No       | Igen  | Az exportálás vagy a feldolgozott entitás felhasználóbarát neve.                                                                                                                                                                                           |
 | `properties.error`                           | No       | Igen  | Opcionális. Hibaüzenet további részletekkel.                                                                                                                                                                                                                  |
-| `properties.additionalInfo.Kind`             | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export`. Az exportálás típusát azonosítja. További információt az exportálási célhelyek [áttekintésében talál](export-destinations.md).                                                                                          |
-| `properties.additionalInfo.AffectedEntities` | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export`. Az exportálásban konfigurált entitások listáját tartalmazza.                                                                                                                                                            |
-| `properties.additionalInfo.MessageCode`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export`. Részletes üzenet az exportáláshoz.                                                                                                                                                                                 |
-| `properties.additionalInfo.entityCount`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Segmentation`. A szegmens tagjainak teljes számát jelzi.                                                                                                                                                    |
+| `properties.additionalInfo.Kind`             | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export` . Az exportálás típusát azonosítja. További információt az exportálási célhelyek [áttekintésében talál](export-destinations.md).                                                                                          |
+| `properties.additionalInfo.AffectedEntities` | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export` . Az exportálásban konfigurált entitások listáját tartalmazza.                                                                                                                                                            |
+| `properties.additionalInfo.MessageCode`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Export` . Részletes üzenet az exportáláshoz.                                                                                                                                                                                 |
+| `properties.additionalInfo.entityCount`      | No       | Igen  | Opcionális. Csak az OperationType típushoz `Segmentation` . A szegmens tagjainak teljes számát jelzi.                                                                                                                                                    |
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

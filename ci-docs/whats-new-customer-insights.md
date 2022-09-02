@@ -1,19 +1,19 @@
 ---
 title: A Dynamics 365 Customer Insights újdonságai
 description: Információ az új szolgáltatásokról, továbbfejlesztésekről és hibajavításokról.
-ms.date: 08/03/2022
+ms.date: 08/31/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246014"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387297"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -23,6 +23,24 @@ A frissítéseket régiónként tesszük közzé. Így bizonyos régiók a máso
 
 > [!TIP]
 > Funkciókérelmek és termékjavaslatok benyújtásához és szavazáshoz látogassa meg a [Dynamics 365 alkalmazás ötletek portálját](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2022-updates"></a>2022. augusztusi frissítések
+
+A 2022. augusztusi frissítések új funkciókat, teljesítményfrissítéseket és hibajavításokat tartalmaznak.
+
+### <a name="contact-unification-in-b-to-b-environments"></a>Kapcsolategyesítés B-B környezetekben
+
+A Customer Insights B-to-B környezetei mostantól támogatják a továbbfejlesztett adategyesítési élményt.
+
+Mostantól a fiókok mellett egyesítheti a kapcsolattartókat, hogy teljes képet kapjon az üzleti kapcsolattartókról. Az egyesített kapcsolattartók egységes fiókokhoz vannak társítva, és mostantól szerepelnek az ügyfélkártyákon. 
+
+További információ: [Egyesített kapcsolattartói profil létrehozása](data-unification-contacts.md).
+
+### <a name="create-and-export-of-segments-based-on-unified-contacts"></a>Szegmensek létrehozása és exportálása egyesített névjegyek alapján
+
+Az új kapcsolategyesítésnek köszönhetően kapcsolattartói szegmenseket hozhat létre a kapcsolattartók, partnerek vagy mindkettő kritériumainak felhasználásával. Ezek a szegmensek exportálhatók más szolgáltatásokban való aktiváláshoz.
+
+További információ: [Exportálások áttekintése](export-destinations.md).
 
 ## <a name="july-2022-updates"></a>2022. júliusi frissítések
 
@@ -44,7 +62,7 @@ További információ: [Adatok exportálása SFTP-gazdagépekre](export-sftp.md)
 
 Az ügyféladatok kezelése nem új kihívás, de egyre nehezebbé válik, ahogy a felhasználók eligazodnak a márkák által kínált különböző digitális csatornákon. Az egyik csatornán ismert (hitelesített) felhasználó ismeretlenné (nem hitelesítetté) válik egy másikban, ha nincs bejelentkezve. A probléma gyakran az, hogy a nem hitelesített (ismeretlen) felhasználók nem rendelkeznek közös azonosítóval. Használható értelmes profilok attribútumainak társítására és egységes ügyfélprofilok létrehozására. A Customer Insights segít megoldani ezt a problémát azáltal, hogy adatokat tölt be a forrásrendszereken lévő nyomkövetési módszerekből.
 
-További információ: [A felhasználói élmény személyre szabása ismert és ismeretlen felhasználók adataival](unknown-to-known.md).
+További információ: [A felhasználói élmény személyre szabása ismert és ismeretlen felhasználók](unknown-to-known.md) adataival.
 
 ## <a name="june-2022-updates"></a>2022. júniusi frissítések
 
@@ -52,7 +70,7 @@ A 2022. júniusi frissítések új funkciókat, teljesítményfrissítéseket é
 
 ### <a name="updated-user-experience-for-data-sources-and-data-ingestion"></a>Frissített felhasználói élmény az adatforrásokhoz és az adatbetöltéshez
 
-Az adatok importálása az adatforrások széles köréből az alapja annak, hogy az ügyféladatokat konszolidálja Dynamics 365 Customer Insights. Újra megvizsgáltuk az adatforrások importálásához és csatlakoztatásához szükséges felhasználói élményt. A frissítés célja, hogy megkönnyítse az adatok betöltését a Customer Insights szolgáltatásba.
+Az adatok importálása az adatforrások széles köréből az alapja annak, hogy az ügyféladatokat konszolidálja.Dynamics 365 Customer Insights Újra megvizsgáltuk az adatforrások importálásához és csatlakoztatásához szükséges felhasználói élményt. A frissítés célja, hogy megkönnyítse az adatok betöltését a Customer Insights szolgáltatásba.
 
 További információ: [Adatforrások áttekintése](data-sources.md).
 
