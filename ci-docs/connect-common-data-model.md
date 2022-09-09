@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245836"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396084"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
@@ -39,6 +39,8 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
   - Storage Blob adatolvasó
   - Storage Blob adattulajdonos
   - Storage Blob adatközreműködő
+
+- A adatforrás kapcsolatot beállító felhasználónak szüksége van a legkevesebb Storage Blob Data közreműködő engedélyre a tárfiókon.
 
 - A Data Lake Storage-ban lévő adatoknak az adatok tárolására vonatkozó Common Data Model szabványt kell követniük, és rendelkezniük kell az adatfájlok sémáját ábrázoló közös adatmodell-jegyzékfájllal (*.csv vagy *.parquet). A jegyzékfájlnak meg kell adnia az entitások részleteit, például az entitásoszlopokat és adattípusokat, valamint az adatfájl helyét és típusát. További információ: [A Common Data Model jegyzékfájl](/common-data-model/sdk/manifest). Ha a jegyzékfájl nincs jelen, a Storage Blob Data Owner vagy Storage Blob Data közreműködő hozzáféréssel rendelkező rendszergazda felhasználók meghatározhatják a sémát az adatok betöltésekor.
 
@@ -62,7 +64,7 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
    > [!NOTE]
    > A adatforrás létrehozásához az alábbi szerepkörök egyikére van szükség a tárolóhoz vagy a tárfiókhoz:
    >
-   >  - Storage Blob Data olvasó elegendő ahhoz, hogy beolvassa a tárfiókból, és betöltse az adatokat a Customer Insightsba. 
+   >  - Storage Blob Data olvasó elegendő ahhoz, hogy beolvassa a tárfiókból, és betöltse az adatokat a Customer Insightsba.
    >  - Storage Blob Data közreműködő vagy tulajdonosra van szükség, ha a jegyzékfájlokat közvetlenül a Customer Insightsban szeretné szerkeszteni.  
   
 1. Válassza ki annak a tárolónak **a** nevét, amely tartalmazza az adatokat és a sémát (model.json vagy manifest.json fájl), amelyből adatokat szeretne importálni, majd kattintson a Tovább **gombra**.

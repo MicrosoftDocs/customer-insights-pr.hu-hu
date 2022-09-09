@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: ce10fcfe9906d33209270f8f6930a51b045b13e2
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 949ea071ca41127b0c45488d5d7af3f6aa4e1c35
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246429"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9395959"
 ---
 # <a name="schedule-system-refresh"></a>Rendszerfrissítés ütemezése
 
@@ -36,7 +36,7 @@ ms.locfileid: "9246429"
 
 1. Választhat **Heti** (alapértelmezett) és **Napi** frissítések között. Ha heti frissítéseket szeretne ütemezni, jelöljön ki egy vagy több napot, amikor a frissítést futtatni szeretné.
 
-1. Állítsa be az **Időzónát**, majd az **Idő** legördülő listában állítsa be a frissítés időpontját. Ha egy nap alatt több frissítést szeretne ütemezni, válassza a **Másik időpont hozzáadása**.
+1. Állítsa be az **Időzónát**, majd az **Idő** legördülő listában állítsa be a frissítés időpontját. Ha egy nap alatt több frissítést szeretne ütemezni, válassza a **Másik időpont hozzáadása**. Legfeljebb négy frissítést adhat hozzá.
 
 1. Válassza a **Mentés** lehetőséget a módosítások alkalmazásához.
 

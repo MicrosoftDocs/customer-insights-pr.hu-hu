@@ -1,7 +1,7 @@
 ---
 title: A Customer Insights-adatok használata a Microsoft Dataverse-ben
 description: Ismerje meg, hogyan csatlakoztathatja a Customer Insights szolgáltatást, és Microsoft Dataverse hogyan értelmezheti a kimeneti entitásokat, amelyek a következőre vannak exportálva:Dataverse.
-ms.date: 08/15/2022
+ms.date: 08/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 0d536259f310b41fe12922baeebdc4569937db08
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
+ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9303832"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9424312"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>A Customer Insights-adatok használata a Microsoft Dataverse-ben
 
@@ -136,6 +136,7 @@ Ha a kapcsolat eltávolítása függőségek miatt meghiúsul, a függőségeket
 A Customer Insights egyes kimeneti entitásai táblákként érhetők el a következő helyen:Dataverse. Az alábbi szakaszok e táblázatok várt sémáját írják le.
 
 - [CustomerProfile](#customerprofile)
+- [ContactProfile](#contactprofile)
 - [AlternateKey](#alternatekey)
 - [UnifiedActivity](#unifiedactivity)
 - [CustomerMeasure](#customermeasure)
@@ -145,21 +146,46 @@ A Customer Insights egyes kimeneti entitásai táblákként érhetők el a köve
 
 ### <a name="customerprofile"></a>CustomerProfile
 
-Ez a tábla a Customer Insights egységes ügyfélprofilját tartalmazza. Az egyesített ügyfélprofil sémája az adategyesítési folyamatban használt entitásoktól és attribútumoktól függ. Az ügyfélprofilséma általában a [CustomerProfile Common Data Model-definíciója](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) attribútumainak egy részhalmazát tartalmazza.
+Ez a tábla a Customer Insights egységes ügyfélprofilját tartalmazza. Az egyesített ügyfélprofil sémája az adategyesítési folyamatban használt entitásoktól és attribútumoktól függ. Az ügyfélprofilséma általában a [CustomerProfile Common Data Model-definíciója](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) attribútumainak egy részhalmazát tartalmazza. A B-to-B forgatókönyv esetében az ügyfélprofil egyesített fiókokat tartalmaz, és a séma általában a Fiók [Common Data Model definíciójából származó](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/account) attribútumok egy részhalmazát tartalmazza.
+
+### <a name="contactprofile"></a>ContactProfile
+
+A ContactProfile egyesített információkat tartalmaz egy névjegyről. A kapcsolattartók olyan [személyek, akik B-től B-ig terjedő forgatókönyv esetén vannak leképezve egy fiókra](data-unification-contacts.md).
+
+| Column                       | Type                | Description     |
+| ---------------------------- | ------------------- | --------------- |
+|  BirthDate            | Dátum/idő       |  A kapcsolattartó születési ideje               |
+|  City                 | Szöveges |  A kapcsolattartási cím városa               |
+|  Kapcsolatazonosító            | Szöveges |  A kapcsolattartói profil azonosítója               |
+|  ContactProfileId     | Egyedi azonosító   |  GUID azonosító a kapcsolattartó számára               |
+|  CountryOrRegion      | Szöveges |  A kapcsolattartási cím országa/régiója               |
+|  Vevőkód           | Szöveges |  Annak a fióknak az azonosítója, amelyhez a kapcsolattartó hozzá van rendelve               |
+|  EntityName           | Szöveges |  Entitás, amelyből az adatok származnak                |
+|  FirstName            | Szöveges |  A kapcsolattartó utóneve               |
+|  Nem               | Szöveges |  A kapcsolattartó neme               |
+|  Id                   | Szöveges |  Determinisztikus GUID a következők alapján: `Identifier`               |
+|  Azonosító           | Szöveges |  A kapcsolattartói profil belső azonosítója: `ContactProfile|CustomerId|ContactId`               |
+|  Munkakör             | Szöveges |  A kapcsolattartó beosztása               |
+|  LastName             | Szöveges |  A kapcsolattartó vezetékneve               |
+|  PostalCode           | Szöveges |  A kapcsolattartási cím irányítószáma               |
+|  Elsődleges E-mail         | Szöveges |  A kapcsolattartó e-mail-címe               |
+|  ElsődlegesPhone         | Szöveges |  A kapcsolattartó telefonszáma               |
+|  Állam vagy megye      | Szöveges |  A kapcsolattartási cím szerinti állam vagy tartomány               |
+|  StreetAddress        | Szöveges |  A kapcsolattartási cím utcaképe               |
 
 ### <a name="alternatekey"></a>AlternateKey
 
 Az AlternateKey-tábla az egyesítési folyamatban részt vett entitások kulcsait tartalmazza.
 
-|Column  |Típus szerint  |Ismertetés  |
+|Column  |Type  |Description  |
 |---------|---------|---------|
-|DataSourceName    |Sztring         | Az adatforrás neve. Például: `datasource5`        |
-|EntityName        | Sztring        | Az entitás neve a Customer Insights szolgáltatásban. Például: `contact1`        |
-|AlternateValue    |Sztring         |Az ügyfélazonosítóhoz leképezett alternatív azonosító. Példa: `cntid_1078`         |
-|KeyRing           | Többsoros szöveg        | JSON-érték  </br> Minta: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
-|Vevőkód         | Sztring        | Az egységes ügyfélprofil azonosítója.         |
-|AlternateKeyId     | GUID         |  AlternateKey determinisztikus GUID az msdynci_identifier alapján       |
-|msdynci_identifier |   Sztring      |   `DataSourceName|EntityName|AlternateValue`  </br> Minta: `testdatasource|contact1|cntid_1078`    |
+|DataSourceName    |Szöveges         | Az adatforrás neve. Például: `datasource5`        |
+|EntityName        | Szöveges        | Az entitás neve a Customer Insights szolgáltatásban. Például: `contact1`        |
+|AlternateValue    |Szöveges         |Az ügyfélazonosítóhoz leképezett alternatív azonosító. Példa: `cntid_1078`         |
+|KeyRing           | Szöveges        | JSON-érték  </br> Minta: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"keys":[" cntid_1078"]}]       |
+|Vevőkód         | Szöveges        | Az egységes ügyfélprofil azonosítója.         |
+|AlternateKeyId     | Egyedi azonosító        |  AlternateKey determinisztikus GUID azonosító alapján`Identifier`      |
+|Azonosító |   Szöveges      |   `DataSourceName|EntityName|AlternateValue`  </br> Minta: `testdatasource|contact1|cntid_1078`    |
 
 ### <a name="unifiedactivity"></a>UnifiedActivity
 
@@ -167,43 +193,42 @@ Ez a táblázat a Customer Insights-szolgáltatásban elérhető felhasználók 
 
 | Column            | Type        | Description                                                                              |
 |-------------------|-------------|------------------------------------------------------------------------------------------|
-| Vevőkód        | Sztring      | Ügyfélprofil-azonosító                                                                      |
-| ActivityId        | Sztring      | Az ügyféltevékenység belső azonosítója (elsődleges kulcs)                                       |
-| SourceEntityName  | Sztring      | A forrásentitás neve                                                                |
-| SourceActivityId  | Sztring      | Elsődleges kulcs a forrásentitásból                                                       |
-| ActivityType      | Sztring      | Szemantikai tevékenység típusa vagy az egyéni tevékenység neve                                        |
-| ActivityTimeStamp | DATETIME    | Tevékenység időbélyegzője                                                                      |
-| Title             | Sztring      | A tevékenység címe vagy neve                                                               |
-| Description       | Sztring      | Tevékenység leírása                                                                     |
-| URL-cím               | Sztring      | Hivatkozás a tevékenységhez specifikus külső URL-címre                                         |
-| SemanticData      | JSON-sztring | Tartalmazza a tevékenységtípusra jellemző szemantikai leképezési mezők legfontosabb értékpárjainak listáját |
-| RangeIndex        | Sztring      | A tevékenység idővonalának és az érvényes tartomány-lekérdezések rendezésére használt Unix időbélyegző |
-| mydynci_unifiedactivityid   | GUID | Az ügyféltevékenység belső azonosítója (ActivityId) |
+| Vevőkód        | Szöveges      | Ügyfélprofil-azonosító                                                                      |
+| ActivityId        | Szöveges      | Az ügyféltevékenység belső azonosítója (elsődleges kulcs)                                       |
+| SourceEntityName  | Szöveges      | A forrásentitás neve                                                                |
+| SourceActivityId  | Szöveges      | Elsődleges kulcs a forrásentitásból                                                       |
+| ActivityType      | Szöveges      | Szemantikai tevékenység típusa vagy az egyéni tevékenység neve                                        |
+| ActivityTimeStamp | Dátum/idő    | Tevékenység időbélyegzője                                                                      |
+| Title             | Szöveges      | A tevékenység címe vagy neve                                                               |
+| Description       | Szöveges      | Tevékenység leírása                                                                     |
+| URL-cím               | Szöveges      | Hivatkozás a tevékenységhez specifikus külső URL-címre                                         |
+| SemanticData      | Szöveges | Tartalmazza a tevékenységtípusra jellemző szemantikai leképezési mezők legfontosabb értékpárjainak listáját |
+| RangeIndex        | Szöveges      | A tevékenység idővonalának és az érvényes tartomány-lekérdezések rendezésére használt Unix időbélyegző |
+| UnifiedActivityId   | Egyedi azonosító | Az ügyféltevékenység belső azonosítója (ActivityId) |
 
 ### <a name="customermeasure"></a>CustomerMeasure
 
 Ez a tábla az ügyfél attribútumalapú mérőszámait tartalmazza.
 
-| Column             | Típus szerint             | Ismertetés                 |
+| Column             | Type             | Description                 |
 |--------------------|------------------|-----------------------------|
-| Vevőkód         | Sztring           | Ügyfélprofil-azonosító        |
-| Mérőszámok           | JSON-sztring      | Tartalmazza az adott vevő kulcsérték-párjait a mérőszám nevéhez és értékeihez | 
-| msdynci_identifier | Sztring           | `Customer_Measure|CustomerId` |
-| msdynci_customermeasureid | GUID      | Ügyfélprofil-azonosító |
-
+| Vevőkód         | Szöveges           | Ügyfélprofil-azonosító        |
+| Mértékek           | Szöveges      | Tartalmazza az adott vevő kulcsérték-párjait a mérőszám nevéhez és értékeihez |
+| Azonosító | Szöveges           | `Customer_Measure|CustomerId` |
+| CustomerMeasureId | Egyedi azonosító     | Ügyfélprofil-azonosító |
 
 ### <a name="enrichment"></a>Dúsítás
 
 Ez a tábla a bővítési folyamat kimenetét tartalmazza.
 
-| Column               | Típus szerint             |  Ismertetés                                          |
+| Column               | Type             |  Description                                          |
 |----------------------|------------------|------------------------------------------------------|
-| Vevőkód           | Sztring           | Ügyfélprofil-azonosító                                 |
-| EnrichmentProvider   | Sztring           | A bővítés szolgáltatójának neve                                  |
-| EnrichmentType       | Sztring           | A bővítés típusa                                      |
-| Értékek               | JSON-sztring      | A bővítési folyamat által előállított attribútumok listája |
-| msdynci_enrichmentid | GUID             | A msdynci_identifier elemhez generált determinisztikus GUID |
-| msdynci_identifier   | Sztring           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
+| Vevőkód           | Szöveges           | Ügyfélprofil-azonosító                                 |
+| EnrichmentProvider   | Szöveges           | A bővítés szolgáltatójának neve                                  |
+| EnrichmentType       | Szöveges           | A bővítés típusa                                      |
+| Értékek               | Szöveges      | A bővítési folyamat által előállított attribútumok listája |
+| EnrichmentId | Egyedi azonosító            | Determinisztikus GUID azonosító, amelyet a`Identifier` |
+| Azonosító   | Szöveges           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
 
 ### <a name="prediction"></a>Előrejelzés
 
@@ -211,12 +236,12 @@ Ez a tábla a modell-előrejelzések kimenetét tartalmazza.
 
 | Column               | Type        | Description                                          |
 |----------------------|-------------|------------------------------------------------------|
-| Vevőkód           | Sztring      | Ügyfélprofil-azonosító                                  |
-| ModelProvider        | Sztring      | A modell szolgáltatójának neve                                      |
-| Modell                | Sztring      | Modell neve                                                |
-| Értékek               | JSON-sztring | A modell által előállított attribútumok listája |
-| msdynci_predictionid | GUID        | A msdynci_identifier elemhez generált determinisztikus GUID | 
-| msdynci_identifier   | Sztring      |  `Model|ModelProvider|CustomerId`                      |
+| Vevőkód           | Szöveges      | Ügyfélprofil-azonosító                                  |
+| ModelProvider        | Szöveges      | A modell szolgáltatójának neve                                      |
+| Modell                | Szöveges      | Modell neve                                                |
+| Értékek               | Szöveges | A modell által előállított attribútumok listája |
+| JóslatId | Egyedi azonosító       | Determinisztikus GUID azonosító, amelyet a`Identifier` |
+| Azonosító   | Szöveges      |  `Model|ModelProvider|CustomerId`                      |
 
 ### <a name="segment-membership"></a>Szegmens tagság
 
@@ -224,12 +249,11 @@ Ez a táblázat az ügyfélprofilok szegmenstagsági adatait tartalmazza.
 
 | Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
-| Vevőkód        | Sztring       | Ügyfélprofil-azonosító        |
-| SzegmensProvider      | Sztring       | A szegmenseket közzétevő alkalmazás.      |
-| Szegmenstagság Típusa | Sztring       | Az adott szegmenstagsági rekordhoz tartozó ügyfél típusa. Többféle típust támogat, például ügyfél, kapcsolattartó vagy partner. Alapértelmezett érték: Ügyfél  |
-| Szegmensek       | JSON-sztring  | Azon egyedi szegmensek listája, amelyeknek az ügyfélprofil tagja      |
-| msdynci_identifier  | Sztring   | A szegmenstagsági rekord egyedi azonosítója. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID-azonosító      | Determinisztikus GUID azonosító, amelyet a`msdynci_identifier`          |
-
+| Vevőkód        | Szöveges       | Ügyfélprofil-azonosító        |
+| SzegmensProvider      | Szöveges       | A szegmenseket közzétevő alkalmazás.      |
+| Szegmenstagság Típusa | Szöveges       | Az adott szegmenstagsági rekordhoz tartozó ügyfél típusa. Többféle típust támogat, például ügyfél, kapcsolattartó vagy partner. Alapértelmezett érték: Ügyfél  |
+| Szegmensek       | Szöveges  | Azon egyedi szegmensek listája, amelyeknek az ügyfélprofil tagja      |
+| Azonosító  | Szöveges   | A szegmenstagsági rekord egyedi azonosítója. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| SegmentMembershipId | Egyedi azonosító      | Determinisztikus GUID azonosító, amelyet a`Identifier`          |
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

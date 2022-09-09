@@ -6,12 +6,12 @@ metadata:
   ms.author: mhart
   ms.date: 05/18/2022
   ms.topic: landing-page
-  ms.openlocfilehash: e8134fa66ce47cdf8aeab144b8405104fb257f6c
-  ms.sourcegitcommit: 6108152b3d28a2ec140eae32a61dbf4317baa37b
+  ms.openlocfilehash: 209d635f8b548559ba035a5803c360d26dea8bab
+  ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
   ms.translationtype: MT
   ms.contentlocale: hu-HU
-  ms.lasthandoff: 05/19/2022
-  ms.locfileid: "8781367"
+  ms.lasthandoff: 09/07/2022
+  ms.locfileid: "9411781"
 title: Dynamics 365 Customer Insights-dokumentáció
 summary: Hasznos erőforrásokat talál az első lépésekhez, és a Customer Insights funkcióinak és lehetőségeinek megismeréséhez.
 landingContent:
@@ -27,7 +27,7 @@ landingContent:
       url: whats-new-customer-insights.md
   - linkListType: learn
     links:
-    - text: Customer Insights tanulási útvonal
+    - text: A Customer Insights képzési terve
       url: /learn/paths/build-customer-insights/
 - title: Ismerkedés a Customer Insights szolgáltatással
   linkLists:
@@ -35,7 +35,7 @@ landingContent:
     links:
     - text: Regisztráció a kipróbáláshoz
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Kezdjük a tárgyalással
+    - text: Kezdje a próbaverzióval
       url: trial-signup.md
     - text: Ismerkedés a Customer Insights szolgáltatással
       url: get-started.md
@@ -49,13 +49,13 @@ landingContent:
     links:
     - text: Adatforrások áttekintése
       url: data-sources.md
-    - text: 'Csatlakozás a következő használatával: Power Query'
+    - text: 'Csatlakozás a következővel: Power Query'
       url: connect-power-query.md
     - text: Csatlakozás a Microsoft Dataverse-hoz
       url: connect-dataverse-managed-lake.md
   - linkListType: learn
     links:
-    - text: Adatok betöltése az Ügyfélelemzésbe
+    - text: Adatok betöltése a Customer Insights szolgáltatásba
       url: /learn/modules/ingest-data-customer-insights/
 - title: Adatok egyesítése
   linkLists:
@@ -79,13 +79,13 @@ landingContent:
       url: enrichment-hub.md
     - text: Kapcsolatok konfigurálása
       url: relationships.md
-    - text: Adatok kiegészítése előrejelzésekkel
-      url: predictions.md
+    - text: Adatok előrejelzése
+      url: predictions-overview.md
   - linkListType: learn
     links:
     - text: Adatok gazdagítása és előrejelzése
       url: /learn/modules/enrich-data/
-- title: Építsen az adataira
+- title: Építs az adataidra
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -93,7 +93,7 @@ landingContent:
       url: segments.md
     - text: Mértékek létrehozása
       url: measures.md
-    - text: Vevői tevékenységek meghatározása
+    - text: Ügyféltevékenységek meghatározása
       url: activities.md
   - linkListType: learn
     links:

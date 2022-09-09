@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 421e1aa41a54a4b8c34ac27fc7c02e510d2bb588
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387159"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411743"
 ---
 # <a name="service-limits-in-customer-insights"></a>Szolgáltatási korlátok a Customer Insights szolgáltatásban
 
@@ -23,7 +23,7 @@ ms.locfileid: "9387159"
 
 | Terület  | Korlátozások  | Megjegyzések |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Szegmensek, mértékek és előrejelzések | 300  | A szegmensek, [mértékek](segments.md)[és](measures.md) előrejelzések [együttes száma](predictions.md) nem haladhatja meg a 300-at.  |
+| Szegmensek, mértékek és előrejelzések | 300  | A szegmensek, [mértékek](segments.md)[és](measures.md) előrejelzések [együttes száma](predictions-overview.md) nem haladhatja meg a 300-at.  |
 | Kapcsolatok | 20 mélységi szint az kapcsolatok elérési útjaiban. | A [szegmensek](segments.md) vagy [mértékek](measures.md) a szerkesztőfelület használatával való létrehozásakor az entitás elérési útjai a kezdő és a célentitás között legfeljebb 20 kapcsolati ugrást kaphatnak.  |
 
 ## <a name="fair-scheduling-of-jobs"></a>A feladatok tisztességes ütemezése

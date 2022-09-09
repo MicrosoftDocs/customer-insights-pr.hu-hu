@@ -160,8 +160,6 @@
           href: sentiment-analysis.md
         - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
           href: custom-models.md
-        - name: Részben hiányzó adatok kitöltése
-          href: predictions.md
     - name: Mintaútmutatók
       items:
         - name: Mintaútmutató a CLV előrejelzéshez

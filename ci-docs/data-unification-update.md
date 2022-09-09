@@ -1,7 +1,7 @@
 ---
 title: Ügyfél-, fiók- vagy kapcsolategyesítési beállítások frissítése
 description: Frissítse az ismétlődő szabályokat, az egyeztetési szabályokat vagy az egyesített mezőket az ügyfél- vagy fiókegyesítési beállításokban.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304338"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392474"
 ---
 # <a name="update-unification-settings"></a>Az egyesítési beállítások frissítése
 
@@ -38,7 +38,7 @@ Ha az egységesített profil létrehozása után át szeretné tekinteni vagy m�
    > Az **Egyezési feltételek** csempe csak akkor jelenik meg, ha több entitás lett kiválasztva.
 
 1. Válassza ki, hogy mit szeretne frissíteni:
-   - [Forrásmezők](#edit-source-fields) entitások vagy attribútumok hozzáadásához vagy attribútumtípusok módosításához.
+   - [Forrásmezők](#edit-source-fields) attribútumok vagy entitások hozzáadásához vagy attribútumtípusok módosításához. Attribútum eltávolításához lásd: [Egyesített mező](#remove-a-unified-field) eltávolítása. Entitás eltávolításához lásd: [Egyesített entitás](#remove-a-unified-entity) eltávolítása.
    - [Duplikált rekordok](#manage-deduplication-rules) a deduplikációs szabályok kezeléséhez vagy a beállítások egyesítéséhez.
    - [Egyező feltételek](#manage-match-rules) két vagy több entitás egyező szabályainak frissítéséhez.
    - [Egyesített vevői mezők](#manage-unified-fields) a mezők egyesítéséhez vagy kizárásához. A kapcsolódó profilokat fürtökbe is csoportosíthatja.
@@ -53,8 +53,6 @@ Ha az egységesített profil létrehozása után át szeretné tekinteni vagy m�
 
 ## <a name="edit-source-fields"></a>Forrásmezők szerkesztése
 
-Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített.
-
 1. Válassza a Szerkesztés **lehetőséget** a **Forrásmezők** csempén.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Képernyőkép: a Forrásmezők oldal az elsődleges kulcsok, a leképezett és a nem leképezett mezők számát mutatja":::
@@ -67,6 +65,80 @@ Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített
 
 1. Válassza a Tovább gombot a deduplikációs szabályok módosításához, vagy válassza a Mentés lehetőséget **, zárja be**, majd térjen vissza az Egyesítési beállítások frissítése **lapra**.[...](#update-unification-settings)
 
+### <a name="remove-a-unified-field"></a>Egyesített mező eltávolítása
+
+Egy egységesített mező eltávolításához a mezőt el kell távolítani minden függőségből, például szegmensekből, mértékekből, gazdagításokból vagy kapcsolatok.
+
+1. Miután eltávolította a mező összes függőségét, lépjen az Adatok **egyesítése** > **lapra**.
+
+1. Válassza a Szerkesztés **lehetőséget** az **Egyesített ügyfélmezők** csempén.
+
+1. Jelölje ki a mező összes előfordulását, majd válassza a Kizárás **lehetőséget**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Képernyőkép az Egyesített mezők lapról, amelyen a kijelölt mezők és a Kizárás gomb látható":::
+
+1. Válassza a Kész **lehetőséget** a megerősítéshez, majd válassza a Mentés és bezárás **lehetőséget**.
+
+   > [!TIP]
+   > Ha a "Nem sikerült menteni az egyesítést" üzenet jelenik meg. A megadott erőforrás nem módosítható vagy törölhető az alsóbb rétegbeli függőségek miatt", majd a mező továbbra is egy lefelé irányuló függőségben van használva.
+
+1. Ha a mezőt ismétlődő rekordokhoz vagy egyező feltételekhez használja egy szabályban, hajtsa végre a következő lépéseket. Ellenkező esetben folytassa a következő lépéssel.
+   1. Válassza a Szerkesztés **lehetőséget** a **Rekordok** megkettőzése csempén.
+   1. Távolítsa el a mezőt az összes szabályból, amelyben használják, ha van ilyen, majd válassza a Tovább **lehetőséget**.
+   1. **Az Egyező feltételek** lapon távolítsa el a mezőt az összes szabályból, amelyben használják, ha vannak ilyenek, majd válassza a Mentés és bezárás **lehetőséget**.
+   1. Válassza az Ügyfélprofilok és -függőségek egyesítése **lehetőséget** > **·**. Várja meg, amíg az egyesítés befejeződik, mielőtt továbblépne a következő lépésre.
+
+1. Válassza a Szerkesztés **lehetőséget** a **Forrásmezők** csempén.
+
+1. Válassza az Entitások és mezők **kiválasztása lehetőséget**, és törölje a jelet a mező minden előfordulása melletti jelölőnégyzetből.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Képernyőkép az Entitások és mezők kiválasztása párbeszédpanelről, amelyen a jelölőnégyzetek törlése látható":::
+
+1. Válassza az **Alkalmaz** lehetőséget.
+
+1. Válassza a **Mentés és bezárás** lehetőséget.
+
+1. Válassza az Ügyfélprofilok és függőségek **egyesítése** > **lehetőséget** az egyesített profil frissítéséhez.
+
+### <a name="remove-a-unified-entity"></a>Egyesített entitás eltávolítása
+
+Az egyesített entitás eltávolításához az entitást el kell távolítani minden függőségből, például szegmensekből, mértékekből, gazdagodásokból vagy kapcsolatok.
+
+1. Miután eltávolította az entitás összes függőségét, lépjen az Adatok **egyesítése** > **lapra**.
+
+1. Válassza a Szerkesztés **lehetőséget** az **Egyesített ügyfélmezők** csempén.
+
+1. Jelölje ki az entitás összes mezőjét, majd válassza a Kizárás **lehetőséget**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Képernyőkép az Egyesített mezőkről, amelyeken egy entitás összes mezője ki van választva, és a Kizárás gomb":::
+
+1. Válassza a Kész **lehetőséget** a megerősítéshez, majd válassza a Mentés és bezárás **lehetőséget**.
+
+   > [!TIP]
+   > Ha a "Nem sikerült menteni az egyesítést" üzenet jelenik meg. A megadott erőforrás nem módosítható vagy törölhető az alsóbb rétegbeli függőségek miatt", majd az entitás továbbra is egy lefelé irányuló függőségben van használva.
+
+1. Válassza a Szerkesztés **lehetőséget** a **Rekordok** megkettőzése csempén.
+
+1. Távolítsa el az összes szabályt az entitásból, ha van ilyen, majd válassza a Tovább **lehetőséget**.
+
+1. **Az Egyezési feltételek** lapon válassza ki az entitást, majd válassza a Törlés **lehetőséget**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Képernyőkép: Egyezési feltételek, amelyeken az entitás ki van választva, és a Törlés gomb":::
+
+1. Válassza a **Mentés és bezárás** lehetőséget.
+
+1. Válassza a Szerkesztés **lehetőséget** a **Forrásmezők** csempén.
+
+1. Válassza az Entitások és mezők **kiválasztása lehetőséget**, és törölje a jelet az entitás melletti jelölőnégyzetből.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Képernyőkép az Entitások és mezők kiválasztása párbeszédpanelről, amelyen az entitás jelölőnégyzete törölve van":::
+
+1. Válassza az **Alkalmaz** lehetőséget.
+
+1. Válassza a **Mentés és bezárás** lehetőséget.
+
+1. Válassza az Ügyfélprofilok és függőségek **egyesítése** > **lehetőséget** az egyesített profil frissítéséhez.
+
 ## <a name="manage-deduplication-rules"></a>Deduplikációs szabályok kezelése
 
 1. Válassza a Szerkesztés **lehetőséget** a **Rekordok** megkettőzése csempén.
@@ -75,7 +147,7 @@ Nem távolíthat el egy attribútumot vagy entitást, ha az már egységesített
 
    A talált duplikált rekordok száma a Duplikátumok **alatt** jelenik meg. A **Rekordok deduplikált** oszlopban látható, hogy mely entitások rendelkeztek duplikált rekordokkal, és hogy hány százalékban voltak duplikált rekordok.
 
-1. Bővített entitás használatához válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
+1. Bővített entitás használatához válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
 
 1. A deduplikációs szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Deduplikációs szabályok](remove-duplicates.md#define-deduplication-rules) meghatározása.
@@ -114,7 +186,7 @@ Az egyezési paraméterek nagy része konfigurálható és finomhangolható. Nem
 
    :::image type="content" source="media/m3_match_condition_preview.png" alt-text="A nem egyező és egyező rekordok grafikus ábrázolása, beleértve az adatok listáját is.":::
 
-1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások gazdagítása](data-sources-enrichment.md).
+1. Ha bővített entitást adott hozzá, válassza a Bővített entitások **használata lehetőséget**. További információ: [Adatforrások](data-sources-enrichment.md) gazdagítása.
 
 1. A szabályok kezeléséhez válasszon az alábbi lehetőségek közül:
    - **Új szabály** létrehozása: Válassza a Szabály **hozzáadása lehetőséget** a megfelelő entitás alatt. További információ: [Szabályok definiálása egyező párokhoz](match-entities.md#define-rules-for-match-pairs).
@@ -171,14 +243,14 @@ Az egyező feltételek futtatása csak a deduplikációt és az egyezési szabá
 
    :::image type="content" source="media/match-KPIs.png" alt-text="Körülvágott képernyőkép a legfontosabb mutatókról a Egyezés oldalon, számokkal és részletekkel.":::
 
-1. A módosítások elvégzéséhez lásd: [Deduplikációs szabályok](#manage-deduplication-rules) kezelése vagy [Egyezési szabályok](#manage-match-rules) kezelése.
+1. A módosítások elvégzéséhez lásd: [Deduplikációs szabályok](#manage-deduplication-rules) kezelése vagy [Egyezési szabályok kezelése](#manage-match-rules).
 
 1. Futtassa újra az egyeztetési folyamatot, vagy [futtassa a profil](#run-updates-to-the-unified-profile) frissítéseit.
 
 ## <a name="run-updates-to-the-unified-profile"></a>Frissítések futtatása az egyesített profilhoz
 
 - Ha egyező feltételeket szeretne futtatni, és a függőségek (például ügyfélkártyák, gazdagítások, szegmensek vagy mértékek) befolyásolása nélkül *szeretné frissíteni az egységesített profilt, és frissíteni szeretné az egységesített profil entitást*, válassza az Ügyfélprofilok **egyesítése lehetőséget**. Fiókok esetén válassza a Fiókok egyesítése profilok **egyesítése lehetőséget.** > **·** Partnerek esetén válassza a Névjegyek egyesítése (előzetes verzió) **Profilok** > **egyesítése lehetőséget**. A függő folyamatok nem futnak, hanem a frissítési ütemezésben [meghatározottak szerint](schedule-refresh.md) frissülnek.
-- Az egyező feltételek futtatásához frissítse az egyesített profilt, és futtassa az összes függőséget, válassza az Ügyfélprofilok és -függőségek **egyesítése lehetőséget**. Minden folyamat automatikusan újrafuttatható. Partnerek és kapcsolattartók esetén válassza a Fiókok **egyesítése profilok és függőségek egyesítése lehetőséget** > **·**. Az egyező feltételek mind a partnerek, mind a kapcsolattartók számára futnak, akik az egyesített profilokat és az összes többi függőséget is frissítik.
+- Az egyező feltételek futtatásához frissítse az egyesített profilt, és futtassa az összes függőséget, válassza az Ügyfélprofilok és -függőségek **egyesítése lehetőséget**. Minden folyamat automatikusan újrafuttatható. Partnerek és kapcsolattartók esetén válassza a Fiókok **egyesítése profilok és függőségek** > **egyesítése lehetőséget**. Az egyező feltételek mind a partnerek, mind a kapcsolattartók számára futnak, akik az egyesített profilokat és az összes többi függőséget is frissítik.
 
 A Forrás mezők kivételével **minden csempe várólistán** vagy **Frissítésen** jelenik meg **.**
 

@@ -8,12 +8,12 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: a87af80fa713a1ac70493345c0c920e416692b0f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 32240c8c43751d8514d38b392f23ef4138d50ee2
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9083100"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411834"
 ---
 # <a name="predictions-overview"></a>Előrejelzések áttekintése
 
@@ -39,14 +39,11 @@ Az adatok előrejelzésével való elindulás legegyszerűbb módja az előre de
 
 > [!TIP]
 > Javasoljuk, hogy rendszeresen frissítse a beépített modelleket frissített adatokkal, hogy azok pontosan tájékoztassák az üzleti használati esetet. Az adatok ad-hoc módon frissülnek, amikor a rendszer új vagy frissített adatforrásokat tölt be. A modellek azonban ebben az esetben csak újrapontozzák a teljesítményt, és továbbra is a meglévő betanítási adatokat használják.
-> 
+>
 > A frissítési ütemezést **úgy konfigurálhatja,** hogy beállítja a modell újraképzési ütemezését a konfigurációs élményben. A modell újratanítja és újrapontozza ezt az ütemezést, amelyet bármikor módosíthat.
-
 
 ## <a name="azure-machine-learning-integration"></a>Azure Machine Learning integrációja
 
 Ha egy szervezet már használ az Azure Machine Learning kísérleteken alapuló forgatókönyveket, a Customer Insights egyéni modelljei segítenek a pontkapcsolatban. Hozzon létre olyan munkafolyamatokat, amelyek segítenek kiválasztani azokat az adatokat, amelyekből elemzéseket érdemes generálni, és az eredményeket az egységes ügyfélprofilokhoz térképezi fel. További tudnivalókat az [Egyéni gépi tanulás modellek](custom-models.md) című rész tartalmaz.
 
-## <a name="ai-builder-prediction"></a>AI Builder előrejelzés
-
-Néha az adatkészletek hiányosak, és néhány érték hiányzik. A Customer Insights segíthet megjósolni az ügyfél entitás és szegmenseinek hiányzó értékeit. További információ: [Egészítse ki a részleges adatait előrejelzésekkel](predictions.md).
+[!INCLUDE [footer-include](includes/footer-banner.md)]

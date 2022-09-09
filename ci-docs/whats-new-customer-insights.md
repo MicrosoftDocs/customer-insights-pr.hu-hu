@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
+ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387297"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "9409360"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -41,6 +41,14 @@ További információ: [Egyesített kapcsolattartói profil létrehozása](data-
 Az új kapcsolategyesítésnek köszönhetően kapcsolattartói szegmenseket hozhat létre a kapcsolattartók, partnerek vagy mindkettő kritériumainak felhasználásával. Ezek a szegmensek exportálhatók más szolgáltatásokban való aktiváláshoz.
 
 További információ: [Exportálások áttekintése](export-destinations.md).
+
+### <a name="deployment-regions-aligned-with-microsoft-dataverse"></a>A következőhöz igazított üzembe helyezési régiók: Microsoft Dataverse
+
+Új Customer Insights-környezet létrehozásakor kiválaszthatja azt a régiót, ahol a szolgáltatást üzembe szeretné helyezni és üzemeltetni szeretné. Frissítettük a régió kiválasztását, hogy igazodjon Microsoft Dataverse a Power Platform.
+
+Mostantól egyszerűen kiválaszthatja ugyanazt a régiót, mint a meglévő Microsoft Dataverse környezete vagy az Azure Data Lake Storage-fiókja (ha ezt a lehetőséget választja), a Customer Insights adott régióban való rendelkezésre állásának függvényében.
+
+További információ: [Új környezet](create-environment.md) létrehozása és [a termék elérhetősége földrajzi hely](https://dynamics.microsoft.com/availability-reports/) szerint.
 
 ## <a name="july-2022-updates"></a>2022. júliusi frissítések
 
@@ -116,13 +124,13 @@ Mostantól [nyomon követheti egy szegmens](segments.md#track-usage-of-a-segment
 
 A Criteo egy online platform, amely segít a felhasználóknak a digitális hirdetések kezelésében. Mostantól exportálhatja az egységes ügyfélprofilok szegmenseit kampányok létrehozásához, e-mailes marketing biztosításához és meghatározott ügyfélcsoportok használatához a Criteo segítségével.
 
-További információ: [Szegmensek exportálása Criteo-ba (előzetes verzió)](export-criteo.md).
+További információ: [Szegmensek exportálása a Criteo-ba (előzetes verzió)](export-criteo.md).
 
 ### <a name="refined-documentation-structure-for-environment-creation"></a>Kifinomult dokumentációs struktúra a környezet létrehozásához
 
 Újra áttekintettük a környezetek létrehozásával és kezelésével kapcsolatos súgódokumentumokat a Customer Insights szolgáltatásban. A cikkek mostantól a tartalomjegyzék Környezetek csomópontja alatt vannak csoportosítva. Az átstrukturált cikkek több útmutatást nyújtanak a környezetek beállításának különböző módjaihoz, és világosabb struktúrával rendelkeznek. Ha van megosztható visszajelzésed, tudasd velünk a súgócikkek vége felé található vezérlőkön keresztül.
 
-További információ: [How to: Create a new environment (Hogyan lehet: Új környezet](create-environment.md) létrehozása).
+További információ: [How to: Create a new environment (Hogyan lehet: Új környezet létrehozása)](create-environment.md).
 
 ## <a name="april-2022-updates"></a>2022. áprilisi frissítések
 
@@ -132,19 +140,19 @@ A 2022. áprilisi frissítések új funkciókat, teljesítményfrissítéseket �
 
 A Dun & Bradstreet kereskedelmi adatokat, elemzéseket és betekintést nyújt a vállalkozások számára. Lehetővé teszi, hogy az ügyfelek az egyesített ügyfélprofilokkal bővítsék az adataikat. A bővítések olyan attribútumokat tartalmaznak, mint a DUNS-szám, a vállalat mérete, a hely, az ipar és egyebek.
 
-További információ: [Vállalati profilok gazdagítása a Dun & Bradstreet (előzetes verzió)](enrichment-dnb.md)-val.
+További információ: [Vállalati profilok gazdagítása Dun & Bradstreettel (előzetes verzió)](enrichment-dnb.md).
 
 ### <a name="define-the-measure-type-when-creating-a-new-measure"></a>A mérték típusának meghatározása új mérték létrehozásakor
 
 Mostantól a teljes vállalkozásodban megkülönböztetheted az egyes profilokra és mértékekre vonatkozó mértékeket. Míg az üzleti mérések a Customer Insights kezdőlapján jelennek meg, az ügyfelek mérései a részletes ügyfélmegtekintésekben jelennek meg.
 
-További információ: [Mértékkészítő használata a semmiből](measure-builder.md) történő intézkedések létrehozásához.
+További információ: [Mértékkészítő használata a semmiből történő intézkedések létrehozásához](measure-builder.md).
 
 ### <a name="consolidation-of-customer-insights-documentation"></a>A Customer Insights dokumentációjának konszolidálása
 
 Újra áttekintettük a dokumentációs cikkeinket, és eltávolítottuk az elkötelezettségi elemzésekről és a célközönség elemzési képességekről szóló említéseket. A továbbiakban következetesen a Customer Insights terméknévre fogunk hivatkozni, amikor az alkalmazás alapvető funkcióiról írunk. Ez a változás a tartalomjegyzék, az URL-struktúra és a mögöttes dokumentációs adattárban található fájlútvonalak jelentős szerkezetátalakításához is vezet. Az összes könyvjelző vagy meglévő hivatkozás továbbra is működik, és átirányít a frissített URL-címekre.
 
-Ha szeretnéd tudatni velünk, hogy hogyan érzékeled ezt a változást, vagy azt szeretnéd észrevenni, hogy valami nem a várt módon működik, mondd el nekünk az oldal visszajelzéseinek [beküldésével](https://github.com/MicrosoftDocs/customer-insights/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Version%20Independent%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Content%3A%20%5BNew%20and%20upcoming%20features%20-%20Dynamics%20365%20Customer%20Insights%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdynamics365%2Fcustomer-insights%2Fwhats-new-customer-insights)%0A*%20Content%20Source%3A%20%5Bci-docs%2Fwhats-new-customer-insights.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fcustomer-insights%2Fblob%2Fmain%2Fci-docs%2Fwhats-new-customer-insights.md)%0A*%20Service%3A%20**customer-insights**%0A*%20Sub-service%3A%20**audience-insights**%0A*%20GitHub%20Login%3A%20%40m-hartmann%0A*%20Microsoft%20Alias%3A%20**mhart**).
+Ha szeretnéd tudatni velünk, hogy hogyan érzékeled ezt a változást, vagy azt szeretnéd észrevenni, hogy valami nem a várt módon működik, mondd el nekünk az oldal [visszajelzéseinek beküldésével](https://github.com/MicrosoftDocs/customer-insights/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Version%20Independent%20ID%3A%20d323ba46-f96e-1972-bc52-9b88f7d9cdfa%0A*%20Content%3A%20%5BNew%20and%20upcoming%20features%20-%20Dynamics%20365%20Customer%20Insights%5D(https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdynamics365%2Fcustomer-insights%2Fwhats-new-customer-insights)%0A*%20Content%20Source%3A%20%5Bci-docs%2Fwhats-new-customer-insights.md%5D(https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fcustomer-insights%2Fblob%2Fmain%2Fci-docs%2Fwhats-new-customer-insights.md)%0A*%20Service%3A%20**customer-insights**%0A*%20Sub-service%3A%20**audience-insights**%0A*%20GitHub%20Login%3A%20%40m-hartmann%0A*%20Microsoft%20Alias%3A%20**mhart**).
 
 ## <a name="march-2022-updates"></a>2022 márciusi frissítések
 
@@ -154,13 +162,13 @@ A 2022. márciusi frissítések új funkciókat, teljesítményfrissítéseket �
 
 A LiveRamp biztosítja az identitásfeloldást és az ügyféladatok összevonását. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásgráfra, és AbiliTec-azonosítókat kaphat. Ezután ezekkel az azonosítókkal jobban egyesítheti az ügyféladatokat.
 
-További információ: [Ügyfélprofilok gazdagítása a LiveRamp (előzetes verzió) identitásadataival](enrichment-liveramp.md).
+További információ: [Ügyfélprofilok gazdagítása identitásadatokkal a LiveRampből (előzetes verzió)](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Szegmensek és mértékek rendszerezése címkékkel és szűrőkkel
 
 Ha a szervezet sok szegmenst vagy intézkedést tart fenn, a megfelelő megtalálása néha kihívást jelenthet. Ez az új funkció lehetővé teszi a listák címkék és oszlopok segítségével történő rendszerezését. Segít az adatok gyors és egyszerű megtalálásában és a nézetek testreszabásában.
 
-További információ: [Címkék és oszlopok használata](work-with-tags-columns.md).
+További információ: [Címkék és oszlopok](work-with-tags-columns.md) használata.
 
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Az adatmegosztás Dataverse engedélyezése saját tárfiók használata esetén
 
@@ -204,19 +212,19 @@ További információ: [Adatforrás csatlakoztatása Azure Synapse (előzetes ve
 
 A LiveRamp biztosítja az identitásfeloldást és az ügyféladatok összevonását. Az ügyféladatokban szereplő személyes azonosítókat leképezheti az AbiliTec identitásgráfra, és AbiliTec-azonosítókat kaphat. Ezután ezekkel az azonosítókkal jobban egyesítheti az ügyféladatokat.
 
-További információ: [Ügyfélprofilok gazdagítása a LiveRamp (előzetes verzió) identitásadataival](enrichment-liveramp.md).
+További információ: [Ügyfélprofilok gazdagítása identitásadatokkal a LiveRampből (előzetes verzió)](enrichment-liveramp.md).
 
 ### <a name="enrichment-for-data-sources-preview"></a>Adatforrások gazdagítása (előzetes verzió)
 
 Használjon olyan forrásokból származó adatokat, mint a Microsoft és más partnerek, hogy az adatok egyesítése előtt gazdagítsa az ügyféladatokat. Adatforrás gazdagítások segítenek az adatok teljességének és minőségének javításában, ami segíthet jobb eredmények elérésében az adatok egységesítése után.
 
-További információ: [Adatforrások gazdagítása (előzetes verzió)](data-sources-enrichment.md).
+További információ: [Adatforrások bővítése (előzetes verzió)](data-sources-enrichment.md).
 
 ### <a name="change-owner-of-environment"></a>A környezet tulajdonosának megváltoztatása
 
 Bár több felhasználó is rendelkezhet rendszergazdai engedélyekkel a Customer Insights szolgáltatásban, csak egy felhasználó a környezet tulajdonosa. A továbbfejlesztett felhasználói élmény lehetővé teszi a környezet tulajdonosainak megváltoztatását és tulajdonjogának igénylését, ha egy korábbi tulajdonos elhagyta a szervezetet. 
 
-További információ: [Környezet](manage-environments.md#change-the-owner-of-an-environment) tulajdonosának módosítása.
+További információ: [Környezet tulajdonosának módosítása](manage-environments.md#change-the-owner-of-an-environment).
 
 ### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Az adat-előkészítési folyamat felsorolja a sérült rekordok sérülési okát
 

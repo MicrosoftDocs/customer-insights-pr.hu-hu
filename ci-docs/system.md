@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246250"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396004"
 ---
 # <a name="view-system-configuration"></a>Rendszerkonfiguráció megtekintése
 
@@ -38,12 +38,6 @@ Megtekintheti a valós idejű API-használat részleteit, és megtekintheti, hog
    - **API-hívások** – olyan diagram, amely a kiválasztott időkeretben megjeleníti az API-hívásokat.
    - **Adatátvitel** – olyan diagram, amely az API-n keresztül továbbított adatok mennyiségét mutatja a kiválasztott időkeretben.
    - **Műveletek** – egy táblázat sorokkal minden elérhető API-művelethez, és részletek a műveletek használatáról. Válasszon ki egy műveletnevet az API-referenciához [való ugráshoz](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   A valós idejű adatbetöltést [használó](real-time-data-ingestion.md) műveletek távcsőszimbólumot tartalmaznak a valós idejű API-használat megtekintéséhez.
-
-   1. Válassza ki a távcsövet a **művelet használati adatait tartalmazó Valós idejű API-használat** panel megnyitásához.
-   1. **Válassza ki a megtekinteni kívánt időkeret**.
-   1. A Csoportosítási **szempont** mezőben kiválaszthatja, hogyan szeretné a legjobban bemutatni a valós idejű interakciókat. Csoportosítsa az adatokat API-módszer, entitás minősített neve **(betöltött entitás),** létrehozva **(az esemény forrása),** eredmény **(sikeres vagy sikertelen) vagy** hibakódok **szerint.** **·** Az adatok előzménydiagramként és táblaként érhetők el.
 
 ## <a name="view-system-information"></a>Rendszerinformációk megtekintése
 
