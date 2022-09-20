@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 44f58d694b9bd35a8d8c04d487d40743291e0566
+ms.sourcegitcommit: ef3e17134d44d2731605381ea0385dbc5aef6120
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304062"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9460193"
 ---
 # <a name="exports-preview-overview"></a>Exportálások (előzetes verzió) áttekintése
 
@@ -81,6 +81,11 @@ Válasszon ki egy exportálást az elérhető műveletek megtekintéséhez.
 ## <a name="schedule-and-run-exports"></a>Exportálás ütemezése ás futtatása
 
 Minden konfigurált exportálás egy frissítési ütemezéssel rendelkezik. A frissítés során a rendszer új vagy frissített adatokat keres, amelyek szerepeljenek az exportálásban. Alapértelmezés szerint az exportálás minden [ütemezett rendszerfrissítés](schedule-refresh.md) részeként fut. Testreszabhatja a frissítési ütemezést, vagy ki is kapcsolhatja az exportálás manuális futtatásához.
+
+> [!TIP]
+> Minimalizálja a szegmensexportálás feldolgozási idejét a következő ajánlott eljárásokkal:
+> - Ossza el a szegmensentitásokat a mutiple-exportálások között.
+> - Kerülje az összes exportálás egyszerre történő ütemezését. Hagyjon 30 percet vagy egy órát az egyes exportálások ütemezett időpontja között.
 
 Az exportálási ütemezések a környezet állapotától függenek. Ha folyamatban vannak frissítések [függőségeken](system.md#refresh-processes) ,amikor egy ütemezett exportálást el kell indítani, a rendszer először befejezi a frissítéseket, majd futtatja az exportálást. A **Frissített** oszlop azt mutatja meg, hogy mikor frissült utoljára az exportálás.
 

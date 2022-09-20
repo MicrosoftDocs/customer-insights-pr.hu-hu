@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 65fd80cc563b8b3b8c8874b66f179f8b0c7a19f0
+ms.sourcegitcommit: fe33cc76d015232ff8737f77193f44f2b884bb6b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194926"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "9473645"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Ügyfélkártya-bővítmény a Dynamics 365 alkalmazásokhoz (előzetes verzió)
 
@@ -32,7 +32,8 @@ ms.locfileid: "9194926"
 - Ahhoz, hogy a Dynamics 365-adatok leképeződjenek a Customer Insights ügyfélprofiljaira, javasoljuk, hogy azokat [a Dynamics 365 alkalmazásból töltse be az Microsoft Dataverse összekötő használatával](connect-power-query.md). Ha más módszert használ a Dynamics 365 kapcsolattartók (vagy partnerek) betöltésére, győződjön meg arról, hogy a `contactid` (vagy `accountid`) mező az adott adatforrás elsődleges kulcsaként [van beállítva az adategyesítési folyamat során](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Az adatok megtekintéséhez az Ügyfélkártya bővítmény minden Dynamics 365-felhasználóját felhasználóként [kell](permissions.md) hozzáadni a Customer Insights szolgáltatáshoz.
 - [Konfigurált keresési és szűrési lehetőségek](search-filter-index.md) a Customer Insights megoldásban.
-- Minden bővítményvezérlő a Customer Insights adott adataira támaszkodik. Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja tájékoztatja, ha egy vezérlő nem érhető el a kiválasztott környezettípus miatt. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
+- Egyes adatok és vezérlők csak meghatározott típusú környezetekben érhetők el. A bővítmény konfigurációja tájékoztatja, ha egy vezérlő nem érhető el a kiválasztott környezettípus miatt. Ez a hiba megjelenik a vezérlőn belül a rendereléskor. További információ a [környezet helyreállításáról](work-with-business-accounts.md).
+- Minden bővítményvezérlő a Customer Insights adott adataira támaszkodik.
   - **A mértékvezérléshez** konfigurált ügyfélattribútum-mértékekre [van szükség](measures.md).
   - **Az intelligenciavezérléshez** előrejelzések vagy egyéni modellek [használatával](predictions-overview.md) létrehozott adatokra van szükség.
   - **Az Ügyféladatok vezérlő** az egyesített ügyfélprofilban elérhető profil összes mezőjét megjeleníti.

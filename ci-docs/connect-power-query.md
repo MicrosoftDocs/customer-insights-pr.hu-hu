@@ -5,19 +5,19 @@ ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
-author: adkuppa
-ms.author: matgos
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 7af51ed04fbd28149ea501c58e6fe71b5fa6d4b6
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207048"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463268"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Csatlakozás adatforrás Power Query
 
@@ -63,7 +63,9 @@ Az összekötőkön alapuló Power Query adatforrások hozzáadása általában 
 Az adatok betöltése időbe telhet. A sikeres frissítés után a betöltött adatok az [**Entitások oldalon ellenőrizhetők**](entities.md).
 
 > [!CAUTION]
-> A adatforrás alapján Power Query adatfolyamot [Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) hoz létre. Ne módosítsa az adatfolyam nevét a Power Platform Customer Insightsban használt felügyeleti központban. Az adatfolyamok átnevezése problémákat okoz a Customer Insights adatforrás és az Dataverse adatfolyam közötti referenciákkal kapcsolatban.
+>
+> - A adatforrás alapján Power Query adatfolyamot [Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) hoz létre. Ne módosítsa az adatfolyam nevét a Power Platform Customer Insightsban használt felügyeleti központban. Az adatfolyamok átnevezése problémákat okoz a Customer Insights adatforrás és az Dataverse adatfolyam közötti referenciákkal kapcsolatban.
+> - Az adatforrások egyidejű kiértékelése Power Query a Customer Insightsban ugyanazokkal [a frissítési korlátokkal rendelkezik, mint például az adatfolyamok a PowerBI.com](/power-query/power-query-online-limits#refresh-limits). Ha egy adatfrissítés meghiúsul, mert elérte a kiértékelési korlátot, javasoljuk, hogy módosítsa az egyes adatfolyamok frissítési ütemezését annak biztosítása érdekében, hogy az adatforrások feldolgozása ne legyen egyszerre.
 
 ### <a name="available-power-query-data-sources"></a>Rendelkezésre álló Power Query adatforrások
 
@@ -75,9 +77,9 @@ A Customer Insights (Adatfolyamok) **oszlopban** pipával ellátott összekötő
 
 Az adatok helyszíni adatforrásokból való betöltése adatfolyamok (PPDF-ek) alapján Microsoft Power Platform támogatott. Az adatfolyamokat a Customer Insightsban engedélyezheti, ha [megadja a Microsoft Dataverse környezet URL-címét](create-environment.md) a környezet beállításakor.
 
-A környezet és a Dataverse Customer Insights társítása után létrehozott adatforrások alapértelmezés szerint adatfolyamokat [Power Platform használnak](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása Dataverse előtt [létező adatforrásokat helyszíni adatátjárók](/data-integration/gateway/service-gateway-app) használatával távolíthatja el és hozhatja létre újra.
+A környezet és a Dataverse Customer Insights társítása után létrehozott adatforrások alapértelmezés szerint adatfolyamokat [Power Platform használnak](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Az adatfolyamok az adatátjáró használatával támogatják a helyszíni összekapcsolhatóságot. A környezet társítása Dataverse előtt [létező adatforrásokat helyszíni adatátjárók használatával távolíthatja el és hozhatja létre újra](/data-integration/gateway/service-gateway-app).
 
-A meglévő Power BI vagy Power Apps környezetből származó adatátjárók láthatók lesznek, és újra felhasználhatja őket a Customer Insights szolgáltatásban. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
+Egy meglévő Power BI vagy Power Apps környezetből származó adatátjárók láthatók lesznek, és újra felhasználhatja őket a Customer Insightsban, ha az adatátjáró és a Customer Insights környezet ugyanabban az Azure-régióban található. Az adatforrások oldalon olyan Microsoft Power Platform környezetbe mutató hivatkozások láthatók, ahol megtekintheti és konfigurálhatja a helyszíni adatátjárókat.
 
 > [!IMPORTANT]
 > Győződjön meg arról, hogy az átjárók frissítve vannak a legújabb verzióra. Telepíthet egy frissítést, és újrakonfigurálhat egy átjárót az átjáró képernyőjén közvetlenül megjelenő parancssorból, vagy [letöltheti a legújabb verziót](https://powerapps.microsoft.com/downloads/). Ha nem a legújabb átjáróverziót használja, az adatfolyam frissítése sikertelen az alábbi hibaüzenetekkel, például **A kulcsszó nem támogatott: konfigurációs tulajdonságok. Paraméter neve: kulcsszó**.
