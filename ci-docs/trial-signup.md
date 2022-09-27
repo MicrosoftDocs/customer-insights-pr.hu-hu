@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: fd32a3e37f4bbf57a5bd05f888fde39d32c02a82
-ms.sourcegitcommit: e5649ca0b3000cee0ca7c9eac7142cbd5f7dd2ac
+ms.openlocfilehash: 13e0b22d40d909abdbea8e77c9b4795ee42271c8
+ms.sourcegitcommit: e02a0bf51b5440fcf3284d410f24ea652fe90723
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/17/2022
-ms.locfileid: "9305607"
+ms.lasthandoff: 09/20/2022
+ms.locfileid: "9544312"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Regisztráció a Dynamics 365 Customer Insights ingyenes próbaverziójára
 
@@ -40,6 +40,6 @@ A próbaverziós környezet olyan funkciókat tartalmaz, mint a fizetett verzió
 
 ## <a name="additional-resources"></a>További információforrások
 
-- [Ismerje meg a Customer Insights képzési terveit és moduljait](/learn/browse/?products=dynamics-cust-insights)
+- [Ismerje meg a Customer Insights képzési terveit és moduljait](/training/browse/?products=dynamics-cust-insights)
 - [Próbaverzió GYIK-ja](trial-faq.md)
 - [Dynamics 365 Customer Insights termék részletei](https://dynamics.microsoft.com/ai/customer-insights/)

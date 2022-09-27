@@ -7,21 +7,21 @@
 - name: Képzési katalógus
   items:
     - name: A Microsoft ügyféladat-platformjának szakértőjeként való tanúsítás
-      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+      href: /certifications/exams/mb-260?tab=tab-instructor-led
     - name: Ismerkedés a Customer Insights szolgáltatással
-      href: /learn/modules/get-started-customer-data-platform/
+      href: /training/modules/get-started-customer-data-platform/
     - name: Adatok betáplálása
-      href: /learn/modules/ingest-data-customer-insights/
+      href: /training/modules/ingest-data-customer-insights/
     - name: Egyesített ügyfélprofil létrehozása
-      href: /learn/modules/unified-customer-profile/
+      href: /training/modules/unified-customer-profile/
     - name: A Customer Insights használata
-      href: /learn/modules/working-with-customer-insights/
+      href: /training/modules/working-with-customer-insights/
     - name: Adatok gazdagítása és előrejelzések készítése
-      href: /learn/modules/enrich-data/
+      href: /training/modules/enrich-data/
     - name: Külső kapcsolatok kezelése
-      href: /learn/modules/configure-third-party-connections/
+      href: /training/modules/configure-third-party-connections/
     - name: Customer Insights adminisztrációja
-      href: /learn/modules/administer-customer-data-platform/
+      href: /training/modules/administer-customer-data-platform/
 - name: Ingyenes próbaverzió
   items:
     - name: Regisztráció ingyenes próbaverzióra
@@ -118,6 +118,8 @@
       href: consent-management.md
     - name: Webes adatok használata személyre szabáshoz
       href: unknown-to-known.md
+    - name: Ismeretlen ügyfélprofilok kezelése
+      href: manage-unknown-profiles.md
 - name: Szegmensek
   items:
     - name: Szegmensek áttekintése
