@@ -1,7 +1,7 @@
 ---
 title: Entitások a Customer Insights szolgáltatásban
 description: Adatok megtekintése az Entitások lapon.
-ms.date: 12/06/2021
+ms.date: 08/04/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-entities
 - customerInsight
-ms.openlocfilehash: 0beaa46d47545ac195ced876b509dfc57821bfaf
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: e365945b27e7c985ca5371c6b72619610b6f3af1
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183560"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610101"
 ---
 # <a name="entities-in-customer-insights"></a>Entitások a Customer Insights szolgáltatásban
 
@@ -61,27 +61,5 @@ Az **Adatentitások** > **elemre kattintva** megtekintheti az entitások listáj
   - **Létrehozva**: Az entitás létrehozásának dátuma és időpontja.
   - **Szerkesztette**: Annak a személynek a neve, aki módosította az entitást.
   - **Szerkesztve**: Az entitás módosításának dátuma és időpontja.
-
-## <a name="entity-specific-information"></a>Entitásspecifikus információk
-
-A következő rész egyes rendszer által létrehozott entitásokkal kapcsolatos információkat tartalmaz.
-
-### <a name="corrupted-data-sources"></a>Sérült adatforrások
-
-A betöltött adatforrásból származó mezők sérült adatokat tartalmazhatnak. A sérült mezőket tartalmazó rekordok láthatóak a rendszer által létrehozott entitások között. A sérült rekordok ismerete segít azonosítani, hogy mely adatokat kell átnézni és frissíteni a forrásrendszerben. Az adatforrás következő frissítésekor a kijavított bejegyzéseket a Customer Insights alkalmazásba be lesznek töltve és tovább lesznek küldve a későbbi folyamatoknak. 
-
-Például egy "születési" oszlop adattípusának beállítása "dátum". Egy ügyfélrekord ban a születésnap értéke „01/01/19777”. A rendszer sérültként jelöli meg a bejegyzést. Most már valaki át tudja változtatni a forrásrendszerben az 1977-re a születésnapot. Az adatforrások automatikus frissítését követően a mező most már érvényes formátumban van, és a rekord törlődik a sérült entitásból.
-
-Nyissa meg az **Adatok** > **Entitások** lehetőséget és keressen sérült entitásokat a **Rendszer** szakaszban. Sérült entitások elnevezési sémája: "DataSourceName_EntityName_corrupt". Válasszon ki egy sérült entitást a sérült mezők és az ok azonosításához az egyes rekordok szintjén.
-
-   :::image type="content" source="media/corruption-reason.png" alt-text="Korrupciós ok.":::
-
-A Customer Insights továbbra is feldolgozza a sérült rekordokat. Ezek azonban problémákat okozhatnak a egyesített adatokkal való munka során.
-
-A következő ellenőrzések a betöltött adatokon futnak a sérült bejegyzések felfedése érdekében:
-
-- A mező értéke nem egyezik meg az oszlopa adattípusával.
-- A mezők olyan karaktereket tartalmaznak, amelyek hatására az oszlopok nem egyeznek meg a várt sémával. Például: nem megfelelően formázott idézőjelek, lezáratlan idézőjelek, vagy újsor karakterek.
-- Ha vannak datetime/date/datetimeoffset oszlopok, akkor a formátumukat meg kell adni a modellben, ha az nem követi a szabványos ISO formátumot.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

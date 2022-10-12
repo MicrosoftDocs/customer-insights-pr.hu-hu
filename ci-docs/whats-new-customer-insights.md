@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
-ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
-ms.translationtype: MT
+ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
+ms.translationtype: HT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "9409360"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609595"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>A Dynamics 365 Customer Insights újdonságai
 
@@ -228,9 +228,9 @@ További információ: [Környezet tulajdonosának módosítása](manage-environ
 
 ### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Az adat-előkészítési folyamat felsorolja a sérült rekordok sérülési okát
 
-Az adatelőkészítés mostantól a sérült adatokat tartalmazó mezők sérülésének okát mutatja. Az információkat az egyedi rekord szintjén nyújtják a könnyű azonosítás érdekében. 
+Az adatelőkészítés mostantól a sérült adatokat tartalmazó mezők sérülésének okát mutatja. Az információkat az egyedi rekord szintjén nyújtják a könnyű azonosítás érdekében.
 
-További információ: [Sérült adatforrások](entities.md#corrupted-data-sources).
+További információ: [Sérült adatforrások](data-sources.md#corrupt-data-sources).
 
 ### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Az elköteleződési elemzési képesség jelentéskészítési funkcióinak előzetes verziójának vége
 

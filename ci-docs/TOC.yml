@@ -162,6 +162,8 @@
           href: sentiment-analysis.md
         - name: Egyéni modellek használata az Azure Machine Learning-szolgáltatásból
           href: custom-models.md
+        - name: Szegmensek létrehozása előrejelzések alapján
+          href: prediction-based-segment.md
     - name: Mintaútmutatók
       items:
         - name: Mintaútmutató a CLV előrejelzéshez
@@ -174,10 +176,6 @@
           href: sample-guide-predict-product-recommendation.md
         - name: Azure Machine Learning-kísérletek
           href: azure-machine-learning-experiments.md
-    - name: Előrejelzések kezelése
-      href: manage-predictions.md
-    - name: Szegmensek létrehozása előrejelzések alapján
-      href: prediction-based-segment.md
 - name: Exportálási beállítások
   items:
     - name: Exportálások

@@ -1,7 +1,7 @@
 ---
 title: Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
 description: Adatok importálása Microsoft Dataverse felügyelt adattóből.
-ms.date: 07/26/2022
+ms.date: 08/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,12 +11,12 @@ ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: b21150a1c51bdad35250cae7fde7f38a014ec876
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 0d9612525344c8ac99b6e3edfe33a426dc0a474b
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9206956"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609798"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Kapcsolódás az adatokhoz egy Microsoft Dataverse felügyelt adattóban
 
@@ -70,5 +70,93 @@ Ha másik Dataverse-adattóhoz szeretne kapcsolódni, [hozzon létre egy új ada
 1. Kattintson a Mentés **gombra** a módosítások alkalmazásához és az **Adatforrások** lapra való visszatéréshez.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupted-data"></a>A betöltési hibák vagy a sérült adatok gyakori okai
+
+A következő ellenőrzések a betöltött adatokon futnak a sérült bejegyzések felfedése érdekében:
+
+- A mező értéke nem egyezik meg az oszlopa adattípusával.
+- A mezők olyan karaktereket tartalmaznak, amelyek hatására az oszlopok nem egyeznek meg a várt sémával. Például: nem megfelelően formázott idézőjelek, lezáratlan idézőjelek, vagy újsor karakterek.
+- Ha vannak datetime/date/datetimeoffset oszlopok, akkor a formátumukat meg kell adni a modellben, ha az nem követi a szabványos ISO formátumot.
+
+### <a name="schema-or-data-type-mismatch"></a>Séma- vagy adattípus-eltérés
+
+Ha az adatok nem felelnek meg a sémának, a rekordok sérültként vannak besorolva. Javítsa ki a forrásadatokat vagy a sémát, és töltse be újra az adatokat.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Rossz formátumú Datetime mezők
+
+Az entitás dátumidő mezői nem ISO vagy en-US formátumban vannak megadva. A Customer Insights alapértelmezett datetime formátuma az en-US formátum. Az entitás összes datetime mezőjének ugyanabban a formátumban kell lennie. A Customer Insights más formátumokat is támogat, feltéve, hogy a megjegyzéseket vagy tulajdonságokat a modell vagy a manifest.json forrás- vagy entitásszintjén készítik el. Például: 
+
+**Model.json fájl**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  A manifest.json fájlban a datetime formátum az entitás szintjén vagy az attribútum szintjén adható meg. Az entitás szintjén használja az "exhibitsTraits" parancsot az entitásban a *.manifest.cdm.json fájlban az adatidő formátumának meghatározásához. Az attribútum szintjén használja az "appliedTraits" attribútumot az entityname.cdm.json attribútumában.
+
+**Manifest.json az entitás szintjén**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json attribútumszinten**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

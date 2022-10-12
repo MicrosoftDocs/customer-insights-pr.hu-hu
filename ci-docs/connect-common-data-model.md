@@ -1,7 +1,7 @@
 ---
 title: Kapcsolódás a Common Data Model-mappához Azure Data Lake fiók használatával
 description: Common Data Model-adatok használata Azure Data Lake Storage segítségével.
-ms.date: 07/27/2022
+ms.date: 09/29/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
-ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
+ms.openlocfilehash: c12603b9ed8a814356a0f8d0137e97afc749b87c
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/02/2022
-ms.locfileid: "9396084"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609945"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Csatlakozás az adatokhoz a Azure Data Lake Storage-ban
 
@@ -43,6 +43,10 @@ Adatok betöltése a Dynamics 365 Customer Insights Gen2-fiók használatába Az
 - A adatforrás kapcsolatot beállító felhasználónak szüksége van a legkevesebb Storage Blob Data közreműködő engedélyre a tárfiókon.
 
 - A Data Lake Storage-ban lévő adatoknak az adatok tárolására vonatkozó Common Data Model szabványt kell követniük, és rendelkezniük kell az adatfájlok sémáját ábrázoló közös adatmodell-jegyzékfájllal (*.csv vagy *.parquet). A jegyzékfájlnak meg kell adnia az entitások részleteit, például az entitásoszlopokat és adattípusokat, valamint az adatfájl helyét és típusát. További információ: [A Common Data Model jegyzékfájl](/common-data-model/sdk/manifest). Ha a jegyzékfájl nincs jelen, a Storage Blob Data Owner vagy Storage Blob Data közreműködő hozzáféréssel rendelkező rendszergazda felhasználók meghatározhatják a sémát az adatok betöltésekor.
+
+## <a name="recommendations"></a>Javaslatok
+
+Az optimális teljesítmény érdekében a Customer Insights azt javasolja, hogy a partíció mérete legfeljebb 1 GB legyen, és a mappában lévő partíciófájlok száma nem haladhatja meg az 1000-et.
 
 ## <a name="connect-to-azure-data-lake-storage"></a>Csatlakozás a Azure Data Lake Storage szolgáltatáshoz
 
@@ -199,5 +203,101 @@ A Csatlakozás tárfiókhoz lehetőséget *frissítheti*. További információ:
 1. Kattintson a Mentés **gombra** a módosítások alkalmazásához és az **Adatforrások** lapra való visszatéréshez.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>A betöltési hibák vagy a sérült adatok gyakori okai
+
+Az adatbetöltés során a leggyakoribb okok közül néhány, amiért egy rekord sérültnek tekinthető, a következők:
+
+- Az adattípusok és a mezőértékek nem egyeznek a forrásfájl és a séma között
+- A forrásfájl oszlopainak száma nem egyezik meg a sémával
+- A mezők olyan karaktereket tartalmaznak, amelyek miatt az oszlopok a várt sémához képest eldőlnek. Például: helytelenül formázott idézőjelek, nem rögzített idézőjelek, újsoros karakterek vagy füles karakterek.
+- A partíciós fájlok hiányoznak
+- Ha vannak datetime/date/datetimeoffset oszlopok, akkor a formátumukat meg kell adni a sémában, ha az nem követi a szabványos formátumot.
+
+### <a name="schema-or-data-type-mismatch"></a>Séma- vagy adattípus-eltérés
+
+Ha az adatok nem felelnek meg a sémának, a betöltési folyamat hibákkal fejeződik be. Javítsa ki a forrásadatokat vagy a sémát, és töltse be újra az adatokat.
+
+### <a name="partition-files-are-missing"></a>A partíciós fájlok hiányoznak
+
+- Ha a betöltés sérült rekordok nélkül volt sikeres, de nem lát adatokat, szerkessze a model.json vagy a manifest.json fájlt, hogy a partíciók meg legyenek adva. [Ezután frissítse a adatforrás](data-sources.md#refresh-data-sources).
+
+- Ha az adatbetöltés az adatforrások automatikus ütemezési frissítés során történő frissítésével egy időben történik, előfordulhat, hogy a partíciófájlok üresek vagy nem érhetők el a Customer Insights számára a feldolgozáshoz. Az upstream frissítési ütemezéshez való igazodáshoz módosítsa a [rendszerfrissítési ütemtervet](schedule-refresh.md) vagy a adatforrás frissítési ütemezését. Igazítsa az időzítést úgy, hogy a frissítések ne történjenek meg egyszerre, és a Customer Insights szolgáltatásban feldolgozandó legfrissebb adatokat biztosítsa.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Rossz formátumú Datetime mezők
+
+Az entitás dátumidő mezői nem ISO 8601 vagy en-US formátumban vannak. A Customer Insights alapértelmezett datetime formátuma az en-US formátum. Az entitás összes datetime mezőjének ugyanabban a formátumban kell lennie. A Customer Insights más formátumokat is támogat, feltéve, hogy a megjegyzéseket vagy tulajdonságokat a modell vagy a manifest.json forrás- vagy entitásszintjén készítik el. Például: 
+
+**Model.json fájl**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  A manifest.json fájlban a datetime formátum az entitás szintjén vagy az attribútum szintjén adható meg. Az entitás szintjén használja az "exhibitsTraits" parancsot az entitásban a *.manifest.cdm.json fájlban a datetime formátum meghatározásához. Az attribútum szintjén használja az "appliedTraits" attribútumot az entityname.cdm.json attribútumában.
+
+**Manifest.json az entitás szintjén**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json attribútumszinten**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

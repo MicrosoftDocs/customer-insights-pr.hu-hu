@@ -1,7 +1,7 @@
 ---
 title: Az Előfizetés-lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálhassa a mezőn kívüli előfizetés lemorzsolódási modellt.
-ms.date: 03/31/2022
+ms.date: 09/19/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,77 +11,73 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 7e754be9a2cb9450949c6b3667bbd37aa39cf0bf
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741414"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610009"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Az Előfizetés-lemorzsolódási előrejelzési példamutató
 
-Elejétől végéig bemutatunk Önnek egy példán keresztül a egy előfizetés lemorzsolódási előrejelzést, használva az alább megadott példaadatokat. 
+Ez az útmutató bemutatja az előfizetés lemorzsolódásának teljes körű példáját előrejelzés mintaadatok használatával. Javasoljuk, hogy ezt a előrejelzés [új környezetben próbálja ki](manage-environments.md).
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. A közelmúltban indítottak el egy előfizetéses üzletet ügyfeleiknek, hogy azok rendszeresen megkaphassák kávéjukat. Céljuk, hogy megérthessék, melyik előfizetett ügyfelük fogja visszavonni előfizetését az elkövetkező pár hónapban. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
+Contoso egy olyan cég, amely kiváló minőségű kávé- és kávéfőzőket gyárt. A termékeket a Contoso Coffee weboldalán keresztül értékesítik. A közelmúltban indítottak el egy előfizetéses üzletet ügyfeleiknek, hogy azok rendszeresen megkaphassák kávéjukat. Céljuk annak megértése, hogy mely feliratkozott ügyfelek mondhatják le előfizetésüket a következő néhány hónapban. Ha tudják, hogy melyik ügyfelük fog lemorzsolódni **,** az segíthet nekik megtakarítani a marketingtörekvéseket azáltal, hogy a megtartására összpontosít.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
 - Legalább [közreműködői engedély](permissions.md) a Customer Insightsban.
-- Javasoljuk, hogy a következő lépéseket hajtsa végre [egy új környezetben](manage-environments.md).
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speciális összekötőkkel [történő Power Query importálásáról szóló cikkeket](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
+Tekintse át az adatbetöltésről [és](data-sources.md) a adatforrás való [csatlakozásról szóló cikkeket Power Query](connect-power-query.md). Az alábbi információk feltételezik, hogy általában ismeri az adatok betöltését.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
-1. Hozzon létre egy adatforrást, elnevezve **eCommerce**-nek, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy e-kereskedelem **nevű Power Query adatforrás,** és válassza ki a **Text/CSV-összekötőt**.
 
 1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscontacts.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
-
    - **SzületésiDátum**: Dátum
    - **CreatedOn**: Dátum/Idő/Zóna
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="A születési dátum átalakítása dátummá.":::
 
-1. A jobb oldali panelben a **Név** mezőben nevezze át az adatforrását a **Lekérdezés** értékről **eCommerceContacts** értékre
+1. **A jobb oldali ablaktábla Név** mezőjében nevezze át a adatforrás eCommerceContacts **névre**
 
 1. Az adatforrások mentése.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Ügyféladatok bevitele a hűségsémából
 
-1. Hozzon létre egy adatforrást, melynek neve **LoyaltyScheme**, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy LoyaltyScheme **nevű adatforrás,** és válassza ki a **Text/CSV-összekötőt**.
 
-1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscustomerloyalty.
+1. Adja meg a hűségügyfelek https://aka.ms/ciadclasscustomerloyalty URL-címét.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
-
    - **SzületésiDátum**: Dátum
    - **JutalmazásiPontok**: Egész Szám
    - **KészültEkkor**: Dátum/Idő
 
-1. A **Név** mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés** helyett **loyCustomers** értékre.
+1. **A jobb oldali panel Név** mezőjében nevezze át a adatforrás a következőre: **loyCustomers**.
 
 1. Az adatforrások mentése.
 
 ### <a name="ingest-subscription-information"></a>Előfizetési információk betáplálása
 
-1. Hozzon létre egy adatforrást, melynek neve **ElőfizetésiElőzmények**, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy SubscriptionHistory nevű **adatforrás, és válassza ki a** Text/CSV-összekötőt **.**
 
-1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadchurnsubscriptionhistory.
+1. Adja meg az előfizetések URL-címét https://aka.ms/ciadchurnsubscriptionhistory.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
-
    - **ElőfizetésAzonosító**: Egész szám
    - **ElőfizetésiÖsszeg**: Pénznem
    - **ElőfizetésVégénekDátuma**: Dátum/Idő
@@ -91,92 +87,107 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
    - **Is_auto_megújítás**: Igaz/Hamis
    - **IsmétlődésiGyakoriságInHónapok**: Egész Szám
 
-1. A **Név** mezőben a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **SubscriptionHistory**-ra.
+1. **A jobb oldali panel Név** mezőjében nevezze át a adatforrás SubscriptionHistory **névre**.
 
 1. Az adatforrások mentése.
 
 ### <a name="ingest-customer-data-from-website-reviews"></a>Tápláljon be ügyféladatokat a webhely értékelésekből.
 
-1. Hozzon létre egy adatforrást, **eCommerce** néven, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy Webhely nevű **adatforrás,** és válassza ki a **Text/CSV-összekötőt**.
 
-1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasswebsite.
+1. Adja meg a webhelyértékelések URL-jét https://aka.ms/ciadclasswebsite.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
-
    - **ÁttekintésiMinősítés**: Egész Szám
    - **ÁttekintésDátuma**: Dátum
 
-1. A "Név" mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés**-ről **webReviews**-re.
+1. **A jobb oldali panel Név** mezőjében nevezze át a adatforrás webReviews **névre**.
 
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
+Tekintse át az adatok egyesítéséről [szóló cikket](data-unification.md). Az alábbi információk feltételezik, hogy általában ismeri az adatok egyesítését.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-the-subscription-churn-prediction"></a>3. feladat – Konfigurálja az előfizetés lemorzsolódási előrejelzést
+## <a name="task-3---create-transaction-history-activity"></a>3. feladat – Tranzakciós előzményekkel kapcsolatos tevékenység létrehozása
 
-Az egységesített ügyfélprofilok elkészítése után, előfizetés lemorzsolódási előrejelzést futtathatunk. A részletes lépéseket az [Előfizetés lemorzsolódása előrejelzés](predict-subscription-churn.md) cikkben találja. 
+Tekintse át az ügyféltevékenységekről szóló [cikket](activities.md). Az alábbi információk feltételezik, hogy általában ismeri a tevékenységek létrehozását.
 
-1. Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.
+1. Hozzon létre egy SubscriptionHistory nevű **tevékenységet az** Előfizetés *entitással és annak elsődleges kulcsával,CustomerId* **.**
 
-1. Válassza az **Előfizetés** beállítást, majd válassza ki a **Kezdő lépések** lehetőséget.
+1. Hozzon létre egy kapcsolatot a SubscriptionHistory:Subscription *és* az eCommerceContacts:eCommerce *között*, ahol **a CustomerID** a két entitás összekapcsolásához szükséges idegen kulcs.
+
+1. Válassza a SubscriptionType lehetőséget **az EventActivity** és **a** SubscriptionEndDate **elemhez a** TimeStamp **esetében**.
+
+1. Válassza az Előfizetés **lehetőséget** a **tevékenységtípushoz,** és szemantikailag leképezi a tevékenységadatokat.
+
+1. Futtassa a tevékenységet.
+
+1. Adjon hozzá egy másik tevékenységet, és képezze le a mezők nevét a megfelelő mezőkre:
+   - Ügyféltevékenységek entitás: Reviews:Website
+   - Elsődleges kulcs: Website.Reviews.ReviewId
+   - Időbélyeg: Website.Reviews.ReviewDate
+   - Esemény (tevékenység neve): Website.Reviews.ActivityTypeDisplay
+   - Részletek (összeg vagy érték): Website.Reviews.ReviewRating
+
+1. Futtassa a tevékenységet.
+
+## <a name="task-4---configure-the-subscription-churn-prediction"></a>4. feladat – Konfigurálja az előfizetés lemorzsolódási előrejelzést
+
+Ha az egyesített ügyfélprofilok a helyükön vannak, és létrehozott tevékenység, futtassa az előfizetési adatváltozást előrejelzés. Részletes lépésekért lásd: [Előfizetési adatváltozás előrejelzés](predict-subscription-churn.md).
+
+1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
+
+1. A Létrehozás lapon válassza a **Modell** használata lehetőséget **az** Ügyfél adatváltozás modelljének csempéjén **.**
+
+1. Válassza az Előfizetés lehetőséget **a lemorzsolódás típusához, majd** az Első lépések lehetőséget **.**
 
 1. Nevezze el a modellt **OOB Előfizetés-lemorzsolódási Előrejelzés**-nek és a kimeneti entitást **OOBElőfizetés-lemorzsolódásiElőrejelzés**-nek.
 
-1. Határozzon meg két feltételt a lemorzsolódási modellhez.
+1. Modellbeállítások meghatározása:
+   - **Napok az előfizetés vége** óta: **60** nap annak jelzésére, hogy az ügyfél lemorzsolódottnak minősül, ha az előfizetése lejárta után ebben az időszakban nem újítja meg az előfizetést.
+   - **Napok a jövőbeli lemorzsolódás** előrejelzésére: **93** nap, amely a modell által megjósolt időtartam, hogy mely ügyfelek hurcolhatnak le. Minél távolabb tekint a jövőben, annál kevésbé pontosak az eredmények.
 
-   * **Amióta az előfizetés véget ért**: **legalább 60** nap. Ha egy ügyfél nem újítja meg előfizetését ebben az időszakban, miután előző előfizetése lejárt, lemorzsolódónak tekintendő. 
+   :::image type="content" source="media/model-subs-levers.PNG" alt-text="Válassza ki a modellbeállításokat és a lemorzsolódás definícióját.":::
 
-   * **Lemorzsolódás meghatározása**: **legalább 93** nap. Az az időtartam, ami alatt a modell megjósolja, hogy mely ügyfelek morzsolódhatnak le. Minél távolabb tekint a jövőben, annál kevésbé pontosak az eredmények.
+1. Válassza a **Következő** lehetőséget.
 
-     :::image type="content" source="media/model-subs-levers.PNG" alt-text="Válassza ki a modellt, amely előhozza az Előrejelzési Ablakot és a Lemorzsolódás Meghatározását.":::
+1. A Szükséges adatok **lépésben válassza az** Adatok **hozzáadása lehetőséget** az előfizetési előzmények megadásához.
 
-1. Válassza ki a **Szükséges adatok hozzáadása** menüt, és ott válassza az **Adatok hozzáadása** lehetőséget az előfizetési előzményekhez.
+1. Válassza az **Előfizetés** és a SubscriptionHistory entitás lehetőséget, majd kattintson a Tovább **gombra**. A szükséges adatok automatikusan kitöltésre kerülnek a tevékenységből. Válassza a **Mentés** parancsot.
 
-1. Adja hozzá a **Előfizetés : ElőfizetésiElőzmények** entitást és képezze le a mezőket az eCommerce-ből a megfelelő mezőkre, melyek modell által megköveteltek.
+1. Az Ügyféltevékenységek alatt válassza az Adatok **hozzáadása lehetőséget**.
 
-1. Csatlakoztassa az **Előfizetés : ElőfizetésiElőzmények** entitáshoz az **eCommerceContacts : eCommerce**-t, nevezze el a kapcsolatot **eCommerceElőfizetések**-nek.
+1. Ebben a példában adja hozzá a webes felülvizsgálati tevékenységet.
 
-   :::image type="content" source="media/model-subscription-join.PNG" alt-text="Csatlakoztassa az eCommerce entitásokhoz.":::
+1. Válassza a **Következő** lehetőséget.
 
-1. Az Ügyféltevékenység alatt adja hozzá a **webReviews : Website** entitást és képezze le a mezőket a webReviewsból a megfelelő mezőkre, melyek modell által megköveteltek. 
-   - Elsődleges kulcs: ÉrtékelésId
-   - Időbélyege: ÉrtékelésDátuma
-   - Esemény: ÉrtékelésMinősítése
-
-1. Konfiguráljon egy tevékenységet a webhely értékeléseknek. Válassza ki az **Értékelés** tevékenységet és csatlakoztassa a **webÉrtékelések : Weboldal** entitást az **eCommerceContacts : eCommerce**-hez.
-
-1. Válassza a **Következő** lehetőséget a modell ütemezésének beállításához.
-
-   A modell rendszeres betanítást igényel ahhoz, hogy új mintákat tanulhasson, amikor új adatok kerülnek a rendszerbe. Ennél a példánál válassza a **Havonta** beállítást.
+1. Az Adatfrissítések **lépésben válassza a** Havi **lehetőséget** a modell ütemezéséhez.
 
 1. A részletek áttekintése után válassza a **Mentés és Futtatás** lehetőséget.
 
-## <a name="task-4---review-model-results-and-explanations"></a>4. feladat – Modell eredmények és a magyarázatok áttekintése
+## <a name="task-5---review-model-results-and-explanations"></a>5. feladat – Modell eredmények és a magyarázatok áttekintése
 
-Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most már megtekintheti az előfizetési lemorzsolódás modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-subscription-churn.md#review-a-prediction-status-and-results) című témakört.
+Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Tekintse át az előfizetés-lemorzsolódási modell magyarázatait. További információ: [előrejelzés eredmények](predict-subscription-churn.md#view-prediction-results) megtekintése.
 
-## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>5. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről
+## <a name="task-6---create-a-segment-of-high-churn-risk-customers"></a>6. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről
 
-Futtatva a termékjavaslati modellt, létrehozhat egy új entitást, amelyet láthat a **Adat** > **Entitások**-nál.   
+A modell futtatása új entitást hoz létre, amely listázva van az **Adatok** > **Entitások** helyen. Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 
-Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
+1. Az eredmény lapon válassza a **Szegmens létrehozása** lehetőséget.
 
-1.  Kattintson a **Szegmensek** lehetőségre. Válassza az **Új** lehetőséget, és válassza a **Létrehozás a következőkből** > **Intelligencia**. 
+1. Hozzon létre egy szabályt az **OOBSubscriptionChurnPrediction** entitás használatával, és határozza meg a szegmenst:
+   - **Mező:** ChurnScore
+   - **Operátor**: nagyobb, mint
+   - **Érték**: 0,6
 
-   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Szegmens létrehozása a modell kimenetével.":::
+1. Válassza a Szegmens mentése **és** futtatása **lehetőséget**.
 
-1. Válassza ki a **OOBSubscriptionChurnPrediction** végpontot és definiálja a szegmenst: 
-   - Mező: ChurnScore
-   - Operátor: nagyobb, mint
-   - Érték: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Állítsa be az előfizetési lemorzsolódási szegmenset.":::
+Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén. További információ: [Szegmensek létrehozása és kezelése](segments.md).
 
-Most már van egy szegmense, amely dinamikusan frissítve van, és amely meghatározza a magas lemorzsolódási kockázatot ennek az üzleti előfizetésnek az esetén.
-
-További információ: [Szegmensek létrehozása és kezelése](segments.md).
-
+> [!TIP]
+> A szegmensek **lapon is létrehozhat szegmenst egy előrejelzés modellhez az Új**, **majd a Létrehozás az** Intelligenciából **lehetőség kiválasztásával** > **·**. További információ: [Új szegmens létrehozása gyors szegmensekkel](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

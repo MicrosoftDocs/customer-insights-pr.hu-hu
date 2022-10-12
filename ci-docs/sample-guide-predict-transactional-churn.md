@@ -1,44 +1,43 @@
 ---
 title: Tranzakcionális lemorzsolódási előrejelzési példamutató
 description: Használja ezt a példamutatót, hogy kipróbálja a mezőn kívüli lemorzsolódás-előrejelzési modellt.
-ms.date: 05/11/2022
+ms.date: 09/19/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 0ccc32b6e5e96adf6f2fa8c6d52960a07d1513f3
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741322"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609687"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Tranzakcionális lemorzsolódási előrejelzési példamutató
 
-Ez az útmutató elejétől végéig bemutatja Önnek egy példán keresztül a tranzakciólemorzsolódási előrejelzést a Customer Insightsban, a lent megadott adatok használatával. Az ebben az útmutatóban felhasznált adatok nem valós ügyféladatok, és részei a Contoso-adatkészletnek, ami megtalálható a *Bemutató* környezetben a Customer Insights Előfizetésében.
+Ez az útmutató elmagyarázza Önnek a tranzakciós adatváltozás teljes körű példáját előrejelzés mintaadatok felhasználásával. Javasoljuk, hogy ezt a előrejelzés [új környezetben próbálja ki](manage-environments.md).
 
 ## <a name="scenario"></a>Forgatókönyv
 
-A Contoso egy vállalat, amely kiváló minőségű kávét és kávégépet árusít, melyet a Contoso Coffee weboldalán keresztül adnak el. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
+Contoso egy olyan cég, amely kiváló minőségű kávé- és kávéfőzőket gyárt. A termékeket a Contoso Coffee weboldalán keresztül értékesítik. Céljuk, hogy megtudják, mely ügyfelek azok, akik általában rendszeresen vásárolnak termékeket, mégis az elkövetkezendő 60 napon megszűnnek aktív ügyfelek lenni. Tudva, melyek azok az ügyfelek, akik **várhatóan a lemorzsolódnak**, segítséget nyújthatnak a marketing-erőfeszítések megtakarításában, azzal, hogy megtartják őket.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Legalább [közreműködői engedély](permissions.md) a Customer Insightsban.
-- Javasoljuk, hogy a következő lépéseket hajtsa végre [egy új környezetben](manage-environments.md).
+- Legalább [közreműködői engedélyek](permissions.md).
 
 ## <a name="task-1---ingest-data"></a>1. Feladat - Adatok betáplálása
 
-Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speciális összekötőkkel [történő Power Query importálásáról szóló cikkeket](connect-power-query.md). A következő információk azt feltételezik, hogy megismerkedett a betáplált adatokkal általánosságban. 
+Tekintse át az adatbetöltésről [és](data-sources.md) a adatforrás való [csatlakozásról szóló cikkeket Power Query](connect-power-query.md). Az alábbi információk feltételezik, hogy általában ismeri az adatok betöltését.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Betáplált ügyféladatok az eCommerce platformról.
 
-1. Hozzon létre egy adatforrást, elnevezve **eCommerce**-nek, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy e-kereskedelem **nevű adatforrás,** és válassza ki a **Text/CSV-összekötőt**.
 
 1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscontacts.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
 
@@ -47,7 +46,7 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="DoB átalakítása Dátummá.":::
 
-1. A jobb oldali panelben a **Név** mezőben nevezze át az adatforrását a **Lekérdezés** értékről **eCommerceContacts** értékre
+1. **A jobb oldali ablaktábla Név** mezőjében nevezze át a adatforrás eCommerceContacts **névre**
 
 1. Az adatforrások mentése.
 
@@ -55,26 +54,26 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
 
 1. Adjon hozzá egy újabb adatforrást a megegyező **eCommerce** adatforráshoz. Válassza a **Text/CSV** csatlakozót újra.
 
-1. Adja meg az URL-címét az **Online vásárlas** adataihoz https://aka.ms/ciadclassonline.
+1. Adja meg az online vásárlási adatok URL-címét https://aka.ms/ciadclassonline.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
 
    - **PurchasedOn** : Dátum/Idő
    - **TotalPrice** : Pénznem
-   
-1. A **Név** mezőben a jobb oldali panelen, nevezze át az adatforrását a **Lekérdezés**-ről **eCommercePurchases**-ra.
+
+1. **A jobb oldali panel Név** mezőjében nevezze át a adatforrás eCommercePurchases **névre**.
 
 1. Az adatforrások mentése.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Ügyféladatok bevitele a hűségsémából
 
-1. Hozzon létre egy adatforrást, melynek neve **LoyaltyScheme**, majd válassza az importálás lehetőséget, és jelölje ki a **Text/CSV** csatlakozót.
+1. Hozzon létre egy LoyaltyScheme **nevű adatforrás,** és válassza ki a **Text/CSV-összekötőt**.
 
 1. Adja meg az URL-címét az eCommerce kapcsolattartóknak https://aka.ms/ciadclasscustomerloyalty.
 
-1. Az adatok szerkesztése közben válassza az **Átalakítás** lehetőséget, majd a **Használja az első sort fejlécként** lehetőséget.
+1. Az adatok szerkesztése közben válassza **az Átalakítás**, majd **az Első sor használata fejlécként** lehetőséget.
 
 1. Frissítse az adattípust az alább felsorolt oszlopokhoz:
 
@@ -82,68 +81,86 @@ Tekintse át az adatbetöltésről [és](data-sources.md) az adatforrások speci
    - **JutalmazásiPontok**: Egész Szám
    - **KészültEkkor**: Dátum/Idő
 
-1. A **Név** mezőben, a jobb oldali panelen, nevezze át az adatforrását **Lekérdezés** helyett **loyCustomers** értékre.
+1. **A jobb oldali panel Név** mezőjében nevezze át a adatforrás a következőre: **loyCustomers**.
 
 1. Az adatforrások mentése.
 
 ## <a name="task-2---data-unification"></a>2. feladat - Adatok egységesítése
 
+Tekintse át az adatok egyesítéséről [szóló cikket](data-unification.md). Az alábbi információk feltételezik, hogy általában ismeri az adatok egyesítését.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-transaction-churn-prediction"></a>3. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.
+## <a name="task-3---create-transaction-history-activity"></a>3. feladat – Tranzakciós előzményekkel kapcsolatos tevékenység létrehozása
 
-Az egységes ügyfélprofilok meglétével most már előrejelzés futtathatjuk a tranzakciós lemorzsolódást. A részletes lépéseket a [Tranzakció lemorzsolódása előrejelzés](predict-transactional-churn.md) cikkben találja. 
+Tekintse át az ügyféltevékenységekről szóló [cikket](activities.md). Az alábbi információk feltételezik, hogy általában ismeri a tevékenységek létrehozását.
 
-1. Nyissa meg az **Intelligencia** > **Felfedezés** elemet, és válassza az **Ügyfél-lemorzsolódási modell** használatát.
+1. Hozzon létre egy eCommercePurchases nevű **tevékenységet az** eCommercePurchases:eCommerce *entitással és annak elsődleges kulcsával,* a PurchaseId azonosítóval **.**
 
-1. Válassza a **Tranzakciós** beállítást, és válassza ki a **Kezdő lépések** lehetőséget.
+1. Hozzon létre kapcsolatot az eCommercePurchases:eCommerce *és* az eCommerceContacts:eCommerce *között*, a ContactID-vel **, mint idegen kulccsal** a két entitás összekapcsolásához.
+
+1. Válassza a TotalPrice lehetőséget **az EventActivity** és **a** PurchasedOn **lehetőséget a** TimeStamp **esetében**.
+
+1. Válassza a SalesOrderLine **lehetőséget** a Tevékenység típusa beállításnál **,** és szemantikailag leképezi a tevékenységadatokat.
+
+1. Futtassa a tevékenységet.
+
+## <a name="task-4---configure-transaction-churn-prediction"></a>4. feladat – Konfigurálja a tranzakciót a lemorzsolódási előrejelzéshez.
+
+Ha az egyesített ügyfélprofilok és a tevékenység a helyén van, futtassa a tranzakciós adatváltozást előrejelzés.
+
+1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
+
+1. A Létrehozás lapon válassza a **Modell** használata lehetőséget **az** Ügyfél adatváltozás modelljén **.**
+
+1. Válassza a Tranzakciós lehetőséget **a lemorzsolódás típusához, majd** az Első lépések lehetőséget **.**
 
 1. Nevezze el a modellt **OOB eCommerce Lemorzsolódási Előrejelzés**-nek és a kimeneti entitást **OOBeCommerceChurnPrediction**-nak.
 
-1. Határozzon meg két feltételt a lemorzsolódási modellhez.
+1. Válassza a **Következő** lehetőséget.
 
-   * **Előrejelzési ablak**: **legalább 60** nap. Ez a beállítás meghatározza, a jövőben milyen távol szeretné előre jelezni az ügyfél lemorzsolódást.
+1. Modellbeállítások meghatározása:
 
-   * **Lemorzsolódás meghatározása**: **legalább 60** nap. A vásárlás nélküli időtartam, ami után egy ügyfél lemorzsolódónak minősül.
+   - **előrejelzés ablak**: **60** nap annak meghatározására, hogy a jövőbe nézve milyen messzire szeretnénk megjósolni az ügyfelek lemorzsolódását.
 
-     :::image type="content" source="media/model-levers.PNG" alt-text="Válassza ki a modellt, amely előhozza az Előrejelzési Ablakot és a Lemorzsolódás Meghatározását.":::
+   - **Lemorzsolódás definíciója**: **60** nap annak a vásárlás nélküli időtartamnak a jelzésére, amely után az ügyfelet lemorzsolódottnak tekintik.
+
+     :::image type="content" source="media/model-levers.PNG" alt-text="Válassza ki a modellbeállításokat előrejelzés Ablak és a Lemorzsolódás definíciója lehetőséget.":::
+
+1. Válassza a **Következő** lehetőséget.
 
 1. Válassza ki a **Vásárlási előzményeket (kötelező)** és válassza az **Adatok hozzáadása** lehetőséget az vásárlási előzményekhez.
 
-1. Adja hozzá a **eCommercePurchases: eCommerce** entitást és képezze le a mezőket az eCommerce-ről a megfelelő mezőkre, melyek modell által megköveteltek.
-
-1. Csatlakozzon az **eCommercePurchases: eCommerce** entitáshoz az **eCommerceContacts: eCommerce**-szel.
+1. Válassza a **SalesOrderLine** lehetőséget és az eCommercePurchases entitást, majd kattintson a Tovább **gombra**. A szükséges adatok automatikusan kitöltésre kerülnek a tevékenységből. Válassza a Mentés, **majd a** Tovább lehetőséget **.**
 
    :::image type="content" source="media/model-purchase-join.PNG" alt-text="Csatlakoztassa az eCommerce entitásokhoz.":::
 
-1. Válassza a **Következő** lehetőséget a modell ütemezésének beállításához.
+1. Hagyja ki a **További adatok (nem kötelező)** lépést.
 
-   A modell rendszeres betanítást igényel ahhoz, hogy új mintákat tanulhasson, amikor új adatok kerülnek a rendszerbe. Ennél a példánál válassza a **Havonta** beállítást.
+1. Az Adatfrissítések **lépésben válassza a** Havi **lehetőséget** a modell ütemezéséhez.
 
 1. A részletek áttekintése után válassza a **Mentés és Futtatás** lehetőséget.
 
-## <a name="task-4---review-model-results-and-explanations"></a>4. feladat – Modell eredmények és a magyarázatok áttekintése
+## <a name="task-5---review-model-results-and-explanations"></a>5. feladat – Modell eredmények és a magyarázatok áttekintése
 
-Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Most áttekintheti a lemorzsolódási modell magyarázatait. További tudnivalókért olvassa el az [Előrejelzés állapotának és eredmények áttekintése](predict-transactional-churn.md#review-a-prediction-status-and-results) című témakört.
+Hagyja, hogy a modell teljesítse az adatok betanítását és pontozását. Tekintse át a lemorzsolódási modell magyarázatait. További információ: [előrejelzés eredmények](predict-transactional-churn.md#view-prediction-results) megtekintése.
 
-## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>5. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről
+## <a name="task-6---create-a-segment-of-high-churn-risk-customers"></a>6. feladat – Hozzon létre egy szegmenst a nagy lemorzsolódási kockázatú ügyfelekről
 
-Futtatva a termékjavaslati modellt, létrehozhat egy új entitást, amelyet láthat a **Adat** > **Entitások**-nál.   
+Az éles modell futtatása létrehoz egy új entitást, amely az **Adatentitások** > **között** szerepel. Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
 
-Létrehozhat egy új szegmenst, a modell által létrehozott entitás alapján.
+1. Az eredmény lapon válassza a **Szegmens létrehozása** lehetőséget.
 
-1.  Kattintson a **Szegmensek** lehetőségre. Válassza az **Új** lehetőséget, és válassza a **Létrehozás a következőkből** > **Intelligencia**. 
+1. Hozzon létre egy szabályt az **OOBeCommerceChurnPrediction** entitás használatával, és határozza meg a szegmenst:
+   - **Mező:** ChurnScore
+   - **Operátor**: nagyobb, mint
+   - **Érték**: 0,6
 
-   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Szegmens létrehozása a modell kimenetével.":::
+1. Válassza a Szegmens mentése **és** futtatása **lehetőséget**.
 
-1. Válassza ki az **OOBeCommerceChurnPrediction** végpont, és határozza meg a szegmenst: 
-   - Mező: ChurnScore
-   - Operátor: nagyobb, mint
-   - Érték: 0,6
+Most már van egy dinamikusan frissített szegmense, amely azonosítja a nagy lemorzsolódási kockázatot jelentő ügyfeleket. További információ: [Szegmensek létrehozása és kezelése](segments.md).
 
-Most már van egy dinamikusan frissített szegmense, amely azonosítja a magas lemorzsolódási kockázatú ügyfeleket.
-
-További információ: [Szegmensek létrehozása és kezelése](segments.md).
-
+> [!TIP]
+> A szegmensek **lapon is létrehozhat szegmenst egy előrejelzés modellhez az Új**, **majd a Létrehozás az** Intelligenciából **lehetőség kiválasztásával** > **·**. További információ: [Új szegmens létrehozása gyors szegmensekkel](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

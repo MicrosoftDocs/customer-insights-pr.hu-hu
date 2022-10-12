@@ -1,7 +1,7 @@
 ---
-title: Ügyfélélettartam érték (CLV) előrejelzése
+title: Ügyfél élettartamra vetített értékének előrejelzése (CLV)
 description: Az aktív ügyfelek jövőbeli bevételi lehetőségeinek előrejelzése a jövőre vonatkozóan.
-ms.date: 07/21/2022
+ms.date: 09/30/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,74 +13,63 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
-ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
+ms.openlocfilehash: f27462ac327027e50e23387ac9f75a671db9a86d
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9186443"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610377"
 ---
-# <a name="customer-lifetime-value-clv-prediction"></a>Ügyfélélettartam érték (CLV) előrejelzése
+# <a name="predict-customer-lifetime-value-clv"></a>Ügyfél élettartamra vetített értékének előrejelzése (CLV)
 
-Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a funkció segíthet különböző célok elérésében:
+Olyan potenciális érték (bevétel) előrejelzése, amit az egyes aktív ügyfelek egy megadott jövőbeli időszak során behoznak a vállalatba. Ez a előrejelzés a következőkben segít:
 
-- Értékes ügyfelek azonosítása és ezen információ feldolgozása
-- Stratégiai ügyfélszegmenseket hozhat létre azok potenciális értéke alapján, hogy célzott értékesítési, marketing- és támogatási erőfeszítésekkel személyre szabott kampányokat futtathasson
-- A termékfejlesztés irányítása az ügyfelek értékét fokozó funkciókra összpontosítva
-- Értékesítési és marketingstratégia optimalizálása és a költségkeretek pontosabb felosztásához az ügyfelek eléréséhez
-- A nagy értékű ügyfelek felismerése és jutalmazása a hűség- és jutalmazási programokkal
+- Azonosítsa a nagy értékű ügyfeleket, és dolgozza fel ezt a betekintést.
+- Stratégiai ügyfélszegmenseket hozhat létre a potenciális értékük alapján, hogy személyre szabott kampányokat futtasson célzott értékesítési, marketing- és támogatási erőfeszítésekkel.
+- Irányítsa a termékfejlesztést azáltal, hogy az ügyfelek értékét növelő funkciókra összpontosít.
+- Optimalizálja az értékesítési vagy marketingstratégiát, és pontosabban ossza fel a költségvetést az ügyfelek tájékoztatására.
+- Ismerje fel és jutalmazza a nagy értékű ügyfeleket hűség- vagy jutalmazási programokkal.
+
+Határozza meg, mit jelent a CLV a vállalkozása számára. Támogatjuk a tranzakcióalapú CLV előrejelzés. Az ügyfél előrejelzett értéke az üzleti tranzakciók történetén alapul. Fontolja meg több modell létrehozását különböző bemeneti beállításokkal, és hasonlítsa össze a modell eredményeit, hogy megtudja, melyik modellváltozat felel meg leginkább az üzleti igényeinek.
+
+> [!TIP]
+> Próbálja ki a CLV-előrejelzés mintaadatokkal: [Ügyfél élettartamra vetített érték (CLV) előrejelzés mintaútmutatóval](sample-guide-predict-clv.md).
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-Az indulás előtt gondolja át a CLV mit jelent a vállalkozása számára. Jelenleg a tranzakcióalapú CLV-előrejelzést támogatjuk. Az ügyfél becsült értéke az üzleti tranzakciók előzményein alapul. Előrejelzés létrehozáshoz előrejelzés rendelkeznie kell legalább [Közreműködő](permissions.md) engedélyekkel.
-
-Mivel a CLV-modell konfigurálása és futtatása nem igényel időt, érdemes létrehozni több olyan modellt, amelyek eltérő bemeneti beállításokat tartalmaznak, és a modellek eredményeivel összehasonlítva láthatja, hogy melyik az üzleti igényeknek leginkább megfelelő modellforgatókönyv.
-
-### <a name="data-requirements"></a>Adatkövetelmények
-
-A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlott a modell teljesítményének növelése érdekében. Minél több adatot képes feldolgozni a modell, annál pontosabb lesz előrejelzés. Ezért javasoljuk, hogy amennyiben rendelkezésre állnak, több ügyfélaktivitási adatot töltsön be.
-
-- Ügyfélazonosító: Egyedi azonosító az egyes ügyfelekhez tranzakciók egyeztetéshez
-
-- Tranzakcióelőzmények: A tranzakciók előzménynaplója a szemantikus adatséma alatt
-    - **Tranzakcióazonosító**: Az egyes tranzakciók egyedi azonosítója
-    - **Tranzakció dátuma**: Dátum, lehetőség szerint az egyes tranzakciók időbélyegzője
-    - **Tranzakció összege**: Az egyes tranzakciók pénzben megadott értéke (például bevétel vagy fedezeti mutató)
-    - **Visszatérítésekhez hozzárendelt címke** (nem kötelező): Olyan logikai érték, amely azt jelzi, hogy a tranzakció visszatérítés-e 
-    - **Termékazonosító** (nem kötelező): A tranzakcióban érintett termék termékazonosítója
-
-- További adatok (nem kötelező), például
-    - Webes tevékenységek: webhelylátogatási előzmények, e-mail előzmények
-    - Hűségtevékenységek: a hűségpontok egyenlege és beváltási előzmények
-    - Ügyfélszolgálati napló, ügyfélszolgálati hívás panasz vagy visszaküldés előzményei
-    - Ügyfélprofil-információk
-- Adatok az ügyfél tevékenységéről (nem kötelező):
-    - Az azonos típusú tevékenységek megkülönböztetésére szolgáló tevékenységazonosítók
-    - A tevékenységek ügyfelekhez rendelésére szolgáló ügyfél-azonosítók
-    - A tevékenység adatai a tevékenység nevét és dátumát tartalmazzák
-    - A tevékenységekhez tartozó szemantikus adatséma az alábbiakat tartalmazza:
-        - **Elsődleges kulcs**: Egy tevékenység egyedi azonosítója
-        - **Időbélyegző**: Az elsődleges kulcs által azonosított esemény dátuma és időpontja
-        - **Esemény (tevékenység neve)**: A használni kívánt esemény neve
-        - **Részletek (összeg vagy érték)**: Az ügyféltevékenység részletei
-
-- Javasolt adatjellemzők:
-    - Elegendő korábbi adat: Legalább egy évnyi tranzakciós adat. A CLV egy évre való előrejelzéséhez lehetőség szerint 2-3 évnyi tranzakciós adat szükséges.
-    - Több vásárlás ügyfélenként: Ideális esetben ügyfélazonosítónként legalább 2-3 tranzakció, lehetőség szerint eltérő dátummal.
-    - Ügyfelek száma: Legalább 100 egyedi ügyfél; lehetőség szerint 10 000-nél több ügyfél. A modell nem működik 100-nál kevesebb ügyfél esetén, illetve ha nem áll rendelkezésre elegendő előzményadat.
-    - Adatok teljessége: A bemeneti adatok kötelező mezőiben legfeljebb az értékek 20%-a hiányzik.
+- Legalább [közreműködő](permissions.md) engedélyek
+- Legalább 100 egyedi ügyfél, lehetőleg több mint 10 000 ügyfél
+- Ügyfél-azonosító, egy egyedi azonosító, amely a tranzakciókat egy adott ügyféllel egyezteti
+- Legalább egyéves tranzakciós előzmények, lehetőleg két-három év. Ideális esetben ügyfél-azonosítónként legalább két-három tranzakció, lehetőleg több dátumon keresztül. A tranzakciós előzményeknek tartalmazniuk kell a következőket:
+  - **Tranzakcióazonosító**: Az egyes tranzakciók egyedi azonosítója
+  - **Tranzakció dátuma**: Az egyes tranzakciók dátum- vagy időbélyegzője
+  - **Tranzakció összege**: Az egyes tranzakciók pénzben megadott értéke (például bevétel vagy fedezeti mutató)
+  - **A visszatéréshez** rendelt címke: Logikai igaz/hamis érték, amely azt jelzi, hogy a tranzakció visszatérés-e
+  - **Termékazonosító**: A tranzakcióban részt vevő termék termékazonosítója
+- Az ügyfelek tevékenységére vonatkozó adatok:
+  - **Elsődleges kulcs**: Egy tevékenység egyedi azonosítója
+  - **Időbélyegző**: Az elsődleges kulccsal azonosított esemény dátuma és időpontja
+  - **Esemény (tevékenység neve)**: A használni kívánt esemény neve
+  - **Részletek (összeg vagy érték)**: Az ügyféltevékenység részletei
+- További adatok, például:
+  - Webes tevékenységek: Webhelylátogatási előzmények vagy e-mail előzmények
+  - Hűségtevékenységek: Hűségjutalmas pontok eredményszemléletű és beváltási előzmények
+  - ügyfélszolgálat napló: Szervizhívás, panasz vagy visszaküldési előzmények
+  - Ügyfélprofil-információk
+- Kevesebb mint 20%- ban hiányzik az értékek a kötelező mezőkből
 
 > [!NOTE]
-> - A modellhez az ügyfelek tranzakciós előzményeire van szükség. Jelenleg csak egy tranzakcióelőzmény-entitás konfigurálható. Ha több beszerzési/tranzakciós entitás van, az adatbetöltés előtt egyesítheti őket Power Query.
-> - További ügyféltevékenység-adat esetén (nem kötelező) azonban annyi ügyféltevékenység-entitást adhat hozzá, amennyit a modellel figyelembe szeretne vetetni.
+> Csak egy tranzakciós előzményentitás konfigurálható. Ha több beszerzési vagy tranzakciós entitás van, egyesítse őket az Power Query adatbetöltés előtt.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Ügyfélélettartam-érték előrejelzésének létrehozása
 
+Válassza a Piszkozat **mentése bármikor lehetőséget** a előrejelzés piszkozatként való mentéséhez. A piszkozat előrejelzés a **Saját előrejelzések** lapon jelenik meg.
+
 1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
 
-1. Válassza az **Ügyfélélettartam értéke** csempét, és válassza a **Modell használata** lehetőséget. 
+1. A Létrehozás lapon válassza a **Modell** használata lehetőséget **az** Ügyfél élettartamának értéke **csempén.**
 
-1. Az Ügyfél élettartamának értéke **panelen válassza az** Első lépések **lehetőséget**.
+1. Válassza az **Első lépések** lehetőséget.
 
 1. **Nevezze el ezt a modellt** és a **Kimeneti entitás nevét**, hogy megkülönböztesse őket az egyéb modellektől vagy entitásoktól.
 
@@ -88,66 +77,56 @@ A következő adatok szükségesek, és ha nem kötelező megadni, akkor ajánlo
 
 ### <a name="define-model-preferences"></a>Modellbeállítások definiálása
 
-1. Állítsa be az **Előrejelzési időszakot**, hogy meghatározza milyen távol a jövőben szeretné előre jelezni a CLV-t.    
-   Az egység alapértelmezés szerint hónapként van beállítva. Ezt módosíthatja évekre, a ha távolabbi jövőt szeretné vizsgálni.
+1. Állítsa be az **Előrejelzési időszakot**, hogy meghatározza milyen távol a jövőben szeretné előre jelezni a CLV-t. Az egység alapértelmezés szerint hónapként van beállítva.
 
    > [!TIP]
-   > Ahhoz, hogy a pontosan előre tudja jelezni a CLV-t a beállított időszakra vonatkozóan, hasonló időszakra van szükség a korábbi adatokból. Ha például a következő 12 hónapra szeretne előrejelzést készíteni a CLV-ről, ajánlott, hogy legalább 18–24 hónap korábbi adatait használja.
+   > A CLV pontos előrejelzéséhez a beállított időszakra vonatkozóan összehasonlítható időszak előzményadatokra van szükség. Ha például a következő 12 hónapra szeretné megjósolni a CLV-t, legalább 18–24 hónapnyi előzményadattal kell rendelkeznie.
 
-1. Adja meg, hogy mit jelentenek az **Aktív ügyfelek** a vállalat számára. Állítsa be időkeretet amelyben az ügyfélnek legalább egy tranzakcióval kell rendelkeznie, hogy aktívnak minősüljön. A modell csak az aktív ügyfelek CLV-jét fogja előre jelezni. 
-   - **Hagyja, hogy a modell számítsa ki a beszerzési intervallumot (ajánlott)**: A modell elemzi az adatokat, és a korábbi vásárlások alapján határoz meg egy időszakot.
-   - **Intervallum manuális beállítása**: Ha egy aktív ügyfélhez specifikus üzleti definíciója van, válassza ezt a beállítást, és ennek megfelelően állítsa be az időszakot.
+1. Állítsa be időkeretet amelyben az ügyfélnek legalább egy tranzakcióval kell rendelkeznie, hogy aktívnak minősüljön. A modell csak az aktív ügyfelek számára jósolja meg a CLV-t **·**.
+   - **Hagyja, hogy a modell kiszámítsa a vásárlási intervallumot (ajánlott)**: A modell elemzi az adatokat, és az előzményvásárlások alapján meghatároz egy időtartamot.
+   - **Időköz manuális** beállítása: Az aktív ügyfél definíciójának időszaka.
 
-1. Definiálja a **Nagy értékű ügyfél** percentilisét, hogy a modell az üzleti definíciónak megfelelő eredményeket nyújtson.
-    - **Modellszámítás (ajánlott)**: A modell elemzi az adatokat, és meghatározza, hogy az ügyfelek tranzakciós előzményei alapján milyen lehet az értékes ügyfél a vállalkozás számára. A modell egy (a 80/20 szabály vagy a pareto elv által inspirált) heurisztikus szabályt használ a nagy értékű ügyfelek arányának megkeresésére. Az ügyfelek százalékos értéke, amely hozzájárult a vállalat korábbi időszakban az összbevétel 80 %-ához nagy értékű ügyfélnek számít. Jellemzően 30-40%-nál kevesebb ügyfél járul hozzá az összbevétel 80%-ához. Ez a szám azonban a vállalattól és az iparágtól függően változhat.    
-    - **A legaktívabb ügyfelek százalékos aránya**: A vállalat értékes ügyfeleit a legnagyobb aktív fizető ügyfelek százalékos értékeként definiálhatja. Ezzel a beállítással például a nagy értékű ügyfeleket a jövőbeli fizető ügyfelek felső 20%-aként határozhatja meg.
+1. Határozza meg a nagy értékű ügyfél **percentilisét**.
+    - **Modellszámítás (ajánlott)**: A modell 80/20 szabályt használ. Az ügyfelek százalékos értéke, amely hozzájárult a vállalat korábbi időszakban az összbevétel 80 %-ához nagy értékű ügyfélnek számít. Jellemzően 30-40%-nál kevesebb ügyfél járul hozzá az összbevétel 80%-ához. Ez a szám azonban a vállalattól és az iparágtól függően változhat.
+    - **A legaktívabb ügyfelek** százalékos aránya: A nagy értékű ügyfelekre vonatkozó százalékos érték. Adja meg **például a 25** értéket, hogy a nagy értékű ügyfeleket a jövőbeli fizető ügyfelek felső 25%-aként határozza meg.
 
     Ha a vállalata más módon definiálja a nagy értékű ügyfeleket, [mondja el nekünk, szeretnének ezt megismerni](https://go.microsoft.com/fwlink/?linkid=2074172).
 
-1. A **Tovább** gombot választva lépjen tovább a következő lépésre.
+1. Válassza a **Következő** lehetőséget.
 
 ### <a name="add-required-data"></a>Szükséges adatok hozzáadása
 
-1. A **Szükséges adatok** lépésben válassza az **Adatok hozzáadása** elemet az **Ügyféltranzakció-előzményekhez**, és válassza ki au entitást, amely biztosítja a tranzakciós/vásárlási előzmény információt, amint azok részletezésre kerültek az [előfeltételekben](#prerequisites).
+1. Válassza az Adatok hozzáadása lehetőséget **az Ügyfél tranzakciós előzményeihez** **.**
 
-1. Képezze le a szemantikai mezőket olyan attribútumokra, melyek a beszerzési előzmények entitáson belül esnek, és válassza a **Tovább** lehetőséget.
+1. Válassza ki a tranzakciós előzményeket tartalmazó salesorder **vagy** salesorderline **szemantikai tevékenységtípust**. Ha a tevékenység nincs beállítva, válassza ki **itt**, és hozza létre.
 
-   :::image type="content" source="media/clv-add-customer-data-mapping.png" alt-text="A konfigurációs lépés képe a kötelező adatok adatattribútumainak leképezéséhez.":::
- 
-1. Ha az alábbi mezők nincsenek megadva, konfigurálja a kapcsolatokat beszerzési előzmények entitásából az *Ügyfél* entitáshoz, és válassza a **Mentés** lehetőséget.
-    1. Válassza ki a tranzakciós előzmények entitást.
-    1. Válassza a mező lehetőséget, mely azonosít egy ügyfelet a beszerzési előzmények entitásban. A mezőnek az Ügyfél entitás elsődleges ügyfél-azonosítójára kell vonatkoznia.
-    1. Válassza ki azt az entitást, amely megfelel az elsődleges ügyfélentitásnak.
-    1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
+1. Ha a Tevékenységek **alatt** a tevékenységattribútumok szemantikailag leképeződtek a tevékenység létrehozásakor, válassza ki azokat az attribútumokat vagy entitásokat, amelyekre a számítást összpontosítani szeretné. Ha a szemantikai leképezés nem történt meg, válassza az Adatok szerkesztése **és leképezése lehetőséget**.
+  
+   :::image type="content" source="media/CLV-add-required.PNG" alt-text="A CLV-modellhez szükséges adatok hozzáadása":::
 
-      :::image type="content" source="media/clv-add-customer-data-relationship.png" alt-text="Az ügyfélentitással való kapcsolatot definiáló konfigurációs lépés képe.":::
+1. Válassza a Tovább **lehetőséget**, és tekintse át a modellhez szükséges attribútumokat.
 
-1. Válassza a **Következő** lehetőséget.
+1. Válassza a **Mentés** parancsot.
+
+1. Adjon hozzá további tevékenységeket, vagy válassza a Tovább **lehetőséget**.
 
 ### <a name="add-optional-activity-data"></a>Opcionális tevékenységadatok hozzáadása
 
 A fő ügyfélinterakciókat tükröző adatok (pl. a web, ügyfélszolgálat és eseménynaplók) környezeteti adatokat ad a tranzakciós bejegyzésekhez. Az ügyféltevékenységi adatokban talált további minták javíthatják az előrejelzések pontosságát.
 
-1. A További adatok (nem kötelező) **lépésben válassza az** Adatok **hozzáadása lehetőséget** a Modellelemzések növelése további tevékenységadatokkal **alatt**. Válassza az ügyfélaktivitás entitást, amely biztosítja, hogy ügyféltevékenység információja az [előfeltételekben](#prerequisites) részletezett módon kerüljön megjelenítésre.
+1. Válassza az Adatok **hozzáadása lehetőséget** a Modellelemzések növelése további tevékenységadatokkal **alatt**.
 
-1. Képezze le a szemantikai mezőket olyan attribútumokra, melyek az ügyféltevékenység entitáson belül esnek és válassza a **Tovább** lehetőséget.
+1. Válassza ki a hozzáadni kívánt ügyféltevékenység típusának megfelelő tevékenységtípust. Ha a tevékenység nincs beállítva, válassza ki **itt**, és hozza létre.
 
-   :::image type="content" source="media/clv-additional-data-mapping.png" alt-text="A konfigurációs lépés képe a további adatok mezőinek leképezéséhez.":::
+1. A Tevékenységek **alatt**, ha a tevékenység attribútumai a tevékenység létrehozásakor voltak leképezve, válassza ki azokat az attribútumokat vagy entitásokat, amelyekre a számítást összpontosítani szeretné. Ha a leképezés nem történt meg, válassza a Szerkesztés **lehetőséget**, és képezze le az adatokat.
 
-1. Válassza ki a hozzáadni kívánt ügyféltevékenység típusának megfelelő tevékenységtípust. Válasszon a meglévő tevékenységtípusok közül, vagy vegyen fel egy új tevékenységtípust.
-
-1. Konfigurálja az ügyféltevékenység entitásának és az *Ügyfél* entitásnak a kapcsolatát.
-
-    1. Válassza ki a mezőt, amely azonosítja az ügyfelet az ügyféltevékenység táblában. Ez közvetlenül kapcsolásra kerülhet *Ügyfél* entitásának Elsődleges ügyfél-azonosítójához.
-    1. Válassza ki azt az *Ügyfél* entitást, amely egyezik az elsődleges *Ügyfél* entitással.
-    1. Adjon meg egy olyan nevet, amely jól leírja a kapcsolatot.
-
-   :::image type="content" source="media/clv-additional-data.png" alt-text="Kép a konfigurációs folyamat lépéséről további adatok felvételéhez és a tevékenység konfigurálásához kitöltött példákkal.":::
+1. Válassza a Tovább **lehetőséget**, és tekintse át a modellhez szükséges attribútumokat.
 
 1. Válassza a **Mentés** parancsot.
-    Adjon hozzá további adatokat, ha más ügyféltevékenységeket is szeretne szerepeletni.
 
-1. Adjon hozzá opcionális ügyféladatokat, vagy válassza a Tovább **lehetőséget**.
+1. Válassza a **Következő** lehetőséget.
+
+1. [Adjon hozzá opcionális ügyféladatokat](#add-optional-customer-data), vagy válassza a Tovább **lehetőséget**, és lépjen a [Frissítési ütemezés beállítása elemre](#set-update-schedule).
 
 ### <a name="add-optional-customer-data"></a>Opcionális ügyféladatok hozzáadása
 
@@ -156,91 +135,79 @@ Válasszon 18 gyakran használt ügyfélprofil-attribútum közül, amelyeket a 
 Például: Contoso Coffee előre szeretné jelezni az ügyfelek élettartamának értékét, hogy a nagy értékű ügyfeleket célozza meg az új eszpresszógépük elindításához kapcsolódó személyre szabott ajánlattal. Contoso a CLV modellt használja, és mind a 18 ügyfélprofil-attribútumot hozzáadja, hogy lássa, mely tényezők befolyásolják a legnagyobb értékű ügyfeleiket. Úgy találják, hogy az ügyfelek tartózkodási helye a legbefolyásosabb tényező ezen ügyfelek számára.
 Ezen információk birtokában helyi rendezvényt szerveznek az eszpresszógép elindításához, és a helyi eladókkal együttműködve személyre szabott ajánlatokat és különleges élményt nyújtanak az eseményen. Ezen információk nélkül előfordulhat, hogy Contoso csak általános marketing e-maileket küldtek volna, és elszalasztották volna a lehetőséget, hogy személyre szabják nagy értékű ügyfeleiknek ezt a helyi szegmensét.
 
-1. A További adatok (nem kötelező) **lépésben válassza az** Adatok **hozzáadása lehetőséget** a Modellelemzések további növelése további ügyféladatokkal **alatt**.
+1. Válassza az Adatok **hozzáadása lehetőséget** a Modellelemzések növelése területen **, amely további ügyféladatokkal még tovább bővül**.
 
-1. Az Entitás **mezőben** válassza a Customer: CustomerInsights **lehetőséget** az egyesített ügyfélprofil-tábla kiválasztásához, amely az ügyfélattribútum-adatokra van leképezve. Az **Ügyfél-azonosító** mezőben válassza **a System.Customer.CustomerId lehetőséget**.
+1. Az Entitás **mezőben** válassza a Customer: CustomerInsights **lehetőséget** az egyesített ügyfélprofil kiválasztásához, amely az ügyfélattribútum-adatokra van leképezve. Az **Ügyfél-azonosító** mezőben válassza **a System.Customer.CustomerId lehetőséget**.
 
 1. Térképezzen le további mezőket, ha az adatok elérhetők az egységes ügyfélprofilokban.
 
    :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Példa az ügyfélprofil-adatok leképezett mezőire.":::
 
-1. Válassza a Mentés **lehetőséget**, miután leképezte azokat az attribútumokat, amelyeket a modellnek az ügyfél élettartamra vetített értékének előrejelzéséhez használnia kell.
+1. Válassza a **Mentés** parancsot.
 
 1. Válassza a **Következő** lehetőséget.
 
 ### <a name="set-update-schedule"></a>Frissítési ütemezés beállítása
 
-1. Az **Adatfrissítés ütemezése** lépésben adja meg, hogy milyen gyakran tanítja újra a modellt a legújabb adatok alapján. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel a rendszer új adatokat tölt be a Customer Insights szolgáltatásba. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
+1. Válassza ki a modellt a legújabb adatok alapján történő újratanításhoz szükséges gyakoriságot. Ez a beállítás fontos az előrejelzések pontosságának frissítéséhez, mivel a rendszer új adatokat tölt be a Customer Insights szolgáltatásba. A legtöbb cég havonta egyszer végez újratanítást, és pontos előrejelzésekhez tud jutni.
 
 1. Válassza a **Következő** lehetőséget.
 
 ### <a name="review-and-run-the-model-configuration"></a>A modellkonfiguráció áttekintése és futtatása
 
-1. Az **Ellenőrizze a modell részleteit** lépésben ellenőrizze a előrejelzés konfigurációját. A megjelenített érték alatt lévő **Szerkesztés** beállítással az előrejelzési konfiguráció bármelyik részéhez visszaléphet. A folyamatjelzőből egy konfigurációs lépést is kiválaszthat.
+Az **Áttekintés és futtatás** lépés a konfiguráció összegzését jeleníti meg, és lehetőséget biztosít a módosítások elvégzésére a előrejelzés létrehozása előtt.
 
-1. Ha minden érték megfelelően van beállítva, válassza a **Mentés és futtatás** lehetőséget a modell futtatásának megkezdéséhez. A **Saját előrejelzések** lapon látható az előrejelzési folyamat állapota. A folyamat – az előrejelzésben használt adatok mennyiségétől függően – több óráig is tarthat.
+1. Válassza a Szerkesztés **lehetőséget** az áttekintéshez és a módosítások elvégzéséhez szükséges lépések bármelyikénél.
 
-## <a name="review-prediction-status-and-results"></a>Az előrejelzési állapot és eredmények áttekintése
+1. Ha elégedett a választásokkal, válassza a Mentés és futtatás **lehetőséget** a modell futtatásának megkezdéséhez. Válassza a **Kész** lehetőséget. A **Saját előrejelzések** lap a előrejelzés létrehozásakor jelenik meg. A folyamat – az előrejelzésben használt adatok mennyiségétől függően – több óráig is tarthat.
 
-### <a name="review-prediction-status"></a>Előrejelzési állapot áttekintése
+[!INCLUDE [progress-details](includes/progress-details-pane.md)]
 
-1.  Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-2.  Jelölje ki az áttekinteni kívánt előrejelzést.
+## <a name="view-prediction-results"></a>Előrejelzés eredmények megtekintése
 
-- **Előrejelzés neve**: Az előrejelzés neve, mely a létrehozáskor kerül megadásra.
-- **Előrejelzés típusa**: Az előrejelzéshez használt model típusa
-- **Kimeneti entitás**: Az előrejelzés kimenetének tárolására szolgáló entitás neve. Az ilyen nevű entitás kereséséhez válassza az **Adatok** > **Entitások** lehetőséget.
-- **Várható mező**: Ez a mező csak bizonyos típusú előrejelzésekhez megadható, és nem használható az ügyféléletciklus értékének előrejelzéshez.
-- **Állapot**: A futtatott előrejelzés állapota.
-    - **Feldolgozási sorban**: Az előrejelzés további folyamatok befejezésére vár.
-    - **Frissítés**: Az előrejelzés jelenleg fut, hogy a kimeneti entitásba kerülő eredményt hozhassa létre.
-    - **Sikertelen**: Az előrejelzés lefuttatása sikertelen. [Ellenőrizze a naplókat](manage-predictions.md#troubleshoot-a-failed-prediction) a további részletekért.
-    - **Sikeres**: Az Előrejelzés lefuttatása sikeresen megtörtént. Válassza a **Megtekintés** lehetőséget a függőleges három pont alatt a kiválasztott előrejelzés megtekintéséhez.
-- **Szerkesztve**: Az előrejelzés konfigurációjának módosítási dátuma.
-- **Legutóbbi frissítés**: A dátum, amikor az előrejelzés frissítette a kimeneti entitásban szereplő eredményeket.
+1. Ugrás az Intelligencia-előrejelzések **oldalra** > **·**.
 
-### <a name="review-prediction-results"></a>Előrejelzési eredmények áttekintése
-
-1. Nyissa meg az **Intelligencia** > **Előrejelzések** menüt, és válassza ki a **Saját előrejelzések** lapot.
-
-1. Válassza ki előrejelzést amelynek eredményekeit szeretné átnézni.
+1. **A Saját előrejelzések** lapon válassza ki a megtekinteni kívánt előrejelzés.
 
 Az eredményoldalon lévő adatok három fő részben jelennek meg.
 
-- **A képzési modell teljesítménye**: A, B vagy C lehetséges osztályzat. Ez a osztályzat jelzi az előrejelzés teljesítményét, és segíthet annak döntésében, hogy a kimeneti entitásban tárolt eredményeket felhasználja-e. Válassza a **Tudnivalók erről a pontszámról** lehetőséget, ha jobban meg szeretné érteni az alapul szolgáló modell teljesítménymérőszáma és a végső modell teljesítményminősége származtatásának módját.
+- **Betanítási modell teljesítménye**: Az A, B vagy C fokozatok jelzik a előrejelzés teljesítményét, és segíthetnek a kimeneti entitásban tárolt eredmények használatára vonatkozó döntés meghozatalában.
   
   :::image type="content" source="media/clv-model-score.png" alt-text="A modell pontszám információs mezője A osztályzattal":::
 
-  A rendszer a előrejelzés konfigurálása során megadott nagy értékű ügyfelek definícióját használva felméri, hogy az AI-modell hogyan teljesített a nagy értékű ügyfelek előrejelzésében az alapmodellhez képest.    
+  A Customer Insights azt értékeli, hogy az AI-modell hogyan teljesített a nagy értékű ügyfelek előrejelzésében az alapmodellhez képest.
 
   Az osztályzatot a következő szabályok határozzák meg:
   - **A**, ha a modell legalább 5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
   - **B**, ha a modell 0–5%-kal több nagy értékű ügyfelet jelzett előre alapmodellhez képest.
   - **C**, ha a modell pontosan kevesebb nagy értékű ügyfelet jelzett előre alapmodellhez képest.
-
-  A **Modell minősítése** panel további részleteket tartalmaz az AI-modell teljesítményéről és az alapmodellről. Az alapmodell nem AI-alapú megközelítést alkalmaz az ügyfelek élettartamának elsődlegesen az ügyfelek által történt korábbi vásárlások alapján történő kiszámításához.     
-  A CLV-értéknek az alapmodellel való kiszámításához használt szabványos képlet:    
-
-  _**Az egyes ügyfelek CLV-értéke** = Az ügyfél által az aktív ügyfélablakban végzett átlagos havi vásárlás * A hónapok száma a CLV-előrejelzési időszakban * Az ügyfelek összesített megtartási aránya*_
-
-  Az AI-modellt az alapmodellhez hasonlítják két teljesítménymérőszám-modell alapján.
   
-  - **A nagy értékű ügyfelek előrejelzésének sikerességi aránya**
+  Válassza a Ismerje meg ezt a pontszámot [**lehetőséget**](#learn-about-the-score) a **Modellminősítés** panel megnyitásához, amely további részleteket mutat be az AI-modell teljesítményéről és az alapmodellről. Ez segít jobban megérteni a modell mögöttes teljesítménymutatókat és azt, hogy hogyan jött létre a modell végső teljesítményosztálya. Az alapmodell nem AI-alapú megközelítést alkalmaz az ügyfelek élettartamának elsődlegesen az ügyfelek által történt korábbi vásárlások alapján történő kiszámításához.
 
-    Megtekintheti a különbséget a nagy értékű ügyfelek előrejelzését az az AI modell használatával alapmodellhez képest. A 84%-os sikeresség például azt jelenti, hogy a képzési adatokban lévő értékes ügyfelekből az AI-modellnek sikerült pontosan rögzítenie a 84%-ot. Ezután összehasonlítjuk ezt az alapmodell sikerességi arányával a relatív változás jelentéséhez. Ez az érték egy osztályzatot rendel a modellhez.
+- **Az ügyfelek értéke percentilis** szerint: Az alacsony és a nagy értékű ügyfelek diagramon jelennek meg. Vigye az egérmutatót a hisztogram sávjai fölé, hogy megtekintse az egyes csoportokban az ügyfelek számát és a csoport átlagos CLV-jét. [Igény szerint létrehozhatja az ügyfelek](prediction-based-segment.md) szegmenseit a CLV-előrejelzések alapján.
+  
+   :::image type="content" source="media/CLV-value-percent.png" alt-text="Az ügyfelek értéke percentilisenként a CLV modellhez":::
 
-  - **Hibamutatók**
-    
-    Egy másik mérőszám lehetővé teszi a modell általános teljesítményének áttekintését a jövőbeli értékek előrejelzésének hibái szempontjából. A hiba felmérésére a gyök átlagos négyezetes eltérés (RMSE) mérőszámot használjuk. Az RMSE egy szabványos módja annak, hogy lemérje egy modell hibáját a kvantitatív adatok előrejelzésében. Összehasonlítják az AI modell RMSE-értékét az alapmodell RMSE-értékével, és a relatív különbség lesz jelentve.
+- **Legbefolyásosabb tényezők**: A CLV-előrejelzés a AI-modell bemeneti adatain alapuló számos tényezőt figyelembe vesz. Az egyes tényezők fontosságát a rendszer kiszámítja a modell által létrehozott összesített előrejelzésekhez. Ezekkel a tényezőkkel ellenőrizheti a előrejelzés eredményeit. Ezek a tényezők további képet adnak a legbefolyásosabb tényezőkről is, amelyek hozzájárultak a CLV minden ügyfélre való előrejelzése során.
+  
+   :::image type="content" source="media/CLV-influence-factors.png" alt-text="A CLV modell legbefolyásosabb tényezői":::
 
-  Az AI modell előnyben részesíti ad az ügyfeleknek a vállalat számára behozott értéknek megfelelő pontos rangsorolásában. Az utolsó modellminőség származtatáshoz tehát csak a nagy értékű ügyfeleket jóslásának sikerességi aránya használható. Az RMSE mérőszám érzékeny a kiesőkre. Olyan helyzetekben, amikor az ügyfelek kis hányadánál nagyon magas a vásárlási érték, előfordulhat, hogy az általános RMSE metrika nem ad teljes képet a modell teljesítményével kapcsolatosan.   
+### <a name="learn-about-the-score"></a>További információ a pontszámról
 
-- **Az ügyfelek értéke percentilis szerint**: A nagy értékű ügyfelek definíciójának használatával az ügyfelek alacsony és magas értékű csoportokba vannak csoportosítva a CLV-előrejelzésük alapján, és egy diagramban jelennek meg. A hisztogram sávjaira mutatva látható az egyes csoportokban található ügyfelek száma és az adott csoport átlagos CLV-je látható. Ezek az adatok segíthetnek abban, ha szeretne [ügyfélszegmenseket létrehozni](segments.md) a CLV-előrejelzésük alapján.
+A CLV-értéknek az alapmodellel való kiszámításához használt szabványos képlet:
 
-- **Legbefolyásosabb tényezők**: A CLV-előrejelzés a AI-modell bemeneti adatain alapuló számos tényezőt figyelembe vesz. Az egyes tényezők fontosságát a rendszer kiszámítja a modell által létrehozott összesített előrejelzésekhez. Ezekkel a tényezőkkel ellenőrizheti az előrejelzés eredményeit. Ezek a tényezők további képet adnak a legbefolyásosabb tényezőkről is, amelyek hozzájárultak a CLV minden ügyfélre való előrejelzése során.
+ _**CLV minden egyes ügyfél** esetében = Az ügyfél által az aktív vevőablakban végrehajtott átlagos havi vásárlás * Hónapok száma a CLV előrejelzés időszakban * Az összes ügyfél általános megtartási aránya_
 
-## <a name="manage-predictions"></a>Előrejelzések kezelése
+Az AI-modellt az alapmodellhez hasonlítják két teljesítménymérőszám-modell alapján.
+  
+- **A nagy értékű ügyfelek előrejelzésének sikerességi aránya**
 
-Lehetőség van az előrejelzések optimalizálására, hibaelhárítására, frissítésére vagy törlésére. Tekintse át a bemeneti adatok használhatósági jelentését, hogy megtudja, hogyan lehet egy előrejelzés gyorsabb és megbízhatóbb. További tudnivalókért lásd: [Előrejelzések kezelése](manage-predictions.md).
+  Megtekintheti a különbséget a nagy értékű ügyfelek előrejelzését az az AI modell használatával alapmodellhez képest. A 84%-os sikeresség például azt jelenti, hogy a képzési adatokban lévő értékes ügyfelekből az AI-modellnek sikerült pontosan rögzítenie a 84%-ot. Ezután összehasonlítjuk ezt az alapmodell sikerességi arányával a relatív változás jelentéséhez. Ez az érték egy osztályzatot rendel a modellhez.
+
+- **Hibamutatók**
+
+  Tekintse meg a modell általános teljesítményét a jövőbeli értékek előrejelzésének hibája szempontjából. A hiba felmérésére a gyök átlagos négyezetes eltérés (RMSE) mérőszámot használjuk. Az RMSE egy szabványos módja annak, hogy lemérje egy modell hibáját a kvantitatív adatok előrejelzésében. Összehasonlítják az AI modell RMSE-értékét az alapmodell RMSE-értékével, és a relatív különbség lesz jelentve.
+
+Az AI modell előnyben részesíti ad az ügyfeleknek a vállalat számára behozott értéknek megfelelő pontos rangsorolásában. Az utolsó modellminőség származtatáshoz tehát csak a nagy értékű ügyfeleket jóslásának sikerességi aránya használható. Az RMSE mérőszám érzékeny a kiesőkre. Olyan helyzetekben, amikor az ügyfelek kis hányadánál nagyon magas a vásárlási érték, előfordulhat, hogy az általános RMSE metrika nem ad teljes képet a modell teljesítményével kapcsolatosan.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
