@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8110eab199920ab8fc2ea15678139faf264a242a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 81adad4caf2d4c6f792bf920b29fc7c67eef42b0
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195753"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724681"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Szegmensek exportálása az AdRollba (előzetes verzió)
 
@@ -21,14 +21,15 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és haszná
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- AdRoll-fiók [és](https://www.adroll.com/) a megfelelő adminisztrátori hitelesítő adatok.
+- AdRoll-fiók [és](https://www.adroll.com/) a megfelelő rendszergazdai hitelesítő adatok.
 - AdRoll [hirdetői azonosító](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
-- [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
+- [Konfigurált szegmensek](segments.md) a Customer Insights alkalmazásban.
 - Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Az AdRollba történő exportálásonként akár 250 000 ügyfélprofil is eltarthat, ami akár 10 percet is igénybe vehet. Az AdRollba exportálható ügyfélprofilok száma az AdRollal kötött szerződéstől függ.
+- A privát kapcsolat a saját tároló használata (BYOS) funkcióval együtt nem támogatott.
+- AdRoll szolgáltatásba történő exportálásonként akár 250 000 ügyfélprofil, ami akár 10 percet is igénybe vehet. Az AdRoll szolgáltatásba exportálható ügyfélprofilok száma az AdRoll szolgáltatással kötött szerződésétől függ.
 - Csak szegmensek. Egy szegmensnek legalább 100 ügyfélprofilt kell tartalmaznia.
 
 ## <a name="set-up-connection-to-adroll"></a>Állítsa be az AdRollal való kapcsolatot
@@ -37,13 +38,13 @@ Exportálja az egyesített ügyfélprofilok szegmenseit az AdRollba, és haszná
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a Kapcsolat **hozzáadása,** majd az AdRoll **lehetőséget**.
+1. Válassza a **Kapcsolat** hozzáadása, majd az AdRoll **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
 1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+1. Tekintse át az adatvédelmet és a megfelelőséget [, és válassza az](connections.md#data-privacy-and-compliance) Elfogadom **lehetőséget**.
 
 1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 

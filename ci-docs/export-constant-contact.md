@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4d2ec29c194dc481ee40048b8ecbed813291b4d2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c0affd3ed45f462696850813bd50331061dde780
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196489"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724504"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Szegmensek exportálása az Állandó kapcsolattartóba (előzetes verzió)
 
@@ -21,14 +21,15 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Állandó [kapcsolattartó fiók](https://www.constantcontact.com/account-home) és a megfelelő rendszergazdai hitelesítő adatok.
+- Constant [Contact fiók](https://www.constantcontact.com/account-home) és a megfelelő rendszergazdai hitelesítő adatok.
 - Állandó [partnerlista azonosítója](https://app.constantcontact.com/pages/contacts/ui#lists). Nyisson meg egy listát az Constant Contactban, és keresse meg a lista azonosítóját az URL-címben.
-- [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
+- [Konfigurált szegmensek](segments.md) a Customer Insights alkalmazásban.
 - Az exportált szegmensekben található egyesített ügyfélprofilok tartalmaznak mezőt, amelyek az e-mail-címet tartalmazza.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- Akár 1 millió ügyfélprofil a Constant Contact alkalmazásba történő exportálásonként, amely akár egy órát is igénybe vehet. A Constant Contact-ba exportálható ügyfélprofilok száma a Constant Contact-tal kötött szerződésétől függ.
+- A privát kapcsolat a saját tároló használata (BYOS) funkcióval együtt nem támogatott.
+- Exportálásonként akár 1 millió ügyfélprofil a Constant Contact szolgáltatásba, ami akár egy órát is igénybe vehet. A Constant Contact szolgáltatásba exportálható ügyfélprofilok száma a Constant Contact szolgáltatással kötött szerződésétől függ.
 - Csak szegmensek.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Kapcsolat beállítása Constant Contacthoz
@@ -37,13 +38,13 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a Kapcsolat **hozzáadása,** majd a Konstans kapcsolat **lehetőséget**.
+1. Válassza a **Kapcsolat** hozzáadása, majd az Állandó kapcsolat **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
 1. A kapcsolat használóinak kiválasztása. Alapértelmezés szerint csak a rendszergazdák. További információért lásd a [Közreműködők engedélyezése, hogy az exportálásokhoz használjanak egy kapcsolatot](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+1. Tekintse át az adatvédelmet és a megfelelőséget [, és válassza az](connections.md#data-privacy-and-compliance) Elfogadom **lehetőséget**.
 
 1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
@@ -65,11 +66,11 @@ Exportálja az egyesített ügyfélprofilok szegmensét az Constant Contactba, �
 
 1. Adja meg az exportálás nevét.
 
-1. Adja meg a **Konstans kapcsolattartói lista azonosítóját**.
+1. Adja meg az állandó kapcsolattartói lista **azonosítóját**.
 
 1. Az **Adatok egyeztetése** szakaszban, az **E-mail** mezőben válassza ki az ügyfél e-mail címét jelképező mezőt.
 
-1. Igény szerint exportálhatja **utónév**, és **további mezőkként vezetéknév**, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
+1. Igény szerint exportálhatja **a utónév** és **vezetéknév** további mezőkként, hogy személyre szabottabb e-maileket hozzon létre. Válassza az **Attribútum hozzáadása** lehetőséget a mezők leképezéséhez.
 
 1. Jelölje ki a szegmenseket, amelyeket exportálni szeretne.
 

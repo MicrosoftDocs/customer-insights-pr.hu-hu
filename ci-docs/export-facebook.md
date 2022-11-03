@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195017"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724601"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Szegmensek exportálása a Hirdetéskezelőbe Facebook (előzetes verzió)
 
@@ -23,16 +23,18 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 ## <a name="prerequisites"></a>Előfeltételek
 
-- Olyan [Facebook hirdetési fiók](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), amely tartalmaz egy [Facebook üzleti fiókot](https://business.facebook.com/).
-- Rendszergazdai jogosultságok a [Facebook Hirdetési fiókban](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Üzleti [Facebook fiókot tartalmazó](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) hirdetési fiók [Facebook](https://business.facebook.com/).
+- Rendszergazdai jogosultságok a [Facebook hirdetési fiókban](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Az egyéni célközönség feltételeket el kell fogadnia annak a felhasználónak, aki beállítja a kapcsolatot a Customer Insights alkalmazásban.
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A Hirdetéskezelőbe irányuló Facebook exportálásonként akár 10 millió ügyfélprofil is lehet, ami akár 90 percet is igénybe vehet.
+- A Hirdetéskezelőbe Facebook exportálásonként akár 10 millió ügyfélprofil is lehet, ami akár 90 percet is igénybe vehet.
 - Csak szegmensek.
-- Facebook *ügyféllista* típusa csak egyéni [célközönségekben](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+- Facebook A hirdetések integrációja nem támogatja a 25-nél több hirdetési fiókkal rendelkező felhasználókat.
+- Facebook *ügyféllista* típusa csak egyéni célközönségek [esetén](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
   > [!NOTE]
-  > Bizonyos esetekben különböző típusú egyéni célközönségeket láthatsz a legördülő listában. Ha a vevőlistától *eltérő* típust választ, az exportálás sikertelen lesz.
+  > Bizonyos esetekben különböző típusú egyéni célközönségek jelenhetnek meg a legördülő listában. Ha az ügyféllistától *eltérő* típust választ, az exportálás sikertelen lesz.
 
 ## <a name="set-up-connection-to-facebook-ads-manager"></a>Kapcsolat beállítása a Facebook Hirdetéskezelőhöz
 
@@ -40,11 +42,11 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válaszd a Kapcsolat **hozzáadása,** majd a Hirdetéskezelő **Facebook lehetőséget**.
+1. Válaszd a Kapcsolat **hozzáadása, majd a** Hirdetéskezelő **Facebook lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
-1. [Lehetővé teszi a közreműködők számára, hogy a kapcsolatot exportálásra](connections.md#allow-contributors-to-use-a-connection-for-exports) használják.
+1. [Engedélyezze a közreműködők számára, hogy a kapcsolatot exportáláshoz](connections.md#allow-contributors-to-use-a-connection-for-exports) használják.
 
 1. Hitelesítés a Facebook-hirdetések használatával:
 
@@ -56,7 +58,7 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
    1. Válasszon egy **meglévő egyéni célközönséget** a legördülő listából, vagy hozzon létre egy **új egyéni célközönséget**.
 
-1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+1. Tekintse át az adatvédelmet és a megfelelőséget [, és válassza az](connections.md#data-privacy-and-compliance) Elfogadom **lehetőséget**.
 
 1. A kapcsolat befejezéséhez válassza a **Mentés** lehetőséget.
 
@@ -68,11 +70,11 @@ Az egyesített ügyfélprofilokat tartalmazó szegmensek exportálása a Faceboo
 
 1. Válassza az Exportálás **hozzáadása lehetőséget**.
 
-1. **A Kapcsolat exportáláshoz** mezőben válassz ki egy kapcsolatot a Facebook Hirdetéskezelő szakaszból. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
+1. A Kapcsolat exportáláshoz **mezőben** válassz ki egy kapcsolatot a Facebook Hirdetéskezelő területen. Ha nem érhető el egy kapcsolat sem, akkor forduljon a rendszergazdához.
 
 1. Adja meg az exportálás nevét.
 
-1. Az Adatok összekapcsolása mezőben válaszd ki az **E-mail-cím**, **a Név és cím** vagy **a Telefon** lehetőséget **, amelyet el szeretnél küldeni a Hirdetéskezelőnek**.Facebook
+1. **A Kapcsolódási adatok** mezőben válaszd az E-mail-cím **, a Név és cím** vagy **a Telefonszám lehetőséget**, **amelyet el szeretnél küldeni a** Hirdetéskezelőnek Facebook.
 
 1. Képezze le a megfelelő attribútumokat az egyesített ügyfél entitásból a kiválasztott kulcsazonosítóhoz.
    > [!TIP]

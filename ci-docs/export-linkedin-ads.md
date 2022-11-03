@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 06eb915e352ad545f95e96e6108be0f81f43a451
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304706"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725311"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Szegmensek exportálása a LinkedIn Ads szolgáltatásba (előzetes verzió)
 
@@ -23,21 +23,22 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 
 - Egy [LinkedIn Campaign Manager fiók](https://business.linkedin.com/marketing-solutions/ads) és a megfelelő rendszergazdai hitelesítő adatok.
 - Fiókazonosító [LinkedIn Campaign Manager](https://www.linkedin.com/help/lms/answer/a424270).
-- [Konfigurált szegmensek](segments.md) a Customer Insights szolgáltatásban.
-- Az exportált szegmenseknek legalább egy adott mezőre van szükségük attól függően, hogy a kapcsolattartók célzását [vagy](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) a vállalati célzást [választja](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) a LinkedInen. A lehetséges mezők az **Adategyeztetés** lépésben vannak felsorolva az exportálás [konfigurálásakor](#configure-an-export).
+- [Konfigurált szegmensek](segments.md) a Customer Insights alkalmazásban.
+- Az exportált szegmenseknek legalább egy adott mezőre van szükségük attól függően, hogy a LinkedInen a kapcsolati célzást vagy [a vállalati célzást](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting)[választja-e](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). A lehetséges mezők az Adategyeztetés **lépésben vannak felsorolva az** exportálás [konfigurálásakor](#configure-an-export).
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- LinkedIn-hirdetésekbe való exportálásonként akár 100 000 ügyfélprofil is lehet, ami akár 10 percet is igénybe vehet.
+- A privát kapcsolat a saját tároló használata (BYOS) funkcióval együtt nem támogatott.
+- Akár 100 000 ügyfélprofil exportálásonként a LinkedIn Ads szolgáltatásba, ami akár 10 percet is igénybe vehet.
 - Csak szegmensek. Egy szegmensnek legalább 300 egyedi profilt kell tartalmaznia.
 
-## <a name="set-up-connection-to-linkedin-ads"></a>Kapcsolat beállítása a LinkedIn-hirdetésekkel
+## <a name="set-up-connection-to-linkedin-ads"></a>A LinkedIn Ads szolgáltatással való kapcsolat beállítása
 
 [!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Menjen a **Rendszergazda** > **Kapcsolatok** lehetőségre.
 
-1. Válassza a Kapcsolat **hozzáadása,** majd a LinkedIn-hirdetések **lehetőséget**.
+1. Válassza a **Kapcsolat** hozzáadása, majd a LinkedIn Ads **lehetőséget**.
 
 1. Adjon meg egy felismerhető nevet a **Megjelenítendő név** mezőben a kapcsolatnak. A név és a kapcsolat típusa írja le ezt a kapcsolatot. Javasoljuk, hogy olyan nevet válasszon, amely ismerteti a kapcsolat célját és szándékát.
 
@@ -45,7 +46,7 @@ Az egyesített ügyfélprofilok szegmenseinek exportálása a LinkedIn Ads-szolg
 
 1. Adja meg fiókazonosítóját LinkedIn Campaign Manager.
 
-1. Tekintse át az adatvédelmet és a megfelelőséget, és válassza az [Elfogadom lehetőséget](connections.md#data-privacy-and-compliance)**.**
+1. Tekintse át az adatvédelmet és a megfelelőséget [, és válassza az](connections.md#data-privacy-and-compliance) Elfogadom **lehetőséget**.
 
 1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
