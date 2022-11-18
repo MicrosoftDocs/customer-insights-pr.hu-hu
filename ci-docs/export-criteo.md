@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 61435030254638965fbeb7980312e73695416aa2
-ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
+ms.openlocfilehash: 811752da943cd5e40608d48644a1744c7971d3c8
+ms.sourcegitcommit: 40ae3322ac95913e485607494754dd03814e42bb
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/27/2022
-ms.locfileid: "9724792"
+ms.lasthandoff: 11/11/2022
+ms.locfileid: "9760029"
 ---
 # <a name="export-segments-to-criteo-preview"></a>Szegmensek exportálása a Criteo alkalmazásba (előzetes verzió)
 
@@ -27,7 +27,6 @@ Exportálja az egységes ügyfélprofilok szegmenseit kampányok létrehozásáh
 
 ## <a name="known-limitations"></a>Ismert korlátozások
 
-- A privát kapcsolat a saját tároló használata (BYOS) funkcióval együtt nem támogatott.
 - A Criteo-ba exportálva akár 1 millió ügyfélprofil is lehet, ami akár 30 percet is igénybe vehet. A Criteo-ba exportálható ügyfélprofilok száma a Criteo-val kötött szerződésétől függ.
 - Csak szegmensek.
 
@@ -47,7 +46,7 @@ Exportálja az egységes ügyfélprofilok szegmenseit kampányok létrehozásáh
 
 1. Válassza a Csatlakozás **lehetőséget** a kapcsolat inicializálásához.
 
-1. Válassza a Hitelesítés a Criteo-val lehetőséget, és adja meg rendszergazdai felhasználónevét és hitelesítő adatait a **Criteo-hoz**.
+1. Válassza a Hitelesítés a Criteo-val lehetőséget, és adja meg rendszergazdai felhasználónevét és hitelesítő adatait a **Criteo-hoz** .
 
 1. Válassza a **Saját maga hozzáadása exportálási felhasználóként** lehetőséget, és adja meg Customer Insights-hitelesítő adatait.
 
